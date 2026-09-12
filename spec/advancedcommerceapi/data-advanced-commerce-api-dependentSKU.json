@@ -1,0 +1,77 @@
+{
+  "id": "data:advanced-commerce-api:dependentSKU",
+  "title": "dependentSKU",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/dependentSKU",
+  "slug": "advancedcommerceapi/dependentsku",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The product identifier of a dependent SKU in a subscription price change.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string dependentSKU",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximumLength",
+      "value": "128",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "A dependent SKU is a product identifier that represents an item that depends on another SKU in the context of subscription price changes. Dependent SKUs cannot be chained or shared between multiple parent SKUs.",
+          "refs": []
+        },
+        {
+          "text": "The dependentSKU value is a string with a maximum length of 128 characters.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/description",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/effective",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/proratedPrice",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/retainBillingCycle",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundAmount",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundReason",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundRiskingPreference",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/storefront",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxCode",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/targetProductId"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "data:retention_messaging:RealtimeUrlNotFoundError",
+  "title": "RealtimeUrlNotFoundError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/RealtimeUrlNotFoundError",
+  "slug": "retentionmessaging/realtimeurlnotfounderror",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates that the URL for your endpoint isn’t configured.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RealtimeUrlNotFoundError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4040021"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "The realtime url is not configured."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "To configure your `Get Retention Message` endpoint, call `Configure-Realtime-URL`. For more information, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/AltTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BodyTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ExistingPerformanceTestRunError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ForbiddenNoPassingTestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/HeaderTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageInUseError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotApprovedError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidLocaleError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidPerformanceTestRequestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidProductIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidRequestIdError"
+      ]
+    }
+  ]
+}

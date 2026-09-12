@@ -1,0 +1,188 @@
+{
+  "id": "rest:app_store_server_api:put:v1-transactions-{}-appAccountToken",
+  "title": "Set App Account Token",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Set-App-Account-Token",
+  "slug": "appstoreserverapi/set-app-account-token",
+  "introducedAt": "1.16",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Sets the app account token value for a purchase the customer makes outside of your app, or updates its value in an existing transaction.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/transactions/{originalTransactionId}/appAccountToken",
+      "parameters": [
+        "{originalTransactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/transactions/{originalTransactionId}/appAccountToken",
+      "parameters": [
+        "{originalTransactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "originalTransactionId",
+      "type": "originalTransactionId",
+      "typeId": "data:app_store_server_api:originalTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The original transaction identifier of the transaction to receive the app account token update.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "UpdateAppAccountTokenRequest",
+    "typeId": "data:app_store_server_api:UpdateAppAccountTokenRequest",
+    "abstract": {
+      "text": "The request body that contains a valid app account token value.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidTransactionIdError | AppTransactionIdNotSupportedError | FamilyTransactionNotSupportedError | InvalidAppAccountTokenUUIDError | TransactionIdIsNotOriginalTransactionIdError)",
+      "typeId": "data:app_store_server_api:InvalidTransactionIdError|data:app_store_server_api:AppTransactionIdNotSupportedError|data:app_store_server_api:FamilyTransactionNotSupportedError|data:app_store_server_api:InvalidAppAccountTokenUUIDError|data:app_store_server_api:TransactionIdIsNotOriginalTransactionIdError",
+      "abstract": {
+        "text": "Invalid request. See the error code for more information. If there’s no error code, the request is malformed.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "OriginalTransactionIdNotFoundError",
+      "typeId": "data:app_store_server_api:OriginalTransactionIdNotFoundError",
+      "abstract": {
+        "text": "The transaction identifier wasn’t found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "An `appAccountToken` is a UUID you create to associate a transaction with a customer account in your system. Use the `Set-App-Account-Token` endpoint to set or reset the `appAccountToken` associated with the transaction you specify in the `originalTransactionId` parameter.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Set-App-Account-Token"
+          ]
+        },
+        {
+          "text": "Typically, your app sets the `appAccountToken(_:)` when a customer makes a purchase in your app. However, customers can also purchase in-app products outside of your app, for example, by redeeming an offer code in the App Store. In that case, the original transaction doesn’t include an app account token. Use the `Set App Account Token` endpoint to associate an app account token with such transactions.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Product/PurchaseOption/appAccountToken(_:)"
+          ]
+        },
+        {
+          "text": "This endpoint supports setting the `appAccountToken` for all product types, including one-time purchases (consumables, non-consumables, and non-renewing subscriptions) and auto-renewable subscriptions. If you call this endpoint for a transaction that already has an `appAccountToken`, the endpoint replaces the existing value with the new value you supply.",
+          "refs": []
+        },
+        {
+          "text": "For auto-renewable subscriptions, the endpoint applies the `appAccountToken` to the current renewal transaction and subsequent renewals, but it doesn’t affect past transactions. The same `appAccountToken` continues to apply to renewal transactions if the customer upgrades, downgrades, or cross-grades the subscription.",
+          "refs": []
+        },
+        {
+          "text": "This endpoint doesn’t support transactions for products shared through Family Sharing, where the transaction has an `inAppOwnershipType` value of `FAMILY_SHARED`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/inAppOwnershipType"
+          ]
+        },
+        {
+          "text": "You can assign the same `appAccountToken` value to more than one transaction, according to your needs. For example, you may choose to reuse the same `appAccountToken` value for every transaction that belongs to the same customer.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Account Token",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UpdateAppAccountTokenRequest"
+      ]
+    }
+  ]
+}

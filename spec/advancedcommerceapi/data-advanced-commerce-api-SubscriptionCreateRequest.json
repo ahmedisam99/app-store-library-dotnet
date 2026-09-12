@@ -1,0 +1,213 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionCreateRequest",
+  "title": "SubscriptionCreateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest",
+  "slug": "advancedcommerceapi/subscriptioncreaterequest",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request data your app provides when a customer purchases an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionCreateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:advanced-commerce-api:currency",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "descriptors",
+      "type": "Descriptors",
+      "typeId": "data:advanced-commerce-api:Descriptors",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "items",
+      "type": "[SubscriptionCreateItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionCreateItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "operation",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "CREATE_SUBSCRIPTION"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "period",
+      "type": "period",
+      "typeId": "data:advanced-commerce-api:period",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "previousTransactionId",
+      "type": "transactionId",
+      "typeId": "data:advanced-commerce-api:transactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "taxCode",
+      "type": "taxCode",
+      "typeId": "data:advanced-commerce-api:taxCode",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "version",
+      "typeId": "data:advanced-commerce-api:version",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Example: subscription with a single item",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"CREATE_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"requestInfo\": {\n        \"requestReferenceId\": \"74ad2401-488d-4e1a-9c9d-80cdf0efed67\"\n    },\n    \"currency\": \"USD\", \n    \"taxCode\": \"C003-00-1\", \n    \"descriptors\": {\n        \"displayName\": \"Anne's Game Stream\",\n        \"description\": \"Streaming Service for Anne's Game\"\n    },\n    \"period\": \"P1M\",\n    \"storefront\": \"USA\",\n    \"items\": [ \n        {\n            \"SKU\": \"ANNES_GOLD_TIER_1M\",\n            \"displayName\": \"Gold Tier\",                        \n            \"description\": \"Access to Anne's Game Stream\",\n            \"price\": 7990\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example: subscription with multiple items and an offer",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"CREATE_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"requestInfo\": {\n        \"requestReferenceId\": \"74ad2401-488d-4e1a-9c9d-80cdf0efed67\"\n    },\n    \"currency\": \"USD\", \n    \"taxCode\": \"C003-00-1\", \n    \"descriptors\": {\n        \"displayName\": \"Streaming Pass\",\n        \"description\": \"Streaming pass with multiple items\"\n    },\n    \"period\": \"P1M\",\n    \"storefront\": \"USA\",\n    \"items\": [ \n        {\n            \"SKU\": \"LIVE_SPORTS\",\n            \"displayName\": \"Live Sports\",                        \n            \"description\": \"Streaming for sports events\",\n            \"price\": 40000\n        },\n        {\n            \"SKU\": \"SATURDAY_MORNING_CARTOONS\",\n            \"displayName\": \"Saturday Morning Cartoons\",\n            \"description\": \"Streaming for animated series\",\n            \"price\": 11000,\n            \"offer\": {\n                \"price\": 2990, \n                \"period\": \"P1M\",\n                \"periodCount\": 3,\n                \"reason\": \"ACQUISITION\"\n            }\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription creation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateItem"
+      ]
+    }
+  ]
+}

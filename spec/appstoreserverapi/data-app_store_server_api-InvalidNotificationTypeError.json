@@ -1,0 +1,103 @@
+{
+  "id": "data:app_store_server_api:InvalidNotificationTypeError",
+  "title": "InvalidNotificationTypeError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidNotificationTypeError",
+  "slug": "appstoreserverapi/invalidnotificationtypeerror",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the notification type or subtype is invalid.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidNotificationTypeError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000018"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The notification type or subtype is invalid."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "For a list of valid notification types and subtypes, see `notificationType` and `subtype`. If you provide both a notification type and subtype, ensure the two are a valid combination, as documented on `subtype`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/subtype"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Notification test and history errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPaginationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStartDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTestNotificationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidInAppOwnershipTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSortError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSubscriptionGroupIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MultipleFiltersSuppliedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/PaginationTokenExpiredError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ServerNotificationURLNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateAfterEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateTooFarInPastError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TestNotificationNotFoundError"
+      ]
+    }
+  ]
+}

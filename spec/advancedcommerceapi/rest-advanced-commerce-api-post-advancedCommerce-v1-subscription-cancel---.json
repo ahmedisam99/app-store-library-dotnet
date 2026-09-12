@@ -1,0 +1,209 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-subscription-cancel-{}",
+  "title": "Cancel a Subscription",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Cancel-a-Subscription",
+  "slug": "advancedcommerceapi/cancel-a-subscription",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Turn off automatic renewal to cancel a customer’s auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/cancel/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/cancel/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier of the auto-renewable subscription to cancel.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionCancelRequest",
+    "typeId": "data:advanced-commerce-api:SubscriptionCancelRequest",
+    "abstract": {
+      "text": "The request body that includes information about the subscription to cancel.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionCancelResponse",
+      "typeId": "data:advanced-commerce-api:SubscriptionCancelResponse",
+      "abstract": {
+        "text": "Success",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(NullRequestInfoError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | MismatchedStorefrontError | OperationNotAllowedError | MalformedPayloadError)",
+      "typeId": "data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionNotEligibleError | ProductNotOwnedError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionNotEligibleError|data:advanced-commerce-api:ProductNotOwnedError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "To use the `Cancel a Subscription` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+        "refs": [
+          "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When this endpoint succeeds, the system sets the subscription’s auto-renew status to `false` and the subscription doesn’t renew at the next renewal period. The customer continues to have access to the subscription until the end of the current period.",
+          "refs": []
+        },
+        {
+          "text": "To immediately cancel a subscription instead, see `Revoke-Subscription`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> To use the `Cancel a Subscription` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+          ]
+        },
+        {
+          "text": "Refer to the Advanced Commerce API Addendum to learn the use cases for the `Cancel a Subscription`, `Revoke-Subscription`, and `Request-Transaction-Refund` APIs.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example request and response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```json\n{\n    \"requestInfo\": {\n        \"requestReferenceId\": \"932c6903-0ab8-4469-9f21-015f6fab013c\"\n    },\n    \"storefront\": \"USA\"  \n}\n```\n\n**Response (decoded signed transaction)**\n\n```json\n{\n    \"transactionId\": \"12345\",\n    \"originalTransactionId\": \"12345\",\n    \"webOrderLineItemId\": \"23456\",\n    \"bundleId\": \"com.example\",\n    \"productId\": \"com.example.base\",\n    \"subscriptionGroupIdentifier\": \"34567\",\n    \"purchaseDate\": 1735718400000,\n    \"originalPurchaseDate\": 1735718400000,\n    \"expiresDate\": 1738396800000,\n    \"quantity\": 1,\n    \"type\": \"Auto-Renewable Subscription\",\n    \"inAppOwnershipType\": \"PURCHASED\",\n    \"signedDate\": 1735718400000,\n    \"environment\": \"Production\",\n    \"transactionReason\": \"PURCHASE\",\n    \"storefront\": \"USA\",\n    \"storefrontId\": \"143441\",\n    \"price\": 12980,\n    \"currency\": \"USD\",\n    \"appTransactionId\": \"45678\",\n    \"appAccountToken\": \"3152947d-8f63-41c2-9a91-e92e45f145e9\",\n    \"advancedCommerceInfo\": {\n        \"estimatedTax\": 0,\n        \"taxRate\": \"0\",\n        \"taxCode\": \"C003-00-1\",\n        \"taxExclusivePrice\": 12980,\n        \"descriptors\": {\n            \"displayName\": \"Ad-free and advanced feature package\",\n            \"description\": \"Remove ads and unlock advanced features.\"\n        },\n        \"items\": [\n            {\n                \"SKU\": \"AD_FREE_1M\",\n                \"displayName\": \"Ad-free monthly plan\",                        \n                \"description\": \"Remove ads for the service.\",\n                \"price\": 9990\n            },\n            {\n                \"SKU\": \"ADVANCED_FEATURES_1M\",\n                \"displayName\": \"Advanced feature monthly plan\",\n                \"description\": \"Unlock advanced features for the month.\",\n                \"price\": 3990,\n                \"offer\": {\n                    \"price\": 2990, \n                    \"period\": \"P1M\",\n                    \"periodCount\": 3,\n                    \"reason\": \"ACQUISITION\"\n                }\n            }\n        ],\n        \"requestReferenceId\": \"932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"period\": \"P1M\"\n    }\n}\n```\n\n**Response (decoded signed renewal information)**\n\n```json\n{\n    \"originalTransactionId\": \"12345\",\n    \"autoRenewProductId\": \"com.example.base\",\n    \"productId\": \"com.example.base\",\n    \"autoRenewStatus\": 0,\n    \"signedDate\": 1735718400000,\n    \"environment\": \"Production\",\n    \"recentSubscriptionStartDate\": 1735718400000,\n    \"renewalDate\": 1738396800000,\n    \"advancedCommerceInfo\": {\n        \"taxCode\": \"C003-00-1\",\n        \"descriptors\": {\n            \"displayName\": \"Ad-free and advanced feature package\",\n            \"description\": \"Remove ads and unlock advanced features.\"\n        },\n        \"items\": [\n            {\n                \"SKU\": \"AD_FREE_1M\",\n                \"displayName\": \"Ad-free monthly plan\",                        \n                \"description\": \"Remove ads for the service.\",\n                \"price\": 9990\n            },\n            {\n                \"SKU\": \"ADVANCED_FEATURES_1M\",\n                \"displayName\": \"Advanced feature monthly plan\",\n                \"description\": \"Unlock advanced features for the month.\",\n                \"price\": 3990,\n                \"offer\": {\n                    \"price\": 2990, \n                    \"period\": \"P1M\",\n                    \"periodCount\": 2,\n                    \"reason\": \"ACQUISITION\"\n                }\n            }\n        ],\n        \"requestReferenceId\": \"932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"consistencyToken\": \"1.12345.932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"period\": \"P1M\"\n    },\n    \"appTransactionId\": \"45678\",\n    \"appAccountToken\": \"3152947d-8f63-41c2-9a91-e92e45f145e9\"\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription cancellation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCancelRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCancelResponse"
+      ]
+    }
+  ]
+}

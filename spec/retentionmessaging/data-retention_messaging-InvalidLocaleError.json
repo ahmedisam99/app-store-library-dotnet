@@ -1,0 +1,114 @@
+{
+  "id": "data:retention_messaging:InvalidLocaleError",
+  "title": "InvalidLocaleError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/InvalidLocaleError",
+  "slug": "retentionmessaging/invalidlocaleerror",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the locale is invalid.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidLocaleError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000164"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. Locale is invalid."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For a full list of locales, see `https://developer.apple.com/documentation/appstoreconnectapi/managing-metadata-in-your-app-by-using-locale-shortcodes`.",
+          "refs": [
+            "https://developer.apple.com/documentation/appstoreconnectapi/managing-metadata-in-your-app-by-using-locale-shortcodes"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/AltTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BodyTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ExistingPerformanceTestRunError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ForbiddenNoPassingTestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/HeaderTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageInUseError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotApprovedError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidPerformanceTestRequestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidProductIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidRequestIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/MaximumNumberOfImagesReachedError"
+      ]
+    }
+  ]
+}

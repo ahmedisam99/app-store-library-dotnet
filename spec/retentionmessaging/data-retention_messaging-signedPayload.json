@@ -1,0 +1,65 @@
+{
+  "id": "data:retention_messaging:signedPayload",
+  "title": "signedPayload",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/signedPayload",
+  "slug": "retentionmessaging/signedpayload",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The payload in a JSON Web Signature (JWS) format, signed by the App Store.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string signedPayload",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The signed payload is a property of `RealtimeRequestBody`. The App Store server sends this request to your `Get Retention Message` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "For information about parsing the signed payload and validating the signature, see `responding-to-realtime-retention-messaging-requests`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time request body",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/originalTransactionId",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/appAppleId",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/signedDate",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/environment"
+      ]
+    }
+  ]
+}

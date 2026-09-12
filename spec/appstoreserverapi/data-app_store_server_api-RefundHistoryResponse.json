@@ -1,0 +1,126 @@
+{
+  "id": "data:app_store_server_api:RefundHistoryResponse",
+  "title": "RefundHistoryResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/RefundHistoryResponse",
+  "slug": "appstoreserverapi/refundhistoryresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains an array of signed JSON Web Signature (JWS) refunded transactions, and paging information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RefundHistoryResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "hasMore",
+      "type": "hasMore",
+      "typeId": "data:app_store_server_api:hasMore",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.6.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A Boolean value that indicates whether the App Store has more transactions than it returns in `signedTransactions`. If the value is `true`, use the `revision` token to request the next set of transactions by calling `Get-Refund-History`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "revision",
+      "type": "revision",
+      "typeId": "data:app_store_server_api:revision",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.6.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A token you provide in a query to request the next set of transactions from the `Get-Refund-History` endpoint.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactions",
+      "type": "[JWSTransaction]",
+      "typeId": "data:app_store_server_api:JWSTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.6.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A list of up to 20 JWS transactions, or an empty array if the customer hasn’t received any refunds in your app.\n\nThe transactions are sorted in ascending order by `revocationDate`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Refund-History` endpoint returns this response.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+          ]
+        },
+        {
+          "text": "This response returns a maximum of 20 refunded transactions. If your customer has more than 20 refunded transactions, the `hasMore` value is `true`. Each response includes a `revision` token. Call `Get-Refund-History` again with the `revision` token in the query to receive the next set of transactions. When the App Store has no more transactions to send, the `hasMore` value is `false`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse/revision",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+          ]
+        },
+        {
+          "text": "Consider storing the `revision` token from the last page of results with other customer account information. Use it at a later date when you call `Get-Refund-History` to request any new refunded transactions since the last time you called the endpoint for the customer. By using the stored `revision` token, you can avoid fetching transactions you’ve already received.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Refund lookup",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+      ]
+    }
+  ]
+}

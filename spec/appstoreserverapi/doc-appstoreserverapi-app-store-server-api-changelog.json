@@ -1,0 +1,807 @@
+{
+  "id": "doc:appstoreserverapi/app-store-server-api-changelog",
+  "title": "App Store Server API changelog",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/app-store-server-api-changelog",
+  "slug": "appstoreserverapi/app-store-server-api-changelog",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Learn about new features and updates in the App Store Server API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this changelog to learn about feature updates, deprecations, and removals for the App Store Server API.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Server update  — 2026/05/05",
+      "paragraphs": [
+        {
+          "text": "Updated recommended domain from `api.storekit.itunes.apple.com` to `api.storekit.apple.com`, and `api.storekit-sandbox.itunes.apple.com` to `api.storekit-sandbox.apple.com`. The previous domains will continue to be supported.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "1.21 - 2026/04/27",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the following fields in `JWSTransactionDecodedPayload` to support monthly subscriptions with a 12-month commitment: `TransactionCommitmentInfo` and `billingPlanType`; and the following fields in `JWSRenewalInfoDecodedPayload`:   `RenewalCommitmentInfo` and `renewalBillingPlanType`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionCommitmentInfo",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPlanType",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RenewalCommitmentInfo",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalBillingPlanType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.20 - 2026/04/13",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `Finish-Transaction` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Finish-Transaction"
+          ]
+        },
+        {
+          "text": "Defined a new type, `anyTransactionId`. The endpoints that previously used the `transactionId` type now use `anyTransactionId`, but the functionality is unchanged.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/anyTransactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.19 - 2025/12/10",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `Send-Consumption-Information` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        },
+        {
+          "text": "Added the `revocationType` and `revocationPercentage` fields to the `JWSTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationType",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "Added the `advancedCommercePriceIncreaseInfo` object, and `advancedCommercePriceIncreaseInfoDependentSKU`, `advancedCommercePriceIncreaseInfoStatus`, `advancedCommercePriceIncreaseInfoPrice`, fields to the `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/advancedCommercePriceIncreaseInfo",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/advancedCommercePriceIncreaseInfoDependentSKU",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/advancedCommercePriceIncreaseInfoStatus",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/advancedCommercePriceIncreaseInfoPrice",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "Use the new `Send-Consumption-Information` endpoint for App Store In-App Purchases that don’t use the Advanced Commerce API.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.18 - 2025/10/29",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `ONE_TIME` value to `offerDiscountType` to indicate In-App Purchase offer codes.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.17 - 2025/10/16",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `Get-App-Transaction-Info` endpoint and `AppTransactionInfoResponse` response object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-App-Transaction-Info",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionInfoResponse"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.16 - 2025/06/09",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `Set-App-Account-Token` endpoint and `UpdateAppAccountTokenRequest` request object, and related error codes:  `TransactionIdIsNotOriginalTransactionIdError`, `FamilyTransactionNotSupportedError`, and `InvalidAppAccountTokenUUIDError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Set-App-Account-Token",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UpdateAppAccountTokenRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionIdIsNotOriginalTransactionIdError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.15 - 2025/02/21",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` and `JWSTransactionDecodedPayload` to include the new `appTransactionId` and `offerPeriod` fields.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerPeriod"
+          ]
+        },
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` to include the `appAccountToken` field.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken"
+          ]
+        },
+        {
+          "text": "Added the `AppTransactionIdNotSupportedError` error object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.14 - 2025/01/17",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added support for `AdvancedCommerceAPI`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.13 — 2024/07/08",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` to include the new `eligibleWinBackOfferIds` field.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/eligibleWinBackOfferIds"
+          ]
+        },
+        {
+          "text": "Added the win-back offer type in `offerType`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.12 — 2024/06/10",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        },
+        {
+          "text": "**Deprecations**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the endpoint `Get-Transaction-History`, which provides transaction history for all In-App Purchases, including consumable In-App Purchases in a finished state.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        },
+        {
+          "text": "Added the fields `renewalPrice`, `currency` and `offerDiscountType` to the `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalPrice",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/currency",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "The `Get-Transaction-History-V1` endpoint is deprecated. Use the new `Get-Transaction-History` endpoint instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.11  — 2024/04/11",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        },
+        {
+          "text": "**Deprecations**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `refundPreferenceV1` field to the  `ConsumptionRequestV1` request body.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        },
+        {
+          "text": "`Send-Consumption-Information-V1` added  support for receiving information for auto-renewable subscriptions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "Added the `InvalidTransactionTypeNotSupportedError` error object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError"
+          ]
+        },
+        {
+          "text": "The system no longer sends the `InvalidTransactionNotConsumableError` error object. It uses `InvalidTransactionTypeNotSupportedError` instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.10.1  — 2024/03/12",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The type of the `price` field changed from `int32` to `int64`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/price"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Server update  — 2024/02/29",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The `Get-Notification-History` endpoint adds support for the new notification type for unreported external purchase tokens.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.10 — 2023/10/26",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the following new properties in the decoded transaction payload `JWSTransactionDecodedPayload`: `price`, `currency`, and `offerDiscountType`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/price",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/currency",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.9 — 2023/09/27",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the error format of the `Send-Consumption-Information-V1` endpoint to match that of other endpoints. The endpoint now returns a JSON body that can contain an error code.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "New error codes for the `Send-Consumption-Information-V1` endpoint include: `InvalidAccountTenureError`, `InvalidAppAccountTokenError`, `InvalidConsumptionStatusError`, `InvalidCustomerConsentedError`, `InvalidDeliveryStatusError`, `InvalidLifetimeDollarsPurchasedError`, `InvalidLifetimeDollarsRefundedError`, `InvalidPlatformError`, `InvalidPlayTimeError`, `InvalidSampleContentProvidedError`, `InvalidTransactionNotConsumableError`, `InvalidUserStatusError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAccountTenureError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidConsumptionStatusError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidDeliveryStatusError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsPurchasedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsRefundedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlatformError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlayTimeError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSampleContentProvidedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidUserStatusError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.8 — 2023/06/05",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        },
+        {
+          "text": "**Deprecations**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added a new endpoint `Get-Transaction-Info` with its response  `TransactionInfoResponse`, which provides information about a single transaction.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-Info",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionInfoResponse"
+          ]
+        },
+        {
+          "text": "The `Get-Notification-History` endpoint adds a new filter parameter, `onlyFailures`. When you set it to `true`, the endpoint returns only the notifications that failed to reach the developer’s server.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/onlyFailures"
+          ]
+        },
+        {
+          "text": "The following endpoints changed their path parameters from `originalTransactionId` to `transactionId`: `Get-All-Subscription-Statuses`, `Get-Transaction-History-V1`, `Get-Refund-History`, and `Send-Consumption-Information-V1`. These endpoints now accept any transaction identifier, including original transaction identifiers.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "The `Get-Notification-History` endpoint now accepts a `transactionId` instead of requiring an original transaction identifier (`originalTransactionId`) in the `NotificationHistoryRequest` body.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest"
+          ]
+        },
+        {
+          "text": "The `Get-Transaction-History-V1` endpoint adds a new filter parameter, `revoked`, that filters the response to return only revoked transactions or only nonrevoked transactions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1"
+          ]
+        },
+        {
+          "text": "The `Get-All-Subscription-Statuses` endpoint adds a new filter parameter, `status`, that enables you to request subscriptions with the status values you specify.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses"
+          ]
+        },
+        {
+          "text": "Added the `storefront`, `storefrontId`, and `transactionReason` fields to the `JWSTransactionDecodedPayload` object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefront",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefrontId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionReason",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "Added the `renewalDate` field to the  `JWSRenewalInfoDecodedPayload` object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalDate",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "Added the `sendAttempts` field to the  `CheckTestNotificationResponse` and the `notificationHistoryResponseItem` of the `NotificationHistoryResponse` to provide information about all the send attempts for App Store Server Notifications.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/CheckTestNotificationResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationHistoryResponseItem",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse"
+          ]
+        },
+        {
+          "text": "Added the error codes `FamilySharedSubscriptionExtensionIneligibleError`, `StatusRequestNotFoundError`, `InvalidStatusError`, `InvalidRevokedError`, `InvalidTransactionIdError`, `TransactionIdNotFoundError`,  and `RateLimitExceededError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StatusRequestNotFoundError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStatusError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRevokedError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionIdError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionIdNotFoundError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RateLimitExceededError"
+          ]
+        },
+        {
+          "text": "All endpoints are subject to a rate limit and can return a `RateLimitExceededError` with an HTTP 429 error code. For more information, see `identifying-rate-limits`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RateLimitExceededError",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits"
+          ]
+        },
+        {
+          "text": "The `excludeRevoked` filter in `Get-Transaction-History-V1` is deprecated. Use the new `revoked` filter instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1"
+          ]
+        },
+        {
+          "text": "The `firstSendAttemptResult` field is deprecated in the `CheckTestNotificationResponse` and `notificationHistoryResponseItem` objects. Use the first `sendAttemptItem` in the `sendAttempts` array instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/CheckTestNotificationResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationHistoryResponseItem",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.7 — 2023/01/30",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The new endpoint `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` takes a subscription product identifier and extends the renewal date for all eligible subscribers. It responds with `MassExtendRenewalDateResponse`. For more information, see `extending-the-renewal-date-for-auto-renewable-subscriptions`. For information about new App Store server notifications related to this endpoint, see the `app-store-server-notifications-changelog`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+          ]
+        },
+        {
+          "text": "The new endpoint `Get-Status-of-Subscription-Renewal-Date-Extensions` checks the status of a subscription-renewal-date extension, and responds with the `MassExtendRenewalDateStatusResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Status-of-Subscription-Renewal-Date-Extensions",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateStatusResponse"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.6 — 2022/08/08",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        },
+        {
+          "text": "Deprecations",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The new version 2 endpoint `Get-Refund-History` returns a paginated list of refunded transactions in the `RefundHistoryResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+          ]
+        },
+        {
+          "text": "The endpoint `Get-Refund-History-V1` and its response `RefundLookupResponse` are deprecated.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundLookupResponse"
+          ]
+        },
+        {
+          "text": "In `firstSendAttemptResult`, the `SSL_ISSUE` value is deprecated and replaced with `TLS_ISSUE`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.5 — 2022/06/06",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The API has two new endpoints to support testing how your server receives App Store Server Notifications. The endpoints are: `Request-a-Test-Notification` and `Get-Test-Notification-Status`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status"
+          ]
+        },
+        {
+          "text": "The API adds the new `Get-Notification-History` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+          ]
+        },
+        {
+          "text": "The `Get-Transaction-History-V1` endpoint is enhanced with new parameters to support filtering and sorting functionality.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1"
+          ]
+        },
+        {
+          "text": "The `JWSRenewalInfoDecodedPayload` now includes the `recentSubscriptionStartDate` field.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/recentSubscriptionStartDate"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.4",
+      "paragraphs": [
+        {
+          "text": "This version doesn’t contain any public changes.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "1.3",
+      "paragraphs": [
+        {
+          "text": "This version doesn’t contain any public changes.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Server update — 2022/03/17",
+      "paragraphs": [
+        {
+          "text": "Removals",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The `JWSDecodedHeader` object no longer includes the `kid` field.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.2 — 2022/02/24",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The `JWSTransactionDecodedPayload` and `JWSRenewalInfoDecodedPayload` objects now include the `environment` field.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Server update — 2022/02/23",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `Get-Refund-History-V1` endpoint now returns a maximum of 50 refunded transactions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History-V1"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.1 — 2022/10/21",
+      "paragraphs": [
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The API adds three endpoints: `Look-Up-Order-ID`, `Get-Refund-History-V1`, and `Extend-a-Subscription-Renewal-Date`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Look-Up-Order-ID",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Server update — 2021/09/20",
+      "paragraphs": [
+        {
+          "text": "The API is now available in the production environment, using the following base URL:",
+          "refs": []
+        },
+        {
+          "text": "```other\nhttps://api.storekit.apple.com/inApps/\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "1.0b1 — 2021/06/07",
+      "paragraphs": [
+        {
+          "text": "Initial version of the App Store Server API.",
+          "refs": []
+        },
+        {
+          "text": "New features",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "This API has three endpoints, available in the sandbox environment: `Get-Transaction-History-V1`, `Send-Consumption-Information-V1`, and `Get-All-Subscription-Statuses`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/creating-api-keys-to-authorize-api-requests",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits"
+      ]
+    }
+  ]
+}

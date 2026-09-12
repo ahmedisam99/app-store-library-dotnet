@@ -1,0 +1,218 @@
+{
+  "id": "rest:app_store_server_api:get:v2-refund-lookup-{}",
+  "title": "Get Refund History",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-Refund-History",
+  "slug": "appstoreserverapi/get-refund-history",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a paginated list of all of a customer’s refunded in-app purchases for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v2/refund/lookup/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v2/refund/lookup/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "anyTransactionId",
+      "type": "anyTransactionId",
+      "typeId": "data:app_store_server_api:anyTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Any `originalTransactionId`, `transactionId` or `appTransactionId` that belongs to the customer for your app.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "revision",
+      "type": "revision",
+      "typeId": "data:app_store_server_api:revision",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A token you provide to get the next set of up to 20 transactions. All responses include a `revision` token. Use the `revision` token from the previous `RefundHistoryResponse`.\n\nYou can store the `revision` token from the final results page and use it for a future call. For more information, see `RefundHistoryResponse`.\n\nThe `revision` token is required in all requests except the initial request.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+        ]
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "RefundHistoryResponse",
+      "typeId": "data:app_store_server_api:RefundHistoryResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidTransactionIdError | InvalidRequestRevisionError)",
+      "typeId": "data:app_store_server_api:InvalidTransactionIdError|data:app_store_server_api:InvalidRequestRevisionError",
+      "abstract": {
+        "text": "Invalid request. Check the specific error message for further information.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:app_store_server_api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "Invalid request. Check the specific error message for further information.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to get the customer’s complete refund history for your app by providing the transaction identifier (`transactionId`) for any of the customer’s in-app purchases. Each response (`RefundHistoryResponse`) contains a maximum of 20 refunded transactions. If the `hasMore` property in the response is `true`, call the endpoint again using the `revision` token from the response to get the next set of refunded transactions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History/revision"
+          ]
+        },
+        {
+          "text": "The response only includes App Store-approved refunds for any product type: consumable, non-consumable, auto-renewable subscriptions, and non-renewing subscriptions. For more information about product types, see `https://developer.apple.com/in-app-purchase/`.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/"
+          ]
+        },
+        {
+          "text": "The information in the response is the same as the information in one or more `REFUND` notifications (`notificationType`) from `AppStoreServerNotifications`. Use this API to retrieve any refund notifications you may have missed, such as during a server outage.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications"
+          ]
+        },
+        {
+          "text": "A successful response may have an empty `signedTransactions` array if the customer hasn’t received any App Store-approved refunds. To identify the date and reason code for a refund, see `revocationDate` and `revocationReason` in the `JWSTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "The App Store Server API returns information based on the customer’s in-app purchase history regardless of whether the customer installs, removes, or reinstalls the app on their devices.",
+          "refs": []
+        },
+        {
+          "text": "To get a customer’s full refund history for your app, start by calling the endpoint without any query parameters, as follows:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v2/refund/lookup/{anyTransactionId}\n```",
+          "refs": []
+        },
+        {
+          "text": "For subsequent requests, include the `revision` token from the previous `RefundHistoryResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History/revision",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+          ]
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v2/refund/lookup/{anyTransactionId}?revision={revision}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Refund lookup",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+      ]
+    }
+  ]
+}

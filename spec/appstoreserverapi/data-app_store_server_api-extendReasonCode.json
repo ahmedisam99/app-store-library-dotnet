@@ -1,0 +1,93 @@
+{
+  "id": "data:app_store_server_api:extendReasonCode",
+  "title": "extendReasonCode",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/extendReasonCode",
+  "slug": "appstoreserverapi/extendreasoncode",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The code that represents the reason for the subscription-renewal-date extension.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 extendReasonCode",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "Undeclared; no information provided.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The renewal-date extension is for customer satisfaction.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "The renewal-date extension is for other reasons.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The renewal-date extension is due to a service issue or outage.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information about requesting subscription-renewal-date extensions, see `extending-the-renewal-date-for-auto-renewable-subscriptions`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Request data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extendByDays",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/requestIdentifier"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_server_api:refundPreference",
+  "title": "refundPreference",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/refundPreference",
+  "slug": "appstoreserverapi/refundpreference",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A value that indicates your preferred outcome for the refund request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string refundPreference",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "DECLINE",
+      "abstract": {
+        "text": "You prefer that the App Store declines the refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "GRANT_FULL",
+      "abstract": {
+        "text": "You prefer that the App Store grants the refund in full.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "GRANT_PRORATED",
+      "abstract": {
+        "text": "You prefer that the App Store grants a prorated refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use these values in the `refundPreference` field of a `ConsumptionRequest`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest"
+          ]
+        },
+        {
+          "text": "The following constraints apply to the `GRANT_PRORATED` option:",
+          "refs": []
+        },
+        {
+          "text": "Your refund preference is one of a variety of factors that the App Store uses to inform its refund decisions.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If the product is a consumable or non-consumable In-App Purchase or a non-renewing subscription, you may include a `consumptionPercentage` value in the `ConsumptionRequest`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage"
+          ]
+        },
+        {
+          "text": "If the product is an auto-renewable subscription, don’t include a `consumptionPercentage` value in the `ConsumptionRequest`. The system calculates the consumption automatically for auto-renewable subscriptions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ]
+}

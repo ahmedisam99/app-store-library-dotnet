@@ -1,0 +1,101 @@
+{
+  "id": "data:app_store_server_api:offerDiscountType",
+  "title": "offerDiscountType",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/offerDiscountType",
+  "slug": "appstoreserverapi/offerdiscounttype",
+  "introducedAt": "1.10",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The payment mode for a discount offer on an In-App Purchase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string offerDiscountType",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "FREE_TRIAL",
+      "abstract": {
+        "text": "A payment mode of a discount for auto-renewable subscriptions that indicates a free trial.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PAY_AS_YOU_GO",
+      "abstract": {
+        "text": "A payment mode of a discount for auto-renewable subscriptions that customers pay over a single or multiple billing periods.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PAY_UP_FRONT",
+      "abstract": {
+        "text": "A payment mode of a discount for auto-renewable subscriptions that customers pay up front.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ONE_TIME",
+      "abstract": {
+        "text": "A payment mode for a discount for In-App Purchase types including consumable, non-consumable, and non-renewing subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You set up subscription offers and determine the payment mode when you configure subscriptions in App Store Connect. For more information about the free trial, pay as you go, and pay up front payment modes, see `https://developer.apple.com/help/app-store-connect/reference/pricing-and-availability`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/pricing-and-availability"
+          ]
+        },
+        {
+          "text": "For more information on subscription offers, see `https://developer.apple.com/app-store/subscriptions/#providing-subscription-offers`.",
+          "refs": [
+            "https://developer.apple.com/app-store/subscriptions/#providing-subscription-offers"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerPeriod",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType"
+      ]
+    }
+  ]
+}

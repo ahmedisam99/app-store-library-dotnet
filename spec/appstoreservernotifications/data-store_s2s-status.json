@@ -1,0 +1,104 @@
+{
+  "id": "data:store_s2s:status",
+  "title": "status",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/status",
+  "slug": "appstoreservernotifications/status",
+  "introducedAt": "2.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The status of an auto-renewable subscription at the time the App Store signs the notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 status",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The auto-renewable subscription is active.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "The auto-renewable subscription is expired.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The auto-renewable subscription is in a billing retry period.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "The auto-renewable subscription is in a Billing Grace Period.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "5",
+      "abstract": {
+        "text": "The auto-renewable subscription is revoked. The App Store refunded the transaction or revoked it from Family Sharing.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This status value is current as of the `signedDate` in the decoded payload, `responseBodyV2DecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App metadata and environment",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleVersion",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/environment"
+      ]
+    }
+  ]
+}

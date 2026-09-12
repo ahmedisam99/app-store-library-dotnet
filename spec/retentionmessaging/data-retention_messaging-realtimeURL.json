@@ -1,0 +1,64 @@
+{
+  "id": "data:retention_messaging:realtimeURL",
+  "title": "realtimeURL",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/realtimeURL",
+  "slug": "retentionmessaging/realtimeurl",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that contains the URL you provide for your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string realtimeURL",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximumLength",
+      "value": "256",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "The `realtimeURL` must begin with `https://` and be a maximum of 256 characters. Otherwise, the call to `Configure-Realtime-URL` fails.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Important**\n>\n> The `realtimeURL` must begin with `https://` and be a maximum of 256 characters. Otherwise, the call to `Configure-Realtime-URL` fails.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

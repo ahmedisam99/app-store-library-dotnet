@@ -1,0 +1,158 @@
+{
+  "id": "data:app_store_server_api:MassExtendRenewalDateStatusResponse",
+  "title": "MassExtendRenewalDateStatusResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/MassExtendRenewalDateStatusResponse",
+  "slug": "appstoreserverapi/massextendrenewaldatestatusresponse",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that indicates the current status of a request to extend the subscription renewal date to all eligible subscribers.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object MassExtendRenewalDateStatusResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "requestIdentifier",
+      "type": "requestIdentifier",
+      "typeId": "data:app_store_server_api:requestIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "128",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The `UUID` that represents your request for a subscription-renewal-date extension.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "complete",
+      "type": "complete",
+      "typeId": "data:app_store_server_api:complete",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A Boolean value that’s `TRUE` to indicate that the App Store completed your request to extend a subscription renewal date for all eligible subscribers.\n\nThe value is `FALSE` if the request is in progress.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "completeDate",
+      "type": "completeDate",
+      "typeId": "data:app_store_server_api:completeDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The date that the App Store completes the request.\n\nAppears only if `complete` is `TRUE`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "failedCount",
+      "type": "failedCount",
+      "typeId": "data:app_store_server_api:failedCount",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The final count of subscribers that fail to receive a subscription-renewal-date extension.\n\nAppears only if `complete` is `TRUE`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "succeededCount",
+      "type": "succeededCount",
+      "typeId": "data:app_store_server_api:succeededCount",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The final count of subscribers that successfully receive a subscription-renewal-date extension.\n\nAppears only if `complete` is `TRUE`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store server sends this response when you call the `Get-Status-of-Subscription-Renewal-Date-Extensions` endpoint. Your request to `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` is complete when the value of the `complete` field is `TRUE`. Otherwise, the request is still in progress.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Status-of-Subscription-Renewal-Date-Extensions",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers"
+          ]
+        },
+        {
+          "text": "The App Store server also sends real-time notifications as it’s processing the subscription-renewal-date extension, including notifications with `notificationType` values of `RENEWAL_EXTENSION` and `RENEWAL_EXTENDED`. For more information, see `AppStoreServerNotifications`. For more information about extending subscription renewal dates, see `extending-the-renewal-date-for-auto-renewable-subscriptions`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/complete",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/completeDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/failedCount",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/succeededCount"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Subscription-renewal-date extension",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Status-of-Subscription-Renewal-Date-Extensions",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ExtendRenewalDateRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ExtendRenewalDateResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateResponse"
+      ]
+    }
+  ]
+}

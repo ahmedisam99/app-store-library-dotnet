@@ -1,0 +1,55 @@
+{
+  "id": "data:app_store_server_api:paginationToken",
+  "title": "paginationToken",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/paginationToken",
+  "slug": "appstoreserverapi/paginationtoken",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A pagination token that you return to the endpoint on a subsequent call to receive the next set of results.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string paginationToken",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "A token you use in the `Get-Notification-History` endpoint to ask for the next set of up to 20 notification history entries. All responses include a `paginationToken`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore"
+      ]
+    }
+  ]
+}

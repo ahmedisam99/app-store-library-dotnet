@@ -1,0 +1,112 @@
+{
+  "id": "doc:advancedcommerceapi/authorizing-server-calls",
+  "title": "Authorizing API requests from your server",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/authorizing-server-calls",
+  "slug": "advancedcommerceapi/authorizing-server-calls",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create JSON Web Tokens (JWTs) to authorize Advanced Commerce requests from your server.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": "The App Store Server Library provides a client that makes it easier to adopt the Advanced Commerce APIs, including creating the JWTs to authorize calls. For more information, see `simplifying-your-implementation-by-using-the-app-store-server-library`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The following Advanced Commerce APIs are endpoints that you call from your server:",
+          "refs": []
+        },
+        {
+          "text": "Calls to the Advanced Commerce API’s endpoints require JSON Web Tokens (JWTs) for authorization; you obtain keys to create the tokens from your organization’s App Store Connect account. See `creating-api-keys-to-authorize-api-requests` to create your keys. See `generating-json-web-tokens-for-api-requests` to generate tokens using your keys and send API requests.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/creating-api-keys-to-authorize-api-requests",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+          ]
+        },
+        {
+          "text": "After you have a complete and signed token, provide the token in the request’s authorization header as a bearer token. Generate a new token for each new API request, or reuse tokens until they expire.",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n> The App Store Server Library provides a client that makes it easier to adopt the Advanced Commerce APIs, including creating the JWTs to authorize calls. For more information, see `simplifying-your-implementation-by-using-the-app-store-server-library`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`Cancel-a-Subscription`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription"
+          ]
+        },
+        {
+          "text": "`Change-Subscription-Metadata`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata"
+          ]
+        },
+        {
+          "text": "`Change-Subscription-Price`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "`Migrate-Subscription-to-Advanced-Commerce-API`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API"
+          ]
+        },
+        {
+          "text": "`Request-Transaction-Refund`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund"
+          ]
+        },
+        {
+          "text": "`Revoke-Subscription`",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "API authorization and rate limits",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+      ]
+    }
+  ]
+}

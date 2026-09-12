@@ -1,0 +1,435 @@
+{
+  "id": "rest:app_store_server_api:get:v1-history-{}",
+  "title": "Get Transaction History V1",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+  "slug": "appstoreserverapi/get-transaction-history-v1",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": "1.12",
+    "summary": {
+      "text": "Use `Get-Transaction-History` instead, which gets the history for all product types, including consumable in-app purchases in the finished state.",
+      "refs": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Get a customer’s in-app purchase transaction history for your app, except finished consumable in-app purchases.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/history/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/history/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "anyTransactionId",
+      "type": "anyTransactionId",
+      "typeId": "data:app_store_server_api:anyTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Any `originalTransactionId`, `transactionId` or `appTransactionId` that belongs to the customer for your app.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "revision",
+      "type": "revision",
+      "typeId": "data:app_store_server_api:revision",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A token you provide to get the next set of up to 20 transactions. All responses include a `revision` token. Use the `revision` token from the previous `HistoryResponse`.\n\nNote: The `revision` token is required in all requests except the initial request. For requests that use the `revision` token, include the same query parameters from the initial request.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "startDate",
+      "type": "startDate",
+      "typeId": "data:app_store_server_api:startDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional start date of the timespan for the transaction history records you’re requesting. The `startDate` needs to precede the `endDate` if you specify both dates. The results include a transaction if its `purchaseDate` is equal to or greater than the `startDate`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/purchaseDate"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "endDate",
+      "type": "endDate",
+      "typeId": "data:app_store_server_api:endDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional end date of the timespan for the transaction history records you’re requesting. Choose an `endDate` that’s later than the `startDate` if you specify both dates. Using an `endDate` in the future is valid. The results include a transaction if its `purchaseDate` is less than the `endDate`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/purchaseDate"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "productId",
+      "type": "[productId]",
+      "typeId": "data:app_store_server_api:productId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional filter that indicates the product identifier to include in the transaction history. Your query may specify more than one `productID`.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "productType",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AUTO_RENEWABLE",
+            "NON_RENEWABLE",
+            "CONSUMABLE",
+            "NON_CONSUMABLE"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "An optional filter that indicates the product type to include in the transaction history. Your query may specify more than one `productType`.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "sort",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ASCENDING",
+            "DESCENDING"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "An optional sort order for the transaction history records. The response sorts the transaction records by their recently modified date. The default value is `ASCENDING`, so you receive the oldest records first.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "subscriptionGroupIdentifier",
+      "type": "[subscriptionGroupIdentifier]",
+      "typeId": "data:app_store_server_api:subscriptionGroupIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional filter that indicates the subscription group identifier to include in the transaction history. Your query may specify more than one `subscriptionGroupIdentifier`.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "inAppOwnershipType",
+      "type": "inAppOwnershipType",
+      "typeId": "data:app_store_server_api:inAppOwnershipType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional filter that limits the transaction history by the in-app ownership type.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "revoked",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "An optional Boolean value that indicates whether the response includes only revoked transactions when the value is `true`, or contains only nonrevoked transactions when the value is `false`. By default, the request doesn’t include this parameter.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "excludeRevoked",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "Set `revoked` to `false` to exclude revoked transactions instead.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "HistoryResponse",
+      "typeId": "data:app_store_server_api:HistoryResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidAppIdentifierError | InvalidRequestRevisionError | InvalidTransactionIdError | InvalidSortError | InvalidStartDateError | InvalidEndDateError | InvalidProductTypeError | InvalidProductIdError | InvalidSubscriptionGroupIdentifierError | InvalidInAppOwnershipTypeError | InvalidExcludeRevokedError | InvalidRevokedError)",
+      "typeId": "data:app_store_server_api:InvalidAppIdentifierError|data:app_store_server_api:InvalidRequestRevisionError|data:app_store_server_api:InvalidTransactionIdError|data:app_store_server_api:InvalidSortError|data:app_store_server_api:InvalidStartDateError|data:app_store_server_api:InvalidEndDateError|data:app_store_server_api:InvalidProductTypeError|data:app_store_server_api:InvalidProductIdError|data:app_store_server_api:InvalidSubscriptionGroupIdentifierError|data:app_store_server_api:InvalidInAppOwnershipTypeError|data:app_store_server_api:InvalidExcludeRevokedError|data:app_store_server_api:InvalidRevokedError",
+      "abstract": {
+        "text": "Invalid request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(AccountNotFoundError | AccountNotFoundRetryableError | AppNotFoundError | AppNotFoundRetryableError | TransactionIdNotFoundError)",
+      "typeId": "data:app_store_server_api:AccountNotFoundError|data:app_store_server_api:AccountNotFoundRetryableError|data:app_store_server_api:AppNotFoundError|data:app_store_server_api:AppNotFoundRetryableError|data:app_store_server_api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Use `Get-Transaction-History` instead to get all the product types, including consumable in-app purchases in the finished state.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+        ]
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " If you use optional query parameters, be sure to use the same query parameters on subsequent requests that include the `revision` parameter.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Transaction-History-V1` endpoint returns results for the following product types:",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Use `Get-Transaction-History` instead to get all the product types, including consumable in-app purchases in the finished state.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        },
+        {
+          "text": "You can customize your request by including query parameters that filter the transaction history. The query parameters limit the scope of the request by dates, product IDs, product types, and subscription group identifiers. You can also exclude revoked or nonrevoked transactions, and limit the transactions by in-app ownership type. If you provide multiple filters in the query, the transactions that return match all the filters.",
+          "refs": []
+        },
+        {
+          "text": "You can also specify a sort order. The App Store sorts the transactions based on their recently modified dates. Use a `DESCENDING` order to get the most recent transactions first. The App Store updates the recently modified date if the customer upgrades a subscription or the App Store revokes an in-app purchase. If a transaction updates while you’re receiving transaction history and the response is sorted in `ASCENDING` order, you may receive the transaction again with updated data.",
+          "refs": []
+        },
+        {
+          "text": "The `productId`, `productType`, and `subscriptionGroupIdentifier` query parameters allow you to specify multiple values. To specify more than one value for a query parameter, include it in the request multiple times. For example, to filter the transaction history by non-consumable and auto-renewable product types, include the following within your request:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v1/history/{anyTransactionId}?productType=NON_CONSUMABLE&productType=AUTO_RENEWABLE\n```",
+          "refs": []
+        },
+        {
+          "text": "When you specify multiple values for a single query parameter, the response contains transactions that match any of the values.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  If you use optional query parameters, be sure to use the same query parameters on subsequent requests that include the `revision` parameter.",
+          "refs": []
+        },
+        {
+          "text": "To request a full transaction history in ascending order for your app, start by calling the endpoint without any query parameters, as follows:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v1/history/{anyTransactionId}\n```",
+          "refs": []
+        },
+        {
+          "text": "For subsequent requests, include the `revision` token from the previous `HistoryResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse"
+          ]
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v1/history/{anyTransactionId}?revision={revision}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Auto-renewable subscriptions",
+          "refs": []
+        },
+        {
+          "text": "Non-renewing subscriptions",
+          "refs": []
+        },
+        {
+          "text": "Non-consumable in-app purchases",
+          "refs": []
+        },
+        {
+          "text": "Consumable in-app purchases if the transaction is refunded or revoked, or if the app hasn’t finished processing the transaction. The results don’t include consumable in-app purchases that the app marks as finished. For more information about finishing transactions, see `finish()` and `finishTransaction(_:)`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/finish()",
+            "doc://com.apple.documentation/documentation/StoreKit/SKPaymentQueue/finishTransaction(_:)"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Deprecated",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History-V1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundLookupResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "data:store_s2s:transactionReason",
+  "title": "transactionReason",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/transactionReason",
+  "slug": "appstoreservernotifications/transactionreason",
+  "introducedAt": "2.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The cause of a purchase transaction, which indicates whether it’s a customer’s purchase or a renewal for an auto-renewable subscription that the system initiates.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string transactionReason",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "PURCHASE",
+      "abstract": {
+        "text": "The customer initiated the purchase, which may be for any in-app purchase type: consumable, non-consumable, non-renewing subscription, or auto-renewable subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RENEWAL",
+      "abstract": {
+        "text": "The App Store server initiated the purchase transaction to renew an auto-renewable subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "If a customer upgrades an auto-renewable subscription, the upgrade is effective immediately and the `transactionReason` is `PURCHASE`.",
+          "refs": []
+        },
+        {
+          "text": "If a customer downgrades an auto-renewable subscription, the product change occurs on the subscription renewal date. The resulting `transactionReason` is `RENEWAL`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

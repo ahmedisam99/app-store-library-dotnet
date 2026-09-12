@@ -1,0 +1,146 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionMigrateRequest",
+  "title": "SubscriptionMigrateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+  "slug": "advancedcommerceapi/subscriptionmigraterequest",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The subscription details you provide to migrate a subscription from In-App Purchase to the Advanced Commerce API, such as descriptors, items, storefront, and more.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionMigrateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "descriptors",
+      "type": "SubscriptionMigrateDescriptors",
+      "typeId": "data:advanced-commerce-api:SubscriptionMigrateDescriptors",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "items",
+      "type": "[SubscriptionMigrateItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionMigrateItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An array of one or more SKUs, along with descriptions and display names, that are included in the subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "renewalItems",
+      "type": "[SubscriptionMigrateRenewalItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionMigrateRenewalItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An optional array of subscription items that represents the items that renew at the next renewal period, if they differ from `items`. Supply this array if the customer has a pending subscription downgrade or cross-grade, which applies at the next renewal period.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "targetProductId",
+      "type": "targetProductId",
+      "typeId": "data:advanced-commerce-api:targetProductId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Your generic product ID for an auto-renewable subscription. You configure this product ID in App Store Connect during setup. For more information, see `creating-your-purchases`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-your-purchases"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "taxCode",
+      "type": "taxCode",
+      "typeId": "data:advanced-commerce-api:taxCode",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors"
+      ]
+    }
+  ]
+}

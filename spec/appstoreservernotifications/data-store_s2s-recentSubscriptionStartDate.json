@@ -1,0 +1,74 @@
+{
+  "id": "data:store_s2s:recentSubscriptionStartDate",
+  "title": "recentSubscriptionStartDate",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+  "slug": "appstoreservernotifications/recentsubscriptionstartdate",
+  "introducedAt": "2.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The earliest start date of a subscription in a series of auto-renewable subscription purchases that ignores all lapses of paid service shorter than 60 days.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "timestamp recentSubscriptionStartDate",
+    "baseType": "timestamp",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Don’t use the `recentSubscriptionStartDate` date to calculate days of paid service. For more information about paid days of service, see `https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+          "https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information about the recent subscription start date, see `recentSubscriptionStartDate`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/recentSubscriptionStartDate"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Don’t use the `recentSubscriptionStartDate` date to calculate days of paid service. For more information about paid days of service, see `https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+            "https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Purchase dates",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalPurchaseDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/purchaseDate"
+      ]
+    }
+  ]
+}

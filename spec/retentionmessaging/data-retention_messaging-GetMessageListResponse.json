@@ -1,0 +1,75 @@
+{
+  "id": "data:retention_messaging:GetMessageListResponse",
+  "title": "GetMessageListResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/GetMessageListResponse",
+  "slug": "retentionmessaging/getmessagelistresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains status information for all messages.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GetMessageListResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifiers",
+      "type": "[GetMessageListResponseItem]",
+      "typeId": "data:retention_messaging:GetMessageListResponseItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An array of all message identifiers and their message states.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Message-List` endpoint returns this response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponseItem"
+      ]
+    }
+  ]
+}

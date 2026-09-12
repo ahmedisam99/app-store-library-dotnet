@@ -1,0 +1,160 @@
+{
+  "id": "data:retention_messaging:sendAttemptResult",
+  "title": "sendAttemptResult",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/sendAttemptResult",
+  "slug": "retentionmessaging/sendattemptresult",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The success or error information the App Store server records when it attempts to send an App Store server notification to your server.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string sendAttemptResult",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "SUCCESS",
+      "abstract": {
+        "text": "The App Store server received a success response when it sent the notification to your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CIRCULAR_REDIRECT",
+      "abstract": {
+        "text": "The App Store server detected a continual redirect. Check your server’s redirects for a circular redirect loop.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INVALID_RESPONSE",
+      "abstract": {
+        "text": "The App Store server received an invalid response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "NO_RESPONSE",
+      "abstract": {
+        "text": "The App Store server didn’t receive a valid HTTP response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "OTHER",
+      "abstract": {
+        "text": "Another error occurred that prevented your server from receiving the notification.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PREMATURE_CLOSE",
+      "abstract": {
+        "text": "The App Store server’s connection to your server was closed while the send was in progress.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SOCKET_ISSUE",
+      "abstract": {
+        "text": "A network error caused the notification attempt to fail.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TIMED_OUT",
+      "abstract": {
+        "text": "The App Store server didn’t get a response from your server and timed out. Check that your server isn’t processing messages in line.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TLS_ISSUE",
+      "abstract": {
+        "text": "The App Store server couldn’t establish a TLS session or validate your certificate. Check that your server has a valid certificate and supports Transport Layer Security (TLS) protocol 1.2 or later.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSUCCESSFUL_HTTP_RESPONSE_CODE",
+      "abstract": {
+        "text": "The App Store server didn’t receive an `HTTP 200` response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSUPPORTED_CHARSET",
+      "abstract": {
+        "text": "The App Store server doesn’t support the supplied charset.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This value describes the success or error the server encountered on its attempt to send the notification to your server as part of a performance test.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestConfig",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponseTimes",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestStatus",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Failures",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestId"
+      ]
+    }
+  ]
+}

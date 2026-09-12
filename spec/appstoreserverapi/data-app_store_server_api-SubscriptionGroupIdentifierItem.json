@@ -1,0 +1,80 @@
+{
+  "id": "data:app_store_server_api:SubscriptionGroupIdentifierItem",
+  "title": "SubscriptionGroupIdentifierItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/SubscriptionGroupIdentifierItem",
+  "slug": "appstoreserverapi/subscriptiongroupidentifieritem",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Information for auto-renewable subscriptions, including signed transaction information and signed renewal information, for one subscription group.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionGroupIdentifierItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "subscriptionGroupIdentifier",
+      "type": "subscriptionGroupIdentifier",
+      "typeId": "data:app_store_server_api:subscriptionGroupIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The subscription group identifier of the auto-renewable subscriptions in the `lastTransactions` array.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lastTransactions",
+      "type": "[lastTransactionsItem]",
+      "typeId": "data:app_store_server_api:lastTransactionsItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array of the most recent App Store-signed transaction information and App Store-signed renewal information for all auto-renewable subscriptions in the subscription group.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Object and Data Types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SubscriptionGroupIdentifierItem/subscriptionGroupIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lastTransactionsItem"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Response Objects and Data Types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId"
+      ]
+    }
+  ]
+}

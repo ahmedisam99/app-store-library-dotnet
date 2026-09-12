@@ -1,0 +1,119 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionPriceChangeRequest",
+  "title": "SubscriptionPriceChangeRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeRequest",
+  "slug": "advancedcommerceapi/subscriptionpricechangerequest",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to change the price of an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionPriceChangeRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:advanced-commerce-api:currency",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The currency of the prices.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "items",
+      "type": "[SubscriptionPriceChangeItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionPriceChangeItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array that contains one or more SKUs and the changed price for each SKU.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Metadata that identifies the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The App Store storefront of the subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Change-Subscription-Price` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "The items array contains `SubscriptionPriceChangeItem`. Include one entry for each SKU within the subscription that has a price change.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeItem"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription price change from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeResponse"
+      ]
+    }
+  ]
+}

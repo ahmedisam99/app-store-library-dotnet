@@ -1,0 +1,76 @@
+{
+  "id": "data:store_s2s:tokenType",
+  "title": "tokenType",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/tokenType",
+  "slug": "appstoreservernotifications/tokentype",
+  "introducedAt": "2.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The type of an external purchase custom link token.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string tokenType",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "ACQUISITION",
+      "abstract": {
+        "text": "A token type that indicates an initial acquisition.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SERVICES",
+      "abstract": {
+        "text": "A token type that indicates usage of App Store services.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The token type field is present only for custom link tokens. For more information on tokens, see `receiving-and-decoding-external-purchase-tokens`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/receiving-and-decoding-external-purchase-tokens"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "External purchase token fields",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenCreationDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenExpirationDate"
+      ]
+    }
+  ]
+}

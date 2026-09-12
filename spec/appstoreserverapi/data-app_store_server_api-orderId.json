@@ -1,0 +1,57 @@
+{
+  "id": "data:app_store_server_api:orderId",
+  "title": "orderId",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/orderId",
+  "slug": "appstoreserverapi/orderid",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The customer’s order ID from an App Store receipt for in-app purchases.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string orderId",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When customers make one or more in-app purchases in your app, the App Store emails them a receipt. The receipt contains an order ID. Use this order ID to call `Look-Up-Order-ID`. Customers can also retrieve their order IDs from their purchase history on the App Store; for more information, see `https://support.apple.com/en-gb/HT204088`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Look-Up-Order-ID",
+            "https://support.apple.com/en-gb/HT204088"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Order ID lookup",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Look-Up-Order-ID",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OrderLookupResponse"
+      ]
+    }
+  ]
+}

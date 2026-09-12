@@ -1,0 +1,156 @@
+{
+  "id": "doc:retentionmessaging/identifying-rate-limits",
+  "title": "Identifying rate limits",
+  "kind": "article",
+  "role": "article",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/identifying-rate-limits",
+  "slug": "retentionmessaging/identifying-rate-limits",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Recognize the rate limits that apply to Retention Messaging API endpoints, and handle them in your code.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Endpoint",
+        "Rate limit (per second)"
+      ],
+      "rows": [
+        [
+          "`Configure-Default-Message`",
+          "10"
+        ],
+        [
+          "`Configure-Realtime-URL`",
+          "1"
+        ],
+        [
+          "`Delete-Default-Message`",
+          "1"
+        ],
+        [
+          "`Delete-Image`",
+          "1"
+        ],
+        [
+          "`Delete-Message`",
+          "1"
+        ],
+        [
+          "`Delete-Realtime-URL`",
+          "1"
+        ],
+        [
+          "`Get-Default-Message`",
+          "1"
+        ],
+        [
+          "`Get-Image-List`",
+          "1"
+        ],
+        [
+          "`Get-Message-List`",
+          "1"
+        ],
+        [
+          "`Get-Performance-Test-Results`",
+          "1"
+        ],
+        [
+          "`Get-Realtime-URL`",
+          "1"
+        ],
+        [
+          "`Initiate-Performance-Test`",
+          "1"
+        ],
+        [
+          "`Upload-Image`",
+          "1"
+        ],
+        [
+          "`Upload-Message`",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The Retention Messaging API limits the number of requests that you can submit to each endpoint within a specified timespan. The request limits apply per app.",
+          "refs": []
+        },
+        {
+          "text": "The following table lists the rate limits for each endpoint in the production environment, expressed in requests per second. The system enforces rate limits on an hourly basis.",
+          "refs": []
+        },
+        {
+          "text": "| Endpoint | Rate limit (per second) |\n| --- | --- |\n| `Configure-Default-Message` | 10 |\n| `Configure-Realtime-URL` | 1 |\n| `Delete-Default-Message` | 1 |\n| `Delete-Image` | 1 |\n| `Delete-Message` | 1 |\n| `Delete-Realtime-URL` | 1 |\n| `Get-Default-Message` | 1 |\n| `Get-Image-List` | 1 |\n| `Get-Message-List` | 1 |\n| `Get-Performance-Test-Results` | 1 |\n| `Get-Realtime-URL` | 1 |\n| `Initiate-Performance-Test` | 1 |\n| `Upload-Image` | 1 |\n| `Upload-Message` | 1 |",
+          "refs": []
+        },
+        {
+          "text": "The rate limits in the sandbox environment are 10% of the limits in the table above.",
+          "refs": []
+        },
+        {
+          "text": "The App Store server may make adjustments to reduce or increase these rate limits as needed at any time.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle exceeded rate limits gracefully",
+      "paragraphs": [
+        {
+          "text": "If you exceed a per-hour limit, the API rejects the request with an `HTTP` `429` response with a `RateLimitExceededError` object in the body.  Consider the following as you integrate the API:",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RateLimitExceededError"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you periodically call the API, throttle your requests to avoid exceeding the per-hour limit for an endpoint.",
+          "refs": []
+        },
+        {
+          "text": "Manage the `HTTP` `429` `RateLimitExceededError` response in your error-handling process. For example, log the failure and queue the job to process it again at a later time.",
+          "refs": []
+        },
+        {
+          "text": "Check the `Retry-After` header if you receive the `HTTP` `429` error. This header contains a UNIX time, in milliseconds, that indicates when you can next send a request.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/retention-messaging-changelog"
+      ]
+    }
+  ]
+}

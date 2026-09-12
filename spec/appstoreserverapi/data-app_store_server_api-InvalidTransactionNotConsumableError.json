@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_server_api:InvalidTransactionNotConsumableError",
+  "title": "InvalidTransactionNotConsumableError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+  "slug": "appstoreserverapi/invalidtransactionnotconsumableerror",
+  "introducedAt": "1.9",
+  "deprecated": {
+    "at": "1.11",
+    "summary": {
+      "text": "The system no longer sends this error. See `InvalidTransactionTypeNotSupportedError` instead.",
+      "refs": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the transaction identifier doesn’t represent a consumable In-App Purchase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidTransactionNotConsumableError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": "1.9.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000043"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": "1.9.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The transaction id parameter must represent a consumable in-app purchase."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The system no longer sends this error.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption request errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageAutoRenewableSubscriptionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageOutOfRangeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAccountTenureError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidConsumptionStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidDeliveryStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsPurchasedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsRefundedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlatformError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlayTimeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSampleContentProvidedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidUserStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UndeliveredConsumptionPercentageNonZeroError"
+      ]
+    }
+  ]
+}

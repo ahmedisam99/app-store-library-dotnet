@@ -1,0 +1,79 @@
+{
+  "id": "data:store_s2s:environment",
+  "title": "environment",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/environment",
+  "slug": "appstoreservernotifications/environment",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The server environment, either sandbox or production.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string environment",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "Sandbox",
+      "abstract": {
+        "text": "Indicates that the notification applies to testing in the sandbox environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "Production",
+      "abstract": {
+        "text": "Indicates that the notification applies to the production environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You receive notifications in the sandbox environment when you opt in to receive notifications in the sandbox environment and test your app in the sandbox environment. TestFlight also uses the sandbox environment to send notifications. To opt in to receive notifications, see `https://help.apple.com/app-store-connect/#/dev0067a330b`. For more information about testing, see `testing-at-all-stages-of-development-with-xcode-and-the-sandbox`, and `https://developer.apple.com/testflight/`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/dev0067a330b",
+            "doc://com.apple.documentation/documentation/StoreKit/testing-at-all-stages-of-development-with-xcode-and-the-sandbox",
+            "https://developer.apple.com/testflight/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App metadata and environment",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleVersion",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/status"
+      ]
+    }
+  ]
+}

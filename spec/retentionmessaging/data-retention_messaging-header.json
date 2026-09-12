@@ -1,0 +1,75 @@
+{
+  "id": "data:retention_messaging:header",
+  "title": "header",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/header",
+  "slug": "retentionmessaging/header",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The header text you provide that appears above the body text in a message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string header",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximumLength",
+      "value": "66",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Provide the `header` as a UTF-8-encoded string. The maximum string length is `66`.",
+          "refs": []
+        },
+        {
+          "text": "The header text appears above the `body` text in a `message`, or above the image.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/body",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/message"
+          ]
+        },
+        {
+          "text": "Body text appears below an optional image.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Messages",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/body",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+      ]
+    }
+  ]
+}

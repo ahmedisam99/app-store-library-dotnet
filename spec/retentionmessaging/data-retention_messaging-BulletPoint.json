@@ -1,0 +1,136 @@
+{
+  "id": "data:retention_messaging:BulletPoint",
+  "title": "BulletPoint",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/BulletPoint",
+  "slug": "retentionmessaging/bulletpoint",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The text and its bullet-point image to include in a retention message’s bulleted list.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BulletPoint",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "altText",
+      "type": "altText",
+      "typeId": "data:retention_messaging:altText",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "150",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The alternative text you provide for the corresponding image of the bullet point.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "imageIdentifier",
+      "type": "imageIdentifier",
+      "typeId": "data:retention_messaging:imageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The identifier of the image to use as the bullet point.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "text",
+      "type": "bulletPointText",
+      "typeId": "data:retention_messaging:bulletPointText",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "66",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The text of the individual bullet point.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use `BulletPoint` items when you set up a text-based message that contains bullet points. Each bullet point item consists of the following elements:",
+          "refs": []
+        },
+        {
+          "text": "Provide an array of `BulletPoint` objects in the `UploadMessageRequestBody`  when you call `Upload-Message`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "An image to use as the bullet point. To use an image as a bullet point icon, upload the image with an `imageSize` of `BULLET_POINT`. For more information, see `Upload-Image`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageSize",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Image"
+          ]
+        },
+        {
+          "text": "The alternative text that describes the bullet point image.",
+          "refs": []
+        },
+        {
+          "text": "The text of the individual bullet point.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Messages",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/body",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/header",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+      ]
+    }
+  ]
+}

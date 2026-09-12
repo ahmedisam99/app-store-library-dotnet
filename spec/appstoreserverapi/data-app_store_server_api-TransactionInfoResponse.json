@@ -1,0 +1,78 @@
+{
+  "id": "data:app_store_server_api:TransactionInfoResponse",
+  "title": "TransactionInfoResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/TransactionInfoResponse",
+  "slug": "appstoreserverapi/transactioninforesponse",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains signed transaction information for a single transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object TransactionInfoResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:app_store_server_api:JWSTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A customer’s in-app purchase transaction, signed by Apple, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `TransactionInfoResponse` contains information about the transaction that you request using the `Get-Transaction-Info` endpoint. The `transactionId` in the `signedTransactionInfo` matches the `transactionId` you provide in the request path.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-Info",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Transaction information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-Info"
+      ]
+    }
+  ]
+}

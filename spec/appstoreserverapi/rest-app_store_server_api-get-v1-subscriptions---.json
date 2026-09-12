@@ -1,0 +1,181 @@
+{
+  "id": "rest:app_store_server_api:get:v1-subscriptions-{}",
+  "title": "Get All Subscription Statuses",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+  "slug": "appstoreserverapi/get-all-subscription-statuses",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the statuses for all of a customer’s auto-renewable subscriptions in your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/subscriptions/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/subscriptions/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "anyTransactionId",
+      "type": "anyTransactionId",
+      "typeId": "data:app_store_server_api:anyTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Any `originalTransactionId`, `transactionId` or `appTransactionId` that belongs to the customer for your app.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "status",
+      "type": "[status]",
+      "typeId": "data:app_store_server_api:status",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional filter that indicates the `status` of subscriptions to include in the response. Your query may specify more than one `status` query parameter.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses/status"
+        ]
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "StatusResponse",
+      "typeId": "data:app_store_server_api:StatusResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidAppIdentifierError | InvalidTransactionIdError | InvalidStatusError)",
+      "typeId": "data:app_store_server_api:InvalidAppIdentifierError|data:app_store_server_api:InvalidTransactionIdError|data:app_store_server_api:InvalidStatusError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(AccountNotFoundError | AccountNotFoundRetryableError | AppNotFoundError | AppNotFoundRetryableError | TransactionIdNotFoundError)",
+      "typeId": "data:app_store_server_api:AccountNotFoundError|data:app_store_server_api:AccountNotFoundRetryableError|data:app_store_server_api:AppNotFoundError|data:app_store_server_api:AppNotFoundRetryableError|data:app_store_server_api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This API returns the status for all of the customer’s subscriptions, organized by their subscription group identifier.",
+          "refs": []
+        },
+        {
+          "text": "Specify multiple values for the `status` query parameter to get a response that contains subscriptions with statuses that match any of the values. For example, the following request returns subscriptions that are active (`status` value of `1`) and subscriptions that are in the Billing Grace Period (`status` value of `4`):",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses/status"
+          ]
+        },
+        {
+          "text": "```javascript\nGET https://api.storekit.apple.com/inApps/v1/subscriptions/{anyTransactionId}?status=1&status=4\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription status",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StatusResponse"
+      ]
+    }
+  ]
+}

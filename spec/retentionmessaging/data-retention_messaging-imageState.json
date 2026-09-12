@@ -1,0 +1,85 @@
+{
+  "id": "data:retention_messaging:imageState",
+  "title": "imageState",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/imageState",
+  "slug": "retentionmessaging/imagestate",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The approval state of an image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string imageState",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "PENDING",
+      "abstract": {
+        "text": "The image is awaiting approval.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "APPROVED",
+      "abstract": {
+        "text": "The image is approved.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REJECTED",
+      "abstract": {
+        "text": "The image is rejected.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call `Get-Image-List` to get the list of images and their current state.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Images",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageSize",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/altText"
+      ]
+    }
+  ]
+}

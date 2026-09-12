@@ -1,0 +1,119 @@
+{
+  "id": "data:advanced-commerce-api:refundReason",
+  "title": "refundReason",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/refundReason",
+  "slug": "advancedcommerceapi/refundreason",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A reason to request a refund.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string refundReason",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "UNINTENDED_PURCHASE",
+      "abstract": {
+        "text": "The customer didn’t intend to make the in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FULFILLMENT_ISSUE",
+      "abstract": {
+        "text": "The customer had issues with receiving or using the in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSATISFIED_WITH_PURCHASE",
+      "abstract": {
+        "text": "The customer wasn’t satisfied with the in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "LEGAL",
+      "abstract": {
+        "text": "The customer requested a refund based on a legal reason.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "OTHER",
+      "abstract": {
+        "text": "The customer requested a refund for other reasons.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "MODIFY_ITEMS_REFUND",
+      "abstract": {
+        "text": "The customer modified one or more items in the subscription, which results in a refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SIMULATE_REFUND_DECLINE",
+      "abstract": {
+        "text": "For testing purposes only, a simulation of a refund that the App Store declines. The App Store declines refunds with this reason. This reason is valid only when you test your app in the sandbox environment or in TestFlight.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/description",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/dependentSKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/effective",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/proratedPrice",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/retainBillingCycle",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundAmount",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundRiskingPreference",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/storefront",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxCode",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/targetProductId"
+      ]
+    }
+  ]
+}

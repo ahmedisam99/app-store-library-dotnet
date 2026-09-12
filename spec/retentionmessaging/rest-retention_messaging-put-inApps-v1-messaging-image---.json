@@ -1,0 +1,294 @@
+{
+  "id": "rest:retention_messaging:put:inApps-v1-messaging-image-{}",
+  "title": "Upload Image",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Upload-Image",
+  "slug": "retentionmessaging/upload-image",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Uploads an image to use for retention messaging.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/image/{imageIdentifier}",
+      "parameters": [
+        "{imageIdentifier}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/image/{imageIdentifier}",
+      "parameters": [
+        "{imageIdentifier}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "imageIdentifier",
+      "type": "imageIdentifier",
+      "typeId": "data:retention_messaging:imageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A UUID you provide to uniquely identify the image you upload.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "imageSize",
+      "type": "imageSize",
+      "typeId": "data:retention_messaging:imageSize",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "default",
+          "value": "FULL_SIZE",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The size of the image you upload.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "image/png",
+    "type": "binary",
+    "typeId": null,
+    "abstract": {
+      "text": "The image file to upload.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "InvalidImageError",
+      "typeId": "data:retention_messaging:InvalidImageError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "MaximumNumberOfMessagesReachedError",
+      "typeId": "data:retention_messaging:MaximumNumberOfMessagesReachedError",
+      "abstract": {
+        "text": "The request is forbidden because the system reached the maximum number of uploaded images.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ImageAlreadyExistsError",
+      "typeId": "data:retention_messaging:ImageAlreadyExistsError",
+      "abstract": {
+        "text": "The image identifier already exists.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "Ensure the images you upload work equally well with both light and dark modes.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "This endpoint isn’t idempotent. If you attempt to upload an image and reuse a previously configured `imageIdentifier`, the endpoint returns the `ImageAlreadyExistsError` response.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to upload an image that you can associate with a message or a bullet point within the message. You provide a unique `imageIdentifier` to identify each image you upload.",
+          "refs": []
+        },
+        {
+          "text": "You can upload image files that meet the following requirements:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n> Ensure the images you upload work equally well with both light and dark modes.",
+          "refs": []
+        },
+        {
+          "text": "The maximum number of images you can configure for each app is 2000. The endpoint returns a `MaximumNumberOfImagesReachedError` response if an attempt to upload an image exceeds this limit. Call `Delete-Image` to delete images.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Image"
+          ]
+        },
+        {
+          "text": "Use full-size images for a message, or the smaller bullet point-size images to use as bullet points.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Format: PNG",
+          "refs": []
+        },
+        {
+          "text": "Doesn’t have transparency",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Upload full-size images",
+      "paragraphs": [
+        {
+          "text": "A full-size image is up to 3840 × 2160 pixels, where the width must be 3840 pixels, and the height can be between 160 to 2160 pixels.",
+          "refs": []
+        },
+        {
+          "text": "You can add alternative text for images when you call `Upload-Message` and associate an image with a message using `UploadMessageImage`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Upload images for bullet points",
+      "paragraphs": [
+        {
+          "text": "Images you use for bullet points are 1024 x 1024 pixels. You can add alternative text for the bullet point images when you supply `bulletPoints` in the `UploadMessageRequestBody`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> This endpoint isn’t idempotent. If you attempt to upload an image and reuse a previously configured `imageIdentifier`, the endpoint returns the `ImageAlreadyExistsError` response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Determine whether an image is ready to display",
+      "paragraphs": [
+        {
+          "text": "Immediately after you upload an image, its `imageState` is `PENDING`. Apple checks the images, and sets the image state to `APPROVED` to indicate the system can display them in retention messaging. Call the `Get-Image-List` endpoint to check the current state of images you upload.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+          ]
+        },
+        {
+          "text": "In the sandbox testing environment, the system automatically sets the message and image states to `APPROVED`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Image configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Image",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetImageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetImageListResponseItem"
+      ]
+    }
+  ]
+}

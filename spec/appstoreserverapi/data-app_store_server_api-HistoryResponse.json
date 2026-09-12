@@ -1,0 +1,185 @@
+{
+  "id": "data:app_store_server_api:HistoryResponse",
+  "title": "HistoryResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/HistoryResponse",
+  "slug": "appstoreserverapi/historyresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains the customer’s transaction history for an app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object HistoryResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:app_store_server_api:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The app’s identifier in the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:app_store_server_api:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle identifier of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:app_store_server_api:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment in which you’re making the request, whether sandbox or production.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "hasMore",
+      "type": "hasMore",
+      "typeId": "data:app_store_server_api:hasMore",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A Boolean value that indicates whether the App Store has more transactions than it returns in this response. If the value is `true`, use the `revision` token to request the next set of transactions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "revision",
+      "type": "revision",
+      "typeId": "data:app_store_server_api:revision",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A token you use in a query to request the next set of transactions from the endpoint.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactions",
+      "type": "[JWSTransaction]",
+      "typeId": "data:app_store_server_api:JWSTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array of in-app purchase transactions for the customer, signed by Apple, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The `Get-Transaction-History-V1` endpoint also returns the `HistoryResponse`, however, it doesn’t include consumable in-app purchases that the app has marked as finished. Use `Get-Transaction-History` instead.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Transaction-History` endpoint returns the `HistoryResponse`. This response contains results for all in-app purchase product types: auto-renewable subscriptions, non-renewing subscriptions, non-consumables, and consumables. The result includes transactions in any state, including transactions that are refunded or revoked, and transactions that the app has or hasn’t marked as finished.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse"
+          ]
+        },
+        {
+          "text": "The history response returns a maximum of 20 transactions per response. If your customer has more than 20 in-app transactions, the `hasMore` value is `true`. Each response includes a `revision` value. Call `Get-Transaction-History` again with the `revision` token in the query to receive the next set of transactions; use the same query parameters for each subsequent call that includes `revision`. When the App Store has no more transactions to send, the `hasMore` value is `false`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse/revision",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        },
+        {
+          "text": "If a customer upgrades a subscription or the App Store revokes an in-app purchase while you’re receiving transaction history, the App Store updates the relevant transaction. If the response is sorted in `ASCENDING` order, you receive the transaction again, with updated data.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The `Get-Transaction-History-V1` endpoint also returns the `HistoryResponse`, however, it doesn’t include consumable in-app purchases that the app has marked as finished. Use `Get-Transaction-History` instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "In-App Purchase history",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+      ]
+    }
+  ]
+}

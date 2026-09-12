@@ -1,0 +1,142 @@
+{
+  "id": "rest:retention_messaging:delete:inApps-v1-messaging-realtime-url",
+  "title": "Delete Realtime URL",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Delete-Realtime-URL",
+  "slug": "retentionmessaging/delete-realtime-url",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Deletes the URL for your Get Retention Message endpoint, in the sandbox or production environments.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/realtime/url",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/realtime/url",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The request is invalid because the developer account doesn’t have access to this API. For more information, see `https://developer.apple.com/contact/request/retention-messaging-api/`.",
+        "refs": [
+          "https://developer.apple.com/contact/request/retention-messaging-api/"
+        ]
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint’s sandbox URL to delete the sandbox URL of your `Get Retention Message` endpoint.  Call this endpoint’s production URL to delete the production URL of your `Get Retention Message` endpoint.",
+          "refs": []
+        },
+        {
+          "text": "After this call succeeds in the sandbox or production environment, the Retention Messaging API no longer provides real-time retention messages in the respective environment, unless you configure a URL again.",
+          "refs": []
+        },
+        {
+          "text": "To configure URLs again, call `Configure-Realtime-URL`. There’s no need to call `Delete-Realtime-URL` before reconfiguring endpoint URLs. To check the URL you have configured for your endpoint, call `Get-Realtime-URL`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlResponse"
+      ]
+    }
+  ]
+}

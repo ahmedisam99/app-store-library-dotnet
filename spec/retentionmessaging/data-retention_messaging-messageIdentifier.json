@@ -1,0 +1,60 @@
+{
+  "id": "data:retention_messaging:messageIdentifier",
+  "title": "messageIdentifier",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/messageIdentifier",
+  "slug": "retentionmessaging/messageidentifier",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A unique identifier for a message, which you provide when you upload the message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "uuid messageIdentifier",
+    "baseType": "uuid",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You create the UUID to identify a message when you call `Upload-Message`. Use this identifier to refer to the same message throughout the API.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Messages",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/body",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/header",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "id": "data:app_store_server_api:sendAttemptResult",
+  "title": "sendAttemptResult",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/sendAttemptResult",
+  "slug": "appstoreserverapi/sendattemptresult",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The success or error information the App Store server records when it attempts to send an App Store server notification to your server.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string sendAttemptResult",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "SUCCESS",
+      "abstract": {
+        "text": "The App Store server received a success response when it sent the notification to your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CIRCULAR_REDIRECT",
+      "abstract": {
+        "text": "The App Store server detected a continual redirect. Check your server’s redirects for a circular redirect loop.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INVALID_RESPONSE",
+      "abstract": {
+        "text": "The App Store server received an invalid response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "NO_RESPONSE",
+      "abstract": {
+        "text": "The App Store server didn’t receive a valid HTTP response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "OTHER",
+      "abstract": {
+        "text": "Another error occurred that prevented your server from receiving the notification.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PREMATURE_CLOSE",
+      "abstract": {
+        "text": "The App Store server’s connection to your server was closed while the send was in progress.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SOCKET_ISSUE",
+      "abstract": {
+        "text": "A network error caused the notification attempt to fail.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TIMED_OUT",
+      "abstract": {
+        "text": "The App Store server didn’t get a response from your server and timed out. Check that your server isn’t processing messages in line.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TLS_ISSUE",
+      "abstract": {
+        "text": "The App Store server couldn’t establish a TLS session or validate your certificate. Check that your server has a valid certificate and supports Transport Layer Security (TLS) protocol 1.2 or later.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSUCCESSFUL_HTTP_RESPONSE_CODE",
+      "abstract": {
+        "text": "The App Store server didn’t receive an `HTTP 200` response from your server.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSUPPORTED_CHARSET",
+      "abstract": {
+        "text": "The App Store server doesn’t support the supplied charset.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Notification-History` and `Get-Test-Notification-Status` endpoints return a `sendAttemptResult` for each notification attempt in their responses. This value describes the success or error the server encountered on its attempt to send the notification to your server.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptResult"
+          ]
+        },
+        {
+          "text": "In the production environment, the App Store server retries sending the notfications if it doesn’t receive a `200` response from your server. Your server may have successfully received the notification on the App Store server’s subsequent attempt if the `sendAttemptResult` value shows an error.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptResult"
+          ]
+        },
+        {
+          "text": "In the sandbox environment, the App Store server attempts to send the notification one time.",
+          "refs": []
+        },
+        {
+          "text": "For more information about the timing of retry attempts, see `responding-to-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/signedPayload"
+      ]
+    }
+  ]
+}

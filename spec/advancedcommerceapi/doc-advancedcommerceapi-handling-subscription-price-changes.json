@@ -1,0 +1,550 @@
+{
+  "id": "doc:advancedcommerceapi/handling-subscription-price-changes",
+  "title": "Handling subscription price changes",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/handling-subscription-price-changes",
+  "slug": "advancedcommerceapi/handling-subscription-price-changes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Initiate a price change and manage communications with your subscribers through the App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The AppStore doesn’t currently support the Advanced Commerce price increase mechanism in India.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "Unlike when requesting consent, the App Store doesn’t send a push notification if the subscriber acknowledges the price increase on the sheet. Notifying via email is still a requirement in either case.",
+        "refs": []
+      }
+    },
+    {
+      "style": "important",
+      "prose": {
+        "text": "You can’t have chains of dependent SKUs. For example, if SKU *A* has dependent SKU *B*, *B* can’t have its own dependent SKU, *C*. However, *B* can have its own price increase.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "After you call the `Change-Subscription-Price` API, the subscription renews on the higher price after one renewal, giving you time to test in the sandbox environment.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Subscription interval",
+        "Email, price increase sheet, and push notification timelines"
+      ],
+      "rows": [
+        [
+          "For 2-month, 3-month, 6-month, and annual subscriptions",
+          "60 days before the renewal date"
+        ],
+        [
+          "Monthly subscriptions",
+          "27 days before the renewal date"
+        ],
+        [
+          "Weekly subscriptions",
+          "7 days before the renewal date"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Price increase info status",
+        "Description"
+      ],
+      "rows": [
+        [
+          "`priceIncreaseInfo.SCHEDULED`",
+          "Indicates the App Store scheduled the price increase for the `SubscriptionPriceChangeItem`."
+        ],
+        [
+          "`priceIncreaseInfo.PENDING`",
+          "Indicates there’s a pending price increase for the `SubscriptionPriceChangeItem` that requires subscriber consent, and the subscriber hasn’t yet consented. If the subscriber doesn’t consent, the `SubscriptionPriceChangeItem` expires at the end of the billing cycle."
+        ],
+        [
+          "`priceIncreaseInfo.ACCEPTED`",
+          "Indicates that the subscriber consented to a price increase for the `SubscriptionPriceChangeItem`."
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Notification type",
+        "Subtype",
+        "Property details",
+        "Description"
+      ],
+      "rows": [
+        [
+          "`PRICE_CHANGE`",
+          "-",
+          "`priceIncreaseInfo.SCHEDULED`",
+          "Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API."
+        ],
+        [
+          "`PRICE_INCREASE`",
+          "`PENDING`",
+          "`priceIncreaseInfo.PENDING`",
+          "Indicates there’s a pending price increase for the SKU that requires subscriber consent, and the subscriber hasn’t yet consented. If the subscriber doesn’t consent, the SKU expires at the end of the billing cycle."
+        ],
+        [
+          "`PRICE_INCREASE`",
+          "`ACCEPTED`",
+          "`priceIncreaseInfo.ACCEPTED`",
+          "Indicates that the subscriber consented to a price increase for the SKU."
+        ],
+        [
+          "`EXPIRED`",
+          "`PRICE_INCREASE`",
+          "-",
+          "Indicates that the auto-renewable subscription expired because the subscriber didn’t consent to the price increase, and allowed the subscription to expire."
+        ],
+        [
+          "`EXPIRED`",
+          "`VOLUNTARY`",
+          "-",
+          "Indicates that the subscriber voluntarily canceled the auto-renewable subscription. This notification type and subtype aren’t specific to price increases."
+        ],
+        [
+          "`DID_RENEW`",
+          "-",
+          "-",
+          "Indicates the SKU renewed. Use the data in the `JWSRenewalInfo` and the `JWSTransaction` to provide service for the SKU."
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Notification type",
+        "Subtype",
+        "Property details",
+        "Description"
+      ],
+      "rows": [
+        [
+          "`PRICE_CHANGE`",
+          "-",
+          "`priceIncreaseInfo.SCHEDULED`",
+          "Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API."
+        ],
+        [
+          "`PRICE_INCREASE`",
+          "`ACCEPTED`",
+          "`priceIncreaseInfo.ACCEPTED`",
+          "Indicates that the App Store informed the subscriber for the subscription price increase for the item, and it’s subject to the price increase."
+        ],
+        [
+          "`EXPIRED`",
+          "`VOLUNTARY`",
+          "-",
+          "Indicates that the subscriber voluntarily canceled the auto-renewable subscription. This notification type and subtype isn’t specific to price increases."
+        ],
+        [
+          "`DID_RENEW`",
+          "-",
+          "-",
+          "The SKU renewed. Always check `JWSRenewalInfo` and the `JWSTransaction` information to provide service to the list items."
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Notification type",
+        "Subtype",
+        "Property details",
+        "Description"
+      ],
+      "rows": [
+        [
+          "`PRICE_CHANGE`",
+          "-",
+          "-",
+          "Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API."
+        ],
+        [
+          "`DID_RENEW`",
+          "-",
+          "-",
+          "Indicates the SKU renewed. Always to check to ensure `JWSRenewalInfo` and the `JWSTransaction` information to provide service to the list items."
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The Advanced Commerce API provides a standard UI to facilitate price increases for subscriptions and manage the subscriber consent process.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n> The AppStore doesn’t currently support the Advanced Commerce price increase mechanism in India.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Implement the Advanced Commerce Subscription price change API",
+      "paragraphs": [
+        {
+          "text": "Use the `Change-Subscription-Price` endpoint in the Advanced Commerce API (ACA) to initiate a price change for an individual subscription item. The UI the framework provides manages all of the necessary interactions and communication with a person using your app, including:",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "![subscription-price-increase-consent-needed.png]",
+          "refs": [
+            "subscription-price-increase-consent-needed.png"
+          ]
+        },
+        {
+          "text": "![subscription-price-increase-consent-not-needed.png]",
+          "refs": [
+            "subscription-price-increase-consent-not-needed.png"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Consent management for price increases.",
+          "refs": []
+        },
+        {
+          "text": "Notifications about price increases when the price increase doesn’t requite explicit consent.",
+          "refs": []
+        },
+        {
+          "text": "A standard UI sheet that App Store displays to obtain explicit user consent, if required, or an acknowledgment of the price increase if explicit consent isn’t required. Examples of these sheets and an explanation of the information they display about your app and the subscription are shown below.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Understand consent management and price change communication",
+      "paragraphs": [
+        {
+          "text": "The App Store checks if a price increase requires consent, and follows different paths depending on whether a subscriber needs to explicitly consent to a price increase or not.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Follow the consent-needed path",
+      "paragraphs": [
+        {
+          "text": "The App Store requests explicit consent from the subscriber if the price increase meets any of the following criteria:",
+          "refs": []
+        },
+        {
+          "text": "When conditions require consent, the App Store notifies subscribers via email, price increase sheet, and push notification, according to the timelines below. If a subscriber doesn’t take any action, the App Store continues to request consent no more than once per week for each method. You can’t raise the price until you receive the subscriber’s consent.",
+          "refs": []
+        },
+        {
+          "text": "| Subscription interval | Email, price increase sheet, and push notification timelines |\n| --- | --- |\n| For 2-month, 3-month, 6-month, and annual subscriptions | 60 days before the renewal date |\n| Monthly subscriptions | 27 days before the renewal date |\n| Weekly subscriptions | 7 days before the renewal date |",
+          "refs": []
+        },
+        {
+          "text": "![price-increase-notification-timeline.png]",
+          "refs": [
+            "price-increase-notification-timeline.png"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The subscriber is located in a region that requires consent for any price changes. For more information about these regions, see `https://help.apple.com/app-store-connect/#/devf3e625675`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/devf3e625675"
+          ]
+        },
+        {
+          "text": "The price increase is:\n\n- More than 50 percent of the current price; and\n- The difference in price exceeds 5 United States Dollars (USD) per period for nonannual subscriptions, or 50 USD per year for annual subscriptions. International equivalents for prices not in USD are based on current exchange rates with specific thresholds subject to change based on changes in taxes or foreign exchange rates.",
+          "refs": []
+        },
+        {
+          "text": "The subscriber had a price increase for the same subscription within the past 12 months.",
+          "refs": []
+        },
+        {
+          "text": "The subscriber converts from trials or offers in South Korea. In these cases, Apple collects consent via email, in-app sheets, or push notifications. The timing and frequency of these communications may differ from those shown for standard subscription price increases, as noted in `https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/consent-for-subscription-offer-conversions`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/in-app-purchases-and-subscriptions/consent-for-subscription-offer-conversions"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Follow the consent not-needed path",
+      "paragraphs": [
+        {
+          "text": "When a price increase doesn’t need the subscriber’s consent, the App Store only notifies subscribers about the new price. When the App Store increases the price of multiple items within a bundle, none of which require consent, it uses a single API request so the subscriber receives a summary of the price increases. The App Store combines notifications into a single communication per method (a single email, one price increase sheet, and a single push notification).",
+          "refs": []
+        },
+        {
+          "text": "The App Store uses the following communication methods and timelines to notify subscribers:",
+          "refs": []
+        },
+        {
+          "text": "- **Email** — For all subscription durations, the App Store sends an email 27 days before the renewal date. Note that for weekly subscriptions, the App Store calls the `Change-Subscription-Price` endpoint on the fourth consecutive renewal to increase the price.\n- **Price increase sheet** — The App Store displays a price increase sheet at the first app launch after the subscriber enters the notice period.\n- **Push notification** — The App Store displays a push notification seven days before the renewal date if the subscriber hasn’t viewed the price increase sheet in-app.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> Unlike when requesting consent, the App Store doesn’t send a push notification if the subscriber acknowledges the price increase on the sheet. Notifying via email is still a requirement in either case.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Understand change subscription conditions and limitations",
+      "paragraphs": [
+        {
+          "text": "Several conditions may affect your ability to change or update a subscription, including:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "During the price increase window, the renewal uses the increased price that the developer has specified  using `Change-Subscription-Price` if you make any of the following changes to the subscription:\n\n- Add an item\n- Remove an item\n- Change an item\n- Resubscribe using the `https://developer.apple.com/documentation/advancedcommerceapi#Subscription-modification-in-the-app`  or the `com.apple.documentation/documentation/advancedcommerceapi#Subscription-reactivation-in-the-app`",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+            "https://developer.apple.com/documentation/advancedcommerceapi#Subscription-modification-in-the-app",
+            "com.apple.documentation/documentation/advancedcommerceapi#Subscription-reactivation-in-the-app"
+          ]
+        },
+        {
+          "text": "If the subscription status is auto-renew = `false` or if the subscription is in a grace period or billing retry state, you can’t call the `Change-Subscription-Price` endpoint.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "If the `SubscriptionPriceChangeItem` is currently in the offer period, you can’t call `Change-Subscription-Price`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Understand interactions with other ACA operations",
+      "paragraphs": [
+        {
+          "text": "Several conditions can affect your ability to update a subscription. There may be specific interactions and rules that apply to price increases, depending on which Advanced Commerce API you need to use.",
+          "refs": []
+        },
+        {
+          "text": "If you need to reactivate items, call the `SubscriptionReactivateInAppRequest` API. The following conditions apply to reactivations:",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionReactivateInAppRequest"
+          ]
+        },
+        {
+          "text": "If you need to  modify a subscription, call the  `SubscriptionModifyInAppRequest` API. Price increases interact with the ACA in a specific way depending on if the call resets or retains the billing cycle.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest"
+          ]
+        },
+        {
+          "text": "If the price increase takes place during a retain billing cycle, the following rules apply:",
+          "refs": []
+        },
+        {
+          "text": "If the price increase takes place during a reset billing cycle, the following rules apply:",
+          "refs": []
+        },
+        {
+          "text": "If you need to change a subscription’s metadata, call the `Change-Subscription-Metadata`. Metadata-only changes, such as changing the SKU from SKU A to SKU B, preserve the price increase because it isn’t a change in product, but rather a change to the product SKU.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata"
+          ]
+        },
+        {
+          "text": "If you need to call the ACA Migration API to migrate a subscription that a subscriber purchased through In-App Purchase to a subscription you manage using the Advanced Commerce API, the following rules apply:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If the App Store communicated the price increase, it reactivates the items you provide through the `items` key in the properties you supply to the `SubscriptionReactivateInAppRequest` request at the higher price. Failing to explicitly reactivate an item doesn’t result in the App Store activating the higher price because the App Store needs to communicate the price increase and receive consent through the normal process.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionReactivateInAppRequest"
+          ]
+        },
+        {
+          "text": "If the App Store hasn’t communicated the price increase, it schedules the price increase communications for the next eligible date.",
+          "refs": []
+        },
+        {
+          "text": "If the App Store communicated the price increase:\n\n- If the price increase is pending consent, the Payment Sheet shows the higher price, and the user must consent to the price increase via the in-app sheet that appears, or via Manage Subscriptions.\n- If the subscriber consented to the  price increase, or the price increase doesn’t require consent,  the Payment Sheet shows the higher price.\n- If the  subscriber declined the price increase, the item doesn’t appear in the Payment Sheet.",
+          "refs": []
+        },
+        {
+          "text": "If the item’s SKU is changing to a different product SKU (such as from SKU `BASIC` to SKU `PREMIUM`), the change invalidates the price increase because the new SKU represents a different product.",
+          "refs": []
+        },
+        {
+          "text": "When the App Store sends an offer with an item subject to a price increase, it’s a *special consideration*; in this case, you send the higher price of the item, and the App Store reschedules the price increase for after the offer period completes, at which point, the item renews at the higher price.",
+          "refs": []
+        },
+        {
+          "text": "If the App Store hasn’t communicated the  price increase, the price increase is invalidated.",
+          "refs": []
+        },
+        {
+          "text": "If the the App Store communicated the price increase, the App Store applies the new price only if the item is sent with the higher price, using the `SubscriptionModifyChangeItem`.\n\n- As described above, changing the item to a different product (such as changing from *BASIC* SKU  to a *Premium* SKU) invalidates the price increase, as the item represents a different product.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem"
+          ]
+        },
+        {
+          "text": "If the In-App purchase product has a pending price increase through App Store Connect, the App Store doesn’t allow the migration if it already communicated the price increase to the subscriber.",
+          "refs": []
+        },
+        {
+          "text": "The App Store doesn’t allow migrations if the item is currently subject to a price increase, and the App Store already sent price increase communications to the subscriber.",
+          "refs": []
+        },
+        {
+          "text": "If there’s an upcoming price increase, the App Store migrates the pending price increase as well.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Understand price increase status and update values",
+      "paragraphs": [
+        {
+          "text": "The following table describes the meaning of price increase status values:",
+          "refs": []
+        },
+        {
+          "text": "| Price increase info status | Description |\n| --- | --- |\n| `priceIncreaseInfo.SCHEDULED` | Indicates the App Store scheduled the price increase for the `SubscriptionPriceChangeItem`. |\n| `priceIncreaseInfo.PENDING` | Indicates there’s a pending price increase for the `SubscriptionPriceChangeItem` that requires subscriber consent, and the subscriber hasn’t yet consented. If the subscriber doesn’t consent, the `SubscriptionPriceChangeItem` expires at the end of the billing cycle. |\n| `priceIncreaseInfo.ACCEPTED` | Indicates that the subscriber consented to a price increase for the `SubscriptionPriceChangeItem`. |",
+          "refs": []
+        },
+        {
+          "text": "The following table describes the notifications and status values for a subscription price change item that requires consent:",
+          "refs": []
+        },
+        {
+          "text": "| Notification type | Subtype | Property details | Description |\n| --- | --- | --- | --- |\n| `PRICE_CHANGE` | - | `priceIncreaseInfo.SCHEDULED` | Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API. |\n| `PRICE_INCREASE` | `PENDING` | `priceIncreaseInfo.PENDING` | Indicates there’s a pending price increase for the SKU that requires subscriber consent, and the subscriber hasn’t yet consented. If the subscriber doesn’t consent, the SKU expires at the end of the billing cycle. |\n| `PRICE_INCREASE` | `ACCEPTED` | `priceIncreaseInfo.ACCEPTED` | Indicates that the subscriber consented to a price increase for the SKU. |\n| `EXPIRED` | `PRICE_INCREASE` | - | Indicates that the auto-renewable subscription expired because the subscriber didn’t consent to the price increase, and allowed the subscription to expire. |\n| `EXPIRED` | `VOLUNTARY` | - | Indicates that the subscriber voluntarily canceled the auto-renewable subscription. This notification type and subtype aren’t specific to price increases. |\n| `DID_RENEW` | - | - | Indicates the SKU renewed. Use the data in the `JWSRenewalInfo` and the `JWSTransaction` to provide service for the SKU. |",
+          "refs": []
+        },
+        {
+          "text": "The following table describes the notifications and status values for a subscription price change item that doesn’t require consent:",
+          "refs": []
+        },
+        {
+          "text": "| Notification type | Subtype | Property details | Description |\n| --- | --- | --- | --- |\n| `PRICE_CHANGE` | - | `priceIncreaseInfo.SCHEDULED` | Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API. |\n| `PRICE_INCREASE` | `ACCEPTED` | `priceIncreaseInfo.ACCEPTED` | Indicates that the App Store informed the subscriber for the subscription price increase for the item, and it’s subject to the price increase. |\n| `EXPIRED` | `VOLUNTARY` | - | Indicates that the subscriber voluntarily canceled the auto-renewable subscription. This notification type and subtype isn’t specific to price increases. |\n| `DID_RENEW` | - | - | The SKU renewed. Always check `JWSRenewalInfo` and the `JWSTransaction` information to provide service to the list items. |",
+          "refs": []
+        },
+        {
+          "text": "The following table describes the notifications and status values for a subscription price change item that decreases a price:",
+          "refs": []
+        },
+        {
+          "text": "| Notification type | Subtype | Property details | Description |\n| --- | --- | --- | --- |\n| `PRICE_CHANGE` | - | - | Indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the Advanced Commerce API. |\n| `DID_RENEW` | - | - | Indicates the SKU renewed. Always to check to ensure `JWSRenewalInfo` and the `JWSTransaction` information to provide service to the list items. |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Understand conditional cancellations and dependent SKUs",
+      "paragraphs": [
+        {
+          "text": "To create a contingency for a situation in which a person doesn’t agree to a price increase and the App Store cancels other bundled services (the “dependent SKUs”), you can provide an array of the SKUs through the `dependentSKUs` property. If the price increase requires a person’s consent, and they don’t consent to the price increase (through a cancellation from the Manage Subscriptions view, or by failing to consent before the renewal date), the App Store cancels the dependent SKUs.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n> You can’t have chains of dependent SKUs. For example, if SKU *A* has dependent SKU *B*, *B* can’t have its own dependent SKU, *C*. However, *B* can have its own price increase.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Test price increases in the sandbox",
+      "paragraphs": [
+        {
+          "text": "To test subscription price increases, call the `Change-Subscription-Price` API in the sandbox to test the API responses. The sandbox environment — and TestFlight — support the full price increase cycle, with the exception of the email and push notifications. The in-app sheet still appears, and price increase management appears on the Manage Subscriptions page.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> After you call the `Change-Subscription-Price` API, the subscription renews on the higher price after one renewal, giving you time to test in the sandbox environment.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        },
+        {
+          "text": "You can test granting consent or declining a price increase through the in-app sheet or by navigating to the Manage Subscription page in the sandbox. For more information, see `testing-disabling-auto-renew`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/testing-disabling-auto-renew"
+          ]
+        },
+        {
+          "text": "In the sandbox, the first renewal after calling `Change-Subscription-Price` uses the existing price to assist in testing states prior to when the App Store communicates the price increase. After the first renewal, the App Store simulates communicating the price increase for the next appropriate renewal.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Tax codes and pricing",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/prices",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxcodes"
+      ]
+    }
+  ]
+}

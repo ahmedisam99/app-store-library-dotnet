@@ -1,0 +1,80 @@
+{
+  "id": "data:retention_messaging:PerformanceTestRequest",
+  "title": "PerformanceTestRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/PerformanceTestRequest",
+  "slug": "retentionmessaging/performancetestrequest",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request object you provide for a performance test that contains an original transaction identifier.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PerformanceTestRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "originalTransactionId",
+      "type": "originalTransactionId",
+      "typeId": "data:retention_messaging:originalTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The original transaction identifier of an In-App Purchase you initiate in the sandbox environment, to use as the purchase for this test.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "To provide a transaction identifier for the purpose of performance testing, check that the transaction meets the following requirements:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The transaction is for an active auto-renewable subscription.",
+          "refs": []
+        },
+        {
+          "text": "The transaction occurs in the sandbox environment.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Server performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Performance-Test-Results",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse"
+      ]
+    }
+  ]
+}

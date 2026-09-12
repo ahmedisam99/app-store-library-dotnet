@@ -1,0 +1,139 @@
+{
+  "id": "data:app_store_server_api:NotificationHistoryResponse",
+  "title": "NotificationHistoryResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/NotificationHistoryResponse",
+  "slug": "appstoreserverapi/notificationhistoryresponse",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains the App Store Server Notifications history for your app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object NotificationHistoryResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "notificationHistory",
+      "type": "[notificationHistoryResponseItem]",
+      "typeId": "data:app_store_server_api:notificationHistoryResponseItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An array of App Store Server Notifications history records.\n\nIf you set `onlyFailures` to `true` in the `NotificationHistoryRequest`, this array contains only the notifications that failed to reach your server.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/onlyFailures",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "hasMore",
+      "type": "hasMore",
+      "typeId": "data:app_store_server_api:hasMore",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A Boolean value that indicates whether the App Store has more notification history records to send. If `hasMore` is `true`, use the `paginationToken` in the subsequent request to get more records. If `hasMore` is false, there are no more records available.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "paginationToken",
+      "type": "paginationToken",
+      "typeId": "data:app_store_server_api:paginationToken",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A pagination token that you provide to `Get-Notification-History` on a subsequent request to get the next page of responses.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The notifications in the history records reflect the state of an in-app purchase at the time the App Store originally sent the notification, and may not reflect its current state. To get the current state of auto-renewable subscriptions, call the `Get-All-Subscription-Statuses` endpoint. For all other in-app purchase types, call the `Get-Transaction-History` endpoint.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Notification-History` endpoint returns this response. Notification history records contain the notifications that the App Store server attempted to send to your server’s `App-Store-Server-Notifications-V2` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "The notification history response contains a maximum of 20 notification history records per response. If the history has more than 20 records, the `hasMore` value is `true`. Call `Get-Notification-History` again with `paginationToken` in the query to receive the next page of responses. When the App Store has no more records to send, the `hasMore` value is `false`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  The notifications in the history records reflect the state of an in-app purchase at the time the App Store originally sent the notification, and may not reflect its current state. To get the current state of auto-renewable subscriptions, call the `Get-All-Subscription-Statuses` endpoint. For all other in-app purchase types, call the `Get-Transaction-History` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/paginationToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications history",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationHistoryResponseItem"
+      ]
+    }
+  ]
+}

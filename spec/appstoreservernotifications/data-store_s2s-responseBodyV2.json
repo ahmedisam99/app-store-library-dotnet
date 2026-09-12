@@ -1,0 +1,103 @@
+{
+  "id": "data:store_s2s:responseBodyV2",
+  "title": "responseBodyV2",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/responseBodyV2",
+  "slug": "appstoreservernotifications/responsebodyv2",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body the App Store sends in a version 2 server notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object responseBodyV2",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedPayload",
+      "type": "signedPayload",
+      "typeId": "data:store_s2s:signedPayload",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The payload in JSON Web Signature (JWS) format, signed by the App Store.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `signedPayload` object is a JWS representation. To get the transaction and subscription renewal details from the notification payload, process the `signedPayload` as follows:",
+          "refs": []
+        },
+        {
+          "text": "Each of the signed JWS representations, `signedPayload`, `signedTransactionInfo`, and `signedRenewalInfo`, have a JWS signature that you can validate on your server. Use the algorithm specified in the header’s `alg` parameter to validate the signature. For more information about validating signatures, see the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/alg",
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Parse `signedPayload` to identify the JWS header, payload, and signature representations.",
+          "refs": []
+        },
+        {
+          "text": "Base64URL-decode the payload to get the `responseBodyV2DecodedPayload`. The decoded payload contains details of the notification such as the notification type and  data.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        },
+        {
+          "text": "The `data` object contains a `signedTransactionInfo` (`JWSTransaction`) and based on the notification type, a `signedRenewalInfo` (`JWSRenewalInfo`). Parse and Base64URL-decode these signed JWS representations to get transaction and subscription renewal details.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/JWSTransaction",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfo"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Response body payload",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/signedPayload"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Server notifications version 2",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+      ]
+    }
+  ]
+}

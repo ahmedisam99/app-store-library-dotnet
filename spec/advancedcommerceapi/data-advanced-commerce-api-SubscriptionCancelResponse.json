@@ -1,0 +1,85 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionCancelResponse",
+  "title": "SubscriptionCancelResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionCancelResponse",
+  "slug": "advancedcommerceapi/subscriptioncancelresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for a successful subscription cancellation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionCancelResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:advanced-commerce-api:JWSRenewalInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:advanced-commerce-api:JWSTransaction",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Transaction information signed by the App Store, in JWS Compact Serialization format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the response body for the `Cancel-a-Subscription` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription cancellation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCancelRequest"
+      ]
+    }
+  ]
+}

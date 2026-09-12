@@ -1,0 +1,190 @@
+{
+  "id": "doc:appstoreservernotifications/transaction-data-types",
+  "title": "Transaction data types",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/transaction-data-types",
+  "slug": "appstoreservernotifications/transaction-data-types",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Refer to these data types for decoded transaction and renewal information payloads.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Environment",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/environment"
+      ]
+    },
+    {
+      "title": "Transaction identifiers",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalTransactionId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transactionId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/webOrderLineItemId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/previousOriginalTransactionId"
+      ]
+    },
+    {
+      "title": "App transaction identifier",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appTransactionId"
+      ]
+    },
+    {
+      "title": "App information",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId"
+      ]
+    },
+    {
+      "title": "Account information",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAccountToken"
+      ]
+    },
+    {
+      "title": "Product information",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/productId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/type",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subscriptionGroupIdentifier",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/quantity"
+      ]
+    },
+    {
+      "title": "Product price and currency",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/price",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency"
+      ]
+    },
+    {
+      "title": "Storefront information",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefront",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontId"
+      ]
+    },
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerIdentifier",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerPeriod",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType"
+      ]
+    },
+    {
+      "title": "Purchase dates",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalPurchaseDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/purchaseDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/recentSubscriptionStartDate"
+      ]
+    },
+    {
+      "title": "Billing status",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/isInBillingRetryPeriod",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/gracePeriodExpiresDate"
+      ]
+    },
+    {
+      "title": "Subscripton renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewStatus",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewProductId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expirationIntent",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expiresDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/isUpgraded",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalBillingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalPrice"
+      ]
+    },
+    {
+      "title": "Monthly subscriptions with 12-month commitments",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/TransactionCommitmentInfo",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPeriodNumber",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentExpiresDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentPrice",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/totalBillingPeriods",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/RenewalCommitmentInfo",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentAutoRenewProductId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentAutoRenewStatus",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalBillingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalPrice"
+      ]
+    },
+    {
+      "title": "Family Sharing",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/inAppOwnershipType"
+      ]
+    },
+    {
+      "title": "Price increase status",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/priceIncreaseStatus"
+      ]
+    },
+    {
+      "title": "Revocations",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationPercentage",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationReason",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationType"
+      ]
+    },
+    {
+      "title": "Transaction reason",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transactionReason"
+      ]
+    },
+    {
+      "title": "JWS signature date",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/signedDate"
+      ]
+    },
+    {
+      "title": "Advanced Commerce API data",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/advancedcommerce-datatypes"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "JWS header and payload data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSDecodedHeader"
+      ]
+    }
+  ]
+}

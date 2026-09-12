@@ -6,7 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Two community-maintained .NET 8.0 packages that version and ship independently: `Enjna.AppStoreServerLibrary` for the App Store Server API, and `Enjna.AppStoreConnectApi` for the App Store Connect API. Neither depends on the other.
 
-Apple's [Node.js App Store Server Library](https://github.com/apple/app-store-server-library-node) is vendored as a git submodule at `vendor/app-store-server-library-node/` and used as a reference to ensure the server library does not miss any functionality, types, models, API calls, or test cases.
+A snapshot of Apple's own documentation is vendored under `spec/`: the App Store Server API, App Store Server Notifications, Retention Messaging and Advanced Commerce documentation sets, plus Apple's App Store Connect OpenAPI document. It is the reference for what the packages should cover. Refresh it with `dotnet run --project tools/AppleSpec -- sync`, after which `git diff spec/` is what Apple changed.
+
+The snapshot covers API shape, not client behaviour. Apple documents nothing about certificate chain validation, OCSP, or receipt parsing; for those, read Apple's own [Swift](https://github.com/apple/app-store-server-library-swift) or [Node.js](https://github.com/apple/app-store-server-library-node) library.
 
 ## Build & Test Commands
 
@@ -37,7 +39,7 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 
 ### App Store Connect (`src/Enjna.AppStoreConnectApi/`)
 
-- **`AppStoreConnectAPIClient`**: HTTP client for the App Store Connect API, split by domain across `AppStoreConnectAPIClient.*.cs` partials. Signs an ES256 bearer token per request. Built from Apple's OpenAPI specification, not the Node reference.
+- **`AppStoreConnectAPIClient`**: HTTP client for the App Store Connect API, split by domain across `AppStoreConnectAPIClient.*.cs` partials. Signs an ES256 bearer token per request. Built from Apple's OpenAPI specification (`spec/appstoreconnectapi/openapi.json`).
 - Models follow the JSON:API envelope: `Resource<TAttributes>`, `ResourceResponse<T>`, `ResourceListResponse<T>`.
 - Update-request attributes derive from `AttributeChangeSet`, which tracks assignment: a property left unassigned stays out of the request, while one assigned `null` is sent as an explicit `null` to clear the stored value.
 
@@ -63,6 +65,6 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 - **`base.`** prefix when calling inherited methods from subclasses.
 - XML doc comments on all public members (build generates documentation file).
 
-## Completeness Check Against Node.js Reference
+## Coverage Against Apple's Documentation
 
-Use the `dotnet-parity-checker` agent (`.claude/agents/dotnet-parity-checker.md`) to verify the server library is not missing any functionality, types, models, API calls, or test cases that are covered in Apple's Node.js reference.
+`dotnet run --project tools/AppleSpec -- check` compares both packages against `spec/` and exits non-zero on a real gap. Deliberate omissions live in `spec/coverage.server.json`, each with its reason. Use the `apple-spec-coverage` agent (`.claude/agents/apple-spec-coverage.md`) to judge whether something the check reports is a gap worth closing or a scope decision worth recording.

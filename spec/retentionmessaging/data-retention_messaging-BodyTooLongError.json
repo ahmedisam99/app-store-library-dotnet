@@ -1,0 +1,114 @@
+{
+  "id": "data:retention_messaging:BodyTooLongError",
+  "title": "BodyTooLongError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/BodyTooLongError",
+  "slug": "retentionmessaging/bodytoolongerror",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the body text is too long.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BodyTooLongError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000163"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The body text is too long."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When calling `Upload-Message`, provide a maximum of 144 characters.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/AltTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ExistingPerformanceTestRunError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ForbiddenNoPassingTestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/HeaderTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageInUseError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotApprovedError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidLocaleError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidPerformanceTestRequestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidProductIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidRequestIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/MaximumNumberOfImagesReachedError"
+      ]
+    }
+  ]
+}

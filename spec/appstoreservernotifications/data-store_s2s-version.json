@@ -1,0 +1,64 @@
+{
+  "id": "data:store_s2s:version",
+  "title": "version",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/version",
+  "slug": "appstoreservernotifications/version",
+  "introducedAt": "2.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that indicates the notification’s App Store Server Notifications version number.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string version",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The version string is `“2.0”`. It’s present in `responseBodyV2DecodedPayload` for version 2 notifications.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        },
+        {
+          "text": "For more information about App Store Server Notification changes, see `app-store-server-notifications-changelog`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Response types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/signedDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationUUID"
+      ]
+    }
+  ]
+}

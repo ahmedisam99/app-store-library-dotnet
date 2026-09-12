@@ -1,0 +1,57 @@
+{
+  "id": "data:retention_messaging:imageIdentifier",
+  "title": "imageIdentifier",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/imageIdentifier",
+  "slug": "retentionmessaging/imageidentifier",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A unique identifier for an image that you provide when you upload the image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "uuid imageIdentifier",
+    "baseType": "uuid",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You create a UUID to identify an image when you call `Upload-Image`. Use this identifier to refer to the same image throughout the API.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Image"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Images",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageSize",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/altText"
+      ]
+    }
+  ]
+}

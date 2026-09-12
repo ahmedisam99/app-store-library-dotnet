@@ -1,0 +1,82 @@
+{
+  "id": "data:app_store_server_api:environment",
+  "title": "environment",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/environment",
+  "slug": "appstoreserverapi/environment",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The server environment, either sandbox or production.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string environment",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "Sandbox",
+      "abstract": {
+        "text": "Indicates that the data applies to testing in the sandbox environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "Production",
+      "abstract": {
+        "text": "Indicates that the data applies to the production environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You receive data from the `AppStoreServerAPI` for the sandbox environment when you send test requests to the endpoints using the sandbox base URL:",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI"
+          ]
+        },
+        {
+          "text": "```javascript\nhttps://api.storekit-sandbox.apple.com/\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ]
+}

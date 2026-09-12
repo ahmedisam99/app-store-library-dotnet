@@ -1,0 +1,113 @@
+{
+  "id": "data:retention_messaging:alternateProduct",
+  "title": "alternateProduct",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/alternateProduct",
+  "slug": "retentionmessaging/alternateproduct",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A switch-plan message and product ID you provide in a real-time response to your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object alternateProduct",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The message identifier of the text to display in the switch-plan retention message.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the subscription the retention message suggests for your customer to switch to.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "billingPlanType",
+      "type": "billingPlanType",
+      "typeId": "data:retention_messaging:billingPlanType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "In your `RealtimeResponseBody` real-time response, you can choose from mutually exclusive options. Include `alternateProduct` in your response to provide a switch-plan retention message.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "Use the product identifier in `DecodedRealtimeRequestBody` to determine the customer’s current subscription. Choose an alternative subscription from the same subscription group.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "The message identifier needs to refer to a message that doesn’t include an image and that has a `messageState` of `APPROVED`; otherwise, the retention message fails. For more information about setting up messages, see `Upload-Message`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time response body",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOffer",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceInfo"
+      ]
+    }
+  ]
+}

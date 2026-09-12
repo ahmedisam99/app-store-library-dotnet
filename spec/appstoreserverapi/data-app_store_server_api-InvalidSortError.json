@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_server_api:InvalidSortError",
+  "title": "InvalidSortError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidSortError",
+  "slug": "appstoreserverapi/invalidsorterror",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the sort parameter is invalid.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidSortError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000021"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The sort parameter is invalid."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Notification test and history errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidNotificationTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPaginationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStartDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTestNotificationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidInAppOwnershipTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSubscriptionGroupIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MultipleFiltersSuppliedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/PaginationTokenExpiredError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ServerNotificationURLNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateAfterEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateTooFarInPastError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TestNotificationNotFoundError"
+      ]
+    }
+  ]
+}

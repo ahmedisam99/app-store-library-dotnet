@@ -1,0 +1,195 @@
+{
+  "id": "data:app_store_server_api:ConsumptionRequest",
+  "title": "ConsumptionRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/ConsumptionRequest",
+  "slug": "appstoreserverapi/consumptionrequest",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body that contains consumption information for an In-App Purchase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ConsumptionRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "customerConsented",
+      "type": "customerConsented",
+      "typeId": "data:app_store_server_api:customerConsented",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A Boolean value of `true` or `false` that indicates whether the customer consented to provide consumption data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "consumptionPercentage",
+      "type": "consumptionPercentage",
+      "typeId": "data:app_store_server_api:consumptionPercentage",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [
+        {
+          "kind": "minimum",
+          "value": "0",
+          "values": null
+        },
+        {
+          "kind": "maximum",
+          "value": "100000",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "An integer that indicates the percentage of the In-App Purchase the customer consumed, in milliunits.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "deliveryStatus",
+      "type": "deliveryStatus",
+      "typeId": "data:app_store_server_api:deliveryStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)**  A value that indicates whether the app successfully delivered an In-App Purchase that works properly.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundPreference",
+      "type": "refundPreference",
+      "typeId": "data:app_store_server_api:refundPreference",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A value that indicates your preference, based on your operational logic, as to whether the App Store should grant the refund.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sampleContentProvided",
+      "type": "sampleContentProvided",
+      "typeId": "data:app_store_server_api:sampleContentProvided",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)**  A Boolean value of `true` or `false` that indicates whether you provided, prior to its purchase, a free sample or trial of the content, or information about its functionality.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The App Store server rejects requests that have a `customerConsented` value other than `true` by returning an `HTTP 400` error with an `InvalidCustomerConsentedError`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use `ConsumptionRequest` to provide information about the customer’s In-App Purchase when you call the `Send-Consumption-Information` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> The App Store server rejects requests that have a `customerConsented` value other than `true` by returning an `HTTP 400` error with an `InvalidCustomerConsentedError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError"
+          ]
+        },
+        {
+          "text": "You can provide consumption information for any type of product: consumable, non-consumable, non-renewing subscription, and auto-renewable subscription.",
+          "refs": []
+        },
+        {
+          "text": "Consider the following constraints when providing an optional `refundPreference`:",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest/refundPreference"
+          ]
+        },
+        {
+          "text": "If the `deliveryStatus` isn’t `DELIVERED`, set the `consumptionPercentage` to `0`; otherwise the request fails with an error.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest/deliveryStatus"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The system supports the `GRANT_FULL` and `DECLINE` values for all product types.",
+          "refs": []
+        },
+        {
+          "text": "If you choose `GRANT_PRORATED` for an auto-renewable subscription, don’t include a `consumptionPercentage`. The system automatically calculates the percentage.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest/consumptionPercentage"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreference",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Consumption information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+      ]
+    }
+  ]
+}

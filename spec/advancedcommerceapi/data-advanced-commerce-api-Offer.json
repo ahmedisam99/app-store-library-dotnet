@@ -1,0 +1,142 @@
+{
+  "id": "data:advanced-commerce-api:Offer",
+  "title": "Offer",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Offer",
+  "slug": "advancedcommerceapi/offer",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A discount offer for an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object Offer",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "period",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P3D",
+            "P1W",
+            "P2W",
+            "P1M",
+            "P2M",
+            "P3M",
+            "P6M",
+            "P9M",
+            "P1Y"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The period of the offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "periodCount",
+      "type": "int32",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "minimum",
+          "value": "1",
+          "values": null
+        },
+        {
+          "kind": "maximum",
+          "value": "12",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The number of periods the offer is active.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "price",
+      "type": "price",
+      "typeId": "data:advanced-commerce-api:price",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The offer price, in milliunits.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "reason",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ACQUISITION",
+            "WIN_BACK",
+            "RETENTION"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The reason for the offer.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Descriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestInfo",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyAddItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyPeriodChange",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyRemoveItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeItem"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,191 @@
+{
+  "id": "data:app_store_server_api:NotificationHistoryRequest",
+  "title": "NotificationHistoryRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/NotificationHistoryRequest",
+  "slug": "appstoreserverapi/notificationhistoryrequest",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body for notification history.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object NotificationHistoryRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "startDate",
+      "type": "startDate",
+      "typeId": "data:app_store_server_api:startDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Required. The start date of the timespan for the requested App Store Server Notification history records. The `startDate` needs to precede the `endDate`. Choose a `startDate` that’s within the past 180 days. In the sandbox environment, choose a `startDate` that’s within the past 30 days.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "endDate",
+      "type": "endDate",
+      "typeId": "data:app_store_server_api:endDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Required. The end date of the timespan for the requested App Store Server Notification history records. Choose an `endDate` that’s later than the `startDate`. If you choose an `endDate` in the future, the endpoint automatically uses the current date as the `endDate`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "notificationType",
+      "type": "notificationType",
+      "typeId": "data:app_store_server_api:notificationType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Optional. A notification type. Provide this field to limit the notification history records to those with this one notification type. For a list of notifications types, see `notificationType`.\n\nNote: You may include either the `transactionId` or the `notificationType` property (or neither) in your query, but not both.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "notificationSubtype",
+      "type": "notificationSubtype",
+      "typeId": "data:app_store_server_api:notificationSubtype",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Optional. A notification subtype. Provide this field to limit the notification history records to those with this one notification subtype. For a list of subtypes, see `subtype`. If you specify a `notificationSubtype`, you need to also specify its related `notificationType`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/subtype"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "onlyFailures",
+      "type": "onlyFailures",
+      "typeId": "data:app_store_server_api:onlyFailures",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Optional. A Boolean value you set to `true` to request only the notifications that haven’t reached your server successfully. The response also includes notifications that the App Store server is currently retrying to send to your server.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "transactionId",
+      "type": "transactionId",
+      "typeId": "data:app_store_server_api:transactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Optional. The transaction identifier, which may be an original transaction identifier, of any transaction belonging to the customer. Provide this field to limit the notification history request to this one customer.\n\nNote: You may include either the `transactionId` or the `notificationType` property (or neither) in your query, but not both.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "originalTransactionId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Use `transactionId` instead.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Notification history is available for the past 180 days in the production environment, and the past 30 days in the sandbox environment. Choose a `startDate` that’s within the past 180 days in the production environment, and within the past 30 days in the sandbox environment.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Specify the constraints for the App Store Server Notification history entries you’re requesting from `Get-Notification-History`. The request requires the `startDate` and `endDate` fields; all other fields are optional. Include only the fields in your request that you need to constrain the response.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History"
+          ]
+        },
+        {
+          "text": "If you provide both the `notificationType` and `subtype`, they need to be a valid combination, otherwise, the request returns an\u00A0`InvalidNotificationTypeError` error. For more information, see `notificationType` and `subtype`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidNotificationTypeError",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/subtype"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Notification history is available for the past 180 days in the production environment, and the past 30 days in the sandbox environment. Choose a `startDate` that’s within the past 180 days in the production environment, and within the past 30 days in the sandbox environment.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/startDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/endDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationSubtype",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/onlyFailures"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications history",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationHistoryResponseItem"
+      ]
+    }
+  ]
+}

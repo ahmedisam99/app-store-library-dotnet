@@ -1,0 +1,115 @@
+{
+  "id": "data:app_store_server_api:recentSubscriptionStartDate",
+  "title": "recentSubscriptionStartDate",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/recentSubscriptionStartDate",
+  "slug": "appstoreserverapi/recentsubscriptionstartdate",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The earliest start date of a subscription in a series of auto-renewable subscription purchases that ignores all lapses of paid service shorter than 60 days.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "timestamp recentSubscriptionStartDate",
+    "baseType": "timestamp",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Don’t use the `recentSubscriptionStartDate` date to calculate days of paid service. For more information about paid days of service, see `https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+          "https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The recent subscription start date is in UNIX time, in milliseconds.",
+          "refs": []
+        },
+        {
+          "text": "Use the `recentSubscriptionStartDate` to identify the earliest start date of a subscription in a series of auto-renewable subscription purchases that the customer maintained continuously, or that has one or more gaps of less than 60 days each.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate"
+          ]
+        },
+        {
+          "text": "The App Store calculates the `recentSubscriptionStartDate` by finding the start date of the most recent auto-renewable subscription purchase that’s preceded by a gap in paid service of more than 60 days in the production environment, or 10 minutes in the sandbox environment. The start date includes any free trials or promotional purchases. If no such gap exists — for example, if the user has only ever purchased one subscription — the `recentSubscriptionStartDate` is the same as the subscription’s `originalPurchaseDate`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPurchaseDate"
+          ]
+        },
+        {
+          "text": "The `recentSubscriptionStartDate` calculation counts a grace period or a billing retry state as a gap in the paid service.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Don’t use the `recentSubscriptionStartDate` date to calculate days of paid service. For more information about paid days of service, see `https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+            "https://developer.apple.com/app-store/subscriptions/#revenue-after-one-year"
+          ]
+        },
+        {
+          "text": "This date applies to active or expired subscriptions. For example, if a subscriber purchases an auto-renewable subscription on June 1, 2022 and lets it expire on December 31, 2022, the App Store determines the recent subscription start date as follows:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Initially, the `recentSubscriptionStartDate` is the same as the `originalPurchaseDate`: June 1, 2022.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPurchaseDate"
+          ]
+        },
+        {
+          "text": "If the customer purchases the subscription again on February 1, 2023, less than 60 days after the initial subscription expired, the `recentSubscriptionStartDate` remains June 1, 2022.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate"
+          ]
+        },
+        {
+          "text": "If the customer purchases the subscription again on April 1, 2023, more than 60 days after the first subscription expired, the App Store updates the `recentSubscriptionStartDate` to April 1, 2023.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/recentSubscriptionStartDate"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Product purchase dates",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPurchaseDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/purchaseDate"
+      ]
+    }
+  ]
+}

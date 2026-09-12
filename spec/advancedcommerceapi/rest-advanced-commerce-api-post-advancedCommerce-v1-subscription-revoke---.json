@@ -1,0 +1,206 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-subscription-revoke-{}",
+  "title": "Revoke Subscription",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Revoke-Subscription",
+  "slug": "advancedcommerceapi/revoke-subscription",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Immediately cancel a customer’s subscription and all the items that are included in the subscription, and request a full or prorated refund.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/revoke/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/revoke/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier of the auto-renewable subscription to revoke. Use the subscription’s original transaction ID or any subsequent transaction ID of a transaction related to the subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionRevokeRequest",
+    "typeId": "data:advanced-commerce-api:SubscriptionRevokeRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionRevokeResponse",
+      "typeId": "data:advanced-commerce-api:SubscriptionRevokeResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(RepeatedRequestReferenceIdError | NullRequestInfoError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | MismatchedStorefrontError | MismatchedStorefrontError | OperationNotAllowedError | MalformedPayloadError | SimulateRefundDeclineOnlyInSandboxError | RefundAmountWithoutCustomError | NullRefundRiskingError | InvalidRefundTypeError | InvalidRefundReasonError | NegativeRefundAmountError | NullRefundAmountError | NullRefundReasonError | NullRefundTypeError | PendingRefundError | RevokeOnInactiveSubscriptionError)",
+      "typeId": "data:advanced-commerce-api:RepeatedRequestReferenceIdError|data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError|data:advanced-commerce-api:SimulateRefundDeclineOnlyInSandboxError|data:advanced-commerce-api:RefundAmountWithoutCustomError|data:advanced-commerce-api:NullRefundRiskingError|data:advanced-commerce-api:InvalidRefundTypeError|data:advanced-commerce-api:InvalidRefundReasonError|data:advanced-commerce-api:NegativeRefundAmountError|data:advanced-commerce-api:NullRefundAmountError|data:advanced-commerce-api:NullRefundReasonError|data:advanced-commerce-api:NullRefundTypeError|data:advanced-commerce-api:PendingRefundError|data:advanced-commerce-api:RevokeOnInactiveSubscriptionError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `authorizing-server-calls`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionNotEligibleError | ProductNotOwnedError | InsufficientFundsError | AlreadyRefundedError | TransactionNotRefundableError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionNotEligibleError|data:advanced-commerce-api:ProductNotOwnedError|data:advanced-commerce-api:InsufficientFundsError|data:advanced-commerce-api:AlreadyRefundedError|data:advanced-commerce-api:TransactionNotRefundableError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `ratelimits`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "To use the `Revoke Subscription` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+        "refs": [
+          "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When this endpoint succeeds, the system sets the subscription’s auto-renew status to `false`, and revokes the subscription with a full or prorated refund. The App Store Server Notifications sends a `REFUND`  `notificationType` to your `App-Store-Server-Notifications-V2` endpoint. Check the `revocationDate` property in the notification’s  `JWSTransactionDecodedPayload`. Turn off service for the subscription and its items as of the revocation date. Don’t turn off service to the subscription until you receive the notification.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "To cancel a subscription at the end of the current period instead, see `Cancel-a-Subscription`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> To use the `Revoke Subscription` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+          ]
+        },
+        {
+          "text": "Refer to the Advanced Commerce API Addendum to learn the use cases for the `Cancel-a-Subscription`, `Revoke Subscription`, and `Request-Transaction-Refund` APIs.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription revocation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionRevokeRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionRevokeResponse"
+      ]
+    }
+  ]
+}

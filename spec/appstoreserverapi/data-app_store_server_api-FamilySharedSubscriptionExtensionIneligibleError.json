@@ -1,0 +1,118 @@
+{
+  "id": "data:app_store_server_api:FamilySharedSubscriptionExtensionIneligibleError",
+  "title": "FamilySharedSubscriptionExtensionIneligibleError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+  "slug": "appstoreserverapi/familysharedsubscriptionextensionineligibleerror",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates a subscription isn’t directly eligible for a renewal date extension because the customer obtained it through Family Sharing.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object FamilySharedSubscriptionExtensionIneligibleError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4030007"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Subscriptions that users obtain through Family Sharing can't get a renewal date extension directly."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "A request returns this error if you call the `Extend-a-Subscription-Renewal-Date` endpoint with an `originalTransactionId` that belongs to a subscription the user obtains through Family Sharing.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date"
+          ]
+        },
+        {
+          "text": "When the endpoint extends an eligible purchased subscription that supports Family Sharing, it automatically extends the family members’ subscriptions as well. However, the endpoint doesn’t support requests to extend a family member’s subscription directly.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRefundPreferenceError"
+      ]
+    }
+  ]
+}

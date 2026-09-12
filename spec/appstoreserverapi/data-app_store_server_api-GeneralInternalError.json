@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_server_api:GeneralInternalError",
+  "title": "GeneralInternalError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/GeneralInternalError",
+  "slug": "appstoreserverapi/generalinternalerror",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates a general internal error.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GeneralInternalError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "5000000"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "An unknown error occurred."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRefundPreferenceError"
+      ]
+    }
+  ]
+}

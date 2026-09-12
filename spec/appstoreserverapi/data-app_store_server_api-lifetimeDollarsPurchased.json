@@ -1,0 +1,124 @@
+{
+  "id": "data:app_store_server_api:lifetimeDollarsPurchased",
+  "title": "lifetimeDollarsPurchased",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+  "slug": "appstoreserverapi/lifetimedollarspurchased",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A value that indicates the dollar amount of in-app purchases the customer has made in your app, since purchasing the app, across all platforms.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 lifetimeDollarsPurchased",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "Lifetime purchase amount is undeclared. Use this value to avoid providing information for this field.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "Lifetime purchase amount is 0 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "Lifetime purchase amount is between 0.01–49.99 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "Lifetime purchase amount is between 50–99.99 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "Lifetime purchase amount is between 100–499.99 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "5",
+      "abstract": {
+        "text": "Lifetime purchase amount is between 500–999.99 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "6",
+      "abstract": {
+        "text": "Lifetime purchase amount is between 1000–1999.99 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "7",
+      "abstract": {
+        "text": "Lifetime purchase amount is over 2000 USD.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatusV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/userStatus"
+      ]
+    }
+  ]
+}

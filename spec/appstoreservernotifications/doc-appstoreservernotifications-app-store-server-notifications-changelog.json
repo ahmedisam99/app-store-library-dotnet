@@ -1,0 +1,646 @@
+{
+  "id": "doc:appstoreservernotifications/app-store-server-notifications-changelog",
+  "title": "App Store Server Notifications changelog",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog",
+  "slug": "appstoreservernotifications/app-store-server-notifications-changelog",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Learn about changes to the App Store Server Notifications service.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Server Notifications has two versions of notifications. Version 1 notifications and the `App-Store-Server-Notifications-V1` endpoint are deprecated. Instead, implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "To set up your server to receive notifications, see `enabling-app-store-server-notifications`. Use this changelog to learn about feature updates, version information, deprecations, and removals for App Store Server Notifications.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "April 27, 2026",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the following fields to support monthly subscriptions with a 12-month commitment: `TransactionCommitmentInfo` and `billingPlanType` in `JWSTransactionDecodedPayload`; `RenewalCommitmentInfo` and `renewalBillingPlanType` in `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/TransactionCommitmentInfo",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPlanType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/RenewalCommitmentInfo",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalBillingPlanType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "December 10, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `revocationType` and `revocationPercentage` fields to the `JWSTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationPercentage",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "Added the `advancedCommercePriceIncreaseInfo` object, and `advancedCommercePriceIncreaseInfoDependentSKU`, `advancedCommercePriceIncreaseInfoStatus`, `advancedCommercePriceIncreaseInfoPrice`, fields to the `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/advancedCommercePriceIncreaseInfo",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/advancedCommercePriceIncreaseInfoDependentSKU",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/advancedCommercePriceIncreaseInfoStatus",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/advancedCommercePriceIncreaseInfoPrice",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "November 4, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `responseBodyV2DecodedPayload` to include the new payload object, `appData`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appData"
+          ]
+        },
+        {
+          "text": "Added the notification type `RESCIND_CONSENT` to `notificationType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "October 29, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `ONE_TIME` value to `offerDiscountType` to indicate In-App Purchase offer codes.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "June 26, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `ACTIVE_TOKEN_REMINDER` and `CREATED` values to `subtype`, which can appear in notifications with an `EXTERNAL_PURCHASE_TOKEN` `notificationType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        },
+        {
+          "text": "Updated `externalPurchaseToken` to include the new fields `tokenType` and `tokenExpirationDate`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenExpirationDate"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "May 27, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The `ONE_TIME_CHARGE` `notificationType` is now available in the production environment.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "March 24, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the notification types `METADATA_UPDATE` and `MIGRATE` to `notificationType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        },
+        {
+          "text": "Added the `previousOriginalTransactionId` field to the `JWSTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/previousOriginalTransactionId",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "February 21, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` and `JWSTransactionDecodedPayload` to include the new `appTransactionId` and `offerPeriod` fields.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appTransactionId",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerPeriod"
+          ]
+        },
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` to include the `appAccountToken` field.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAccountToken"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "January 17, 2025",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added support for the `AdvancedCommerceAPI`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "July 8, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `JWSRenewalInfoDecodedPayload` to include the new field `eligibleWinBackOfferIds`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/eligibleWinBackOfferIds"
+          ]
+        },
+        {
+          "text": "Added the win-back offer type to `offerType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "June 10, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the notification type `ONE_TIME_CHARGE` to `notificationType`. This notification type is currently available only in the sandbox environment.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        },
+        {
+          "text": "Added the fields `renewalPrice`, `currency`, and `offerDiscountType` to the `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/renewalPrice",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "April 11, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `consumptionRequestReason` to the `data` object.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/consumptionRequestReason",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data"
+          ]
+        },
+        {
+          "text": "The `CONSUMPTION_REQUEST` `notificationType` added notifications for refund requests for auto-renewable subscriptions.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "March 12, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The type of the `price` field changed from `int32` to `int64`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/price"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "February 29, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added a new `notificationType`:  `EXTERNAL_PURCHASE_TOKEN` and a `subtype`: `UNREPORTED`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+          ]
+        },
+        {
+          "text": "Updated the `responseBodyV2DecodedPayload` to include the new payload object, `externalPurchaseToken`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+          ]
+        },
+        {
+          "text": "Added the types `externalPurchaseId` and `tokenCreationDate`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseId",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenCreationDate"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "January 23, 2024",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Changed the notification type the App Store server sends when a customer redeems a subscription offer for an inactive subscription to the `SUBSCRIBED` `notificationType`. The App Store server only sends the `OFFER_REDEEMED` notification type when customers redeem an offer on an active subscription.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "October 26, 2023",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added new properties in the `JWSTransactionDecodedPayload` object: `price`, `currency`, and `offerDiscountType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/price",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "June 5, 2023",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        },
+        {
+          "text": "**Deprecations**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added a new version 2 `notificationType`, `REFUND_REVERSED`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        },
+        {
+          "text": "Added the following new fields in the transaction decoded payload, `JWSTransactionDecodedPayload`: `storefront`, `storefrontId`, and `transactionReason`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefront",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontId",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transactionReason"
+          ]
+        },
+        {
+          "text": "Added the `renewalDate` field in the renewal info decoded payload, `JWSRenewalInfoDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "Added a subscription `status` field in the `data` object of the `responseBodyV2DecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/status",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        },
+        {
+          "text": "The `responseBodyV1` now includes a `deprecation` field.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+          ]
+        },
+        {
+          "text": "The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications are deprecated. Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "January 30, 2023",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added a new notification type for App Store Server Notifications 2 that consists of the `notificationType` value `RENEWAL_EXTENSION` and `subtype` values of `SUMMARY` and `FAILURE`. This notification provides information when you extend the subscription renewal date for all active subscribers, based on a product identifier. For more information, see `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` in the `AppStoreServerAPI`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+          ]
+        },
+        {
+          "text": "Updated the `responseBodyV2DecodedPayload` to include the new `summary` object, which appears in the payload for a `RENEWAL_EXTENSION` notification with a `SUMMARY` `subtype`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "November 7, 2022",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the `PRODUCT_NOT_FOR_SALE` `subtype` for the `EXPIRED` `notificationType`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "June 6, 2022",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "App Store Server Notifications 2 supports sending a `TEST` notification. For more information, see `notificationType`, and the endpoints `Request-a-Test-Notification` and `Get-Test-Notification-Status` in the `AppStoreServerAPI`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Test-Notification-Status",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "May 12, 2022",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "In App Store Server Notifications 2, the notification subtype `ACCEPTED` is now sent when the App Store notifies the customer of an auto-renewable subscription price increase that doesn’t require customer consent. This notification subtype is available only in version 2 notifications. For more information, see `subtype`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "October 21, 2021 - version 2",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`App-Store-Server-Notifications-V2` is available, and version\u00A01 is still supported. For information about the notifications sent in version\u00A02, see `notificationType`, `substate`, and `responseBodyV2`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2"
+          ]
+        },
+        {
+          "text": "For information about the notifications sent in version\u00A01, see `notification_type` and `responseBodyV1` (previously named `responseBody`).",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "March 10, 2021",
+      "paragraphs": [
+        {
+          "text": "**Deprecations**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "In `app-store-server-notifications-version-1`, the following notification type and top-level objects are deprecated and removed: `RENEWAL,latest_receipt`, `latest_receipt_info`, `latest_expired_receipt`, and `latest_expired_receipt_info`. For more information, see `responseBodyV1` and `notification_type`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-version-1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "November 21, 2019 - version 1",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "App Store Server Notifications is available.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/receiving-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+      ]
+    }
+  ]
+}

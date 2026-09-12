@@ -1,0 +1,89 @@
+{
+  "id": "data:app_store_server_api:offerIdentifier",
+  "title": "offerIdentifier",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/offerIdentifier",
+  "slug": "appstoreserverapi/offeridentifier",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The string identifier of a subscription offer that you create in App Store Connect.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string offerIdentifier",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `offerIdentifier` is a string that you provide in App Store Connect when you set up a subscription offer. All offer types (`offerType`) have offer identifiers, except for introductory offers.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType"
+          ]
+        },
+        {
+          "text": "For more information about subscription offers, see `https://developer.apple.com/app-store/subscriptions/#providing-subscription-offers`. For information about configuring the various types of subscription offers in App Store Connect, see:",
+          "refs": [
+            "https://developer.apple.com/app-store/subscriptions/#providing-subscription-offers"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-offer-codes/`",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-offer-codes/"
+          ]
+        },
+        {
+          "text": "`https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-introductory-offers-for-auto-renewable-subscriptions`",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-introductory-offers-for-auto-renewable-subscriptions"
+          ]
+        },
+        {
+          "text": "`https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-promotional-offers-for-auto-renewable-subscriptions`",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-promotional-offers-for-auto-renewable-subscriptions"
+          ]
+        },
+        {
+          "text": "`https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-win-back-offers`",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-win-back-offers"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerPeriod",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,345 @@
+{
+  "id": "data:app_store_server_api:ConsumptionRequestV1",
+  "title": "ConsumptionRequestV1",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/ConsumptionRequestV1",
+  "slug": "appstoreserverapi/consumptionrequestv1",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body containing consumption information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ConsumptionRequestV1",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "accountTenure",
+      "type": "accountTenure",
+      "typeId": "data:app_store_server_api:accountTenure",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** The age of the customer’s account.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAccountToken",
+      "type": "appAccountToken",
+      "typeId": "data:app_store_server_api:appAccountToken",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** The UUID of the in-app user account that completed the in-app purchase transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "consumptionStatus",
+      "type": "consumptionStatus",
+      "typeId": "data:app_store_server_api:consumptionStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates the extent to which the customer consumed the in-app purchase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "customerConsented",
+      "type": "customerConsented",
+      "typeId": "data:app_store_server_api:customerConsented",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A Boolean value of `true` or `false` that indicates whether the customer consented to provide consumption data.\n\nNote: The App Store server rejects requests that have a `customerConsented` value other than `true` by returning an `HTTP 400` error with an `InvalidCustomerConsentedError`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "deliveryStatus",
+      "type": "deliveryStatusV1",
+      "typeId": "data:app_store_server_api:deliveryStatusV1",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates whether the app successfully delivered an in-app purchase that works properly.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lifetimeDollarsPurchased",
+      "type": "lifetimeDollarsPurchased",
+      "typeId": "data:app_store_server_api:lifetimeDollarsPurchased",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates the total amount, in USD, of in-app purchases the customer has made in your app, across all platforms.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lifetimeDollarsRefunded",
+      "type": "lifetimeDollarsRefunded",
+      "typeId": "data:app_store_server_api:lifetimeDollarsRefunded",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates the total amount, in USD, of refunds the customer has received, in your app, across all platforms.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "platform",
+      "type": "platform",
+      "typeId": "data:app_store_server_api:platform",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates the platform on which the customer consumed the in-app purchase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "playTime",
+      "type": "playTime",
+      "typeId": "data:app_store_server_api:playTime",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A value that indicates the amount of time that the customer used the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundPreference",
+      "type": "refundPreferenceV1",
+      "typeId": "data:app_store_server_api:refundPreferenceV1",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A value that indicates your preference, based on your operational logic, as to whether Apple should grant the refund.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sampleContentProvided",
+      "type": "sampleContentProvided",
+      "typeId": "data:app_store_server_api:sampleContentProvided",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** A Boolean value of `true` or `false` that indicates whether you provided, prior to its purchase, a free sample or trial of the content, or information about its functionality.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "userStatus",
+      "type": "userStatus",
+      "typeId": "data:app_store_server_api:userStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**(Required)** The status of the customer’s account.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " For App Store In-App Purchases that don’t use the Advanced Commerce API, use `ConsumptionRequest` with the `Send-Consumption-Information` endpoint instead.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+        ]
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " Use the field value for *undeclared*, where available, if you choose not to provide information.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "> **Important**\n>\n>  For App Store In-App Purchases that don’t use the Advanced Commerce API, use `ConsumptionRequest` with the `Send-Consumption-Information` endpoint instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use `ConsumptionRequestV1` to provide information about the customer’s consumable in-app purchase or auto-renewable subscription when you call the `Send-Consumption-Information-V1` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "To create a valid request and avoid an `HTTP 400 Bad Request` error, `ConsumptionRequestV1` must contain all the required fields with proper data types and valid values. However, you can choose whether or not to provide information for most fields. Most fields have a valid option if you choose not to provide the information.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Use the field value for *undeclared*, where available, if you choose not to provide information.",
+          "refs": []
+        },
+        {
+          "text": "For example, if you choose not to provide information for the `accountTenure` field, set `accountTenure` to `0`. If you choose not to provide information for the `appAccountToken` field, set its value to an empty string. Refer to each field’s documentation for the list of valid values, including the undeclared value where available.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken"
+          ]
+        },
+        {
+          "text": "The App Store server rejects requests that have a `customerConsented` value other than `true` by returning an `HTTP 400` error with an `InvalidCustomerConsentedError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Provide the app account token in a consumption request",
+      "paragraphs": [
+        {
+          "text": "The `ConsumptionRequestV1` request body requires that you set the `appAccountToken` to a valid value of either a UUID or an empty string. Set the `appAccountToken` value to the value you received in the `CONSUMPTION_REQUEST` notification, or, if you choose not to provide this information, set the value to an empty string.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        },
+        {
+          "text": "If you receive a `CONSUMPTION_REQUEST` notification for a transaction, find its associated `appAccountToken` value as follows:",
+          "refs": []
+        },
+        {
+          "text": "The `appAccountToken` value may be an empty string if your app doesn’t use app account tokens.",
+          "refs": []
+        },
+        {
+          "text": "For more information about App Store Server Notifications versions, see `app-store-server-notifications-changelog`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you receive `App-Store-Server-Notifications-V2`, the `appAccountToken` value is in `JWSTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "If you receive `app-store-server-notifications-version-1`, the `appAccountToken` value is in `Latest_receipt_info-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/app-store-server-notifications-version-1",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/unified_receipt/Latest_receipt_info-data.dictionary"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatusV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/userStatus"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Consumption information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+      ]
+    }
+  ]
+}

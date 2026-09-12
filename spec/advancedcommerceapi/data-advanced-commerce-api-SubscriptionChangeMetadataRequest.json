@@ -1,0 +1,115 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionChangeMetadataRequest",
+  "title": "SubscriptionChangeMetadataRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataRequest",
+  "slug": "advancedcommerceapi/subscriptionchangemetadatarequest",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you provide to change the metadata of a subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionChangeMetadataRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "descriptors",
+      "type": "SubscriptionChangeMetadataDescriptors",
+      "typeId": "data:advanced-commerce-api:SubscriptionChangeMetadataDescriptors",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "items",
+      "type": "[SubscriptionChangeMetadataItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionChangeMetadataItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "taxCode",
+      "type": "taxCode",
+      "typeId": "data:advanced-commerce-api:taxCode",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription metadata changes from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataItem"
+      ]
+    }
+  ]
+}

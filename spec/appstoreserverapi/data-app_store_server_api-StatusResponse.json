@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_server_api:StatusResponse",
+  "title": "StatusResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/StatusResponse",
+  "slug": "appstoreserverapi/statusresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains status information for all of a customer’s auto-renewable subscriptions in your app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object StatusResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[SubscriptionGroupIdentifierItem]",
+      "typeId": "data:app_store_server_api:SubscriptionGroupIdentifierItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array of information for auto-renewable subscriptions, including App Store-signed transaction information and App Store-signed renewal information.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:app_store_server_api:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment, sandbox or production, in which the App Store generated the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:app_store_server_api:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Your app’s App Store identifier.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:app_store_server_api:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Your app’s bundle identifier.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Response Objects and Data Types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SubscriptionGroupIdentifierItem",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Subscription status",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses"
+      ]
+    }
+  ]
+}

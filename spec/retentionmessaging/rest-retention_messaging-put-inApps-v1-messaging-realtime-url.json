@@ -1,0 +1,245 @@
+{
+  "id": "rest:retention_messaging:put:inApps-v1-messaging-realtime-url",
+  "title": "Configure Realtime URL",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Configure-Realtime-URL",
+  "slug": "retentionmessaging/configure-realtime-url",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Configures the URL for your Get Retention Message endpoint in the sandbox and production environments.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/realtime/url",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/realtime/url",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "RealtimeUrlRequest",
+    "typeId": "data:retention_messaging:RealtimeUrlRequest",
+    "abstract": {
+      "text": "The request body that includes your endpoint’s URL.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "BadRequestRealtimeUrlError",
+      "typeId": "data:retention_messaging:BadRequestRealtimeUrlError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ForbiddenNoPassingTestError",
+      "typeId": "data:retention_messaging:ForbiddenNoPassingTestError",
+      "abstract": {
+        "text": "Passing a performance test is required before setting a production URL.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The request is invalid because the developer account doesn’t have access to this API. For more information, see `https://developer.apple.com/contact/request/retention-messaging-api/`.",
+        "refs": [
+          "https://developer.apple.com/contact/request/retention-messaging-api/"
+        ]
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Your server needs to pass a performance test before you can configure your `Get Retention Message` endpoint for the production environment. For more information, see `Initiate-Performance-Test`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to configure the URLs for your `Get Retention Message` endpoints in the sandbox and production environments. For more information, including endpoint specifications and server requirements, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Your server needs to pass a performance test before you can configure your `Get Retention Message` endpoint for the production environment. For more information, see `Initiate-Performance-Test`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+          ]
+        },
+        {
+          "text": "As a best practice, use different URLs for the sandbox and production environments.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Configure your URL for the sandbox environment",
+      "paragraphs": [
+        {
+          "text": "To configure your `Get Retention Message` endpoint for the sandbox environment, call `Configure-Realtime-URL` using its sandbox URL. Provide your endpoint’s sandbox URL.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Configure your URL for the production environment",
+      "paragraphs": [
+        {
+          "text": "To configure your `Get Retention Message` endpoint for the production environment, first configure your `Get Retention Message` endpoint for the sandbox environment, then:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Call `Initiate-Performance-Test` to test your endpoint in the sandbox environment.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+          ]
+        },
+        {
+          "text": "Call `Get-Performance-Test-Results` and ensure your server passes the performance test.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Performance-Test-Results"
+          ]
+        },
+        {
+          "text": "To configure your `Get Retention Message` endpoint for the production environment, call `Configure-Realtime-URL` using its production URL. Provide your endpoint’s production URL.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Change your endpoint’s URL",
+      "paragraphs": [
+        {
+          "text": "To change your endpoint’s URL, just call `Configure-Realtime-URL` again. The Retention Messaging API uses your most recent successful configuration. To check the URL you set, call `Get-Realtime-URL`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL"
+          ]
+        },
+        {
+          "text": "To delete—or deconfigure—your endpoint’s URL entirely, call `Delete-Realtime-URL`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": "rest:app_store_server_api:get:v1-notifications-test-{}",
+  "title": "Get Test Notification Status",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-Test-Notification-Status",
+  "slug": "appstoreserverapi/get-test-notification-status",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Check the status of the test App Store server notification sent to your server.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/notifications/test/{testNotificationToken}",
+      "parameters": [
+        "{testNotificationToken}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/notifications/test/{testNotificationToken}",
+      "parameters": [
+        "{testNotificationToken}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "testNotificationToken",
+      "type": "testNotificationToken",
+      "typeId": "data:app_store_server_api:testNotificationToken",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The token that uniquely identifies a test, that you receive when you call `Request-a-Test-Notification`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification"
+        ]
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CheckTestNotificationResponse",
+      "typeId": "data:app_store_server_api:CheckTestNotificationResponse",
+      "abstract": {
+        "text": "Success.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "InvalidTestNotificationTokenError",
+      "typeId": "data:app_store_server_api:InvalidTestNotificationTokenError",
+      "abstract": {
+        "text": "The test notification token is invalid. Use a valid token that you receive in the `SendTestNotificationResponse`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SendTestNotificationResponse"
+        ]
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TestNotificationNotFoundError",
+      "typeId": "data:app_store_server_api:TestNotificationNotFoundError",
+      "abstract": {
+        "text": "The status isn’t yet available or the test notification token wasn’t found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint using the `testNotificationToken` you receive when you call `Request-a-Test-Notification`. You can check the status using the `testNotificationToken` for up to six months. Use the information in the `CheckTestNotificationResponse` to troubleshoot your server if it’s unable to receive App Store Server Notifications successfully.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status/testNotificationToken",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/CheckTestNotificationResponse"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications testing",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SendTestNotificationResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/CheckTestNotificationResponse"
+      ]
+    }
+  ]
+}

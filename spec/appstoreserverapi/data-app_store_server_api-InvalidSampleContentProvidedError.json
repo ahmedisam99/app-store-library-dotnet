@@ -1,0 +1,114 @@
+{
+  "id": "data:app_store_server_api:InvalidSampleContentProvidedError",
+  "title": "InvalidSampleContentProvidedError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidSampleContentProvidedError",
+  "slug": "appstoreserverapi/invalidsamplecontentprovidederror",
+  "introducedAt": "1.9",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the value in the sample content provided field is invalid.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidSampleContentProvidedError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.9.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000041"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.9.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The sample content provided field is invalid."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "See `sampleContentProvided` for valid values.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption request errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageAutoRenewableSubscriptionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageOutOfRangeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAccountTenureError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidConsumptionStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidDeliveryStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsPurchasedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsRefundedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlatformError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlayTimeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidUserStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UndeliveredConsumptionPercentageNonZeroError"
+      ]
+    }
+  ]
+}

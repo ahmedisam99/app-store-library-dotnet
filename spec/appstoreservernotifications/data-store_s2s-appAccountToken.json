@@ -1,0 +1,57 @@
+{
+  "id": "data:store_s2s:appAccountToken",
+  "title": "appAccountToken",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/appAccountToken",
+  "slug": "appstoreservernotifications/appaccounttoken",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A UUID that associates the transaction with a customer on your service.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "uuid appAccountToken",
+    "baseType": "uuid",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When a customer initiates an in-app purchase, your app may create an `appAccountToken(_:)` and send it to the App Store. The App Store returns the same value in `appAccountToken` in the transaction information after the customer completes the purchase.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Product/PurchaseOption/appAccountToken(_:)",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAccountToken"
+          ]
+        },
+        {
+          "text": "If you’re using the `original-api-for-in-app-purchase` and provide a UUID in the `applicationUsername` property, then the `appAccountToken` field contains that value.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/original-api-for-in-app-purchase",
+            "doc://com.apple.documentation/documentation/StoreKit/SKMutablePayment/applicationUsername",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAccountToken"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

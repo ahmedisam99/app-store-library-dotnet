@@ -1,0 +1,86 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionMigrateDescriptors",
+  "title": "SubscriptionMigrateDescriptors",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors",
+  "slug": "advancedcommerceapi/subscriptionmigratedescriptors",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The description and display name of the subscription to migrate to that you manage.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionMigrateDescriptors",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "description",
+      "type": "description",
+      "typeId": "data:advanced-commerce-api:description",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "45",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The description of the subscription to migrate to. This string doesn’t display to customers.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "displayName",
+      "type": "displayName",
+      "typeId": "data:advanced-commerce-api:displayName",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "30",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The display name of the subscription to migrate to. This string displays to customers.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem"
+      ]
+    }
+  ]
+}

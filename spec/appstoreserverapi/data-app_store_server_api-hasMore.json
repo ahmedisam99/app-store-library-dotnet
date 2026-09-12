@@ -1,0 +1,73 @@
+{
+  "id": "data:app_store_server_api:hasMore",
+  "title": "hasMore",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/hasMore",
+  "slug": "appstoreserverapi/hasmore",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A Boolean value indicating whether the App Store has more transaction data.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "boolean hasMore",
+    "baseType": "boolean",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This value is `true` if the App Store has more transactions for the customer. Call the endpoint again, including the `revision` or `paginationToken` query parameter, to get the next set of transactions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/paginationToken"
+          ]
+        },
+        {
+          "text": "If this value is `false`, there aren’t any additional transactions.",
+          "refs": []
+        },
+        {
+          "text": "The `hasMore` value appears in responses to endpoints that provide paginated results, such as `NotificationHistoryResponse`, `HistoryResponse`, and `RefundHistoryResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/HistoryResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionRevokeResponse",
+  "title": "SubscriptionRevokeResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionRevokeResponse",
+  "slug": "advancedcommerceapi/subscriptionrevokeresponse",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for a successful revoke-subscription request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionRevokeResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:advanced-commerce-api:JWSRenewalInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:advanced-commerce-api:JWSTransaction",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Transaction information signed by the App Store, in JWS Compact Serialization format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the response body for the `Revoke-Subscription` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription revocation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionRevokeRequest"
+      ]
+    }
+  ]
+}

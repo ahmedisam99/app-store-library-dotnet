@@ -1,0 +1,148 @@
+{
+  "id": "data:store_s2s:price",
+  "title": "price",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/price",
+  "slug": "appstoreservernotifications/price",
+  "introducedAt": "2.9",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The price, in milliunits, of the In-App Purchase that the system records in the transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int64 price",
+    "baseType": "int64",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+          "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Configured price in App Store Connect",
+        "`price` parameter",
+        "`currency` parameter"
+      ],
+      "rows": [
+        [
+          "$1.99 (U.S. dollar)",
+          "1990",
+          "USD"
+        ],
+        [
+          "KRW 3300 (South Korean won)",
+          "3300000",
+          "KRW"
+        ],
+        [
+          "JPY 300 (Japanese yen)",
+          "300000",
+          "JPY"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This value represents the price, in milliunits of the `currency`, of the In-App Purchase that the system records in the transaction. One unit of the currency equals 1000 milliunits.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency"
+          ]
+        },
+        {
+          "text": "The `price` value reflects all of the following:",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/price"
+          ]
+        },
+        {
+          "text": "The following table shows some examples of the `price` and `currency` parameters based on sample prices you might configure in App Store Connect:",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/price",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/currency"
+          ]
+        },
+        {
+          "text": "| Configured price in App Store Connect | `price` parameter | `currency` parameter |\n| --- | --- | --- |\n| $1.99 (U.S. dollar) | 1990 | USD |\n| KRW 3300 (South Korean won) | 3300000 | KRW |\n| JPY 300 (Japanese yen) | 300000 | JPY |",
+          "refs": []
+        },
+        {
+          "text": "To determine the storefront, use the `storefront` value in the transaction. Don’t use the `currency` value to infer the storefront.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/storefront",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/currency"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+            "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+          ]
+        },
+        {
+          "text": "For more information on how you set prices, see `https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price` and `https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price",
+            "https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The price you configured in App Store Connect, which the system records on the purchase date (`purchaseDate`).",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/purchaseDate"
+          ]
+        },
+        {
+          "text": "The discount from an offer in the `offerIdentifier` field, if the transaction includes an offer.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerIdentifier"
+          ]
+        },
+        {
+          "text": "The `quantity` of a consumable In-App Purchase. The price value shows the total amount of the transaction for the quantity the customer purchased.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/quantity"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Product price and currency",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "data:app_store_server_api:InvalidEmptyStorefrontCountryCodeListError",
+  "title": "InvalidEmptyStorefrontCountryCodeListError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+  "slug": "appstoreserverapi/invalidemptystorefrontcountrycodelisterror",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates a required storefront country code is empty.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidEmptyStorefrontCountryCodeListError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000027"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.7.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. If provided, the list of storefront country codes must not be empty."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This error applies to the `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` endpoint. If your request applies to all storefronts, omit the `storefrontCountryCodes` list from the `MassExtendRenewalDateRequest` object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateRequest"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRefundPreferenceError"
+      ]
+    }
+  ]
+}

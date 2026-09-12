@@ -1,0 +1,312 @@
+{
+  "id": "rest:app_store_server_api:put:v1-transactions-consumption-{}",
+  "title": "Send Consumption Information V1",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+  "slug": "appstoreserverapi/send-consumption-information-v1",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Send consumption information about a consumable In-App Purchase or auto-renewable subscription to the App Store after your server receives a consumption request notification.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/transactions/consumption/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/transactions/consumption/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "transactionId",
+      "typeId": "data:app_store_server_api:transactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier for which you’re providing consumption information. You receive this identifier in the `CONSUMPTION_REQUEST` notification the App Store sends to your server’s `App-Store-Server-Notifications-V2` endpoint.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+        ]
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "ConsumptionRequestV1",
+    "typeId": "data:app_store_server_api:ConsumptionRequestV1",
+    "abstract": {
+      "text": "The request body.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 202,
+      "reason": "Accepted",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The App Store server received the consumption information.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidAccountTenureError | InvalidAppAccountTokenError | InvalidConsumptionStatusError | InvalidCustomerConsentedError | InvalidDeliveryStatusError | InvalidLifetimeDollarsPurchasedError | InvalidLifetimeDollarsRefundedError | InvalidPlatformError | InvalidPlayTimeError | InvalidSampleContentProvidedError | InvalidUserStatusError | InvalidRefundPreferenceError | InvalidTransactionTypeNotSupportedError)",
+      "typeId": "data:app_store_server_api:InvalidAccountTenureError|data:app_store_server_api:InvalidAppAccountTokenError|data:app_store_server_api:InvalidConsumptionStatusError|data:app_store_server_api:InvalidCustomerConsentedError|data:app_store_server_api:InvalidDeliveryStatusError|data:app_store_server_api:InvalidLifetimeDollarsPurchasedError|data:app_store_server_api:InvalidLifetimeDollarsRefundedError|data:app_store_server_api:InvalidPlatformError|data:app_store_server_api:InvalidPlayTimeError|data:app_store_server_api:InvalidSampleContentProvidedError|data:app_store_server_api:InvalidUserStatusError|data:app_store_server_api:InvalidRefundPreferenceError|data:app_store_server_api:InvalidTransactionTypeNotSupportedError",
+      "abstract": {
+        "text": "Invalid request. See the error code for more information. If there’s no error code, the request is malformed.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:app_store_server_api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "The transaction identifier wasn’t found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:app_store_server_api:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " For App Store In-App Purchases that don’t use the Advanced Commerce API, use `Send-Consumption-Information` instead.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+        ]
+      }
+    },
+    {
+      "style": "important",
+      "prose": {
+        "text": " Don’t use the `AppTrackingTransparency` prompt to obtain consent for sharing data with Apple through the `Send-Consumption-Information-V1` API. Obtaining consent needed to use the `Send-Consumption-Information-V1` endpoint is unrelated to `AppTrackingTransparency`. These two features are distinct and unrelated.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppTrackingTransparency",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "> **Important**\n>\n>  For App Store In-App Purchases that don’t use the Advanced Commerce API, use `Send-Consumption-Information` instead.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store uses a variety of factors to determine if a refund request is approved or denied. To help inform and improve the refund process, you can send information about a customer’s consumption of the In-App Purchase to the App Store when the customer requests a refund. The App Store uses the consumption information you provide to inform its refund decisions.",
+          "refs": []
+        },
+        {
+          "text": "When a customer initiates a refund request for a consumable In-App Purchase or auto-renewable subscription, the App Store sends a `CONSUMPTION_REQUEST` `notificationType` to your server through your `App-Store-Server-Notifications-V2` endpoint. If the customer provided consent, respond by calling this API and sending the consumption data in the `ConsumptionRequestV1` to the App Store. If not, don’t respond to the `CONSUMPTION_REQUEST` notification.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        },
+        {
+          "text": "Respond within 12 hours of receiving the `CONSUMPTION_REQUEST` notification.",
+          "refs": []
+        },
+        {
+          "text": "For information about configuring your server to receive App Store server notifications, see `enabling-app-store-server-notifications`. For information about initiating refund requests in an app, see any of the refund request methods, including `beginRefundRequest(in:)-9k0pj`, `beginRefundRequest(for:in:)-65tph`, `beginRefundRequest(in:)-63bvd`, and `beginRefundRequest(for:in:)-9mscy`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/beginRefundRequest(in:)-9k0pj",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/beginRefundRequest(for:in:)-65tph",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/beginRefundRequest(in:)-63bvd",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/beginRefundRequest(for:in:)-9mscy"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Obtain valid consent",
+      "paragraphs": [
+        {
+          "text": "You must obtain valid consent from the customer before sharing their personal data with Apple in the `Send-Consumption-Information-V1` API. You, the developer, are solely responsible for obtaining valid consent because you’re sharing with Apple the data that you collected from the customer.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "The requirements to obtain valid consent vary under applicable law, and Apple can’t advise you on specific ways to obtain valid consent. Developers are responsible for determining specific compliance with applicable laws. If your app violates Apple’s guidelines, App Review will reach out and work with you to address any concerns.",
+          "refs": []
+        },
+        {
+          "text": "Here are some general guidelines to keep in mind for obtaining valid consent:",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Don’t use the `AppTrackingTransparency` prompt to obtain consent for sharing data with Apple through the `Send-Consumption-Information-V1` API. Obtaining consent needed to use the `Send-Consumption-Information-V1` endpoint is unrelated to `AppTrackingTransparency`. These two features are distinct and unrelated.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppTrackingTransparency",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        },
+        {
+          "text": "The data you share with Apple through the `Send-Consumption-Information-V1` API isn’t used for tracking. You must separately obtain consent from customers when sharing data with Apple using the `Send-Consumption-Information-V1` API.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Valid consent is freely given, specific, informed, and unambiguous as to a customer’s wishes with respect to their personal data.",
+          "refs": []
+        },
+        {
+          "text": "As an example, when requesting consent, you may include: clear language that conveys to a customer that you will provide Apple with some of their personal data to assist with reviewing the customer’s app refund requests; clear language that conveys to customers that they can withdraw their consent at any time; and a method for customers to give their affirmative consent.",
+          "refs": []
+        },
+        {
+          "text": "Opt-in consent is a higher standard for consent than offering an opt-out. Generally, if you don’t offer an individual the opportunity to opt out, it can be difficult to show that consent is freely given.",
+          "refs": []
+        },
+        {
+          "text": "After you’ve obtained consent, if there is a change in circumstances causing you to conclude that the customer’s consent is no longer valid — for example, due to a change in the way you use or share data, or if the customer withdraws consent for this purpose — you should update the `customerConsented` flag and not send any further data from that customer.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Disclose data usage",
+      "paragraphs": [
+        {
+          "text": "If you adopt the `Send-Consumption-Information-V1` API, answer the app privacy questions to disclose in your labels any data you collect from your customers and what you’re using it for. For more information about app privacy labels, see `https://developer.apple.com/app-store/app-privacy-details/`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+            "https://developer.apple.com/app-store/app-privacy-details/"
+          ]
+        },
+        {
+          "text": "Apple uses and protects the data you share through the `Send-Consumption-Information-V1` API in accordance with `https://www.apple.com/legal/privacy/en-ww/`. For additional information about how Apple protects data, see `https://support.apple.com/guide/security/welcome/web`. Apple retains the data you provide through the `Send-Consumption-Information-V1` API for the period necessary to fulfill the purpose for which the data was collected, which is to improve the refund process by obtaining data that assists with reviewing the customer’s refund request. Apple may share the data you provide through the `Send-Consumption-Information-V1` API with service providers who act on our behalf, our partners, or others at your direction. Apple will not share the data with third parties for their own marketing purposes. For more information, see `https://www.apple.com/legal/privacy/data/en/app-store/`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information-V1",
+            "https://www.apple.com/legal/privacy/en-ww/",
+            "https://support.apple.com/guide/security/welcome/web",
+            "https://www.apple.com/legal/privacy/data/en/app-store/"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle requests to access or delete consumption data",
+      "paragraphs": [
+        {
+          "text": "If your customers request access to or deletion of their personal data related to consumption information, inform them that they may submit requests directly to Apple by visiting `https://privacy.apple.com`. If your app stores data in CloudKit on behalf of your customers, see `responding-to-requests-to-delete-data`, `providing-user-access-to-cloudkit-data`, and `changing-access-controls-on-user-data` for more information.",
+          "refs": [
+            "https://privacy.apple.com",
+            "doc://com.apple.documentation/documentation/CloudKit/responding-to-requests-to-delete-data",
+            "doc://com.apple.documentation/documentation/CloudKit/providing-user-access-to-cloudkit-data",
+            "doc://com.apple.documentation/documentation/CloudKit/changing-access-controls-on-user-data"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+      ]
+    }
+  ]
+}

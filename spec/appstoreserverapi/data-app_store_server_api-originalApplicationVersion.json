@@ -1,0 +1,67 @@
+{
+  "id": "data:app_store_server_api:originalApplicationVersion",
+  "title": "originalApplicationVersion",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/originalApplicationVersion",
+  "slug": "appstoreserverapi/originalapplicationversion",
+  "introducedAt": "1.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The app version that the customer originally purchased from the App Store.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string originalApplicationVersion",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this value to determine which app version the customer first purchased or downloaded. This value remains constant and doesn’t change when the customer upgrades the app.",
+          "refs": []
+        },
+        {
+          "text": "The string value contains the original value of the `CFBundleShortVersionString` for apps running in macOS, and the original value of the `CFBundleVersion` for apps running on all other platforms.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/BundleResources/Information-Property-List/CFBundleShortVersionString",
+            "doc://com.apple.documentation/documentation/BundleResources/Information-Property-List/CFBundleVersion"
+          ]
+        },
+        {
+          "text": "In the sandbox testing environment, the `originalApplicationVersion` value is always 1.0.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPlatform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/preorderDate"
+      ]
+    }
+  ]
+}

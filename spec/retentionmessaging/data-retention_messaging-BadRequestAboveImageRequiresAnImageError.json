@@ -1,0 +1,93 @@
+{
+  "id": "data:retention_messaging:BadRequestAboveImageRequiresAnImageError",
+  "title": "BadRequestAboveImageRequiresAnImageError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/BadRequestAboveImageRequiresAnImageError",
+  "slug": "retentionmessaging/badrequestaboveimagerequiresanimageerror",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates that no image object is included, but the request indicates that the header should be placed above the image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BadRequestAboveImageRequiresAnImageError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000224"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. ABOVE_IMAGE requires an image to be provided."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors for bad requests",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestAppTransactionIdForUnsupportedEndpointError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestBulletPointTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestImageSizeError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestRealtimeUrlError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTooManyBulletPointsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdNotOtidError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdNotSupportedForFamilySharingError"
+      ]
+    }
+  ]
+}

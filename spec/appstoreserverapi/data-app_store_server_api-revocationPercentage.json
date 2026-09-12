@@ -1,0 +1,101 @@
+{
+  "id": "data:app_store_server_api:revocationPercentage",
+  "title": "revocationPercentage",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/revocationPercentage",
+  "slug": "appstoreserverapi/revocationpercentage",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The percentage, in milliunits, of the transaction that the App Store has refunded or revoked.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 revocationPercentage",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximum",
+      "value": "100000",
+      "values": null
+    },
+    {
+      "kind": "minimum",
+      "value": "0",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Percentage",
+        "Integer equivalent, in milliunits"
+      ],
+      "rows": [
+        [
+          "67.932%",
+          "67932"
+        ],
+        [
+          "0.015%",
+          "15"
+        ],
+        [
+          "40%",
+          "40000"
+        ],
+        [
+          "100%",
+          "100000"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The revocation percentage value is rounded to three decimal places of precision, and is expressed as an integer, in milliunits. This field is present in the `JWSTransactionDecodedPayload` for refunded transactions. This field doesn’t appear if the refund is reversed.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "The following table shows several examples of revocation percentages, and their milliunit equivalents:",
+          "refs": []
+        },
+        {
+          "text": "| Percentage | Integer equivalent, in milliunits |\n| --- | --- |\n| 67.932% | 67932 |\n| 0.015% | 15 |\n| 40% | 40000 |\n| 100% | 100000 |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Revocation",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationReason",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationType"
+      ]
+    }
+  ]
+}

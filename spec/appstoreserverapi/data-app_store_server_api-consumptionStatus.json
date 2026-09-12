@@ -1,0 +1,109 @@
+{
+  "id": "data:app_store_server_api:consumptionStatus",
+  "title": "consumptionStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/consumptionStatus",
+  "slug": "appstoreserverapi/consumptionstatus",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A value that indicates the extent to which the customer consumed the In-App Purchase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 consumptionStatus",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "The consumption status is undeclared. Use this value to avoid providing information for this field.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The In-App Purchase is not consumed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "The In-App Purchase is partially consumed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The In-App Purchase is fully consumed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Some examples of consumption status include the following scenarios:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A customer purchases a “bag of 100 coins” in your app and spends all 100 coins. The In-App Purchase is considered fully consumed.",
+          "refs": []
+        },
+        {
+          "text": "If your app has an exchange platform that has bartering, or if your app transferred an In-App Purchase from one account to another customer’s account, the In-App Purchase is considered fully consumed.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatusV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/userStatus"
+      ]
+    }
+  ]
+}

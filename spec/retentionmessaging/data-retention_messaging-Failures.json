@@ -1,0 +1,65 @@
+{
+  "id": "data:retention_messaging:Failures",
+  "title": "Failures",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Failures",
+  "slug": "retentionmessaging/failures",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A map of server-to-server notification failure reasons and counts that represent the number of failures during a performance test.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object Failures",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "Any Key",
+      "type": "int32",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A string that describes the success or error the server encountered as it attempted to send a notification to your server as part of a performance test. For possible keys, see `sendAttemptResult`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/sendAttemptResult"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestConfig",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponseTimes",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestStatus",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/sendAttemptResult",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestId"
+      ]
+    }
+  ]
+}

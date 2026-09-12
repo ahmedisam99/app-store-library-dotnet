@@ -1,0 +1,130 @@
+{
+  "id": "data:retention_messaging:RealtimeResponseBody",
+  "title": "RealtimeResponseBody",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/RealtimeResponseBody",
+  "slug": "retentionmessaging/realtimeresponsebody",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response you provide to choose, in real time, a retention message the system displays to the customer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RealtimeResponseBody",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "message",
+      "type": "message",
+      "typeId": "data:retention_messaging:message",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A retention message that’s text-based and can include an optional image. If you supply this field, don’t include the other fields.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "alternateProduct",
+      "type": "alternateProduct",
+      "typeId": "data:retention_messaging:alternateProduct",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A retention message with a switch-plan option. If you supply this field, don’t include the other fields.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "promotionalOffer",
+      "type": "promotionalOffer",
+      "typeId": "data:retention_messaging:promotionalOffer",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A retention message that includes a promotional offer. If you supply this field, don’t include the other fields.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "advancedCommerceInfo",
+      "type": "advancedCommerceInfo",
+      "typeId": "data:retention_messaging:advancedCommerceInfo",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A retention offer or switch plan option. If you pass this object for a subscription that’s not an Advanced Commerce subscription, the framework treats the request as invalid and ignores the response. If you supply this field, don’t include the other fields.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Return this response when the App Store calls your `Get Retention Message` endpoint.",
+          "refs": []
+        },
+        {
+          "text": "In this response, you select a retention message in real time for the system to display to your customer. Choose a message based on your business needs and by considering the information you receive in `RealtimeRequestBody`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "All messages and images need to be in an `APPROVED` state for the system to display them to customers. For more information, see `setting-up-retention-messages`, and  `responding-to-realtime-retention-messaging-requests`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests"
+          ]
+        },
+        {
+          "text": "For more information on the Advanced Commerce API, see `AdvancedCommerceAPI`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging responses",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+      ]
+    }
+  ]
+}

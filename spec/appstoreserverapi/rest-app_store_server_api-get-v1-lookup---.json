@@ -1,0 +1,174 @@
+{
+  "id": "rest:app_store_server_api:get:v1-lookup-{}",
+  "title": "Look Up Order ID",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Look-Up-Order-ID",
+  "slug": "appstoreserverapi/look-up-order-id",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a customer’s in-app purchases from a receipt using the order ID.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/lookup/{orderId}",
+      "parameters": [
+        "{orderId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "orderId",
+      "type": "orderId",
+      "typeId": "data:app_store_server_api:orderId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The order ID for in-app purchases that belong to the customer.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "OrderLookupResponse",
+      "typeId": "data:app_store_server_api:OrderLookupResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "GeneralBadRequestError",
+      "typeId": "data:app_store_server_api:GeneralBadRequestError",
+      "abstract": {
+        "text": "The request is invalid and can’t be accepted.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " This endpoint isn’t available in the sandbox environment.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Important**\n>\n>  This endpoint isn’t available in the sandbox environment.",
+          "refs": []
+        },
+        {
+          "text": "Call this endpoint to identify and validate a customer’s in-app purchases, based on their order ID.",
+          "refs": []
+        },
+        {
+          "text": "When a customer contacts you for support, ask for their order ID and use that value to call this endpoint. Customers can retrieve their order IDs from their purchase history on the App Store; for more information, see `https://support.apple.com/en-gb/HT204088`. The App Store also sends customers an email receipt with an order ID each time they make in-app purchases.",
+          "refs": [
+            "https://support.apple.com/en-gb/HT204088"
+          ]
+        },
+        {
+          "text": "A successful response with an `OrderLookupStatus` value of `0` contains an array of one or more signed transactions for the in-app purchase based on the order ID. Use the decoded transaction, `JWSTransactionDecodedPayload`, to identify information such as the `productId` and `purchaseDate` that you can use to provide customer support.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OrderLookupStatus",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "A response with an `OrderLookupStatus` value of `1` doesn’t contain a signed transactions array.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OrderLookupStatus"
+          ]
+        },
+        {
+          "text": "The App Store Server API returns information based on the customer’s in-app purchase history regardless of whether the customer installed, removed, or reinstalled the app on their devices.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Request data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/orderId"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Order ID lookup",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/orderId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OrderLookupResponse"
+      ]
+    }
+  ]
+}

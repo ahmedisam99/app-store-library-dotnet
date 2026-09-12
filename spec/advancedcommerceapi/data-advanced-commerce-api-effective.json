@@ -1,0 +1,74 @@
+{
+  "id": "data:advanced-commerce-api:effective",
+  "title": "effective",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/effective",
+  "slug": "advancedcommerceapi/effective",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string value that indicates when a requested change to an auto-renewable subscription goes into effect.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string effective",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "IMMEDIATELY",
+      "abstract": {
+        "text": "The requested change goes into effect immediately.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "NEXT_BILL_CYCLE",
+      "abstract": {
+        "text": "The requested change goes into effect at the start of the next billing cycle.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/description",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/dependentSKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/proratedPrice",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/retainBillingCycle",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundAmount",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundReason",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundRiskingPreference",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/storefront",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxCode",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/targetProductId"
+      ]
+    }
+  ]
+}

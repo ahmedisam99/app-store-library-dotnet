@@ -1,0 +1,91 @@
+{
+  "id": "data:retention_messaging:imageSize",
+  "title": "imageSize",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/imageSize",
+  "slug": "retentionmessaging/imagesize",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The size of an image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string imageSize",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "default",
+      "value": "FULL_SIZE",
+      "values": null
+    }
+  ],
+  "values": [
+    {
+      "name": "FULL_SIZE",
+      "abstract": {
+        "text": "3840 pixels in width, and from 160 to 2160 pixels in height, inclusive.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "BULLET_POINT",
+      "abstract": {
+        "text": "1024 by 1024 pixels, to use for bullet points only.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Specify the `FULL_SIZE` image size when you upload an image to appear above the message body.",
+          "refs": []
+        },
+        {
+          "text": "Specify the `BULLET_POINT` size when you upload an image to use as a bullet point icon.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `Upload-Image` and `BulletPoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Image",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Images",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/altText"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "id": "rest:app_store_server_api:post:v1-notifications-test",
+  "title": "Request a Test Notification",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+  "slug": "appstoreserverapi/request-a-test-notification",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Ask App Store Server Notifications to send a test notification to your server.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/notifications/test",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/notifications/test",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SendTestNotificationResponse",
+      "typeId": "data:app_store_server_api:SendTestNotificationResponse",
+      "abstract": {
+        "text": "Successfully received your request to send a test notification.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ServerNotificationURLNotFoundError",
+      "typeId": "data:app_store_server_api:ServerNotificationURLNotFoundError",
+      "abstract": {
+        "text": "An error that indicates that the App Store server couldn’t find a notifications URL for your app in this environment. For more information, see `ServerNotificationURLNotFoundError`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ServerNotificationURLNotFoundError"
+        ]
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to test if your server is receiving `AppStoreServerNotifications` at the URLs that you configured in App Store Connect. The `Request-a-Test-Notification` endpoint prompts the App Store server to send your server a notification with the `TEST` `notificationType`. The App Store server sends the `TEST` notification to your production URL if you call this endpoint’s production URL; it sends it to your sandbox URL if you call this endpoint’s sandbox URL.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationType"
+          ]
+        },
+        {
+          "text": "Although `TEST` is a version 2 notification, you can call this endpoint regardless of whether you configured your App Store Server Notifications URL in App Store Connect for version 1 or version 2. For more information about the configuration and enabling notifications, see `https://help.apple.com/app-store-connect/#/dev0067a330b` and `enabling-app-store-server-notifications`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/dev0067a330b",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "This endpoint responds with a `testNotificationToken` in `SendTestNotificationResponse`. To learn the result that the App Store server recorded when it attempted to send your server the `TEST` notification, call the `Get-Test-Notification-Status` endpoint with the `testNotificationToken`. Use the status information to troubleshoot your server if it’s unable to receive the `TEST` notification.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SendTestNotificationResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications testing",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SendTestNotificationResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/CheckTestNotificationResponse"
+      ]
+    }
+  ]
+}

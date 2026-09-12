@@ -1,0 +1,74 @@
+{
+  "id": "data:app_store_server_api:revision",
+  "title": "revision",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/revision",
+  "slug": "appstoreserverapi/revision",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A token you use in a query to request the next set of transactions for the customer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string revision",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store server returns a `revision` value in each response to certain endpoints, such as `Get-Transaction-History` and `Get-Refund-History`. Use the `revision` value to get a set of paginated transactions.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
+          ]
+        },
+        {
+          "text": "The first time you call an endpoint, you don’t include a `revision` query parameter, and the API returns the customer’s first set of up to 20 transactions. If there are more transactions, the `hasMore` value in the response is `true`. To get the next set of transactions, use the `revision` value from the response in your subsequent call to the endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision"
+          ]
+        },
+        {
+          "text": "Consider storing the `revision` value from the last page of transactions, when the `hasMore` value is `false`, with other customer account information.  Use it the next time you call the endpoint for the same customer, to avoid fetching transactions you’ve already received. For the `Get-Transaction-History` endpoint, store the `revision` value only if you request the transaction history in `ASCENDING` sort order.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ]
+}

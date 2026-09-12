@@ -1,0 +1,53 @@
+{
+  "id": "data:app_store_server_api:priceIncreaseStatus",
+  "title": "priceIncreaseStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/priceIncreaseStatus",
+  "slug": "appstoreserverapi/priceincreasestatus",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The status that indicates whether an auto-renewable subscription is subject to a price increase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 priceIncreaseStatus",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "The customer hasn’t yet responded to an auto-renewable subscription price increase that requires customer consent.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The customer consented to an auto-renewable subscription price increase that requires customer consent, or the App Store has notified the customer of an auto-renewable subscription price increase that doesn’t require consent.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

@@ -1,0 +1,220 @@
+{
+  "id": "AdvancedCommerceAPI",
+  "title": "Advanced Commerce API",
+  "kind": "module",
+  "role": "collection",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI",
+  "slug": "advancedcommerceapi",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Support In-App Purchases through the App Store for exceptionally large catalogs of custom one-time purchases, subscriptions, and subscriptions with optional add-ons.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "To learn more about eligibility and apply for access to the Advanced Commerce API, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. For more about eligibility and to apply for access to the Mini Apps Partner Program, see `https://developer.apple.com/programs/mini-apps-partner/`.",
+        "refs": [
+          "https://developer.apple.com/in-app-purchase/advanced-commerce-api/",
+          "https://developer.apple.com/programs/mini-apps-partner/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this framework to offer an exceptionally large catalog of one-time purchases, subscriptions, and subscriptions with optional add-ons while using the App Store commerce system. Apps that use this API host and manage their own catalog of In-App Purchases, or SKUs. The App Store commerce system handles the end-to-end payment processing, global distribution, tax support, and customer service.",
+          "refs": []
+        },
+        {
+          "text": "You can use the Advanced Commerce API and the StoreKit `in-app-purchase` API in the same app. Both APIs use the App Store commerce system, including the same signed JWS transactions and JWS renewal info. For products that you offer using the In-App Purchase API, you set up product identifiers in App Store Connect. For products that you offer using the Advanced Commerce API, you host and manage your own catalog of SKUs and add product details dynamically at runtime. For complete setup information, see `setting-up-your-project-for-advanced-commerce`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/in-app-purchase",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce"
+          ]
+        },
+        {
+          "text": "Advanced Commerce API features are available through requests you make using StoreKit in your app and endpoint requests from your server. To authorize these requests, you generate JSON Web Tokens (JWTs). The App Store Server Library provides a client that makes it easier to create JWTs to authorize calls. For more information about the library, see `simplifying-your-implementation-by-using-the-app-store-server-library`. For more information about authorizing calls, see  `authorizing-server-calls`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+          ]
+        },
+        {
+          "text": "Your server must support the Transport Layer Security (TLS) protocol 1.2 or later to call the Advanced Commerce API.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n> To learn more about eligibility and apply for access to the Advanced Commerce API, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. For more about eligibility and to apply for access to the Mini Apps Partner Program, see `https://developer.apple.com/programs/mini-apps-partner/`.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/advanced-commerce-api/",
+            "https://developer.apple.com/programs/mini-apps-partner/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setupmanagesubscriptions",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/changelog"
+      ]
+    },
+    {
+      "title": "API authorization and rate limits",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+      ]
+    },
+    {
+      "title": "Generic product IDs and SKUs",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-generic-product-identifiers",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-your-purchases",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-skus-for-the-mini-app-partner-program"
+      ]
+    },
+    {
+      "title": "Tax codes and pricing",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/prices",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxcodes",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/handling-subscription-price-changes"
+      ]
+    },
+    {
+      "title": "In-app API requests",
+      "members": [
+        "doc://com.apple.documentation/documentation/StoreKit/sending-advanced-commerce-api-requests-from-your-app",
+        "doc://com.apple.documentation/documentation/StoreKit/generating-jws-to-sign-app-store-requests"
+      ]
+    },
+    {
+      "title": "One-time charge creation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeItem"
+      ]
+    },
+    {
+      "title": "Subscription creation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateItem"
+      ]
+    },
+    {
+      "title": "Subscription modification in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyAddItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyRemoveItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyPeriodChange"
+      ]
+    },
+    {
+      "title": "Subscription reactivation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionReactivateInAppRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionReactivateItem"
+      ]
+    },
+    {
+      "title": "Subscription price change from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeResponse"
+      ]
+    },
+    {
+      "title": "Subscription cancellation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCancelRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCancelResponse"
+      ]
+    },
+    {
+      "title": "Subscription revocation from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionRevokeRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionRevokeResponse"
+      ]
+    },
+    {
+      "title": "Refund request from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundItem"
+      ]
+    },
+    {
+      "title": "Subscription metadata changes from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataItem"
+      ]
+    },
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/datatypes"
+      ]
+    },
+    {
+      "title": "Signed transaction information",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/JWSRenewalInfo",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/JWSTransaction"
+      ]
+    },
+    {
+      "title": "Error handling",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/errorcodes"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

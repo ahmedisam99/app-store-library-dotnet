@@ -1,0 +1,78 @@
+{
+  "id": "data:app_store_server_api:sendAttemptItem",
+  "title": "sendAttemptItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/sendAttemptItem",
+  "slug": "appstoreserverapi/sendattemptitem",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The success or error information and the date the App Store server records when it attempts to send a server notification to your server.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object sendAttemptItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attemptDate",
+      "type": "attemptDate",
+      "typeId": "data:app_store_server_api:attemptDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The date the App Store server attempts to send the notification.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sendAttemptResult",
+      "type": "sendAttemptResult",
+      "typeId": "data:app_store_server_api:sendAttemptResult",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The success or error information the App Store server records when it attempts to send an App Store server notification to your server.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/attemptDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptResult"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/signedPayload"
+      ]
+    }
+  ]
+}

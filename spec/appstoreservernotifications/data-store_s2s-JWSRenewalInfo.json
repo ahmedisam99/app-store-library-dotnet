@@ -1,0 +1,74 @@
+{
+  "id": "data:store_s2s:JWSRenewalInfo",
+  "title": "JWSRenewalInfo",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/JWSRenewalInfo",
+  "slug": "appstoreservernotifications/jwsrenewalinfo",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string JWSRenewalInfo",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `JWSRenewalInfo` type is a string of three Base64 URL-encoded components, separated by a period. The string contains the JWS representation of the subscription renewal information, signed by the App Store according to the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfo",
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The three components in the string are a header, a payload, and a signature, in that order.",
+          "refs": []
+        },
+        {
+          "text": "To read the subscription renewal information, Base64 URL-decode the payload. Use a `JWSRenewalInfoDecodedPayload` object to read the payload information.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "To read the header, Base64 URL-decode it and use a `JWSDecodedHeader` object to access the information. Use the information in the header to verify the signature.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSDecodedHeader"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "JWS transaction and renewal info",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransaction",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+      ]
+    }
+  ]
+}

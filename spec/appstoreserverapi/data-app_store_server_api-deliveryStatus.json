@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_server_api:deliveryStatus",
+  "title": "deliveryStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/deliveryStatus",
+  "slug": "appstoreserverapi/deliverystatus",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A value that indicates whether the app successfully delivered an In-App Purchase that works properly.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string deliveryStatus",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "DELIVERED",
+      "abstract": {
+        "text": "The app delivered the In-App Purchase and it’s working properly.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNDELIVERED_QUALITY_ISSUE",
+      "abstract": {
+        "text": "The app didn’t deliver the In-App Purchase due to a quality issue.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNDELIVERED_WRONG_ITEM",
+      "abstract": {
+        "text": "The app delivered the wrong item.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNDELIVERED_SERVER_OUTAGE",
+      "abstract": {
+        "text": "The app didn’t deliver the In-App Purchase due to a server outage.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNDELIVERED_OTHER",
+      "abstract": {
+        "text": "The app didn’t deliver the In-App Purchase for other reasons.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "If the delivery status isn’t `DELIVERED`, set the `consumptionPercentage` to `0`; otherwise, the request fails with an error.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use these delivery status values in the `ConsumptionRequest` request body.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> If the delivery status isn’t `DELIVERED`, set the `consumptionPercentage` to `0`; otherwise, the request fails with an error.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreference",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ]
+}

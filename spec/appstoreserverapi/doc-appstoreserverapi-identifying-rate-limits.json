@@ -1,0 +1,172 @@
+{
+  "id": "doc:appstoreserverapi/identifying-rate-limits",
+  "title": "Identifying rate limits",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/identifying-rate-limits",
+  "slug": "appstoreserverapi/identifying-rate-limits",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Recognize the rate limits that apply to App Store Server API endpoints and handle them in your code.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Endpoint",
+        "Rate limit (per second)"
+      ],
+      "rows": [
+        [
+          "`Finish-Transaction`",
+          "50"
+        ],
+        [
+          "`Get-App-Transaction-Info`",
+          "50"
+        ],
+        [
+          "`Get-Transaction-Info`",
+          "50"
+        ],
+        [
+          "`Get-Transaction-History`",
+          "50"
+        ],
+        [
+          "`Get-Transaction-History-V1`",
+          "50"
+        ],
+        [
+          "`Get-All-Subscription-Statuses`",
+          "50"
+        ],
+        [
+          "`Send-Consumption-Information`",
+          "50"
+        ],
+        [
+          "`Send-Consumption-Information-V1`",
+          "50"
+        ],
+        [
+          "`Get-Notification-History`",
+          "50"
+        ],
+        [
+          "`Extend-a-Subscription-Renewal-Date`",
+          "20"
+        ],
+        [
+          "`Set-App-Account-Token`",
+          "20"
+        ],
+        [
+          "`Look-Up-Order-ID`",
+          "10"
+        ],
+        [
+          "`Get-Refund-History`",
+          "10"
+        ],
+        [
+          "`Get-Refund-History-V1`",
+          "10"
+        ],
+        [
+          "`Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers`",
+          "1"
+        ],
+        [
+          "`Request-a-Test-Notification`",
+          "1"
+        ],
+        [
+          "`Get-Test-Notification-Status`",
+          "1"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store Server API limits the number of requests that you can submit to each endpoint within a specified timespan. The request limits apply per app.",
+          "refs": []
+        },
+        {
+          "text": "The following table lists the rate limits for each endpoint in the production environment, expressed in requests per second. The system enforces rate limits on an hourly basis.",
+          "refs": []
+        },
+        {
+          "text": "| Endpoint | Rate limit (per second) |\n| --- | --- |\n| `Finish-Transaction` | 50 |\n| `Get-App-Transaction-Info` | 50 |\n| `Get-Transaction-Info` | 50 |\n| `Get-Transaction-History` | 50 |\n| `Get-Transaction-History-V1` | 50 |\n| `Get-All-Subscription-Statuses` | 50 |\n| `Send-Consumption-Information` | 50 |\n| `Send-Consumption-Information-V1` | 50 |\n| `Get-Notification-History` | 50 |\n| `Extend-a-Subscription-Renewal-Date` | 20 |\n| `Set-App-Account-Token` | 20 |\n| `Look-Up-Order-ID` | 10 |\n| `Get-Refund-History` | 10 |\n| `Get-Refund-History-V1` | 10 |\n| `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` | 1 |\n| `Request-a-Test-Notification` | 1 |\n| `Get-Test-Notification-Status` | 1 |",
+          "refs": []
+        },
+        {
+          "text": "The rate limits in the sandbox environment are 10% of the limits in the table above.",
+          "refs": []
+        },
+        {
+          "text": "The App Store server may make adjustments to reduce or increase these rate limits as needed at any time.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle exceeded rate limits gracefully",
+      "paragraphs": [
+        {
+          "text": "If you exceed a per-hour limit, the API rejects the request with an `HTTP` `429` response, with a `RateLimitExceededError` in the body.  Consider the following as you integrate the API:",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RateLimitExceededError"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you periodically call the API, throttle your requests to avoid exceeding the per-hour limit for an endpoint.",
+          "refs": []
+        },
+        {
+          "text": "Manage the `HTTP` `429` `RateLimitExceededError` in your error-handling process. For example, log the failure and queue the job to process it again at a later time.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RateLimitExceededError"
+          ]
+        },
+        {
+          "text": "Check the `Retry-After` header if you receive the `HTTP` `429` error. This header contains a UNIX time, in milliseconds, that informs you when you can next send a request.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/creating-api-keys-to-authorize-api-requests",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/app-store-server-api-changelog"
+      ]
+    }
+  ]
+}

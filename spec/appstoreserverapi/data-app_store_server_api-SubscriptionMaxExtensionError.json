@@ -1,0 +1,114 @@
+{
+  "id": "data:app_store_server_api:SubscriptionMaxExtensionError",
+  "title": "SubscriptionMaxExtensionError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/SubscriptionMaxExtensionError",
+  "slug": "appstoreserverapi/subscriptionmaxextensionerror",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the subscription doesn’t qualify for a renewal-date extension because it has already received the maximum extensions.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionMaxExtensionError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4030005"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Forbidden - subscription has reached maximum extension count."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This error applies to the `Extend-a-Subscription-Renewal-Date` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError"
+      ]
+    }
+  ]
+}

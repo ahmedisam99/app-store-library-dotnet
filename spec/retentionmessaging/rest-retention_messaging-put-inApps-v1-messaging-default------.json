@@ -1,0 +1,243 @@
+{
+  "id": "rest:retention_messaging:put:inApps-v1-messaging-default-{}-{}",
+  "title": "Configure Default Message",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Configure-Default-Message",
+  "slug": "retentionmessaging/configure-default-message",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Configures a default message for a specific product in a specific locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "locale",
+      "type": "locale",
+      "typeId": "data:retention_messaging:locale",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The locale for the default configuration.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Path Parameters",
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier for the default configuration.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "DefaultConfigurationRequest",
+    "typeId": "data:retention_messaging:DefaultConfigurationRequest",
+    "abstract": {
+      "text": "The request body that includes the message identifier to configure as the default message.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidProductIdError | InvalidLocaleError)",
+      "typeId": "data:retention_messaging:InvalidProductIdError|data:retention_messaging:InvalidLocaleError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(MessageNotApprovedError | ImageNotApprovedError)",
+      "typeId": "data:retention_messaging:MessageNotApprovedError|data:retention_messaging:ImageNotApprovedError",
+      "abstract": {
+        "text": "The provided message or image isn’t in an approved state, so you can’t configure it as a default message.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "MessageNotFoundError",
+      "typeId": "data:retention_messaging:MessageNotFoundError",
+      "abstract": {
+        "text": "The system can’t find the message.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "If either the message or the image isn’t in an `APPROVED` state, the request fails with an error.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When this request succeeds, the system configures the retention message you specify in the request body as the default message for `productId` in `locale`. You can configure a default message for every auto-renewable subscription’s product ID in every locale for your app.",
+          "refs": []
+        },
+        {
+          "text": "You can configure only text-based messages and text-based messages with an image as a default message. Call `Get-Message-List` and `Get-Image-List` to check the current state of messages and images, respectively.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> If either the message or the image isn’t in an `APPROVED` state, the request fails with an error.",
+          "refs": []
+        },
+        {
+          "text": "To replace a default message, call this endpoint again with a different message identifier. This endpoint is idempotent. If the product already has a default message for the locale, the endpoint overwrites that configuration and responds with a `200` status code.",
+          "refs": []
+        },
+        {
+          "text": "To delete a default message, call `Delete-Default-Message`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Default-Message"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Use default messages",
+      "paragraphs": [
+        {
+          "text": "Configure a default message for each product in each locale. If you implement the `Get Retention Message` endpoint, the system requires a default message for every product in each locale where you provide real-time retention messages. For more information, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        },
+        {
+          "text": "The system uses the default messages if your server response fails for any reason, or if you don’t implement the `Get Retention Message` endpoint.",
+          "refs": []
+        },
+        {
+          "text": "To present promotional-offer or switch-plan retention messages instead of default messages, implement the `Get Retention Message` endpoint to respond with those message types in real time. For more information, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Default message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationResponse"
+      ]
+    }
+  ]
+}

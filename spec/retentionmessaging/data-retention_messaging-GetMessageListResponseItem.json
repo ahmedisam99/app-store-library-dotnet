@@ -1,0 +1,89 @@
+{
+  "id": "data:retention_messaging:GetMessageListResponseItem",
+  "title": "GetMessageListResponseItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/GetMessageListResponseItem",
+  "slug": "retentionmessaging/getmessagelistresponseitem",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A message identifier and status information for a message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GetMessageListResponseItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The identifier of the message.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "messageState",
+      "type": "messageState",
+      "typeId": "data:retention_messaging:messageState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The current state of the message.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Message-List` endpoint returns an array of these values in its response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "data:retention_messaging:RealtimeRequestBody",
+  "title": "RealtimeRequestBody",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/RealtimeRequestBody",
+  "slug": "retentionmessaging/realtimerequestbody",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body the App Store server sends to your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RealtimeRequestBody",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedPayload",
+      "type": "signedPayload",
+      "typeId": "data:retention_messaging:signedPayload",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The payload in JSON Web Signature (JWS) format, signed by the App Store.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Get Retention Message` endpoint, which you can implement to choose retention messages for customers in real time. For more information about the endpoint, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        },
+        {
+          "text": "The `signedPayload` is a string of three Base64URL-encoded components separated by a period. The string contains the JWS Compact Serialization of the real-time request, signed by the App Store according to the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The three components of the string are a header, a payload, and a signature, in that order.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "To read the real-time request information, Base64URL-decode the payload. Use a `DecodedRealtimeRequestBody` object to read the payload information.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "To read the header, decode it and use a `JWSDecodedHeader` object to access the information. Use the information in the header to verify the signature.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/JWSDecodedHeader"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlResponse"
+      ]
+    }
+  ]
+}

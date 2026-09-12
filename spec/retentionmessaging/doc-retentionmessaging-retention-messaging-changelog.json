@@ -1,0 +1,200 @@
+{
+  "id": "doc:retentionmessaging/retention-messaging-changelog",
+  "title": "Retention Messaging API changelog",
+  "kind": "article",
+  "role": "article",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/retention-messaging-changelog",
+  "slug": "retentionmessaging/retention-messaging-changelog",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Learn about new features and updates in the Retention Messaging API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this changelog to learn about feature updates, deprecations, and removals for the Retention Messaging API.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Server update  — 2026/05/05",
+      "paragraphs": [
+        {
+          "text": "Updated recommended domain from `api.storekit.itunes.apple.com` to `api.storekit.apple.com`, and `api.storekit-sandbox.itunes.apple.com` to `api.storekit-sandbox.apple.com`. The previous domains will continue to be supported.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "1.5 2026/04/27",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added the new property `billingPlanType` to `alternateProduct` to support monthly subscriptions with 12-month commitments.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/billingPlanType",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/alternateProduct"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.4  2026/03/31",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Added `Configure-Realtime-URL`, `Get-Realtime-URL`, `Delete-Realtime-URL`, and `Get-Default-Message` endpoints.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Default-Message"
+          ]
+        },
+        {
+          "text": "Added objects, properties, and types related to the new endpoints, including: `BulletPoint`, `bulletPointText`, `headerPosition`, `imageSize`, `realtimeURL`, and `RealtimeUrlRequest`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageSize",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/realtimeURL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest"
+          ]
+        },
+        {
+          "text": "Added `error-codes` to indicate bad requests and other errors related to the added endpoints.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/error-codes"
+          ]
+        },
+        {
+          "text": "Updated `GetImageListResponseItem` and `Upload-Image` to add support for the `imageSize` parameter.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetImageListResponseItem",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Image"
+          ]
+        },
+        {
+          "text": "Updated `UploadMessageRequestBody` to add support for the `bulletPoints` and `headerPosition` parameters.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.3  2025/12/09",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The framework now supports the ability to test server response times for real time retention messaging using the `Initiate-Performance-Test` and `Get-Performance-Test-Results` endpoints.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Performance-Test-Results"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.2  2025/11/05",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `RealtimeResponseBody` to include the `advancedCommerceInfo` object.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceInfo"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.1  2025/09/04",
+      "paragraphs": [
+        {
+          "text": "**New features**",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Updated the `DecodedRealtimeRequestBody` to include the `environment` and `signedDate` fields.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/environment",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/signedDate"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "1.0  2025/07/16",
+      "paragraphs": [
+        {
+          "text": "Initial pre-release.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+      ]
+    }
+  ]
+}

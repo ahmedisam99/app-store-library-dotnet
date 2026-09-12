@@ -1,0 +1,198 @@
+{
+  "id": "doc:advancedcommerceapi/changelog",
+  "title": "Advanced Commerce API changelog",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/changelog",
+  "slug": "advancedcommerceapi/changelog",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Learn about new features and updates in the Advanced Commerce API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this changelog to learn about feature updates, deprecations, and removals for the Advanced Commerce API.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Server update – April 22, 2026",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "For subscribers in South Korea, if the price increase meets the criteria that requires communication with the customer, the App Store notifies subscribers via email, price increase sheet, and push notification. Previously, developers needed to implement the price-increase communications for South Korea. For more information, see `handling-subscription-price-changes`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/handling-subscription-price-changes"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update – March 26, 2026",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added the following error code: `MigrationNotAllowedWhenPriceIncreaseCommunicatedError`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/MigrationNotAllowedWhenPriceIncreaseCommunicatedError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update — March 5, 2026",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added additional tax codes for books in `taxcodes`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxcodes"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update – January 23, 2026",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added the following error codes: `InvalidProratedPriceForChangeItemWithEffectiveLaterError` and `FreeTrialOfferMustUsePeriodCountOfOneError`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/InvalidProratedPriceForChangeItemWithEffectiveLaterError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/FreeTrialOfferMustUsePeriodCountOfOneError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "1.2 – December 10, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added the `dependentSKUs` field to the `Change-Subscription-Price` endpoint payload for managing subscription price changes. For more information, see `handling-subscription-price-changes`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/handling-subscription-price-changes"
+          ]
+        },
+        {
+          "text": "Added the following error codes: `ACAPriceIncreaseIsNotCurrentlySupportedInIndiaError`, `DependentSKUsCannotBeChainedError`, `DependentSKUsCannotBeSharedError`, `InvalidPriceForChangeItemInPriceIncreaseError`, `InvalidSKUProvidedMustBeCurrentSKUSetToRenewError`, `ItemCannotBeSpecifiedMultipleTimesError`, and `PriceChangeCannotBeIssuedWhenAlreadyCommunicatedError`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ACAPriceIncreaseIsNotCurrentlySupportedInIndiaError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/DependentSKUsCannotBeChainedError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/DependentSKUsCannotBeSharedError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/InvalidPriceForChangeItemInPriceIncreaseError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/InvalidSKUProvidedMustBeCurrentSKUSetToRenewError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ItemCannotBeSpecifiedMultipleTimesError",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/PriceChangeCannotBeIssuedWhenAlreadyCommunicatedError"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update - November 13, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added support for the `https://developer.apple.com/programs/mini-apps-partner/`.",
+          "refs": [
+            "https://developer.apple.com/programs/mini-apps-partner/"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update — July 2, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added tax codes for games in `taxcodes`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxcodes"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Server update – May 5, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added the error code `TransactionCannotBeRefundedContactSupportError`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/TransactionCannotBeRefundedContactSupportError"
+          ]
+        },
+        {
+          "text": "Removed the unused error code `TransactionNotFoundError`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "1.1 — March 24, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added the endpoints `Change-Subscription-Metadata`, `Migrate-Subscription-to-Advanced-Commerce-API`, `Request-Transaction-Refund`, and `Revoke-Subscription`, and the related data types and error codes.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "1.0 — January 23, 2025",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Initial release.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setupmanagesubscriptions"
+      ]
+    }
+  ]
+}

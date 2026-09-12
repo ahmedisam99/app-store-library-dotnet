@@ -1,0 +1,182 @@
+{
+  "id": "rest:retention_messaging:delete:inApps-v1-messaging-message-{}",
+  "title": "Delete Message",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Delete-Message",
+  "slug": "retentionmessaging/delete-message",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Deletes a previously uploaded message.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/message/{messageIdentifier}",
+      "parameters": [
+        "{messageIdentifier}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/message/{messageIdentifier}",
+      "parameters": [
+        "{messageIdentifier}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The identifier of the message to delete.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "MessageNotFoundError",
+      "typeId": "data:retention_messaging:MessageNotFoundError",
+      "abstract": {
+        "text": "The system can’t find the message.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "This endpoint isn’t idempotent. If the system doesn’t find the message, this endpoint throws an error.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to delete a message. After successfully deleting the message, its `messageIdentifier` no longer exists.",
+          "refs": []
+        },
+        {
+          "text": "To avoid errors, don’t use the `messageIdentifier` of deleted messages in `RealtimeResponseBody` when your server replies to the `Get Retention Message` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> This endpoint isn’t idempotent. If the system doesn’t find the message, this endpoint throws an error.",
+          "refs": []
+        },
+        {
+          "text": "To delete an image associated with a message, call `Delete-Image` after you delete the message.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Image"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponseItem"
+      ]
+    }
+  ]
+}

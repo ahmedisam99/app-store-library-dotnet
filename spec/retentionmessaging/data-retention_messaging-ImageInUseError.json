@@ -1,0 +1,115 @@
+{
+  "id": "data:retention_messaging:ImageInUseError",
+  "title": "ImageInUseError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/ImageInUseError",
+  "slug": "retentionmessaging/imageinuseerror",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the image is currently in use as part of a message, so you can’t delete it.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ImageInUseError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4030019"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "The image is in use."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `Delete-Image` endpoint returns this error if a configured message uses the `imageIdentifier`. To delete an image, first delete all messages that include the image.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Image",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageIdentifier"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/AltTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BodyTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ExistingPerformanceTestRunError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ForbiddenNoPassingTestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/HeaderTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotApprovedError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidLocaleError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidPerformanceTestRequestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidProductIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidRequestIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/MaximumNumberOfImagesReachedError"
+      ]
+    }
+  ]
+}

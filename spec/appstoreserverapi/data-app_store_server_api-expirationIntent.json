@@ -1,0 +1,98 @@
+{
+  "id": "data:app_store_server_api:expirationIntent",
+  "title": "expirationIntent",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/expirationIntent",
+  "slug": "appstoreserverapi/expirationintent",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The reason an auto-renewable subscription expired.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 expirationIntent",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The customer canceled their subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "Billing error; for example, the customer’s payment information is no longer valid.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The customer didn’t consent to an auto-renewable subscription price increase that requires their consent, or to a subscription offer conversion that requires their consent, so the subscription expired. For more information about subscription price increases that require customer consent, see `https://developer.apple.com/help/app-store-connect/reference/auto-renewable-subscription-price-increase-thresholds`. For more information about offer conversions that require customer consent, see `https://developer.apple.com/help/app-store-connect/reference/consent-for-subscription-offer-conversions`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/reference/auto-renewable-subscription-price-increase-thresholds",
+          "https://developer.apple.com/help/app-store-connect/reference/consent-for-subscription-offer-conversions"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "The product wasn’t available for purchase at the time of renewal.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "5",
+      "abstract": {
+        "text": "The subscription expired for some other reason.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewProductId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expiresDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/isUpgraded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalBillingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalPrice",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/status"
+      ]
+    }
+  ]
+}

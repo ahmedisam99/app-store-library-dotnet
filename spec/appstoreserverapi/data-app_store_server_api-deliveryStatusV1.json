@@ -1,0 +1,130 @@
+{
+  "id": "data:app_store_server_api:deliveryStatusV1",
+  "title": "deliveryStatusV1",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/deliveryStatusV1",
+  "slug": "appstoreserverapi/deliverystatusv1",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": null,
+    "summary": {
+      "text": "Use `deliveryStatus` instead, along with the `ConsumptionRequest` for the `Send-Consumption-Information` endpoint.",
+      "refs": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A value that indicates whether the app successfully delivered an In-App Purchase that works properly.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 deliveryStatusV1",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "The app delivered the consumable In-App Purchase and it’s working properly.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The app didn’t deliver the consumable In-App Purchase due to a quality issue.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "The app delivered the wrong item.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The app didn’t deliver the consumable In-App Purchase due to a server outage.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "The app didn’t deliver the consumable In-App Purchase due to an in-game currency change.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "5",
+      "abstract": {
+        "text": "The app didn’t deliver the consumable In-App Purchase for other reasons.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use these delivery status values in the `ConsumptionRequestV1` request body.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/userStatus"
+      ]
+    }
+  ]
+}

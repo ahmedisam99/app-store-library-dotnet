@@ -1,0 +1,188 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-subscription-migrate-{}",
+  "title": "Migrate a Subscription to Advanced Commerce API",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+  "slug": "advancedcommerceapi/migrate-subscription-to-advanced-commerce-api",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Migrate a subscription that a customer purchased through In-App Purchase to a subscription you manage using the Advanced Commerce API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/migrate/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/migrate/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier of the auto-renewable subscription to migrate. Use the subscription’s original transaction ID or any subsequent transaction ID of a transaction related to the subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionMigrateRequest",
+    "typeId": "data:advanced-commerce-api:SubscriptionMigrateRequest",
+    "abstract": {
+      "text": "The request body that contains the details for the migration.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionMigrateResponse",
+      "typeId": "data:advanced-commerce-api:SubscriptionMigrateResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(RepeatedRequestReferenceIdError | NullRequestInfoError | NullTaxCodeError | NullItemsError | NullDescriptorsError | NullSKUError | NullDisplayNameError | NullDescriptionError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | SKULengthExceededError | DescriptionLengthExceededError | DisplayNameLengthExceededError | InvalidDisplayNameError | InvalidDescriptionError | InvalidProductError | InvalidSKUError | InvalidTaxProductCodeError | MismatchedStorefrontError | MissingPricingConfigForStorefrontError | OperationNotAllowedError | MalformedPayloadError | AtLeastOneItemError | NullTargetProductIDError | InvalidTargetProductIDError | SubscriptionAlreadyMigratedError | ItemLimitExceededError | PendingChangesMismatchError)",
+      "typeId": "data:advanced-commerce-api:RepeatedRequestReferenceIdError|data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:NullTaxCodeError|data:advanced-commerce-api:NullItemsError|data:advanced-commerce-api:NullDescriptorsError|data:advanced-commerce-api:NullSKUError|data:advanced-commerce-api:NullDisplayNameError|data:advanced-commerce-api:NullDescriptionError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:SKULengthExceededError|data:advanced-commerce-api:DescriptionLengthExceededError|data:advanced-commerce-api:DisplayNameLengthExceededError|data:advanced-commerce-api:InvalidDisplayNameError|data:advanced-commerce-api:InvalidDescriptionError|data:advanced-commerce-api:InvalidProductError|data:advanced-commerce-api:InvalidSKUError|data:advanced-commerce-api:InvalidTaxProductCodeError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:MissingPricingConfigForStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError|data:advanced-commerce-api:AtLeastOneItemError|data:advanced-commerce-api:NullTargetProductIDError|data:advanced-commerce-api:InvalidTargetProductIDError|data:advanced-commerce-api:SubscriptionAlreadyMigratedError|data:advanced-commerce-api:ItemLimitExceededError|data:advanced-commerce-api:PendingChangesMismatchError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `authorizing-server-calls`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionAlreadyExistsError | SubscriptionNotEligibleError | ProductNotOwnedError | InactiveACASubError | ProductNotEligibleError | StorefrontChangeError | MigrationNotAllowedWhenPriceIncreaseCommunicatedError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionAlreadyExistsError|data:advanced-commerce-api:SubscriptionNotEligibleError|data:advanced-commerce-api:ProductNotOwnedError|data:advanced-commerce-api:InactiveACASubError|data:advanced-commerce-api:ProductNotEligibleError|data:advanced-commerce-api:StorefrontChangeError|data:advanced-commerce-api:MigrationNotAllowedWhenPriceIncreaseCommunicatedError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(TransactionIdNotFoundError | ProductNotFoundError)",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError|data:advanced-commerce-api:ProductNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `ratelimits`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "You can use the Advanced Commerce API and the StoreKit `in-app-purchase` APIs in the same app. Both APIs use the App Store commerce system, including the same signed JWS transactions and JWS renewal info. For products that you offer using the In-App Purchase API, you set up product identifiers in App Store Connect. For products that you offer using the Advanced Commerce API, you host and manage your own catalog of SKUs and add product details dynamically at runtime.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/StoreKit/in-app-purchase"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n> You can use the Advanced Commerce API and the StoreKit `in-app-purchase` APIs in the same app. Both APIs use the App Store commerce system, including the same signed JWS transactions and JWS renewal info. For products that you offer using the In-App Purchase API, you set up product identifiers in App Store Connect. For products that you offer using the Advanced Commerce API, you host and manage your own catalog of SKUs and add product details dynamically at runtime.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/in-app-purchase"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "data:retention_messaging:message",
+  "title": "message",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/message",
+  "slug": "retentionmessaging/message",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A message identifier you provide in a real-time response to your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object message",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The identifier of the message to display to the customer.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "In your `RealtimeResponseBody` real-time response, you can choose from mutually exclusive options. Include `message` in your response to provide a text-based message (with or without an image) as the retention message the system displays to the customer.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "The message identifier needs to refer to a message that has a `messageState` of `APPROVED`; otherwise, the retention message fails. If the message includes an image, the image also needs to have an `imageState` of `APPROVED`. For more information about setting up messages, see `setting-up-retention-messages`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time response body",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/alternateProduct",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOffer",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceInfo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "rest:retention_messaging:get:inApps-v1-messaging-image-list",
+  "title": "Get Image List",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Get-Image-List",
+  "slug": "retentionmessaging/get-image-list",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Gets the image identifier and state for all uploaded images.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/image/list",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/image/list",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GetImageListResponse",
+      "typeId": "data:retention_messaging:GetImageListResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to get all uploaded image identifiers and check their current state, `imageState`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/imageState"
+          ]
+        },
+        {
+          "text": "Images need to be in an `APPROVED` state before the system can display messages that contain them.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Image configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Image",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Image",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetImageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetImageListResponseItem"
+      ]
+    }
+  ]
+}

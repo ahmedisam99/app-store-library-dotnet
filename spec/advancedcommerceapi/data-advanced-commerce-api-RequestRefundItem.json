@@ -1,0 +1,130 @@
+{
+  "id": "data:advanced-commerce-api:RequestRefundItem",
+  "title": "RequestRefundItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/RequestRefundItem",
+  "slug": "advancedcommerceapi/requestrefunditem",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Information about the refund request for an item, such as its SKU, the refund amount, reason, and type.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RequestRefundItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "SKU",
+      "type": "SKU",
+      "typeId": "data:advanced-commerce-api:SKU",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "128",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The product identifier.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundAmount",
+      "type": "refundAmount",
+      "typeId": "data:advanced-commerce-api:refundAmount",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The refund amount you’re requesting for the `SKU`, in milliunits of the currency.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundReason",
+      "type": "refundReason",
+      "typeId": "data:advanced-commerce-api:refundReason",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The reason for the refund request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundType",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "FULL",
+            "PRORATED",
+            "CUSTOM"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The type of refund requested.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "revoke",
+      "type": "boolean",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Refund request from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundResponse"
+      ]
+    }
+  ]
+}

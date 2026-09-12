@@ -1,0 +1,78 @@
+{
+  "id": "data:app_store_server_api:JWSRenewalInfo",
+  "title": "JWSRenewalInfo",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/JWSRenewalInfo",
+  "slug": "appstoreserverapi/jwsrenewalinfo",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Subscription renewal information, signed by the App Store, in JSON Web Signature (JWS) format.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string JWSRenewalInfo",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `JWSRenewalInfo` type is a string of three Base64 URL-encoded components, separated by a period, containing subscription renewal information signed by the App Store. The App Store signs the string according to the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The three components in the string are a header, a payload, and a signature.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "To read the subscription renewal information, decode the payload. Use a `JWSRenewalInfoDecodedPayload` object to read the payload information.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload"
+          ]
+        },
+        {
+          "text": "To read the header, decode it and use a `JWSDecodedHeader` object to access the information. Use the information in the header to verify the signature.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "JWS headers and payloads",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/data-types"
+      ]
+    }
+  ]
+}

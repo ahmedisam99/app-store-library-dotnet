@@ -1,0 +1,276 @@
+{
+  "id": "data:store_s2s:subtype",
+  "title": "subtype",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/subtype",
+  "slug": "appstoreservernotifications/subtype",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that provides details about select notification types in version 2.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string subtype",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "ACCEPTED",
+      "abstract": {
+        "text": "Applies to the `PRICE_INCREASE` `notificationType`. A notification with this subtype indicates that the customer consented to the subscription price increase if the price increase requires customer consent, or that the system notified them of a price increase if the price increase doesn’t require customer consent.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ACTIVE_TOKEN_REMINDER",
+      "abstract": {
+        "text": "Applies to the `EXTERNAL_PURCHASE_TOKEN` `notificationType`. A notification with this subtype is a reminder that Apple created a custom link external purchase token for your app, and the token is still active. App Store Server sends this notification monthly while the token is active, unless you report the token as a duplicate. For information about reporting tokens, see `externalPurchaseToken`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "AUTO_RENEW_DISABLED",
+      "abstract": {
+        "text": "Applies to the `DID_CHANGE_RENEWAL_STATUS` `notificationType`. A notification with this subtype indicates that the customer turned off subscription auto-renewal, or the App Store turned off subscription auto-renewal after the customer requested a refund.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "AUTO_RENEW_ENABLED",
+      "abstract": {
+        "text": "Applies to the `DID_CHANGE_RENEWAL_STATUS` `notificationType`. A notification with this subtype indicates that the customer enabled subscription auto-renewal.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "BILLING_RECOVERY",
+      "abstract": {
+        "text": "Applies to the `DID_RENEW` `notificationType`. A notification with this subtype indicates that the expired subscription that previously failed to renew has successfully renewed.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "BILLING_RETRY",
+      "abstract": {
+        "text": "Applies to the EXPIRED notificationType. A notification with this subtype indicates that the subscription expired because the subscription failed to renew before the billing retry period ended.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CREATED",
+      "abstract": {
+        "text": "Applies to the `EXTERNAL_PURCHASE_TOKEN` `notificationType`. A notification with this subtype indicates that Apple created a custom link token for your app. For more information about custom link tokens, see `receiving-and-decoding-external-purchase-tokens`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.documentation/documentation/StoreKit/receiving-and-decoding-external-purchase-tokens"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DOWNGRADE",
+      "abstract": {
+        "text": "Applies to the `DID_CHANGE_RENEWAL_PREF` and `OFFER_REDEEMED` `notificationType`. A notification with this subtype indicates that the customer downgraded their subscription or cross-graded to a subscription with a different duration. Downgrades take effect at the next renewal date.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FAILURE",
+      "abstract": {
+        "text": "Applies to the `RENEWAL_EXTENSION` `notificationType`. A notification with this `subtype` indicates that the subscription-renewal-date extension failed for an individual subscription. For details, see the `data` object in the `responseBodyV2DecodedPayload`. For information on the request, see `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "GRACE_PERIOD",
+      "abstract": {
+        "text": "Applies to the `DID_FAIL_TO_RENEW` `notificationType`. A notification with this subtype indicates that the subscription failed to renew due to a billing issue. Continue to provide access to the subscription during the grace period.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INITIAL_BUY",
+      "abstract": {
+        "text": "Applies to the `SUBSCRIBED` `notificationType`. A notification with this `subtype` indicates that the customer purchased the subscription for the first time or that the customer received access to the subscription through Family Sharing\u00A0for the first time.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PENDING",
+      "abstract": {
+        "text": "Applies to the `PRICE_INCREASE` `notificationType`. A notification with this `subtype` indicates that the system informed the customer of the subscription price increase, but the customer hasn’t accepted it.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PRICE_INCREASE",
+      "abstract": {
+        "text": "Applies to the `EXPIRED` `notificationType`. A notification with this `subtype` indicates that the subscription expired because the customer didn’t consent to a price increase.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PRODUCT_NOT_FOR_SALE",
+      "abstract": {
+        "text": "Applies to the `EXPIRED` `notificationType`. A notification with this `subtype` indicates that the subscription expired because the product wasn’t available for purchase at the time the subscription attempted to renew.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RESUBSCRIBE",
+      "abstract": {
+        "text": "Applies to the `SUBSCRIBED` `notificationType`. A notification with this `subtype` indicates that the customer resubscribed or received access through Family Sharing to the same subscription or to another subscription within the same subscription group.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SUMMARY",
+      "abstract": {
+        "text": "Applies to the `RENEWAL_EXTENSION` `notificationType`. A notification with this subtype indicates that the App Store server completed your request to extend the subscription renewal date for all eligible subscribers. For the summary details, see the `summary` object in the `responseBodyV2DecodedPayload`. For information on the request, see `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UPGRADE",
+      "abstract": {
+        "text": "Applies to the `DID_CHANGE_RENEWAL_PREF` and `OFFER_REDEEMED` `notificationType`. A notification with this `subtype` indicates that the customer upgraded their subscription or cross-graded to a subscription with the same duration. Upgrades take effect immediately.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNREPORTED",
+      "abstract": {
+        "text": "Applies to the `EXTERNAL_PURCHASE_TOKEN` `notificationType`. A notification with this `subtype` indicates that Apple created a token for your app but didn’t receive a report. For more information about reporting the token, see `externalPurchaseToken`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "VOLUNTARY",
+      "abstract": {
+        "text": "Applies to the `EXPIRED` `notificationType`. A notification with this subtype indicates that the subscription expired after the customer turned off subscription auto-renewal.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This `subtype` field is part of the `responseBodyV2DecodedPayload`, and further describes an event of type `notificationType`. It’s present only for specific version 2 notifications.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Server notifications version 2",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "data:app_store_server_api:testNotificationToken",
+  "title": "testNotificationToken",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/testNotificationToken",
+  "slug": "appstoreserverapi/testnotificationtoken",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A unique identifier for a notification test that the App Store server sends to your server.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string testNotificationToken",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You receive a `testNotificationToken` when you call the `Request-a-Test-Notification` endpoint. Use the `testNotificationToken` to learn your server’s response to the test by calling `Get-Test-Notification-Status`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

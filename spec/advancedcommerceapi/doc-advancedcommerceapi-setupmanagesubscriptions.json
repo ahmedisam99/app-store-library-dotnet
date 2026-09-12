@@ -1,0 +1,94 @@
+{
+  "id": "doc:advancedcommerceapi/setupmanagesubscriptions",
+  "title": "Setting up a link to manage subscriptions",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/setupmanagesubscriptions",
+  "slug": "advancedcommerceapi/setupmanagesubscriptions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create a deep link to a subscription-management page for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "To submit the subscription-management deep link URL for your eligible Advanced Commerce API app, use the Advanced Commerce API Access form on the `https://developer.apple.com/in-app-purchase/advanced-commerce-api/` page.",
+        "refs": [
+          "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Customers use the Settings > Apple Account > Subscriptions page in iOS to manage their subscriptions, including upgrading, downgrading, resubscribing, and canceling. When you offer subscriptions through the Advanced Commerce API, the Subscriptions page displays a “Manage in App” button.",
+          "refs": []
+        },
+        {
+          "text": "![subscription-management-app-link.png]",
+          "refs": [
+            "subscription-management-app-link.png"
+          ]
+        },
+        {
+          "text": "You implement a subscription-management page in your app, and create a deep link URL to it that you submit to Apple. The Settings > Apple Account  > Subscriptions page then uses your deep link for the “Manage in App” button.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n> To submit the subscription-management deep link URL for your eligible Advanced Commerce API app, use the Advanced Commerce API Access form on the `https://developer.apple.com/in-app-purchase/advanced-commerce-api/` page.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+          ]
+        },
+        {
+          "text": "Create the deep link by following these guidelines:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Follow universal link guidelines for the URL. For more information, see `allowing-apps-and-websites-to-link-to-your-content`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/Xcode/allowing-apps-and-websites-to-link-to-your-content"
+          ]
+        },
+        {
+          "text": "Ensure the deep link lands on a page in your app that provides information about the subscription’s state and options for the customer to manage their subscription, for example, to change the plan, or resubscribe.",
+          "refs": []
+        },
+        {
+          "text": "Optionally, provide a unique subscription-management deep link URL for each storefront.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/changelog"
+      ]
+    }
+  ]
+}

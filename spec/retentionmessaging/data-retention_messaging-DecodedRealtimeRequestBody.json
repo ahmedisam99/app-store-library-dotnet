@@ -1,0 +1,177 @@
+{
+  "id": "data:retention_messaging:DecodedRealtimeRequestBody",
+  "title": "DecodedRealtimeRequestBody",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/DecodedRealtimeRequestBody",
+  "slug": "retentionmessaging/decodedrealtimerequestbody",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The decoded request body the App Store sends to your server to request a real-time retention message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object DecodedRealtimeRequestBody",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "originalTransactionId",
+      "type": "originalTransactionId",
+      "typeId": "data:retention_messaging:originalTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The original transaction identifier of the customer’s subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:retention_messaging:appAppleId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app in the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the auto-renewable subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "userLocale",
+      "type": "locale",
+      "typeId": "data:retention_messaging:locale",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The device’s locale.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestIdentifier",
+      "type": "requestIdentifier",
+      "typeId": "data:retention_messaging:requestIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A UUID the App Store server creates to uniquely identify each request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:retention_messaging:environment",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment, either sandbox or production.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedDate",
+      "type": "signedDate",
+      "typeId": "data:retention_messaging:signedDate",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, that the App Store signed the JSON Web Signature (JWS) data.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "Always check that the `appAppleId` in the request matches your app’s `appAppleId`. If it doesn’t match, don’t respond to the request.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store server sends a request to your `Get Retention Message` endpoint that includes a `RealtimeRequestBody`. The `DecodedRealtimeRequestBody` is the decoded version of that request body.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "The `DecodedRealtimeRequestBody` provides information you can use to select a retention message for display. The request includes the customer’s original transaction identifier, the product identifier, and their locale. Consider this information, along with your business logic, to choose the best retention message for the customer.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n> Always check that the `appAppleId` in the request matches your app’s `appAppleId`. If it doesn’t match, don’t respond to the request.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `responding-to-realtime-retention-messaging-requests`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging responses",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+      ]
+    }
+  ]
+}

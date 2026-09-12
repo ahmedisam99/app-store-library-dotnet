@@ -1,0 +1,59 @@
+{
+  "id": "data:app_store_server_api:customerConsented",
+  "title": "customerConsented",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/customerConsented",
+  "slug": "appstoreserverapi/customerconsented",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A Boolean value that indicates whether the customer consented to provide consumption data to the App Store.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "boolean customerConsented",
+    "baseType": "boolean",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Set this field to `true` if the customer provided consent to send the App Store the consumption data related to their refund request, including all the data you provide in the `ConsumptionRequest` or `ConsumptionRequestV1` request body. If not, don’t respond to the `CONSUMPTION_REQUEST` notification.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequestV1"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreference",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "data:retention_messaging:environment",
+  "title": "environment",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/environment",
+  "slug": "retentionmessaging/environment",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The server environment, either sandbox or production.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string environment",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "Sandbox",
+      "abstract": {
+        "text": "Indicates that the request applies to testing in the sandbox environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "Production",
+      "abstract": {
+        "text": "Indicates that the request applies to the production environment.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time request body",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/signedPayload",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/originalTransactionId",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/appAppleId",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/signedDate"
+      ]
+    }
+  ]
+}

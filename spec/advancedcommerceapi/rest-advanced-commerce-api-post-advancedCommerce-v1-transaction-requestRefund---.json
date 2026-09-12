@@ -1,0 +1,193 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-transaction-requestRefund-{}",
+  "title": "Request Transaction Refund",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Request-Transaction-Refund",
+  "slug": "advancedcommerceapi/request-transaction-refund",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Request a refund for a one-time charge or subscription transaction.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/transaction/requestRefund/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/transaction/requestRefund/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier for which you request a refund.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "RequestRefundRequest",
+    "typeId": "data:advanced-commerce-api:RequestRefundRequest",
+    "abstract": {
+      "text": "The request body.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "RequestRefundResponse",
+      "typeId": "data:advanced-commerce-api:RequestRefundResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(RepeatedRequestReferenceIdError | NullRequestInfoError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | MismatchedStorefrontError | MismatchedStorefrontError | OperationNotAllowedError | MalformedPayloadError | SimulateRefundDeclineOnlyInSandboxError | RefundAmountWithoutCustomError | NullRefundRiskingError | InvalidRefundTypeError | InvalidRefundReasonError | NegativeRefundAmountError | NullRefundAmountError | NullRefundReasonError | NullRefundTypeError | RemovalAllNotAllowedError | PendingRefundError | ProratedOnlyLatestTransactionError | PartialSimulateRefundDeclineError)",
+      "typeId": "data:advanced-commerce-api:RepeatedRequestReferenceIdError|data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError|data:advanced-commerce-api:SimulateRefundDeclineOnlyInSandboxError|data:advanced-commerce-api:RefundAmountWithoutCustomError|data:advanced-commerce-api:NullRefundRiskingError|data:advanced-commerce-api:InvalidRefundTypeError|data:advanced-commerce-api:InvalidRefundReasonError|data:advanced-commerce-api:NegativeRefundAmountError|data:advanced-commerce-api:NullRefundAmountError|data:advanced-commerce-api:NullRefundReasonError|data:advanced-commerce-api:NullRefundTypeError|data:advanced-commerce-api:RemovalAllNotAllowedError|data:advanced-commerce-api:PendingRefundError|data:advanced-commerce-api:ProratedOnlyLatestTransactionError|data:advanced-commerce-api:PartialSimulateRefundDeclineError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `authorizing-server-calls`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionNotEligibleError | ProductNotOwnedError | InsufficientFundsError | AlreadyRefundedError | TransactionNotRefundableError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionNotEligibleError|data:advanced-commerce-api:ProductNotOwnedError|data:advanced-commerce-api:InsufficientFundsError|data:advanced-commerce-api:AlreadyRefundedError|data:advanced-commerce-api:TransactionNotRefundableError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `ratelimits`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "To use the `Request Transaction Refund` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+        "refs": [
+          "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n> To use the `Request Transaction Refund` endpoint, your membership Account Holder must sign the Advanced Commerce API Addendum, and you must meet certain eligibility requirements. For more information, see `https://developer.apple.com/in-app-purchase/advanced-commerce-api/`. If the most recent version of this agreement isn’t yet accepted, you can’t call this endpoint, and it returns an error.",
+          "refs": [
+            "https://developer.apple.com/in-app-purchase/advanced-commerce-api/"
+          ]
+        },
+        {
+          "text": "Refer to the Advanced Commerce API Addendum to learn the use cases for the `Cancel-a-Subscription`, `Revoke-Subscription`, and `Request Transaction Refund` APIs.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Cancel-a-Subscription",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Revoke-Subscription"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Refund request from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundItem"
+      ]
+    }
+  ]
+}

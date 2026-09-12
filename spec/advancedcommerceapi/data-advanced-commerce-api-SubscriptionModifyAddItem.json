@@ -1,0 +1,147 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionModifyAddItem",
+  "title": "SubscriptionModifyAddItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionModifyAddItem",
+  "slug": "advancedcommerceapi/subscriptionmodifyadditem",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data your app provides to add items when it makes changes to an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionModifyAddItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "SKU",
+      "type": "SKU",
+      "typeId": "data:advanced-commerce-api:SKU",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "128",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "description",
+      "type": "description",
+      "typeId": "data:advanced-commerce-api:description",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "45",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "displayName",
+      "type": "displayName",
+      "typeId": "data:advanced-commerce-api:displayName",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "30",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offer",
+      "type": "Offer",
+      "typeId": "data:advanced-commerce-api:Offer",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "price",
+      "type": "price",
+      "typeId": "data:advanced-commerce-api:price",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "proratedPrice",
+      "type": "proratedPrice",
+      "typeId": "data:advanced-commerce-api:proratedPrice",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription modification in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyRemoveItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyPeriodChange"
+      ]
+    }
+  ]
+}

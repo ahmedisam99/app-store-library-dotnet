@@ -1,0 +1,181 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-subscription-changeMetadata-{}",
+  "title": "Change Subscription Metadata",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+  "slug": "advancedcommerceapi/change-subscription-metadata",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update the SKU, display name, and description associated with a subscription, without affecting the subscription’s billing or its service.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/changeMetadata/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/changeMetadata/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier of the auto-renewable subscription to get changes to its metadata. Use the subscription’s original transaction ID or any subsequent transaction ID of a transaction related to the subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionChangeMetadataRequest",
+    "typeId": "data:advanced-commerce-api:SubscriptionChangeMetadataRequest",
+    "abstract": {
+      "text": "The request body that contains the metadata changes.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionChangeMetadataResponse",
+      "typeId": "data:advanced-commerce-api:SubscriptionChangeMetadataResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(RepeatedRequestReferenceIdError | NullRequestInfoError | NullEffectiveError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | SKULengthExceededError | DescriptionLengthExceededError | DisplayNameLengthExceededError | InvalidProductChangesError | InvalidDisplayNameError | InvalidDescriptionError | InvalidProductError | InvalidSKUError | InvalidTaxProductCodeError | MismatchedStorefrontError | MismatchedStorefrontError | OperationNotAllowedError | MalformedPayloadError | AtLeastOneItemError | AtLeastOneOfDisplayNameOrDescriptionError)",
+      "typeId": "data:advanced-commerce-api:RepeatedRequestReferenceIdError|data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:NullEffectiveError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:SKULengthExceededError|data:advanced-commerce-api:DescriptionLengthExceededError|data:advanced-commerce-api:DisplayNameLengthExceededError|data:advanced-commerce-api:InvalidProductChangesError|data:advanced-commerce-api:InvalidDisplayNameError|data:advanced-commerce-api:InvalidDescriptionError|data:advanced-commerce-api:InvalidProductError|data:advanced-commerce-api:InvalidSKUError|data:advanced-commerce-api:InvalidTaxProductCodeError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError|data:advanced-commerce-api:AtLeastOneItemError|data:advanced-commerce-api:AtLeastOneOfDisplayNameOrDescriptionError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `authorizing-server-calls`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionNotEligibleError | ProductNotOwnedError | InactiveACASubError | ProductNotEligibleError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionNotEligibleError|data:advanced-commerce-api:ProductNotOwnedError|data:advanced-commerce-api:InactiveACASubError|data:advanced-commerce-api:ProductNotEligibleError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(TransactionIdNotFoundError | ProductNotFoundError)",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError|data:advanced-commerce-api:ProductNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `ratelimits`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/ratelimits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to update the display name and description of an auto-renewable subscription. Calling this endpoint doesn’t change the price, billing details, or the service. For example, you can call `Change Subscription Metadata` if a subscription’s display name changes due to a change in its branding.",
+          "refs": []
+        },
+        {
+          "text": "Don’t call this endpoint if a customer is changing subscriptions to receive a different service, such as upgrading, downgrading, or cross-grading. For such changes, use `SubscriptionModifyInAppRequest`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription metadata changes from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataItem"
+      ]
+    }
+  ]
+}

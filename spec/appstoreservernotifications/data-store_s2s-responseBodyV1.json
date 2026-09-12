@@ -1,0 +1,311 @@
+{
+  "id": "data:store_s2s:responseBodyV1",
+  "title": "responseBodyV1",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/responseBodyV1",
+  "slug": "appstoreservernotifications/responsebodyv1",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": "2.8",
+    "summary": {
+      "text": "Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+      "refs": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body containing JSON data that the App Store sends in a version 1 server notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object responseBodyV1",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "auto_renew_adam_id",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An identifier that App Store Connect generates and the App Store uses to uniquely identify the auto-renewable subscription that the user’s subscription renews. Treat this value as a 64-bit integer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "auto_renew_product_id",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the auto-renewable subscription that the user’s subscription renews.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "auto_renew_status",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "true",
+            "false"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The current renewal status for an auto-renewable subscription product. Note that these values are the strings `“true”` and `“false”`, and not the strings `“0”` or `“1”` that appear in `auto_renew_status` in the receipt.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/auto_renew_status"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "auto_renew_status_change_date",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The time at which the user turned on or off the renewal status for an auto-renewable subscription, in a date-time format similar to the ISO 8601 standard.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "auto_renew_status_change_date_ms",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The time at which the user turned on or off the renewal status for an auto-renewable subscription, in UNIX time, in milliseconds. Use this time format to process dates.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "auto_renew_status_change_date_pst",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The time at which the user turned on or off the renewal status for an auto-renewable subscription, in Pacific standard time.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bid",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A string that contains the app bundle ID.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bvrs",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A string that contains the app bundle version.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "deprecation",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The date that `App-Store-Server-Notifications-V1` are deprecated. For more information, see `app-store-server-notifications-changelog`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Sandbox",
+            "PROD"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The environment for which the App Store generated the receipt.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expiration_intent",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The reason a subscription expired. This field is only present for an expired auto-renewable subscription. See `expiration_intent` for more information.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/expiration_intent"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "notification_type",
+      "type": "notification_type",
+      "typeId": "data:store_s2s:notification_type",
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The subscription event that triggered the notification. See `notification_type` for the complete list of version 1 notification types.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1/notification_type"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "original_transaction_id",
+      "type": "long",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The original transaction identifier for which App Store Server Notifications sends the notification.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "password",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The same value as the shared secret you submit in the `password` field of the App Store Receipt `requestBody` when validating receipts.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/requestBody"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "unified_receipt",
+      "type": "unified_receipt",
+      "typeId": "data:store_s2s:unified_receipt",
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An object that contains information about the most recent in-app purchase transactions for the app.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use the information in the response body to react quickly to changes in your users’ subscription states. The fields available in a notification sent to your server depend on the `notification_type`, which indicates the event that triggered the notification.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1/notification_type"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Unified receipt object",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Version 1 notifications",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type"
+      ]
+    }
+  ]
+}

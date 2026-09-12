@@ -1,0 +1,88 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionMigrateResponse",
+  "title": "SubscriptionMigrateResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+  "slug": "advancedcommerceapi/subscriptionmigrateresponse",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains signed renewal and transaction information after a subscription successfully migrates to the Advanced Commerce API.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionMigrateResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:advanced-commerce-api:JWSRenewalInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format, for the migrated subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:advanced-commerce-api:JWSTransaction",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Transaction information signed by the App Store, in JSON Web Signature (JWS) Compact Serialization format, for the migrated subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the response body for the `Migrate-Subscription-to-Advanced-Commerce-API` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors"
+      ]
+    }
+  ]
+}

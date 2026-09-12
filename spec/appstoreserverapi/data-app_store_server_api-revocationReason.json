@@ -1,0 +1,74 @@
+{
+  "id": "data:app_store_server_api:revocationReason",
+  "title": "revocationReason",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/revocationReason",
+  "slug": "appstoreserverapi/revocationreason",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The reason for a refunded transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 revocationReason",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "The App Store refunded the transaction on behalf of the customer for other reasons, for example, an accidental purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The App Store refunded the transaction on behalf of the customer due to an actual or perceived issue within your app.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For Family Sharing transactions, the revocation reason value is `0` if the customer leaves the family group or the owner stops sharing. If the purchaser of a Family Sharing transaction receives a refund, the revocation reason for Family Sharing transactions matches the value of the purchaser’s revocation reason.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Revocation",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationType"
+      ]
+    }
+  ]
+}

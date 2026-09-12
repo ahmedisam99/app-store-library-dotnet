@@ -1,0 +1,168 @@
+{
+  "id": "doc:appstoreserverapi/creating-api-keys-to-authorize-api-requests",
+  "title": "Creating API keys to authorize API requests",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/creating-api-keys-to-authorize-api-requests",
+  "slug": "appstoreserverapi/creating-api-keys-to-authorize-api-requests",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create API keys you use to sign JSON Web Tokens and authorize API requests.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Store your private keys in a secure place. Don’t share your keys, don’t store keys in a code repository, and don’t include keys in client-side code. If you suspect a private key is compromised, immediately revoke the key in App Store Connect. See `revoking-api-keys` for details.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreConnectAPI/revoking-api-keys"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `AppStoreServerAPI`, the `AdvancedCommerceAPI`, and the `ExternalPurchaseServerAPI` require JSON Web Tokens (JWTs) to authorize each request you make to the API. You generate JWTs using a private API key that you download from App Store Connect. For information about generating the JWT using your private key, see `generating-json-web-tokens-for-api-requests`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI",
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI",
+            "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+          ]
+        },
+        {
+          "text": "An API key has two parts: a public portion that Apple keeps, and a private key that you download. Use the private key to sign tokens that authorize the API to access or submit your data to the App Store.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Store your private keys in a secure place. Don’t share your keys, don’t store keys in a code repository, and don’t include keys in client-side code. If you suspect a private key is compromised, immediately revoke the key in App Store Connect. See `revoking-api-keys` for details.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreConnectAPI/revoking-api-keys"
+          ]
+        },
+        {
+          "text": "Use the API key for the App Store Server API, the Advanced Commerce API, and the External Purchase Server API. You can’t use the key for other Apple services.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Generate a private key",
+      "paragraphs": [
+        {
+          "text": "To generate an API key to use with the App Store Server API, the Advanced Commerce API, and the External Purchase Server API, log in to `https://appstoreconnect.apple.com` and complete the following steps:",
+          "refs": [
+            "https://appstoreconnect.apple.com"
+          ]
+        },
+        {
+          "text": "After you generate an in-app purchase key, you cannot edit its name. If you need to make changes, revoke the key and generate a new one.",
+          "refs": []
+        },
+        {
+          "text": "The new key’s name, key ID, a download link, and other information appear on the page.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "On the homepage, click Users and Access.",
+          "refs": []
+        },
+        {
+          "text": "Click the Integrations tab.",
+          "refs": []
+        },
+        {
+          "text": "In the sidebar under Keys, click In-App Purchase.",
+          "refs": []
+        },
+        {
+          "text": "Click Generate In-App Purchase Key. If you already have an Active In-App Purchase key generated, click the Add (+) icon to add more.",
+          "refs": []
+        },
+        {
+          "text": "Enter a name for the key. The name is for your reference only and is not part of the key itself.",
+          "refs": []
+        },
+        {
+          "text": "Click Generate.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Download and store the private key",
+      "paragraphs": [
+        {
+          "text": "After generating your API key, App Store Connect gives you the opportunity to download the private half of the key. The private key is only available for download a single time.",
+          "refs": []
+        },
+        {
+          "text": "The download link appears only if you haven’t yet downloaded the private key. Apple doesn’t keep a copy of the private key. Store your private key in a secure place.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Log in to `https://appstoreconnect.apple.com/`.",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "On the homepage, click Users and Access.",
+          "refs": []
+        },
+        {
+          "text": "Click the Integrations tab.",
+          "refs": []
+        },
+        {
+          "text": "In the sidebar under Keys, click In-App Purchase.",
+          "refs": []
+        },
+        {
+          "text": "Navigate to a key under the Active section, then click Download Key for the key you want to download.",
+          "refs": []
+        },
+        {
+          "text": "In the dialog, click Download.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/app-store-server-api-changelog"
+      ]
+    }
+  ]
+}

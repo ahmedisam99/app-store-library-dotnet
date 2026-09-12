@@ -1,0 +1,287 @@
+{
+  "id": "doc:advancedcommerceapi/creating-your-purchases",
+  "title": "Creating SKUs for your In-App Purchases",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/creating-your-purchases",
+  "slug": "advancedcommerceapi/creating-your-purchases",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Define and manage one-time charges, subscriptions, and bundled subscriptions within your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "You can set up an image that displays in the payment sheet instead of the app icon. For more information, see the “Set up an image for the payment sheet to display” section in `setting-up-your-project-for-advanced-commerce`.",
+        "refs": [
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "For each purchase you plan to offer, create a product identifier, or SKU, in your system along with corresponding text such as display name and price. The App Store displays this information on the payment sheet when a customer initiates a purchase, which helps them understand the transaction before they confirm their purchase. The App Store also uses this information in additional communication to the customer, including in email receipts and in the Apple Account Settings under Subscriptions.",
+          "refs": []
+        },
+        {
+          "text": "To ensure your purchases display properly and provide a quality experience, follow these guidelines:",
+          "refs": []
+        },
+        {
+          "text": "Review the Human Interface Guidelines for additional best practices for `https://developer.apple.com/design/human-interface-guidelines/writing` and designing your `https://developer.apple.com/design/human-interface-guidelines/in-app-purchase`. If you offer subscriptions, get additional best practices for `https://developer.apple.com/app-store/subscriptions/#clear-description` in your paywalls and payment sheets.",
+          "refs": [
+            "https://developer.apple.com/design/human-interface-guidelines/writing",
+            "https://developer.apple.com/design/human-interface-guidelines/in-app-purchase",
+            "https://developer.apple.com/app-store/subscriptions/#clear-description"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Be clear, concise, and descriptive.",
+          "refs": []
+        },
+        {
+          "text": "Use proper capitalization and punctuation, and avoid using all capitals.",
+          "refs": []
+        },
+        {
+          "text": "Create localized information for any regions where your app is available.",
+          "refs": []
+        },
+        {
+          "text": "Consider how you use special characters (for example, hyphens, periods, and underscores) and diacritics. You can use special characters, but avoid using them excessively or beginning strings with them.",
+          "refs": []
+        },
+        {
+          "text": "Don’t use markup language, emoticons, diacritics, or control characters (for example, null, new lines, carriage returns, escape, or other invisible characters) that cause strings to exceed a single line.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Create one-time charges",
+      "paragraphs": [
+        {
+          "text": "Manage one-time purchases — such as one-time rentals, books, or courses — by using the `OneTimeChargeCreateRequest` API to provide information to the App Store when the customer initiates a purchase. After a one-time charge is complete, customers receive an email receipt from Apple.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest"
+          ]
+        },
+        {
+          "text": "![one-time-purchase-example.png]",
+          "refs": [
+            "one-time-purchase-example.png"
+          ]
+        },
+        {
+          "text": "The following details appear in the App Store payment sheet as well as your email receipt; you set both of these values in the `OneTimeChargeItem` of the `OneTimeChargeCreateRequest`:",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeItem",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest"
+          ]
+        },
+        {
+          "text": "![one-time-purchase-text-field-mapping.png]",
+          "refs": [
+            "one-time-purchase-text-field-mapping.png"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> You can set up an image that displays in the payment sheet instead of the app icon. For more information, see the “Set up an image for the payment sheet to display” section in `setting-up-your-project-for-advanced-commerce`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-your-project-for-advanced-commerce"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "item.`displayName`: The name of the item the customer is purchasing.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName"
+          ]
+        },
+        {
+          "text": "item.`price`: The price of the item the customer is purchasing.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Create subscriptions",
+      "paragraphs": [
+        {
+          "text": "Use the `SubscriptionCreateRequest` API to provide information to the App Store when the customer initiates a purchase for each subscription SKU you offer. After a successful purchase, Apple sends customers a subscription confirmation email and a receipt. Customers can go to their Apple Account Subscription Settings to manage their subscription at any time.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "![subscription-creator-app.png]",
+          "refs": [
+            "subscription-creator-app.png"
+          ]
+        },
+        {
+          "text": "The following details appear in the App Store payment sheet, email communications from Apple, and the customer’s Apple Account Subscription Settings; you set the values of these details in `SubscriptionCreateRequest`:",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "![subscription-creator-app-text-field-mapping.png]",
+          "refs": [
+            "subscription-creator-app-text-field-mapping.png"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`https://developer.apple.com/documentation/advancedcommerceapi/Descriptors`.`displayName`: The name of the subscription the customer is purchasing.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/Descriptors",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName"
+          ]
+        },
+        {
+          "text": "`https://developer.apple.com/documentation/advancedcommerceapi/SubscriptionCreateItem`.`displayName`: The tier of the subscription service the customer is purchasing, which needs to be different from your `descriptors.displayName`. For example, if your app includes creator subscriptions and a creator offers multiple subscription tiers, the `displayName` represents the tier the customer is purchasing.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/SubscriptionCreateItem",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName"
+          ]
+        },
+        {
+          "text": "items.`price`: The price of the item the customer is purchasing.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/SubscriptionCreateItem",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price"
+          ]
+        },
+        {
+          "text": "`period`: The duration of the subscription’s billing cycle.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period"
+          ]
+        },
+        {
+          "text": "`currency`: The currency that your app uses to charge the customer.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency"
+          ]
+        },
+        {
+          "text": "App link: A dedicated link for customers to manage their subscription within your app. This link appears in the customer’s Apple Account Subscription Settings as a “Manage in [Your App Name]” button. For setup information, see `setupmanagesubscriptions`. You must also provide a way for customers to `https://developer.apple.com/documentation/advancedcommerceapi/subscriptionreactivateinapprequest` to a subscription that has expired or has automatic renewals turned off.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setupmanagesubscriptions",
+            "https://developer.apple.com/documentation/advancedcommerceapi/subscriptionreactivateinapprequest"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Create bundled subscriptions",
+      "paragraphs": [
+        {
+          "text": "For subscription-specific services that are bundled with additional add-on content or services (all of which auto-renews as a single subscription), create a SKU for each service or content offering. Use the `SubscriptionCreateRequest` API to provide information to the App Store when the customer initiates a purchase. After a successful purchase, Apple sends customers a subscription confirmation email and a receipt. Customers can go to their Apple Account Subscription Settings to manage their subscription at any time.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "![subscription-bundle-destination-video.png]",
+          "refs": [
+            "subscription-bundle-destination-video.png"
+          ]
+        },
+        {
+          "text": "The following details appear in the App Store payment sheet, email communications from Apple, and customer’s Subscription Settings; you set the values of these details in `SubscriptionCreateRequest`:",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "![subscription-bundle-text-field-mapping.png]",
+          "refs": [
+            "subscription-bundle-text-field-mapping.png"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "descriptors.`displayName`: The name of the subscription SKU a customer is purchasing. This needs to represent your overall subscription as well as be relevant for any combination of SKUs someone might choose to bundle.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/Descriptors",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName"
+          ]
+        },
+        {
+          "text": "items.`displayName`: The name of the add-on a customer is purchasing. For example, for a streaming app with multiple channel add-ons, this string might be “Live Sports”.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/SubscriptionCreateItem",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName"
+          ]
+        },
+        {
+          "text": "items.`price`: The price for each add-on within the bundled subscription purchase. When your app or email displays multiple bundle items, it sorts them from highest to lowest price.",
+          "refs": [
+            "https://developer.apple.com/documentation/advancedcommerceapi/SubscriptionCreateItem",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price"
+          ]
+        },
+        {
+          "text": "`period`: The duration of the subscription’s billing cycle.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period"
+          ]
+        },
+        {
+          "text": "`currency`: The currency that your app uses to charge the customer.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency"
+          ]
+        },
+        {
+          "text": "App link: A dedicated link for customers to manage their subscription within your app. This link appears in the customer’s Apple Account Subscription Settings as a “Manage in [Your App Name]” button. For setup information, see `setupmanagesubscriptions`. You must also provide a way for customers to resubscribe to a subscription that has expired or has automatic renewals turned off.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setupmanagesubscriptions",
+            "https://developer.apple.com/documentation/advancedcommerceapi/subscriptionreactivateinapprequest"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Generic product IDs and SKUs",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-generic-product-identifiers",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-skus-for-the-mini-app-partner-program"
+      ]
+    }
+  ]
+}

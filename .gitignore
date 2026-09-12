@@ -149,6 +149,8 @@ _TeamCity*
 coverage*.json
 coverage*.xml
 coverage*.info
+# Coverlet's rule above also matches the reviewed coverage decisions vendored under spec/.
+!spec/coverage.*.json
 
 # Visual Studio code coverage results
 *.coverage
@@ -472,3 +474,6 @@ $RECYCLE.BIN/
 ##
 docfx/_site/
 docfx/api/
+
+# Claude Code, per-machine permission state
+.claude/settings.local.json

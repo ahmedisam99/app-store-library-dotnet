@@ -1,0 +1,79 @@
+{
+  "id": "data:retention_messaging:promotionalOfferSignatureV2",
+  "title": "promotionalOfferSignatureV2",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/promotionalOfferSignatureV2",
+  "slug": "retentionmessaging/promotionaloffersignaturev2",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The promotional-offer signature you generate in a JSON Web Signature (JWS) format.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string promotionalOfferSignatureV2",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "The `transactionId` parameter of the signature is required. Use the `originalTransactionId` you receive in `DecodedRealtimeRequestBody`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/originalTransactionId",
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "To provide a promotional-offer retention message, you need to cryptographically sign the offer and include it in the `promotionalOffer` parameter of your `RealtimeResponseBody` response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOffer",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "To generate the promotional-offer signature in a JWS format, see `generating-jws-to-sign-app-store-requests`, and follow the instructions for promotional-offer signatures, including the custom claims.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/generating-jws-to-sign-app-store-requests"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n> The `transactionId` parameter of the signature is required. Use the `originalTransactionId` you receive in `DecodedRealtimeRequestBody`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/originalTransactionId",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "The App Store Server Library provides functions that simplify generating this signature. For more information, see `simplifying-your-implementation-by-using-the-app-store-server-library`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

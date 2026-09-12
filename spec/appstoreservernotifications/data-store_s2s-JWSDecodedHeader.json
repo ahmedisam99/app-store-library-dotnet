@@ -1,0 +1,125 @@
+{
+  "id": "data:store_s2s:JWSDecodedHeader",
+  "title": "JWSDecodedHeader",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/JWSDecodedHeader",
+  "slug": "appstoreservernotifications/jwsdecodedheader",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A decoded JSON Web Signature header containing transaction or renewal information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object JWSDecodedHeader",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "alg",
+      "type": "alg",
+      "typeId": "data:store_s2s:alg",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The algorithm used for signing the JSON Web Signature (JWS).",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "x5c",
+      "type": "x5c",
+      "typeId": "data:store_s2s:x5c",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The X.509 certificate chain that corresponds to the key that the App Store used to secure the JWS.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "All JWS representations, including the `signedPayload`, contain a JWS header. When you Base64 URL-decode the header, use the `JWSDecodedHeader` object to read its contents. Use the information in the `JWSDecodedHeader` to validate the JWS signature. For more information about validating signatures, see the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/signedPayload",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/JWSDecodedHeader",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSDecodedHeader",
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The App Store signs transaction and renewal information that you receive in `App-Store-Server-Notifications-V2` and in the `AppStoreServerAPI`. It uses the following `x5c` certificate chain, in the following order:",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+          ]
+        },
+        {
+          "text": "For more information, or to download Apple’s root and intermediate certificates, see `https://www.apple.com/certificateauthority/`.",
+          "refs": [
+            "https://www.apple.com/certificateauthority/"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A certificate that contains the public key that corresponds to the key the App Store uses to digitally sign the JWS. Section 4.11.10 Mac App Store Receipt Signing Certificates of the `https://images.apple.com/certificateauthority/pdf/Apple_WWDR_CPS_v1.26.pdf` document defines the custom extensions this certificate uses.",
+          "refs": [
+            "https://images.apple.com/certificateauthority/pdf/Apple_WWDR_CPS_v1.26.pdf"
+          ]
+        },
+        {
+          "text": "An Apple intermediate certificate that contains an extension with the extension ID for `Apple Worldwide Developer Relations (1.2.840.113635.100.6.2.1)`.",
+          "refs": []
+        },
+        {
+          "text": "An Apple root certificate.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "JWS header types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/alg",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/x5c"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "JWS header and payload data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transaction-data-types"
+      ]
+    }
+  ]
+}

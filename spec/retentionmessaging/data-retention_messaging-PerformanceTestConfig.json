@@ -1,0 +1,140 @@
+{
+  "id": "data:retention_messaging:PerformanceTestConfig",
+  "title": "PerformanceTestConfig",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/PerformanceTestConfig",
+  "slug": "retentionmessaging/performancetestconfig",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An object that enumerates the test configuration parameters.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PerformanceTestConfig",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "maxConcurrentRequests",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The maximum number of concurrent requests the API allows.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "responseTimeThreshold",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The maximum time your server has to respond when the system calls your `Get Retention Message` endpoint in the sandbox environment.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "successRateThreshold",
+      "type": "int32",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The success rate threshold percentage.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "totalDuration",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The total duration of the test in milliseconds.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "totalRequests",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The total number of requests to make during the test.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `Initiate-Performance-Test` endpoint returns the `PerformanceTestConfig` object in the `PerformanceTestResponse` response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse"
+          ]
+        },
+        {
+          "text": "When you call the `Initiate-Performance-Test` endpoint to start a performance test, the test sends multiple requests and runs for a period of time. To calculate the time when the test concludes, add the `totalDuration` to the time, in milliseconds, you initiated the test.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponseTimes",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestStatus",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Failures",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/sendAttemptResult",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestId"
+      ]
+    }
+  ]
+}

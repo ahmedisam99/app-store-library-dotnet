@@ -1,0 +1,112 @@
+{
+  "id": "data:retention_messaging:ExistingPerformanceTestRunError",
+  "title": "ExistingPerformanceTestRunError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/ExistingPerformanceTestRunError",
+  "slug": "retentionmessaging/existingperformancetestrunerror",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates an error with an existing test.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ExistingPerformanceTestRunError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000213"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. Existing performance test run."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This error indicates the service is already processing a test with this ID.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/AltTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BodyTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ForbiddenNoPassingTestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/HeaderTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageAlreadyExistsError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageInUseError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotApprovedError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/ImageNotFoundError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidLocaleError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidPerformanceTestRequestError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidProductIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/InvalidRequestIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/MaximumNumberOfImagesReachedError"
+      ]
+    }
+  ]
+}

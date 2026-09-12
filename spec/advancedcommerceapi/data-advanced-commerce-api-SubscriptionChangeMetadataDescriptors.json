@@ -1,0 +1,99 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionChangeMetadataDescriptors",
+  "title": "SubscriptionChangeMetadataDescriptors",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataDescriptors",
+  "slug": "advancedcommerceapi/subscriptionchangemetadatadescriptors",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The subscription metadata to change, specifically the description and display name.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionChangeMetadataDescriptors",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "description",
+      "type": "description",
+      "typeId": "data:advanced-commerce-api:description",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "45",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The new description for the subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "displayName",
+      "type": "displayName",
+      "typeId": "data:advanced-commerce-api:displayName",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "30",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The new display name for the subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "effective",
+      "type": "effective",
+      "typeId": "data:advanced-commerce-api:effective",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The string that determines when the metadata change goes into effect.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription metadata changes from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataItem"
+      ]
+    }
+  ]
+}

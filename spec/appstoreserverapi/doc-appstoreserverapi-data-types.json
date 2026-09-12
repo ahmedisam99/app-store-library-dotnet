@@ -1,0 +1,199 @@
+{
+  "id": "doc:appstoreserverapi/data-types",
+  "title": "Data types",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/data-types",
+  "slug": "appstoreserverapi/data-types",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Refer to these data types for decoded transaction and renewal information payloads.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Environment",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/environment"
+      ]
+    },
+    {
+      "title": "Transaction identifiers",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/webOrderLineItemId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/anyTransactionId"
+      ]
+    },
+    {
+      "title": "App transaction identifier",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+      ]
+    },
+    {
+      "title": "App information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAppleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/bundleId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalApplicationVersion",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPlatform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/preorderDate"
+      ]
+    },
+    {
+      "title": "Account information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken"
+      ]
+    },
+    {
+      "title": "Product information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/productId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/type",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/subscriptionGroupIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/quantity"
+      ]
+    },
+    {
+      "title": "Product price and currency",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/price",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/currency"
+      ]
+    },
+    {
+      "title": "Storefront information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefront",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefrontId"
+      ]
+    },
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerPeriod",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType"
+      ]
+    },
+    {
+      "title": "Product purchase dates",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalPurchaseDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/purchaseDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/recentSubscriptionStartDate"
+      ]
+    },
+    {
+      "title": "Billing status",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/isInBillingRetryPeriod",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/gracePeriodExpiresDate"
+      ]
+    },
+    {
+      "title": "Subscription renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewProductId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expirationIntent",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expiresDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/isUpgraded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalBillingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalPrice",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/status"
+      ]
+    },
+    {
+      "title": "Monthly subscriptions with 12-month commitments",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionCommitmentInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPeriodNumber",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentExpiresDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentPrice",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/totalBillingPeriods",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RenewalCommitmentInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentAutoRenewProductId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentAutoRenewStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentRenewalBillingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentRenewalDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/commitmentRenewalPrice"
+      ]
+    },
+    {
+      "title": "Family Sharing",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/inAppOwnershipType"
+      ]
+    },
+    {
+      "title": "Price increase status",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/priceIncreaseStatus"
+      ]
+    },
+    {
+      "title": "Revocation",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationReason",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationType"
+      ]
+    },
+    {
+      "title": "Transaction reason",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionReason"
+      ]
+    },
+    {
+      "title": "JSON Web Signature (JWS) date",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/signedDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/receiptCreationDate"
+      ]
+    },
+    {
+      "title": "Advanced Commerce API data",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/advancedcommerce-datatypes"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "JWS headers and payloads",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload"
+      ]
+    }
+  ]
+}

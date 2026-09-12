@@ -1,0 +1,57 @@
+{
+  "id": "data:store_s2s:tokenCreationDate",
+  "title": "tokenCreationDate",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/tokenCreationDate",
+  "slug": "appstoreservernotifications/tokencreationdate",
+  "introducedAt": "2.10",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The field of an external purchase token that contains the UNIX date, in milliseconds, when the system created the token.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "timestamp tokenCreationDate",
+    "baseType": "timestamp",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This field represents the date when the system created the `externalPurchaseToken`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "External purchase token fields",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenExpirationDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenType"
+      ]
+    }
+  ]
+}

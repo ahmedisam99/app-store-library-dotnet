@@ -1,0 +1,79 @@
+{
+  "id": "data:advanced-commerce-api:refundRiskingPreference",
+  "title": "refundRiskingPreference",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/refundRiskingPreference",
+  "slug": "advancedcommerceapi/refundriskingpreference",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A Boolean value that indicates whether the App Store asks you for consumption data to help inform the refund decision.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "boolean refundRiskingPreference",
+    "baseType": "boolean",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store uses a variety of factors to determine if a refund request is approved or denied. Set this value to `true` to enable the App Store to ask for consumption information about the product with the refund request. When this value is `true`, you receive a `CONSUMPTION_REQUEST` `notificationType` on your your `App-Store-Server-Notifications-V2` endpoint. Respond to the consumption request using the `Send-Consumption-Information` to provide additional information that informs and improves the refund process.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        },
+        {
+          "text": "Set this value to `false` otherwise. You won’t receive a `CONSUMPTION_REQUEST` notification.",
+          "refs": []
+        },
+        {
+          "text": "The default value is `true`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/currency",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/description",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/dependentSKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/effective",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/proratedPrice",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/retainBillingCycle",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundAmount",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundReason",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/storefront",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxCode",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/targetProductId"
+      ]
+    }
+  ]
+}

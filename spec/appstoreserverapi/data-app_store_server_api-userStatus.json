@@ -1,0 +1,109 @@
+{
+  "id": "data:app_store_server_api:userStatus",
+  "title": "userStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/userStatus",
+  "slug": "appstoreserverapi/userstatus",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The status of a customer’s account within your app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 userStatus",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "0",
+      "abstract": {
+        "text": "Account status is undeclared. Use this value to avoid providing information for this field.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "1",
+      "abstract": {
+        "text": "The customer’s account is active.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "The customer’s account is suspended.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "The customer’s account is terminated.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "The customer’s account has limited access.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This user status represents the standing of a customer account in your app.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatusV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "data:retention_messaging:promotionalOffer",
+  "title": "promotionalOffer",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/promotionalOffer",
+  "slug": "retentionmessaging/promotionaloffer",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A promotional offer and message you provide in a real-time response to your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object promotionalOffer",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The identifier of the message to display to the customer, along with the promotional offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "promotionalOfferSignatureV2",
+      "type": "promotionalOfferSignatureV2",
+      "typeId": "data:retention_messaging:promotionalOfferSignatureV2",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The promotional offer signature in V2 format. This field is mutually exclusive with `promotionalOfferSignatureV1` field.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "promotionalOfferSignatureV1",
+      "type": "promotionalOfferSignatureV1",
+      "typeId": "data:retention_messaging:promotionalOfferSignatureV1",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The promotional offer signature in V1 format. This field is mutually exclusive with the `promotionalOfferSignatureV2` field.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "In your `RealtimeResponseBody` real-time response, you can choose from mutually exclusive options. Include `promotionalOffer` in your response to provide a retention message with a promotional offer. The message identifier needs to refer to a message that doesn’t have an image, and that has a `messageState` of `APPROVED`; otherwise, the retention message fails. For more information about setting up messages, see `Upload-Message`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        },
+        {
+          "text": "For new implementations, consider using the `promotionalOfferSignatureV2` signature, which is easier to generate.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOfferSignatureV2"
+          ]
+        },
+        {
+          "text": "For more information on generating the signatures, see `promotionalOfferSignatureV1` and `promotionalOfferSignatureV2`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOfferSignatureV1",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOfferSignatureV2"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time response body",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/alternateProduct",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceInfo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "data:retention_messaging:DefaultConfigurationRequest",
+  "title": "DefaultConfigurationRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/DefaultConfigurationRequest",
+  "slug": "retentionmessaging/defaultconfigurationrequest",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body that contains the default configuration information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object DefaultConfigurationRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The message identifier of the message to configure as a default message.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Configure-Default-Message` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Default-Message"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Default message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "data:retention_messaging:RealtimeUrlRequest",
+  "title": "RealtimeUrlRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/RealtimeUrlRequest",
+  "slug": "retentionmessaging/realtimeurlrequest",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body for configuring the URL of your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RealtimeUrlRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "realtimeURL",
+      "type": "realtimeURL",
+      "typeId": "data:retention_messaging:realtimeURL",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "256",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "A string that contains the URL of your `Get Retention Message` endpoint for configuration.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "To configure your `Get Retention Message` endpoint’s URL, call `Configure-Realtime-URL` and provide the URL in this request body. For more information, see `setting-up-retention-messaging-endpoint`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlResponse"
+      ]
+    }
+  ]
+}

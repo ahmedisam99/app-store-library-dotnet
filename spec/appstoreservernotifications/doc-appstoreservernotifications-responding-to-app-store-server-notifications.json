@@ -1,0 +1,110 @@
+{
+  "id": "doc:appstoreservernotifications/responding-to-app-store-server-notifications",
+  "title": "Responding to App Store Server Notifications",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications",
+  "slug": "appstoreservernotifications/responding-to-app-store-server-notifications",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Send HTTP status codes to indicate the success of a notification post.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Retry notifications are available only in the production environment. In the sandbox environment, the App Store server attempts to send the notification one time.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "When you set up the endpoints on your server to receive notifications, configure your server to send a response. Use HTTP status codes to indicate whether the App Store server notification post succeeded:",
+          "refs": []
+        },
+        {
+          "text": "The system considers all other HTTP codes an unsuccessful post. Your server isn’t required to return a data value.",
+          "refs": []
+        },
+        {
+          "text": "If the App Store server doesn’t receive a success response from your server after the initial notification attempt, it retries as follows:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  Retry notifications are available only in the production environment. In the sandbox environment, the App Store server attempts to send the notification one time.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Send HTTP `200`, or any HTTP code between `200` and `206`, if the post was successful.",
+          "refs": []
+        },
+        {
+          "text": "Send HTTP `50x` or `40x` to have the App Store retry the notification, if the post didn’t succeed.",
+          "refs": []
+        },
+        {
+          "text": "For version 2 notifications, it retries five times, at 1, 12, 24, 48, and 72 hours after the previous attempt.",
+          "refs": []
+        },
+        {
+          "text": "For version 1 notifications, it retries three times, at 6, 24, and 48 hours after the previous attempt.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Recover from server outages",
+      "paragraphs": [
+        {
+          "text": "If your server misses notifications due to an outage, you can always get up-to-date transaction information by calling `AppStoreServerAPI` endpoints including `Get-Transaction-History` and `Get-All-Subscription-Statuses`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Transaction-History",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses"
+          ]
+        },
+        {
+          "text": "If you use version 2 notifications (`App-Store-Server-Notifications-V2`), you can recover missed notifications by calling `Get-Notification-History`. You can also test whether your server is receiving and responding to version 2 notifications correctly by calling the `Request-a-Test-Notification` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Notification-History",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Request-a-Test-Notification"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/receiving-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+      ]
+    }
+  ]
+}

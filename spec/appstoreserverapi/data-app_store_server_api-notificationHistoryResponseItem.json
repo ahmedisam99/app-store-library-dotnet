@@ -1,0 +1,101 @@
+{
+  "id": "data:app_store_server_api:notificationHistoryResponseItem",
+  "title": "notificationHistoryResponseItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/notificationHistoryResponseItem",
+  "slug": "appstoreserverapi/notificationhistoryresponseitem",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The App Store server notification history record, including the signed notification payload and the result of the server’s first send attempt.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object notificationHistoryResponseItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "sendAttempts",
+      "type": "[sendAttemptItem]",
+      "typeId": "data:app_store_server_api:sendAttemptItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An array of information the App Store server records for its attempts to send a notification to your server. The maximum number of entries in the array is six.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedPayload",
+      "type": "signedPayload",
+      "typeId": "data:app_store_server_api:signedPayload",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The cryptographically signed payload, in JSON Web Signature (JWS) format, containing the original response body of a version 2 notification. For more information, see `signedPayload` in `AppStoreServerNotifications`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/signedPayload",
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "firstSendAttemptResult",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": "1.5.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The result of the App Store server’s first attempt to send the notification to your server’s `App-Store-Server-Notifications-V2` endpoint.\n\nUse the earliest `sendAttemptItem` in the `sendAttempts` array instead.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptResult",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/signedPayload"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications history",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "data:app_store_server_api:signedPayload",
+  "title": "signedPayload",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/signedPayload",
+  "slug": "appstoreserverapi/signedpayload",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A cryptographically signed payload, in JSON Web Signature (JWS) format, containing the response body for a version 2 notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string signedPayload",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `signedpayload` is a string of three Base64 URL-encoded components, separated by a period.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `signedPayload` in `AppStoreServerNotifications`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/signedPayload",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem"
+      ]
+    }
+  ]
+}

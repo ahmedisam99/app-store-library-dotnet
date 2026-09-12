@@ -1,0 +1,89 @@
+{
+  "id": "data:app_store_server_api:offerPeriod",
+  "title": "offerPeriod",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/offerPeriod",
+  "slug": "appstoreserverapi/offerperiod",
+  "introducedAt": "1.15",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The duration of the offer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string offerPeriod",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Single period length",
+        "Period count",
+        "Offer period value"
+      ],
+      "rows": [
+        [
+          "1 month",
+          "1",
+          "`P1M`"
+        ],
+        [
+          "1 month",
+          "2",
+          "`P2M`"
+        ],
+        [
+          "3 days",
+          "1",
+          "`P3D`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This field is in ISO 8601 duration format.",
+          "refs": []
+        },
+        {
+          "text": "The following table shows examples of offer period values.",
+          "refs": []
+        },
+        {
+          "text": "| Single period length | Period count | Offer period value |\n| --- | --- | --- |\n| 1 month | 1 | `P1M` |\n| 1 month | 2 | `P2M` |\n| 3 days | 1 | `P3D` |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/offerDiscountType"
+      ]
+    }
+  ]
+}

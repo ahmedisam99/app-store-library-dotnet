@@ -1,0 +1,114 @@
+{
+  "id": "data:app_store_server_api:InvalidRevokedError",
+  "title": "InvalidRevokedError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/InvalidRevokedError",
+  "slug": "appstoreserverapi/invalidrevokederror",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the revoked parameter contains an invalid value.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InvalidRevokedError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000030"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.8.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The revoked parameter is invalid."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-Transaction-History` endpoint returns this error if you provide an invalid value for the `revoked` query parameter.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError"
+      ]
+    }
+  ]
+}

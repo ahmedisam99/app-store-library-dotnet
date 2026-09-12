@@ -1,0 +1,194 @@
+{
+  "id": "rest:app_store_server_api:post:v1-subscriptions-extend-mass",
+  "title": "Extend Subscription Renewal Dates for All Active Subscribers",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+  "slug": "appstoreserverapi/extend-subscription-renewal-dates-for-all-active-subscribers",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Uses a subscription’s product identifier to extend the renewal date for all of its eligible active subscribers.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/subscriptions/extend/mass",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/subscriptions/extend/mass",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "MassExtendRenewalDateRequest",
+    "typeId": "data:app_store_server_api:MassExtendRenewalDateRequest",
+    "abstract": {
+      "text": "The request body for extending a subscription renewal date for all of its active subscribers.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "MassExtendRenewalDateResponse",
+      "typeId": "data:app_store_server_api:MassExtendRenewalDateResponse",
+      "abstract": {
+        "text": "Request succeeded.\n\nIf you reuse the `requestIdentifier` to call the endpoint again, the server responds with `200`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/requestIdentifier"
+        ]
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidExtendByDaysError | InvalidProductIdError | InvalidExtendReasonCodeError | InvalidRequestIdentifierError | InvalidEmptyStorefrontCountryCodeListError | InvalidStorefrontCountryCodeError)",
+      "typeId": "data:app_store_server_api:InvalidExtendByDaysError|data:app_store_server_api:InvalidProductIdError|data:app_store_server_api:InvalidExtendReasonCodeError|data:app_store_server_api:InvalidRequestIdentifierError|data:app_store_server_api:InvalidEmptyStorefrontCountryCodeListError|data:app_store_server_api:InvalidStorefrontCountryCodeError",
+      "abstract": {
+        "text": "The request is invalid and can’t be accepted.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionExtensionIneligibleError | SubscriptionMaxExtensionError)",
+      "typeId": "data:app_store_server_api:SubscriptionExtensionIneligibleError|data:app_store_server_api:SubscriptionMaxExtensionError",
+      "abstract": {
+        "text": "The request is invalid and can’t be accepted.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "StatusRequestNotFoundError",
+      "typeId": "data:app_store_server_api:StatusRequestNotFoundError",
+      "abstract": {
+        "text": "The server didn’t find a subscription-renewal-date extension request for the request identifier and product identifier you provided.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "The request failed. This may be due to a temporary outage. Check the specific error message for further information.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " After the subscription renewal extension goes into effect, there’s no way to reverse it. The extension period doesn’t count toward the one year of paid service when the App Store calculates the developer’s commission rate.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to compensate your customers for temporary service outages, canceled events, or interruptions to live streamed events by extending the renewal date of their paid, active subscription. This endpoint acts on all active subscriptions for the product identifier you specify, and is limited to the storefronts you optionally specify.",
+          "refs": []
+        },
+        {
+          "text": "To call this endpoint, provide the subscription product identifier that experienced the service interruption, and other information, in the request body, `MassExtendRenewalDateRequest`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateRequest"
+          ]
+        },
+        {
+          "text": "A successful response with an `HTTP 200` status code contains the `MassExtendRenewalDateResponse` object, which includes the same unique `requestIdentifier` you provide in the request. This endpoint is an asynchronous request. A successful response indicates that the App Store server is processing the request. Status codes other than `HTTP 200` indicate that the request failed.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateResponse"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  After the subscription renewal extension goes into effect, there’s no way to reverse it. The extension period doesn’t count toward the one year of paid service when the App Store calculates the developer’s commission rate.",
+          "refs": []
+        },
+        {
+          "text": "After a successful renewal date extension, Apple sends an email to notify the customer of their updated subscription renewal date.",
+          "refs": []
+        },
+        {
+          "text": "For more information about this endpoint, including subscription eligibility, getting status notifications, and retrying extensions that fail, see `extending-the-renewal-date-for-auto-renewable-subscriptions`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription-renewal-date extension",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Status-of-Subscription-Renewal-Date-Extensions",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ExtendRenewalDateRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ExtendRenewalDateResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateStatusResponse"
+      ]
+    }
+  ]
+}

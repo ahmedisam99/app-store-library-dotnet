@@ -1,0 +1,121 @@
+{
+  "id": "data:store_s2s:appData",
+  "title": "appData",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/appData",
+  "slug": "appstoreservernotifications/appdata",
+  "introducedAt": "2.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The object that contains the app metadata and signed app transaction information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object appData",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:store_s2s:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app that the notification applies to. This property is available for apps that users download from the App Store. It isn’t present in the sandbox environment.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:store_s2s:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle identifier of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:store_s2s:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment that the notification applies to, either `sandbox` or `production`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedAppTransactionInfo",
+      "type": "JWSAppTransaction",
+      "typeId": "data:store_s2s:JWSAppTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.19.0",
+      "attributes": [],
+      "abstract": {
+        "text": "App transaction information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `appData` object is part of the `responseBodyV2DecodedPayload`. This object is present in the payload when the `notificationType` is `RESCIND_CONSENT`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "JWS app transaction information",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSAppTransaction"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Response objects for in-app purchases",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data"
+      ]
+    }
+  ]
+}

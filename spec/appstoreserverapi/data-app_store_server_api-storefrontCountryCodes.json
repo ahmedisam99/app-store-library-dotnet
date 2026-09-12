@@ -1,0 +1,66 @@
+{
+  "id": "data:app_store_server_api:storefrontCountryCodes",
+  "title": "storefrontCountryCodes",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/storefrontCountryCodes",
+  "slug": "appstoreserverapi/storefrontcountrycodes",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A list of storefront country codes you provide to limit the storefronts for a subscription-renewal-date extension.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "[storefrontCountryCode] storefrontCountryCodes",
+    "baseType": "[storefrontCountryCode]",
+    "isArray": true,
+    "elementType": "storefrontCountryCode"
+  },
+  "constraints": [
+    {
+      "kind": "maximumLength",
+      "value": "3",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You provide the list of storefront country codes in the `MassExtendRenewalDateRequest` to limit the storefronts in which the App Store extends the subscription renewal date. To indicate that the extension applies in all storefronts, omit the `storefrontCountryCodes` object from the `MassExtendRenewalDateRequest` object.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MassExtendRenewalDateRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefrontCountryCodes"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extendByDays",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extendReasonCode",
+        "doc://com.apple.documentation/documentation/AppStoreServerNotifications/productId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/requestIdentifier",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefrontCountryCode"
+      ]
+    }
+  ]
+}

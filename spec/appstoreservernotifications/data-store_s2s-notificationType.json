@@ -1,0 +1,671 @@
+{
+  "id": "data:store_s2s:notificationType",
+  "title": "notificationType",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/notificationType",
+  "slug": "appstoreservernotifications/notificationtype",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The type that describes the In-App Purchase or external purchase event for which the App Store sends the version 2 notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string notificationType",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "CONSUMPTION_REQUEST",
+      "abstract": {
+        "text": "A notification type that indicates that the customer initiated a refund request for a consumable In-App Purchase or auto-renewable subscription, and the App Store is requesting that you provide consumption data. For more information, see `Send-Consumption-Information`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Send-Consumption-Information"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_CHANGE_RENEWAL_PREF",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that the customer made a change to their subscription plan. If the `subtype` is `UPGRADE`, the customer upgraded their subscription. The upgrade goes into effect immediately, starting a new billing period, and the customer receives a prorated refund for the unused portion of the previous period. If the `subtype` is `DOWNGRADE`, the customer downgraded their subscription. Downgrades take effect at the next renewal date and don’t affect the currently active plan.\n\nIf the `subtype` is empty, the customer changed their renewal preference back to the current subscription, effectively canceling a downgrade.\n\nFor more information on subscription levels, see `https://developer.apple.com/app-store/subscriptions/#ranking`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+          "https://developer.apple.com/app-store/subscriptions/#ranking"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_CHANGE_RENEWAL_STATUS",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that the customer made a change to the subscription renewal status. If the `subtype` is `AUTO_RENEW_ENABLED`, the customer reenabled subscription auto-renewal. If the `subtype` is `AUTO_RENEW_DISABLED`, the customer turned off subscription auto-renewal, or the App Store turned off subscription auto-renewal after the customer requested a refund.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_FAIL_TO_RENEW",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that the subscription failed to renew due to a billing issue. The subscription enters the billing retry period. If the `subtype` is `GRACE_PERIOD`, continue to provide service through the grace period. If the `subtype` is empty, the subscription isn’t in a grace period and you can stop providing the subscription service.\n\nInform the customer that there may be an issue with their billing information. The App Store continues to retry billing for 60 days, or until the customer resolves their billing issue or cancels their subscription, whichever comes first. For more information, see `reducing-involuntary-subscriber-churn`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+          "doc://com.apple.documentation/documentation/StoreKit/reducing-involuntary-subscriber-churn"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_RENEW",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that the subscription successfully renewed. If the `subtype` is `BILLING_RECOVERY`, the expired subscription that previously failed to renew has successfully renewed. If the `subtype` is empty, the active subscription has successfully auto-renewed for a new transaction period. Provide the customer with access to the subscription’s content or service.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "EXPIRED",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that a subscription expired. If the `subtype` is `VOLUNTARY`, the subscription expired after the customer turned off subscription renewal. If the `subtype` is `BILLING_RETRY`, the subscription expired because the billing retry period ended without a successful billing transaction. If the `subtype` is `PRICE_INCREASE`, the subscription expired because the customer didn’t consent to a price increase that requires customer consent. If the `subtype` is `PRODUCT_NOT_FOR_SALE`, the subscription expired because the product wasn’t available for purchase at the time the subscription attempted to renew.\n\nA notification without a subtype indicates that the subscription expired for some other reason.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "EXTERNAL_PURCHASE_TOKEN",
+      "abstract": {
+        "text": "A notification type that applies only to apps that use the `external-purchase` API to provide alternative payment options. This notification can have a `subtype` of `CREATED`, `ACTIVE_TOKEN_REMINDER`, or `UNREPORTED`, and includes the external purchase token information, `externalPurchaseToken`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/StoreKit/external-purchase",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "GRACE_PERIOD_EXPIRED",
+      "abstract": {
+        "text": "A notification type that indicates that the billing grace period has ended without renewing the subscription, so you can turn off access to the service or content. Inform the customer that there may be an issue with their billing information. The App Store continues to retry billing for 60 days, or until the customer resolves their billing issue or cancels their subscription, whichever comes first. For more information, see `reducing-involuntary-subscriber-churn`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/StoreKit/reducing-involuntary-subscriber-churn"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "METADATA_UPDATE",
+      "abstract": {
+        "text": "A notification type that indicates you used the `Change-Subscription-Metadata` endpoint to change the metadata for a subscription. This notification only applies to apps that use the `AdvancedCommerceAPI`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "MIGRATION",
+      "abstract": {
+        "text": "A notification type that indicates you used the `Migrate-Subscription-to-Advanced-Commerce-API` endpoint. This notification only applies to apps that use the `AdvancedCommerceAPI`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "OFFER_REDEEMED",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that a customer with an active subscription redeemed a subscription offer.\n\nIf the `subtype` is  `UPGRADE`, the customer redeemed an offer to upgrade their active subscription, which goes into effect immediately. If the subtype is `DOWNGRADE`, the customer redeemed an offer to downgrade their active subscription, which goes into effect at the next renewal date. If the customer redeemed an offer for their active subscription, you receive an `OFFER_REDEEMED` notification type without a `subtype`.\n\nWhen customers redeem an offer code for a consumable, non-consumable, or non-renewing subscription, the notification type is `ONE_TIME_CHARGE`.\n\nFor more information about offer codes, see `supporting-offer-codes-in-your-app`. For more information about promotional offers, see `implementing-promotional-offers-in-your-app`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+          "doc://com.apple.documentation/documentation/StoreKit/supporting-offer-codes-in-your-app",
+          "doc://com.apple.documentation/documentation/StoreKit/implementing-promotional-offers-in-your-app"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ONE_TIME_CHARGE",
+      "abstract": {
+        "text": "A notification type that indicates the customer purchased a consumable, non-consumable, or non-renewing subscription. The App Store also sends this notification when the customer receives access to a non-consumable product through Family Sharing. To determine whether the customer redeemed an offer, check the `offerType` in the decoded payload, `JWSTransactionDecodedPayload`.\n\nFor notifications about auto-renewable subscription purchases, see the `SUBSCRIBED` notification type.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PRICE_CHANGE",
+      "abstract": {
+        "text": "A notification type that indicates that you called the `Change-Subscription-Price` endpoint. This notification only applies to apps that use the `AdvancedCommerceAPI`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+          "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PRICE_INCREASE",
+      "abstract": {
+        "text": "A notification type that, along with its `subtype`, indicates that the system has informed the customer of an auto-renewable subscription price increase.\n\nIf the price increase requires customer consent, the `subtype` is `PENDING` if the customer hasn’t responded to the price increase, or `ACCEPTED` if the customer has consented to the price increase.\n\nIf the price increase doesn’t require customer consent, the `subtype` is `ACCEPTED`.\n\nFor information about how the system calls your app before it displays the price consent sheet for subscription price increases that require customer consent, see `paymentQueueShouldShowPriceConsent(_:)`. For information about managing subscription prices, see `managing-price-increases-for-auto-renewable-subscriptions` and `https://developer.apple.com/app-store/subscriptions/#managing-prices-for-existing-subscribers`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+          "doc://com.apple.documentation/documentation/StoreKit/SKPaymentQueueDelegate/paymentQueueShouldShowPriceConsent(_:)",
+          "doc://com.apple.documentation/documentation/StoreKit/managing-price-increases-for-auto-renewable-subscriptions",
+          "https://developer.apple.com/app-store/subscriptions/#managing-prices-for-existing-subscribers"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REFUND",
+      "abstract": {
+        "text": "A notification type that indicates that the App Store successfully refunded a transaction for a consumable In-App Purchase, a non-consumable In-App Purchase, an auto-renewable subscription, or a non-renewing subscription.\n\nThe `revocationDate` contains the timestamp of the refunded transaction. The `originalTransactionId` and `productId` identify the original transaction and product. The `revocationReason` contains the reason.\n\nTo request a list of all refunded transactions for a customer, see `Get-Refund-History` in the `AppStoreServerAPI`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationDate",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalTransactionId",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/productId",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/revocationReason",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Refund-History",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REFUND_DECLINED",
+      "abstract": {
+        "text": "A notification type that indicates the App Store declined a refund request.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REFUND_REVERSED",
+      "abstract": {
+        "text": "A notification type that indicates the App Store reversed a previously granted refund due to a dispute that the customer raised. If your app revoked content or services as a result of the related refund, it needs to reinstate them.\n\nThis notification type can apply to any In-App Purchase type: consumable, non-consumable, non-renewing subscription, and auto-renewable subscription. For auto-renewable subscriptions, the renewal date remains unchanged when the App Store reverses a refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RENEWAL_EXTENDED",
+      "abstract": {
+        "text": "A notification type that indicates the App Store extended the subscription renewal date for a specific subscription. You request subscription-renewal-date extensions by calling Extend a Subscription Renewal Date or Extend Subscription Renewal Dates for All Active Subscribers in the App Store Server API.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RENEWAL_EXTENSION",
+      "abstract": {
+        "text": "A notification type that, along with its subtype, indicates that the App Store is attempting to extend the subscription renewal date that you request by calling Extend Subscription Renewal Dates for All Active Subscribers.\n\nIf the subtype is `SUMMARY`, the App Store completed extending the renewal date for all eligible subscribers. See the `summary` in the `responseBodyV2DecodedPayload` for details. If the subtype is `FAILURE`, the renewal date extension didn’t succeed for a specific subscription. See the data in the responseBodyV2DecodedPayload for details.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RESCIND_CONSENT",
+      "abstract": {
+        "text": "A notification type that indicates the parent or guardian has withdrawn consent for a child’s app usage.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REVOKE",
+      "abstract": {
+        "text": "A notification type that indicates that an In-App Purchase the customer was entitled to through Family Sharing is no longer available through sharing. The App Store sends this notification when a purchaser disables Family Sharing for their purchase, the purchaser (or family member) leaves the family group, or the purchaser receives a refund. Your app also receives a `paymentQueue(_:didRevokeEntitlementsForProductIdentifiers:)` call. Family Sharing applies to non-consumable In-App Purchases and auto-renewable subscriptions. For more information about Family Sharing, see Supporting Family Sharing in your app.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SUBSCRIBED",
+      "abstract": {
+        "text": "A notification type that, along with its subtype, indicates that the customer subscribed to an auto-renewable subscription.  If the subtype is `RESUBSCRIBE`, the customer resubscribed or received access through Family Sharing to the same subscription or to another subscription within the same subscription group. If the subtype is `INITIAL_BUY`, the customer either purchased or received access through Family Sharing to the subscription for the first time. To determine whether the customer redeemed an offer, check the `offerType` in the decoded payload, `JWSTransactionDecodedPayload`.\n\nFor notifications about other product type purchases, see the `ONE_TIME_CHARGE` notification type.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TEST",
+      "abstract": {
+        "text": "A notification type that the App Store server sends when you request it by calling the `Request-a-Test-Notification` endpoint. Call that endpoint to test whether your server is receiving notifications. You receive this notification only at your request. For troubleshooting information, see the `Get-Test-Notification-Status` endpoint.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Test-Notification-Status"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "Customer purchases a consumable, non-consumable, or non-renewing subscription.",
+          "`ONE_TIME_CHARGE`",
+          ""
+        ],
+        [
+          "Customer redeems an offer code for a consumable, non-consumable, or non-renewing subscription.",
+          "`ONE_TIME_CHARGE`",
+          ""
+        ],
+        [
+          "Customer receives access to a non-consumable In-App Purchase through Family Sharing.",
+          "`ONE_TIME_CHARGE`",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "Customer subscribes for the first time to any subscription within a subscription group.",
+          "`SUBSCRIBED`",
+          "`INITIAL_BUY`"
+        ],
+        [
+          "Customer resubscribes to any subscription from the same subscription group as their expired subscription.",
+          "`SUBSCRIBED`",
+          "`RESUBSCRIBE`"
+        ],
+        [
+          "The subscription successfully auto-renews.",
+          "`DID_RENEW`",
+          ""
+        ],
+        [
+          "A family member gains access to the subscription through Family Sharing after the purchaser subscribes for the first time.",
+          "`SUBSCRIBED`",
+          "`INITIAL_BUY`"
+        ],
+        [
+          "A family member gains access to the subscription through Family Sharing after the purchaser resubscribes.",
+          "`SUBSCRIBED`",
+          "`RESUBSCRIBE`"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "Customer downgrades a subscription within the same subscription group.",
+          "`DID_CHANGE_RENEWAL_PREF`",
+          "`DOWNGRADE`"
+        ],
+        [
+          "Customer reverts to the previous subscription, effectively canceling their downgrade.",
+          "`DID_CHANGE_RENEWAL_PREF`",
+          ""
+        ],
+        [
+          "Customer upgrades a subscription within the same subscription group.",
+          "`DID_CHANGE_RENEWAL_PREF`",
+          "`UPGRADE`"
+        ],
+        [
+          "Customer cancels the subscription from the App Store Subscriptions settings page.",
+          "`DID_CHANGE_RENEWAL_STATUS`",
+          "`AUTO_RENEW_DISABLED`"
+        ],
+        [
+          "Customer subscribes again after canceling a subscription, which reenables auto-renew.",
+          "`DID_CHANGE_RENEWAL_STATUS`",
+          "`AUTO_RENEW_ENABLED`"
+        ],
+        [
+          "The system turned off auto-renew because the customer initiated a refund through your app using the refund request API.",
+          "`DID_CHANGE_RENEWAL_STATUS`",
+          "`AUTO_RENEW_DISABLED`"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "Customer redeems a promotional offer or offer code for an active subscription.",
+          "`OFFER_REDEEMED`",
+          ""
+        ],
+        [
+          "Customer redeems\u00A0an offer code to subscribe for the first time.",
+          "`SUBSCRIBED`",
+          "`INITIAL_BUY`"
+        ],
+        [
+          "Customer redeems a promotional offer, offer code, or win-back offer after their subscription expired.",
+          "`SUBSCRIBED`",
+          "`RESUBSCRIBE`"
+        ],
+        [
+          "Customer redeems a promotional offer or offer code to upgrade their subscription.",
+          "`OFFER_REDEEMED`",
+          "`UPGRADE`"
+        ],
+        [
+          "Customer redeems a promotional offer and downgrades their subscription.",
+          "`OFFER_REDEEMED`",
+          "`DOWNGRADE`"
+        ],
+        [
+          "Customer redeems an offer code for a consumable, non-consumable, or non-recurring subscription.",
+          "`ONE_TIME_CHARGE`",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "The subscription expires because the customer chose to cancel it.",
+          "`EXPIRED`",
+          "`VOLUNTARY`"
+        ],
+        [
+          "The subscription expires because the developer removed the subscription from sale and the renewal fails.",
+          "`EXPIRED`",
+          "`PRODUCT_NOT_FOR_SALE`"
+        ],
+        [
+          "The subscription expires because the billing retry period\u00A0ends\u00A0without recovering the subscription.",
+          "`EXPIRED`",
+          "`BILLING_RETRY`"
+        ],
+        [
+          "The subscription fails to renew and enters the billing retry period.",
+          "`DID_FAIL_TO_RENEW`",
+          ""
+        ],
+        [
+          "The subscription fails to renew and enters the billing retry period with Billing Grace Period enabled.",
+          "`DID_FAIL_TO_RENEW`",
+          "`GRACE_PERIOD`"
+        ],
+        [
+          "The billing retry successfully recovers the subscription.",
+          "`DID_RENEW`",
+          "`BILLING_RECOVERY`"
+        ],
+        [
+          "The subscription exits the billing grace period (and continues in billing retry).",
+          "`GRACE_PERIOD_EXPIRED`",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "The system informs the customer of the auto-renewable subscription price increase that requires customer consent, and the customer doesn’t respond.",
+          "`PRICE_INCREASE`",
+          "`PENDING`"
+        ],
+        [
+          "The auto-renewable subscription expires because the customer didn’t consent to the price increase that requires consent.",
+          "`EXPIRED`",
+          "`PRICE_INCREASE`"
+        ],
+        [
+          "Customer consents to an auto-renewable subscription price increase that requires consent.",
+          "`PRICE_INCREASE`",
+          "`ACCEPTED`"
+        ],
+        [
+          "The system notifies the customer of the auto-renewable subscription price increase that doesn’t require customer consent.",
+          "`PRICE_INCREASE`",
+          "`ACCEPTED`"
+        ],
+        [
+          "Customer canceled the subscription after receiving a price increase notice or a request to consent to a price increase.",
+          "`DID_CHANGE_RENEWAL_STATUS`",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "Apple refunds the transaction for a consumable or non-consumable In-App Purchase, a non-renewing subscription, or an auto-renewable subscription.",
+          "`REFUND`",
+          ""
+        ],
+        [
+          "Apple reverses a previously granted refund due to a dispute that the customer raised.",
+          "`REFUND_REVERSED`",
+          ""
+        ],
+        [
+          "Apple declines a refund that the customer initiated in the app, using the request refund API.",
+          "`REFUND_DECLINED`",
+          ""
+        ],
+        [
+          "Apple requests consumption information for a refund request that a customer initiates.",
+          "`CONSUMPTION_REQUEST`",
+          ""
+        ],
+        [
+          "A family member loses access to the subscription through Family Sharing.",
+          "`REVOKE`",
+          ""
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Event",
+        "Notification type",
+        "Notification subtype"
+      ],
+      "rows": [
+        [
+          "The App Store successfully extends a subscription renewal date for a specific subscription.",
+          "`RENEWAL_EXTENDED`",
+          ""
+        ],
+        [
+          "The App Store successfully completes extending the subscription renewal date for all eligible subscribers.",
+          "`RENEWAL_EXTENSION`",
+          "`SUMMARY`"
+        ],
+        [
+          "The App Store failed to extend the subscription renewal date for a specific subscriber.",
+          "`RENEWAL_EXTENSION`",
+          "`FAILURE`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `notificationType appears` in the notification payload, `responseBodyV2DecodedPayload`. It describes the event that leads to the notification. Some notifications also have a `subtype` that further describes the event. See the `responseBodyV2DecodedPayload` for more information about the notification in the `data`, `summary`, or `externalPurchaseToken` object.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle use cases for In-App Purchase life-cycle events",
+      "paragraphs": [
+        {
+          "text": "When events occur that affect the customer’s In-App Purchase and subscription life cycle, the App Store server sends you notifications. The following tables list the notifications by life-cycle events.",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| Customer purchases a consumable, non-consumable, or non-renewing subscription. | `ONE_TIME_CHARGE` |  |\n| Customer redeems an offer code for a consumable, non-consumable, or non-renewing subscription. | `ONE_TIME_CHARGE` |  |\n| Customer receives access to a non-consumable In-App Purchase through Family Sharing. | `ONE_TIME_CHARGE` |  |",
+          "refs": []
+        },
+        {
+          "text": "Events that enable service for subscriptions, including initial subscriptions, resubscribing, and successful auto-renewals, result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| Customer subscribes for the first time to any subscription within a subscription group. | `SUBSCRIBED` | `INITIAL_BUY` |\n| Customer resubscribes to any subscription from the same subscription group as their expired subscription. | `SUBSCRIBED` | `RESUBSCRIBE` |\n| The subscription successfully auto-renews. | `DID_RENEW` |  |\n| A family member gains access to the subscription through Family Sharing after the purchaser subscribes for the first time. | `SUBSCRIBED` | `INITIAL_BUY` |\n| A family member gains access to the subscription through Family Sharing after the purchaser resubscribes. | `SUBSCRIBED` | `RESUBSCRIBE` |",
+          "refs": []
+        },
+        {
+          "text": "Customers changing their subscription options, including upgrading, downgrading, or canceling, result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| Customer downgrades a subscription within the same subscription group. | `DID_CHANGE_RENEWAL_PREF` | `DOWNGRADE` |\n| Customer reverts to the previous subscription, effectively canceling their downgrade. | `DID_CHANGE_RENEWAL_PREF` |  |\n| Customer upgrades a subscription within the same subscription group. | `DID_CHANGE_RENEWAL_PREF` | `UPGRADE` |\n| Customer cancels the subscription from the App Store Subscriptions settings page. | `DID_CHANGE_RENEWAL_STATUS` | `AUTO_RENEW_DISABLED` |\n| Customer subscribes again after canceling a subscription, which reenables auto-renew. | `DID_CHANGE_RENEWAL_STATUS` | `AUTO_RENEW_ENABLED` |\n| The system turned off auto-renew because the customer initiated a refund through your app using the refund request API. | `DID_CHANGE_RENEWAL_STATUS` | `AUTO_RENEW_DISABLED` |",
+          "refs": []
+        },
+        {
+          "text": "Customers redeeming offers, such as promotional offers, win-back offers, or offer codes result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| Customer redeems a promotional offer or offer code for an active subscription. | `OFFER_REDEEMED` |  |\n| Customer redeems\u00A0an offer code to subscribe for the first time. | `SUBSCRIBED` | `INITIAL_BUY` |\n| Customer redeems a promotional offer, offer code, or win-back offer after their subscription expired. | `SUBSCRIBED` | `RESUBSCRIBE` |\n| Customer redeems a promotional offer or offer code to upgrade their subscription. | `OFFER_REDEEMED` | `UPGRADE` |\n| Customer redeems a promotional offer and downgrades their subscription. | `OFFER_REDEEMED` | `DOWNGRADE` |\n| Customer redeems an offer code for a consumable, non-consumable, or non-recurring subscription. | `ONE_TIME_CHARGE` |  |",
+          "refs": []
+        },
+        {
+          "text": "Billing events, including billing retries, entering and exiting the billing grace period, and expiring subscriptions, result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| The subscription expires because the customer chose to cancel it. | `EXPIRED` | `VOLUNTARY` |\n| The subscription expires because the developer removed the subscription from sale and the renewal fails. | `EXPIRED` | `PRODUCT_NOT_FOR_SALE` |\n| The subscription expires because the billing retry period\u00A0ends\u00A0without recovering the subscription. | `EXPIRED` | `BILLING_RETRY` |\n| The subscription fails to renew and enters the billing retry period. | `DID_FAIL_TO_RENEW` |  |\n| The subscription fails to renew and enters the billing retry period with Billing Grace Period enabled. | `DID_FAIL_TO_RENEW` | `GRACE_PERIOD` |\n| The billing retry successfully recovers the subscription. | `DID_RENEW` | `BILLING_RECOVERY` |\n| The subscription exits the billing grace period (and continues in billing retry). | `GRACE_PERIOD_EXPIRED` |  |",
+          "refs": []
+        },
+        {
+          "text": "Events or notifications that occur when you increase the price of an auto-renewable subscription\u00A0include:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| The system informs the customer of the auto-renewable subscription price increase that requires customer consent, and the customer doesn’t respond. | `PRICE_INCREASE` | `PENDING` |\n| The auto-renewable subscription expires because the customer didn’t consent to the price increase that requires consent. | `EXPIRED` | `PRICE_INCREASE` |\n| Customer consents to an auto-renewable subscription price increase that requires consent. | `PRICE_INCREASE` | `ACCEPTED` |\n| The system notifies the customer of the auto-renewable subscription price increase that doesn’t require customer consent. | `PRICE_INCREASE` | `ACCEPTED` |\n| Customer canceled the subscription after receiving a price increase notice or a request to consent to a price increase. | `DID_CHANGE_RENEWAL_STATUS` |  |",
+          "refs": []
+        },
+        {
+          "text": "Customers requesting refunds or canceling Family Sharing result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| Apple refunds the transaction for a consumable or non-consumable In-App Purchase, a non-renewing subscription, or an auto-renewable subscription. | `REFUND` |  |\n| Apple reverses a previously granted refund due to a dispute that the customer raised. | `REFUND_REVERSED` |  |\n| Apple declines a refund that the customer initiated in the app, using the request refund API. | `REFUND_DECLINED` |  |\n| Apple requests consumption information for a refund request that a customer initiates. | `CONSUMPTION_REQUEST` |  |\n| A family member loses access to the subscription through Family Sharing. | `REVOKE` |  |",
+          "refs": []
+        },
+        {
+          "text": "Developers requesting subscription-renewal-date extensions result in the following notifications:",
+          "refs": []
+        },
+        {
+          "text": "| Event | Notification type | Notification subtype |\n| --- | --- | --- |\n| The App Store successfully extends a subscription renewal date for a specific subscription. | `RENEWAL_EXTENDED` |  |\n| The App Store successfully completes extending the subscription renewal date for all eligible subscribers. | `RENEWAL_EXTENSION` | `SUMMARY` |\n| The App Store failed to extend the subscription renewal date for a specific subscriber. | `RENEWAL_EXTENSION` | `FAILURE` |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Server notifications version 2",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+      ]
+    }
+  ]
+}

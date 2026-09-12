@@ -1,0 +1,95 @@
+{
+  "id": "data:store_s2s:consumptionRequestReason",
+  "title": "consumptionRequestReason",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/consumptionRequestReason",
+  "slug": "appstoreservernotifications/consumptionrequestreason",
+  "introducedAt": "2.11",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The\u00A0customer-provided\u00A0reason for a refund request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string consumptionRequestReason",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "UNINTENDED_PURCHASE",
+      "abstract": {
+        "text": "The customer didn’t intend to make the in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FULFILLMENT_ISSUE",
+      "abstract": {
+        "text": "The customer had issues with receiving or using the  in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "UNSATISFIED_WITH_PURCHASE",
+      "abstract": {
+        "text": "The customer wasn’t satisfied with the in-app purchase.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "LEGAL",
+      "abstract": {
+        "text": "The customer requested a refund based on a legal reason.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "OTHER",
+      "abstract": {
+        "text": "The customer requested a refund for other reasons.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When a customer initiates a refund request for a consumable in-app purchase or auto-renewable subscription, the App Store sends a `CONSUMPTION_REQUEST` `notificationType` to your server. The notification includes the `consumptionRequestReason` in the `data` object.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

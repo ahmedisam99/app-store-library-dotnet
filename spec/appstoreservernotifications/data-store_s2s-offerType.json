@@ -1,0 +1,105 @@
+{
+  "id": "data:store_s2s:offerType",
+  "title": "offerType",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/offerType",
+  "slug": "appstoreservernotifications/offertype",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The type of offer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 offerType",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "1",
+      "abstract": {
+        "text": "An introductory offer.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "2",
+      "abstract": {
+        "text": "A promotional offer.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "3",
+      "abstract": {
+        "text": "An offer with an offer code.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "4",
+      "abstract": {
+        "text": "A win-back offer.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "All offer types, except offer type `1`, have an `offerIdentifier`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerIdentifier"
+          ]
+        },
+        {
+          "text": "You set up offers in App Store Connect. For more information on subscription offers, see `https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-introductory-offers-for-auto-renewable-subscriptions`, `https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-promotional-offers-for-auto-renewable-subscriptions`, `https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-offer-codes`, and `https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-win-back-offers`. For more information on offer codes, see `https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/create-offer-codes-for-in-app-purchases`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-introductory-offers-for-auto-renewable-subscriptions",
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-promotional-offers-for-auto-renewable-subscriptions",
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-offer-codes",
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-up-win-back-offers",
+            "https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/create-offer-codes-for-in-app-purchases"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerIdentifier",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerPeriod",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType"
+      ]
+    }
+  ]
+}

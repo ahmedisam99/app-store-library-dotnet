@@ -1,0 +1,136 @@
+{
+  "id": "data:store_s2s:unified_receipt",
+  "title": "unified_receipt",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/unified_receipt",
+  "slug": "appstoreservernotifications/unified_receipt",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An object that contains information about the most recent in-app purchase transactions for the app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object unified_receipt",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "environment",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Sandbox",
+            "Production"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The environment for which the App Store generated the receipt.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "latest_receipt",
+      "type": "byte",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The latest Base64-encoded app receipt.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "latest_receipt_info",
+      "type": "[unified_receipt.Latest_receipt_info]",
+      "typeId": "data:store_s2s:unified_receipt.Latest_receipt_info",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array that contains the latest 100 in-app purchase transactions of the decoded value in `latest_receipt`. This array excludes transactions for consumable products your app has marked as finished. The contents of this array are identical to those in `Latest_receipt_info-data.dictionary` in the `Verify-Receipt` endpoint response for receipt validation.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/responseBody/Latest_receipt_info-data.dictionary",
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/Verify-Receipt"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "pending_renewal_info",
+      "type": "[unified_receipt.Pending_renewal_info]",
+      "typeId": "data:store_s2s:unified_receipt.Pending_renewal_info",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An array in which each element contains the pending renewal information for each auto-renewable subscription identified in `product_id`. The contents of this array are identical to those in `Pending_renewal_info-data.dictionary` in the `Verify-Receipt` endpoint response for receipt validation.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/responseBody/Pending_renewal_info-data.dictionary",
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/Verify-Receipt"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "status",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "0"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The status code, where `0` indicates that the notification is valid.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Latest_receipt_info-data.dictionary",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Pending_renewal_info-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

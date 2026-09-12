@@ -1,0 +1,64 @@
+{
+  "id": "data:store_s2s:signedPayload",
+  "title": "signedPayload",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/signedPayload",
+  "slug": "appstoreservernotifications/signedpayload",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A cryptographically signed payload, in JSON Web Signature (JWS) format, that contains the response body for a version 2 notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string signedPayload",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `signedPayload` is a string of three Base64URL-encoded components, separated by a period. The string contains a JWS representation of the notification response body, signed by the App Store according to the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The three components of the string are a header, a payload, and a signature, in that order.",
+          "refs": []
+        },
+        {
+          "text": "To read the notification response body, Base64URL-decode the payload. Use a `responseBodyV2DecodedPayload` object to read the payload information.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        },
+        {
+          "text": "To read the header, Base64URL-decode it and use a `JWSDecodedHeader` object to access the information. Use the information in the decoded header to verify the signature.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSDecodedHeader"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

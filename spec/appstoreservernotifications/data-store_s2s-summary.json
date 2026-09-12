@@ -1,0 +1,191 @@
+{
+  "id": "data:store_s2s:summary",
+  "title": "summary",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/summary",
+  "slug": "appstoreservernotifications/summary",
+  "introducedAt": "2.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The payload data for a subscription-renewal-date extension notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object summary",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "requestIdentifier",
+      "type": "requestIdentifier",
+      "typeId": "data:store_s2s:requestIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The `UUID` that represents a specific request to extend a subscription renewal date. This value matches the value you initially specify in the `requestIdentifier` when you call `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` in the `AppStoreServerAPI`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:store_s2s:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment that the notification applies to, either `sandbox` or `production`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:store_s2s:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app that the notification applies to. This property is available for apps that users download from the App Store. It isn’t present in the sandbox environment.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:store_s2s:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle identifier of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:store_s2s:productId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the auto-renewable subscription that the subscription-renewal-date extension applies to.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefrontCountryCodes",
+      "type": "storefrontCountryCodes",
+      "typeId": "data:store_s2s:storefrontCountryCodes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A list of country codes that limits the App Store’s attempt to apply the subscription-renewal-date extension. If this list isn’t present, the subscription-renewal-date extension applies to all storefronts.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "failedCount",
+      "type": "failedCount",
+      "typeId": "data:store_s2s:failedCount",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The final count of subscriptions that fail to receive a subscription-renewal-date extension.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "succeededCount",
+      "type": "succeededCount",
+      "typeId": "data:store_s2s:succeededCount",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The final count of subscriptions that successfully receive a subscription-renewal-date extension.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `summary` object appears in the `responseBodyV2DecodedPayload` when the `notificationType` is `RENEWAL_EXTENSION` and the `subtype` is `SUMMARY`. This notification occurs when the App Store completes your request to extend the subscription renewal date for eligible subscribers. For more information about this request, see `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` in the `AppStoreServerAPI`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/requestIdentifier",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/environment",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/productId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontCountryCodes",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontCountryCode",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/failedCount",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/succeededCount"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Response objects for in-app purchases",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appData"
+      ]
+    }
+  ]
+}

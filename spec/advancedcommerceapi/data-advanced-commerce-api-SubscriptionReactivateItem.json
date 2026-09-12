@@ -1,0 +1,76 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionReactivateItem",
+  "title": "SubscriptionReactivateItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionReactivateItem",
+  "slug": "advancedcommerceapi/subscriptionreactivateitem",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An item in a subscription to reactive.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionReactivateItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "SKU",
+      "type": "SKU",
+      "typeId": "data:advanced-commerce-api:SKU",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "128",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The SKU of the item to reactivate.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This object is part of the `SubscriptionReactivateInAppRequest` that your app uses to reactivate a subscription that would otherwise expire.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionReactivateInAppRequest"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription reactivation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionReactivateInAppRequest"
+      ]
+    }
+  ]
+}

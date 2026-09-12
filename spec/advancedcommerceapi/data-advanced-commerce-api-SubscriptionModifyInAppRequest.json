@@ -1,0 +1,367 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionModifyInAppRequest",
+  "title": "SubscriptionModifyInAppRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest",
+  "slug": "advancedcommerceapi/subscriptionmodifyinapprequest",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request data your app provides to make changes to an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionModifyInAppRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "addItems",
+      "type": "[SubscriptionModifyAddItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionModifyAddItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "changeItems",
+      "type": "[SubscriptionModifyChangeItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionModifyChangeItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:advanced-commerce-api:currency",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "descriptors",
+      "type": "SubscriptionModifyDescriptors",
+      "typeId": "data:advanced-commerce-api:SubscriptionModifyDescriptors",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "operation",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "MODIFY_SUBSCRIPTION"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "periodChange",
+      "type": "SubscriptionModifyPeriodChange",
+      "typeId": "data:advanced-commerce-api:SubscriptionModifyPeriodChange",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "removeItems",
+      "type": "[SubscriptionModifyRemoveItem]",
+      "typeId": "data:advanced-commerce-api:SubscriptionModifyRemoveItem",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "retainBillingCycle",
+      "type": "retainBillingCycle",
+      "typeId": "data:advanced-commerce-api:retainBillingCycle",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "taxCode",
+      "type": "taxCode",
+      "typeId": "data:advanced-commerce-api:taxCode",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "transactionId",
+      "type": "transactionId",
+      "typeId": "data:advanced-commerce-api:transactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "version",
+      "typeId": "data:advanced-commerce-api:version",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You use the `SubscriptionModifyInAppRequest` in your app when the customer makes one or more changes to a subscription, such as upgrading, downgrading, or adding or removing items.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example: upgrade a subscription",
+      "paragraphs": [
+        {
+          "text": "In the following request:",
+          "refs": []
+        },
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"MODIFY_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"transactionId\": \"12345\",\n    \"requestInfo\": {\n        \"requestReferenceId\": \"e2a88501-25ba-403a-9c46-d7b8eecc56ba\"\n    },\n    \"currency\": \"USD\", \n    \"storefront\": \"USA\",\n    \"descriptors\": {\n        \"effective\": \"IMMEDIATELY\",\n        \"displayName\": \"Anne's Game Stream\",\n        \"description\": \"Streaming Service for Anne's Game\"\n    },\n    \"periodChange\": {\n        \"effective\": \"IMMEDIATELY\",\n        \"period\": \"P1Y\"\n    },\n    \"retainBillingCycle\": false,\n    \"changeItems\": [\n        {\n            \"effective\": \"IMMEDIATELY\",\n            \"currentSKU\": \"ANNES_GOLD_TIER_1M\",\n            \"SKU\": \"ANNES_PLATINUM_TIER_1Y\",  \n            \"price\": 99990,\n            \"displayName\": \"Platinum Tier\",\n            \"description\": \"Access to Anne's Game Stream & chat\",\n            \"reason\": \"UPGRADE\"\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The customer upgrades the subscription from a monthly to an annual subscription, effective immediately.",
+          "refs": []
+        },
+        {
+          "text": "The billing cycle resets.",
+          "refs": []
+        },
+        {
+          "text": "The example doesn’t include optional fields in `requestInfo`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Example: add an item and retain the billing cycle",
+      "paragraphs": [
+        {
+          "text": "In the following request:",
+          "refs": []
+        },
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"MODIFY_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"transactionId\": \"12345\",\n    \"requestInfo\": {\n        \"requestReferenceId\": \"e2a88501-25ba-403a-9c46-d7b8eecc56ba\"\n    },\n    \"currency\": \"USD\", \n    \"storefront\": \"USA\",\n    \"descriptors\": {\n        \"effective\": \"IMMEDIATELY\",\n        \"displayName\": \"Streaming Pass\",\n        \"description\": \"Streaming pass with multiple items\"\n    },\n    \"retainBillingCycle\": true,\n    \"addItems\": [\n        {\n            \"SKU\": \"NEWS_CHANNELS\",    \n            \"displayName\": \"News Channel\",                            \n            \"description\": \"Access to news channels\",\n            \"price\": 4990\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The customer adds an item to the subscription, effective immediately.",
+          "refs": []
+        },
+        {
+          "text": "The billing cycle remains the same. The customer needs to pay the prorated price of the new item. Apple calculates the prorated price and presents a payment sheet to the customer.",
+          "refs": []
+        },
+        {
+          "text": "The customer is charged USD 4.99, as indicated by the `price` and `currency` fields in the request, at the next regular billing period.",
+          "refs": []
+        },
+        {
+          "text": "The example doesn’t include optional fields in `requestInfo`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Example: remove an item at the next renewal",
+      "paragraphs": [
+        {
+          "text": "In the following request:",
+          "refs": []
+        },
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"MODIFY_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"transactionId\": \"12345\",\n    \"requestInfo\": {\n        \"requestReferenceId\": \"e2a88501-25ba-403a-9c46-d7b8eecc56ba\"\n    },\n    \"currency\": \"USD\", \n    \"storefront\": \"USA\",\n    \"retainBillingCycle\": true,\n    \"removeItems\": [\n        {\n            \"SKU\": \"LIVE_SPORTS\"\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The customer removes an item from the subscription, effective at the next renewal.",
+          "refs": []
+        },
+        {
+          "text": "The billing cycle remains the same.",
+          "refs": []
+        },
+        {
+          "text": "The remaining items renew at the next billing period.",
+          "refs": []
+        },
+        {
+          "text": "The example doesn’t include optional fields in `requestInfo`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Example: downgrade a subscription at the next renewal",
+      "paragraphs": [
+        {
+          "text": "In the following request:",
+          "refs": []
+        },
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"MODIFY_SUBSCRIPTION\",\n    \"version\": \"1\", \n    \"transactionId\": \"12345\",\n    \"requestInfo\": {\n        \"requestReferenceId\": \"e2a88501-25ba-403a-9c46-d7b8eecc56ba\"\n    },\n    \"currency\": \"USD\", \n    \"storefront\": \"USA\",\n    \"descriptors\": {\n        \"effective\": \"NEXT_BILL_CYCLE\",\n        \"displayName\": \"Anne's Game Stream\",\n        \"description\": \"Streaming Service for Anne’s Game\"\n    },\n    \"retainBillingCycle\": true,\n    \"changeItems\": [\n        {\n            \"effective\": \"NEXT_BILL_CYCLE\",\n            \"currentSKU\": \"ANNES_PLATINUM_TIER_1M\",\n            \"SKU\": \"ANNES_GOLD_TIER_1M\",  \n            \"price\": 7990,\n            \"displayName\": \"Gold Tier\",\n            \"description\": \"Access to Anne's Game Stream\",\n            \"reason\": \"DOWNGRADE\"\n        }\n    ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The customer downgrades the subscription, effective at the next renewal.",
+          "refs": []
+        },
+        {
+          "text": "The billing cycle remains the same.",
+          "refs": []
+        },
+        {
+          "text": "The example doesn’t include optional fields in `requestInfo`.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription modification in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyAddItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyRemoveItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyPeriodChange"
+      ]
+    }
+  ]
+}

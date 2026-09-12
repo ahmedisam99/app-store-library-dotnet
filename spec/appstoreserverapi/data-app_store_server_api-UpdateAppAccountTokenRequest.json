@@ -1,0 +1,70 @@
+{
+  "id": "data:app_store_server_api:UpdateAppAccountTokenRequest",
+  "title": "UpdateAppAccountTokenRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/UpdateAppAccountTokenRequest",
+  "slug": "appstoreserverapi/updateappaccounttokenrequest",
+  "introducedAt": "1.16",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body that contains an app account token value.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object UpdateAppAccountTokenRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAccountToken",
+      "type": "appAccountToken",
+      "typeId": "data:app_store_server_api:appAccountToken",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.16.0",
+      "attributes": [],
+      "abstract": {
+        "text": "**Required**. A UUID value to associate with the transaction you indicate in the endpoint parameter.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Set-App-Account-Token` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Set-App-Account-Token"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Account Token",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Set-App-Account-Token"
+      ]
+    }
+  ]
+}

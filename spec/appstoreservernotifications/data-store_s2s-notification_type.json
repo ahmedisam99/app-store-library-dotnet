@@ -1,0 +1,425 @@
+{
+  "id": "data:store_s2s:notification_type",
+  "title": "notification_type",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/notification_type",
+  "slug": "appstoreservernotifications/notification_type",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": "2.8",
+    "summary": {
+      "text": "Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+      "refs": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The type that describes the in-app purchase event for which the App Store sends the version 1 notification.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string notification_type",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "CANCEL",
+      "abstract": {
+        "text": "Indicates that Apple Support canceled the auto-renewable subscription and the customer received a refund as of the timestamp in `cancellation_date_ms`.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CONSUMPTION_REQUEST",
+      "abstract": {
+        "text": "Indicates that the customer initiated a refund request for a consumable in-app purchase, and the App Store is requesting that you provide consumption data. For more information, see `Send-Consumption-Information`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Send-Consumption-Information"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_CHANGE_RENEWAL_PREF",
+      "abstract": {
+        "text": "Indicates that the customer made a change in their subscription plan that takes effect at the next renewal. The currently active plan isn’t affected. Check the `auto_renew_product_id field` in `Pending_renewal_info-data.dictionary` to retrieve the product identifier for the product the customer’s subscription renews.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Pending_renewal_info-data.dictionary"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_CHANGE_RENEWAL_STATUS",
+      "abstract": {
+        "text": "Indicates a change in the subscription renewal status. In the JSON response, check `auto_renew_status_change_date_ms` to retrieve the date and time of the last status update. Check `auto_renew_status` to get the current renewal status.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_FAIL_TO_RENEW",
+      "abstract": {
+        "text": "Indicates a subscription that failed to renew due to a billing issue. Check `is_in_billing_retry_period` to retrieve the current retry status of the subscription. Check `grace_period_expires_date` to get the new service expiration date if the subscription is in a billing grace period.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_RECOVER",
+      "abstract": {
+        "text": "Indicates a successful automatic renewal of an expired subscription that failed to renew in the past. Check `expires_date` to determine the next renewal date and time.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DID_RENEW",
+      "abstract": {
+        "text": "Indicates that a customer’s subscription has successfully auto-renewed for a new transaction period. Provide the customer with access to the subscription’s content or service.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INITIAL_BUY",
+      "abstract": {
+        "text": "Occurs at the user’s initial purchase of the subscription. Store `latest_receipt` on your server as a token to verify the user’s subscription status at any time by validating it with the App Store.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INTERACTIVE_RENEWAL",
+      "abstract": {
+        "text": "Indicates the customer renewed a subscription interactively, either by using your app’s interface, or on the App Store in the account’s Subscriptions settings. Make service available immediately.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PRICE_INCREASE_CONSENT",
+      "abstract": {
+        "text": "Indicates that the App Store has started asking the customer to consent to your app’s auto-renewable subscription price increase that requires consent. In the `Pending_renewal_info-data.dictionary` object, the `price_consent_status` value is `0` to indicate that the user hasn’t yet responded to the price increase. The App Store server sets the `price_consent_status` to `1` when the customer consents to the price increase.\nCheck the latest price consent status by calling the `Get-All-Subscription-Statuses` endpoint in the App Store Server API. Check the `priceIncreaseStatus` field in the `JWSRenewalInfoDecodedPayload`. You can also call `Verify-Receipt` to view the updated price consent status. For more information about how StoreKit calls your app before it displays the price consent sheet for subscription price increases that require customer consent, see `paymentQueueShouldShowPriceConsent(_:)`. For more information about managing subscription prices, see `https://developer.apple.com/app-store/subscriptions/#managing-prices-for-existing-subscribers`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Pending_renewal_info-data.dictionary",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+          "doc://com.apple.documentation/documentation/AppStoreReceipts/Verify-Receipt",
+          "doc://com.apple.documentation/documentation/StoreKit/SKPaymentQueueDelegate/paymentQueueShouldShowPriceConsent(_:)",
+          "https://developer.apple.com/app-store/subscriptions/#managing-prices-for-existing-subscribers"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REFUND",
+      "abstract": {
+        "text": "Indicates that the App Store successfully refunded a transaction for a consumable in-app purchase, a non-consumable in-app purchase, or a non-renewing subscription. The `cancellation_date_ms` contains the timestamp of the refunded transaction. The `original_transaction_id` and `product_id` identify the original transaction and product. The `cancellation_reason` contains the reason.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REVOKE",
+      "abstract": {
+        "text": "Indicates that an in-app purchase the user was entitled to through Family Sharing is no longer available through sharing. StoreKit sends this notification when a purchaser disabled Family Sharing for a product, the purchaser (or family member) left the family group, or the purchaser asked for and received a refund. Your app will also receive a `paymentQueue(_:didRevokeEntitlementsForProductIdentifiers:)` call. For more information about Family Sharing, see Supporting `supporting-family-sharing-in-your-app`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/StoreKit/SKPaymentTransactionObserver/paymentQueue(_:didRevokeEntitlementsForProductIdentifiers:)",
+          "doc://com.apple.documentation/documentation/StoreKit/supporting-family-sharing-in-your-app"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "RENEWAL (DEPRECATED)",
+      "abstract": {
+        "text": "As of March 10, 2021 this notification is no longer sent in production and sandbox environments. Update your existing code to rely on the DID_RECOVER notification type instead.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " If you’re receiving App Store Server Notifications Version 2, see `responseBodyV2` and `notificationType` instead.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Subscription or in-app purchase event",
+        "Notification types"
+      ],
+      "rows": [
+        [
+          "Customer completed an initial purchase of a subscription",
+          "`INITIAL_BUY`"
+        ],
+        [
+          "Subscription is active; customer upgraded to another SKU",
+          "`DID_CHANGE_RENEWAL_STATUS`, `INTERACTIVE_RENEWAL`"
+        ],
+        [
+          "Subscription is active; customer downgraded to another SKU",
+          "`DID_CHANGE_RENEWAL_PREF`"
+        ],
+        [
+          "Subscription has expired; customer resubscribed to the same SKU",
+          "`DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "Subscription has expired; customer resubscribed to another SKU (upgrade or downgrade)",
+          "`INTERACTIVE_RENEWAL`, `DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "Customer canceled the subscription from the App Store Subscriptions settings page. Their subscription will not auto-renew and will expire on the `expires_date`",
+          "`DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "Customer previously canceled the subscription, but now resubscribed to same product before the subscription expired. The subscription will auto-renew on the `expires_date`",
+          "`DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "AppleCare refunded a subscription",
+          "`CANCEL`, `DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "Subscription failed to renew because of a billing issue",
+          "`DID_FAIL_TO_RENEW`"
+        ],
+        [
+          "Expired subscription recovered by App Store through a billing retry",
+          "`DID_RECOVER`"
+        ],
+        [
+          "Subscription churned after failed billing retry attempts",
+          "`DID_CHANGE_RENEWAL_STATUS`"
+        ],
+        [
+          "AppleCare successfully refunded the transaction for a consumable, non-consumable, or a non-renewing subscription",
+          "`REFUND`"
+        ],
+        [
+          "You’ve increased the price of an auto-renewable subscription and the price increase requires customer consent before the subscription auto-renews",
+          "`PRICE_INCREASE_CONSENT`"
+        ],
+        [
+          "Subscription successfully auto-renewed",
+          "`DID_RENEW`"
+        ],
+        [
+          "A purchaser disabled Family Sharing for a product, the purchaser (or family member) left the family group, or the purchaser asked for and received a refund",
+          "`REVOKE`"
+        ],
+        [
+          "The customer initiated a refund request for a consumable in-app purchase",
+          "`CONSUMPTION_REQUEST`"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "Notification type",
+        "Received for Purchaser",
+        "Received for Family Members"
+      ],
+      "rows": [
+        [
+          "`CANCEL`",
+          "YES",
+          "NO"
+        ],
+        [
+          "`CONSUMPTION_REQUEST`",
+          "YES",
+          "N/A"
+        ],
+        [
+          "`DID_CHANGE_RENEWAL_PREF`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`DID_CHANGE_RENEWAL_STATUS`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`DID_FAIL_TO_RENEW`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`DID_RECOVER`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`DID_RENEW`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`INITIAL_BUY`",
+          "YES",
+          "NO"
+        ],
+        [
+          "`INTERACTIVE_RENEWAL`",
+          "YES",
+          "YES"
+        ],
+        [
+          "`PRICE_INCREASE_CONSENT`",
+          "YES",
+          "NO"
+        ],
+        [
+          "`REFUND`",
+          "YES",
+          "NO"
+        ],
+        [
+          "`REVOKE`",
+          "NO",
+          "YES"
+        ],
+        [
+          "`RENEWAL` (Deprecated)",
+          "N/A",
+          "N/A"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You receive and can react to server notifications in real time for the subscription and refund events that these notification type values describe. The `notification_type` appears in the `responseBodyV1`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  If you’re receiving App Store Server Notifications Version 2, see `responseBodyV2` and `notificationType` instead.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle use cases for notification events",
+      "paragraphs": [
+        {
+          "text": "When events occur that affect the customer’s product and subscription life-cycle, your server receives notifications from the App Store. Here are some examples of product events and the server notifications you can expect to receive:",
+          "refs": []
+        },
+        {
+          "text": "| Subscription or in-app purchase event | Notification types |\n| --- | --- |\n| Customer completed an initial purchase of a subscription | `INITIAL_BUY` |\n| Subscription is active; customer upgraded to another SKU | `DID_CHANGE_RENEWAL_STATUS`, `INTERACTIVE_RENEWAL` |\n| Subscription is active; customer downgraded to another SKU | `DID_CHANGE_RENEWAL_PREF` |\n| Subscription has expired; customer resubscribed to the same SKU | `DID_CHANGE_RENEWAL_STATUS` |\n| Subscription has expired; customer resubscribed to another SKU (upgrade or downgrade) | `INTERACTIVE_RENEWAL`, `DID_CHANGE_RENEWAL_STATUS` |\n| Customer canceled the subscription from the App Store Subscriptions settings page. Their subscription will not auto-renew and will expire on the `expires_date` | `DID_CHANGE_RENEWAL_STATUS` |\n| Customer previously canceled the subscription, but now resubscribed to same product before the subscription expired. The subscription will auto-renew on the `expires_date` | `DID_CHANGE_RENEWAL_STATUS` |\n| AppleCare refunded a subscription | `CANCEL`, `DID_CHANGE_RENEWAL_STATUS` |\n| Subscription failed to renew because of a billing issue | `DID_FAIL_TO_RENEW` |\n| Expired subscription recovered by App Store through a billing retry | `DID_RECOVER` |\n| Subscription churned after failed billing retry attempts | `DID_CHANGE_RENEWAL_STATUS` |\n| AppleCare successfully refunded the transaction for a consumable, non-consumable, or a non-renewing subscription | `REFUND` |\n| You’ve increased the price of an auto-renewable subscription and the price increase requires customer consent before the subscription auto-renews | `PRICE_INCREASE_CONSENT` |\n| Subscription successfully auto-renewed | `DID_RENEW` |\n| A purchaser disabled Family Sharing for a product, the purchaser (or family member) left the family group, or the purchaser asked for and received a refund | `REVOKE` |\n| The customer initiated a refund request for a consumable in-app purchase | `CONSUMPTION_REQUEST` |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Receive notifications for the purchaser and family members",
+      "paragraphs": [
+        {
+          "text": "The following table identifies the notifications you receive for the purchaser and for their family members who share products through Family Sharing. To determine if a notification is for the purchaser or a family member, check the value of the `in_app_ownership_type` field, which appears in the `Latest_receipt_info-data.dictionary` of the `responseBody` object. For more information about Family Sharing, see `supporting-family-sharing-in-your-app`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreReceipts/in_app_ownership_type",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Latest_receipt_info-data.dictionary",
+            "doc://com.apple.documentation/documentation/StoreKit/supporting-family-sharing-in-your-app"
+          ]
+        },
+        {
+          "text": "| Notification type | Received for Purchaser | Received for Family Members |\n| --- | --- | --- |\n| `CANCEL` | YES | NO |\n| `CONSUMPTION_REQUEST` | YES | N/A |\n| `DID_CHANGE_RENEWAL_PREF` | YES | YES |\n| `DID_CHANGE_RENEWAL_STATUS` | YES | YES |\n| `DID_FAIL_TO_RENEW` | YES | YES |\n| `DID_RECOVER` | YES | YES |\n| `DID_RENEW` | YES | YES |\n| `INITIAL_BUY` | YES | NO |\n| `INTERACTIVE_RENEWAL` | YES | YES |\n| `PRICE_INCREASE_CONSENT` | YES | NO |\n| `REFUND` | YES | NO |\n| `REVOKE` | NO | YES |\n| `RENEWAL` (Deprecated) | N/A | N/A |",
+          "refs": []
+        },
+        {
+          "text": "The `CONSUMPTION_REQUEST` notification applies to consumable in-app purchases, which aren’t eligible for Family Sharing.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Test notification events with sandbox",
+      "paragraphs": [
+        {
+          "text": "Your development-signed apps use the sandbox environment when you sign in to App Store using a Sandbox Apple Account. To create a Sandbox Apple Account or test account in App Store Connect, see `https://help.apple.com/app-store-connect/#/dev8b997bee1`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/dev8b997bee1"
+          ]
+        },
+        {
+          "text": "If you enabled App Store Server Notifications, test your logic for transactions in the sandbox environment. To determine if a notification for a subscription event occurred in the test environment, check whether the value of the `environment` field in the JSON `responseBodyV1` object equals `Sandbox`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+          ]
+        },
+        {
+          "text": "The following notification types are available in sandbox: `INITIAL_BUY`, `DID_CHANGE_RENEWAL_PREF`, `DID_CHANGE_RENEWAL_STATUS`, `DID_RENEW`, `INTERACTIVE_RENEWAL`, `CANCEL`, and `REFUND`. Notifications in the sandbox environment are for the purchaser only, and have `in_app_ownership_type` equal to `PURCHASED`. For more information about testing in-app purchases, see `testing-in-app-purchases-with-sandbox`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreReceipts/in_app_ownership_type",
+            "doc://com.apple.documentation/documentation/StoreKit/testing-in-app-purchases-with-sandbox"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Version 1 notifications",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+      ]
+    }
+  ]
+}

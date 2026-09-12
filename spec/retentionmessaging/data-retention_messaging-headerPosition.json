@@ -1,0 +1,77 @@
+{
+  "id": "data:retention_messaging:headerPosition",
+  "title": "headerPosition",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/headerPosition",
+  "slug": "retentionmessaging/headerposition",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The position where the header text appears in a message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string headerPosition",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "ABOVE_BODY",
+      "abstract": {
+        "text": "Position the header text above the message body. This is the default value.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ABOVE_IMAGE",
+      "abstract": {
+        "text": "Position the header text above the image.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `headerPosition` defaults to `ABOVE_BODY`. Include it in your request if you want the header to appear above the image instead.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Messages",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/body",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/header"
+      ]
+    }
+  ]
+}

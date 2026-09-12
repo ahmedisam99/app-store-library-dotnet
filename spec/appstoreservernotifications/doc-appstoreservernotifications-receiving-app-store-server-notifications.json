@@ -1,0 +1,104 @@
+{
+  "id": "doc:appstoreservernotifications/receiving-app-store-server-notifications",
+  "title": "Receiving App Store Server Notifications",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/receiving-app-store-server-notifications",
+  "slug": "appstoreservernotifications/receiving-app-store-server-notifications",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Implement server-side code to receive and parse notification posts.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications, `notification_type`, are deprecated. Instead, implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store delivers JSON objects using an HTTP POST to your server for notable in-app purchase events and unreported external purchase tokens. Your server is responsible for parsing, interpreting, and responding to all server-to-server notification posts. For more information about responding, see `responding-to-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "The body of the POST contains the data elements described in the `responseBodyV2` for version 2 notifications, and `responseBodyV1` for version 1. Parse them using the following information:",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications, `notification_type`, are deprecated. Instead, implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "Use the notification type along with the transaction and subscription renewal information to update a user’s service or present promotional offers according to your business logic. For information on handling notifications that contain an external purchase token, see `externalPurchaseToken`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The version 2 response body, `responseBodyV2`, contains a `signedPayload` that’s cryptographically signed by the App Store in JSON Web Signature (JWS) format. The JWS format increases security and enables you to decode and validate the signature on your server.  Some notifications include a `data` object, which has transaction and subscription renewal information that the App Store signs in JWS. The `AppStoreServerAPI` and the StoreKit `in-app-purchase` API use the same JWS-signed format for transaction and subscription status information. For more information about JWS, see the `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/signedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI",
+            "doc://com.apple.documentation/documentation/StoreKit/in-app-purchase",
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The version 1 response body, `responseBodyV1`, is a JSON object. It includes the receipt that contains the most recent in-app purchase transaction for the app. For more information, see the `unified_receipt` object.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_server_api:ConsumptionPercentageOutOfRangeError",
+  "title": "ConsumptionPercentageOutOfRangeError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/ConsumptionPercentageOutOfRangeError",
+  "slug": "appstoreserverapi/consumptionpercentageoutofrangeerror",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates the consumption percentage is outside the valid range.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ConsumptionPercentageOutOfRangeError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "int64",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000207"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.19.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The consumption percentage is outside the valid range."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption request errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageAutoRenewableSubscriptionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAccountTenureError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidConsumptionStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidDeliveryStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsPurchasedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsRefundedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlatformError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlayTimeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSampleContentProvidedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidUserStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UndeliveredConsumptionPercentageNonZeroError"
+      ]
+    }
+  ]
+}

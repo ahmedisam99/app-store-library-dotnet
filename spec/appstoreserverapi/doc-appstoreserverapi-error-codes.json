@@ -1,0 +1,116 @@
+{
+  "id": "doc:appstoreserverapi/error-codes",
+  "title": "Error codes",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/error-codes",
+  "slug": "appstoreserverapi/error-codes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Understand the error codes that App Store Server API responses return.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AdvancedCommerceTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionDoesNotExistError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionIdNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilySharedSubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/FamilyTransactionNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralBadRequestError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenUUIDError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEmptyStorefrontCountryCodeListError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendByDaysError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExtendReasonCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidOriginalTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRefundPreferenceError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRequestIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRequestRevisionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidRevokedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStorefrontCountryCodeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OriginalTransactionIdNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RateLimitExceededError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StatusRequestNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SubscriptionExtensionIneligibleError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SubscriptionMaxExtensionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionIdIsNotOriginalTransactionIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TransactionIdNotFoundError"
+      ]
+    },
+    {
+      "title": "Errors to retry",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AccountNotFoundRetryableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppNotFoundRetryableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/GeneralInternalRetryableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/OriginalTransactionIdNotFoundRetryableError"
+      ]
+    },
+    {
+      "title": "Consumption request errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageAutoRenewableSubscriptionError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageOutOfRangeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAccountTenureError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidAppAccountTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidConsumptionStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidCustomerConsentedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidDeliveryStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsPurchasedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidLifetimeDollarsRefundedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlatformError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPlayTimeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSampleContentProvidedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionTypeNotSupportedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidUserStatusError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTransactionNotConsumableError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UndeliveredConsumptionPercentageNonZeroError"
+      ]
+    },
+    {
+      "title": "Notification test and history errors",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidNotificationTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidPaginationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidStartDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidTestNotificationTokenError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidInAppOwnershipTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductIdError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidProductTypeError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSortError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidSubscriptionGroupIdentifierError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/MultipleFiltersSuppliedError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/PaginationTokenExpiredError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ServerNotificationURLNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateAfterEndDateError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/StartDateTooFarInPastError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/TestNotificationNotFoundError",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/InvalidExcludeRevokedError"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

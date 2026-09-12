@@ -1,0 +1,93 @@
+{
+  "id": "data:retention_messaging:BadRequestTooManyBulletPointsError",
+  "title": "BadRequestTooManyBulletPointsError",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/BadRequestTooManyBulletPointsError",
+  "slug": "retentionmessaging/badrequesttoomanybulletpointserror",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An error that indicates there are too many bullet points.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BadRequestTooManyBulletPointsError",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorCode",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "4000218"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "errorMessage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "Invalid request. The number of bullet points is too many."
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Errors for bad requests",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestAboveImageRequiresAnImageError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestAppTransactionIdForUnsupportedEndpointError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestBulletPointTextTooLongError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestImageSizeError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestRealtimeUrlError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdNotOtidError",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BadRequestTransactionIdNotSupportedForFamilySharingError"
+      ]
+    }
+  ]
+}

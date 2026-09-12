@@ -1,0 +1,87 @@
+{
+  "id": "data:app_store_server_api:RefundLookupResponse",
+  "title": "RefundLookupResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/RefundLookupResponse",
+  "slug": "appstoreserverapi/refundlookupresponse",
+  "introducedAt": "1.1",
+  "deprecated": {
+    "at": "1.6",
+    "summary": {
+      "text": "Use `Get-Refund-History` and its response, `RefundHistoryResponse`, instead.",
+      "refs": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains an array of signed JSON Web Signature (JWS) transactions.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RefundLookupResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedTransactions",
+      "type": "[JWSTransaction]",
+      "typeId": "data:app_store_server_api:JWSTransaction",
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A list of JWS transactions, or an empty array if the customer has received no refunds in your app. The transactions are sorted in ascending order by their `revocationDate`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "If the customer hasn’t received any refunds for in-app purchases in your app, the `signedTransactions` array is empty. To read the transaction information, decode the payload for each `JWSTransaction` object in the `signedTransactions` array. Use a `JWSTransactionDecodedPayload` object to read the transaction information in the payload.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "This response can contain a maximum of 50 transactions in the `signedTransactions` array.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Deprecated",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History-V1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History-V1"
+      ]
+    }
+  ]
+}

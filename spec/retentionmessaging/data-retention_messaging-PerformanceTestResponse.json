@@ -1,0 +1,87 @@
+{
+  "id": "data:retention_messaging:PerformanceTestResponse",
+  "title": "PerformanceTestResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/PerformanceTestResponse",
+  "slug": "retentionmessaging/performancetestresponse",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The performance test response object.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PerformanceTestResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "config",
+      "type": "PerformanceTestConfig",
+      "typeId": "data:retention_messaging:PerformanceTestConfig",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The performance test configuration object.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestId",
+      "type": "requestId",
+      "typeId": "data:retention_messaging:requestId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The performance test request identifier.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `requestId` to get the test results, by calling `Get-Performance-Test-Results`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Performance-Test-Results"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Server performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Performance-Test-Results",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse"
+      ]
+    }
+  ]
+}

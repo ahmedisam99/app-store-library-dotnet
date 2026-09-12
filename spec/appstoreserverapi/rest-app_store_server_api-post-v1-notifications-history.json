@@ -1,0 +1,201 @@
+{
+  "id": "rest:app_store_server_api:post:v1-notifications-history",
+  "title": "Get Notification History",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-Notification-History",
+  "slug": "appstoreserverapi/get-notification-history",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of notifications that the App Store server attempted to send to your server.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/notifications/history",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/notifications/history",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "paginationToken",
+      "type": "paginationToken",
+      "typeId": "data:app_store_server_api:paginationToken",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "An optional token you use to get the next set of up to 20 notification history records. All responses that have more records available include a `paginationToken`.\n\nNote: Omit this parameter the first time you call this endpoint.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "NotificationHistoryRequest",
+    "typeId": "data:app_store_server_api:NotificationHistoryRequest",
+    "abstract": {
+      "text": "The request body that includes the start and end dates, and optional query constraints.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "NotificationHistoryResponse",
+      "typeId": "data:app_store_server_api:NotificationHistoryResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidTransactionIdError | PaginationTokenExpiredError | InvalidPaginationTokenError | InvalidStartDateError | InvalidEndDateError | StartDateAfterEndDateError | StartDateTooFarInPastError | InvalidNotificationTypeError | MultipleFiltersSuppliedError)",
+      "typeId": "data:app_store_server_api:InvalidTransactionIdError|data:app_store_server_api:PaginationTokenExpiredError|data:app_store_server_api:InvalidPaginationTokenError|data:app_store_server_api:InvalidStartDateError|data:app_store_server_api:InvalidEndDateError|data:app_store_server_api:StartDateAfterEndDateError|data:app_store_server_api:StartDateTooFarInPastError|data:app_store_server_api:InvalidNotificationTypeError|data:app_store_server_api:MultipleFiltersSuppliedError",
+      "abstract": {
+        "text": "Invalid request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(TransactionIdNotFoundError | AccountNotFoundError)",
+      "typeId": "data:app_store_server_api:TransactionIdNotFoundError|data:app_store_server_api:AccountNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit.",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " For notifications that relate to in-app purchases, the history records reflect the state of an in-app purchase at the time the App Store originally sent the notification, and may not reflect its current state. To get the current state of auto-renewable subscriptions, call the `Get-All-Subscription-Statuses` endpoint. For all other in-app purchase types, call the `Get-Transaction-History` endpoint.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to get a paginated list of the version 2 `AppStoreServerNotifications` that the App Store attempted to send to your server’s `App-Store-Server-Notifications-V2` endpoint in a specified timespan. Notification history is available for the past 180 days in the production environment, and the past 30 days in the sandbox environment.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "You can further limit the request by specifying a `notificationType` or `notificationSubtype` in the `NotificationHistoryRequest` object. Alternatively, to get the notification history for a single user, provide a `transactionId`. The response, `NotificationHistoryResponse`, contains the full contents of the original notifications.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse"
+          ]
+        },
+        {
+          "text": "Each time you call this endpoint, it returns a maximum of 20 notification history records. If the `hasMore` field in the `NotificationHistoryResponse` is `true`, use the `paginationToken` from the response in your subsequent request to get the next set of records. Use the same `NotificationHistoryRequest` body on subsequent requests.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History/paginationToken",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest"
+          ]
+        },
+        {
+          "text": "This endpoint is available in the production and sandbox environments. For more information about configuring App Store Server Notifications, see `enabling-app-store-server-notifications` and `https://help.apple.com/app-store-connect/#/dev0067a330b`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+            "https://help.apple.com/app-store-connect/#/dev0067a330b"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  For notifications that relate to in-app purchases, the history records reflect the state of an in-app purchase at the time the App Store originally sent the notification, and may not reflect its current state. To get the current state of auto-renewable subscriptions, call the `Get-All-Subscription-Statuses` endpoint. For all other in-app purchase types, call the `Get-Transaction-History` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-All-Subscription-Statuses",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Transaction-History"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Store Server Notifications history",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryResponse",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/notificationHistoryResponseItem"
+      ]
+    }
+  ]
+}

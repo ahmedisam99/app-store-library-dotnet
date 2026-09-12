@@ -1,0 +1,122 @@
+{
+  "id": "rest:retention_messaging:get:inApps-v1-messaging-message-list",
+  "title": "Get Message List",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Get-Message-List",
+  "slug": "retentionmessaging/get-message-list",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Gets the message identifier and state of all uploaded messages.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/message/list",
+      "parameters": []
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/message/list",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GetMessageListResponse",
+      "typeId": "data:retention_messaging:GetMessageListResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "If a message includes an image, also check the image state by calling `Get-Image-List`. The system displays retention messages with images only if both the message and the image are in an `APPROVED` state.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to get a list of all uploaded message identifiers and check their current state, `messageState`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> If a message includes an image, also check the image state by calling `Get-Image-List`. The system displays retention messages with images only if both the message and the image are in an `APPROVED` state.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponseItem"
+      ]
+    }
+  ]
+}

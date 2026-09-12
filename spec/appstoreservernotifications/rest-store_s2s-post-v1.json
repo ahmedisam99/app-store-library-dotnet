@@ -1,0 +1,102 @@
+{
+  "id": "rest:store_s2s:post:v1",
+  "title": "App Store Server Notifications V1",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+  "slug": "appstoreservernotifications/app-store-server-notifications-v1",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": "2.8",
+    "summary": {
+      "text": "The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications are deprecated. Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+      "refs": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Specify your secure server’s URL in App Store Connect to receive version 1 notifications.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://example.com/",
+      "path": "v1",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "responseBodyV1",
+      "typeId": "data:store_s2s:responseBodyV1",
+      "abstract": {
+        "text": "The response body for a version 1 notification.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " For version 2 notifications, see `App-Store-Server-Notifications-V2`.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "To receive server notifications from the App Store, provide your secure server’s HTTPS URL in App Store Connect. For more information, see `enabling-app-store-server-notifications`. To secure your server and receive notifications, your server must support the Transport Layer Security (TLS) protocol version 1.2 or later.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "Upon receiving a server notification, respond to the App Store with an HTTP status code of `200` if the post was successful. If the post was unsuccessful, send HTTP `50x` or `40x` to have the App Store retry the notification. For more information, see `responding-to-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  For version 2 notifications, see `App-Store-Server-Notifications-V2`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Version 1 notifications",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV1",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type"
+      ]
+    }
+  ]
+}

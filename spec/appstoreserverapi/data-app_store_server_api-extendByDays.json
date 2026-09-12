@@ -1,0 +1,60 @@
+{
+  "id": "data:app_store_server_api:extendByDays",
+  "title": "extendByDays",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/extendByDays",
+  "slug": "appstoreserverapi/extendbydays",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The number of days to extend the subscription renewal date.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 extendByDays",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximum",
+      "value": "90",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The number of days is a number from 1 to 90.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Request data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extendReasonCode",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/requestIdentifier"
+      ]
+    }
+  ]
+}

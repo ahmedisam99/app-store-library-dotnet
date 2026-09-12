@@ -1,0 +1,95 @@
+{
+  "id": "data:app_store_server_api:renewalPrice",
+  "title": "renewalPrice",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/renewalPrice",
+  "slug": "appstoreserverapi/renewalprice",
+  "introducedAt": "1.12",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The renewal price, in milliunits, of the auto-renewable subscription that renews at the next billing period.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int64 renewalPrice",
+    "baseType": "int64",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+          "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This value represents the renewal price, in milliunits of the `currency`, of the auto-renewable subscription. One unit of the currency equals 1000 milliunits.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/currency"
+          ]
+        },
+        {
+          "text": "If the next billing period includes an offer specified by the `offerIdentifier`, the `renewalPrice` value reflects the discount.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/offerIdentifier",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalPrice"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+            "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+          ]
+        },
+        {
+          "text": "To determine the storefront, use the `storefront` value in the transaction. Don’t use the `currency` value to infer the storefront.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/storefront",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/currency"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewProductId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expirationIntent",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expiresDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/isUpgraded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalBillingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/status"
+      ]
+    }
+  ]
+}

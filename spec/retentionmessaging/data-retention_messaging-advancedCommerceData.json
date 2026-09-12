@@ -1,0 +1,64 @@
+{
+  "id": "data:retention_messaging:advancedCommerceData",
+  "title": "advancedCommerceData",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/advancedCommerceData",
+  "slug": "retentionmessaging/advancedcommercedata",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A Base64-encoded JSON object which contains a JWS with information describing an offer or switch-plan recommendation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string advancedCommerceData",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This property is a part of the `advancedCommerceInfo`. For more information on the Advanced Commerce API (ACA), see `AdvancedCommerceAPI`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceInfo",
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI"
+          ]
+        },
+        {
+          "text": "See `sending-advanced-commerce-api-requests-from-your-app` for how to construct this object. Pass the Base64-encoded advancedCommerceRequestData object as a UTF-8 string as `advancedCommerceData`. Use `SubscriptionModifyInAppRequest` with a single `SubscriptionModifyChangeItem` provided when constructing the advancedCommerceRequestData.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/sending-advanced-commerce-api-requests-from-your-app",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/advancedCommerceData",
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionModifyInAppRequest",
+            "doc://com.apple.documentation/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem"
+          ]
+        },
+        {
+          "text": "For more information on the structure of JWS objects, see `generating-jws-to-sign-app-store-requests`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/generating-jws-to-sign-app-store-requests"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

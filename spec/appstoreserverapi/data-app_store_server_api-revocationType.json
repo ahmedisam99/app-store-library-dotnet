@@ -1,0 +1,85 @@
+{
+  "id": "data:app_store_server_api:revocationType",
+  "title": "revocationType",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/revocationType",
+  "slug": "appstoreserverapi/revocationtype",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The type of the refund or revocation that applies to the transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string revocationType",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "REFUND_FULL",
+      "abstract": {
+        "text": "The transaction has a full refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REFUND_PRORATED",
+      "abstract": {
+        "text": "The transaction has a prorated refund.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FAMILY_REVOKE",
+      "abstract": {
+        "text": "The transaction is revoked from Family Sharing.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "If the `revocationType` is `REFUND_PRORATED`, see the `revocationPercentage` for the prorated percentage.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Revocation",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationReason",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage"
+      ]
+    }
+  ]
+}

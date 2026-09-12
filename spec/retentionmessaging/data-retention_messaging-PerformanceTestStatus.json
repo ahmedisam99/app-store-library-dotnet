@@ -1,0 +1,80 @@
+{
+  "id": "data:retention_messaging:PerformanceTestStatus",
+  "title": "PerformanceTestStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/PerformanceTestStatus",
+  "slug": "retentionmessaging/performanceteststatus",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The status of the performance test.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string PerformanceTestStatus",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "PENDING",
+      "abstract": {
+        "text": "The test is still pending.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PASS",
+      "abstract": {
+        "text": "The test passed. For additional details, see the specific `PerformanceTestResponse` results.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FAIL",
+      "abstract": {
+        "text": "The test failed. For additional details, see the specific `PerformanceTestResponse` results.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestConfig",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponseTimes",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Failures",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/sendAttemptResult",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestId"
+      ]
+    }
+  ]
+}

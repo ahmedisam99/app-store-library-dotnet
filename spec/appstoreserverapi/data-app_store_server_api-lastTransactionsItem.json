@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_server_api:lastTransactionsItem",
+  "title": "lastTransactionsItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/lastTransactionsItem",
+  "slug": "appstoreserverapi/lasttransactionsitem",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The most recent App Store-signed transaction information and App Store-signed renewal information for an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object lastTransactionsItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "originalTransactionId",
+      "type": "originalTransactionId",
+      "typeId": "data:app_store_server_api:originalTransactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The original transaction identifier of the auto-renewable subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "status",
+      "type": "status",
+      "typeId": "data:app_store_server_api:status",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The status of the auto-renewable subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:app_store_server_api:JWSRenewalInfo",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:app_store_server_api:JWSTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction information signed by the App Store, in JWS format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Data Types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/status",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Object and Data Types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/SubscriptionGroupIdentifierItem/subscriptionGroupIdentifier"
+      ]
+    }
+  ]
+}

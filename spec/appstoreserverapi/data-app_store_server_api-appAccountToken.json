@@ -1,0 +1,74 @@
+{
+  "id": "data:app_store_server_api:appAccountToken",
+  "title": "appAccountToken",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/appAccountToken",
+  "slug": "appstoreserverapi/appaccounttoken",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The UUID that you generate to associate a customer’s In-App Purchase with its resulting App Store transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "uuid appAccountToken",
+    "baseType": "uuid",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When a customer initiates an In-App Purchase in your app, you can optionally generate an app account token and call `appAccountToken(_:)` to associate it with the purchase. If you use the `original-api-for-in-app-purchase`, you can provide a UUID in the `applicationUsername` property. The App Store returns the same UUID in `appAccountToken` in the transaction information and subscription renewal information after the customer completes the purchase.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Product/PurchaseOption/appAccountToken(_:)",
+            "doc://com.apple.documentation/documentation/StoreKit/original-api-for-in-app-purchase",
+            "doc://com.apple.documentation/documentation/StoreKit/SKMutablePayment/applicationUsername",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/appAccountToken"
+          ]
+        },
+        {
+          "text": "To provide an app account token for a transaction that the customer completes outside of your app, or to update the value of an existing app account token, call the `Set-App-Account-Token` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Set-App-Account-Token"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/consumptionStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatusV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsPurchased",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/lifetimeDollarsRefunded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/platform",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/playTime",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreferenceV1",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/userStatus"
+      ]
+    }
+  ]
+}

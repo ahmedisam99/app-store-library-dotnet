@@ -1,0 +1,128 @@
+{
+  "id": "data:advanced-commerce-api:RequestRefundRequest",
+  "title": "RequestRefundRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/RequestRefundRequest",
+  "slug": "advancedcommerceapi/requestrefundrequest",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body for requesting a refund for a transaction.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RequestRefundRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:advanced-commerce-api:currency",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The currency of the transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "items",
+      "type": "[RequestRefundItem]",
+      "typeId": "data:advanced-commerce-api:RequestRefundItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "refundRiskingPreference",
+      "type": "refundRiskingPreference",
+      "typeId": "data:advanced-commerce-api:refundRiskingPreference",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Request-Transaction-Refund` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Refund request from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Request-Transaction-Refund",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RequestRefundItem"
+      ]
+    }
+  ]
+}

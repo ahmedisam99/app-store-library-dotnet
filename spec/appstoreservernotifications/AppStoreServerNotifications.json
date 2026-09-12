@@ -1,0 +1,176 @@
+{
+  "id": "AppStoreServerNotifications",
+  "title": "App Store Server Notifications",
+  "kind": "module",
+  "role": "collection",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications",
+  "slug": "appstoreservernotifications",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Monitor In-App Purchase events in real time and learn of unreported external purchase tokens, with server notifications from the App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications, `notification_type`, are deprecated. Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type",
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Server Notifications is a server-to-server service that sends real-time notifications for In-App Purchase events, and notifications for unreported external purchase tokens. Use the data in the notifications to update your user-account database, and to monitor and respond to in-app purchase refunds. For notifications related to the `external-purchase` API, see `externalPurchaseToken`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/external-purchase",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  The `App-Store-Server-Notifications-V1` endpoint and version 1 notifications, `notification_type`, are deprecated. Implement the `App-Store-Server-Notifications-V2` endpoint on your server to receive version 2 notifications instead.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V1",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notification_type",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "To receive server notifications from the App Store, provide your server’s HTTPS URL in App Store Connect. Opt in to receive notifications for the production environment and the sandbox environment. For more information, see `enabling-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "Your server is responsible for parsing, interpreting, and responding to all server-to-server notification posts. For more information, see `receiving-app-store-server-notifications` and `responding-to-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/receiving-app-store-server-notifications",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Process in-app purchase notifications",
+      "paragraphs": [
+        {
+          "text": "Notifications cover events in the in-app purchase life cycle, including purchases, subscription renewals, offer redemptions, refunds, and more. For a complete list of notification types, see `notificationType` for `App-Store-Server-Notifications-V2`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2"
+          ]
+        },
+        {
+          "text": "Use the notification type, along with the transaction and subscription renewal information, to update a customer’s service or to present promotional offers according to your business logic.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Process external purchase token notifications",
+      "paragraphs": [
+        {
+          "text": "A `notificationType` of `EXTERNAL_PURCHASE_TOKEN` with an `UNREPORTED` `subtype` indicates that Apple generated an external purchase token for your app but hasn’t received a report for the token. The notification includes the token in the `externalPurchaseToken` field of the `responseBodyV2DecodedPayload`. Use the token information to report it to Apple, including if you don’t recognize the token in your system. To report tokens, with or without associated transactions, call the `ExternalPurchaseServerAPI`’s `Send-External-Purchase-Report` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI",
+            "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI/Send-External-Purchase-Report"
+          ]
+        },
+        {
+          "text": "For more information about token reporting requirements, see `https://developer.apple.com/support/apps-using-alternative-payment-providers-in-the-eu/`.",
+          "refs": [
+            "https://developer.apple.com/support/apps-using-alternative-payment-providers-in-the-eu/"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Test your server setup",
+      "paragraphs": [
+        {
+          "text": "To determine whether your server is receiving notifications, call the `Request-a-Test-Notification` endpoint in the `AppStoreServerAPI` to ask the App Store server to send a notification with the `notificationType` `TEST`. Use the `testNotificationToken` you receive to call the `Get-Test-Notification-Status` endpoint to learn how your server responds to the test notification.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Request-a-Test-Notification",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Get-Test-Notification-Status"
+          ]
+        },
+        {
+          "text": "The App Store server sends the `TEST` notification in the version 2 notification format, however, it sends it to your server regardless of whether you configure a version 1 or version 2 notification URL in App Store Connect. For more information about configuring your URL in App Store Connect, see `https://help.apple.com/app-store-connect/#/dev0067a330b`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/dev0067a330b"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/receiving-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-changelog"
+      ]
+    },
+    {
+      "title": "Server notifications version 2",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+      ]
+    },
+    {
+      "title": "Deprecated",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/app-store-server-notifications-version-1"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "members": [
+        "doc://com.apple.documentation/documentation/StoreKit/in-app-purchase",
+        "doc://com.apple.documentation/documentation/AppStoreServerAPI",
+        "doc://com.apple.documentation/documentation/AppStoreReceipts"
+      ]
+    }
+  ]
+}

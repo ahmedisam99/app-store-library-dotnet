@@ -1,0 +1,62 @@
+{
+  "id": "data:store_s2s:isUpgraded",
+  "title": "isUpgraded",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/isUpgraded",
+  "slug": "appstoreservernotifications/isupgraded",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A Boolean value that indicates whether the customer upgraded to another subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "boolean isUpgraded",
+    "baseType": "boolean",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "If `isUpgraded` is `true`, the customer has upgraded the subscription represented by this transaction to another subscription. This value appears in the transaction only when the value is `true`. To determine the service that the customer is entitled to, look for another transaction that has a subscription with a higher level of service. For more information about subscription groups and levels of service, see `https://developer.apple.com/app-store/subscriptions/`.",
+          "refs": [
+            "https://developer.apple.com/app-store/subscriptions/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscripton renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewStatus",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewProductId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expirationIntent",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expiresDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalBillingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalPrice"
+      ]
+    }
+  ]
+}

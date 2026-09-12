@@ -1,0 +1,88 @@
+{
+  "id": "data:advanced-commerce-api:currency",
+  "title": "currency",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/currency",
+  "slug": "advancedcommerceapi/currency",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The three-letter ISO 4217 currency code for the price of a product.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string currency",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The currency property contains an ISO 4217 alpha-3 string that represents the currency of the price of a SKU. You provide a currency value each time you create or modify a purchase transaction.",
+          "refs": []
+        },
+        {
+          "text": "To get the current storefront’s currency in your app:",
+          "refs": []
+        },
+        {
+          "text": "For a list of regions and currencies that the App Store supports, see `https://developer.apple.com/help/app-store-connect/reference/financial-report-regions-and-currencies`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/financial-report-regions-and-currencies"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "In iOS 15 through iOS 17, check the `Product.priceFormatStyle.currencyCode` of the generic product ID that represents your Advanced Commerce product. For more information, see `priceFormatStyle`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Product/priceFormatStyle"
+          ]
+        },
+        {
+          "text": "In iOS 17 and later, get the currency value using `Storefront.current.currency`.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/description",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/dependentSKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/displayName",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/effective",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/period",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/price",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/proratedPrice",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/retainBillingCycle",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundAmount",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundReason",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/refundRiskingPreference",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SKU",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/storefront",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/taxCode",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/targetProductId"
+      ]
+    }
+  ]
+}

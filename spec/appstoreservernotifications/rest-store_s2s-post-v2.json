@@ -1,0 +1,79 @@
+{
+  "id": "rest:store_s2s:post:v2",
+  "title": "App Store Server Notifications V2",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
+  "slug": "appstoreservernotifications/app-store-server-notifications-v2",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Specify your secure server’s URL in App Store Connect to receive version 2 notifications.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://example.com/",
+      "path": "v2",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "responseBodyV2",
+      "typeId": "data:store_s2s:responseBodyV2",
+      "abstract": {
+        "text": "The response body for a version 2 notification.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "To receive server notifications from the App Store, provide your secure server’s HTTPS URL in App Store Connect. For more information, see `enabling-app-store-server-notifications`. To secure your server and receive notifications, your server must support the Transport Layer Security (TLS) protocol version 1.2 or later.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/enabling-app-store-server-notifications"
+          ]
+        },
+        {
+          "text": "Upon receiving a server notification, respond to the App Store with an HTTP status code of `200-206` if the post was successful. If the post was unsuccessful, send HTTP `50x` or `40x` to have the App Store retry the notification. For more information, see `responding-to-app-store-server-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responding-to-app-store-server-notifications"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Server notifications version 2",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+      ]
+    }
+  ]
+}

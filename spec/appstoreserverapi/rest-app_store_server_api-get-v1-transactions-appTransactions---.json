@@ -1,0 +1,169 @@
+{
+  "id": "rest:app_store_server_api:get:v1-transactions-appTransactions-{}",
+  "title": "Get App Transaction Info",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/Get-App-Transaction-Info",
+  "slug": "appstoreserverapi/get-app-transaction-info",
+  "introducedAt": "1.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a customer’s app transaction information for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/inApps/",
+      "path": "v1/transactions/appTransactions/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/inApps/",
+      "path": "v1/transactions/appTransactions/{anyTransactionId}",
+      "parameters": [
+        "{anyTransactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "anyTransactionId",
+      "type": "anyTransactionId",
+      "typeId": "data:app_store_server_api:anyTransactionId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Any `originalTransactionId`, `transactionId` or `appTransactionId` that belongs to the customer for your app.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/transactionId",
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+        ]
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppTransactionInfoResponse",
+      "typeId": "data:app_store_server_api:AppTransactionInfoResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "InvalidTransactionIdError",
+      "typeId": "data:app_store_server_api:InvalidTransactionIdError",
+      "abstract": {
+        "text": "Invalid request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "(TransactionIdNotFoundError | AppTransactionDoesNotExistError)",
+      "typeId": "data:app_store_server_api:TransactionIdNotFoundError|data:app_store_server_api:AppTransactionDoesNotExistError",
+      "abstract": {
+        "text": "Check the specific error message for further information.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:app_store_server_api:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:app_store_server_api:GeneralInternalError|data:app_store_server_api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to get the app transaction information for a customer of your app. You can provide any transaction ID that belongs to the customer to get their app transaction information.",
+          "refs": []
+        },
+        {
+          "text": "App transaction information represents the customer’s purchase of the app, cryptographically signed by the App Store. The App Store generates a single, globally unique `appTransactionId` for each Apple Account that downloads your app and for each family group member for apps that support Family Sharing. The `appTransactionId` value remains the same for the same Apple Account and app if the customer redownloads the app on any device, receives a refund, repurchases the app, or changes the storefront. For apps that support Family Sharing, the `appTransactionId` is unique for each family group member.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appTransactionId"
+          ]
+        },
+        {
+          "text": "App transaction information includes details about the app the customer purchased, such as its bundleID, original version, original purchase date, and more. You can also get app transaction information in your app from StoreKit, using `AppTransaction`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/AppTransaction"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "App Transaction information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/AppTransactionInfoResponse"
+      ]
+    }
+  ]
+}

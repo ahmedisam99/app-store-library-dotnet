@@ -1,0 +1,85 @@
+{
+  "id": "data:store_s2s:currency",
+  "title": "currency",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/currency",
+  "slug": "appstoreservernotifications/currency",
+  "introducedAt": "2.9",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The three-letter ISO 4217 currency code for the price of the product.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string currency",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+          "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The currency property contains an ISO 4217 alpha-3 string that represents the currency of the price of the product.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  For financial and accounting purposes, use the App Store Connect reporting tools. For more information, see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports` and `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports",
+            "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+          ]
+        },
+        {
+          "text": "Don’t use the `currency` value to infer the storefront. Use the `storefront` value in the transaction instead.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/currency",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefront"
+          ]
+        },
+        {
+          "text": "For more information on how you set prices, see `https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price` and `https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price",
+            "https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Product price and currency",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/price"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "data:store_s2s:offerIdentifier",
+  "title": "offerIdentifier",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/offerIdentifier",
+  "slug": "appstoreservernotifications/offeridentifier",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The string identifier of an offer that you create in App Store Connect.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string offerIdentifier",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `offerIdentifier` is a string that you provide in App Store Connect when you set up an offer. All offer types (`offerType`) have offer identifiers, except for introductory offers.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType"
+          ]
+        },
+        {
+          "text": "For more information on offer codes, see `supporting-offer-codes-in-your-app`. For more information on promotional offers, see `https://help.apple.com/app-store-connect/#/dev16dfca448`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/supporting-offer-codes-in-your-app",
+            "https://help.apple.com/app-store-connect/#/dev16dfca448"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Offers",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/eligibleWinBackOfferIds",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerPeriod",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/offerDiscountType"
+      ]
+    }
+  ]
+}

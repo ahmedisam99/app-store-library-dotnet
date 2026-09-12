@@ -1,0 +1,118 @@
+{
+  "id": "data:store_s2s:TransactionCommitmentInfo",
+  "title": "TransactionCommitmentInfo",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/TransactionCommitmentInfo",
+  "slug": "appstoreservernotifications/transactioncommitmentinfo",
+  "introducedAt": "2.21",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object TransactionCommitmentInfo",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "billingPeriodNumber",
+      "type": "billingPeriodNumber",
+      "typeId": "data:store_s2s:billingPeriodNumber",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.21.0",
+      "attributes": [
+        {
+          "kind": "minimum",
+          "value": "1",
+          "values": null
+        },
+        {
+          "kind": "maximum",
+          "value": "12",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "totalBillingPeriods",
+      "type": "totalBillingPeriods",
+      "typeId": "data:store_s2s:totalBillingPeriods",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.21.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "commitmentExpiresDate",
+      "type": "commitmentExpiresDate",
+      "typeId": "data:store_s2s:commitmentExpiresDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.21.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "commitmentPrice",
+      "type": "commitmentPrice",
+      "typeId": "data:store_s2s:commitmentPrice",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "2.21.0",
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Monthly subscriptions with 12-month commitments",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPeriodNumber",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentExpiresDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentPrice",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/totalBillingPeriods",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/RenewalCommitmentInfo",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentAutoRenewProductId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentAutoRenewStatus",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalBillingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/commitmentRenewalPrice"
+      ]
+    }
+  ]
+}

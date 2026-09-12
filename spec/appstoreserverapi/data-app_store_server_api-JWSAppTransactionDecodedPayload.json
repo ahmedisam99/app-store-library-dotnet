@@ -1,0 +1,195 @@
+{
+  "id": "data:app_store_server_api:JWSAppTransactionDecodedPayload",
+  "title": "JWSAppTransactionDecodedPayload",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload",
+  "slug": "appstoreserverapi/jwsapptransactiondecodedpayload",
+  "introducedAt": "1.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A decoded payload that contains app transaction information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object JWSAppTransactionDecodedPayload",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:app_store_server_api:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier the App Store uses to identify the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appTransactionId",
+      "type": "appTransactionId",
+      "typeId": "data:app_store_server_api:appTransactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app download transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:app_store_server_api:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle identifier that the app transaction applies to.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "originalApplicationVersion",
+      "type": "originalApplicationVersion",
+      "typeId": "data:app_store_server_api:originalApplicationVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The app version that the customer originally purchased from the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "originalPlatform",
+      "type": "originalPlatform",
+      "typeId": "data:app_store_server_api:originalPlatform",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The platform on which the customer originally purchased the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "originalPurchaseDate",
+      "type": "originalPurchaseDate",
+      "typeId": "data:app_store_server_api:originalPurchaseDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The date the customer originally purchased the app from the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "preorderDate",
+      "type": "preorderDate",
+      "typeId": "data:app_store_server_api:preorderDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The date the customer placed an order for the app before it’s available in the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "receiptCreationDate",
+      "type": "receiptCreationDate",
+      "typeId": "data:app_store_server_api:receiptCreationDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The date that the App Store signed the JWS app transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "receiptType",
+      "type": "environment",
+      "typeId": "data:app_store_server_api:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment, production or sandbox, that signed the app transaction.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `Get-App-Transaction-Info` endpoint returns a `JWSAppTransaction`, which you decode to get `JWSAppTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-App-Transaction-Info",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction"
+          ]
+        },
+        {
+          "text": "You can also get app transaction information in your app from StoreKit, using `AppTransaction`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/AppTransaction"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "JWS headers and payloads",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/data-types"
+      ]
+    }
+  ]
+}

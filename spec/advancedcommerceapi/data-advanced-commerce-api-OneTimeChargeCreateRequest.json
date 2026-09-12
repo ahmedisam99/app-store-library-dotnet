@@ -1,0 +1,160 @@
+{
+  "id": "data:advanced-commerce-api:OneTimeChargeCreateRequest",
+  "title": "OneTimeChargeCreateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest",
+  "slug": "advancedcommerceapi/onetimechargecreaterequest",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request data your app provides when a customer purchases a one-time-charge product.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object OneTimeChargeCreateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:advanced-commerce-api:currency",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The currency of the price of the product.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "item",
+      "type": "OneTimeChargeItem",
+      "typeId": "data:advanced-commerce-api:OneTimeChargeItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The details of the product for purchase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "operation",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "CREATE_ONE_TIME_CHARGE"
+          ]
+        }
+      ],
+      "abstract": {
+        "text": "The constant that represents the operation of this request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestInfo",
+      "type": "RequestInfo",
+      "typeId": "data:advanced-commerce-api:RequestInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The metadata of the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "storefront",
+      "type": "storefront",
+      "typeId": "data:advanced-commerce-api:storefront",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The storefront for the transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "taxCode",
+      "type": "taxCode",
+      "typeId": "data:advanced-commerce-api:taxCode",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The tax code for this product.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "version",
+      "typeId": "data:advanced-commerce-api:version",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The version number of the API.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Example",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```json\n{\n    \"operation\": \"CREATE_ONE_TIME_CHARGE\",\n    \"version\": \"1\",                     \n    \"requestInfo\": {\n        \"requestReferenceId\": \"f55df048-4cd8-4261-b404-b6f813ff70e5\"\n    },\n    \"currency\": \"USD\",\n    \"taxCode\": \"C003-00-2\", \n    \"storefront\": \"USA\",\n    \"item\": {\n        \"SKU\": \"BOOK_SHERLOCK_HOLMES\",\n        \"displayName\": \"Sherlock Holmes\", \n        \"description\": \"The Sherlock Holmes, 5th Edition\",\n        \"price\": 4990\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "One-time charge creation in the app",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeItem"
+      ]
+    }
+  ]
+}

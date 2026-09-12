@@ -1,0 +1,188 @@
+{
+  "about": [
+    "The reviewed baseline for `dotnet run --project tools/AppleSpec -- check`.",
+    "",
+    "Apple documents more than this library implements, and spells some things differently. Every",
+    "such departure is written down here on purpose, so that the check fails on what is new rather",
+    "than on what was already decided. Anything Apple documents that is neither mapped nor ignored",
+    "below fails the check, which is the mechanism that makes an Apple release land as a decision.",
+    "",
+    "`prefixes` teaches the matcher a naming convention. `types`, `enums` and `endpoints` name the",
+    ".NET symbol for a documented symbol whose name differs. `ignore` drops a documented symbol from",
+    "the check, and every entry states why. `netOnly` does the same in the other direction, for .NET",
+    "symbols with no Apple counterpart.",
+    "",
+    "An `ignore` entry is for a decision, never for a field that simply has not been added yet: a",
+    "documented property missing from a mapped type is a decode that silently drops data, and it is",
+    "supposed to fail until someone either implements it or writes down why they will not.",
+    "",
+    "An ignore pattern matches the bare symbol name or `framework/name`, and `*` stands for any run",
+    "of characters. An ignore naming a symbol Apple no longer documents fails the check too — a",
+    "decision still in force about a symbol that has moved is worse than no decision at all."
+  ],
+  "prefixes": {
+    "advancedcommerceapi": "AdvancedCommerce"
+  },
+  "types": {
+    "JWSAppTransactionDecodedPayload": "AppTransaction"
+  },
+  "enums": {
+    "commitmentAutoRenewStatus": "AutoRenewStatus",
+    "commitmentRenewalBillingPlanType": "RenewalBillingPlanType",
+    "environment": "AppStoreEnvironment",
+    "notificationType": "NotificationTypeV2",
+    "originalPlatform": "PurchasePlatform"
+  },
+  "endpoints": {
+    "GET /inApps/v1/history": "GetTransactionHistoryAsync",
+    "GET /inApps/v2/history": "GetTransactionHistoryAsync"
+  },
+  "ignore": [
+    {
+      "symbol": "appstoreserverapi/*Error",
+      "reason": "Apple documents one dictionary per error code, and all of them are the same two fields, errorCode and errorMessage. The library collapses them into APIException carrying an APIError enum, so that a caller matches on a code rather than on a type. Listing each by hand is how a baseline rots: there are 66 here and Apple adds more with every release."
+    },
+    {
+      "symbol": "advancedcommerceapi/*Error",
+      "reason": "Same per-error-code dictionaries, 131 of them, collapsed the same way."
+    },
+    {
+      "symbol": "retentionmessaging/*Error",
+      "reason": "Same per-error-code dictionaries, 33 of them, collapsed the same way."
+    },
+    {
+      "symbol": "POST /advancedCommerce/*",
+      "reason": "The six Advanced Commerce endpoints are called by the app through StoreKit, never by a server. This library's part is signing the request, which AdvancedCommerceInAppSignatureCreator does; the Advanced Commerce models exist to be signed, not to be sent. Only the endpoints are ignored: the dictionaries and enums they carry are checked like any other."
+    },
+    {
+      "symbol": "POST /v1",
+      "reason": "App Store Server Notifications V1. This is an endpoint the developer implements and Apple calls, not one any client issues; and the library decodes V2 payloads only."
+    },
+    {
+      "symbol": "POST /v2",
+      "reason": "App Store Server Notifications V2. Apple calls this endpoint on the developer's own server. SignedDataVerifier decodes what arrives; nothing here issues the request."
+    },
+    {
+      "symbol": "appstoreservernotifications/responseBodyV1",
+      "reason": "The V1 notification payload. The library decodes V2 only, which is what Apple has recommended since 2021."
+    },
+    {
+      "symbol": "appstoreservernotifications/unified_receipt*",
+      "reason": "Covers unified_receipt and its two nested shapes. Part of the V1 payload above; a legacy receipt this library does not decode."
+    },
+    {
+      "symbol": "appstoreservernotifications/notification_type",
+      "reason": "The V1 notification type list, distinct from notificationType. Only the V2 list is mapped, as NotificationTypeV2."
+    },
+    {
+      "symbol": "appstoreserverapi/RefundLookupResponse",
+      "reason": "The response shape of Get Refund History V1, deprecated at App Store Server API 1.6. The library calls the v2 endpoint, whose RefundHistoryResponse is mapped normally."
+    },
+    {
+      "symbol": "GET /inApps/v1/refund/lookup",
+      "reason": "Get Refund History V1, deprecated at 1.6 and superseded by /inApps/v2/refund/lookup, which GetRefundHistoryAsync calls. Unlike transaction history, there is no reason to offer the old shape."
+    },
+    {
+      "symbol": "retentionmessaging/Failures",
+      "reason": "A free-form map of notification failure reason to count, not a fixed shape. The library models it as PerformanceTestResultResponse.Failures, a Dictionary<string, int>; the documented property name is the literal placeholder \"Any Key\"."
+    },
+    {
+      "symbol": "advancedcommerceapi/version",
+      "reason": "Documented as a one-value list, \"1\". The library carries it as AdvancedCommerceInAppRequest.Version, a plain string, so that a request signed against a future version does not need a new library."
+    }
+  ],
+  "netOnly": [
+    {
+      "name": "AppStoreServerAPIClient",
+      "reason": "The client itself. Apple documents the endpoints it calls, not the caller."
+    },
+    {
+      "name": "SignedDataVerifier",
+      "reason": "JWS verification and X.509 chain validation. Apple documents the signature format; this is the implementation of reading it."
+    },
+    {
+      "name": "ReceiptUtility",
+      "reason": "Extracts transaction identifiers from legacy ASN.1 app receipts. A migration helper with no documented shape of its own."
+    },
+    {
+      "name": "HelperValidationUtils",
+      "reason": "Length and range checks for Advanced Commerce fields. The limits come from Apple's prose; the helper does not."
+    },
+    {
+      "name": "JWSSignatureCreator",
+      "reason": "Base class for the three signature creators below. Apple documents the claims each signature carries, not a class hierarchy."
+    },
+    {
+      "name": "PromotionalOfferSignatureCreator",
+      "reason": "Legacy V1 promotional offer signatures: raw ECDSA over a separator-joined payload rather than a JWS, which is why it is not a JWSSignatureCreator."
+    },
+    {
+      "name": "PromotionalOfferV2SignatureCreator",
+      "reason": "Signs a promotional offer V2 claim set."
+    },
+    {
+      "name": "IntroductoryOfferEligibilitySignatureCreator",
+      "reason": "Signs an introductory offer eligibility claim set."
+    },
+    {
+      "name": "AdvancedCommerceInAppSignatureCreator",
+      "reason": "Signs an Advanced Commerce in-app request. The counterpart to the ignored Advanced Commerce endpoints: the library signs, StoreKit sends."
+    },
+    {
+      "name": "APIException",
+      "reason": "The single exception every documented per-error-code dictionary collapses into. Carries the HTTP status and an APIError."
+    },
+    {
+      "name": "VerificationException",
+      "reason": "Raised when signature or certificate chain verification fails. A library concern; nothing reaches the wire."
+    },
+    {
+      "name": "APIError",
+      "reason": "The error codes themselves. Apple publishes them as a table on the Error Codes page rather than as a value list on a symbol page, so the check cannot compare them value by value."
+    },
+    {
+      "name": "VerificationStatus",
+      "reason": "The result of local verification — expired chain, invalid certificate, wrong bundle ID. Diagnostic, and entirely this library's own."
+    },
+    {
+      "name": "GetTransactionHistoryVersion",
+      "reason": "Selects which of the two documented transaction history endpoints GetTransactionHistoryAsync calls. An API-shape selector interpolated into the path, not a field."
+    },
+    {
+      "name": "TransactionHistoryRequest",
+      "reason": "The query parameters of Get Transaction History, gathered into one object. Never serialized — the client hand-maps each property to a query parameter — which is why none of its properties carries a JsonPropertyName."
+    },
+    {
+      "name": "ProductType",
+      "reason": "Values of the productType query parameter on Get Transaction History. Apple documents them on the endpoint page rather than as a symbol, so there is nothing to compare against."
+    },
+    {
+      "name": "SortOrder",
+      "reason": "Values of the sort query parameter on Get Transaction History. Documented on the endpoint page, as above."
+    },
+    {
+      "name": "DecodedSignedData",
+      "reason": "The base carrying signedDate for the four decoded payload types. Apple repeats signedDate on each payload instead; the check flattens the hierarchy before comparing, so every subclass is still checked against its documented property list."
+    },
+    {
+      "name": "ErrorResponseBody",
+      "reason": "The errorCode and errorMessage pair every error response carries, read once before being turned into an APIException."
+    },
+    {
+      "name": "AdvancedCommerceRequest",
+      "reason": "The base carrying requestInfo for the seven Advanced Commerce request types. Apple repeats requestInfo on each request instead."
+    },
+    {
+      "name": "AdvancedCommerceInAppRequest",
+      "reason": "The base carrying operation and version for the four in-app request types, and requestInfo one level above that."
+    },
+    {
+      "name": "AdvancedCommerceResponse",
+      "reason": "The base carrying signedRenewalInfo and signedTransactionInfo for the six Advanced Commerce response types."
+    },
+    {
+      "name": "AdvancedCommerceOfferReason",
+      "reason": "The reason an Advanced Commerce offer was granted. Apple's offer dictionary documents the field but publishes no value list for it, so there is nothing to compare against."
+    }
+  ]
+}

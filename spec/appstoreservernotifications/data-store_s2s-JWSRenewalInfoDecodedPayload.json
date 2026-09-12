@@ -1,0 +1,389 @@
+{
+  "id": "data:store_s2s:JWSRenewalInfoDecodedPayload",
+  "title": "JWSRenewalInfoDecodedPayload",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+  "slug": "appstoreservernotifications/jwsrenewalinfodecodedpayload",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A decoded payload containing subscription renewal information for an auto-renewable subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object JWSRenewalInfoDecodedPayload",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAccountToken",
+      "type": "appAccountToken",
+      "typeId": "data:store_s2s:appAccountToken",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A UUID you create at the time of purchase that associates the transaction with a customer on your own service. This is the token that applies to the upcoming renewal transaction. If your app doesn’t provide an `appAccountToken`, this field is omitted.  For more information, see `appAccountToken(_:)`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/StoreKit/Product/PurchaseOption/appAccountToken(_:)"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "appTransactionId",
+      "type": "appTransactionId",
+      "typeId": "data:store_s2s:appTransactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app download transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "autoRenewProductId",
+      "type": "autoRenewProductId",
+      "typeId": "data:store_s2s:autoRenewProductId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the product that renews at the next billing period.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "autoRenewStatus",
+      "type": "autoRenewStatus",
+      "typeId": "data:store_s2s:autoRenewStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The renewal status of the auto-renewable subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "currency",
+      "type": "currency",
+      "typeId": "data:store_s2s:currency",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The currency code for the `renewalPrice` of the subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "commitmentInfo",
+      "type": "RenewalCommitmentInfo",
+      "typeId": "data:store_s2s:RenewalCommitmentInfo",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "eligibleWinBackOfferIds",
+      "type": "eligibleWinBackOfferIds",
+      "typeId": "data:store_s2s:eligibleWinBackOfferIds",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The list of win-back offer IDs that the customer is eligible for.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:store_s2s:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment, either sandbox or production.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expirationIntent",
+      "type": "expirationIntent",
+      "typeId": "data:store_s2s:expirationIntent",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The reason the subscription expired.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "gracePeriodExpiresDate",
+      "type": "gracePeriodExpiresDate",
+      "typeId": "data:store_s2s:gracePeriodExpiresDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The time when the Billing Grace Period for subscription renewals expires.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isInBillingRetryPeriod",
+      "type": "isInBillingRetryPeriod",
+      "typeId": "data:store_s2s:isInBillingRetryPeriod",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The Boolean value that indicates whether the App Store is attempting to automatically renew the expired subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerDiscountType",
+      "type": "offerDiscountType",
+      "typeId": "data:store_s2s:offerDiscountType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The payment mode of the discount offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerIdentifier",
+      "type": "offerIdentifier",
+      "typeId": "data:store_s2s:offerIdentifier",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The offer code or the promotional offer identifier.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerPeriod",
+      "type": "offerPeriod",
+      "typeId": "data:store_s2s:offerPeriod",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The duration of the offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerType",
+      "type": "offerType",
+      "typeId": "data:store_s2s:offerType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The type of offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "originalTransactionId",
+      "type": "originalTransactionId",
+      "typeId": "data:store_s2s:originalTransactionId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The transaction identifier of the original purchase associated with this transaction.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "priceIncreaseStatus",
+      "type": "priceIncreaseStatus",
+      "typeId": "data:store_s2s:priceIncreaseStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The status that indicates whether the auto-renewable subscription is subject to a price increase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:store_s2s:productId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the In-App Purchase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "recentSubscriptionStartDate",
+      "type": "recentSubscriptionStartDate",
+      "typeId": "data:store_s2s:recentSubscriptionStartDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The earliest start date of the auto-renewable subscription in a series of subscription purchases that ignores all lapses of paid service that are 60 days or fewer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "renewalBillingPlanType",
+      "type": "renewalBillingPlanType",
+      "typeId": "data:store_s2s:renewalBillingPlanType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "renewalDate",
+      "type": "renewalDate",
+      "typeId": "data:store_s2s:renewalDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, when the most recent auto-renewable subscription purchase expires.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "renewalPrice",
+      "type": "renewalPrice",
+      "typeId": "data:store_s2s:renewalPrice",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The renewal price, in milliunits, of the auto-renewable subscription that renews at the next billing period.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedDate",
+      "type": "signedDate",
+      "typeId": "data:store_s2s:signedDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, that the App Store signed the JSON Web Signature (JWS) data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "advancedCommerceInfo",
+      "type": "advancedCommerceRenewalInfo",
+      "typeId": "data:store_s2s:advancedCommerceRenewalInfo",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Renewal information that is present only for Advanced Commerce API SKUs.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transaction-data-types"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "JWS header and payload data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSDecodedHeader",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/transaction-data-types"
+      ]
+    }
+  ]
+}

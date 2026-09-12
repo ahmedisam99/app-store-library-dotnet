@@ -1,0 +1,160 @@
+{
+  "id": "data:store_s2s:externalPurchaseToken",
+  "title": "externalPurchaseToken",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/externalPurchaseToken",
+  "slug": "appstoreservernotifications/externalpurchasetoken",
+  "introducedAt": "2.10",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The payload data that contains an external purchase token.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object externalPurchaseToken",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "externalPurchaseId",
+      "type": "externalPurchaseId",
+      "typeId": "data:store_s2s:externalPurchaseId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the token. Use this value to report tokens and their associated transactions in the `Send-External-Purchase-Report` endpoint.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI/Send-External-Purchase-Report"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "tokenCreationDate",
+      "type": "tokenCreationDate",
+      "typeId": "data:store_s2s:tokenCreationDate",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, when the system created the token.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:store_s2s:appAppleId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The app Apple ID for which the system generated the token.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:store_s2s:bundleId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle ID of the app for which the system generated the token.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "tokenExpirationDate",
+      "type": "tokenExpirationDate",
+      "typeId": "data:store_s2s:tokenExpirationDate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, when a token expires. This field is present only for custom link tokens.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "tokenType",
+      "type": "tokenType",
+      "typeId": "data:store_s2s:tokenType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The custom link token type, either `SERVICES` or `ACQUISITION`. This field is present only for custom link tokens.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `externalPurchaseToken` object is part of the `responseBodyV2DecodedPayload`. It’s present in the payload when the `notificationType` is `EXTERNAL_PURCHASE_TOKEN`. This notification type applies to apps that use the `external-purchase` API to offer alternative payment options.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.documentation/documentation/StoreKit/external-purchase"
+          ]
+        },
+        {
+          "text": "The `externalPurchaseToken` object is the Base64URL-decoded JSON of the external purchase token your app or website receives when your customer initiates an external purchase. For more information on external purchase tokens, see `receiving-and-decoding-external-purchase-tokens`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/receiving-and-decoding-external-purchase-tokens"
+          ]
+        },
+        {
+          "text": "To report tokens with or without associated transactions, call the `Send-External-Purchase-Report` endpoint of the `ExternalPurchaseServerAPI` from your server.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI/Send-External-Purchase-Report",
+            "doc://com.apple.documentation/documentation/ExternalPurchaseServerAPI"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "External purchase token fields",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenCreationDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenExpirationDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenType"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

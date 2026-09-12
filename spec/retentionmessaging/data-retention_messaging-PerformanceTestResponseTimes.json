@@ -1,0 +1,119 @@
+{
+  "id": "data:retention_messaging:PerformanceTestResponseTimes",
+  "title": "PerformanceTestResponseTimes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/PerformanceTestResponseTimes",
+  "slug": "retentionmessaging/performancetestresponsetimes",
+  "introducedAt": "1.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An object that describes test response times.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PerformanceTestResponseTimes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "average",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Average response time in milliseconds.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "p50",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The 50th percentile response time in milliseconds.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "p90",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The 90th percentile response time in milliseconds.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "p95",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The 95th percentile response time in milliseconds.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "p99",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.3.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The 99th percentile response time in milliseconds.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Performance testing",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestConfig",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestResultResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/PerformanceTestStatus",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Failures",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/sendAttemptResult",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/requestId"
+      ]
+    }
+  ]
+}

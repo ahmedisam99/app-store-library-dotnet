@@ -1,0 +1,87 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionChangeMetadataResponse",
+  "title": "SubscriptionChangeMetadataResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataResponse",
+  "slug": "advancedcommerceapi/subscriptionchangemetadataresponse",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for a successful subscription metadata change.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionChangeMetadataResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:advanced-commerce-api:JWSRenewalInfo",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:advanced-commerce-api:JWSTransaction",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [],
+      "abstract": {
+        "text": "Transaction information signed by the App Store, in JWS Compact Serialization format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the response body for the `Change-Subscription-Metadata` endpoint.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription metadata changes from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Change-Subscription-Metadata",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionChangeMetadataItem"
+      ]
+    }
+  ]
+}

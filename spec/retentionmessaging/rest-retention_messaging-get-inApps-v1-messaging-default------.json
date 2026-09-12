@@ -1,0 +1,180 @@
+{
+  "id": "rest:retention_messaging:get:inApps-v1-messaging-default-{}-{}",
+  "title": "Get Default Message",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Get-Default-Message",
+  "slug": "retentionmessaging/get-default-message",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Gets the default message for a specific product in a specific locale, if it’s configured.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "GET",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "locale",
+      "type": "locale",
+      "typeId": "data:retention_messaging:locale",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The locale of the message.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Path Parameters",
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product identifier of the message.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "DefaultConfigurationResponse",
+      "typeId": "data:retention_messaging:DefaultConfigurationResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidProductIdError | InvalidLocaleError)",
+      "typeId": "data:retention_messaging:InvalidProductIdError|data:retention_messaging:InvalidLocaleError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "DefaultMessageNotFoundError",
+      "typeId": "data:retention_messaging:DefaultMessageNotFoundError",
+      "abstract": {
+        "text": "The default message for the specified product ID and locale wasn’t found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to retrieve the default message you previously configured for a specific product in a specific locale. If a default message isn’t configured, the endpoint returns an `HTTP 404` error with `DefaultMessageNotFoundError`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultMessageNotFoundError"
+          ]
+        },
+        {
+          "text": "For information about setting up default messages, see `setting-up-retention-messages`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Default message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationResponse"
+      ]
+    }
+  ]
+}

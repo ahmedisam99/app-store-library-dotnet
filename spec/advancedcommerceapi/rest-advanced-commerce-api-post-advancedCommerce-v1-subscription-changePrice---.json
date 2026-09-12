@@ -1,0 +1,221 @@
+{
+  "id": "rest:advanced-commerce-api:post:advancedCommerce-v1-subscription-changePrice-{}",
+  "title": "Change Subscription Price",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/Change-Subscription-Price",
+  "slug": "advancedcommerceapi/change-subscription-price",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Increase or decrease the price of an auto-renewable subscription, a bundle, or individual items within a subscription at the next renewal.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/changePrice/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "POST",
+      "baseUrl": "https://api.storekit-sandbox.itunes.apple.com/",
+      "path": "advancedCommerce/v1/subscription/changePrice/{transactionId}",
+      "parameters": [
+        "{transactionId}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "transactionId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A transaction identifier of the auto-renewable subscription that is subject to the price change. Use the subscription’s original transaction ID or any subsequent transaction ID of a transaction related to the subscription.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionPriceChangeRequest",
+    "typeId": "data:advanced-commerce-api:SubscriptionPriceChangeRequest",
+    "abstract": {
+      "text": "The request body that contains the details of the price change.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionPriceChangeResponse",
+      "typeId": "data:advanced-commerce-api:SubscriptionPriceChangeResponse",
+      "abstract": {
+        "text": "Success",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(NullRequestInfoError | NullItemsError | NullSKUError | InvalidAppAccountTokenError | NullRequestReferenceIDError | InvalidRequestReferenceIDError | InvalidConsistencyTokenError | InvalidStorefrontError | InvalidCurrencyError | NegativePriceError | SKULengthExceededError | DescriptionLengthExceededError | DisplayNameLengthExceededError | InvalidProductError | InvalidSKUError | MismatchedStorefrontError | MissingPricingConfigForStorefrontError | OperationNotAllowedError | MalformedPayloadError | DependentSKUsCannotBeSharedError | DependentSKUsCannotBeChainedError | ItemCannotBeSpecifiedMultipleTimesError | PriceChangeCannotBeIssuedWhenAlreadyCommunicatedError | InvalidSKUProvidedMustBeCurrentSKUSetToRenewError)",
+      "typeId": "data:advanced-commerce-api:NullRequestInfoError|data:advanced-commerce-api:NullItemsError|data:advanced-commerce-api:NullSKUError|data:advanced-commerce-api:InvalidAppAccountTokenError|data:advanced-commerce-api:NullRequestReferenceIDError|data:advanced-commerce-api:InvalidRequestReferenceIDError|data:advanced-commerce-api:InvalidConsistencyTokenError|data:advanced-commerce-api:InvalidStorefrontError|data:advanced-commerce-api:InvalidCurrencyError|data:advanced-commerce-api:NegativePriceError|data:advanced-commerce-api:SKULengthExceededError|data:advanced-commerce-api:DescriptionLengthExceededError|data:advanced-commerce-api:DisplayNameLengthExceededError|data:advanced-commerce-api:InvalidProductError|data:advanced-commerce-api:InvalidSKUError|data:advanced-commerce-api:MismatchedStorefrontError|data:advanced-commerce-api:MissingPricingConfigForStorefrontError|data:advanced-commerce-api:OperationNotAllowedError|data:advanced-commerce-api:MalformedPayloadError|data:advanced-commerce-api:DependentSKUsCannotBeSharedError|data:advanced-commerce-api:DependentSKUsCannotBeChainedError|data:advanced-commerce-api:ItemCannotBeSpecifiedMultipleTimesError|data:advanced-commerce-api:PriceChangeCannotBeIssuedWhenAlreadyCommunicatedError|data:advanced-commerce-api:InvalidSKUProvidedMustBeCurrentSKUSetToRenewError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "(SubscriptionDoesNotExistError | SubscriptionNotEligibleError)",
+      "typeId": "data:advanced-commerce-api:SubscriptionDoesNotExistError|data:advanced-commerce-api:SubscriptionNotEligibleError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "TransactionIdNotFoundError",
+      "typeId": "data:advanced-commerce-api:TransactionIdNotFoundError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:advanced-commerce-api:RateLimitExceededError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "(GeneralInternalError | GeneralInternalRetryableError)",
+      "typeId": "data:advanced-commerce-api:GeneralInternalError|data:advanced-commerce-api:GeneralInternalRetryableError",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint when you change the price of a subscription or any bundle or item within it. For information about the customer communication, see `handling-subscription-price-changes`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/handling-subscription-price-changes"
+          ]
+        },
+        {
+          "text": "Only active subscriptions that aren’t in a billing retry state are eligible for price changes. When you call this endpoint, the price change takes effect at the next subscription renewal. Call the endpoint no later than 24 hours before the renewal date to have it take effect at the renewal.",
+          "refs": []
+        },
+        {
+          "text": "For information about providing prices, see `prices`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/prices"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example request and response",
+      "paragraphs": [
+        {
+          "text": "In the following request:",
+          "refs": []
+        },
+        {
+          "text": "**Request**\n\n```json\n{\n    \"requestInfo\": {\n        \"requestReferenceId\": \"7c80bb86-f892-4b21-a919-1357811d6c4f\"\n    },\n    \"currency\": \"USD\",\n    \"storefront\": \"USA\",\n    \"items\": [\n        { \n            \"SKU\": \"AD_FREE_1M\",\n            \"price\": 12990,\n            \"dependentSKUs\": [\"ADVANCED_FEATURES_1M\"]\n        } \n    ]\n}\n```\n\n**Response (decoded signed transaction)**\n\n```json\n{\n    \"transactionId\": \"12345\",\n    \"originalTransactionId\": \"12345\",\n    \"webOrderLineItemId\": \"23456\",\n    \"bundleId\": \"com.example\",\n    \"productId\": \"com.example.base\",\n    \"subscriptionGroupIdentifier\": \"34567\",\n    \"purchaseDate\": 1735718400000,\n    \"originalPurchaseDate\": 1735718400000,\n    \"expiresDate\": 1738396800000,\n    \"quantity\": 1,\n    \"type\": \"Auto-Renewable Subscription\",\n    \"inAppOwnershipType\": \"PURCHASED\",\n    \"signedDate\": 1735718400000,\n    \"environment\": \"Production\",\n    \"transactionReason\": \"PURCHASE\",\n    \"storefront\": \"USA\",\n    \"storefrontId\": \"143441\",\n    \"price\": 12980,\n    \"currency\": \"USD\",\n    \"appTransactionId\": \"45678\",\n    \"appAccountToken\": \"3152947d-8f63-41c2-9a91-e92e45f145e9\",\n    \"advancedCommerceInfo\": {\n        \"estimatedTax\": 0,\n        \"taxRate\": \"0\",\n        \"taxCode\": \"C003-00-1\",\n        \"taxExclusivePrice\": 12980,\n        \"descriptors\": {\n            \"displayName\": \"Ad-free and advanced feature package\",\n            \"description\": \"Remove ads and unlock advanced features.\"\n        },\n        \"items\": [\n            {\n                \"SKU\": \"AD_FREE_1M\",\n                \"displayName\": \"Ad-free monthly plan\",                        \n                \"description\": \"Remove ads for the service.\",\n                \"price\": 9990\n            },\n            {\n                \"SKU\": \"ADVANCED_FEATURES_1M\",\n                \"displayName\": \"Advanced feature monthly plan\",\n                \"description\": \"Unlock advanced features for the month.\",\n                \"price\": 3990,\n                \"offer\": {\n                    \"price\": 2990, \n                    \"period\": \"P1M\",\n                    \"periodCount\": 3,\n                    \"reason\": \"ACQUISITION\"\n                }\n            }\n        ],\n        \"requestReferenceId\": \"932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"period\": \"P1M\"\n    }\n}\n```\n\n**Response (decoded signed renewal information)**\n\n```json\n{\n    \"originalTransactionId\": \"12345\",\n    \"autoRenewProductId\": \"com.example.base\",\n    \"productId\": \"com.example.base\",\n    \"autoRenewStatus\": 1,\n    \"signedDate\": 1735718400000,\n    \"environment\": \"Production\",\n    \"recentSubscriptionStartDate\": 1735718400000,\n    \"renewalDate\": 1738396800000,\n    \"advancedCommerceInfo\": {\n        \"taxCode\": \"C003-00-1\",\n        \"descriptors\": {\n            \"displayName\": \"Ad-free and advanced feature package\",\n            \"description\": \"Remove ads and unlock advanced features.\"\n        },\n        \"items\": [\n            {\n                \"SKU\": \"AD_FREE_1M\",\n                \"displayName\": \"Ad-free monthly plan\",                        \n                \"description\": \"Remove ads for the service.\",\n                \"price\": 12990,\n                \"priceIncreaseInfo\": {\n                    \"status\": \"PENDING\",\n                    \"price\": 12990,\n                    \"dependentSKUs\": [\"ADVANCED_FEATURES_1M\"]\n                }\n            },\n            {\n                \"SKU\": \"ADVANCED_FEATURES_1M\",\n                \"displayName\": \"Advanced feature monthly plan\",\n                \"description\": \"Unlock advanced features for the month.\",\n                \"price\": 3990,\n                \"offer\": {\n                    \"price\": 2990, \n                    \"period\": \"P1M\",\n                    \"periodCount\": 2,\n                    \"reason\": \"ACQUISITION\"\n                }\n            }\n        ],\n        \"requestReferenceId\": \"932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"consistencyToken\": \"1.12345.932c6903-0ab8-4469-9f21-015f6fab013c\",\n        \"period\": \"P1M\"\n    },\n    \"appTransactionId\": \"45678\",\n    \"appAccountToken\": \"3152947d-8f63-41c2-9a91-e92e45f145e9\"\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The subscription includes multiple items, and only one item has a price increase to USD 12.99.",
+          "refs": []
+        },
+        {
+          "text": "The price increase takes effect at the next subscription renewal.",
+          "refs": []
+        },
+        {
+          "text": "The decoded signed transaction shows price in the current period, before the increase.",
+          "refs": []
+        },
+        {
+          "text": "The decoded signed renewal information shows the increased price, which takes effect at the next renewal period if consented to.",
+          "refs": []
+        },
+        {
+          "text": "The item has a dependent SKU, which will be cancelled if the price increase is not agreed to.",
+          "refs": []
+        },
+        {
+          "text": "In this example, the price increase has been communicated, so the status is marked as pending.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription price change from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeResponse"
+      ]
+    }
+  ]
+}

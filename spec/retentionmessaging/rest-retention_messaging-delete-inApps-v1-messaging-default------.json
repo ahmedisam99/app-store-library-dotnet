@@ -1,0 +1,165 @@
+{
+  "id": "rest:retention_messaging:delete:inApps-v1-messaging-default-{}-{}",
+  "title": "Delete Default Message",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Delete-Default-Message",
+  "slug": "retentionmessaging/delete-default-message",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Deletes a default message for a product in a locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/default/{productId}/{locale}",
+      "parameters": [
+        "{productId}",
+        "{locale}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "locale",
+      "type": "locale",
+      "typeId": "data:retention_messaging:locale",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The locale of the default message configuration.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Path Parameters",
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The product ID of the default message configuration.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(InvalidProductIdError | InvalidLocaleError)",
+      "typeId": "data:retention_messaging:InvalidProductIdError|data:retention_messaging:InvalidLocaleError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to delete a default message configuration. After a successful deletion, `productId` in `locale` has no default message.",
+          "refs": []
+        },
+        {
+          "text": "This endpoint is idempotent. If the product has no configured default message for the locale, the endpoint still responds with a `200` status code.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Default message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Default-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DefaultConfigurationResponse"
+      ]
+    }
+  ]
+}

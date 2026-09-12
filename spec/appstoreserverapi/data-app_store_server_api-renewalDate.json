@@ -1,0 +1,63 @@
+{
+  "id": "data:app_store_server_api:renewalDate",
+  "title": "renewalDate",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/renewalDate",
+  "slug": "appstoreserverapi/renewaldate",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The UNIX time, in milliseconds, when the most recent auto-renewable subscription purchase expires.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "timestamp renewalDate",
+    "baseType": "timestamp",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `renewalDate` is a value that’s always present in the payload for auto-renewable subscriptions, even for expired subscriptions. This date indicates the expiration date of the most recent auto-renewable subscription purchase, including renewals, and may be in the past. For subscriptions that renew successfully, the `renewalDate` is the date when the subscription renews.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalDate"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscription renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/autoRenewProductId",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/billingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expirationIntent",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/expiresDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/isUpgraded",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalBillingPlanType",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/renewalPrice",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/status"
+      ]
+    }
+  ]
+}

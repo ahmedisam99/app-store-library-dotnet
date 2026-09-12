@@ -1,0 +1,302 @@
+{
+  "id": "rest:retention_messaging:put:inApps-v1-messaging-message-{}",
+  "title": "Upload Message",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/Upload-Message",
+  "slug": "retentionmessaging/upload-message",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Uploads a message to use for retention messaging.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit.apple.com/",
+      "path": "inApps/v1/messaging/message/{messageIdentifier}",
+      "parameters": [
+        "{messageIdentifier}"
+      ]
+    },
+    {
+      "title": "Sandbox URL",
+      "method": "PUT",
+      "baseUrl": "https://api.storekit-sandbox.apple.com/",
+      "path": "inApps/v1/messaging/message/{messageIdentifier}",
+      "parameters": [
+        "{messageIdentifier}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "messageIdentifier",
+      "type": "messageIdentifier",
+      "typeId": "data:retention_messaging:messageIdentifier",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "A UUID you provide to uniquely identify the message you upload.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "UploadMessageRequestBody",
+    "typeId": "data:retention_messaging:UploadMessageRequestBody",
+    "abstract": {
+      "text": "The message text to upload.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "(BodyTooLongError | HeaderTooLongError | AltTextTooLongError | BadRequestImageSizeError | BadRequestTooManyBulletPointsError | BadRequestBulletPointTextTooLongError | BadRequestAboveImageRequiresAnImageError)",
+      "typeId": "data:retention_messaging:BodyTooLongError|data:retention_messaging:HeaderTooLongError|data:retention_messaging:AltTextTooLongError|data:retention_messaging:BadRequestImageSizeError|data:retention_messaging:BadRequestTooManyBulletPointsError|data:retention_messaging:BadRequestBulletPointTextTooLongError|data:retention_messaging:BadRequestAboveImageRequiresAnImageError",
+      "abstract": {
+        "text": "The request is invalid and unacceptable.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "The JSON Web Token (JWT) in the authorization header is invalid. For more information, see `generating-json-web-tokens-for-api-requests`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/generating-json-web-tokens-for-api-requests"
+        ]
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "MaximumNumberOfMessagesReachedError",
+      "typeId": "data:retention_messaging:MaximumNumberOfMessagesReachedError",
+      "abstract": {
+        "text": "The request is forbidden because the system reached the maximum number of uploaded messages.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "MessageAlreadyExistsError",
+      "typeId": "data:retention_messaging:MessageAlreadyExistsError",
+      "abstract": {
+        "text": "The message identifier already exists.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "RateLimitExceededError",
+      "typeId": "data:retention_messaging:RateLimitExceededError",
+      "abstract": {
+        "text": "The request exceeded the rate limit. For more information, see `identifying-rate-limits`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/identifying-rate-limits"
+        ]
+      }
+    },
+    {
+      "status": 500,
+      "reason": "Internal Server Error",
+      "mimeType": "application/json",
+      "type": "GeneralInternalError",
+      "typeId": "data:retention_messaging:GeneralInternalError",
+      "abstract": {
+        "text": "Server error. Try again later.",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "Only text-based retention messages can include images. If you’re uploading text for a promotional-offer message or a switch-plan message, don’t include an image.",
+        "refs": []
+      }
+    },
+    {
+      "style": "tip",
+      "prose": {
+        "text": "Keep a record of the message and image contents on your system.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Field",
+        "Maximum length",
+        "Related error code"
+      ],
+      "rows": [
+        [
+          "`header`",
+          "66",
+          "`HeaderTooLongError`"
+        ],
+        [
+          "`body`",
+          "144",
+          "`BodyTooLongError`"
+        ],
+        [
+          "`altText`",
+          "150",
+          "`AltTextTooLongError`"
+        ],
+        [
+          "`bulletPointText`",
+          "66",
+          "`BadRequestBulletPointTextTooLongError`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Call this endpoint to upload the text for retention messages. You provide a unique `messageIdentifier` to identify each message you upload. You can optionally include an image and bullet points with the message.",
+          "refs": []
+        },
+        {
+          "text": "You define a message by providing the following strings and objects in the `UploadMessageRequestBody`:",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n> Only text-based retention messages can include images. If you’re uploading text for a promotional-offer message or a switch-plan message, don’t include an image.",
+          "refs": []
+        },
+        {
+          "text": "To change the position of the header text in a retention message, use `headerPosition` to indicate whether to place the header above the message body or above the image.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+          ]
+        },
+        {
+          "text": "Each string needs to be a UTF-8-encoded value with a maximum length as indicated below:",
+          "refs": []
+        },
+        {
+          "text": "| Field | Maximum length | Related error code |\n| --- | --- | --- |\n| `header` | 66 | `HeaderTooLongError` |\n| `body` | 144 | `BodyTooLongError` |\n| `altText` | 150 | `AltTextTooLongError` |\n| `bulletPointText` | 66 | `BadRequestBulletPointTextTooLongError` |",
+          "refs": []
+        },
+        {
+          "text": "The maximum number of messages you can configure for each app is 2000. For example, you may choose to upload a message for a product identifier for each locale your app supports. The endpoint returns a `MaximumNumberOfMessagesReachedError` response if you exceed the maximum limit. Call `Delete-Message` to delete messages.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message"
+          ]
+        },
+        {
+          "text": "> **Tip**\n>\n> Keep a record of the message and image contents on your system.",
+          "refs": []
+        },
+        {
+          "text": "This endpoint isn’t idempotent. If you have a previously configured message with the same `messageIdentifier`, the endpoint returns `MessageAlreadyExistsError`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/MessageAlreadyExistsError"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The body, which contains the main text of the message.",
+          "refs": []
+        },
+        {
+          "text": "A header, which contains text to display above the message body or above the image.",
+          "refs": []
+        },
+        {
+          "text": "An optional `UploadMessageImage` that represents an image you upload with alternative text.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage"
+          ]
+        },
+        {
+          "text": "An optional array of `BulletPoint` text, along with images to use as the bullet point icons.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Determine whether a message is ready to display",
+      "paragraphs": [
+        {
+          "text": "Immediately after you upload an message, its `messageState` is `PENDING`. Apple checks the message, and sets the message state to `APPROVED` to indicate the system can display it in retention messaging. Call the `Get-Message-List` endpoint to check the current state of all messages. If a message includes an image, call `Get-Image-List` to check the current state of the image separately. Both the message and its image, if any, need to be in an `APPROVED` state before the system can display a message.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Image-List"
+          ]
+        },
+        {
+          "text": "In the sandbox testing environment, the system automatically sets message and image states to `APPROVED`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponseItem"
+      ]
+    }
+  ]
+}

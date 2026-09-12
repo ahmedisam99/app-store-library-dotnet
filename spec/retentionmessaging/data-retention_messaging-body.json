@@ -1,0 +1,71 @@
+{
+  "id": "data:retention_messaging:body",
+  "title": "body",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/body",
+  "slug": "retentionmessaging/body",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The body text you provide for a message.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string body",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximumLength",
+      "value": "144",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Provide the `body` as a UTF-8-encoded string. The maximum string length is `144`.",
+          "refs": []
+        },
+        {
+          "text": "The `body` text appears, along with the `header` text, in a `message`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/header",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/message"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Messages",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageIdentifier",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/messageState",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/BulletPoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/bulletPointText",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/header",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/headerPosition"
+      ]
+    }
+  ]
+}

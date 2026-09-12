@@ -1,0 +1,115 @@
+{
+  "id": "doc:advancedcommerceapi/ratelimits",
+  "title": "Identifying rate limits for Advanced Commerce APIs",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/ratelimits",
+  "slug": "advancedcommerceapi/ratelimits",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Recognize and handle the rate limits that apply to Advanced Commerce API endpoints.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Endpoint",
+        "Rate limit (per second)"
+      ],
+      "rows": [
+        [
+          "`Cancel-a-Subscription`",
+          "5"
+        ],
+        [
+          "`Change-Subscription-Metadata`",
+          "50"
+        ],
+        [
+          "`Change-Subscription-Price`",
+          "50"
+        ],
+        [
+          "`Migrate-Subscription-to-Advanced-Commerce-API`",
+          "50"
+        ],
+        [
+          "`Request-Transaction-Refund`",
+          "5"
+        ],
+        [
+          "`Revoke-Subscription`",
+          "5"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The Advanced Commerce API limits the number of requests that you can submit to each endpoint within a specified timespan. The request limits apply per app. The following table lists the rate limits in the production environment, expressed in requests per second. Limits are enforced on an hourly basis.",
+          "refs": []
+        },
+        {
+          "text": "| Endpoint | Rate limit (per second) |\n| --- | --- |\n| `Cancel-a-Subscription` | 5 |\n| `Change-Subscription-Metadata` | 50 |\n| `Change-Subscription-Price` | 50 |\n| `Migrate-Subscription-to-Advanced-Commerce-API` | 50 |\n| `Request-Transaction-Refund` | 5 |\n| `Revoke-Subscription` | 5 |",
+          "refs": []
+        },
+        {
+          "text": "The rate limits in the sandbox environment are 10 percent of the limits in the table above. The Advanced Commerce server may make adjustments to reduce or increase these rate limits as needed at any time.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle exceeded rate limits gracefully",
+      "paragraphs": [
+        {
+          "text": "If you exceed a per-hour limit, the API rejects the request with an `HTTP 429` response, with a `RateLimitExceededError` in the body. Consider the following as you integrate the API:",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/RateLimitExceededError"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you periodically call the API, throttle your requests to avoid exceeding the per-hour limit for an endpoint.",
+          "refs": []
+        },
+        {
+          "text": "Manage the `HTTP 429 RateLimitExceededError` in your error-handling process. For example, log the failure and queue the job to process it again at a later time.",
+          "refs": []
+        },
+        {
+          "text": "Check the `Retry-After` header if you receive the `HTTP 429` error. This header contains a UNIX time, in milliseconds, that informs you when you can next send a request.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "API authorization and rate limits",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/authorizing-server-calls"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "id": "doc:advancedcommerceapi/creating-skus-for-the-mini-app-partner-program",
+  "title": "Creating SKUs for the Mini Apps Partner Program",
+  "kind": "article",
+  "role": "article",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/creating-skus-for-the-mini-app-partner-program",
+  "slug": "advancedcommerceapi/creating-skus-for-the-mini-app-partner-program",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Define display names and SKUs for one-time charges and subscriptions in the Mini Apps Partner Program.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Identifier",
+        "Description",
+        "Example"
+      ],
+      "rows": [
+        [
+          "`[Mini App Name]`",
+          "The name of the mini app",
+          "`Anne’s Game`"
+        ],
+        [
+          "`[Mini App Product Name]`",
+          "The name of the product associated with the mini app",
+          "`Boost Pack` or `Pro Monthly`"
+        ],
+        [
+          "`[Mini App Partner Name]`",
+          "The name of the mini app partner",
+          "`Apple_Seed`"
+        ],
+        [
+          "`[Mini App Partner ID]`",
+          "The unique identifier you set for the mini app partner",
+          "`WC123`"
+        ],
+        [
+          "`[Mini App SKU Identifier]`",
+          "The unique identifier you set for the Mini App Product",
+          "`boost_pack_id, pro_monthly_id`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "If your app supports the Mini Apps Partner Program, use the Advanced Commerce APIs when a customer initiates a one-time purchase (`OneTimeChargeCreateRequest`), or purchases a subscription (`SubscriptionCreateRequest`).",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "The Mini Apps Partner Program has specific requirements for defining the SKUs and the product display names, so they fully identify each mini app product. Follow these guidelines to create display names and SKUs for products you offer through the Mini Apps Partner Program and describe the format for one-time purchases and subscriptions. See `creating-your-purchases` for additional guidance.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-your-purchases"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Describe the mini app and mini apps partner with metadata",
+      "paragraphs": [
+        {
+          "text": "The following table lists the identifiers that make up mini app display names and SKUs.",
+          "refs": []
+        },
+        {
+          "text": "| Identifier | Description | Example |\n| --- | --- | --- |\n| `[Mini App Name]` | The name of the mini app | `Anne’s Game` |\n| `[Mini App Product Name]` | The name of the product associated with the mini app | `Boost Pack` or `Pro Monthly` |\n| `[Mini App Partner Name]` | The name of the mini app partner | `Apple_Seed` |\n| `[Mini App Partner ID]` | The unique identifier you set for the mini app partner | `WC123` |\n| `[Mini App SKU Identifier]` | The unique identifier you set for the Mini App Product | `boost_pack_id, pro_monthly_id` |",
+          "refs": []
+        },
+        {
+          "text": "You determine the names and concatenate them to create the display names and SKUs, as specified in the one-time or subscription purchase instructions below, when you use the Advanced Commerce APIs to initiate purchases.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Initiate a one-time charge purchase",
+      "paragraphs": [
+        {
+          "text": "To initiate a one-time charge for a mini app product, use the `OneTimeChargeCreateRequest`.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest"
+          ]
+        },
+        {
+          "text": "Create the mini app display name using the format `[Mini App Name] - [Mini App Product Name]`. Using the sample values from the table above, `item.displayName` would look like the following example:",
+          "refs": []
+        },
+        {
+          "text": "```\nitem.displayName = \"Anne’s Game - Boost Pack\"\n```",
+          "refs": []
+        },
+        {
+          "text": "Create the `item.SKU` using the format `[Mini App SKU Identifier]|[Mini App Partner Name]|[Mini App Partner ID]`",
+          "refs": []
+        },
+        {
+          "text": "Using the sample values from the table above, the `items.SKU` would look like the following example:",
+          "refs": []
+        },
+        {
+          "text": "```\nitem.SKU = \"boost_pack_id |Apple_Seed|WC123\"\n```",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The display name can use a maximum of 30 characters.",
+          "refs": []
+        },
+        {
+          "text": "The two elements are separated by the ‘-’ character, with a single space on either side of the ‘-’ character.",
+          "refs": []
+        },
+        {
+          "text": "The SKU value needs to be unique within your app and can use a maximum of 128 characters.",
+          "refs": []
+        },
+        {
+          "text": "All three elements are separated by the ‘|’ character and all three elements must be present.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Initiate a subscription purchase",
+      "paragraphs": [
+        {
+          "text": "To initiate a subscription purchase, use the `SubscriptionCreateRequest` API.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "Create the display name and SKU in `SubscriptionCreateItem` to include the specified details and ensure it conforms to the indicated formatting and length limitations.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateItem"
+          ]
+        },
+        {
+          "text": "The mini app’s display name can use a maximum of 30 characters, and follows this format: `descriptors.displayName` = `[Mini App Name]`, for example",
+          "refs": []
+        },
+        {
+          "text": "```\ndescriptors.displayName = \"Anne's Game\"\n```",
+          "refs": []
+        },
+        {
+          "text": "The product display name can use a maximum of 30 characters and follow this format: `items.displayName` = `[Mini App Product Name]`, for example",
+          "refs": []
+        },
+        {
+          "text": "```\nitems.displayName = \"Pro Monthly\"\n```",
+          "refs": []
+        },
+        {
+          "text": "The SKU value needs to be unique within your app and can use a maximum of 128 characters and follows this format: items.SKU = `[Mini App SKU Identifier]|[Mini App Partner Name]|[Mini App Partner ID]`, for example",
+          "refs": []
+        },
+        {
+          "text": "```\nitems.SKU = \"pro_monthly_id|Apple_Seed|WC123\"\n```",
+          "refs": []
+        },
+        {
+          "text": "All three elements are separated by the ‘|’ character and all three elements must be present.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Generic product IDs and SKUs",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/setting-up-generic-product-identifiers",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/creating-your-purchases"
+      ]
+    }
+  ]
+}

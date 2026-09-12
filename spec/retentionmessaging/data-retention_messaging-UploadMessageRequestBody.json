@@ -1,0 +1,166 @@
+{
+  "id": "data:retention_messaging:UploadMessageRequestBody",
+  "title": "UploadMessageRequestBody",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/UploadMessageRequestBody",
+  "slug": "retentionmessaging/uploadmessagerequestbody",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body for uploading a message, which includes the message text and an optional image reference and bullet points.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object UploadMessageRequestBody",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "header",
+      "type": "header",
+      "typeId": "data:retention_messaging:header",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "66",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The header text of the retention message that the system displays to customers.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "body",
+      "type": "body",
+      "typeId": "data:retention_messaging:body",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "144",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The body text of the retention message that the system displays to customers.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "image",
+      "type": "UploadMessageImage",
+      "typeId": "data:retention_messaging:UploadMessageImage",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The optional image identifier and its alternative text to appear as part of a text-based message with an image.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bulletPoints",
+      "type": "[BulletPoint]",
+      "typeId": "data:retention_messaging:BulletPoint",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "An optional array of bullet points.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "headerPosition",
+      "type": "headerPosition",
+      "typeId": "data:retention_messaging:headerPosition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The position of header text, which defaults to placing header text above the body.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the request body for the `Upload-Message` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message"
+          ]
+        },
+        {
+          "text": "All messages require `body` and `header` text.",
+          "refs": []
+        },
+        {
+          "text": "Don’t include an `image` or `bulletPoints` when you upload the text for the following retention message types:",
+          "refs": []
+        },
+        {
+          "text": "All default retention messages require body text and header text, and may optionally include an image and bullet points. To place header text above an image, include an image, and set the value of `headerPosition` to `ABOVE_IMAGE`. Otherwise, the header text appears above the message body, which is below the image.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageRequestBody/headerPosition"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A promotional-offer retention message",
+          "refs": []
+        },
+        {
+          "text": "A switch-plan retention message",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Message configuration",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Upload-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Message",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Message-List",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/UploadMessageImage",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponse",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/GetMessageListResponseItem"
+      ]
+    }
+  ]
+}

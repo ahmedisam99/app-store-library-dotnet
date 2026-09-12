@@ -1,0 +1,61 @@
+{
+  "id": "data:store_s2s:transactionId",
+  "title": "transactionId",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/transactionId",
+  "slug": "appstoreservernotifications/transactionid",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The unique identifier for a transaction, such as an In-App Purchase, restored purchase, or subscription renewal.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string transactionId",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store generates a new value for transaction identifier every time the subscription automatically renews or the user restores it on a new device.",
+          "refs": []
+        },
+        {
+          "text": "When a user first purchases a subscription, the transaction identifier always matches the original transaction identifier (`originalTransactionId`). For a restore or renewal, the transaction identifier doesn’t match the original transaction identifier. If a user restores or renews the same subscription multiple times, each restore or renewal has a unique transaction identifier.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalTransactionId"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Transaction identifiers",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/originalTransactionId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/webOrderLineItemId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/previousOriginalTransactionId"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "data:advanced-commerce-api:SubscriptionMigrateRenewalItem",
+  "title": "SubscriptionMigrateRenewalItem",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/SubscriptionMigrateRenewalItem",
+  "slug": "advancedcommerceapi/subscriptionmigraterenewalitem",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The item information that replaces a migrated subscription item when the subscription renews.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionMigrateRenewalItem",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "SKU",
+      "type": "SKU",
+      "typeId": "data:advanced-commerce-api:SKU",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "128",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The SKU that the subscription item renews to at the next renewal period.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "description",
+      "type": "description",
+      "typeId": "data:advanced-commerce-api:description",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "45",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The description of the renewing SKU.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "displayName",
+      "type": "displayName",
+      "typeId": "data:advanced-commerce-api:displayName",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.1.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "30",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "The display name of the renewing SKU.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "If you migrate a subscription that is to renew to another SKU, provide the item that is to renew in the `SubscriptionMigrateRenewalItem`.\nFor example, if a customer downgrades a subscription, the subscription continues unchanged until the end of the billing period, and downgrades when it renews. If you migrate a subscription in this state before the end of the billing period, you need to provide the item that renews.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Migration from the server",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Migrate-Subscription-to-Advanced-Commerce-API",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateRequest",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateResponse",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionMigrateDescriptors"
+      ]
+    }
+  ]
+}

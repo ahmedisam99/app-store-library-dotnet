@@ -1,0 +1,80 @@
+{
+  "id": "data:app_store_server_api:AppTransactionInfoResponse",
+  "title": "AppTransactionInfoResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/AppTransactionInfoResponse",
+  "slug": "appstoreserverapi/apptransactioninforesponse",
+  "introducedAt": "1.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains signed app transaction information for a customer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppTransactionInfoResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signedAppTransactionInfo",
+      "type": "JWSAppTransaction",
+      "typeId": "data:app_store_server_api:JWSAppTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.17.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A customer’s app transaction information, signed by Apple, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This response contains information that you request by calling the `Get-App-Transaction-Info` endpoint. For information on decoding and reading the app transaction, see `JWSAppTransaction` and `JWSAppTransactionDecodedPayload`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-App-Transaction-Info",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Transaction information",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-App-Transaction-Info"
+      ]
+    }
+  ]
+}

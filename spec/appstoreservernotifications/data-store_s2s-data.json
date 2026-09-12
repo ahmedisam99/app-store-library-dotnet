@@ -1,0 +1,203 @@
+{
+  "id": "data:store_s2s:data",
+  "title": "data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/data",
+  "slug": "appstoreservernotifications/data",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The payload data that contains app metadata and the signed renewal and transaction information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAppleId",
+      "type": "appAppleId",
+      "typeId": "data:store_s2s:appAppleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The unique identifier of the app that the notification applies to. This property is available for apps that users download from the App Store. It isn’t present in the sandbox environment.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "bundleId",
+      "typeId": "data:store_s2s:bundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The bundle identifier of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleVersion",
+      "type": "bundleVersion",
+      "typeId": "data:store_s2s:bundleVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The version of the build that identifies an iteration of the bundle.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "consumptionRequestReason",
+      "type": "consumptionRequestReason",
+      "typeId": "data:store_s2s:consumptionRequestReason",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The reason the customer requested the refund. This field appears only for `CONSUMPTION_REQUEST` notifications, which the server sends when a customer initiates a refund request for a consumable in-app purchase or auto-renewable subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "environment",
+      "type": "environment",
+      "typeId": "data:store_s2s:environment",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The server environment that the notification applies to, either `sandbox` or `production`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedRenewalInfo",
+      "type": "JWSRenewalInfo",
+      "typeId": "data:store_s2s:JWSRenewalInfo",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format. This field appears only for notifications that apply to auto-renewable subscriptions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "signedTransactionInfo",
+      "type": "JWSTransaction",
+      "typeId": "data:store_s2s:JWSTransaction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "Transaction information signed by the App Store, in JSON Web Signature (JWS) format.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "status",
+      "type": "status",
+      "typeId": "data:store_s2s:status",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The status of an auto-renewable subscription as of the `signedDate` in the `responseBodyV2DecodedPayload`. This field appears only for notifications sent for auto-renewable subscriptions.",
+        "refs": [
+          "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `data` object is part of the `responseBodyV2DecodedPayload`. It’s present in the payload for `notificationType` values related to in-app purchases, except for the `RENEWAL_EXTENSION` notification type with a `SUMMARY` `subtype`, and the `EXTERNAL_PURCHASE_TOKEN` notification type.",
+          "refs": [
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
+            "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype"
+          ]
+        },
+        {
+          "text": "Use the notification type along with the transaction and subscription renewal information in the `data` object to update a user’s service or present promotional offers according to your business logic.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "App metadata and environment",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleVersion",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/environment",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/status"
+      ]
+    },
+    {
+      "title": "JWS transaction and renewal info",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfo",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransaction",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload"
+      ]
+    },
+    {
+      "title": "Consumption request info",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/consumptionRequestReason"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Response objects for in-app purchases",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appData"
+      ]
+    }
+  ]
+}

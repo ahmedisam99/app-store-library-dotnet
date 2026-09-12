@@ -1,0 +1,91 @@
+{
+  "id": "data:app_store_server_api:JWSAppTransaction",
+  "title": "JWSAppTransaction",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/JWSAppTransaction",
+  "slug": "appstoreserverapi/jwsapptransaction",
+  "introducedAt": "1.17",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "App transaction information signed by the App Store, in JSON Web Signature (JWS) Compact Serialization format.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string JWSAppTransaction",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `JWSAppTransaction` type is a string of three Base64URL-encoded components separated by a period. The string contains the JWS Compact Serialization of the transaction information, signed by the App Store according to the JSON Web Signature (JWS) `https://datatracker.ietf.org/doc/html/rfc7515` specification.",
+          "refs": [
+            "https://datatracker.ietf.org/doc/html/rfc7515"
+          ]
+        },
+        {
+          "text": "The three components of the string are a header, a payload, and a signature, in that order.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "To read the transaction information, Base64URL-decode the payload. Use a `JWSAppTransactionDecodedPayload` object to read the payload information.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload"
+          ]
+        },
+        {
+          "text": "To read the header, decode it and use a `JWSDecodedHeader` object to access the information. Use the information in the header to verify the signature.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Use App Store Server Library functions",
+      "paragraphs": [
+        {
+          "text": "To verify a `JWSAppTransaction` on your server, consider implementing the verification using the App Store Server Library function `verifyAndDecodeAppTransaction`. The library provides this function in each language the library supports. For more information, see `simplifying-your-implementation-by-using-the-app-store-server-library`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/simplifying-your-implementation-by-using-the-app-store-server-library"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "JWS headers and payloads",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSDecodedHeader",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSAppTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransaction",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfo",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSRenewalInfoDecodedPayload",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/data-types"
+      ]
+    }
+  ]
+}

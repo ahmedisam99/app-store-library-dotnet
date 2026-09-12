@@ -1,0 +1,60 @@
+{
+  "id": "data:store_s2s:renewalDate",
+  "title": "renewalDate",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/renewalDate",
+  "slug": "appstoreservernotifications/renewaldate",
+  "introducedAt": "2.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The UNIX time, in milliseconds, when the most recent auto-renewable subscription purchase expires.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "timestamp renewalDate",
+    "baseType": "timestamp",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `renewalDate` is a value that’s always present in the payload for auto-renewable subscriptions, even for expired subscriptions. This date indicates the expiration date of the most recent auto-renewable subscription purchase, including renewals, and may be in the past. For subscriptions that renew successfully, the `renewalDate` is the date when the subscription renews.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Subscripton renewal and expiration",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewStatus",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/autoRenewProductId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/billingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expirationIntent",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/expiresDate",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/isUpgraded",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalBillingPlanType",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/renewalPrice"
+      ]
+    }
+  ]
+}

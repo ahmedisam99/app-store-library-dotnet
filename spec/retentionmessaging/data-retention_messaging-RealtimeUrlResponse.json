@@ -1,0 +1,81 @@
+{
+  "id": "data:retention_messaging:RealtimeUrlResponse",
+  "title": "RealtimeUrlResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/RealtimeUrlResponse",
+  "slug": "retentionmessaging/realtimeurlresponse",
+  "introducedAt": "1.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body that contains the URL for your Get Retention Message endpoint.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RealtimeUrlResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "realtimeURL",
+      "type": "realtimeURL",
+      "typeId": "data:retention_messaging:realtimeURL",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.4.0",
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "256",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "A string that contains the URL you provided for your Get Retention Message endpoint.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This is the response body for the `Get-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody"
+      ]
+    }
+  ]
+}

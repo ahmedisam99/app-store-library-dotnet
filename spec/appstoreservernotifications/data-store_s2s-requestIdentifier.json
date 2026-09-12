@@ -1,0 +1,63 @@
+{
+  "id": "data:store_s2s:requestIdentifier",
+  "title": "requestIdentifier",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreservernotifications",
+  "path": "/documentation/AppStoreServerNotifications/requestIdentifier",
+  "slug": "appstoreservernotifications/requestidentifier",
+  "introducedAt": "2.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that contains a unique identifier for a subscription-renewal-date extension request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "uuid requestIdentifier",
+    "baseType": "uuid",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You originally specify the `requestIdentifier` when you call `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers` in the `AppStoreServerAPI`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers",
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Data types",
+      "members": [
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/environment",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/productId",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontCountryCodes",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/storefrontCountryCode",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/failedCount",
+        "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/succeededCount"
+      ]
+    }
+  ]
+}

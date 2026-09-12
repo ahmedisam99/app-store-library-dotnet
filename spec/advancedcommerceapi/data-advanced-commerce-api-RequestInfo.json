@@ -1,0 +1,194 @@
+{
+  "id": "data:advanced-commerce-api:RequestInfo",
+  "title": "RequestInfo",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "advancedcommerceapi",
+  "path": "/documentation/AdvancedCommerceAPI/RequestInfo",
+  "slug": "advancedcommerceapi/requestinfo",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The metadata to include in server requests.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RequestInfo",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appAccountToken",
+      "type": "uuid",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "36",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "A UUID that represents an app account token, to associate with the transaction in the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "consistencyToken",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "abstract": {
+        "text": "The value of the `advancedCommerceConsistencyToken` that you receive in the `JWSRenewalInfo` renewal information for a subscription. Don’t generate this value.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/AppStoreServerAPI/advancedCommerceConsistencyToken",
+          "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/JWSRenewalInfo"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "requestReferenceId",
+      "type": "uuid",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximumLength",
+          "value": "36",
+          "values": null
+        }
+      ],
+      "abstract": {
+        "text": "A UUID that you provide to uniquely identify each request. If the request times out, you can use the same `requestReferenceId` value to retry the request. Otherwise, provide a unique value.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "If you do include `appAccountToken` in the `purchase(options:)`, you must include the same app account token value in the `RequestInfo`; otherwise, the request fails.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You provide the `RequestInfo` in your Advanced Commerce API server requests to uniquely identify your requests. You also have the option to provide additional data in the `RequestInfo` object.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Include the app account token, optionally",
+      "paragraphs": [
+        {
+          "text": "You can include an `appAccountToken` in `RequestInfo` to associate an account on your system with the purchase. The App Store returns the same `appAccountToken` value in the transaction information.",
+          "refs": []
+        },
+        {
+          "text": "If you include `appAccountToken` in the `RequestInfo`, you don’t need to include the app account token as a purchase option by adding `appAccountToken(_:)` to the product purchase options (`purchase(options:)`).",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Product/PurchaseOption/appAccountToken(_:)",
+            "doc://com.apple.documentation/documentation/StoreKit/Product/purchase(options:)"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n> If you do include `appAccountToken` in the `purchase(options:)`, you must include the same app account token value in the `RequestInfo`; otherwise, the request fails.",
+          "refs": []
+        },
+        {
+          "text": "For more information about sending API requests from your app, see `sending-advanced-commerce-api-requests-from-your-app`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/sending-advanced-commerce-api-requests-from-your-app"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Include the consistency token, optionally",
+      "paragraphs": [
+        {
+          "text": "The consistency token helps prevent unintended operations that might occur when the server gets multiple or overlapping requests for the same subscription.",
+          "refs": []
+        },
+        {
+          "text": "Subscriptions receive a new consistency token in the `advancedCommerceRenewalInfo` object of the `JWSRenewalInfo` each time the system updates the subscrpition renewal information. Include the consistency token when you use the `SubscriptionCreateRequest` operation to resubscribe to the subscription and provide the `previousTransactionID`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerAPI/advancedCommerceRenewalInfo",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/JWSRenewalInfo",
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        },
+        {
+          "text": "Don’t include a consistency token when:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "You haven’t received a consistency token.",
+          "refs": []
+        },
+        {
+          "text": "You’re using the `OneTimeChargeCreateRequest` operation.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/OneTimeChargeCreateRequest"
+          ]
+        },
+        {
+          "text": "You’re using the `SubscriptionCreateRequest` operation for an initial subscription purchase.",
+          "refs": [
+            "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionCreateRequest"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "members": [
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Descriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/Offer",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyAddItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyChangeItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyDescriptors",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyPeriodChange",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionModifyRemoveItem",
+        "doc://com.apple.advancedcommerceapi/documentation/AdvancedCommerceAPI/SubscriptionPriceChangeItem"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "id": "doc:retentionmessaging/setting-up-retention-messaging-endpoint",
+  "title": "Setting up your Get Retention Message endpoint",
+  "kind": "article",
+  "role": "article",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/setting-up-retention-messaging-endpoint",
+  "slug": "retentionmessaging/setting-up-retention-messaging-endpoint",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Choose retention messages for customers in real time by implementing an endpoint on your server that responds to requests from the App Store server.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "Your server must pass the performance test in the sandbox environment before you can configure your real-time endpoint for the production environment. For more information, including response-time requirements in the sandbox environment, see `Initiate-Performance-Test`.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "To receive requests from the App Store so that you can provide retention messages in real time, complete the following:",
+          "refs": []
+        },
+        {
+          "text": "After you set up the `Get Retention Message` endpoint, the App Store server delivers real-time requests when customers view a subscription detail page where they may choose to cancel the subscription. You respond to the request by choosing a retention message for the system to display to the customer. You set up the retention messages in advance. The system only displays messages that have an `APPROVED` state. If the message includes an image, the image also needs to have an `APPROVED` state.",
+          "refs": []
+        },
+        {
+          "text": "Your server is responsible for parsing, interpreting, and responding to all server-to-server posts. For information about responding to requests, see `responding-to-realtime-retention-messaging-requests`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/responding-to-realtime-retention-messaging-requests"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "On your server, implement a `Get Retention Message` endpoint to the specifications described below.",
+          "refs": []
+        },
+        {
+          "text": "Configure your endpoint for the sandbox environment by calling the `Configure-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        },
+        {
+          "text": "Call the `Initiate-Performance-Test`, which runs in the sandbox environment. Your server needs to pass the test before you can configure your endpoint for the production environment.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+          ]
+        },
+        {
+          "text": "Configure your endpoint for the production environment by calling the `Configure-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Implement your endpoint",
+      "paragraphs": [
+        {
+          "text": "Implement this endpoint on your server to the following specifications:",
+          "refs": []
+        },
+        {
+          "text": "**Endpoint reference name:** `Get Retention Message`",
+          "refs": []
+        },
+        {
+          "text": "**URL:** `POST https://example.com/<your URL>`",
+          "refs": []
+        },
+        {
+          "text": "You determine the HTTPS URL(s) on your server to receive the requests for the sandbox and production environments. Share your URLs with Apple by calling the `Configure-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        },
+        {
+          "text": "**HTTP body:** `RealtimeRequestBody`",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "The request body. For the decoded version, see `DecodedRealtimeRequestBody`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/DecodedRealtimeRequestBody"
+          ]
+        },
+        {
+          "text": "**Response codes:** `200` - `OK`   `RealtimeResponseBody`\nYour response body identifies the retention message to display to the customer.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "If a request fails for any reason, the system displays a default retention message. If a default message isn’t available, the system doesn’t display a retention message. For more information about default messages, see `setting-up-retention-messages`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/setting-up-retention-messages"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Implement the server requirements",
+      "paragraphs": [
+        {
+          "text": "Set up secure communications with the App Store server by meeting the following requirements:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Your domain must have a valid SSL certificate.",
+          "refs": []
+        },
+        {
+          "text": "Your endpoint must implement TLS 1.2.",
+          "refs": []
+        },
+        {
+          "text": "Your endpoint needs to respond within 700 ms in the production environment; otherwise, the App Store server times out and the request fails.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Configure your endpoint for real-time use",
+      "paragraphs": [
+        {
+          "text": "To configure your `Get Retention Message` endpoint with this API’s server, call the `Configure-Realtime-URL` endpoint. Set up the endpoint in the sandbox environment first.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> Your server must pass the performance test in the sandbox environment before you can configure your real-time endpoint for the production environment. For more information, including response-time requirements in the sandbox environment, see `Initiate-Performance-Test`.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Initiate-Performance-Test"
+          ]
+        },
+        {
+          "text": "To check the URL you configured, call the `Get-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL"
+          ]
+        },
+        {
+          "text": "To remove your endpoint from real-time use, call the `Delete-Realtime-URL` endpoint.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Real-time retention messaging setup",
+      "members": [
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Configure-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Get-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/Delete-Realtime-URL",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlRequest",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeRequestBody",
+        "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeUrlResponse"
+      ]
+    }
+  ]
+}

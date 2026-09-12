@@ -1,0 +1,142 @@
+{
+  "id": "data:app_store_server_api:consumptionPercentage",
+  "title": "consumptionPercentage",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/consumptionPercentage",
+  "slug": "appstoreserverapi/consumptionpercentage",
+  "introducedAt": "1.19",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An integer that indicates the percentage, in milliunits, of the In-App Purchase the customer consumed.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "int32 consumptionPercentage",
+    "baseType": "int32",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [
+    {
+      "kind": "maximum",
+      "value": "100000",
+      "values": null
+    },
+    {
+      "kind": "minimum",
+      "value": "0",
+      "values": null
+    }
+  ],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Percentage",
+        "Integer equivalent, in milliunits"
+      ],
+      "rows": [
+        [
+          "67.932%",
+          "67932"
+        ],
+        [
+          "0.015%",
+          "15"
+        ],
+        [
+          "40%",
+          "40000"
+        ],
+        [
+          "100%",
+          "100000"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You can provide a consumption percentage in the `ConsumptionRequest` object when you call `Send-Consumption-Information` for consumable and non-consumable In-App Purchases and non-renewing subscriptions. The consumption percentage represents the portion of the product that the customer consumed.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information"
+          ]
+        },
+        {
+          "text": "The consumption percentage you provide is one of a variety of factors that the App Store uses to inform its refund decisions. The final refund percentage may differ from the value you provide.",
+          "refs": []
+        },
+        {
+          "text": "Consider the following when you use this field:",
+          "refs": []
+        },
+        {
+          "text": "Use the consumption percentage to indicate the amount of the product the customer consumed. The percentage value allows for three decimal places of precision, and is expressed as an integer, in milliunits. The following table shows several examples of valid consumption percentages, and their milliunit equivalents:",
+          "refs": []
+        },
+        {
+          "text": "| Percentage | Integer equivalent, in milliunits |\n| --- | --- |\n| 67.932% | 67932 |\n| 0.015% | 15 |\n| 40% | 40000 |\n| 100% | 100000 |",
+          "refs": []
+        },
+        {
+          "text": "For example, if a transaction contains a quantity of two consumable In-App Purchases, and the customer fully consumed one of them, the `consumptionPercentage` is `50000`, which represents 50%.",
+          "refs": []
+        },
+        {
+          "text": "If the system approves a prorated refund, the `revocationPercentage` field in the `JWSTransactionDecodedPayload` contains the revoked percentage of the transaction.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revocationPercentage",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/JWSTransactionDecodedPayload"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you select `GRANT_PRORATED` for the `refundPreference` field, you need to provide a `consumptionPercentage` greater than `0` and less than `100000`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreference"
+          ]
+        },
+        {
+          "text": "If the `deliveryStatus` value isn’t `DELIVERED`, set the `consumptionPercentage` to `0`; otherwise, the request fails with an `HTTP 400` error `UndeliveredConsumptionPercentageNonZeroError`.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/UndeliveredConsumptionPercentageNonZeroError"
+          ]
+        },
+        {
+          "text": "Don’t provide a consumption percentage for auto-renewable subscriptions, otherwise the request fails with an `HTTP 400` error `ConsumptionPercentageAutoRenewableSubscriptionError`. The system automatically calculates the consumption percentage for auto-renewable subscriptions based on elapsed time.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionPercentageAutoRenewableSubscriptionError"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Consumption data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/customerConsented",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/deliveryStatus",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/refundPreference",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sampleContentProvided"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_server_api:originalTransactionId",
+  "title": "originalTransactionId",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreserverapi",
+  "path": "/documentation/AppStoreServerAPI/originalTransactionId",
+  "slug": "appstoreserverapi/originaltransactionid",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The original transaction identifier of a purchase.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string originalTransactionId",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " If you maintain a database to manage your subscribers, save the original transaction identifier to uniquely identify auto-renewable subscriptions.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The App Store generates an original transaction identifier when a customer makes a successful in-app purchase. Most App Store Server API endpoints accept an `originalTransactionId`.",
+          "refs": []
+        },
+        {
+          "text": "There are several ways to obtain this value: from your app after a user makes a successful in-app purchase, from transaction information provided in `AppStoreServerNotifications`, or from `AppStoreReceipts` for apps that use the `original-api-for-in-app-purchase`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications",
+            "doc://com.apple.documentation/documentation/AppStoreReceipts",
+            "doc://com.apple.documentation/documentation/StoreKit/original-api-for-in-app-purchase"
+          ]
+        },
+        {
+          "text": "To get the original transaction identifier from your app, use the `originalID` property of the `Transaction` object that represents the in-app purchase.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction/originalID",
+            "doc://com.apple.documentation/documentation/StoreKit/Transaction"
+          ]
+        },
+        {
+          "text": "If you’ve enabled `AppStoreServerNotifications`, your server receives notifications for in-app purchase events that include the transaction information with the original transaction identifier. For more information, see `responseBodyV2DecodedPayload`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications",
+            "doc://com.apple.documentation/documentation/AppStoreServerNotifications/responseBodyV2DecodedPayload"
+          ]
+        },
+        {
+          "text": "If your app uses the `original-api-for-in-app-purchase`, the original transaction identifier is the `transactionIdentifier` property in the `SKPaymentTransaction` object. For restored purchases, the original transaction identifier is found in the `transactionIdentifier` of the `original` property. If you verify receipts using `Verify-Receipt`, the original transaction identifier is the `original_transaction_id` value.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/original-api-for-in-app-purchase",
+            "doc://com.apple.documentation/documentation/StoreKit/SKPaymentTransaction/transactionIdentifier",
+            "doc://com.apple.documentation/documentation/StoreKit/SKPaymentTransaction",
+            "doc://com.apple.documentation/documentation/StoreKit/SKPaymentTransaction/original",
+            "doc://com.apple.documentation/documentation/AppStoreReceipts/Verify-Receipt",
+            "doc://com.apple.documentation/documentation/AppStoreReceipts/original_transaction_id"
+          ]
+        },
+        {
+          "text": "Use the value of the original transaction identifier that you get from your app, a notification, or a receipt as the value for `originalTransactionId` when you send requests to the App Store Server API.",
+          "refs": [
+            "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/originalTransactionId"
+          ]
+        },
+        {
+          "text": "> **Tip**\n>\n>  If you maintain a database to manage your subscribers, save the original transaction identifier to uniquely identify auto-renewable subscriptions.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Response data types",
+      "members": [
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/effectiveDate",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/success",
+        "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/webOrderLineItemId"
+      ]
+    }
+  ]
+}

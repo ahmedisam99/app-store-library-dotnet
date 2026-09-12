@@ -1,0 +1,170 @@
+{
+  "id": "data:retention_messaging:promotionalOfferSignatureV1",
+  "title": "promotionalOfferSignatureV1",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "retentionmessaging",
+  "path": "/documentation/RetentionMessaging/promotionalOfferSignatureV1",
+  "slug": "retentionmessaging/promotionaloffersignaturev1",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The promotional-offer signature you generate using an earlier signature version.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object promotionalOfferSignatureV1",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "encodedSignature",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The Base64-encoded cryptographic signature you generate using the offer parameters.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productId",
+      "type": "productId",
+      "typeId": "data:retention_messaging:productId",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The subscription’s product identifier.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "nonce",
+      "type": "uuid",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A one-time-use UUID antireplay value you generate. Use lowercase.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "timestamp",
+      "type": "timestamp",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The UNIX time, in milliseconds, when you generate the signature.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "keyId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A string that identifies the private key you use to generate the signature. You can find this identifier in App Store Connect Users and Access > Keys in the Key ID column for the subscription key you generate.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerIdentifier",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "The subscription offer identifier that you set up in App Store Connect.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appAccountToken",
+      "type": "uuid",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": "1.0.0",
+      "attributes": [],
+      "abstract": {
+        "text": "A UUID that you provide to associate with the transaction if the customer accepts the promotional offer. The string representation of the `appAccountToken` needs to be lowercase.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": "For a simpler implementation, use `promotionalOfferSignatureV2` instead.",
+        "refs": [
+          "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOfferSignatureV2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "To provide a promotional-offer retention message, you need to cryptographically sign the offer and include it in the `promotionalOffer` parameter of your `RealtimeResponseBody` response.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOffer",
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/RealtimeResponseBody"
+          ]
+        },
+        {
+          "text": "> **Tip**\n>\n> For a simpler implementation, use `promotionalOfferSignatureV2` instead.",
+          "refs": [
+            "doc://com.apple.retentionmessaging/documentation/RetentionMessaging/promotionalOfferSignatureV2"
+          ]
+        },
+        {
+          "text": "For instructions on generating the `encodedSignature` for the `promotionalOfferSignatureV1`, see `generating-a-signature-for-promotional-offers`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/generating-a-signature-for-promotional-offers"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}
