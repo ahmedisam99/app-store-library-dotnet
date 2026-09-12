@@ -2,9 +2,7 @@
 
 A .NET library for the [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi), [App Store Server Notifications](https://developer.apple.com/documentation/appstoreservernotifications), and [Retention Messaging API](https://developer.apple.com/documentation/retentionmessaging).
 
-> This is a community-maintained library and is not affiliated with Apple. For official libraries, see [Swift](https://github.com/apple/app-store-server-library-swift), [Node.js](https://github.com/apple/app-store-server-library-node), [Python](https://github.com/apple/app-store-server-library-python), and [Java](https://github.com/apple/app-store-server-library-java).
-
-`Enjna.AppStoreServerLibrary` ships independently of `Enjna.AppStoreConnectApi`, the sibling package for the [App Store Connect API](https://developer.apple.com/documentation/appstoreconnectapi). Each has its own version, and neither depends on the other. Install whichever you need.
+> This is a community-maintained library and is not affiliated with Apple
 
 ## Table of Contents
 

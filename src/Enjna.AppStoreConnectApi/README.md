@@ -4,8 +4,6 @@ A .NET library for the [App Store Connect API](https://developer.apple.com/docum
 
 > This is a community-maintained library and is not affiliated with Apple.
 
-`Enjna.AppStoreConnectApi` ships independently of `Enjna.AppStoreServerLibrary`, the sibling package for the [App Store Server API](https://developer.apple.com/documentation/appstoreserverapi). Each has its own version, and neither depends on the other. Install whichever you need.
-
 ## Table of Contents
 
 1. [Installation](#installation)
