@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,7 +25,7 @@ namespace Enjna.AppStoreConnectApi;
 public partial class AppStoreConnectAPIClient : IDisposable
 {
     private const string BaseUrl = "https://api.appstoreconnect.apple.com";
-    private const string UserAgent = "enjna-app-store-connect-api/dotnet/0.1.0";
+    private static readonly string UserAgent = $"enjna-app-store-connect-api/dotnet/{PackageVersion()}";
     private const string Audience = "appstoreconnect-v1";
     private const string RateLimitHeader = "X-Rate-Limit";
     private const string IndividualKeySubject = "user";
@@ -481,6 +482,23 @@ public partial class AppStoreConnectAPIClient : IDisposable
 
         var handler = new JsonWebTokenHandler();
         return handler.CreateToken(descriptor);
+    }
+
+    private static string PackageVersion()
+    {
+        var informationalVersion = typeof(AppStoreConnectAPIClient).Assembly
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion;
+
+        if (string.IsNullOrEmpty(informationalVersion))
+        {
+            return "0.0.0";
+        }
+
+        // A build that records the commit it came from appends "+<sha>" to the informational version.
+        var metadataIndex = informationalVersion.IndexOf('+', StringComparison.Ordinal);
+
+        return metadataIndex < 0 ? informationalVersion : informationalVersion[..metadataIndex];
     }
 
     /// <inheritdoc/>

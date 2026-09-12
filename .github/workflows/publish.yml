@@ -1,12 +1,20 @@
 name: Publish NuGet Package
 
 on:
-  workflow_dispatch:
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      package:
+        description: The package to publish
+        required: true
+        type: choice
+        options:
+          - server
+          - connect
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,11 +25,61 @@ jobs:
         with:
           dotnet-version: '8.x'
 
+      - name: Resolve the package to publish
+        id: package
+        env:
+          EVENT: ${{ github.event_name }}
+          TAG: ${{ github.event.release.tag_name }}
+          CHOICE: ${{ inputs.package }}
+        run: |
+          set -euo pipefail
+
+          if [ "$EVENT" = "release" ]; then
+            case "$TAG" in
+              server-v*)  name=server;  tagged="${TAG#server-v}"  ;;
+              connect-v*) name=connect; tagged="${TAG#connect-v}" ;;
+              *)
+                echo "::error::Release tag '$TAG' names no package. Tag a release 'server-vX.Y.Z' or 'connect-vX.Y.Z'."
+                exit 1
+                ;;
+            esac
+          else
+            name="$CHOICE"
+            tagged=""
+          fi
+
+          case "$name" in
+            server)  project=src/Enjna.AppStoreServerLibrary/Enjna.AppStoreServerLibrary.csproj ;;
+            connect) project=src/Enjna.AppStoreConnectApi/Enjna.AppStoreConnectApi.csproj ;;
+            *)
+              echo "::error::Unknown package '$name'."
+              exit 1
+              ;;
+          esac
+
+          declared=$(grep -oPm1 '(?<=<Version>)[^<]+' "$project")
+
+          # A forgotten version bump is otherwise silent: the push finds the version already on
+          # NuGet, --skip-duplicate swallows it, and the run goes green having shipped nothing.
+          if [ -n "$tagged" ] && [ "$tagged" != "$declared" ]; then
+            echo "::error::Tag '$TAG' ships $tagged but $project declares $declared. Bump the project file or fix the tag."
+            exit 1
+          fi
+
+          {
+            echo "project=$project"
+            echo "version=$declared"
+          } >> "$GITHUB_OUTPUT"
+
+          echo "Publishing \`$project\` version \`$declared\`." >> "$GITHUB_STEP_SUMMARY"
+
+      # Both suites gate every release. They share a commit, so a break in either one is a break
+      # in what is about to ship.
       - name: Run tests
         run: dotnet test -c Release --logger "console;verbosity=normal"
 
       - name: Build and pack
-        run: dotnet pack -c Release --output nupkg
+        run: dotnet pack ${{ steps.package.outputs.project }} -c Release --output nupkg
 
       - name: Install validator
         run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global

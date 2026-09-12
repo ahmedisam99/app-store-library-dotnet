@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading;
@@ -16,6 +17,14 @@ public class AppStoreServerAPIClientTests
     private const string KeyId = "testKeyId";
     private const string IssuerId = "testIssuerId";
     private const string BundleId = "com.example";
+
+    /// <summary>
+    /// The expected <c>User-Agent</c>, built from the library assembly's own version. Asserting a
+    /// literal version here would go stale the moment the package version is bumped, and pass
+    /// anyway, which is how this library once shipped a wrong <c>User-Agent</c>.
+    /// </summary>
+    private static readonly string UserAgent =
+        "enjna-app-store-server-library/dotnet/" + GetLibraryPackageVersion();
 
     private sealed class TestHttpMessageHandler : HttpMessageHandler
     {
@@ -61,11 +70,24 @@ public class AppStoreServerAPIClientTests
         return (client, handler);
     }
 
+    private static string GetLibraryPackageVersion()
+    {
+        var informationalVersion = typeof(AppStoreServerAPIClient).Assembly
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion;
+
+        Assert.False(string.IsNullOrEmpty(informationalVersion));
+
+        var metadataIndex = informationalVersion.IndexOf('+', StringComparison.Ordinal);
+
+        return metadataIndex < 0 ? informationalVersion : informationalVersion[..metadataIndex];
+    }
+
     private static void AssertCommonHeaders(TestHttpMessageHandler handler)
     {
         var request = handler.CapturedRequest!;
 
-        Assert.Contains("enjna-app-store-server-library/dotnet/2.2.0", request.Headers.GetValues("User-Agent"));
+        Assert.Contains(UserAgent, request.Headers.GetValues("User-Agent"));
         Assert.Contains("application/json", request.Headers.Accept.ToString());
 
         var auth = request.Headers.Authorization;

@@ -34,7 +34,7 @@ dotnet add package Enjna.AppStoreConnectApi
 
 ## Documentation
 
-[Documentation](https://ahmedisam99.github.io/app-store-server-library-dotnet/index.html)
+[Documentation](https://ahmedisam99.github.io/app-store-library-dotnet/index.html)
 
 ## Obtaining an App Store Connect API key
 

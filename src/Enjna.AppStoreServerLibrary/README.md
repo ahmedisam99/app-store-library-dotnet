@@ -35,7 +35,7 @@ dotnet add package Enjna.AppStoreServerLibrary
 
 ## Documentation
 
-[Documentation](https://ahmedisam99.github.io/app-store-server-library-dotnet/index.html)
+[Documentation](https://ahmedisam99.github.io/app-store-library-dotnet/index.html)
 
 [WWDC Video](https://developer.apple.com/videos/play/wwdc2023/10143/)
 

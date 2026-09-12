@@ -27,7 +27,7 @@ public class AppStoreServerAPIClient : IDisposable
     private const string ProductionUrl = "https://api.storekit.apple.com";
     private const string SandboxUrl = "https://api.storekit-sandbox.apple.com";
     private const string LocalTestingUrl = "https://local-testing-base-url";
-    private const string UserAgent = "enjna-app-store-server-library/dotnet/2.2.0";
+    private static readonly string UserAgent = $"enjna-app-store-server-library/dotnet/{PackageVersion()}";
     private static readonly JsonSerializerOptions JsonOptions = new();
 
     private readonly string _signingKey;
@@ -1052,5 +1052,22 @@ public class AppStoreServerAPIClient : IDisposable
         }
 
         return value.ToString();
+    }
+
+    private static string PackageVersion()
+    {
+        var informationalVersion = typeof(AppStoreServerAPIClient).Assembly
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
+            ?.InformationalVersion;
+
+        if (string.IsNullOrEmpty(informationalVersion))
+        {
+            return "0.0.0";
+        }
+
+        // A build that records the commit it came from appends "+<sha>" to the informational version.
+        var metadataIndex = informationalVersion.IndexOf('+', StringComparison.Ordinal);
+
+        return metadataIndex < 0 ? informationalVersion : informationalVersion[..metadataIndex];
     }
 }

@@ -1,4 +1,4 @@
-# App Store Server Library for .NET
+# App Store Library for .NET
 
 This repository ships two independent packages, one for each of the Apple APIs below. Each has its own version, and neither depends on the other. Install whichever you need.
 
@@ -37,7 +37,7 @@ dotnet add package Enjna.AppStoreServerLibrary
 
 ### Documentation
 
-[Documentation](https://ahmedisam99.github.io/app-store-server-library-dotnet/index.html)
+[Documentation](https://ahmedisam99.github.io/app-store-library-dotnet/index.html)
 
 [WWDC Video](https://developer.apple.com/videos/play/wwdc2023/10143/)
 
@@ -225,7 +225,7 @@ dotnet add package Enjna.AppStoreConnectApi
 
 ### Documentation
 
-[Documentation](https://ahmedisam99.github.io/app-store-server-library-dotnet/index.html)
+[Documentation](https://ahmedisam99.github.io/app-store-library-dotnet/index.html)
 
 ### Obtaining an App Store Connect API key
 
