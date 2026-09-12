@@ -1,3 +1,4 @@
+using System;
 using Xunit;
 
 namespace Enjna.AppStoreServerLibrary.Tests;
@@ -119,7 +120,7 @@ public class HelperValidationUtilsTests
     [Fact]
     public void ValidateItems_RejectsEmptyArray()
     {
-        Assert.False(HelperValidationUtils.ValidateItems(System.Array.Empty<object>()));
+        Assert.False(HelperValidationUtils.ValidateItems(Array.Empty<object>()));
     }
 
     [Fact]

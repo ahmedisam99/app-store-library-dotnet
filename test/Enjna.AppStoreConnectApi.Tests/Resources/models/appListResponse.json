@@ -1,0 +1,103 @@
+{
+  "data": [
+    {
+      "type": "apps",
+      "id": "6446939457",
+      "attributes": {
+        "name": "Example Notes",
+        "bundleId": "com.example.notes",
+        "sku": "EXAMPLENOTES",
+        "primaryLocale": "en-US",
+        "isOrEverWasMadeForKids": false,
+        "subscriptionStatusUrl": "https://example.com/notifications/v2",
+        "subscriptionStatusUrlVersion": "V2",
+        "subscriptionStatusUrlForSandbox": "https://sandbox.example.com/notifications/v1",
+        "subscriptionStatusUrlVersionForSandbox": "V1",
+        "contentRightsDeclaration": "USES_THIRD_PARTY_CONTENT",
+        "streamlinedPurchasingEnabled": true,
+        "accessibilityUrl": "https://example.com/accessibility"
+      },
+      "relationships": {
+        "betaGroups": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/6446939457/relationships/betaGroups",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/6446939457/betaGroups"
+          },
+          "data": [
+            {
+              "type": "betaGroups",
+              "id": "0d5e9ee1-4c02-4b7a-9f3b-2b0c9a1d7e11"
+            }
+          ]
+        },
+        "preReleaseVersions": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/apps/6446939457/relationships/preReleaseVersions",
+            "related": "https://api.appstoreconnect.apple.com/v1/apps/6446939457/preReleaseVersions"
+          },
+          "data": [
+            {
+              "type": "preReleaseVersions",
+              "id": "9a1cf2d3-7f11-4f5b-8a4d-6c2f1e3b7d05"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/apps/6446939457"
+      }
+    },
+    {
+      "type": "apps",
+      "id": "1198765432",
+      "attributes": {
+        "name": "Example Tasks",
+        "bundleId": "com.example.tasks",
+        "sku": "EXAMPLETASKS",
+        "primaryLocale": "de-DE",
+        "isOrEverWasMadeForKids": true,
+        "contentRightsDeclaration": "DOES_NOT_USE_THIRD_PARTY_CONTENT",
+        "streamlinedPurchasingEnabled": false
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/apps/1198765432"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "betaGroups",
+      "id": "0d5e9ee1-4c02-4b7a-9f3b-2b0c9a1d7e11",
+      "attributes": {
+        "name": "Internal QA",
+        "createdDate": "2024-01-09T17:04:22-08:00",
+        "isInternalGroup": true,
+        "hasAccessToAllBuilds": true,
+        "publicLinkEnabled": false,
+        "publicLinkLimitEnabled": false,
+        "feedbackEnabled": true,
+        "iosBuildsAvailableForAppleSiliconMac": false,
+        "iosBuildsAvailableForAppleVision": true
+      }
+    },
+    {
+      "type": "preReleaseVersions",
+      "id": "9a1cf2d3-7f11-4f5b-8a4d-6c2f1e3b7d05",
+      "attributes": {
+        "version": "1.4.0",
+        "platform": "IOS"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/apps?limit=2",
+    "first": "https://api.appstoreconnect.apple.com/v1/apps?limit=2",
+    "next": "https://api.appstoreconnect.apple.com/v1/apps?cursor=BQ.o3Q9NQ&limit=2"
+  },
+  "meta": {
+    "paging": {
+      "total": 5,
+      "limit": 2
+    }
+  }
+}

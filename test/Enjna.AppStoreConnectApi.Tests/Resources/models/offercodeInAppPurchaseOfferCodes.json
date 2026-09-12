@@ -1,0 +1,86 @@
+{
+  "data": [
+    {
+      "type": "inAppPurchaseOfferCodes",
+      "id": "1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11",
+      "attributes": {
+        "name": "Launch Week Coins",
+        "customerEligibilities": [
+          "NON_SPENDER",
+          "CHURNED_SPENDER"
+        ],
+        "productionCodeCount": 2500,
+        "sandboxCodeCount": 10,
+        "active": true
+      },
+      "relationships": {
+        "prices": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11/relationships/prices",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11/prices"
+          },
+          "meta": {
+            "paging": {
+              "total": 2,
+              "limit": 50
+            }
+          },
+          "data": [
+            {
+              "type": "inAppPurchaseOfferPrices",
+              "id": "eyJzIjoiNjQ0NjgxOTI3OSIsInQiOiJVU0EifQ"
+            },
+            {
+              "type": "inAppPurchaseOfferPrices",
+              "id": "eyJzIjoiNjQ0NjgxOTI3OSIsInQiOiJKUE4ifQ"
+            }
+          ]
+        },
+        "oneTimeUseCodes": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11/relationships/oneTimeUseCodes",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11/oneTimeUseCodes"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/1f6d0c2a-9b45-4f9e-8f1c-2a7d5b3e9c11"
+      }
+    },
+    {
+      "type": "inAppPurchaseOfferCodes",
+      "id": "b83c4d17-2e60-49a5-b0d3-6c9f8a1e4477",
+      "attributes": {
+        "name": "Win-Back Coins",
+        "customerEligibilities": [
+          "ACTIVE_SPENDER"
+        ],
+        "productionCodeCount": 0,
+        "sandboxCodeCount": 0,
+        "active": false
+      },
+      "relationships": {
+        "prices": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/b83c4d17-2e60-49a5-b0d3-6c9f8a1e4477/relationships/prices",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/b83c4d17-2e60-49a5-b0d3-6c9f8a1e4477/prices"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseOfferCodes/b83c4d17-2e60-49a5-b0d3-6c9f8a1e4477"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/offerCodes?limit=2",
+    "first": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/offerCodes?limit=2",
+    "next": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/offerCodes?cursor=AQ.PXlqU3A&limit=2"
+  },
+  "meta": {
+    "paging": {
+      "total": 5,
+      "limit": 2
+    }
+  }
+}

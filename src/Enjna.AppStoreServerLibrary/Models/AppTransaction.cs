@@ -1,6 +1,7 @@
 using System;
 using System.Text.Json.Serialization;
 using Enjna.AppStoreServerLibrary.Models.Enums;
+
 namespace Enjna.AppStoreServerLibrary.Models;
 
 /// <summary>

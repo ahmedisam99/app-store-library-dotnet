@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "type": "betaTesters",
+      "id": "5f6a7b8c-9d0e-4f1a-8b2c-3d4e5f6a7b8c",
+      "attributes": {
+        "firstName": "Dana",
+        "lastName": "Okafor",
+        "email": "dana.okafor@example.com",
+        "inviteType": "EMAIL",
+        "state": "INSTALLED",
+        "appDevices": [
+          {
+            "model": "iPhone 15 Pro",
+            "platform": "IOS",
+            "osVersion": "17.5.1",
+            "appBuildVersion": "1042"
+          },
+          {
+            "model": "Apple Vision Pro",
+            "platform": "VISION_OS",
+            "osVersion": "1.2",
+            "appBuildVersion": "1041"
+          }
+        ]
+      },
+      "relationships": {
+        "betaGroups": {
+          "data": [
+            {
+              "type": "betaGroups",
+              "id": "0d5e9ee1-4c02-4b7a-9f3b-2b0c9a1d7e11"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/betaTesters/5f6a7b8c-9d0e-4f1a-8b2c-3d4e5f6a7b8c"
+      }
+    },
+    {
+      "type": "betaTesters",
+      "id": "6a7b8c9d-0e1f-4a2b-9c3d-4e5f6a7b8c9d",
+      "attributes": {
+        "email": "public.tester@example.com",
+        "inviteType": "PUBLIC_LINK",
+        "state": "INVITED",
+        "appDevices": []
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/betaGroups/0d5e9ee1-4c02-4b7a-9f3b-2b0c9a1d7e11/betaTesters"
+  },
+  "meta": {
+    "paging": {
+      "total": 2,
+      "limit": 50
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "type": "subscriptionIntroductoryOffers",
+      "id": "b7c8d9e0-0001",
+      "attributes": {
+        "startDate": "2024-06-01",
+        "endDate": "2024-09-30",
+        "duration": "THREE_DAYS",
+        "offerMode": "FREE_TRIAL",
+        "numberOfPeriods": 1,
+        "targetSubscriptionPlanType": "MONTHLY"
+      },
+      "relationships": {
+        "territory": {
+          "data": {
+            "type": "territories",
+            "id": "USA"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionIntroductoryOffers/b7c8d9e0-0001"
+      }
+    },
+    {
+      "type": "subscriptionIntroductoryOffers",
+      "id": "b7c8d9e0-0002",
+      "attributes": {
+        "startDate": "2024-06-01",
+        "endDate": null,
+        "duration": "SIX_MONTHS",
+        "offerMode": "PAY_AS_YOU_GO",
+        "numberOfPeriods": 6,
+        "targetSubscriptionPlanType": "UPFRONT"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionIntroductoryOffers/b7c8d9e0-0002"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/introductoryOffers"
+  },
+  "meta": {
+    "paging": {
+      "total": 2,
+      "limit": 50
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "data": {
+    "type": "subscriptions",
+    "id": "6446075067",
+    "attributes": {
+      "name": "Pro Monthly",
+      "productId": "com.example.pro.monthly",
+      "familySharable": true,
+      "state": "APPROVED",
+      "subscriptionPeriod": "ONE_MONTH",
+      "reviewNote": "Sign in with the demo account to see the subscription.",
+      "groupLevel": 2
+    },
+    "relationships": {
+      "group": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/relationships/group",
+          "related": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/group"
+        },
+        "data": {
+          "type": "subscriptionGroups",
+          "id": "20925550"
+        }
+      },
+      "prices": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/relationships/prices",
+          "related": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/prices"
+        },
+        "meta": {
+          "paging": {
+            "total": 2,
+            "limit": 50
+          }
+        },
+        "data": [
+          {
+            "type": "subscriptionPrices",
+            "id": "eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJVU0EifQ"
+          },
+          {
+            "type": "subscriptionPrices",
+            "id": "eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJDQU4ifQ"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067"
+    }
+  },
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067"
+  }
+}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Enjna.AppStoreServerLibrary;
@@ -78,10 +79,10 @@ public static class HelperValidationUtils
     /// <typeparam name="T">The element type.</typeparam>
     /// <param name="items">The items to validate.</param>
     /// <returns><c>true</c> if the items are valid; otherwise <c>false</c>.</returns>
-    public static bool ValidateItems<T>(System.Collections.Generic.IEnumerable<T?>? items) where T : class
+    public static bool ValidateItems<T>(IEnumerable<T?>? items) where T : class
     {
         if (items is null) return false;
-        var materialized = items as System.Collections.Generic.ICollection<T?> ?? items.ToList();
+        var materialized = items as ICollection<T?> ?? items.ToList();
         return materialized.Count > 0 && materialized.All(item => item is not null);
     }
 }

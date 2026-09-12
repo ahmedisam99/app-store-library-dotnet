@@ -1,0 +1,62 @@
+{
+  "data": {
+    "type": "inAppPurchases",
+    "id": "6446819279",
+    "attributes": {
+      "name": "Pro Unlock",
+      "productId": "com.example.app.pro_unlock",
+      "inAppPurchaseType": "NON_CONSUMABLE",
+      "state": "READY_TO_SUBMIT",
+      "reviewNote": "Unlocks every editing tool. No account is required to test it.",
+      "familySharable": true,
+      "contentHosting": false
+    },
+    "relationships": {
+      "inAppPurchaseLocalizations": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/relationships/inAppPurchaseLocalizations",
+          "related": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/inAppPurchaseLocalizations"
+        },
+        "meta": {
+          "paging": {
+            "total": 2,
+            "limit": 50
+          }
+        },
+        "data": [
+          {
+            "type": "inAppPurchaseLocalizations",
+            "id": "e2c1ef7b-3e04-4a1f-9d47-3f09b8f5d0aa"
+          },
+          {
+            "type": "inAppPurchaseLocalizations",
+            "id": "5a9f3b21-8d6c-4f0e-9a12-77c1e4b6f331"
+          }
+        ]
+      },
+      "iapPriceSchedule": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/relationships/iapPriceSchedule",
+          "related": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/iapPriceSchedule"
+        },
+        "data": {
+          "type": "inAppPurchasePriceSchedules",
+          "id": "6446819279"
+        }
+      },
+      "inAppPurchaseAvailability": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/relationships/inAppPurchaseAvailability",
+          "related": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/inAppPurchaseAvailability"
+        },
+        "data": null
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279"
+    }
+  },
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279?include=inAppPurchaseLocalizations"
+  }
+}

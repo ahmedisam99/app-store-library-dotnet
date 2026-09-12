@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Enjna.AppStoreServerLibrary.Models;
 using Enjna.AppStoreServerLibrary.Models.Enums;
 using Xunit;
+
 namespace Enjna.AppStoreServerLibrary.Tests;
 
 public class SignedDataVerifierTests

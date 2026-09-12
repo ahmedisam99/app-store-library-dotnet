@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>Enjna.AppStoreConnectApi</RootNamespace>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <PackageId>Enjna.AppStoreConnectApi</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>ahmedisam99</Authors>
+    <Product>App Store Connect API for .NET</Product>
+    <Description>
+      A .NET library for the App Store Connect API.
+    </Description>
+    <PackageProjectUrl>https://ahmedisam99.github.io/app-store-server-library-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ahmedisam99/app-store-server-library-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>apple;app-store-connect;app-store-connect-api;app-store;testflight;in-app-purchase</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <EmbedAllSources>true</EmbedAllSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>Enjna.AppStoreConnectApi.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

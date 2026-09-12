@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+      "type": "subscriptionPrices",
+      "id": "eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJVU0EifQ",
+      "attributes": {
+        "startDate": "2024-03-01",
+        "preserved": false,
+        "planType": "MONTHLY"
+      },
+      "relationships": {
+        "territory": {
+          "data": {
+            "type": "territories",
+            "id": "USA"
+          }
+        },
+        "subscriptionPricePoint": {
+          "data": {
+            "type": "subscriptionPricePoints",
+            "id": "eyJzIjoiNjQ0NjA3NTA2NyIsInAiOiIxMDAwMSIsInQiOiJVU0EifQ"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPrices/eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJVU0EifQ"
+      }
+    },
+    {
+      "type": "subscriptionPrices",
+      "id": "eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJDQU4ifQ",
+      "attributes": {
+        "startDate": null,
+        "preserved": true,
+        "planType": "UPFRONT"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPrices/eyJzIjoiNjQ0NjA3NTA2NyIsInQiOiJDQU4ifQ"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/prices"
+  },
+  "meta": {
+    "paging": {
+      "total": 2,
+      "limit": 50
+    }
+  }
+}

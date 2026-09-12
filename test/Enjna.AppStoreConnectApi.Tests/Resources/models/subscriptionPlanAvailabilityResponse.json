@@ -1,0 +1,52 @@
+{
+  "data": {
+    "type": "subscriptionPlanAvailabilities",
+    "id": "a1b2c3d4-0001",
+    "attributes": {
+      "availableInNewTerritories": true,
+      "planType": "MONTHLY"
+    },
+    "relationships": {
+      "availableTerritories": {
+        "meta": {
+          "paging": {
+            "total": 2,
+            "limit": 50
+          }
+        },
+        "data": [
+          {
+            "type": "territories",
+            "id": "USA"
+          },
+          {
+            "type": "territories",
+            "id": "JPN"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/a1b2c3d4-0001"
+    }
+  },
+  "included": [
+    {
+      "type": "territories",
+      "id": "USA",
+      "attributes": {
+        "currency": "USD"
+      }
+    },
+    {
+      "type": "territories",
+      "id": "JPN",
+      "attributes": {
+        "currency": "JPY"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPlanAvailabilities/a1b2c3d4-0001"
+  }
+}

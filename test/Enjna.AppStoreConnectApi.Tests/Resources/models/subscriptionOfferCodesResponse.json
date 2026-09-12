@@ -1,0 +1,61 @@
+{
+  "data": [
+    {
+      "type": "subscriptionOfferCodes",
+      "id": "a1b2c3d4-0001",
+      "attributes": {
+        "name": "Winter campaign",
+        "customerEligibilities": [
+          "NEW",
+          "EXPIRED"
+        ],
+        "offerEligibility": "STACK_WITH_INTRO_OFFERS",
+        "duration": "THREE_MONTHS",
+        "offerMode": "FREE_TRIAL",
+        "numberOfPeriods": 1,
+        "totalNumberOfCodes": 25000,
+        "productionCodeCount": 24000,
+        "sandboxCodeCount": 1000,
+        "active": true,
+        "autoRenewEnabled": false,
+        "targetSubscriptionPlanType": "MONTHLY"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/a1b2c3d4-0001"
+      }
+    },
+    {
+      "type": "subscriptionOfferCodes",
+      "id": "a1b2c3d4-0002",
+      "attributes": {
+        "name": "Future campaign",
+        "customerEligibilities": [
+          "EXISTING",
+          "LAPSED_ANNUAL"
+        ],
+        "offerEligibility": "REPLACE_INTRO_OFFERS",
+        "duration": "ONE_MONTH",
+        "offerMode": "PAY_AS_YOU_GO",
+        "numberOfPeriods": 2,
+        "totalNumberOfCodes": 500,
+        "productionCodeCount": 500,
+        "sandboxCodeCount": 0,
+        "active": false,
+        "autoRenewEnabled": true,
+        "targetSubscriptionPlanType": "WEEKLY"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/a1b2c3d4-0002"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446075067/offerCodes"
+  },
+  "meta": {
+    "paging": {
+      "total": 2,
+      "limit": 50
+    }
+  }
+}

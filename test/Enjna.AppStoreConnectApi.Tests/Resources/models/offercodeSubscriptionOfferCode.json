@@ -1,0 +1,63 @@
+{
+  "data": {
+    "type": "subscriptionOfferCodes",
+    "id": "7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90",
+    "attributes": {
+      "name": "Three Months On Us",
+      "customerEligibilities": [
+        "NEW",
+        "EXPIRED"
+      ],
+      "offerEligibility": "STACK_WITH_INTRO_OFFERS",
+      "duration": "THREE_MONTHS",
+      "offerMode": "FREE_TRIAL",
+      "numberOfPeriods": 1,
+      "totalNumberOfCodes": 5000,
+      "productionCodeCount": 4800,
+      "sandboxCodeCount": 200,
+      "active": true,
+      "autoRenewEnabled": true,
+      "targetSubscriptionPlanType": "MONTHLY"
+    },
+    "relationships": {
+      "subscription": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90/relationships/subscription",
+          "related": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90/subscription"
+        },
+        "data": {
+          "type": "subscriptions",
+          "id": "6446900112"
+        }
+      },
+      "customCodes": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90/relationships/customCodes",
+          "related": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90/customCodes"
+        },
+        "meta": {
+          "paging": {
+            "total": 2,
+            "limit": 50
+          }
+        },
+        "data": [
+          {
+            "type": "subscriptionOfferCodeCustomCodes",
+            "id": "9d4e8f10-6b27-4c33-a5e9-1f0b7c2d8a44"
+          },
+          {
+            "type": "subscriptionOfferCodeCustomCodes",
+            "id": "3a7c9e52-8d14-4b6f-90a2-4e5d1c8b7f66"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90"
+    }
+  },
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptionOfferCodes/7c2b1d5e-4a83-4f61-9e0b-5d8a2c6f7b90?include=customCodes"
+  }
+}

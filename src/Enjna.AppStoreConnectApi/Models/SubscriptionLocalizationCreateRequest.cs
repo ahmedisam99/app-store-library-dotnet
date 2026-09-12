@@ -1,0 +1,16 @@
+using System.Text.Json.Serialization;
+
+namespace Enjna.AppStoreConnectApi.Models;
+
+/// <summary>
+/// The request body you use to add localized metadata to an auto-renewable subscription.
+/// </summary>
+/// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionlocalizationcreaterequest"/>
+public sealed class SubscriptionLocalizationCreateRequest
+{
+    /// <summary>
+    /// The resource data. This value is required.
+    /// </summary>
+    [JsonPropertyName("data")]
+    public required SubscriptionLocalizationCreateRequestData Data { get; set; }
+}
