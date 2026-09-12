@@ -4,14 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-A community-maintained .NET 8.0 App Store Server Library. Apple's [Node.js App Store Server Library](https://github.com/apple/app-store-server-library-node) is vendored as a git submodule at `vendor/app-store-server-library-node/` and used as a reference to ensure this library does not miss any functionality, types, models, API calls, or test cases.
+Two community-maintained .NET 8.0 packages that version and ship independently: `Enjna.AppStoreServerLibrary` for the App Store Server API, and `Enjna.AppStoreConnectApi` for the App Store Connect API. Neither depends on the other.
+
+Apple's [Node.js App Store Server Library](https://github.com/apple/app-store-server-library-node) is vendored as a git submodule at `vendor/app-store-server-library-node/` and used as a reference to ensure the server library does not miss any functionality, types, models, API calls, or test cases.
 
 ## Build & Test Commands
 
 ```bash
 dotnet build                    # Build the solution
 dotnet test                     # Run all tests
-dotnet run --project test/Enjna.AppStoreServerLibrary.Tests  # Run tests directly (verbose output)
+dotnet run --project test/Enjna.AppStoreServerLibrary.Tests  # Run one suite directly (verbose output)
+dotnet run --project test/Enjna.AppStoreConnectApi.Tests
 ```
 
 To run a filtered subset of tests (xunit.v3 syntax):
@@ -32,6 +35,12 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 - **`PromotionalOfferSignatureCreator`**: Standalone (not a JWSSignatureCreator subclass). Creates legacy V1 promotional offer signatures using raw ECDSA over a separator-joined payload.
 - **`ReceiptUtility`**: Extracts transaction IDs from legacy app receipts and transaction receipts.
 
+### App Store Connect (`src/Enjna.AppStoreConnectApi/`)
+
+- **`AppStoreConnectAPIClient`**: HTTP client for the App Store Connect API, split by domain across `AppStoreConnectAPIClient.*.cs` partials. Signs an ES256 bearer token per request. Built from Apple's OpenAPI specification, not the Node reference.
+- Models follow the JSON:API envelope: `Resource<TAttributes>`, `ResourceResponse<T>`, `ResourceListResponse<T>`.
+- Update-request attributes derive from `AttributeChangeSet`, which tracks assignment: a property left unassigned stays out of the request, while one assigned `null` is sent as an explicit `null` to clear the stored value.
+
 ### Models (`src/Enjna.AppStoreServerLibrary/Models/`)
 
 - Data models are simple classes.
@@ -45,6 +54,7 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 - Test resources are **embedded resources** loaded via `TestUtilities.ReadResourceAsString()` / `ReadResourceAsBytes()` using dot-separated paths (e.g., `"models.signedTransaction.json"`).
 - `TestUtilities.CreateSignedDataFromJson()` wraps JSON fixtures in ephemeral ES256 JWTs for decoding tests.
 - `TestUtilities.GetDefaultSignedPayloadVerifier()` creates a verifier with `Environment.LocalTesting` which **skips certificate chain validation entirely**, allowing tests to decode payloads without real Apple credentials.
+- `test/Enjna.AppStoreConnectApi.Tests/` follows the same conventions. `TestUtilities.GetClientWithJson()` / `GetClientWithBody()` return a client wired to a `TestHttpMessageHandler` that replays queued responses and records the requests it received.
 
 ## Code Conventions
 
@@ -55,4 +65,4 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 
 ## Completeness Check Against Node.js Reference
 
-Use the `dotnet-parity-checker` agent (`.claude/agents/dotnet-parity-checker.md`) to verify this library is not missing any functionality, types, models, API calls, or test cases that are covered in Apple's Node.js reference.
+Use the `dotnet-parity-checker` agent (`.claude/agents/dotnet-parity-checker.md`) to verify the server library is not missing any functionality, types, models, API calls, or test cases that are covered in Apple's Node.js reference.
