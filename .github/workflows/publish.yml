@@ -85,8 +85,11 @@ jobs:
       - name: Build and pack
         run: dotnet pack ${{ steps.package.outputs.project }} -c Release --output nupkg
 
+      # Pinned: 2.0.0 onwards ships only net10.0 and net11.0 entry points, and global.json holds
+      # this repository on the 8.0 SDK, which then finds nothing to install. 1.0.59 is the last
+      # version carrying a net8.0 asset.
       - name: Install validator
-        run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
+        run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global --version 1.0.59
 
       - name: Validate package
         run: meziantou.validate-nuget-package --excluded-rules IconMustBeSet nupkg/*.nupkg
