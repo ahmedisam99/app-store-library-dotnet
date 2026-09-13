@@ -4,6 +4,8 @@ A .NET library for the [App Store Server API](https://developer.apple.com/docume
 
 > This is a community-maintained library and is not affiliated with Apple
 
+Checked against App Store Server API 1.21, App Store Server Notifications 2, Retention Messaging 1.5, and Advanced Commerce 1.2. Every request a server can make against these is implemented, apart from one Apple deprecated.
+
 ## Table of Contents
 
 1. [Installation](#installation)

@@ -204,4 +204,6 @@ A client handed an `HttpClient` never disposes it, so the factory keeps that lif
 
 ## Coverage
 
+Built against the App Store Connect API specification 4.4.1.
+
 Covered today: apps, in-app purchases, subscriptions, subscription groups, subscription pricing, offer codes, customer reviews, analytics reports, and TestFlight builds and beta groups. Not covered: Game Center, Xcode Cloud, provisioning, and App Store versions and release management.
