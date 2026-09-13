@@ -173,20 +173,23 @@ public static class ServerCheck
             mapped.Add(@enum.Name);
             compared += symbol.Members.Count;
 
-            // The _Unmapped sentinel exists precisely so that a value Apple adds decodes instead of
-            // throwing, so a value the library has not mapped yet is reported, never failed.
             var values = @enum.Members
                 .Where(member => !member.Sentinel && member.Wire is not null)
                 .Select(member => member.Wire!)
                 .ToHashSet(StringComparer.Ordinal);
 
+            // _Unmapped keeps an unknown value from throwing, but it does not preserve it: the value
+            // is gone the moment it decodes. That is the same silent loss as a property the library
+            // does not carry, so it fails the same way. Write the decision down to excuse one.
             foreach (var value in symbol.Members.Where(value => !values.Contains(value) && !coverage.IsIgnored(symbol, value)))
             {
-                report.Reports.Add(new CheckItem("Unmapped enum value", $"{symbol.Title}.{value}",
-                    $"documented in {symbol.Where()}; {@enum.Name} decodes it as _Unmapped"));
+                report.Failures.Add(new CheckItem("Unmapped enum value", $"{symbol.Title}.{value}",
+                    $"documented in {symbol.Where()} but {@enum.Name} has no member carrying it, so it decodes as _Unmapped and the value is lost"));
             }
 
-            foreach (var value in values.Where(value => !symbol.Members.Contains(value)))
+            // The other direction loses nothing, so it stays a report: a member Apple never documents
+            // is either a library-only value someone added on purpose or a spelling that stopped matching.
+            foreach (var value in values.Where(value => !symbol.Members.Contains(value) && !coverage.IsIgnored(symbol, value)))
             {
                 report.Reports.Add(new CheckItem("Retired enum value", $"{@enum.Name}.{value}",
                     $"mapped by the library but no longer listed on {symbol.Title}"));

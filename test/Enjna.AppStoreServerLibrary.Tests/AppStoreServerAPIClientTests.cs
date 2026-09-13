@@ -487,9 +487,13 @@ public class AppStoreServerAPIClientTests
         Assert.Equal(HttpMethod.Get, handler.CapturedRequest!.Method);
         Assert.Equal("/inApps/v1/messaging/image/list", handler.CapturedRequest.RequestUri!.AbsolutePath);
         Assert.NotNull(response.ImageIdentifiers);
-        Assert.Single(response.ImageIdentifiers);
+        Assert.Equal(2, response.ImageIdentifiers.Length);
         Assert.Equal("a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890", response.ImageIdentifiers[0].ImageIdentifier);
         Assert.Equal(ImageState.Approved, response.ImageIdentifiers[0].ImageState);
+        Assert.Equal(ImageState.Pending, response.ImageIdentifiers[1].ImageState);
+#pragma warning disable CS0618 // The former name is kept as the same value so existing comparisons still match.
+        Assert.Equal(ImageState.PendingReview, response.ImageIdentifiers[1].ImageState);
+#pragma warning restore CS0618
     }
 
     // 15. UploadImageAsync
@@ -532,9 +536,13 @@ public class AppStoreServerAPIClientTests
         Assert.Equal(HttpMethod.Get, handler.CapturedRequest!.Method);
         Assert.Equal("/inApps/v1/messaging/message/list", handler.CapturedRequest.RequestUri!.AbsolutePath);
         Assert.NotNull(response.MessageIdentifiers);
-        Assert.Single(response.MessageIdentifiers);
+        Assert.Equal(2, response.MessageIdentifiers.Length);
         Assert.Equal("a1b2c3d4-e5f6-7890-a1b2-c3d4e5f67890", response.MessageIdentifiers[0].MessageIdentifier);
         Assert.Equal(MessageState.Approved, response.MessageIdentifiers[0].MessageState);
+        Assert.Equal(MessageState.Pending, response.MessageIdentifiers[1].MessageState);
+#pragma warning disable CS0618 // The former name is kept as the same value so existing comparisons still match.
+        Assert.Equal(MessageState.PendingReview, response.MessageIdentifiers[1].MessageState);
+#pragma warning restore CS0618
     }
 
     // 18. UploadMessageAsync

@@ -297,7 +297,7 @@ public class AdvancedCommerceModelsTests
     {
         var model = Deserialize<GetImageListResponse>("models.getImageListResponse.json");
         Assert.NotNull(model.ImageIdentifiers);
-        Assert.Single(model.ImageIdentifiers);
+        Assert.Equal(2, model.ImageIdentifiers.Length);
         Assert.Equal(ImageSize.FullSize, model.ImageIdentifiers[0].ImageSize);
     }
 

@@ -10,6 +10,10 @@
     "`prefixes` teaches the matcher a naming convention. `types`, `enums` and `endpoints` name the",
     ".NET symbol for a documented symbol whose name differs. `ignore` drops a documented symbol from",
     "the check, and every entry states why. `netOnly` does the same in the other direction, for .NET",
+    "",
+    "An ignore may also name a single value of an enum, as `symbol.VALUE`. That covers both directions:",
+    "a documented value the library deliberately does not map, and a value the library carries that Apple",
+    "never documented.",
     "symbols with no Apple counterpart.",
     "",
     "An `ignore` entry is for a decision, never for a field that simply has not been added yet: a",
@@ -27,6 +31,7 @@
     "JWSAppTransactionDecodedPayload": "AppTransaction"
   },
   "enums": {
+    "advancedCommerceReason": "AdvancedCommerceOfferReason",
     "commitmentAutoRenewStatus": "AutoRenewStatus",
     "commitmentRenewalBillingPlanType": "RenewalBillingPlanType",
     "environment": "AppStoreEnvironment",
@@ -89,6 +94,14 @@
     {
       "symbol": "advancedcommerceapi/version",
       "reason": "Documented as a one-value list, \"1\". The library carries it as AdvancedCommerceInAppRequest.Version, a plain string, so that a request signed against a future version does not need a new library."
+    },
+    {
+      "symbol": "environment.Xcode",
+      "reason": "A .NET-only member of AppStoreEnvironment. Apple does not document Xcode as an environment value, but a transaction read out of an Xcode-generated receipt has to name where it came from, and callers switch on it."
+    },
+    {
+      "symbol": "environment.LocalTesting",
+      "reason": "A .NET-only member of AppStoreEnvironment. It selects the local-testing base URL and tells SignedDataVerifier to skip certificate chain validation, which is what the test suite runs against."
     }
   ],
   "netOnly": [
@@ -181,8 +194,8 @@
       "reason": "The base carrying signedRenewalInfo and signedTransactionInfo for the six Advanced Commerce response types."
     },
     {
-      "name": "AdvancedCommerceOfferReason",
-      "reason": "The reason an Advanced Commerce offer was granted. Apple's offer dictionary documents the field but publishes no value list for it, so there is nothing to compare against."
+      "name": "AdvancedCommerceReason",
+      "reason": "The reason on SubscriptionModifyChangeItem, whose values UPGRADE, DOWNGRADE and APPLY_OFFER Apple carries as an allowedValues attribute on a plain string field rather than on a page of its own, so there is no documented symbol to map it to. Distinct from advancedCommerceReason, which is the reason on an offer and maps to AdvancedCommerceOfferReason."
     }
   ]
 }

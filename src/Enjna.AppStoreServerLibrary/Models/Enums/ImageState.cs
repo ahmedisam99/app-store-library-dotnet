@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -18,8 +19,8 @@ public enum ImageState
     /// <summary>
     /// The image is awaiting approval.
     /// </summary>
-    [EnumMember(Value = "PENDING_REVIEW")]
-    PendingReview,
+    [EnumMember(Value = "PENDING")]
+    Pending,
 
     /// <summary>
     /// The image is approved.
@@ -31,5 +32,13 @@ public enum ImageState
     /// The image is rejected.
     /// </summary>
     [EnumMember(Value = "REJECTED")]
-    Rejected
+    Rejected,
+
+    /// <summary>
+    /// The image is awaiting approval. The same value as <see cref="Pending"/>, under the name this
+    /// library used while it mapped the wire value as PENDING_REVIEW.
+    /// </summary>
+    [EnumMember(Value = "PENDING")]
+    [Obsolete("Use Pending. Apple documents the value as PENDING, and PENDING_REVIEW never arrives.")]
+    PendingReview = Pending
 }
