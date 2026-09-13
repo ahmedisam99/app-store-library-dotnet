@@ -1,0 +1,163 @@
+{
+  "id": "rest:app_store_connect_api:delete:v1-subscriptionGroupLocalizations-{}",
+  "title": "Delete a subscription group localization (v1)",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/DELETE-v1-subscriptionGroupLocalizations-_id_",
+  "slug": "appstoreconnectapi/delete-v1-subscriptiongrouplocalizations-_id_",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This endpoint is deprecated. Use `DELETE-v2-subscriptionGroupLocalizations-_id_` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-subscriptionGroupLocalizations-_id_"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Delete localized metadata that you configured for a subscription group.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/subscriptionGroupLocalizations/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 204,
+      "reason": "No Content",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n>  Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionGroupLocalizations-_id_"
+      ]
+    }
+  ]
+}

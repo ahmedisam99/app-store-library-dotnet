@@ -1,0 +1,626 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-reviewSubmissions-{}-items",
+  "title": "List the Items in a Review Submission",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-items",
+  "slug": "appstoreconnectapi/get-v1-reviewsubmissions-_id_-items",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List all the items in a specific review submission.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/reviewSubmissions/{id}/items",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the review submissions resource. Obtain the app resource ID from the `GET-v1-reviewSubmissions` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[reviewSubmissionItems]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "state",
+            "appStoreVersion",
+            "appCustomProductPageVersion",
+            "appStoreVersionExperiment",
+            "appStoreVersionExperimentV2",
+            "appEvent",
+            "backgroundAssetVersion",
+            "gameCenterAchievementVersion",
+            "gameCenterActivityVersion",
+            "gameCenterChallengeVersion",
+            "gameCenterLeaderboardSetVersion",
+            "gameCenterLeaderboardVersion",
+            "inAppPurchaseVersion",
+            "subscriptionVersion",
+            "subscriptionGroupVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionExperiments]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "trafficProportion",
+            "state",
+            "reviewRequired",
+            "startDate",
+            "endDate",
+            "appStoreVersion",
+            "appStoreVersionExperimentTreatments",
+            "platform",
+            "app",
+            "latestControlVersion",
+            "controlVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appCustomProductPageVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "deepLink",
+            "appCustomProductPage",
+            "appCustomProductPageLocalizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appEvents]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "badge",
+            "eventState",
+            "deepLink",
+            "purchaseRequirement",
+            "primaryLocale",
+            "priority",
+            "purpose",
+            "territorySchedules",
+            "archivedTerritorySchedules",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersion",
+            "appCustomProductPageVersion",
+            "appStoreVersionExperiment",
+            "appStoreVersionExperimentV2",
+            "appEvent",
+            "backgroundAssetVersion",
+            "gameCenterAchievementVersion",
+            "gameCenterActivityVersion",
+            "gameCenterChallengeVersion",
+            "gameCenterLeaderboardSetVersion",
+            "gameCenterLeaderboardVersion",
+            "inAppPurchaseVersion",
+            "subscriptionVersion",
+            "subscriptionGroupVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[backgroundAssetVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "createdDate",
+            "platforms",
+            "state",
+            "stateDetails",
+            "version",
+            "locale",
+            "backgroundAsset",
+            "internalBetaRelease",
+            "externalBetaRelease",
+            "appStoreRelease",
+            "assetFile",
+            "manifestFile",
+            "backgroundAssetUploadFiles"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAchievementVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "achievement",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterActivityVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "fallbackUrl",
+            "activity",
+            "localizations",
+            "defaultImage",
+            "releases"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterChallengeVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "challenge",
+            "localizations",
+            "releases",
+            "defaultImage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardSetVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "leaderboardSet",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "leaderboard",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[inAppPurchaseVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "inAppPurchase",
+            "image",
+            "images",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[subscriptionGroupVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "subscriptionGroup",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[subscriptionVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "state",
+            "subscription",
+            "image",
+            "images",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "ReviewSubmissionItemsResponse",
+      "typeId": "data:app_store_connect_api:ReviewSubmissionItemsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-relationships-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-reviewSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+      ]
+    }
+  ]
+}

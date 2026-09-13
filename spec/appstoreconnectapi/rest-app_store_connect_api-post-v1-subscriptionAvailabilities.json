@@ -1,0 +1,164 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-subscriptionAvailabilities",
+  "title": "Modify the territory availability of a subscription",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-subscriptionAvailabilities",
+  "slug": "appstoreconnectapi/post-v1-subscriptionavailabilities",
+  "introducedAt": "2.3",
+  "deprecated": {
+    "at": "4.4",
+    "summary": {
+      "text": "This endpoint is deprecated. Use `POST-v1-subscriptionPlanAvailabilities` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPlanAvailabilities"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Update the territory availability of a specific subscription.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/subscriptionAvailabilities",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionAvailabilityCreateRequest",
+    "typeId": "data:app_store_connect_api:SubscriptionAvailabilityCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "SubscriptionAvailabilityResponse",
+      "typeId": "data:app_store_connect_api:SubscriptionAvailabilityResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n>  Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionAvailabilities-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionAvailabilities-_id_-availableTerritories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionAvailabilities-_id_-relationships-availableTerritories"
+      ]
+    }
+  ]
+}

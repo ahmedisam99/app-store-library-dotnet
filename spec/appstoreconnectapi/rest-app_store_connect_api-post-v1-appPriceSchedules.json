@@ -1,0 +1,173 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appPriceSchedules",
+  "title": "Add a Scheduled Price Change to an App",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appPriceSchedules",
+  "slug": "appstoreconnectapi/post-v1-apppriceschedules",
+  "introducedAt": "2.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create a scheduled price change for an app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appPriceSchedules",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppPriceScheduleCreateRequest",
+    "typeId": "data:app_store_connect_api:AppPriceScheduleCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppPriceScheduleResponse",
+      "typeId": "data:app_store_connect_api:AppPriceScheduleResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "warning",
+      "prose": {
+        "text": " If you use this endpoint to add a scheduled price change to your app, you can’t use `AppPriceInlineCreate` to change your app’s price.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Warning**\n>\n>  If you use this endpoint to add a scheduled price change to your app, you can’t use `AppPriceInlineCreate` to change your app’s price.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/appPriceSchedules\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"appPriceSchedules\",\n    \"attributes\": {},\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"6447402192\"\n        }\n      },\n      \"manualPrices\": {\n        \"data\": [\n          {\n            \"type\": \"appPrices\",\n            \"id\": \"${newprice-0}\"\n          },\n          {\n            \"type\": \"appPrices\",\n            \"id\": \"${newprice-1}\"\n          },\n          {\n            \"type\": \"appPrices\",\n            \"id\": \"${newprice-2}\"\n          },\n          {\n            \"type\": \"appPrices\",\n            \"id\": \"${newprice-3}\"\n          }\n        ]\n      },\n      \"baseTerritory\": {\n        \"data\": {\n          \"type\": \"territories\",\n          \"id\": \"CAN\"\n        }\n      }\n    }\n  },\n  \"included\": [\n    {\n      \"id\": \"${newprice-0}\",\n      \"relationships\": {\n        \"appPricePoint\": {\n          \"data\": {\n            \"type\": \"appPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBTEIiLCJwIjoiMTAwMTQifQ\"\n          }\n        }\n      },\n      \"type\": \"appPrices\",\n      \"attributes\": {\n        \"startDate\": null,\n        \"endDate\": \"2023-03-11\"\n      }\n    },\n    {\n      \"id\": \"${newprice-1}\",\n      \"relationships\": {\n        \"appPricePoint\": {\n          \"data\": {\n            \"type\": \"appPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBUkciLCJwIjoiMTAwMzQifQ\"\n          }\n        }\n      },\n      \"type\": \"appPrices\",\n      \"attributes\": {\n        \"startDate\": null,\n        \"endDate\": \"2023-03-11\"\n      }\n    },\n    {\n      \"id\": \"${newprice-2}\",\n      \"relationships\": {\n        \"appPricePoint\": {\n          \"data\": {\n            \"type\": \"appPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDcifQ\"\n          }\n        }\n      },\n      \"type\": \"appPrices\",\n      \"attributes\": {\n        \"startDate\": null,\n        \"endDate\": \"2023-03-11\"\n      }\n    },\n    {\n      \"id\": \"${newprice-3}\",\n      \"relationships\": {\n        \"appPricePoint\": {\n          \"data\": {\n            \"type\": \"appPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMTAifQ\"\n          }\n        }\n      },\n      \"type\": \"appPrices\",\n      \"attributes\": {\n        \"startDate\": \"2023-03-11\",\n        \"endDate\": null\n      }\n    }\n  ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting and managing an app’s price schedules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-automaticPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-manualPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-automaticPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-manualPrices"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:GameCenterChallengeVersionReleaseResponse",
+  "title": "GameCenterChallengeVersionReleaseResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterChallengeVersionReleaseResponse",
+  "slug": "appstoreconnectapi/gamecenterchallengeversionreleaseresponse",
+  "introducedAt": "4.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single release record for a Game Center challenge version.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterChallengeVersionReleaseResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterChallengeVersionRelease",
+      "typeId": "data:app_store_connect_api:GameCenterChallengeVersionRelease",
+      "required": true,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[GameCenterChallengeVersion]",
+      "typeId": "data:app_store_connect_api:GameCenterChallengeVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionReleaseCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionReleasesResponse"
+      ]
+    }
+  ]
+}

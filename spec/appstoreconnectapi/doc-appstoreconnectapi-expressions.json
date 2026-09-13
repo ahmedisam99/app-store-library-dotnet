@@ -1,0 +1,198 @@
+{
+  "id": "doc:appstoreconnectapi/expressions",
+  "title": "Expressions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/expressions",
+  "slug": "appstoreconnectapi/expressions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Write expressions that query the match requests in a queue to find the best players for a match.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Array",
+        "Description"
+      ],
+      "rows": [
+        [
+          "`players`",
+          "An array of `player` objects representing the players associated with the requests. ![spacer] Available in all types of rule expressions."
+        ],
+        [
+          "`requests`",
+          "An array of `request` objects representing the match requests that you compare in an expression. ![spacer] Available in all types of rule expressions. In compatible and distance rules, contains two items for comparison. In match and team rules, contains two or more items."
+        ],
+        [
+          "`teams`",
+          "An array of `team` objects representing the teams that you add to a rule set, including the players assigned to the teams. ![spacer] Available only in team rule expressions."
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An *expression* is a `https://jmespath.org/` formatted string with additional matchmaking rule functions. Game Center uses the expression to query a collection of match requests represented as JSON. The expression needs to evaluate to either a Boolean or number value according to the rule type.",
+          "refs": [
+            "https://jmespath.org/"
+          ]
+        },
+        {
+          "text": "To create a matchmaking rule in Game Center, you pass an expression to the `POST-v1-gameCenterMatchmakingRules` endpoint. Set the `expression` and `type` fields of the `Attributes-data.dictionary` object that you pass in the request.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRules",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "For example, if players can only join matches that run the same version of your game, add a compatible rule that compares the app versions. If you set the rule’s `type` field to `COMPATIBLE`, the `requests` array in the JSON input to the expression contains two match requests to compare. In the expression, use the `areCompatibleAppVersions()` function that returns `true` if the app versions are compatible.",
+          "refs": []
+        },
+        {
+          "text": "```other\nareCompatibleAppVersions(requests[0], requests[1])\n```",
+          "refs": []
+        },
+        {
+          "text": "You can improve the game experience by prioritizing matches between players who are geographically close, resulting in lower latency when sending messages between devices. If you set the rule’s `type` field to `DISTANCE`, the `requests` array in the expression contains two match requests to compare. In the expression, use the `geoLatency()` function that returns a range between `0.0` and `1.0`, where `0.0` is in the local area:",
+          "refs": []
+        },
+        {
+          "text": "```other\ngeoLatency(requests[0], requests[1])\n```",
+          "refs": []
+        },
+        {
+          "text": "The JSON input to an expression contains the following arrays, that you can use in expressions, depending on the rule type:",
+          "refs": []
+        },
+        {
+          "text": "| Array | Description |\n| --- | --- |\n| `players` | An array of `player` objects representing the players associated with the requests. ![spacer] Available in all types of rule expressions. |\n| `requests` | An array of `request` objects representing the match requests that you compare in an expression. ![spacer] Available in all types of rule expressions. In compatible and distance rules, contains two items for comparison. In match and team rules, contains two or more items. |\n| `teams` | An array of `team` objects representing the teams that you add to a rule set, including the players assigned to the teams. ![spacer] Available only in team rule expressions. |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Comparison functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/comparing-app-versions"
+      ]
+    },
+    {
+      "title": "Distance functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/getting-geographic-distance"
+      ]
+    },
+    {
+      "title": "Match functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/getting-value-based-on-age",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/getting-value-based-on-age-using-an-array"
+      ]
+    },
+    {
+      "title": "Team functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/keeping-invited-players-on-the-same-team"
+      ]
+    },
+    {
+      "title": "Boolean functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/evaluating-a-boolean-value"
+      ]
+    },
+    {
+      "title": "Numeric functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/dividing-numbers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subtracting-numbers"
+      ]
+    },
+    {
+      "title": "Array functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/converting-arrays-to-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/computing-numeric-differences",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/intersecting-sets"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "Matchmaking rule objects that you can use in expressions.",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/request",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/player",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/team"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rule-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/metrics"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-territories",
+  "title": "List territories",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-territories",
+  "slug": "appstoreconnectapi/get-v1-territories",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List all territories where the App Store operates.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/territories",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "fields[territories]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "currency"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "TerritoriesResponse",
+      "typeId": "data:app_store_connect_api:TerritoriesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Territories",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-endUserLicenseAgreements-_id_-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-endUserLicenseAgreements-_id_-relationships-territories"
+      ]
+    }
+  ]
+}

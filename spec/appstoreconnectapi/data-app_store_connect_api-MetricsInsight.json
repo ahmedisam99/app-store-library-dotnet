@@ -1,0 +1,202 @@
+{
+  "id": "data:app_store_connect_api:MetricsInsight",
+  "title": "MetricsInsight",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/MetricsInsight",
+  "slug": "appstoreconnectapi/metricsinsight",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Results of an analysis of metric data for a single metric category for your app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object MetricsInsight",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "highImpact",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the insight is high impact, meaning the metrics show that the latest app version has a regression of 100% or more, compared with the average values of the metric from the previous app versions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "metricCategory",
+      "type": "MetricCategory",
+      "typeId": "data:app_store_connect_api:MetricCategory",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The category of the metric that this insight is about.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "metric",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The specific measurement within the `metricCategory` that this insight analyzes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "subSystemLabel",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A metric subtype, which provides additional information about the source of the measurement.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "latestVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The version number of the most current version of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "maxLatestVersionValue",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum value of this metric for the latest app version, from the values in `populations`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "populations",
+      "type": "[MetricsInsight.Populations]",
+      "typeId": "data:app_store_connect_api:MetricsInsight.Populations",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of metrics organized by device type on the latest app version, that includes the percent change of the metric as compared with previous app versions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "summaryString",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A human-readable description of the trend.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceVersions",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A list of previous app versions that the system uses to compare the current app version to, when calculating metric value regressions or trends.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricsInsight/Populations-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignaturesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignature",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLogCallStackNode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PerfPowerMetric",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPerfPowerMetricsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignatureLogsLinkagesResponse"
+      ]
+    }
+  ]
+}

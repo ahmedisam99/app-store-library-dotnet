@@ -1,0 +1,137 @@
+{
+  "id": "rest:app_store_connect_api:delete:v1-gameCenterChallengeVersionReleases-{}",
+  "title": "Delete a Challenge Version Release",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterChallengeVersionReleases-_id_",
+  "slug": "appstoreconnectapi/delete-v1-gamecenterchallengeversionreleases-_id_",
+  "introducedAt": "4.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Remove a specific version release from a Game Center challenge version.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "DELETE",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterChallengeVersionReleases/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 204,
+      "reason": "No Content",
+      "mimeType": null,
+      "type": null,
+      "typeId": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing version releases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallengeVersionReleases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterChallengeVersionReleases-_id_"
+      ]
+    }
+  ]
+}

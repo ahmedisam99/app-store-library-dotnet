@@ -1,0 +1,660 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-builds-{}-appStoreVersion",
+  "title": "Read the app store version information of a build",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-appStoreVersion",
+  "slug": "appstoreconnectapi/get-v1-builds-_id_-appstoreversion",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the App Store version of a specific build.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/builds/{id}/appStoreVersion",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionExperiments]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "trafficProportion",
+            "state",
+            "reviewRequired",
+            "startDate",
+            "endDate",
+            "appStoreVersion",
+            "appStoreVersionExperimentTreatments",
+            "platform",
+            "app",
+            "latestControlVersion",
+            "controlVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "description",
+            "locale",
+            "keywords",
+            "marketingUrl",
+            "promotionalText",
+            "supportUrl",
+            "whatsNew",
+            "appStoreVersion",
+            "appScreenshotSets",
+            "appPreviewSets",
+            "searchKeywords"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appStoreVersionLocalizations]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appStoreVersionExperiments]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appClipDefaultExperiences]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "action",
+            "appClip",
+            "releaseWithAppStoreVersion",
+            "appClipDefaultExperienceLocalizations",
+            "appClipAppStoreReviewDetail"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionSubmissions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreReviewDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "contactFirstName",
+            "contactLastName",
+            "contactPhone",
+            "contactEmail",
+            "demoAccountName",
+            "demoAccountPassword",
+            "demoAccountRequired",
+            "notes",
+            "appStoreVersion",
+            "appStoreReviewAttachments"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[routingAppCoverages]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "fileSize",
+            "fileName",
+            "sourceFileChecksum",
+            "uploadOperations",
+            "assetDeliveryState",
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionPhasedReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "phasedReleaseState",
+            "startDate",
+            "totalPauseDuration",
+            "currentDayNumber"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[builds]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "uploadedDate",
+            "expirationDate",
+            "expired",
+            "minOsVersion",
+            "lsMinimumSystemVersion",
+            "computedMinMacOsVersion",
+            "computedMinVisionOsVersion",
+            "iconAssetToken",
+            "processingState",
+            "buildAudienceType",
+            "usesNonExemptEncryption",
+            "preReleaseVersion",
+            "individualTesters",
+            "betaGroups",
+            "betaBuildLocalizations",
+            "appEncryptionDeclaration",
+            "betaAppReviewSubmission",
+            "app",
+            "buildBetaDetail",
+            "appStoreVersion",
+            "icons",
+            "buildBundles",
+            "buildUpload",
+            "perfPowerMetrics",
+            "diagnosticSignatures"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appStoreVersionExperimentsV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[alternativeDistributionPackages]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "sourceFileChecksum",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAppVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "enabled",
+            "compatibilityVersions",
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppStoreVersionResponse",
+      "typeId": "data:app_store_connect_api:AppStoreVersionResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Build Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-appStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-preReleaseVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-preReleaseVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-metrics-betaBuildUsages"
+      ]
+    }
+  ]
+}

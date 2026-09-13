@@ -1,0 +1,93 @@
+{
+  "id": "data:app_store_connect_api:BetaAppClipInvocationResponse",
+  "title": "BetaAppClipInvocationResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaAppClipInvocationResponse",
+  "slug": "appstoreconnectapi/betaappclipinvocationresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single TestFlight App Clip invocation URL.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BetaAppClipInvocationResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "BetaAppClipInvocation",
+      "typeId": "data:app_store_connect_api:BetaAppClipInvocation",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[BetaAppClipInvocationLocalization]",
+      "typeId": "data:app_store_connect_api:BetaAppClipInvocationLocalization",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocationUpdateRequest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}-metrics-betaTesterUsages",
+  "title": "Read Beta Tester Metrics for an App",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-metrics-betaTesterUsages",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_-metrics-betatesterusages",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get usage metrics for beta testers of a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}/metrics/betaTesterUsages",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[betaTesters]",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the betaTester resource ID from the `GET-v1-betaTesters` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaTesters"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "groupBy",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "betaTesters"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "period",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P7D",
+            "P30D",
+            "P90D",
+            "P365D"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "\n\n- **`P7D`** — 7 days\n- **`P30D`** — 30 days\n- **`P90D`** — 90 days\n- **`P365D`** — 356 days",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppsBetaTesterUsagesV1MetricResponse",
+      "typeId": "data:app_store_connect_api:AppsBetaTesterUsagesV1MetricResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " This endpoint requires either `groupBy` or `filter[betaTesters]` parameter.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Tip**\n>\n>  This endpoint requires either `groupBy` or `filter[betaTesters]` parameter.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?period=P365D&limit=5&groupBy=betaTesters\n```\n\n**Response**\n\n```json\n{\n  \"data\" : [ {\n    \"type\" : \"appsBetaTesterUsages\",\n    \"dataPoints\" : [ {\n      \"start\" : \"2022-10-05\",\n      \"end\" : \"2023-10-05\",\n      \"values\" : {\n        \"crashCount\" : 0,\n        \"sessionCount\" : 21,\n        \"feedbackCount\" : 1\n      }\n    } ],\n    \"dimensions\" : {\n      \"betaTesters\" : {\n        \"data\" : {\n          \"type\" : \"betaTesters\",\n          \"id\" : \"8fa019c6-a92a-4563-ab06-577daa03c5d1\"\n        },\n        \"links\" : {\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/betaTesters/8fa019c6-a92a-4563-ab06-577daa03c5d1\",\n          \"groupBy\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?groupBy=betaTesters\"\n        }\n      }\n    }\n  }, {\n    \"type\" : \"appsBetaTesterUsages\",\n    \"dataPoints\" : [ {\n      \"start\" : \"2022-10-05\",\n      \"end\" : \"2023-10-05\",\n      \"values\" : {\n        \"crashCount\" : 5,\n        \"sessionCount\" : 5,\n        \"feedbackCount\" : 0\n      }\n    } ],\n    \"dimensions\" : {\n      \"betaTesters\" : {\n        \"data\" : {\n          \"type\" : \"betaTesters\",\n          \"id\" : \"98a05411-af84-40bf-919a-dc32c75e9e32\"\n        },\n        \"links\" : {\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/betaTesters/98a05411-af84-40bf-919a-dc32c75e9e32\",\n          \"groupBy\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?groupBy=betaTesters\"\n        }\n      }\n    }\n  }, {\n    \"type\" : \"appsBetaTesterUsages\",\n    \"dataPoints\" : [ {\n      \"start\" : \"2022-10-05\",\n      \"end\" : \"2023-10-05\",\n      \"values\" : {\n        \"crashCount\" : 1,\n        \"sessionCount\" : 2,\n        \"feedbackCount\" : 1\n      }\n    } ],\n    \"dimensions\" : {\n      \"betaTesters\" : {\n        \"data\" : {\n          \"type\" : \"betaTesters\",\n          \"id\" : \"993a21fd-980c-4ae3-9767-0eb50095f70e\"\n        },\n        \"links\" : {\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/betaTesters/993a21fd-980c-4ae3-9767-0eb50095f70e\",\n          \"groupBy\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?groupBy=betaTesters\"\n        }\n      }\n    }\n  }, {\n    \"type\" : \"appsBetaTesterUsages\",\n    \"dataPoints\" : [ {\n      \"start\" : \"2022-10-05\",\n      \"end\" : \"2023-10-05\",\n      \"values\" : {\n        \"crashCount\" : 4,\n        \"sessionCount\" : 16,\n        \"feedbackCount\" : 4\n      }\n    } ],\n    \"dimensions\" : {\n      \"betaTesters\" : {\n        \"data\" : {\n          \"type\" : \"betaTesters\",\n          \"id\" : \"9988d713-a315-45ae-9147-1fe119b9eea9\"\n        },\n        \"links\" : {\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/betaTesters/9988d713-a315-45ae-9147-1fe119b9eea9\",\n          \"groupBy\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?groupBy=betaTesters\"\n        }\n      }\n    }\n  }, {\n    \"type\" : \"appsBetaTesterUsages\",\n    \"dataPoints\" : [ {\n      \"start\" : \"2022-10-05\",\n      \"end\" : \"2023-10-05\",\n      \"values\" : {\n        \"crashCount\" : 0,\n        \"sessionCount\" : 200,\n        \"feedbackCount\" : 10\n      }\n    } ],\n    \"dimensions\" : {\n      \"betaTesters\" : {\n        \"data\" : {\n          \"type\" : \"betaTesters\",\n          \"id\" : \"99e5ee74-39c3-4f52-86be-041c0fee2c6f\"\n        },\n        \"links\" : {\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/betaTesters/99e5ee74-39c3-4f52-86be-041c0fee2c6f\",\n          \"groupBy\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?groupBy=betaTesters\"\n        }\n      }\n    }\n  } ],\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?period=PT8760H&limit=5&groupBy=betaTesters\",\n    \"next\" : \"https://api.appstoreconnect.apple.com/v1/apps/6447306070/metrics/betaTesterUsages?cursor=BQ.TGQPUQ&period=PT8760H&limit=5&groupBy=betaTesters\"\n  },\n  \"meta\" : {\n    \"paging\" : {\n      \"total\" : 931,\n      \"limit\" : 5\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/6448250830/metrics/betaTesterUsages?filter%5BbetaTesters%5D=cd082742-b2ec-4e63-b63f-6732f3e7abdd\n```\n\n**Response**\n\n```json\n{\n  “data”: [\n    {\n      “type”: “appsBetaTesterUsages”,\n      “dataPoints”: [\n        {\n          “start”: “2022-10-05”,\n          “end”: “2023-10-05”,\n          “values”: {\n            “crashCount”: 4,\n            “sessionCount”: 16,\n            “feedbackCount”: 0\n          }\n        }\n      ],\n      “dimensions”: {\n        “betaTesters”: {\n          “data”: {\n            “type”: “betaTesters”,\n            “id”: “cd082742-b2ec-4e63-b63f-6732f3e7abdd”\n          },\n          “links”: {\n            “related”: “https://api.appstoreconnect.apple.com/v1/betaTesters/cd082742-b2ec-4e63-b63f-6732f3e7abdd”,\n            “groupBy”: “https://api.appstoreconnect.apple.com/v1/apps/6448250830/metrics/betaTesterUsages?groupBy=betaTesters”\n          }\n        }\n      }\n    }\n  ],\n  “links”: {\n    “self”: “https://api.appstoreconnect.apple.com/v1/apps/6448250830/metrics/betaTesterUsages?filter%5BbetaTesters%5D=cd082742-b2ec-4e63-b63f-6732f3e7abdd”\n  },\n  “meta”: {\n    “paging”: {\n      “total”: 1,\n      “limit”: 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

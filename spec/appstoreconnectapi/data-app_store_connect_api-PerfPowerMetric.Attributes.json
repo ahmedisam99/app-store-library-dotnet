@@ -1,0 +1,105 @@
+{
+  "id": "data:app_store_connect_api:PerfPowerMetric.Attributes",
+  "title": "PerfPowerMetric.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PerfPowerMetric/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/perfpowermetric/attributes-data.dictionary",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a Power and Performance Metrics resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PerfPowerMetric.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "deviceType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that represents the device type.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "metricType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DISK",
+            "HANG",
+            "BATTERY",
+            "LAUNCH",
+            "MEMORY",
+            "ANIMATION",
+            "TERMINATION",
+            "STORAGE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "For more information about metric types, see `MetricCategory`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "platform",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "IOS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

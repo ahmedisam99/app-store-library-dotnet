@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:AppStoreVersionPhasedReleaseCreateRequest.Data",
+  "title": "AppStoreVersionPhasedReleaseCreateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseCreateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/appstoreversionphasedreleasecreaterequest/data-data.dictionary",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data element of the request body.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppStoreVersionPhasedReleaseCreateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "AppStoreVersionPhasedReleaseCreateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:AppStoreVersionPhasedReleaseCreateRequest.Data.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "AppStoreVersionPhasedReleaseCreateRequest.Data.Relationships",
+      "typeId": "data:app_store_connect_api:AppStoreVersionPhasedReleaseCreateRequest.Data.Relationships",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersionPhasedReleases"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

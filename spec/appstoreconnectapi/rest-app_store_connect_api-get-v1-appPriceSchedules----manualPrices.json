@@ -1,0 +1,328 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-appPriceSchedules-{}-manualPrices",
+  "title": "List Manually Chosen Prices for an App",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-manualPrices",
+  "slug": "appstoreconnectapi/get-v1-apppriceschedules-_id_-manualprices",
+  "introducedAt": "2.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List the prices you chose for a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appPriceSchedules/{id}/manualPrices",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPricePoints]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "customerPrice",
+            "proceeds",
+            "app",
+            "equalizations",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app price point resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPrices]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "manual",
+            "startDate",
+            "endDate",
+            "appPricePoint",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app price resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[territories]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "currency"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each territory resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[endDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by end date.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[startDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by start date.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[territory]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by territory.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appPricePoint",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of app price resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppPricesV2Response",
+      "typeId": "data:app_store_connect_api:AppPricesV2Response",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/appPriceSchedules/6447402192/manualPrices?limit=200&include=appPricePoint,territory&fields%5BappPricePoints%5D=customerPrice&filter%5Bterritory%5D=USA,CAN&fields%5Bterritories%5D=currency\n```\n\n**Response**\n\n```json\n{\n  \"data\" : [ {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDciLCJzZCI6MC4wLCJlZCI6MC4wfQ\",\n    \"attributes\" : {\n      \"manual\" : true,\n      \"startDate\" : null,\n      \"endDate\" : null\n    },\n    \"relationships\" : {\n      \"appPricePoint\" : {\n        \"data\" : {\n          \"type\" : \"appPricePoints\",\n          \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDcifQ\"\n        }\n      },\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"CAN\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDciLCJzZCI6MC4wLCJlZCI6MC4wfQ\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJVU0EiLCJwIjoiMTAwMDciLCJzZCI6MC4wLCJlZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDB9\",\n    \"attributes\" : {\n      \"manual\" : true,\n      \"startDate\" : null,\n      \"endDate\" : \"2023-02-28\"\n    },\n    \"relationships\" : {\n      \"appPricePoint\" : {\n        \"data\" : {\n          \"type\" : \"appPricePoints\",\n          \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJVU0EiLCJwIjoiMTAwMDcifQ\"\n        }\n      },\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"USA\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJVU0EiLCJwIjoiMTAwMDciLCJzZCI6MC4wLCJlZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDB9\"\n    }\n  } ],\n  \"included\" : [ {\n    \"type\" : \"appPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDcifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"9.99\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v3/appPricePoints/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDQU4iLCJwIjoiMTAwMDcifQ\"\n    }\n  }, {\n    \"type\" : \"territories\",\n    \"id\" : \"CAN\",\n    \"attributes\" : {\n      \"currency\" : \"CAD\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/territories/CAN\"\n    }\n  }, {\n    \"type\" : \"appPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJVU0EiLCJwIjoiMTAwMDcifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"0.89\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v3/appPricePoints/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJVU0EiLCJwIjoiMTAwMDcifQ\"\n    }\n  }, {\n    \"type\" : \"territories\",\n    \"id\" : \"USA\",\n    \"attributes\" : {\n      \"currency\" : \"USD\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/territories/USA\"\n    }\n  } ],\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/appPriceSchedules/6447402192/manualPrices?include=appPricePoint%2Cterritory&fields%5BappPricePoints%5D=customerPrice&filter%5Bterritory%5D=CAN%2CUSA&limit=200&fields%5Bterritories%5D=currency\"\n  },\n  \"meta\" : {\n    \"paging\" : {\n      \"total\" : 2,\n      \"limit\" : 200\n    }\n  }\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting and managing an app’s price schedules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-automaticPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-automaticPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-manualPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPriceSchedules"
+      ]
+    }
+  ]
+}

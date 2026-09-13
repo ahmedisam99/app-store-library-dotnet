@@ -1,0 +1,147 @@
+{
+  "id": "data:app_store_connect_api:PrereleaseVersion",
+  "title": "PrereleaseVersion",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PrereleaseVersion",
+  "slug": "appstoreconnectapi/prereleaseversion",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A pre-release version associated with a build, representing a development or beta software version before App Store submission.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PrereleaseVersion",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "PrereleaseVersion.Attributes",
+      "typeId": "data:app_store_connect_api:PrereleaseVersion.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "PrereleaseVersion.Relationships",
+      "typeId": "data:app_store_connect_api:PrereleaseVersion.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links to related data and included resource types and IDs.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "preReleaseVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersion/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersion/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreReleaseVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersionWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreReleaseVersionsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreReleaseVersionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersionAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PrereleaseVersionBuildsLinkagesResponse"
+      ]
+    }
+  ]
+}

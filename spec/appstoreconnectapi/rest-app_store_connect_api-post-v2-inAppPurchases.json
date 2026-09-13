@@ -1,0 +1,168 @@
+{
+  "id": "rest:app_store_connect_api:post:v2-inAppPurchases",
+  "title": "Create an in-app purchase",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v2-inAppPurchases",
+  "slug": "appstoreconnectapi/post-v2-inapppurchases",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create an in-app purchase, including a consumable, non-consumable, or non-renewing subscription.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v2/inAppPurchases",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "InAppPurchaseV2CreateRequest",
+    "typeId": "data:app_store_connect_api:InAppPurchaseV2CreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "InAppPurchaseV2Response",
+      "typeId": "data:app_store_connect_api:InAppPurchaseV2Response",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n>  Changes that you make to product metadata with the App Store Connect API can take up to 1 hour to appear in the sandbox environment.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-inAppPurchasesV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-pricePoints",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchasePricePoints-_id_-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchasePricePoints-_id_-relationships-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-promotedPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-promotedPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-inAppPurchaseLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-inAppPurchaseLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-appStoreReviewScreenshot",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-appStoreReviewScreenshot",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseSubmissions"
+      ]
+    }
+  ]
+}

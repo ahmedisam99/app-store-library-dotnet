@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_connect_api:ErrorLinks",
+  "title": "ErrorLinks",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ErrorLinks",
+  "slug": "appstoreconnectapi/errorlinks",
+  "introducedAt": "3.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Navigation links within an error response, providing references to related resources or documentation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ErrorLinks",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "about",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "associated",
+      "type": "*",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "uri-reference",
+            "ErrorLinks.Associated"
+          ]
+        }
+      ],
+      "typeDetails": [
+        {
+          "baseType": "uri-reference",
+          "isArray": false
+        },
+        {
+          "baseType": "dictionary",
+          "isArray": false
+        }
+      ],
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorLinks/Associated-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/JsonPointer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Parameter"
+      ]
+    }
+  ]
+}

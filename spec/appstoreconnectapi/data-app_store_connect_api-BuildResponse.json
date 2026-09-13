@@ -1,0 +1,134 @@
+{
+  "id": "data:app_store_connect_api:BuildResponse",
+  "title": "BuildResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildResponse",
+  "slug": "appstoreconnectapi/buildresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that read or modify a single build.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "Build",
+      "typeId": "data:app_store_connect_api:Build",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppEncryptionDeclaration",
+            "AppStoreVersion",
+            "App",
+            "BetaAppReviewSubmission",
+            "BetaBuildLocalization",
+            "BetaGroup",
+            "BetaTester",
+            "BuildBetaDetail",
+            "BuildBundle",
+            "BuildIcon",
+            "BuildUpload",
+            "PrereleaseVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaBuildLocalizations-_id_-build"
+      ]
+    },
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppEncryptionDeclarationLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppEncryptionDeclarationLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIndividualTestersLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIndividualTestersLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaGroupsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ImageAsset",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaBuildUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppStoreVersionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaAppReviewSubmissionLinkageResponse"
+      ]
+    }
+  ]
+}

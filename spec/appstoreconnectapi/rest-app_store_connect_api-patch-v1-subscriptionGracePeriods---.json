@@ -1,0 +1,185 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-subscriptionGracePeriods-{}",
+  "title": "Modify the billing grace period opt-in status and duration",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionGracePeriods-_id_",
+  "slug": "appstoreconnectapi/patch-v1-subscriptiongraceperiods-_id_",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Change the Boolean value representing the billing grace period opt-in status.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/subscriptionGracePeriods/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "SubscriptionGracePeriodUpdateRequest",
+    "typeId": "data:app_store_connect_api:SubscriptionGracePeriodUpdateRequest",
+    "abstract": {
+      "text": "There are now new duration options that can be set by using `SubscriptionGracePeriodDuration`",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionGracePeriodDuration"
+      ]
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SubscriptionGracePeriodResponse",
+      "typeId": "data:app_store_connect_api:SubscriptionGracePeriodResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/subscriptionGracePeriods/6446671329     \n-d $'{\n  \"data\": {\n    \"type\": \"subscriptionGracePeriods\",\n    \"id\": \"6446671329\",\n    \"attributes\": {\n      \"sandboxOptIn\": true,\n      \"optIn\": true,\n      \"renewalType\": \"PAID_TO_PAID_ONLY\",\n      \"duration\": \"TWENTY_EIGHT_DAYS\"\n    }\n  }\n}'\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"subscriptionGracePeriods\",\n    \"id\" : \"6446671329\",\n    \"attributes\" : {\n      \"optIn\" : true,\n      \"sandboxOptIn\" : true,\n      \"duration\" : \"TWENTY_EIGHT_DAYS\",\n      \"renewalType\" : \"PAID_TO_PAID_ONLY\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionGracePeriods/6446671329\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionGracePeriods/6446671329\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-subscriptionGracePeriod",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-subscriptionGracePeriod",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGracePeriods-_id_"
+      ]
+    }
+  ]
+}

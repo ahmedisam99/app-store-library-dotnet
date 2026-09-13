@@ -1,0 +1,142 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterActivityVersions",
+  "title": "Create an Activity Version",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterActivityVersions",
+  "slug": "appstoreconnectapi/post-v1-gamecenteractivityversions",
+  "introducedAt": "4.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add an activity to a Game Center detail, group, or leaderboard.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterActivityVersions",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterActivityVersionCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterActivityVersionCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterActivityVersionResponse",
+      "typeId": "data:app_store_connect_api:GameCenterActivityVersionResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Read, create, and update Game Center activity versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivities-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivities-_id_-relationships-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivityVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivityVersions-_id_-defaultImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivityVersions-_id_-relationships-defaultImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivityVersions-_id_-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterActivityVersions-_id_-relationships-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterActivityVersionReleases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterActivityVersions-_id_"
+      ]
+    }
+  ]
+}

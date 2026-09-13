@@ -1,0 +1,247 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-betaGroups-{}-metrics-betaTesterUsages",
+  "title": "Read Metrics for Beta Testers in a Beta Group",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-metrics-betaTesterUsages",
+  "slug": "appstoreconnectapi/get-v1-betagroups-_id_-metrics-betatesterusages",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get beta tester usage metrics for a beta group.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/betaGroups/{id}/metrics/betaTesterUsages",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the `betaGroups` resource ID from the `GET-v1-betaGroups` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[betaTesters]",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the `betaTesters` resource ID from the `GET-v1-betaTesters` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaTesters"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "groupBy",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "betaTesters"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "period",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P7D",
+            "P30D",
+            "P90D",
+            "P365D"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "\n-`P7D`: 7 days -`P30D`: 30 days -`P90D`: 90 days -`P365D`: 356 days",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppsBetaTesterUsagesV1MetricResponse",
+      "typeId": "data:app_store_connect_api:AppsBetaTesterUsagesV1MetricResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/betaGroups/db51edb0-a8a4-4be9-8481-09dff260ea6e/metrics/betaTesterUsages?groupBy=betaTesters&filter%5BbetaTesters%5D=1aa1fe09-bb5c-47dd-a067-a6066db1d32\n```\n\n**Response**\n\n```json\n{\n  “data”: [\n    {\n      “type”: “appsBetaTesterUsages”,\n      “dataPoints”: [\n        {\n          “start”: “2022-10-05”,\n          “end”: “2023-10-05”,\n          “values”: {\n            “crashCount”: 13,\n            “sessionCount”: 48,\n            “feedbackCount”: 21\n          }\n        }\n      ],\n      “dimensions”: {\n        “betaTesters”: {\n          “data”: {\n            “type”: “betaTesters”,\n            “id”: “1aa1fe09-bb5c-47dd-a067-a6066db1d32d”\n          },\n          “links”: {\n            “related”: “https://api.appstoreconnect.apple.com/v1/betaTesters/1aa1fe09-bb5c-47dd-a067-a6066db1d32d”,\n            “groupBy”: “https://api.appstoreconnect.apple.com/v1/betaGroups/db51edb0-a8a4-4be9-8481-09dff260ea6e/metrics/betaTesterUsages?groupBy=betaTesters”\n          }\n        }\n      }\n    }\n  ],\n  “links”: {\n    “self”: “https://api.appstoreconnect.apple.com/v1/betaTesters/842d4014-3ecc-4f80-8531-19aa800e3a53/metrics/betaTesterUsages?period=PT8760H&filter%5Bapps%5D=6448250830”\n  },\n  “meta”: {\n    “paging”: {\n      “total”: 1,\n      “limit”: 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Beta Group Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriterionCompatibleBuildCheck",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-betaRecruitmentCriterionCompatibleBuildCheck"
+      ]
+    }
+  ]
+}

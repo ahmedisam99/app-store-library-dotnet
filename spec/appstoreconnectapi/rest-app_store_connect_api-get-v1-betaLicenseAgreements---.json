@@ -1,0 +1,259 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-betaLicenseAgreements-{}",
+  "title": "Read beta license agreement information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-betaLicenseAgreements-_id_",
+  "slug": "appstoreconnectapi/get-v1-betalicenseagreements-_id_",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a specific beta license agreement.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/betaLicenseAgreements/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[betaLicenseAgreements]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "agreementText",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Relationship data to include in the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "BetaLicenseAgreementResponse",
+      "typeId": "data:app_store_connect_api:BetaLicenseAgreementResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Beta License Agreement Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaLicenseAgreements",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaLicenseAgreements-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaLicenseAgreements-_id_-relationships-app"
+      ]
+    }
+  ]
+}

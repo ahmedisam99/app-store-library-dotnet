@@ -1,0 +1,144 @@
+{
+  "id": "doc:appstoreconnectapi/alternative-distribution-packages",
+  "title": "Alternative Distribution Packages",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/alternative-distribution-packages",
+  "slug": "appstoreconnectapi/alternative-distribution-packages",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and read distribution packages for an alternative app distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App developers can get alternative distribution package IDs through the App Store Connect API by using `GET-v1-appStoreVersions-_id_-alternativeDistributionPackage`. You can also get the IDs in App Store Connect, to learn more, see `https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/get-an-alternative-distribution-package-id`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-alternativeDistributionPackage",
+            "https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/get-an-alternative-distribution-package-id"
+          ]
+        },
+        {
+          "text": "The alternative distribution package ID is valid for distributing a marketplace app, an app on an alternative marketplace, or through web distribution. To learn more about creating alternative distribution packages, see `creating-alternative-distribution-packages`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-alternative-distribution-packages"
+          ]
+        },
+        {
+          "text": "To learn more about ingesting alternative distribution packages as a marketplace, see `processing-alternative-marketplace-notifications`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/marketplacekit/processing-alternative-marketplace-notifications"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating and reading distribution packages",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-alternative-distribution-packages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionPackages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-alternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_-versions"
+      ]
+    },
+    {
+      "title": "Getting version information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-deltas",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-variants",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-relationships-deltas",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-relationships-variants",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_-relationships-versions"
+      ]
+    },
+    {
+      "title": "Getting delta information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageDeltas-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-deltas"
+      ]
+    },
+    {
+      "title": "Getting variant information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVariants-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-variants"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDelta",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltaResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltasResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariant",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionDeltasLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionVariantsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Alternative Distribution Packages and Notifications",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/notifications"
+      ]
+    }
+  ]
+}

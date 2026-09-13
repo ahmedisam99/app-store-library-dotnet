@@ -1,0 +1,105 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperienceResponse",
+  "title": "AppClipAdvancedExperienceResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceResponse",
+  "slug": "appstoreconnectapi/appclipadvancedexperienceresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single App Clip advanced experience configuration.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperienceResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppClipAdvancedExperience",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperience",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppClipAdvancedExperienceImage",
+            "AppClipAdvancedExperienceLocalization",
+            "AppClip"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperience",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceLanguage"
+      ]
+    }
+  ]
+}

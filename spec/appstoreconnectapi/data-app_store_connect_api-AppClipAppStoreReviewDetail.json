@@ -1,0 +1,143 @@
+{
+  "id": "data:app_store_connect_api:AppClipAppStoreReviewDetail",
+  "title": "AppClipAppStoreReviewDetail",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetail",
+  "slug": "appstoreconnectapi/appclipappstorereviewdetail",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The review submission details for an App Clip, including the invocation URLs required for App Store review.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAppStoreReviewDetail",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "AppClipAppStoreReviewDetail.Attributes",
+      "typeId": "data:app_store_connect_api:AppClipAppStoreReviewDetail.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The attributes that describe the App Clip App Store Review Details resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies an App Clip App Store Review Details resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "AppClipAppStoreReviewDetail.Relationships",
+      "typeId": "data:app_store_connect_api:AppClipAppStoreReviewDetail.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The navigational links to related data and included resource types and IDs.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appClipAppStoreReviewDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetail/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetail/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailUpdateRequest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": "data:app_store_connect_api:CiFilesAndFoldersRule",
+  "title": "CiFilesAndFoldersRule",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiFilesAndFoldersRule",
+  "slug": "appstoreconnectapi/cifilesandfoldersrule",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Settings Xcode Cloud uses to determine whether a change should start a new build or not.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiFilesAndFoldersRule",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "matchers",
+      "type": "[CiStartConditionFileMatcher]",
+      "typeId": "data:app_store_connect_api:CiStartConditionFileMatcher",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Directory and file information Xcode Cloud uses to determine if a change to a file or directory matches a custom start condition.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "mode",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "START_IF_ANY_FILE_MATCHES",
+            "DO_NOT_START_IF_ALL_FILES_MATCH"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates whether a workflow’s start condition’s Files and Folders setting should start a new build or not for a change.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiStartConditionFileMatcher"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAdditionalRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductPrimaryRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductWorkflowsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiScheduledStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestination"
+      ]
+    }
+  ]
+}

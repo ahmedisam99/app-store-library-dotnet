@@ -1,0 +1,104 @@
+{
+  "id": "doc:appstoreconnectapi/app-categories",
+  "title": "App Categories",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-categories",
+  "slug": "appstoreconnectapi/app-categories",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get App Store categories and subcategories for apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`appCategories` provides read-only information that includes the list of choices for an app’s App Store category, subcategory, and secondary category.",
+          "refs": []
+        },
+        {
+          "text": "To update your app’s categories, use the `app-infos` resource. For more information about categories, see `https://developer.apple.com/app-store/categories/`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+            "https://developer.apple.com/app-store/categories/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Listing Categories and Subcategories",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories-_id_-subcategories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories-_id_-relationships-subcategories"
+      ]
+    },
+    {
+      "title": "Reading App Category Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories-_id_-parent",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCategories-_id_-relationships-parent"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCategoriesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCategory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCategoryResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCategoriesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCategoryWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimaryCategoryLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimarySubcategoryOneLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimarySubcategoryTwoLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondaryCategoryLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondarySubcategoryOneLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondarySubcategoryTwoLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Categories and Age Declarations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/age-ratings"
+      ]
+    }
+  ]
+}

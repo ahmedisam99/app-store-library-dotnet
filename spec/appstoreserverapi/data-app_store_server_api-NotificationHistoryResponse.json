@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "An array of App Store Server Notifications history records.\n\nIf you set `onlyFailures` to `true` in the `NotificationHistoryRequest`, this array contains only the notifications that failed to reach your server.",
         "refs": [
@@ -48,6 +49,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A Boolean value that indicates whether the App Store has more notification history records to send. If `hasMore` is `true`, use the `paginationToken` in the subsequent request to get more records. If `hasMore` is false, there are no more records available.",
         "refs": []
@@ -62,6 +64,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A pagination token that you provide to `Get-Notification-History` on a subsequent request to get the next page of responses.",
         "refs": [
@@ -120,6 +123,10 @@
   "topics": [
     {
       "title": "Data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/paginationToken",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore"
@@ -129,6 +136,10 @@
   "seeAlso": [
     {
       "title": "App Store Server Notifications history",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",

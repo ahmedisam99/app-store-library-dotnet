@@ -1,0 +1,173 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseImage.Attributes",
+  "title": "InAppPurchaseImage.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseImage/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/inapppurchaseimage/attributes-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `InAppPurchaseImageV2` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageV2"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a subscription image resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseImage.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "assetToken",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileSize",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "imageAsset",
+      "type": "ImageAsset",
+      "typeId": "data:app_store_connect_api:ImageAsset",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sourceFileChecksum",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AWAITING_UPLOAD",
+            "UPLOAD_COMPLETE",
+            "FAILED",
+            "PREPARE_FOR_SUBMISSION",
+            "WAITING_FOR_REVIEW",
+            "APPROVED",
+            "REJECTED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "uploadOperations",
+      "type": "[UploadOperation]",
+      "typeId": "data:app_store_connect_api:UploadOperation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImage/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

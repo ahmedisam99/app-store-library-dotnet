@@ -1,0 +1,109 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionImageUpdateRequest.Data",
+  "title": "SubscriptionImageUpdateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionImageUpdateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/subscriptionimageupdaterequest/data-data.dictionary",
+  "introducedAt": "3.6",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `SubscriptionImageV2UpdateRequest` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionImageV2UpdateRequest"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to update a subscription purchase image reservation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionImageUpdateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "SubscriptionImageUpdateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:SubscriptionImageUpdateRequest.Data.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the `subscriptionImages` resource ID from the `GET-v1-subscriptions-_id_-images` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-images"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "subscriptionImages"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionImageUpdateRequest/Data-data.dictionary/Attributes-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

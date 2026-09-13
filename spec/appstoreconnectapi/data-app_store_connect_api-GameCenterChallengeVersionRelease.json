@@ -1,0 +1,137 @@
+{
+  "id": "data:app_store_connect_api:GameCenterChallengeVersionRelease",
+  "title": "GameCenterChallengeVersionRelease",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterChallengeVersionRelease",
+  "slug": "appstoreconnectapi/gamecenterchallengeversionrelease",
+  "introducedAt": "4.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The data structure that represent a challenge version release.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterChallengeVersionRelease",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "GameCenterChallengeVersionRelease.Relationships",
+      "typeId": "data:app_store_connect_api:GameCenterChallengeVersionRelease.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "gameCenterChallengeVersionReleases"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionRelease/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallenge",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeLeaderboardV2LinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeLeaderboardLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionsLinkagesResponse"
+      ]
+    }
+  ]
+}

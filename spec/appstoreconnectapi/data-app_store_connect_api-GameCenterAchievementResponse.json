@@ -1,0 +1,121 @@
+{
+  "id": "data:app_store_connect_api:GameCenterAchievementResponse",
+  "title": "GameCenterAchievementResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterAchievementResponse",
+  "slug": "appstoreconnectapi/gamecenterachievementresponse",
+  "introducedAt": "3.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify a single Game Center achievement.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterAchievementResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterAchievement",
+      "typeId": "data:app_store_connect_api:GameCenterAchievement",
+      "required": true,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "GameCenterAchievementLocalization",
+            "GameCenterAchievementRelease",
+            "GameCenterAchievement",
+            "GameCenterActivity",
+            "GameCenterDetail",
+            "GameCenterGroup"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementsV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2ActivityLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementV2VersionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievement",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementGroupAchievementLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementGroupAchievementLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementActivityLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievementLocalizationsLinkagesResponse"
+      ]
+    }
+  ]
+}

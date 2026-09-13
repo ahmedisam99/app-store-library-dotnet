@@ -1,0 +1,143 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-2-4-release-notes",
+  "title": "App Store Connect API 2.4 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-2-4-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-2-4-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "New features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added support for product page optimization tests that run without being interrupted by new app version releases with the new `app-store-version-experiments`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-experiments"
+          ]
+        },
+        {
+          "text": "A new `actors` resource provides details on which team member submitted and last interacted with an App Store submission.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/actors"
+          ]
+        },
+        {
+          "text": "Added the ability to look up territory availability from an in-app purchase with `GET-v2-inAppPurchases-_id_-inAppPurchaseAvailability` or from a subscription with `GET-v1-subscriptions-_id_-subscriptionAvailability`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-inAppPurchaseAvailability",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-subscriptionAvailability"
+          ]
+        },
+        {
+          "text": "Updated the limit for return values to 8000 for `GET-v2-inAppPurchases-_id_-pricePoints` and `GET-v1-subscriptions-_id_-pricePoints`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-pricePoints"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `GET-v1-appStoreVersionExperiments-_id_` endpoint is now deprecated and replaced with `GET-v2-appStoreVersionExperiments-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperiments-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-appStoreVersionExperiments-_id_"
+          ]
+        },
+        {
+          "text": "The `POST-v1-appStoreVersionExperiments` endpoint is now deprecated and replaced with `POST-v2-appStoreVersionExperiments`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionExperiments",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-appStoreVersionExperiments"
+          ]
+        },
+        {
+          "text": "The `PATCH-v1-appStoreVersionExperiments-_id_` endpoint is now deprecated and replaced with `PATCH-v2-appStoreVersionExperiments-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersionExperiments-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-appStoreVersionExperiments-_id_"
+          ]
+        },
+        {
+          "text": "The `DELETE-v1-appStoreVersionExperiments-_id_` endpoint is now deprecated and replaced with `DELETE-v2-appStoreVersionExperiments-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionExperiments-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-appStoreVersionExperiments-_id_"
+          ]
+        },
+        {
+          "text": "The `GET-v1-appStoreVersions-_id_-appStoreVersionExperiments` endpoint is now deprecated and replaced with `GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperiments",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2"
+          ]
+        },
+        {
+          "text": "The `pricePoints` include for `GET-v1-apps-_id_-inAppPurchasesV2` is no longer available.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-inAppPurchasesV2"
+          ]
+        },
+        {
+          "text": "The `pricePoints` include for `GET-v2-inAppPurchases-_id_` is now deprecated and replaced with `GET-v2-inAppPurchases-_id_-pricePoints`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes"
+      ]
+    }
+  ]
+}

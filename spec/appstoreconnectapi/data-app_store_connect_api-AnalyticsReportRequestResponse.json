@@ -1,0 +1,119 @@
+{
+  "id": "data:app_store_connect_api:AnalyticsReportRequestResponse",
+  "title": "AnalyticsReportRequestResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AnalyticsReportRequestResponse",
+  "slug": "appstoreconnectapi/analyticsreportrequestresponse",
+  "introducedAt": "3.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create or read an analytics report request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AnalyticsReportRequestResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AnalyticsReportRequest",
+      "typeId": "data:app_store_connect_api:AnalyticsReportRequest",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[AnalyticsReport]",
+      "typeId": "data:app_store_connect_api:AnalyticsReport",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this object with `GET-v1-analyticsReportRequests-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReport",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstance",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstanceResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstancesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegment",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegmentResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegmentsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstanceSegmentsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstancesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestReportsLinkagesResponse"
+      ]
+    }
+  ]
+}

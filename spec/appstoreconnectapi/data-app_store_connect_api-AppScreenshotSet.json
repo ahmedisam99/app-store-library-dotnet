@@ -1,0 +1,146 @@
+{
+  "id": "data:app_store_connect_api:AppScreenshotSet",
+  "title": "AppScreenshotSet",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppScreenshotSet",
+  "slug": "appstoreconnectapi/appscreenshotset",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data structure that represent an app screenshot set resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppScreenshotSet",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "AppScreenshotSet.Attributes",
+      "typeId": "data:app_store_connect_api:AppScreenshotSet.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "AppScreenshotSet.Relationships",
+      "typeId": "data:app_store_connect_api:AppScreenshotSet.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appScreenshotSets"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSet/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSet/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetAppScreenshotsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetAppScreenshotsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScreenshotDisplayType"
+      ]
+    }
+  ]
+}

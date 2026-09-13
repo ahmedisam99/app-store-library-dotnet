@@ -1,0 +1,153 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterMatchmakingTeams",
+  "title": "Create a Team",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingTeams",
+  "slug": "appstoreconnectapi/post-v1-gamecentermatchmakingteams",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add a game-specific team to a rule set.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingTeams",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterMatchmakingTeamCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterMatchmakingTeamCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingTeamResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingTeamResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTeams\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingTeams”,\n        “attributes”: {\n            “minPlayers”: 2,\n            “maxPlayers”: 4,\n            “referenceName”: “blue”\n        },\n        “relationships”: {\n            “ruleSet”: {\n                “data”: {\n                    “type”: “gameCenterMatchmakingRuleSets”,\n                    “id”: “50d7eed2-8016-441a-a919-db3d863f433c”\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingTeams”,\n        “id”: “2a68632b-0129-4c07-8e84-6da57a76499d”,\n        “attributes”: {\n            “referenceName”: “blue”,\n            “minPlayers”: 2,\n            “maxPlayers”: 4\n        },\n        “links”: {\n            “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTeams/2a68632b-0129-4c07-8e84-6da57a76499d”\n        }\n    },\n    “links”: {\n        “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTeams”\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, modifying, and deleting teams",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingTeams-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingTeams-_id_"
+      ]
+    }
+  ]
+}

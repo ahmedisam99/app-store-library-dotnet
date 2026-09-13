@@ -1,0 +1,168 @@
+{
+  "id": "rest:app_store_connect_api:get:v2-inAppPurchases-{}-relationships-pricePoints",
+  "title": "List price point IDs for an in-app purchase",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-pricePoints",
+  "slug": "appstoreconnectapi/get-v2-inapppurchases-_id_-relationships-pricepoints",
+  "introducedAt": "4.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of price point IDs for a specific in-app purchase.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v2/inAppPurchases/{id}/relationships/pricePoints",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "8000",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "InAppPurchaseV2PricePointsLinkagesResponse",
+      "typeId": "data:app_store_connect_api:InAppPurchaseV2PricePointsLinkagesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-inAppPurchases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-inAppPurchasesV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-inAppPurchases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchasePricePoints-_id_-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchasePricePoints-_id_-relationships-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-promotedPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-promotedPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-inAppPurchaseLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-inAppPurchaseLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-appStoreReviewScreenshot",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-appStoreReviewScreenshot",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseSubmissions"
+      ]
+    }
+  ]
+}

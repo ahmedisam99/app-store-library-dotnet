@@ -1,0 +1,245 @@
+{
+  "id": "data:app_store_connect_api:App.Attributes",
+  "title": "App.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/App/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/app/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe an Apps resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object App.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The bundle ID for your app. This ID must match the one you use in Xcode. The bundle ID cannot be changed after you upload your first build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "name",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of your app as it will appear in the App Store. The maximum length is 30 characters.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "primaryLocale",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The primary locale for your app. If localized app information isn’t available in an App Store territory, the information from your primary language is used instead.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sku",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A unique ID for your app that is not visible on the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "contentRightsDeclaration",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DOES_NOT_USE_THIRD_PARTY_CONTENT",
+            "USES_THIRD_PARTY_CONTENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isOrEverWasMadeForKids",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "subscriptionStatusUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "subscriptionStatusUrlForSandbox",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "subscriptionStatusUrlVersion",
+      "type": "SubscriptionStatusUrlVersion",
+      "typeId": "data:app_store_connect_api:SubscriptionStatusUrlVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "subscriptionStatusUrlVersionForSandbox",
+      "type": "SubscriptionStatusUrlVersion",
+      "typeId": "data:app_store_connect_api:SubscriptionStatusUrlVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "accessibilityUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "streamlinedPurchasingEnabled",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The default value is `true`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/apps"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/App/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,275 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-winBackOffers-{}",
+  "title": "Read Win-Back Offer Information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_",
+  "slug": "appstoreconnectapi/get-v1-winbackoffers-_id_",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data structure that represents a get-v1-win back offers-{id} resource.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/winBackOffers/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the `winBackOffers` resource ID from the `GET-v1-subscriptions-_id_-winBackOffers` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-winBackOffers"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[winBackOfferPrices]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "territory",
+            "subscriptionPricePoint"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[winBackOffers]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "offerId",
+            "duration",
+            "offerMode",
+            "periodCount",
+            "customerEligibilityPaidSubscriptionDurationInMonths",
+            "customerEligibilityTimeSinceLastSubscribedInMonths",
+            "customerEligibilityWaitBetweenOffersInMonths",
+            "startDate",
+            "endDate",
+            "priority",
+            "promotionIntent",
+            "targetSubscriptionPlanType",
+            "prices"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "prices"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[prices]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "WinBackOfferResponse",
+      "typeId": "data:app_store_connect_api:WinBackOfferResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Read details about a specific win-back offer.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500       \n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"winBackOffers\",\n    \"id\": \"10778326500\",\n    \"attributes\": {\n      \"referenceName\": \"6 Months for 3 A\",\n      \"offerId\": \"6Monthfor3_a\",\n      \"duration\": \"SIX_MONTHS\",\n      \"offerMode\": \"PAY_UP_FRONT\",\n      \"periodCount\": 1,\n      \"customerEligibilityPaidSubscriptionDurationInMonths\": 6,\n      \"customerEligibilityTimeSinceLastSubscribedInMonths\": {\n        \"minimum\": 2,\n        \"maximum\": 24\n      },\n      \"customerEligibilityWaitBetweenOffersInMonths\": 2,\n      \"startDate\": \"2024-07-01\",\n      \"endDate\": \"2024-07-31\",\n      \"priority\": \"HIGH\",\n      \"promotionIntent\": \"NOT_PROMOTED\"\n    },\n    \"relationships\": {\n      \"promotion\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/relationships/promotion\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/promotion\"\n        }\n      },\n      \"prices\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/relationships/prices\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/prices\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500\"\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Creating-and-configuring-win-back-offers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-winBackOffers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-relationships-winBackOffers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_-relationships-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-winBackOffers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-winBackOffers-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-winBackOffers-_id_"
+      ]
+    }
+  ]
+}

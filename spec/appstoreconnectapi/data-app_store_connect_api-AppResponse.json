@@ -1,0 +1,146 @@
+{
+  "id": "data:app_store_connect_api:AppResponse",
+  "title": "AppResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppResponse",
+  "slug": "appstoreconnectapi/appresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that read or modify a single app in your team.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "App",
+      "typeId": "data:app_store_connect_api:App",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AndroidToIosAppMappingDetail",
+            "AppClip",
+            "AppCustomProductPage",
+            "AppEncryptionDeclaration",
+            "AppEvent",
+            "AppInfo",
+            "AppStoreVersionExperimentV2",
+            "AppStoreVersion",
+            "BetaAppLocalization",
+            "BetaAppReviewDetail",
+            "BetaGroup",
+            "BetaLicenseAgreement",
+            "BuildIcon",
+            "Build",
+            "CiProduct",
+            "EndUserLicenseAgreement",
+            "GameCenterDetail",
+            "GameCenterEnabledVersion",
+            "InAppPurchase",
+            "PrereleaseVersion",
+            "PromotedPurchase",
+            "ReviewSubmission",
+            "SubscriptionGracePeriod",
+            "SubscriptionGroup"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appEncryptionDeclarations-_id_-app"
+      ]
+    },
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/App",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppBetaTestersLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointV3",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointV3Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointsV3Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPriceScheduleCreateRequest"
+      ]
+    }
+  ]
+}

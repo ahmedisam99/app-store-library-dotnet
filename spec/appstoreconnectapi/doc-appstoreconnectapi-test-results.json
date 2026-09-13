@@ -1,0 +1,118 @@
+{
+  "id": "doc:appstoreconnectapi/test-results",
+  "title": "Test Results",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/test-results",
+  "slug": "appstoreconnectapi/test-results",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read test results for test actions Xcode Cloud performs.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciTestResult` resource represents the test results that Xcode Cloud makes available if you configure a workflow to include a test action. Use this resource to access:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The name of the test class",
+          "refs": []
+        },
+        {
+          "text": "Test file information",
+          "refs": []
+        },
+        {
+          "text": "The name and operating system version of the simulated device that Xcode Cloud used to perform the tests",
+          "refs": []
+        },
+        {
+          "text": "The time it took to run the tests",
+          "refs": []
+        },
+        {
+          "text": "Test status information",
+          "refs": []
+        },
+        {
+          "text": "A unique identifier for the tests Xcode Cloud ran",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Test Results",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciTestResults-_id_"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestResult",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestResultResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Build Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-runs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-actions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/issues"
+      ]
+    }
+  ]
+}

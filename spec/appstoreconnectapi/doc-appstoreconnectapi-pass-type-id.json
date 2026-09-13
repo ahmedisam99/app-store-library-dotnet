@@ -1,0 +1,94 @@
+{
+  "id": "doc:appstoreconnectapi/pass-type-id",
+  "title": "Pass type Ids",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/pass-type-id",
+  "slug": "appstoreconnectapi/pass-type-id",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create, download, and revoke pass type ids for app development and distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `passTypeId` resource represents a pass type certificates unique identifier that you can register, modify, and delete. You need a pass type ID before you can create a pass type certificate with the `certificates` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing pass type Ids",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates-_id_-passTypeId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates-_id_-relationships-passTypeId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-passTypeIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-passTypeIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-passTypeIds-_id_-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-passTypeIds-_id_-relationships-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-passTypeIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-passTypeIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-passTypeIds-_id_"
+      ]
+    },
+    {
+      "title": "Object and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificatePassTypeIdLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeIdCertificatesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeIdCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeIdResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeIdUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeIdsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids"
+      ]
+    }
+  ]
+}

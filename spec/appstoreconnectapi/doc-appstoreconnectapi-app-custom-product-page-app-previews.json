@@ -1,0 +1,103 @@
+{
+  "id": "doc:appstoreconnectapi/app-custom-product-page-app-previews",
+  "title": "App Custom Product Page App Previews",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-custom-product-page-app-previews",
+  "slug": "appstoreconnectapi/app-custom-product-page-app-previews",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Upload and download app previews for an app locale and display target.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An `appPreviews` resource represents a single app preview for an app locale and display target. Use this resource to:",
+          "refs": []
+        },
+        {
+          "text": "To upload app previews, begin by using `POST-v1-appPreviewSets` endpoint for the locale and display target. For more information, see `https://developer.apple.com/help/app-store-connect/reference/app-preview-specifications`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPreviewSets",
+            "https://developer.apple.com/help/app-store-connect/reference/app-preview-specifications"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Upload new app previews to App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "Download existing app previews.",
+          "refs": []
+        },
+        {
+          "text": "Set a custom timestamp for the preview’s poster frame.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPreviewSets-_id_-appPreviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPreviews-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPreviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appPreviews-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appPreviews-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreview",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UploadOperation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Custom Product Page App Previews",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-custom-product-page-app-preview-sets"
+      ]
+    }
+  ]
+}

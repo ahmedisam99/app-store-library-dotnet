@@ -1,0 +1,128 @@
+{
+  "id": "data:app_store_connect_api:BuildUploadFileCreateRequest.Data.Attributes",
+  "title": "BuildUploadFileCreateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildUploadFileCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/builduploadfilecreaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "4.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that you update for a build upload file resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildUploadFileCreateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "assetType",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ASSET",
+            "ASSET_DESCRIPTION",
+            "ASSET_SPI"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileName",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileSize",
+      "type": "int64",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "minimum",
+          "value": "1",
+          "values": null
+        },
+        {
+          "kind": "maximum",
+          "value": "9007199254740991",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "uti",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "com.apple.binary-property-list",
+            "com.apple.ipa",
+            "com.apple.pkg",
+            "com.apple.xml-property-list",
+            "com.pkware.zip-archive"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

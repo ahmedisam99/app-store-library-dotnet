@@ -1,0 +1,81 @@
+{
+  "id": "data:app_store_connect_api:AppClipDomainStatusResponse",
+  "title": "AppClipDomainStatusResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipDomainStatusResponse",
+  "slug": "appstoreconnectapi/appclipdomainstatusresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing the validation status of associated domains configured for an App Clip.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipDomainStatusResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppClipDomainStatus",
+      "typeId": "data:app_store_connect_api:AppClipDomainStatus",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleFileSize",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleFileSizesResponse"
+      ]
+    }
+  ]
+}

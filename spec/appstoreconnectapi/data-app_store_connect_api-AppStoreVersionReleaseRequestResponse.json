@@ -1,0 +1,77 @@
+{
+  "id": "data:app_store_connect_api:AppStoreVersionReleaseRequestResponse",
+  "title": "AppStoreVersionReleaseRequestResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequestResponse",
+  "slug": "appstoreconnectapi/appstoreversionreleaserequestresponse",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single manual release request for an App Store version.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppStoreVersionReleaseRequestResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppStoreVersionReleaseRequest",
+      "typeId": "data:app_store_connect_api:AppStoreVersionReleaseRequest",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequestCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequest"
+      ]
+    }
+  ]
+}

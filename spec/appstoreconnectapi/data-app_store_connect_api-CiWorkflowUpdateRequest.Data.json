@@ -1,0 +1,115 @@
+{
+  "id": "data:app_store_connect_api:CiWorkflowUpdateRequest.Data",
+  "title": "CiWorkflowUpdateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/ciworkflowupdaterequest/data-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data element of the request you use to update an Xcode Cloud workflow.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiWorkflowUpdateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "CiWorkflowUpdateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:CiWorkflowUpdateRequest.Data.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The attributes that describe the request that updates a Workflows resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "CiWorkflowUpdateRequest.Data.Relationships",
+      "typeId": "data:app_store_connect_api:CiWorkflowUpdateRequest.Data.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The types and IDs of the related data to update.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ciWorkflows"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest/Data-data.dictionary/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

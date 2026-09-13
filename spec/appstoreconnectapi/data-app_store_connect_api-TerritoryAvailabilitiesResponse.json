@@ -1,0 +1,116 @@
+{
+  "id": "data:app_store_connect_api:TerritoryAvailabilitiesResponse",
+  "title": "TerritoryAvailabilitiesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/TerritoryAvailabilitiesResponse",
+  "slug": "appstoreconnectapi/territoryavailabilitiesresponse",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list an app’s availability across territories.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object TerritoryAvailabilitiesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[TerritoryAvailability]",
+      "typeId": "data:app_store_connect_api:TerritoryAvailability",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[Territory]",
+      "typeId": "data:app_store_connect_api:Territory",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAppAvailabilityV2LinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrder",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrderCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrderResponse"
+      ]
+    }
+  ]
+}

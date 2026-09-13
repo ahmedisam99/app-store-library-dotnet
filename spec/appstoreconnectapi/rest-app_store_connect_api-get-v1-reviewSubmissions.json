@@ -1,0 +1,466 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-reviewSubmissions",
+  "title": "List Review Submissions for an App",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions",
+  "slug": "appstoreconnectapi/get-v1-reviewsubmissions",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List recent and current review submissions for a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/reviewSubmissions",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "fields[actors]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "actorType",
+            "userFirstName",
+            "userLastName",
+            "userEmail",
+            "apiKeyId"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[reviewSubmissionItems]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "state",
+            "appStoreVersion",
+            "appCustomProductPageVersion",
+            "appStoreVersionExperiment",
+            "appStoreVersionExperimentV2",
+            "appEvent",
+            "backgroundAssetVersion",
+            "gameCenterAchievementVersion",
+            "gameCenterActivityVersion",
+            "gameCenterChallengeVersion",
+            "gameCenterLeaderboardSetVersion",
+            "gameCenterLeaderboardVersion",
+            "inAppPurchaseVersion",
+            "subscriptionVersion",
+            "subscriptionGroupVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[reviewSubmissions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "submittedDate",
+            "state",
+            "app",
+            "items",
+            "appStoreVersionForReview",
+            "submittedByActor",
+            "lastUpdatedByActor"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[app]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[platform]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "IOS",
+            "MAC_OS",
+            "TV_OS",
+            "VISION_OS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[state]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "READY_FOR_REVIEW",
+            "WAITING_FOR_REVIEW",
+            "IN_REVIEW",
+            "UNRESOLVED_ISSUES",
+            "CANCELING",
+            "COMPLETING",
+            "COMPLETE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "app",
+            "items",
+            "appStoreVersionForReview",
+            "submittedByActor",
+            "lastUpdatedByActor"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[items]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "ReviewSubmissionsResponse",
+      "typeId": "data:app_store_connect_api:ReviewSubmissionsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-relationships-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-reviewSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+      ]
+    }
+  ]
+}

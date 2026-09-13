@@ -1,0 +1,146 @@
+{
+  "id": "data:app_store_connect_api:BetaAppLocalization",
+  "title": "BetaAppLocalization",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaAppLocalization",
+  "slug": "appstoreconnectapi/betaapplocalization",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The localized feedback URL, marketing URL, and privacy policy URL shown to TestFlight testers for a specific language.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BetaAppLocalization",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "BetaAppLocalization.Attributes",
+      "typeId": "data:app_store_connect_api:BetaAppLocalization.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "BetaAppLocalization.Relationships",
+      "typeId": "data:app_store_connect_api:BetaAppLocalization.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links to related data and included resource types and IDs.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "betaAppLocalizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalization/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalization/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationAppLinkageResponse"
+      ]
+    }
+  ]
+}

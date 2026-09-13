@@ -1,0 +1,234 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-builds-{}-diagnosticSignatures",
+  "title": "List all diagnostic signatures for a build",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+  "slug": "appstoreconnectapi/get-v1-builds-_id_-diagnosticsignatures",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List the aggregate backtrace signatures captured for a specific build.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/builds/{id}/diagnosticSignatures",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource ID that uniquely identifies the build to return metrics data for. Obtain the build resource ID from the `GET-v1-builds` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[diagnosticSignatures]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "diagnosticType",
+            "signature",
+            "weight",
+            "insight",
+            "logs"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for diagnostic signatures.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[diagnosticType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DISK_WRITES",
+            "HANGS",
+            "LAUNCHES"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The diagnostic types by which to filter.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "DiagnosticSignaturesResponse",
+      "typeId": "data:app_store_connect_api:DiagnosticSignaturesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example below requests the top two weighted disk write diagnostic signatures. The example response returns two signatures that are responsible for 85% and 7% of disk writes.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/builds/1a254ec1-8e3d-48e7-bbd6-6b9a30072b29/diagnosticSignatures?filter[diagnosticType]=DISK_WRITES&limit=2\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"diagnosticSignatures\",\n      \"id\": \"35fd8da9ea3dd8d2a64cb3d458fa59b2b41e66115f7ca5fa34df25a9419c5216dd\",\n      \"attributes\": {\n        \"diagnosticType\": \"DISK_WRITES\",\n        \"signature\": \"ExampleApp: -[DatabaseConnection executeSQL:enumerateRowsWithBlock:] + 23\",\n        \"weight\": 0.85\n      },\n      \"relationships\": {\n        \"logs\": {\n          \"links\": {\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/diagnosticSignatures/35fd8da9ea3dd8d2a64cb3d458fa59b2b41e66115f7ca5fa34df25a9419c5216dd/logs\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/diagnosticSignatures/35fd8da9ea3dd8d2a64cb3d458fa59b2b41e66115f7ca5fa34df25a9419c5216dd\"\n      }\n    },\n    {\n      \"type\": \"diagnosticSignatures\",\n      \"id\": \"351c486f96912d7520ef0ceea8efe19aca98f41e3b111a77e64f6923d6eba0e2c7\",\n      \"attributes\": {\n        \"diagnosticType\": \"DISK_WRITES\",\n        \"signature\": \"ExampleApp: -[TemporaryFile appendData:] + 100\",\n        \"weight\": 0.07\n      },\n      \"relationships\": {\n        \"logs\": {\n          \"links\": {\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/diagnosticSignatures/351c486f96912d7520ef0ceea8efe19aca98f41e3b111a77e64f6923d6eba0e2c7/logs\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/diagnosticSignatures/351c486f96912d7520ef0ceea8efe19aca98f41e3b111a77e64f6923d6eba0e2c7\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/builds/1a254ec1-8e3d-48e7-bbd6-6b9a30072b29/diagnosticSignatures?limit=3&filter%5BdiagnosticType%5D=DISK_WRITES\",\n    \"next\": \"https://api.appstoreconnect.apple.com/v1/builds/1a254ec1-8e3d-48e7-bbd6-6b9a30072b29/diagnosticSignatures?cursor=Aw.AOYOFlQ&limit=3&filter%5BdiagnosticType%5D=DISK_WRITES\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 4,\n      \"limit\": 2\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Metrics and Diagnostic Logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/retrieve-power-and-performance-metrics-and-log-insights",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs"
+      ]
+    }
+  ]
+}

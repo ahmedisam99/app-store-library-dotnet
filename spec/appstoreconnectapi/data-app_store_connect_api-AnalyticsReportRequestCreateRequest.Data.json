@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:AnalyticsReportRequestCreateRequest.Data",
+  "title": "AnalyticsReportRequestCreateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AnalyticsReportRequestCreateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/analyticsreportrequestcreaterequest/data-data.dictionary",
+  "introducedAt": "3.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data object within an analytics report request create request containing the resource type, attributes, and relationships for the create operation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AnalyticsReportRequestCreateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "AnalyticsReportRequestCreateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:AnalyticsReportRequestCreateRequest.Data.Attributes",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "AnalyticsReportRequestCreateRequest.Data.Relationships",
+      "typeId": "data:app_store_connect_api:AnalyticsReportRequestCreateRequest.Data.Relationships",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "analyticsReportRequests"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

@@ -1,0 +1,129 @@
+{
+  "id": "data:app_store_connect_api:ScmRepository.Relationships",
+  "title": "ScmRepository.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ScmRepository/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/scmrepository/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships of the Repositories resource you included in the request and those on which you can operate.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ScmRepository.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "defaultBranch",
+      "type": "ScmRepository.Relationships.DefaultBranch",
+      "typeId": "data:app_store_connect_api:ScmRepository.Relationships.DefaultBranch",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The Git repository’s default branch.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "gitReferences",
+      "type": "ScmRepository.Relationships.GitReferences",
+      "typeId": "data:app_store_connect_api:ScmRepository.Relationships.GitReferences",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "pullRequests",
+      "type": "ScmRepository.Relationships.PullRequests",
+      "typeId": "data:app_store_connect_api:ScmRepository.Relationships.PullRequests",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "scmProvider",
+      "type": "ScmRepository.Relationships.ScmProvider",
+      "typeId": "data:app_store_connect_api:ScmRepository.Relationships.ScmProvider",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Providers resource.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository/Relationships-data.dictionary/DefaultBranch-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository/Relationships-data.dictionary/ScmProvider-data.dictionary"
+      ]
+    },
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository/Relationships-data.dictionary/GitReferences-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository/Relationships-data.dictionary/PullRequests-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

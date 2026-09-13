@@ -1,0 +1,105 @@
+{
+  "id": "data:app_store_connect_api:ReviewSubmission.Attributes",
+  "title": "ReviewSubmission.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ReviewSubmission/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/reviewsubmission/attributes-data.dictionary",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a review submission resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ReviewSubmission.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "platform",
+      "type": "Platform",
+      "typeId": "data:app_store_connect_api:Platform",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "READY_FOR_REVIEW",
+            "WAITING_FOR_REVIEW",
+            "IN_REVIEW",
+            "UNRESOLVED_ISSUES",
+            "CANCELING",
+            "COMPLETING",
+            "COMPLETE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "submittedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmission/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

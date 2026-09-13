@@ -1,0 +1,98 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseSubmissionResponse",
+  "title": "InAppPurchaseSubmissionResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseSubmissionResponse",
+  "slug": "appstoreconnectapi/inapppurchasesubmissionresponse",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use the review submissions workflow instead.",
+      "refs": []
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A response confirming the submission of an in-app purchase for App Store review.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseSubmissionResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "InAppPurchaseSubmission",
+      "typeId": "data:app_store_connect_api:InAppPurchaseSubmission",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[InAppPurchaseV2]",
+      "typeId": "data:app_store_connect_api:InAppPurchaseV2",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseSubmissionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseSubmission"
+      ]
+    }
+  ]
+}

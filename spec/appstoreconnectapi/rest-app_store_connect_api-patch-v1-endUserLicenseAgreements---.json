@@ -1,0 +1,206 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-endUserLicenseAgreements-{}",
+  "title": "Modify an end user license agreement",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-endUserLicenseAgreements-_id_",
+  "slug": "appstoreconnectapi/patch-v1-enduserlicenseagreements-_id_",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update the text or territories for your custom end user license agreement.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/endUserLicenseAgreements/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "EndUserLicenseAgreementUpdateRequest",
+    "typeId": "data:app_store_connect_api:EndUserLicenseAgreementUpdateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "EndUserLicenseAgreementResponse",
+      "typeId": "data:app_store_connect_api:EndUserLicenseAgreementResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to change the license agreement text or associate the agreement with different App Store territories.",
+          "refs": []
+        },
+        {
+          "text": "In the following example the request contains a blank value for the `agreementText` attribute. Replace that attribute value with your actual agreement text.",
+          "refs": []
+        },
+        {
+          "text": "If you change the territories relationship, the new territories replace the original territories.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Change the Text of a License Agreement",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH /v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a\n\n{\n  \"data\": {\n    \"type\": \"endUserLicenseAgreements\",\n    \"attributes\": {\n      \"agreementText\": \"...\"\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"endUserLicenseAgreements\",\n    \"id\" : \"b25d1669-d6b1-4e9b-8679-02863557222a\",\n    \"attributes\" : {\n      \"agreementText\" : \"...\"\n    },\n    \"relationships\" : {\n      \"app\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/relationships/app\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/app\"\n        }\n      },\n      \"territories\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/relationships/territories\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/territories\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Replace the Territories of a License Agreement with Japan and Canada",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a\n\n{\n  \"data\": {\n    \"type\": \"endUserLicenseAgreements\",\n    \"relationships\": {\n      \"territories\": {\n        \"data\": [\n          {\n            \"type\": \"territories\",\n            \"id\": \"JPN\"\n          },\n          {\n            \"type\": \"territories\",\n            \"id\": \"CAN\"\n          }\n        ]\n      }\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"endUserLicenseAgreements\",\n    \"id\" : \"b25d1669-d6b1-4e9b-8679-02863557222a\",\n    \"attributes\" : {\n      \"agreementText\" : \"...\"\n    },\n    \"relationships\" : {\n      \"app\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/relationships/app\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/app\"\n        }\n      },\n      \"territories\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/relationships/territories\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a/territories\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements/b25d1669-d6b1-4e9b-8679-02863557222a\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/endUserLicenseAgreements\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, Modifying, and Deleting an EULA",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-endUserLicenseAgreements",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-endUserLicenseAgreements-_id_"
+      ]
+    }
+  ]
+}

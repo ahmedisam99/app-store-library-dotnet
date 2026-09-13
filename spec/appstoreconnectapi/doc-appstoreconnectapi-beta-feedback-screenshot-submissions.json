@@ -1,0 +1,114 @@
+{
+  "id": "doc:appstoreconnectapi/beta-feedback-screenshot-submissions",
+  "title": "Beta feedback screenshot submissions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-feedback-screenshot-submissions",
+  "slug": "appstoreconnectapi/beta-feedback-screenshot-submissions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get Testflight feedback screenshots from beta testers for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this API to read details about screenshots submitted by testers while testing your beta app builds. There are many filters available for these endpoints to help you identify patterns and isolate issues.",
+          "refs": []
+        },
+        {
+          "text": "You can get new beta feedback screenshot submissions in two ways:",
+          "refs": []
+        },
+        {
+          "text": "To manage beta feedback screenshot submissions, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "Both Team and Individual keys can use these endpoints with the correct role.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Make an active `GET` request to look up new beta feedback screenshot submissions.",
+          "refs": []
+        },
+        {
+          "text": "Set up a webhook to get a notification when there is a new beta feedback screenshot submission. Then look up the corresponding feedback. For more information about these notifications, see `webhook-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications"
+          ]
+        },
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP MANAGER`",
+          "refs": []
+        },
+        {
+          "text": "`DEVELOPER`",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading and deleting beta feedback screenshot submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-betaFeedbackScreenshotSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-betaFeedbackScreenshotSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaFeedbackScreenshotSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaFeedbackScreenshotSubmissions-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackScreenshotSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackScreenshotSubmissionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackScreenshotSubmissionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackScreenshotImage"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Beta Feedback",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-feedback-crash-submissions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "data:app_store_connect_api:MarketplaceWebhookUpdateRequest.Data.Attributes",
+  "title": "MarketplaceWebhookUpdateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/MarketplaceWebhookUpdateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/marketplacewebhookupdaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "3.3",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a marketplace webhook resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object MarketplaceWebhookUpdateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "endpointUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "secret",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An arbitrary string. Alternative marketplaces use this secret string to verify the incoming requests from Apple about changes to apps. For more information about webhook-style validation, see `https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries#about-validating-webhook-deliveries`.\n\nFor more information about implementing Hash-based Message Authentication Code (HMAC) security in your notifications webhook, see `processing-alternative-marketplace-notifications`.",
+        "refs": [
+          "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries#about-validating-webhook-deliveries",
+          "doc://com.apple.documentation/documentation/marketplacekit/processing-alternative-marketplace-notifications"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

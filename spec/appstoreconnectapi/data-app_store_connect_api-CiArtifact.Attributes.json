@@ -1,0 +1,109 @@
+{
+  "id": "data:app_store_connect_api:CiArtifact.Attributes",
+  "title": "CiArtifact.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiArtifact/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/ciartifact/attributes-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe the output of an artifact resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiArtifact.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "downloadUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The URL you use to download the Xcode Cloud build artifact.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The artifact’s filename as a string.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileSize",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An integer value that represents the artifact’s file size.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ARCHIVE",
+            "ARCHIVE_EXPORT",
+            "LOG_BUNDLE",
+            "RESULT_BUNDLE",
+            "TEST_PRODUCTS",
+            "XCODEBUILD_PRODUCTS",
+            "STAPLED_NOTARIZED_ARCHIVE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes the type of the artifact.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

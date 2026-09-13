@@ -1,0 +1,86 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseOfferCodeCreateRequest.Data.Attributes",
+  "title": "InAppPurchaseOfferCodeCreateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseOfferCodeCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/inapppurchaseoffercodecreaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "4.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create an in-app purchase offer code create request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseOfferCodeCreateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "customerEligibilities",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NON_SPENDER",
+            "ACTIVE_SPENDER",
+            "CHURNED_SPENDER"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "name",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseOfferCodeCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

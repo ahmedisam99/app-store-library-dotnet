@@ -1,0 +1,181 @@
+{
+  "id": "data:app_store_connect_api:AlternativeDistributionPackageVersion",
+  "title": "AlternativeDistributionPackageVersion",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion",
+  "slug": "appstoreconnectapi/alternativedistributionpackageversion",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A versioned snapshot of an alternative distribution package, containing its variants and delta updates.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AlternativeDistributionPackageVersion",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "AlternativeDistributionPackageVersion.Attributes",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionPackageVersion.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the alternative distribution package version.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "AlternativeDistributionPackageVersion.Relationships",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionPackageVersion.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "alternativeDistributionPackageVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " Use the `links` fields to navigate the resource object graph while making your requests. For example, from the alternative distribution package version object above, you can also reach its package metadata, deltas, and variants.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information about the responses that includes alternative distribution package version objects, see `AlternativeDistributionPackageVersionResponse` or `AlternativeDistributionPackageVersionsResponse`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionResponse",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsResponse"
+          ]
+        },
+        {
+          "text": "> **Tip**\n>\n>  Use the `links` fields to navigate the resource object graph while making your requests. For example, from the alternative distribution package version object above, you can also reach its package metadata, deltas, and variants.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDelta",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltaResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltasResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariant",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionDeltasLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionVariantsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsLinkagesResponse"
+      ]
+    }
+  ]
+}

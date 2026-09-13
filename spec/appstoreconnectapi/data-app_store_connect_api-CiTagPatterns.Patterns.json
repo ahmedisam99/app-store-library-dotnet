@@ -1,0 +1,65 @@
+{
+  "id": "data:app_store_connect_api:CiTagPatterns.Patterns",
+  "title": "CiTagPatterns.Patterns",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiTagPatterns/Patterns-data.dictionary",
+  "slug": "appstoreconnectapi/citagpatterns/patterns-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A case-sensitive pattern Xcode Cloud uses to determine if a change meets tag names you configure for a workflow’s start condition.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiTagPatterns.Patterns",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "isPrefix",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the pattern matches the start of a tag name, or the exact tag name.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "pattern",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A case-sensitive string. If the string is a prefix pattern, Xcode Cloud starts a build when the changed tag name starts with this string. Otherwise, Xcode Cloud starts a build when the changed tag name exactly matches this string.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:GameCenterLeaderboardImageResponse",
+  "title": "GameCenterLeaderboardImageResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageResponse",
+  "slug": "appstoreconnectapi/gamecenterleaderboardimageresponse",
+  "introducedAt": "3.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify a single Game Center leaderboard image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterLeaderboardImageResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterLeaderboardImage",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardImage",
+      "required": true,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[GameCenterLeaderboardLocalization]",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardLocalization",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardImageUpdateRequest"
+      ]
+    }
+  ]
+}

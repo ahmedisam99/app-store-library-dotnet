@@ -1,0 +1,116 @@
+{
+  "id": "doc:appstoreconnectapi/profiles",
+  "title": "Profiles",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/profiles",
+  "slug": "appstoreconnectapi/profiles",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create, delete, and download provisioning profiles that enable app installations for development and distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `profiles` resource represents the provisioning profiles that allow you to install apps on your iOS devices or Mac. You can create and delete provisioning profiles, and download them to sign your code.",
+          "refs": []
+        },
+        {
+          "text": "Provisioning profiles include signing certificates, device identifiers, and a bundle ID.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating and Deleting Provisioning Profiles",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-profiles-_id_"
+      ]
+    },
+    {
+      "title": "Getting Provisioning Profile Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_"
+      ]
+    },
+    {
+      "title": "Getting Related Data",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-bundleId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-relationships-bundleId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-relationships-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-profiles-_id_-relationships-devices"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Profile",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfileCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfileResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfilesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfilesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfileBundleIdLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfileCertificatesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ProfileDevicesLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

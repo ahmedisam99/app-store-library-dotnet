@@ -1,0 +1,91 @@
+{
+  "id": "data:app_store_connect_api:PassTypeId.Relationships.Certificates",
+  "title": "PassTypeId.Relationships.Certificates",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PassTypeId/Relationships-data.dictionary/Certificates-data.dictionary",
+  "slug": "appstoreconnectapi/passtypeid/relationships-data.dictionary/certificates-data.dictionary",
+  "introducedAt": "4.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The certificates relationship for a pass type identifier, linking to the signing certificates that can sign passes.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PassTypeId.Relationships.Certificates",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[PassTypeId.Relationships.Certificates.Data]",
+      "typeId": "data:app_store_connect_api:PassTypeId.Relationships.Certificates.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "RelationshipLinks",
+      "typeId": "data:app_store_connect_api:RelationshipLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PassTypeId/Relationships-data.dictionary/Certificates-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_connect_api:CiIssue.Attributes",
+  "title": "CiIssue.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiIssue/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/ciissue/attributes-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe an Issues resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiIssue.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "category",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "​A string representing the issue’s category; for example, the name of the build phase where the issue occurred.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileSource",
+      "type": "FileLocation",
+      "typeId": "data:app_store_connect_api:FileLocation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The file and line number where Xcode Cloud encountered an issue.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "issueType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ANALYZER_WARNING",
+            "ERROR",
+            "TEST_FAILURE",
+            "WARNING"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates what kind of issue Xcode Cloud encountered.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "message",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Information about the issue that occurred.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

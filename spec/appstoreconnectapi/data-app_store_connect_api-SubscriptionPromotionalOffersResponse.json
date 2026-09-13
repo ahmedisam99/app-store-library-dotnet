@@ -1,0 +1,122 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionPromotionalOffersResponse",
+  "title": "SubscriptionPromotionalOffersResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionPromotionalOffersResponse",
+  "slug": "appstoreconnectapi/subscriptionpromotionaloffersresponse",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list promotional offers for a subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionPromotionalOffersResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[SubscriptionPromotionalOffer]",
+      "typeId": "data:app_store_connect_api:SubscriptionPromotionalOffer",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "SubscriptionPromotionalOfferPrice",
+            "Subscription"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOffer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferPrice",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferPriceInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferPricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPromotionalOfferUpdateRequest"
+      ]
+    }
+  ]
+}

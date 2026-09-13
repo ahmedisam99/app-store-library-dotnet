@@ -1,0 +1,258 @@
+{
+  "id": "data:app_store_connect_api:Build.Attributes",
+  "title": "Build.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/Build/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/build/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a Builds resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object Build.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "expired",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates if the build has expired. An expired build is unavailable for testing.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "iconAssetToken",
+      "type": "ImageAsset",
+      "typeId": "data:app_store_connect_api:ImageAsset",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The icon of the uploaded build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "minOsVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The minimum operating system version needed to test a build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "processingState",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "PROCESSING",
+            "FAILED",
+            "INVALID",
+            "VALID"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The processing state of the build indicating that it is not yet available for testing.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The version number of the uploaded build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "usesNonExemptEncryption",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build uses non-exempt encryption.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "uploadedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time the build was uploaded to App Store Connect.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expirationDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time the build  will auto-expire and no longer be available for testing.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildAudienceType",
+      "type": "BuildAudienceType",
+      "typeId": "data:app_store_connect_api:BuildAudienceType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "computedMinMacOsVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lsMinimumSystemVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "computedMinVisionOsVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAudienceType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/builds"
+      ]
+    },
+    {
+      "title": "Attributes and Relationships",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

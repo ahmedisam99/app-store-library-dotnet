@@ -1,0 +1,126 @@
+{
+  "id": "data:app_store_connect_api:GameCenterDetailResponse",
+  "title": "GameCenterDetailResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterDetailResponse",
+  "slug": "appstoreconnectapi/gamecenterdetailresponse",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that read or modify the Game Center details for an app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterDetailResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterDetail",
+      "typeId": "data:app_store_connect_api:GameCenterDetail",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppStoreVersion",
+            "App",
+            "GameCenterAchievementRelease",
+            "GameCenterAchievement",
+            "GameCenterActivity",
+            "GameCenterActivityVersionRelease",
+            "GameCenterAppVersion",
+            "GameCenterChallengeVersionRelease",
+            "GameCenterChallenge",
+            "GameCenterGroup",
+            "GameCenterLeaderboardRelease",
+            "GameCenterLeaderboardSetRelease",
+            "GameCenterLeaderboardSet",
+            "GameCenterLeaderboard"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterAchievementsV2LinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterAchievementsV2LinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardSetsV2LinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardSetsV2LinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardsV2LinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardsV2LinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterAchievementsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterAchievementsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardSetsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardSetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailGameCenterLeaderboardsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetailChallengesMinimumPlatformVersionsLinkagesRequest"
+      ]
+    }
+  ]
+}

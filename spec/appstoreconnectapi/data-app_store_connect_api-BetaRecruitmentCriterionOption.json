@@ -1,0 +1,134 @@
+{
+  "id": "data:app_store_connect_api:BetaRecruitmentCriterionOption",
+  "title": "BetaRecruitmentCriterionOption",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOption",
+  "slug": "appstoreconnectapi/betarecruitmentcriterionoption",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A specific device family and OS version combination available as a value for a beta recruitment criterion.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BetaRecruitmentCriterionOption",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "BetaRecruitmentCriterionOption.Attributes",
+      "typeId": "data:app_store_connect_api:BetaRecruitmentCriterionOption.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "betaRecruitmentCriterionOptions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOption/Attributes-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheck",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheckResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaPublicLinkUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamilyOsVersionFilter",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOptionsResponse"
+      ]
+    }
+  ]
+}

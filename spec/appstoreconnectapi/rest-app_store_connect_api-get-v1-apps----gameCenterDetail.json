@@ -1,0 +1,1020 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}-gameCenterDetail",
+  "title": "Read the state of game center for an app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-gameCenterDetail",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_-gamecenterdetail",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get Game Center detail information for an app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}/gameCenterDetail",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAchievementReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "live",
+            "gameCenterDetail",
+            "gameCenterAchievement"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center achievement release resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAchievements]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "points",
+            "showBeforeEarned",
+            "repeatable",
+            "archived",
+            "activityProperties",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupAchievement",
+            "localizations",
+            "releases",
+            "activity",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center achievement resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAppVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "enabled",
+            "compatibilityVersions",
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center app version resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "arcadeEnabled",
+            "challengeEnabled",
+            "app",
+            "gameCenterAppVersions",
+            "gameCenterGroup",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges",
+            "defaultLeaderboard",
+            "defaultLeaderboardV2",
+            "defaultGroupLeaderboard",
+            "defaultGroupLeaderboardV2",
+            "achievementReleases",
+            "activityReleases",
+            "challengeReleases",
+            "leaderboardReleases",
+            "leaderboardSetReleases",
+            "challengesMinimumPlatformVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center detail resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterGroups]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "gameCenterDetails",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center group resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "live",
+            "gameCenterDetail",
+            "gameCenterLeaderboard"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center leaderboard release resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardSetReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "live",
+            "gameCenterDetail",
+            "gameCenterLeaderboardSet"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center leaderboard set release resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardSets]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupLeaderboardSet",
+            "localizations",
+            "gameCenterLeaderboards",
+            "releases",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center leaderboard set resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboards]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "defaultFormatter",
+            "referenceName",
+            "vendorIdentifier",
+            "submissionType",
+            "scoreSortType",
+            "scoreRangeStart",
+            "scoreRangeEnd",
+            "recurrenceStartDate",
+            "recurrenceDuration",
+            "recurrenceRule",
+            "archived",
+            "activityProperties",
+            "visibility",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupLeaderboard",
+            "gameCenterLeaderboardSets",
+            "localizations",
+            "releases",
+            "activity",
+            "challenge",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Game Center leaderboard resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "app",
+            "gameCenterAppVersions",
+            "gameCenterGroup",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges",
+            "defaultLeaderboard",
+            "defaultLeaderboardV2",
+            "defaultGroupLeaderboard",
+            "defaultGroupLeaderboardV2",
+            "achievementReleases",
+            "activityReleases",
+            "challengeReleases",
+            "leaderboardReleases",
+            "leaderboardSetReleases",
+            "challengesMinimumPlatformVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[achievementReleases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related achievement releases resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterAchievements]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related Game Center achievements resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterAppVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related Game Center app versions resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterLeaderboardSets]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related Game Center leaderboard sets resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterLeaderboards]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related Game Center leaderboards resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[leaderboardReleases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related leaderboard releases resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[leaderboardSetReleases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related leaderboard set releases resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterActivities]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "playStyle",
+            "minimumPlayersCount",
+            "maximumPlayersCount",
+            "supportsPartyCode",
+            "archived",
+            "properties",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "achievements",
+            "achievementsV2",
+            "leaderboards",
+            "leaderboardsV2",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterActivityVersionReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterChallengeVersionReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterChallenges]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "archived",
+            "challengeType",
+            "repeatable",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "versions",
+            "leaderboard",
+            "leaderboardV2"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[activityReleases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[challengeReleases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[challengesMinimumPlatformVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterAchievementsV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterActivities]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterChallenges]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterLeaderboardSetsV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterLeaderboardsV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterDetailResponse",
+      "typeId": "data:app_store_connect_api:GameCenterDetailResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Game Center detail information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-gameCenterDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-gameCenterEnabledVersions"
+      ]
+    }
+  ]
+}

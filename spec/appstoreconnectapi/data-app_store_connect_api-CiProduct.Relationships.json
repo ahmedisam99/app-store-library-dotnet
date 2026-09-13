@@ -1,0 +1,161 @@
+{
+  "id": "data:app_store_connect_api:CiProduct.Relationships",
+  "title": "CiProduct.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/ciproduct/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships of the Products resource you included in the request and those on which you can operate.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiProduct.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "app",
+      "type": "CiProduct.Relationships.App",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.App",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Apps resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "primaryRepositories",
+      "type": "CiProduct.Relationships.PrimaryRepositories",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.PrimaryRepositories",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related primary repository.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "CiProduct.Relationships.BundleId",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.BundleId",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related bundle ID.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "additionalRepositories",
+      "type": "CiProduct.Relationships.AdditionalRepositories",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.AdditionalRepositories",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildRuns",
+      "type": "CiProduct.Relationships.BuildRuns",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.BuildRuns",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "workflows",
+      "type": "CiProduct.Relationships.Workflows",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.Workflows",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/App-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/BundleId-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/PrimaryRepositories-data.dictionary"
+      ]
+    },
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/AdditionalRepositories-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/BuildRuns-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/Workflows-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

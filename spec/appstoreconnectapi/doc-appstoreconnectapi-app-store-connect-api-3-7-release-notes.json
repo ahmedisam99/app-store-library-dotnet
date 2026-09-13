@@ -1,0 +1,223 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-3-7-release-notes",
+  "title": "App Store Connect API 3.7 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-3-7-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 3.7 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Developers now need to provide a description for all beta localizations before submitting to beta app review for external testing with TestFlight. You can update `betaAppLocalizations` with `PATCH-v1-betaAppLocalizations-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-betaAppLocalizations-_id_"
+          ]
+        },
+        {
+          "text": "Added `WIN_BACK_ELIGIBILITY` report type to `GET-v1-salesReports`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-salesReports"
+          ]
+        },
+        {
+          "text": "Name is now a required field when using `POST-v1-appInfoLocalizations`. To see other attributes you can create or modify, see  `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appInfoLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalizationCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "Developers can now look up in-app purchase price point equalization using `GET-v1-inAppPurchasePricePoints-_id_-equalizations`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchasePricePoints-_id_-equalizations"
+          ]
+        },
+        {
+          "text": "The enum `UNIVERSAL` is now added to `BundleIdPlatform`. To learn more, see `https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution/#Set-the-bundle-ID`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdPlatform",
+            "https://developer.apple.com/documentation/xcode/preparing-your-app-for-distribution/#Set-the-bundle-ID"
+          ]
+        },
+        {
+          "text": "The enums `DEVELOPER_ID_APPLICATION_G2` and `DEVELOPER_ID_KEXT_G2` are now available when using `CertificateType`. To learn more, see `https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution` and `https://developer.apple.com/library/archive/technotes/tn2206/_index.html#//apple_ref/doc/uid/DTS40007919`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificateType",
+            "https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution",
+            "https://developer.apple.com/library/archive/technotes/tn2206/_index.html#//apple_ref/doc/uid/DTS40007919"
+          ]
+        },
+        {
+          "text": "You can now read age ratings for France by using `GET-v1-appInfos-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_"
+          ]
+        },
+        {
+          "text": "The `GET-v1-apps-_id_-alternativeDistributionKey` endpoint now shows multiple distribution keys when you have multiple configured.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-alternativeDistributionKey"
+          ]
+        },
+        {
+          "text": "There is a new required attribute `defaultFormatter` when you use `POST-v1-gameCenterLeaderboards`, which gives all your localizations the same formatter. To learn more, see `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboards",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The attribute `previewImage` on `Attributes-data.dictionary` is deprecated. Use `previewFrameImage` and `PreviewFrameImage` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreview/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewFrameImage"
+          ]
+        },
+        {
+          "text": "The attribute `assetDeliveryState` on `Attributes-data.dictionary` is deprecated. Use `videoDeliveryState` and `AppMediaVideoState` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreview/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaVideoState"
+          ]
+        },
+        {
+          "text": "The attribute `previewImage` on `Attributes-data.dictionary` is deprecated. Use `previewFrameImage` and `PreviewFrameImage` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClip/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewFrameImage"
+          ]
+        },
+        {
+          "text": "The attribute `assetDeliveryState` on `Attributes-data.dictionary` is deprecated. Use `videoDeliveryState` and `AppMediaVideoState` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClip/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaVideoState"
+          ]
+        },
+        {
+          "text": "The attribute `appStoreState` on `Attributes-data.dictionary` is deprecated. Use `state` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfo/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The attribute `appStoreState` on `Attributes-data.dictionary` is deprecated. Use `appVersionState` and `AppVersionState` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersion/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppVersionState"
+          ]
+        },
+        {
+          "text": "The relationship `groupLeaderboardSet` on `Relationships-data.dictionary` is deprecated.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSet/Relationships-data.dictionary"
+          ]
+        },
+        {
+          "text": "The relationship `groupAchievement` on `Relationships-data.dictionary` is deprecated.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAchievement/Relationships-data.dictionary"
+          ]
+        },
+        {
+          "text": "The relationship `groupLeaderboard` on `Relationships-data.dictionary` is deprecated.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboard/Relationships-data.dictionary"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `v1/appPreOrders` and `v1/appAvailabilities` resources are removed and replaced with `v2/appAvailabilities`. To learn more, see `app-availability`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-availability"
+          ]
+        },
+        {
+          "text": "`WATCH_SERIES_4` and `WATCH_SERIES_3` enums are removed from `PreviewType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewType"
+          ]
+        },
+        {
+          "text": "The `subscription` include for `GET-v1-subscriptionAvailabilities-_id_` is removed.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionAvailabilities-_id_"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

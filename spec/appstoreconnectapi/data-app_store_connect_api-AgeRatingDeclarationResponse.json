@@ -1,0 +1,84 @@
+{
+  "id": "data:app_store_connect_api:AgeRatingDeclarationResponse",
+  "title": "AgeRatingDeclarationResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AgeRatingDeclarationResponse",
+  "slug": "appstoreconnectapi/ageratingdeclarationresponse",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single age rating declaration with your app’s content descriptors.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AgeRatingDeclarationResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AgeRatingDeclaration",
+      "typeId": "data:app_store_connect_api:AgeRatingDeclaration",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data structure that represents the Age Rating Declarations resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links including the self-link and links to the related data.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclarationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoAgeRatingDeclarationLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoTerritoryAgeRatingsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BrazilAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/KidsAgeBand",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAgeRatingsResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_connect_api:GameCenterLeaderboardSetMemberLocalizationsResponse",
+  "title": "GameCenterLeaderboardSetMemberLocalizationsResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationsResponse",
+  "slug": "appstoreconnectapi/gamecenterleaderboardsetmemberlocalizationsresponse",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains multiple leaderboard localizations resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterLeaderboardSetMemberLocalizationsResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[GameCenterLeaderboardSetMemberLocalization]",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardSetMemberLocalization",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "GameCenterLeaderboardSet",
+            "GameCenterLeaderboard"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationGameCenterLeaderboardLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetMemberLocalizationGameCenterLeaderboardSetLinkageResponse"
+      ]
+    }
+  ]
+}

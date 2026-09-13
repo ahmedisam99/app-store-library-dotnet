@@ -1,0 +1,86 @@
+{
+  "id": "doc:appstoreconnectapi/teams",
+  "title": "Teams",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/teams",
+  "slug": "appstoreconnectapi/teams",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the teams that you add to matchmaking rule sets.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `team` resource represents an optional game-specific team that Game Center assigns to players using team rules. For more information, see `assigning-players-to-teams-using-rules`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/assigning-players-to-teams-using-rules"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, modifying, and deleting teams",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingTeams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingTeams-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingTeams-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeamCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeamUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeamResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeamsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeam"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/expressions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rule-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/metrics"
+      ]
+    }
+  ]
+}

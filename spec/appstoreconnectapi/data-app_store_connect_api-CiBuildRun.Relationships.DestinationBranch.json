@@ -1,0 +1,76 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRun.Relationships.DestinationBranch",
+  "title": "CiBuildRun.Relationships.DestinationBranch",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/DestinationBranch-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildrun/relationships-data.dictionary/destinationbranch-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data and links that describe the relationship between the Build Runs resource and the Git References resource that represents the destination branch.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRun.Relationships.DestinationBranch",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "CiBuildRun.Relationships.DestinationBranch.Data",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.DestinationBranch.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The ID of the related Git References resource that represents the destination branch.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/DestinationBranch-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Builds-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Product-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/PullRequest-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/SourceBranchOrTag-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Workflow-data.dictionary"
+      ]
+    }
+  ]
+}

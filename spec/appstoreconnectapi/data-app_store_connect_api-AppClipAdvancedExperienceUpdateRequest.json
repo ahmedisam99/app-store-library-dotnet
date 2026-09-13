@@ -1,0 +1,91 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperienceUpdateRequest",
+  "title": "AppClipAdvancedExperienceUpdateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceUpdateRequest",
+  "slug": "appstoreconnectapi/appclipadvancedexperienceupdaterequest",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to update an advanced App Clip experience.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperienceUpdateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppClipAdvancedExperienceUpdateRequest.Data",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceUpdateRequest.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[AppClipAdvancedExperienceLocalizationInlineCreate]",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceLocalizationInlineCreate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceUpdateRequest/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperience",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceLanguage"
+      ]
+    }
+  ]
+}

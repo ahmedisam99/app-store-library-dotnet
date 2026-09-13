@@ -1,0 +1,141 @@
+{
+  "id": "doc:appstoreconnectapi/products",
+  "title": "Products",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/products",
+  "slug": "appstoreconnectapi/products",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read information about the products Xcode Cloud detected or delete a product and all its associated information.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Deleting a product deletes all associated data, including build information like build artifacts, and can’t be undone.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciProducts` resource represents the products `Xcode-Cloud` detected when you started using Xcode Cloud. The resource includes information associated with the product like your app, workflows, builds, and Git repositories.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/Xcode/Xcode-Cloud"
+          ]
+        },
+        {
+          "text": "In addition to viewing your product and its associated information, you can use the `ciProducts` resource to delete a product and its associated data.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Deleting a product deletes all associated data, including build information like build artifacts, and can’t be undone.",
+          "refs": []
+        },
+        {
+          "text": "This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Xcode Cloud Products",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-additionalRepositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-relationships-additionalRepositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-relationships-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-primaryRepositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-relationships-primaryRepositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-workflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciProducts-_id_-relationships-workflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-ciProduct"
+      ]
+    },
+    {
+      "title": "Deleting Xcode Cloud Products",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-ciProducts-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAdditionalRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductPrimaryRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductWorkflowsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiFilesAndFoldersRule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiScheduledStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestination",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiActionType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiCompletionStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiExecutionProgress",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestinationKind",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestStatus"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Xcode Cloud Products and Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/workflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/macos-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcode-versions"
+      ]
+    }
+  ]
+}

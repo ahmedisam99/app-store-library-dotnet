@@ -1,0 +1,214 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-bundleIds-{}-app",
+  "title": "Read the app information of a bundle id",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-app",
+  "slug": "appstoreconnectapi/get-v1-bundleids-_id_-app",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/bundleIds/{id}/app",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppWithoutIncludesResponse",
+      "typeId": "data:app_store_connect_api:AppWithoutIncludesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Related Data",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-bundleIdCapabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-bundleIdCapabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-profiles"
+      ]
+    }
+  ]
+}

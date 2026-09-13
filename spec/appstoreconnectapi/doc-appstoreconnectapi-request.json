@@ -1,0 +1,69 @@
+{
+  "id": "doc:appstoreconnectapi/request",
+  "title": "Request",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/request",
+  "slug": "appstoreconnectapi/request",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An object that represents a match request in a queue.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use a `Request` object in the expression of a matchmaking rule to access data in the matchmaking rules. A `Request` object corresponds to a `GKMatchRequest` object that the game creates to submit a match request.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Properties",
+      "paragraphs": [
+        {
+          "text": "-`appVersion`: The app version of the game that makes the request. -`bundleId`: The bundle ID of the game that makes the request. -`locale`: The language and region that the player who initiates this match request uses. -`maxPlayer`: The maximum number of players that can join the match. This is the same value as the `GKMatchRequest.``maxPlayers` property that you set when submitting this request. -`minPlayers`: The minimum number of players that can join the match. This is the same value as the `GKMatchRequest.``minPlayers` property that you set when submitting this request. -`platform`: The platform of the game that makes the request. -`playerCount`: The total number of players invited to join the match, including the player who initiates the match request. For example, if the request is for the local player only, the player count is `1`. If the local player invites one friend, the player count is `2`. -`playerId`: A unique identifier for the player who initiates this match request. -`properties`: The properties of the game or player that initiates this match request. -`requestName`: A unique identifier for the request. -`secondsInQueue`: The age of the request in seconds.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/maxPlayers",
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/minPlayers"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/player",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/team"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "id": "doc:appstoreconnectapi/app-pre-orders",
+  "title": "App Pre-Orders",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-pre-orders",
+  "slug": "appstoreconnectapi/app-pre-orders",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the settings that make your app available for pre-order.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " You can’t push a pre-order live to the App Store using the App Store Connect API. You can only do so in App Store Connect.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use `appPreOrders` to offer your app as a pre-order before it’s initial release on the App Store. Customers can see your product page and order your app before it’s released for download. Once your app is released, customers are notified and your app is automatically download to their devices.",
+          "refs": []
+        },
+        {
+          "text": "Set up your app’s pre-order settings before submitting it for review. Once your app is approved, you can offer it on the App Store as a pre-order.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  You can’t push a pre-order live to the App Store using the App Store Connect API. You can only do so in App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/publish-for-pre-order`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-your-apps-availability/publish-for-pre-order"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Making Apps Available for Pre-Order",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-appAvailabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-territoryAvailabilities-_id_"
+      ]
+    },
+    {
+      "title": "Canceling an App Pre-Order",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-endAppAvailabilityPreOrders"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Publishing",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-phased-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-release-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-availability"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": "doc:appstoreconnectapi/beta-recruitment-criteria",
+  "title": "Beta recruitment criteria",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-recruitment-criteria",
+  "slug": "appstoreconnectapi/beta-recruitment-criteria",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create public links that accept testers with specific device and OS combinations.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `betaRecruitmentCriteria` resource to create public links with Device and OS criteria that help improve beta recruitment. Gain insights on the public-link performance from tester-event metrics, so you can modify the criteria set for the public, and enable or disable a public link.",
+          "refs": []
+        },
+        {
+          "text": "Team keys or individual keys with these roles can use this this resource:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Account holder",
+          "refs": []
+        },
+        {
+          "text": "Admin",
+          "refs": []
+        },
+        {
+          "text": "App Managers",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Resending Invitations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-betaRecruitmentCriteria-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaRecruitmentCriteria-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriterionCompatibleBuildCheck",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaRecruitmentCriterionOptions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheck",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheckResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOption",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaPublicLinkUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamilyOsVersionFilter",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOptionsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Beta Testers and Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-testers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-tester-invitations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-groups"
+      ]
+    }
+  ]
+}

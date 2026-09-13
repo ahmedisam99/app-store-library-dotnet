@@ -1,0 +1,107 @@
+{
+  "id": "doc:appstoreconnectapi/rule-sets",
+  "title": "Rule sets",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/rule-sets",
+  "slug": "appstoreconnectapi/rule-sets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the rule sets that you add matchmaking rules and teams to.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `rule set` resource represents a set of rules associated with a queue that Game Center applies to match requests in the queue. For more information, see `matchmaking-rules` in the GameKit framework.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/matchmaking-rules"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, modifying, and deleting rule sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRuleSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingRuleSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingRuleSets-_id_"
+      ]
+    },
+    {
+      "title": "Reading rule set information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-matchmakingQueues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-relationships-matchmakingQueues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-relationships-rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRuleSets-_id_-relationships-teams"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRulesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetMatchmakingQueuesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetRulesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetTeamsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/expressions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/metrics"
+      ]
+    }
+  ]
+}

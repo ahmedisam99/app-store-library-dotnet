@@ -1,0 +1,193 @@
+{
+  "id": "doc:appstoreconnectapi/builds",
+  "title": "Builds",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/builds",
+  "slug": "appstoreconnectapi/builds",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage builds for testers and submit builds for review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `builds` resource represents a single build of an app. You must upload builds using Xcode, Transporter, or the `build-uploads` resource. Once App Store Connect processes the build, it appears as a build resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-uploads"
+          ]
+        },
+        {
+          "text": "Once the build is in the system, you can use the API to perform actions like:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Submitting builds for review.",
+          "refs": []
+        },
+        {
+          "text": "Individually assigning builds to testers.",
+          "refs": []
+        },
+        {
+          "text": "Adding the build to a beta group for testing.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Build Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-appStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-appStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-preReleaseVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-preReleaseVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-metrics-betaBuildUsages"
+      ]
+    },
+    {
+      "title": "Modifying Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-builds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-builds-_id_-relationships-appEncryptionDeclaration"
+      ]
+    },
+    {
+      "title": "Adding and Removing Build Access",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-builds-_id_-relationships-betaGroups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-builds-_id_-relationships-betaGroups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-builds-_id_-relationships-individualTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-builds-_id_-relationships-individualTesters"
+      ]
+    },
+    {
+      "title": "Listing Individually Assigned Beta Testers",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-individualTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-individualTesters"
+      ]
+    },
+    {
+      "title": "Checking Beta Review Submission Status",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-betaAppReviewSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-betaAppReviewSubmission"
+      ]
+    },
+    {
+      "title": "Getting Information Associated with Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-buildBetaDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-buildBetaDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-appEncryptionDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-appEncryptionDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-betaBuildLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-betaBuildLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-icons",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-icons",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-diagnosticSignatures",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-relationships-appStoreVersion"
+      ]
+    },
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppEncryptionDeclarationLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppEncryptionDeclarationLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIndividualTestersLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIndividualTestersLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaGroupsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ImageAsset",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaBuildUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAppStoreVersionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaAppReviewSubmissionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaBuildLocalizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaDetailBuildLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildDiagnosticSignaturesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIconsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildPerfPowerMetricsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildPreReleaseVersionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildAudienceType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightDirection",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-bundles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-icons",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-uploads",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-encryption-declarations"
+      ]
+    }
+  ]
+}

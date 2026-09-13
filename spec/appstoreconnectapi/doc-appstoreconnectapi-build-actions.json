@@ -1,0 +1,135 @@
+{
+  "id": "doc:appstoreconnectapi/build-actions",
+  "title": "Build Actions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/build-actions",
+  "slug": "appstoreconnectapi/build-actions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read information about actions you configured for an Xcode Cloud workflow and their related data such as artifacts, issues, or test results.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciBuildActions` resource represents the actions Xcode Cloud performed when it built your project or workspace. Use it to read information about the actions Xcode Cloud performed during a build; for example:",
+          "refs": []
+        },
+        {
+          "text": "To update a workflow’s actions, use the `workflows` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/workflows"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Type, name, and date information of the action",
+          "refs": []
+        },
+        {
+          "text": "Status information for an ongoing and completed action",
+          "refs": []
+        },
+        {
+          "text": "Artifacts created by the action",
+          "refs": []
+        },
+        {
+          "text": "Issues that occurred",
+          "refs": []
+        },
+        {
+          "text": "Detailed information about test results",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Build Actions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-buildRun",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-testResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-buildRun",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-testResults"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiArtifactsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildActionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssuesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestResultsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildActionArtifactsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildActionBuildRunLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildActionIssuesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildActionTestResultsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Build Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-runs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/test-results"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingRuleSetTestResponse",
+  "title": "GameCenterMatchmakingRuleSetTestResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetTestResponse",
+  "slug": "appstoreconnectapi/gamecentermatchmakingrulesettestresponse",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for testing a rule set.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingRuleSetTestResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterMatchmakingRuleSetTest",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleSetTest",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "GameCenterMatchmakingTestPlayerProperty",
+            "GameCenterMatchmakingTestRequest"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetTestCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetTest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestRequestInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestPlayerProperty",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestPlayerPropertyInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTeamAssignment",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Location",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Property"
+      ]
+    }
+  ]
+}

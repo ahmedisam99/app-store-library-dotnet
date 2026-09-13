@@ -1,0 +1,94 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseLocalizationV2Response",
+  "title": "InAppPurchaseLocalizationV2Response",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationV2Response",
+  "slug": "appstoreconnectapi/inapppurchaselocalizationv2response",
+  "introducedAt": "4.4.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify an in-app purchase localization with the v2 API.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseLocalizationV2Response",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "InAppPurchaseLocalizationV2",
+      "typeId": "data:app_store_connect_api:InAppPurchaseLocalizationV2",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[InAppPurchaseVersion]",
+      "typeId": "data:app_store_connect_api:InAppPurchaseVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationsV2Response"
+      ]
+    }
+  ]
+}

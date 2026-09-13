@@ -1,0 +1,139 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionOfferCodePrice",
+  "title": "SubscriptionOfferCodePrice",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionOfferCodePrice",
+  "slug": "appstoreconnectapi/subscriptionoffercodeprice",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The territory-specific customer price and duration for a subscription promotional offer code.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionOfferCodePrice",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "SubscriptionOfferCodePrice.Relationships",
+      "typeId": "data:app_store_connect_api:SubscriptionOfferCodePrice.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "subscriptionOfferCodePrices"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodePrice/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCustomCodesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCustomCode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeOneTimeUseCodeValue",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeOneTimeUseCodesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeOneTimeUseCode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/csv",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodePricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCustomCodeCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCustomCodeResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeCustomCodeUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeOneTimeUseCodeCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCodeOneTimeUseCodeResponse"
+      ]
+    }
+  ]
+}

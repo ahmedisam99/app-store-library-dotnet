@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:WinBackOfferResponse",
+  "title": "WinBackOfferResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WinBackOfferResponse",
+  "slug": "appstoreconnectapi/winbackofferresponse",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify a single win-back offer for a subscription.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WinBackOfferResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "WinBackOffer",
+      "typeId": "data:app_store_connect_api:WinBackOffer",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[WinBackOfferPrice]",
+      "typeId": "data:app_store_connect_api:WinBackOfferPrice",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPrice",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPriceInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffersResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/IntegerRange",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionWinBackOffersLinkagesResponse"
+      ]
+    }
+  ]
+}

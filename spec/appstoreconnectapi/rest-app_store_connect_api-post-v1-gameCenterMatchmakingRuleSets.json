@@ -1,0 +1,153 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterMatchmakingRuleSets",
+  "title": "Create a Rule Set",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRuleSets",
+  "slug": "appstoreconnectapi/post-v1-gamecentermatchmakingrulesets",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create a rule set to contain matchmaking rules and teams.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingRuleSets",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterMatchmakingRuleSetCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleSetCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingRuleSetResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleSetResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1//gameCenterMatchmakingRuleSets\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRuleSets”,\n        “attributes”: {\n            “referenceName”: “com.example.mygame.GameSettingsRuleSet”,\n            “ruleLanguageVersion”: 1,\n            “minPlayers”: 2,\n            “maxPlayers”: 4\n        },\n        “relationships”: {}\n    }\n}\n```\n\n**Response**\n\n```json\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRuleSets”,\n        “id”: “7353266e-8c6f-4cbe-8f0f-5108332a1146”,\n        “attributes”: {\n            “referenceName”: “com.example.mygame.GameSettingsRuleSet”,\n            “ruleLanguageVersion”: 1,\n            “minPlayers”: 2,\n            “maxPlayers”: 4\n        },\n        “relationships”: {\n            “teams”: {\n                “links”: {\n                    “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/relationships/teams”,\n                    “related”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/teams”\n                }\n            },\n            “rules”: {\n                “links”: {\n                    “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/relationships/rules”,\n                    “related”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/rules”\n                }\n            },\n            “matchmakingQueues”: {\n                “links”: {\n                    “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/relationships/matchmakingQueues”,\n                    “related”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146/matchmakingQueues”\n                }\n            }\n        },\n        “links”: {\n            “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets/7353266e-8c6f-4cbe-8f0f-5108332a1146”\n        }\n    },\n    “links”: {\n        “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSets”\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, modifying, and deleting rule sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingRuleSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingRuleSets-_id_"
+      ]
+    }
+  ]
+}

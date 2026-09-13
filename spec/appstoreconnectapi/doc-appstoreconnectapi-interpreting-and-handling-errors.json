@@ -1,0 +1,109 @@
+{
+  "id": "doc:appstoreconnectapi/interpreting-and-handling-errors",
+  "title": "Interpreting and Handling Errors",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/interpreting-and-handling-errors",
+  "slug": "appstoreconnectapi/interpreting-and-handling-errors",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Learn how the App Store Connect API returns errors and handle them in your code.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "When you send a request to the App Store Connect API, you receive a response that includes an HTTP status code and, in most cases, a response body. To determine your request’s status and handle errors, use the HTTP status code along with the `code` from the `ErrorResponse`. Interpret the error starting with the most general information first.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read the HTTP Status Code",
+      "paragraphs": [
+        {
+          "text": "The HTTP status code informs you if the request succeeded or failed. If it succeeded, the HTTP status code is in the 200 range, and the response body contains the requested data. If the request failed, the HTTP status code is in the 400 or 500 range, and the response body contains information about the error. In many cases, the status code may be all you need to properly handle errors.  See `about-the-http-status-code` for more information.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/about-the-http-status-code"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Interpret the Error Response",
+      "paragraphs": [
+        {
+          "text": "If the API request failed, the `ErrorResponse` object contains details to help you troubleshoot the error, and a `code` property to use for programmatic error handling. See `parsing-the-error-response-code` for more information.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/parsing-the-error-response-code"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Pinpoint the Source of the Error",
+      "paragraphs": [
+        {
+          "text": "In some cases, the error information includes a `source` property that precisely locates the problem in your request. See `pinpointing-the-location-of-errors` for more information.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pinpointing-the-location-of-errors"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Handling Errors",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/about-the-http-status-code",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/parsing-the-error-response-code",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pinpointing-the-location-of-errors"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/JsonPointer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Parameter"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

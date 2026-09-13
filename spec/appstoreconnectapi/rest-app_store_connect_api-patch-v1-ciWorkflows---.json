@@ -1,0 +1,187 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-ciWorkflows-{}",
+  "title": "Update an xcode cloud workflow",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-ciWorkflows-_id_",
+  "slug": "appstoreconnectapi/patch-v1-ciworkflows-_id_",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Make changes to an Xcode Cloud workflow.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciWorkflows/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the Workflows resource.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "CiWorkflowUpdateRequest",
+    "typeId": "data:app_store_connect_api:CiWorkflowUpdateRequest",
+    "abstract": {
+      "text": "The request body you use to update an Xcode Cloud workflow.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CiWorkflowResponse",
+      "typeId": "data:app_store_connect_api:CiWorkflowResponse",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below updates the name of an existing Xcode Cloud workflow. For a successful update, the response includes detailed information about the workflow. Use it to access additional information, start a new build, and so on.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\n\n{\n    \"data\": {\n        \"type\": \"ciWorkflows\",\n        \"id\": \"3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\",\n        \"attributes\": {\n            \"name\": \"A new name for an existing workflow.\"\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciWorkflows\",\n        \"id\": \"3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\",\n        \"attributes\": {\n            \"name\": \"A new name for an existing workflow.\",\n            \"description\": \"\",\n            \"branchStartCondition\": {\n                \"source\": {\n                    \"isAllMatch\": false,\n                    \"patterns\": [\n                        {\n                            \"pattern\": \"main\",\n                            \"isPrefix\": false\n                        }\n                    ]\n                },\n                \"filesAndFoldersRule\": {\n                    \"mode\": \"START_IF_ANY_FILE_MATCHES\",\n                    \"matchers\": []\n                },\n                \"autoCancel\": true\n            },\n            \"tagStartCondition\": null,\n            \"pullRequestStartCondition\": null,\n            \"scheduledStartCondition\": null,\n            \"actions\": [\n                {\n                    \"name\": \"Archive iOS\",\n                    \"actionType\": \"ARCHIVE\",\n                    \"destination\": null,\n                    \"buildDistributionAudience\": null,\n                    \"testConfiguration\": null,\n                    \"scheme\": \"MyApp\",\n                    \"platform\": \"IOS\",\n                    \"isRequiredToPass\": true\n                }\n            ],\n            \"isEnabled\": true,\n            \"isLockedForEditing\": false,\n            \"clean\": false,\n            \"containerFilePath\": \"MyXcodeProject.xcodeproj\",\n            \"lastModifiedDate\": null\n        },\n        \"relationships\": {\n            \"repository\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/relationships/repository\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/repository\"\n                }\n            },\n            \"buildRuns\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/relationships/buildRuns\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/buildRuns\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\"\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Xcode Cloud Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-ciWorkflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-ciWorkflows-_id_"
+      ]
+    }
+  ]
+}

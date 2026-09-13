@@ -1,0 +1,103 @@
+{
+  "id": "data:app_store_connect_api:BuildUploadFilesResponse",
+  "title": "BuildUploadFilesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildUploadFilesResponse",
+  "slug": "appstoreconnectapi/builduploadfilesresponse",
+  "introducedAt": "4.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a list of file upload records for a build upload operation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildUploadFilesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[BuildUploadFile]",
+      "typeId": "data:app_store_connect_api:BuildUploadFile",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUpload",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadBuildUploadFilesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFile",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppBuildUploadsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/StateDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeliveryFileUploadOperation"
+      ]
+    }
+  ]
+}

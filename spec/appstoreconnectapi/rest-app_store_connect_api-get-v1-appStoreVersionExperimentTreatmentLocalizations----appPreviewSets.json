@@ -1,0 +1,424 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-appStoreVersionExperimentTreatmentLocalizations-{}-appPreviewSets",
+  "title": "List all preview sets for an experiment treatment localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatmentLocalizations-_id_-appPreviewSets",
+  "slug": "appstoreconnectapi/get-v1-appstoreversionexperimenttreatmentlocalizations-_id_-apppreviewsets",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of preview sets for a specific App Store version experiment treatment localization.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appStoreVersionExperimentTreatmentLocalizations/{id}/appPreviewSets",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the App Store version experiment treatment localization resource ID from the `GET-v1-appStoreVersionExperimentTreatments-_id_-appStoreVersionExperimentTreatmentLocalizations` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatments-_id_-appStoreVersionExperimentTreatmentLocalizations"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPreviewSets]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "previewType",
+            "appStoreVersionLocalization",
+            "appCustomProductPageLocalization",
+            "appStoreVersionExperimentTreatmentLocalization",
+            "appPreviews"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app preview set resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPreviews]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "fileSize",
+            "fileName",
+            "sourceFileChecksum",
+            "previewFrameTimeCode",
+            "mimeType",
+            "videoUrl",
+            "previewFrameImage",
+            "previewImage",
+            "uploadOperations",
+            "assetDeliveryState",
+            "videoDeliveryState",
+            "appPreviewSet"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app preview resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[appCustomProductPageLocalization]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app preview sets by app custom product page localization.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[appStoreVersionLocalization]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app preview sets by App Store version localization.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[previewType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "IPHONE_67",
+            "IPHONE_61",
+            "IPHONE_65",
+            "IPHONE_58",
+            "IPHONE_55",
+            "IPHONE_47",
+            "IPHONE_40",
+            "IPHONE_35",
+            "IPAD_PRO_3GEN_129",
+            "IPAD_PRO_3GEN_11",
+            "IPAD_PRO_129",
+            "IPAD_105",
+            "IPAD_97",
+            "DESKTOP",
+            "APPLE_TV",
+            "APPLE_VISION_PRO"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app preview sets by preview type.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersionLocalization",
+            "appCustomProductPageLocalization",
+            "appStoreVersionExperimentTreatmentLocalization",
+            "appPreviews"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of app preview set resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appPreviews]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related app preview resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appCustomProductPageLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "locale",
+            "promotionalText",
+            "appCustomProductPageVersion",
+            "appScreenshotSets",
+            "appPreviewSets",
+            "searchKeywords"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app custom product page localization resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionExperimentTreatmentLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "locale",
+            "appStoreVersionExperimentTreatment",
+            "appScreenshotSets",
+            "appPreviewSets"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each App Store version experiment treatment localization resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "description",
+            "locale",
+            "keywords",
+            "marketingUrl",
+            "promotionalText",
+            "supportUrl",
+            "whatsNew",
+            "appStoreVersion",
+            "appScreenshotSets",
+            "appPreviewSets",
+            "searchKeywords"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each App Store version localization resource returned by the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppPreviewSetsResponse",
+      "typeId": "data:app_store_connect_api:AppPreviewSetsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatmentLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatmentLocalizations-_id_-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatmentLocalizations-_id_-relationships-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperimentTreatmentLocalizations-_id_-relationships-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionExperimentTreatmentLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionExperimentTreatmentLocalizations-_id_"
+      ]
+    }
+  ]
+}

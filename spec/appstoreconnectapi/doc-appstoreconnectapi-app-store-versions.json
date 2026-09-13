@@ -1,0 +1,244 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-versions",
+  "title": "App Store Versions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-versions",
+  "slug": "appstoreconnectapi/app-store-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage versions of your app that are available in App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `appStoreVersions` resource represents the information related to an App Store version of your app. Using this resource, you can:",
+          "refs": []
+        },
+        {
+          "text": "For more information about versions, see `https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Create, modify, or delete a version for your app.",
+          "refs": []
+        },
+        {
+          "text": "Read key details for your version, including its App Store state.",
+          "refs": []
+        },
+        {
+          "text": "Specify whether to release the version manually or automatically.",
+          "refs": []
+        },
+        {
+          "text": "Modify attributes such as your app’s copyright information.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting App Store Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appStoreVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_"
+      ]
+    },
+    {
+      "title": "Getting App Store Version Experiments",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionExperimentsV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperiments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionExperiments"
+      ]
+    },
+    {
+      "title": "Creating and Modifying App Store Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersions-_id_"
+      ]
+    },
+    {
+      "title": "Attaching a Build to a Version",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-build",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-build",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersions-_id_-relationships-build"
+      ]
+    },
+    {
+      "title": "Attaching a Default App Clip Experience to a Version",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appClipDefaultExperience",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appClipDefaultExperience",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersions-_id_-relationships-appClipDefaultExperience"
+      ]
+    },
+    {
+      "title": "Reading Localization Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionLocalizations"
+      ]
+    },
+    {
+      "title": "Reading Release and Review Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreReviewDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreReviewDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionPhasedRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionPhasedRelease"
+      ]
+    },
+    {
+      "title": "Reading Declarations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-routingAppCoverage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-routingAppCoverage"
+      ]
+    },
+    {
+      "title": "Getting Customer Reviews",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-customerReviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-customerReviews"
+      ]
+    },
+    {
+      "title": "Getting Game Center app versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-gameCenterAppVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-gameCenterAppVersion"
+      ]
+    },
+    {
+      "title": "Reading Distribution Package Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-alternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-alternativeDistributionPackage"
+      ]
+    },
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionBuildLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionBuildLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppClipDefaultExperienceLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppClipDefaultExperienceLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppVersionState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAlternativeDistributionPackageLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreReviewDetailLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreVersionExperimentsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreVersionExperimentsV2LinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreVersionLocalizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreVersionPhasedReleaseLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionAppStoreVersionSubmissionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionCustomerReviewsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionGameCenterAppVersionLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationAppPreviewSetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationAppScreenshotSetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionRoutingAppCoverageLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-info-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/routing-app-coverages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/accessibility-declarations"
+      ]
+    }
+  ]
+}

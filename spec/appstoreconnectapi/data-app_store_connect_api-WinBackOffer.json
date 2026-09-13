@@ -1,0 +1,150 @@
+{
+  "id": "data:app_store_connect_api:WinBackOffer",
+  "title": "WinBackOffer",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WinBackOffer",
+  "slug": "appstoreconnectapi/winbackoffer",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A promotional offer targeting lapsed subscribers, providing a discount or free trial to encourage them to resubscribe.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WinBackOffer",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "WinBackOffer.Attributes",
+      "typeId": "data:app_store_connect_api:WinBackOffer.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "WinBackOffer.Relationships",
+      "typeId": "data:app_store_connect_api:WinBackOffer.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links to related data and included resource types and IDs.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "winBackOffers"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffer/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffer/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPrice",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPriceInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffersResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/IntegerRange",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionWinBackOffersLinkagesResponse"
+      ]
+    }
+  ]
+}

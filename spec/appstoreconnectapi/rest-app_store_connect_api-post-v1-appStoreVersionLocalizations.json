@@ -1,0 +1,172 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appStoreVersionLocalizations",
+  "title": "Create an app store version localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionLocalizations",
+  "slug": "appstoreconnectapi/post-v1-appstoreversionlocalizations",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add localized version-level information for a new locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appStoreVersionLocalizations",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppStoreVersionLocalizationCreateRequest",
+    "typeId": "data:app_store_connect_api:AppStoreVersionLocalizationCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppStoreVersionLocalizationResponse",
+      "typeId": "data:app_store_connect_api:AppStoreVersionLocalizationResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " If the App Store version and the app info don’t have the same set of localizations, you will receive an erorr when you submit the version to the App Store.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to add localized version information for a new locale. Be sure to use `POST-v1-appInfoLocalizations` to add the same locale to the version as well.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appInfoLocalizations"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  If the App Store version and the app info don’t have the same set of localizations, you will receive an erorr when you submit the version to the App Store.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Add Localized App Store Version Information in US English",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations\n\n{\n  \"data\": {\n    \"type\": \"appStoreVersionLocalizations\",\n    \"attributes\": {\n      \"locale\": \"en-US\",\n      \"description\": \"Go wild and discover trails, parks and off-the-beaten-track terrain with Forest Explorer. Whether you’re bushwalking in the outback or looking for a quick local hike, Forest Explorer has thousands of trails and destinations from around the globe to explore.\",\n      \"keywords\": \"hiking, trails, backcountry, parks, path, terrain, forest\",\n      \"marketingUrl\": \"https://www.apple.com/forestexplorer\",\n      \"promotionalText\": \"Get Forest Explorer free for a limited time.\",\n      \"supportUrl\": \"https://support.apple.com\",\n      \"whatsNew\": \"Now includes trails in Europe and South America\"\n    },\n    \"relationships\": {\n      \"appStoreVersion\": {\n        \"data\": {\n          \"type\": \"appStoreVersions\",\n          \"id\": \"54457681-4b65-4071-a636-ea66cb98c8e9\"\n        }\n      }\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"appStoreVersionLocalizations\",\n    \"id\": \"af806ced-8826-4a9d-8a0f-9f3402ce3629\",\n    \"attributes\": {\n      \"locale\": \"en-US\",\n      \"description\": \"Go wild and discover trails, parks and off-the-beaten-track terrain with Forest Explorer. Whether you’re bushwalking in the outback or looking for a quick local hike, Forest Explorer has thousands of trails and destinations from around the globe to explore.\",\n      \"keywords\": \"hiking, trails, backcountry, parks, path, terrain, forest\",\n      \"marketingUrl\": \"https://www.apple.com/forestexplorer\",\n      \"promotionalText\": \"Get Forest Explorer free for a limited time.\",\n      \"supportUrl\": \"https://support.apple.com\",\n      \"whatsNew\": \"Now includes trails in Europe and South America\"\n    },\n    \"relationships\": {\n      \"appStoreVersion\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/relationships/appStoreVersion\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/appStoreVersion\"\n        }\n      },\n      \"appScreenshotSets\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/relationships/appScreenshotSets\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/appScreenshotSets\"\n        }\n      },\n      \"appPreviewSets\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/relationships/appPreviewSets\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629/appPreviewSets\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/appStoreVersionLocalizations/af806ced-8826-4a9d-8a0f-9f3402ce3629\"\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, Modifying, and Deleting Version Localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersionLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionLocalizations-_id_"
+      ]
+    }
+  ]
+}

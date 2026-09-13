@@ -1,0 +1,109 @@
+{
+  "id": "doc:appstoreconnectapi/user-invitations",
+  "title": "User Invitations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/user-invitations",
+  "slug": "appstoreconnectapi/user-invitations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Email invitations to join your App Store Connect team.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `userInvitations` resource represents users who have been invited to join a team in App Store Connect. When you create a user invitation the user receives an email with a link to activate an account and connect it to their Apple Account.",
+          "refs": []
+        },
+        {
+          "text": "If the user accepts the invitation, the user is added to the team and the invitation is deleted. User invitations expire after three days.",
+          "refs": []
+        },
+        {
+          "text": "You can also get a list of all invited users, read the invite information of a single user, and find out which apps an invited user can test.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Invited Users",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-userInvitations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-userInvitations-_id_"
+      ]
+    },
+    {
+      "title": "Sending and Canceling Invitations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-userInvitations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-userInvitations-_id_"
+      ]
+    },
+    {
+      "title": "Getting Visible Apps",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-userInvitations-_id_-visibleApps",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-userInvitations-_id_-relationships-visibleApps"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitationVisibleAppsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Users and Access",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/users",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sandbox-testers"
+      ]
+    }
+  ]
+}

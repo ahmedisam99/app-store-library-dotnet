@@ -1,0 +1,246 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingTestRequestInlineCreate.Attributes",
+  "title": "GameCenterMatchmakingTestRequestInlineCreate.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestRequestInlineCreate/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingtestrequestinlinecreate/attributes-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes for a sample match request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingTestRequestInlineCreate.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The app version of the game that makes the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The bundle ID of the game that makes the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "locale",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AR-SA",
+            "CA-ES",
+            "CS-CZ",
+            "DA-DK",
+            "DE-DE",
+            "EL-GR",
+            "EN-AU",
+            "EN-GB",
+            "EN-US",
+            "EN-KY",
+            "ES-ES",
+            "ES-MX",
+            "FI-FI",
+            "FR-CA",
+            "FR-FR",
+            "HI-IN",
+            "HR-HR",
+            "HU-HU",
+            "ID-ID",
+            "IT-IT",
+            "IW-IL",
+            "JA-JP",
+            "KO-KR",
+            "MS-MY",
+            "NL-NL",
+            "NO-NO",
+            "PL-PL",
+            "PT-BR",
+            "PT-PT",
+            "RO-RO",
+            "RU-RU",
+            "SK-SK",
+            "SV-SE",
+            "TH-TH",
+            "TR-TR",
+            "UK-UA",
+            "ZH-CN",
+            "ZH-TW",
+            "ZH-HK"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The language and region that the player who initiates this match request uses. The default value is `EN-US`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "location",
+      "type": "Location",
+      "typeId": "data:app_store_connect_api:Location",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The physical location where this request originates. The default value is `0, 0`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "maxPlayers",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of players that can join the match. This is the same value as the `GKMatchRequest.``maxPlayers` property that you set when submitting a request from a native app. The default value is `16`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/maxPlayers"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "minPlayers",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The minimum number of players that can join the match. This is the same value as the `GKMatchRequest.``minPlayers` property that you set when submitting a request from a native app. The default value is `2`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/minPlayers"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "platform",
+      "type": "Platform",
+      "typeId": "data:app_store_connect_api:Platform",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The platform of the game that makes the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "playerCount",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The total number of players invited to join the match including the player who initiates the match request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requestName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A unique identifier for the request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "secondsInQueue",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The age of the request in seconds.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingTestRequestInlineCreate/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

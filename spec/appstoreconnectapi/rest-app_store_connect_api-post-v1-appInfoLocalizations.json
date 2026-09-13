@@ -1,0 +1,172 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appInfoLocalizations",
+  "title": "Create an app info localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appInfoLocalizations",
+  "slug": "appstoreconnectapi/post-v1-appinfolocalizations",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add app-level localized information for a new locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appInfoLocalizations",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppInfoLocalizationCreateRequest",
+    "typeId": "data:app_store_connect_api:AppInfoLocalizationCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppInfoLocalizationResponse",
+      "typeId": "data:app_store_connect_api:AppInfoLocalizationResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " If the App Store version and the app info don’t have the same set of localizations, you will receive an erorr when you submit the version to the App Store.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to add localized app information for a new locale. Be sure to use `POST-v1-appStoreVersionLocalizations` to add the same locale to the version as well.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionLocalizations"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  If the App Store version and the app info don’t have the same set of localizations, you will receive an erorr when you submit the version to the App Store.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Add Localized App Information in US English",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/appInfoLocalizations\n\n{\n  \"data\": {\n    \"type\": \"appInfoLocalizations\",\n    \"attributes\": {\n      \"locale\": \"en-US\",\n      \"name\": \"Forest Explorer\",\n      \"subtitle\": \"Hikes, trails, and maps\",\n      \"privacyPolicyUrl\": \"https://forestexplorer.apple.com/privacy-simple\"\n    },\n    \"relationships\": {\n      \"appInfo\": {\n        \"data\": {\n          \"type\": \"appInfos\",\n          \"id\": \"9c8e7e2b-07a8-45d9-8951-948507275bc6\"\n        }\n      }\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"appInfoLocalizations\",\n    \"id\": \"9c8e7e2b-07a8-45d9-8951-948507275bc6\",\n    \"attributes\": {\n      \"locale\": \"en-GB\",\n      \"name\": \"Forest Explorer\",\n      \"subtitle\": \"Hikes, trails, and maps\",\n      \"privacyPolicyUrl\": \"https://forestexplorer.apple.com/privacy-simple\",\n      \"privacyPolicyText\": null\n    },\n    \"relationships\": {\n      \"appInfo\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/74ae3739-d321-4f83-afc3-3b66043ff163/relationships/appInfo\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/74ae3739-d321-4f83-afc3-3b66043ff163/appInfo\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/74ae3739-d321-4f83-afc3-3b66043ff163\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfoLocalizations/74ae3739-d321-4f83-afc3-3b66043ff163\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, Modifying, and Deleting Localized App Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appInfoLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appInfoLocalizations-_id_"
+      ]
+    }
+  ]
+}

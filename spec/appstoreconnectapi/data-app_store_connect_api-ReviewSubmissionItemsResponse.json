@@ -1,0 +1,128 @@
+{
+  "id": "data:app_store_connect_api:ReviewSubmissionItemsResponse",
+  "title": "ReviewSubmissionItemsResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ReviewSubmissionItemsResponse",
+  "slug": "appstoreconnectapi/reviewsubmissionitemsresponse",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list items in a review submission.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ReviewSubmissionItemsResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[ReviewSubmissionItem]",
+      "typeId": "data:app_store_connect_api:ReviewSubmissionItem",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppCustomProductPageVersion",
+            "AppEvent",
+            "AppStoreVersionExperiment",
+            "AppStoreVersion",
+            "BackgroundAssetVersion",
+            "GameCenterAchievementVersionV2",
+            "GameCenterActivityVersion",
+            "GameCenterChallengeVersion",
+            "GameCenterLeaderboardSetVersionV2",
+            "GameCenterLeaderboardVersionV2",
+            "InAppPurchaseVersion",
+            "SubscriptionGroupVersion",
+            "SubscriptionVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionItemCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionItemUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionItemResponse"
+      ]
+    }
+  ]
+}

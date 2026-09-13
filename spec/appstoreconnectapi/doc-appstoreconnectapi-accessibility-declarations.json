@@ -1,0 +1,146 @@
+{
+  "id": "doc:appstoreconnectapi/accessibility-declarations",
+  "title": "Accessibility declarations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/accessibility-declarations",
+  "slug": "appstoreconnectapi/accessibility-declarations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage accessibility metadata for your apps per device family.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The default value for each attribute in an accessibility declaration is `false`. If you modify a subset of the available attributes, the remaining attributes default to `false`.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "There are five modalities for accessibility: Vision, Hearing, Speech, Mobility, and Cognitive. Apple operating systems provide opportunities to deliver high-quality experiences to everyone, including people with disabilities. To learn more  about all the features developers can leverage in their apps to support users with disabilities, see `https://developer.apple.com/accessibility/`.",
+          "refs": [
+            "https://developer.apple.com/accessibility/"
+          ]
+        },
+        {
+          "text": "Accessibility declarations enable you to show the accessibility modalities and the specific features your app supports. Use this resource to create and configure accessibility declarations for your apps. Once you create an accessibility declaration, your App Store page shows the accessibility details for your app. You make accessibility declarations for each app and they apply to a device family, to learn more, see `DeviceFamily`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> The default value for each attribute in an accessibility declaration is `false`. If you modify a subset of the available attributes, the remaining attributes default to `false`.",
+          "refs": []
+        },
+        {
+          "text": "To add an accessibility URL to your the App Store page for your app, use `PATCH-v1-apps-_id_` and update the the `accessibilityUrl` attribute.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-apps-_id_"
+          ]
+        },
+        {
+          "text": "To manage accessibility declarations, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "Both Team and Individual API keys can use these endpoints with the correct role.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP MANAGER`",
+          "refs": []
+        },
+        {
+          "text": "`MARKETING`",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-accessibility-declarations"
+      ]
+    },
+    {
+      "title": "Managing accessibility metadata",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-accessibilityDeclarations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-accessibilityDeclarations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-accessibilityDeclarations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-accessibilityDeclarations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-accessibilityDeclarations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-accessibilityDeclarations-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AccessibilityDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AccessibilityDeclarationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AccessibilityDeclarationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AccessibilityDeclarationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AccessibilityDeclarationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAccessibilityDeclarationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-info-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/routing-app-coverages"
+      ]
+    }
+  ]
+}

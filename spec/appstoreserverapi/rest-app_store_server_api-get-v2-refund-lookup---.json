@@ -47,6 +47,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "Any `originalTransactionId`, `transactionId` or `appTransactionId` that belongs to the customer for your app.",
         "refs": [
@@ -65,6 +66,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A token you provide to get the next set of up to 20 transactions. All responses include a `revision` token. Use the `revision` token from the previous `RefundHistoryResponse`.\n\nYou can store the `revision` token from the final results page and use it for a future call. For more information, see `RefundHistoryResponse`.\n\nThe `revision` token is required in all requests except the initial request.",
         "refs": [
@@ -210,6 +212,10 @@
   "seeAlso": [
     {
       "title": "Refund lookup",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/RefundHistoryResponse"
       ]

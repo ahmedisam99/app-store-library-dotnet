@@ -1,0 +1,147 @@
+{
+  "id": "doc:appstoreconnectapi/workflows",
+  "title": "Workflows",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/workflows",
+  "slug": "appstoreconnectapi/workflows",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage Xcode Cloud workflows and view workflow details like actions and start conditions.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Deleting a workflow also deletes associated build information and artifacts. Instead of deleting a workflow, consider deactivating it in Xcode or App Store Connect. To learn more about deactivating a workflow, see `Developing-a-Workflow-Strategy-for-Xcode-Cloud`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/Xcode/Developing-a-Workflow-Strategy-for-Xcode-Cloud"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciWorkflows` resource represents an Xcode Cloud workflow. Use it to:",
+          "refs": []
+        },
+        {
+          "text": "To learn more about workflows, see `Xcode-Cloud-Workflow-Reference`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/Xcode/Xcode-Cloud-Workflow-Reference"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Deleting a workflow also deletes associated build information and artifacts. Instead of deleting a workflow, consider deactivating it in Xcode or App Store Connect. To learn more about deactivating a workflow, see `Developing-a-Workflow-Strategy-for-Xcode-Cloud`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/Xcode/Developing-a-Workflow-Strategy-for-Xcode-Cloud"
+          ]
+        },
+        {
+          "text": "This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Read workflow information.",
+          "refs": []
+        },
+        {
+          "text": "Create a new workflow.",
+          "refs": []
+        },
+        {
+          "text": "Update an existing workflow.",
+          "refs": []
+        },
+        {
+          "text": "Delete a workflow you no longer need.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Xcode Cloud Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-repository",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-relationships-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-relationships-repository"
+      ]
+    },
+    {
+      "title": "Managing Xcode Cloud Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-ciWorkflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-ciWorkflows-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-ciWorkflows-_id_"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiAction",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowRepositoryLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Xcode Cloud Products and Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/products",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/macos-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcode-versions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "id": "doc:appstoreconnectapi/configuring-subscription-prices-across-territories",
+  "title": "Configuring subscription prices across territories",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/configuring-subscription-prices-across-territories",
+  "slug": "appstoreconnectapi/configuring-subscription-prices-across-territories",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Set plan types and equalized prices for an auto-renewable subscription with the App Store Connect API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " Filter the endpoint by territory to reduce the amount of data you review. Always include `filter[territory]` on this endpoint — it’s required in a future release.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " Use this endpoint with filters to identify a specific adjusted equalization. Provide the `filter[upfrontPricePointId]` and `filter[planType]` query parameters:\n\n```\nGET /v1/subscriptionPricePoints/{pricePointId}/adjustedEqualizations?filter[upfrontPricePointId]=$id&filter[planType]=MONTHLY\n```",
+        "refs": []
+      }
+    },
+    {
+      "style": "important",
+      "prose": {
+        "text": " Review price changes carefully. Once a price change goes into effect, you can’t revert it. For guidance on price changes, see `https://developer.apple.com/help/app-store-connect/`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Territory",
+        "Plan type",
+        "Price (local currency)"
+      ],
+      "rows": [
+        [
+          "United States (USA)",
+          "`MONTHLY`",
+          "9.99 USD"
+        ],
+        [
+          "Canada (CAN)",
+          "`MONTHLY`",
+          "equalized from USA"
+        ],
+        [
+          "Japan (JPN)",
+          "`MONTHLY`",
+          "equalized from USA"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store Connect API lets you choose which plan type — monthly or up-front — is available for an auto-renewable subscription in each territory, and then set a consistent price for that subscription everywhere you offer it. Rather than calculating a comparable price for every territory yourself, you can read the *adjusted equalizations* of a base price point and reuse the equalized price points the API returns. This workflow assumes you already created a subscription in a subscription group. To create one, see `managing-auto-renewable-subscriptions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Review App Store Connect API usage",
+      "paragraphs": [
+        {
+          "text": "To manage auto-renewable subscriptions with the App Store Connect API, you need to understand key concepts for using the API. If you’re new to using the App Store Connect API, make sure to read the documentation in the Essentials section of `AppStoreConnectAPI` and learn how to create API keys, generate JWTs, identify rate limits, and more.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI"
+          ]
+        },
+        {
+          "text": "To configure subscription plan types and prices, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "For the full list of App Store Connect user roles, see `UserRole` and `https://developer.apple.com/support/roles`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserRole",
+            "https://developer.apple.com/support/roles"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`ACCOUNT_HOLDER`",
+          "refs": []
+        },
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP_MANAGER`",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Plan your pricing",
+      "paragraphs": [
+        {
+          "text": "Before you set prices, decide which plan type you offer in each territory and which territory’s price anchors the rest.",
+          "refs": []
+        },
+        {
+          "text": "A subscription plan type controls how a customer pays for the subscription period:",
+          "refs": []
+        },
+        {
+          "text": "For the complete definition, see `SubscriptionPlanType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanType"
+          ]
+        },
+        {
+          "text": "Equalization keeps a subscription’s price comparable across currencies. When you pick a price in your base territory, the API can return the *equalized* price point in every other territory — the closest local-currency equivalent. Adjusted equalizations extend this to plan types, so the equalized prices stay consistent whether a territory offers the monthly or the up-front plan.",
+          "refs": []
+        },
+        {
+          "text": "Map out your offering before you start. The following example plans a single subscription across three territories.",
+          "refs": []
+        },
+        {
+          "text": "| Territory | Plan type | Price (local currency) |\n| --- | --- | --- |\n| United States (USA) | `MONTHLY` | 9.99 USD |\n| Canada (CAN) | `MONTHLY` | equalized from USA |\n| Japan (JPN) | `MONTHLY` | equalized from USA |",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`MONTHLY` — the customer pays month to month over a 12-month commitment.",
+          "refs": []
+        },
+        {
+          "text": "`UPFRONT` — the customer pays the full subscription price up front.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Set plan type availability",
+      "paragraphs": [
+        {
+          "text": "Declare which plan type is available for the subscription in each territory by using `POST /v1/subscriptionPlanAvailabilities` (`POST-v1-subscriptionPlanAvailabilities`). The request requires a `planType` attribute and relationships to the `subscription` and the `availableTerritories` the plan type applies to.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPlanAvailabilities"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"subscriptionPlanAvailabilities\",\n    \"attributes\": {\n      \"planType\": \"MONTHLY\",\n      \"availableInNewTerritories\": true\n    },\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6447497832\"\n        }\n      },\n      \"availableTerritories\": {\n        \"data\": [\n          { \"type\": \"territories\", \"id\": \"USA\" },\n          { \"type\": \"territories\", \"id\": \"CAN\" },\n          { \"type\": \"territories\", \"id\": \"JPN\" }\n        ]\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "To review or change which territories offer a plan type later, use `GET-v1-subscriptions-_id_-planAvailabilities` to list the plan availabilities on a subscription, then `PATCH-v1-subscriptionPlanAvailabilities-_id_-relationships-availableTerritories` to update the territories. For more detail, see `subscription-plan-availability`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-planAvailabilities",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionPlanAvailabilities-_id_-relationships-availableTerritories",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-plan-availability"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Look up a base price point",
+      "paragraphs": [
+        {
+          "text": "Choose the base price for your subscription in your anchor territory, then look up the price point ID that represents it. Use `GET /v1/subscriptions/{id}/pricePoints` (`GET-v1-subscriptions-_id_-pricePoints`) and filter by territory to keep the response small.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-pricePoints"
+          ]
+        },
+        {
+          "text": "```other\nGET /v1/subscriptions/6447497832/pricePoints?filter[territory]=USA&include=territory&limit=200\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n>  Filter the endpoint by territory to reduce the amount of data you review. Always include `filter[territory]` on this endpoint — it’s required in a future release.",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example response, truncated for clarity:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": [\n    {\n      \"type\": \"subscriptionPricePoints\",\n      \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ\",\n      \"attributes\": {\n        \"customerPrice\": \"9.99\",\n        \"proceeds\": \"6.99\"\n      },\n      \"relationships\": {\n        \"territory\": {\n          \"data\": { \"type\": \"territories\", \"id\": \"USA\" }\n        }\n      }\n    }\n  ]\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Note the `id` of the price point whose `customerPrice` matches the base price you planned. You use it as the base price point in the next step.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Equalize the price across territories",
+      "paragraphs": [
+        {
+          "text": "With your base price point, read its adjusted equalizations to get the comparable price point in every other territory. Use `GET /v1/subscriptionPricePoints/{id}/adjustedEqualizations` (`GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations`), where `{id}` is the base price point ID from the previous step.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Use this endpoint with filters to identify a specific adjusted equalization. Provide the `filter[upfrontPricePointId]` and `filter[planType]` query parameters:\n> \n> ```\n> GET /v1/subscriptionPricePoints/{pricePointId}/adjustedEqualizations?filter[upfrontPricePointId]=$id&filter[planType]=MONTHLY\n> ```",
+          "refs": []
+        },
+        {
+          "text": "Add `include=territory` so each returned price point carries its territory, and filter by territory when you only need a subset:",
+          "refs": []
+        },
+        {
+          "text": "```other\nGET /v1/subscriptionPricePoints/eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ/adjustedEqualizations?filter[upfrontPricePointId]=eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ&filter[planType]=MONTHLY&include=territory&limit=200\n```",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example response, truncated for clarity:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": [\n    {\n      \"type\": \"subscriptionPricePoints\",\n      \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJDQU4iLCJwIjoiMTAxNDIifQ\",\n      \"attributes\": {\n        \"customerPrice\": \"12.99\",\n        \"proceeds\": \"9.09\"\n      },\n      \"relationships\": {\n        \"territory\": {\n          \"data\": { \"type\": \"territories\", \"id\": \"CAN\" }\n        }\n      }\n    },\n    {\n      \"type\": \"subscriptionPricePoints\",\n      \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJKUE4iLCJwIjoiMTAxNTUifQ\",\n      \"attributes\": {\n        \"customerPrice\": \"1500\",\n        \"proceeds\": \"1050\"\n      },\n      \"relationships\": {\n        \"territory\": {\n          \"data\": { \"type\": \"territories\", \"id\": \"JPN\" }\n        }\n      }\n    }\n  ]\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Each entry is the equalized price point for one territory. Note the `id` of each price point — you assign these when you set prices.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Set prices per territory",
+      "paragraphs": [
+        {
+          "text": "Assign a price point to the subscription in each territory by using `POST /v1/subscriptionPrices` (`POST-v1-subscriptionPrices`). The request requires relationships to the `subscription` and the `subscriptionPricePoint`. Set `startDate` to `null` to apply the price immediately, or to a future date to schedule the change. Include `planType` to match the plan you made available.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPrices"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Review price changes carefully. Once a price change goes into effect, you can’t revert it. For guidance on price changes, see `https://developer.apple.com/help/app-store-connect/`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/"
+          ]
+        },
+        {
+          "text": "Here’s an example payload that sets the equalized Canadian price point:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"subscriptionPrices\",\n    \"attributes\": {\n      \"startDate\": null,\n      \"planType\": \"MONTHLY\"\n    },\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6447497832\"\n        }\n      },\n      \"subscriptionPricePoint\": {\n        \"data\": {\n          \"type\": \"subscriptionPricePoints\",\n          \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJDQU4iLCJwIjoiMTAxNDIifQ\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Repeat this call for each territory, using the equalized price point ID you noted for that territory. There’s no bulk endpoint that applies equalized prices in a single call.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Verify your prices",
+      "paragraphs": [
+        {
+          "text": "Confirm the prices you set by using `GET /v1/subscriptions/{id}/prices` (`GET-v1-subscriptions-_id_-prices`). Filter by plan type and territory to check a specific configuration.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-prices"
+          ]
+        },
+        {
+          "text": "```other\nGET /v1/subscriptions/6447497832/prices?filter[planType]=MONTHLY&filter[territory]=CAN&include=subscriptionPricePoint,territory\n```",
+          "refs": []
+        },
+        {
+          "text": "If you set a price you no longer want — for example, a scheduled change that hasn’t taken effect — remove it with `DELETE /v1/subscriptionPrices/{id}` (`DELETE-v1-subscriptionPrices-_id_`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-subscriptionPrices-_id_"
+          ]
+        },
+        {
+          "text": "For more information about subscription price points and prices, see `subscription-price-points-and-subscription-prices`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Auto-Renewable Subscriptions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/querying-adjusted-subscription-price-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-plan-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/billing-grace-periods"
+      ]
+    }
+  ]
+}

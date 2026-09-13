@@ -1,0 +1,117 @@
+{
+  "id": "data:app_store_connect_api:UserVisibleAppsLinkagesResponse",
+  "title": "UserVisibleAppsLinkagesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/UserVisibleAppsLinkagesResponse",
+  "slug": "appstoreconnectapi/uservisibleappslinkagesresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response body that contains a list of related resource IDs.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object UserVisibleAppsLinkagesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[UserVisibleAppsLinkagesResponse.Data]",
+      "typeId": "data:app_store_connect_api:UserVisibleAppsLinkagesResponse.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The object types and IDs of the related resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links including the self-link and links to the related data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserVisibleAppsLinkagesResponse/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-users-_id_-relationships-visibleApps"
+      ]
+    },
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/User",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UsersResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserVisibleAppsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserRole"
+      ]
+    }
+  ]
+}

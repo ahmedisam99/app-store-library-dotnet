@@ -1,0 +1,263 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-ciBuildActions-{}",
+  "title": "Read build action information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_",
+  "slug": "appstoreconnectapi/get-v1-cibuildactions-_id_",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get information about a specific action Xcode Cloud performed as part of a build.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciBuildActions/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the Build Actions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciBuildActions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "actionType",
+            "startedDate",
+            "finishedDate",
+            "issueCounts",
+            "executionProgress",
+            "completionStatus",
+            "isRequiredToPass",
+            "buildRun",
+            "artifacts",
+            "issues",
+            "testResults"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Build Actions resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "buildRun"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciBuildRuns]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "number",
+            "createdDate",
+            "startedDate",
+            "finishedDate",
+            "sourceCommit",
+            "destinationCommit",
+            "isPullRequestBuild",
+            "issueCounts",
+            "executionProgress",
+            "completionStatus",
+            "startReason",
+            "cancelReason",
+            "builds",
+            "workflow",
+            "product",
+            "sourceBranchOrTag",
+            "destinationBranch",
+            "actions",
+            "pullRequest"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Build Actions resource returned by the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CiBuildActionResponse",
+      "typeId": "data:app_store_connect_api:CiBuildActionResponse",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below retrieves detailed information about an action Xcode Cloud performed. It also requests detailed information about the action’s build by including the `build-runs` resource in the query. Use the information provided in the response to display information on a dashboard or to access additional information; for example, information about other actions Xcode Cloud performed during the build.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-runs"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d?include=buildRun\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciBuildActions\",\n        \"id\": \"6034552c-6cc0-4ac3-ad18-c3d24970882d\",\n        \"attributes\": {\n            \"name\": \"archive\",\n            \"actionType\": \"ARCHIVE\",\n            \"startedDate\": null,\n            \"finishedDate\": null,\n            \"issueCounts\": null,\n            \"executionProgress\": \"PENDING\",\n            \"completionStatus\": null,\n            \"isRequiredToPass\": true\n        },\n        \"relationships\": {\n            \"buildRun\": {\n                \"data\": {\n                    \"type\": \"ciBuildRuns\",\n                    \"id\": \"a2c112a3-1ed1-416d-baf8-a9f46909a16a\"\n                },\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/relationships/buildRun\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/buildRun\"\n                }\n            },\n            \"artifacts\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/relationships/artifacts\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/artifacts\"\n                }\n            },\n            \"issues\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/relationships/issues\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/issues\"\n                }\n            },\n            \"testResults\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/relationships/testResults\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/testResults\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d\"\n        }\n    },\n    \"included\": [\n        {\n            \"type\": \"ciBuildRuns\",\n            \"id\": \"a2c112a3-1ed1-416d-baf8-a9f46909a16a\",\n            \"attributes\": {\n                \"number\": 1,\n                \"createdDate\": \"2021-08-17T17:33:22.59Z\",\n                \"startedDate\": null,\n                \"finishedDate\": null,\n                \"sourceCommit\": {\n                    \"commitSha\": \"SHA\",\n                    \"message\": \"Summary Message\\n\\nSome more details about the commit message.\",\n                    \"author\": {\n                        \"displayName\": \"Source Author\",\n                        \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                    },\n                    \"committer\": {\n                        \"displayName\": \"Source Committer\",\n                        \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                    },\n                    \"webUrl\": \"https://example.com/commit/abc123\"\n                },\n                \"destinationCommit\": {\n                    \"commitSha\": \"PR_BASE_COMMIT_SHA\",\n                    \"message\": \"BASE MESSAGE\",\n                    \"author\": {\n                        \"displayName\": \"Base Author\",\n                        \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                    },\n                    \"committer\": {\n                        \"displayName\": \"Base Committer\",\n                        \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                    },\n                    \"webUrl\": \"https://example.com/commit/xyz987\"\n                },\n                \"isPullRequestBuild\": false,\n                \"issueCounts\": null,\n                \"executionProgress\": \"PENDING\",\n                \"completionStatus\": null,\n                \"startReason\": \"MANUAL\",\n                \"cancelReason\": null\n            },\n            \"relationships\": {\n                \"buildRun\": {},\n                \"builds\": {\n                    \"links\": {\n                        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/a2c112a3-1ed1-416d-baf8-a9f46909a16a/relationships/builds\",\n                        \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/a2c112a3-1ed1-416d-baf8-a9f46909a16a/builds\"\n                    }\n                },\n                \"actions\": {\n                    \"links\": {\n                        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/a2c112a3-1ed1-416d-baf8-a9f46909a16a/relationships/actions\",\n                        \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/a2c112a3-1ed1-416d-baf8-a9f46909a16a/actions\"\n                    }\n                }\n            },\n            \"links\": {\n                \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/a2c112a3-1ed1-416d-baf8-a9f46909a16a\"\n            }\n        }\n    ],\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d?include=buildRun\"\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Build Actions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-buildRun",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-testResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-buildRun",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-testResults"
+      ]
+    }
+  ]
+}

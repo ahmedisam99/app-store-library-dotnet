@@ -1,0 +1,93 @@
+{
+  "id": "data:app_store_connect_api:BetaTesterState",
+  "title": "BetaTesterState",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaTesterState",
+  "slug": "appstoreconnectapi/betatesterstate",
+  "introducedAt": "3.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "String that describes the state of a beta tester.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string BetaTesterState",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "NOT_INVITED",
+      "abstract": {
+        "text": "The beta tester is not currently invited.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INVITED",
+      "abstract": {
+        "text": "The build of your app is eligible for submission and release on the App Store.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ACCEPTED",
+      "abstract": {
+        "text": "The beta tester has accepted an invite to test a build.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "INSTALLED",
+      "abstract": {
+        "text": "The beta tester has installed a build.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "REVOKED",
+      "abstract": {
+        "text": "The beta tester chose to stop testing, or the beta tester was removed from the app. In both cases, their installed build is not expired. Once the build expires, the system deletes the resource.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Attributes and Relationships",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaInviteType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

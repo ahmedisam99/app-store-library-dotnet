@@ -1,0 +1,246 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperience.Attributes",
+  "title": "AppClipAdvancedExperience.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperience/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/appclipadvancedexperience/attributes-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe an Advanced App Clip Experiences resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperience.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "action",
+      "type": "AppClipAction",
+      "typeId": "data:app_store_connect_api:AppClipAction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The call-to-action verb that appears on the App Clip card.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "businessCategory",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AUTOMOTIVE",
+            "BEAUTY",
+            "BIKES",
+            "BOOKS",
+            "CASINO",
+            "EDUCATION",
+            "EDUCATION_JAPAN",
+            "ENTERTAINMENT",
+            "EV_CHARGER",
+            "FINANCIAL_USD",
+            "FINANCIAL_CNY",
+            "FINANCIAL_GBP",
+            "FINANCIAL_JPY",
+            "FINANCIAL_EUR",
+            "FITNESS",
+            "FOOD_AND_DRINK",
+            "GAS",
+            "GROCERY",
+            "HEALTH_AND_MEDICAL",
+            "HOTEL_AND_TRAVEL",
+            "MUSIC",
+            "PARKING",
+            "PET_SERVICES",
+            "PROFESSIONAL_SERVICES",
+            "SHOPPING",
+            "TICKETING",
+            "TRANSIT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The business category of an advanced App Clip experience; for example, `PARKING`",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "defaultLanguage",
+      "type": "AppClipAdvancedExperienceLanguage",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceLanguage",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The default language for the advanced App Clip experience.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isPoweredBy",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the advanced App Clip experience was submitted by a platform provider that serves multiple businesses.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "link",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The invocation URL of the advanced App Clip experience.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "place",
+      "type": "AppClipAdvancedExperience.Attributes.Place",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperience.Attributes.Place",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The physical location you associate with the advanced App Clip experience. If you associate an advanced App Clip experience with a place, users can launch your App Clip from location-based suggestions from Siri Suggestions and the Maps app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "placeStatus",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "PENDING",
+            "MATCHED",
+            "NO_MATCH"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes a place’s match status with Points of Interest (POI) in Apple Maps. `PENDING` indicates that Apple Maps is currently matching the place to a POI. `MATCHED` indicates that the provided place information matched a POI, and `NO_MATCH` indicates that the place doesn’t match a POI in Apple Maps or is in a location not supported by Apple Maps.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "status",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "RECEIVED",
+            "DEACTIVATED",
+            "APP_TRANSFER_IN_PROGRESS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes the status of an advanced App Clip experience. `RECEIVED` indicates that users can invoke this experience, `DEACTIVATED` indicates that the experience is deactivated and users can’t launch the App Clip with this invocation, and `APP_TRANSFER_IN_PROGRESS` indicates that the experience is part of an app that’s currently transferred to another developer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The build version of the App Clip as an integer value; for example, `1234`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperience/Attributes-data.dictionary/Place-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperience/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

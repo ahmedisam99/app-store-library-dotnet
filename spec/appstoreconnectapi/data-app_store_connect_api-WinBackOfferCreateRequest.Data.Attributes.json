@@ -1,0 +1,259 @@
+{
+  "id": "data:app_store_connect_api:WinBackOfferCreateRequest.Data.Attributes",
+  "title": "WinBackOfferCreateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/winbackoffercreaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a winback offer resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WinBackOfferCreateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "customerEligibilityPaidSubscriptionDurationInMonths",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "How long a customer was a subscriber. Possible values are 1 to 24 (months as integers), 36 (3 years), 48 (4 years), and 60 (5 years).",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "customerEligibilityTimeSinceLastSubscribedInMonths",
+      "type": "IntegerRange",
+      "typeId": "data:app_store_connect_api:IntegerRange",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "How long since the subscriber last had an active subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "customerEligibilityWaitBetweenOffersInMonths",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The minimum time between the end of the customer’s subscription and the customer redeeming the same offer again. Optional. Possible values are 2 to 24 months.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "duration",
+      "type": "SubscriptionOfferDuration",
+      "typeId": "data:app_store_connect_api:SubscriptionOfferDuration",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The length of time for the offer period.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "endDate",
+      "type": "date",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Minimum length for a win-back offer is 3 days.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerId",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "(Required) string of alphanumeric characters, periods, and underscores, up to 100 characters. Use a unique value that you have not used for a promotional offer, offer code, or introductory offer, when you create your win-back offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "offerMode",
+      "type": "SubscriptionOfferMode",
+      "typeId": "data:app_store_connect_api:SubscriptionOfferMode",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "(Required) Describes how payment is configured for a win-back offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "periodCount",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "(Required) The number of subscription duration intervals.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "priority",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "HIGH",
+            "NORMAL"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Select how this offer ranks among your other offers and in-app events. `HIGH` priority offers will appear above other offers and events on your appʼs product page.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "promotionIntent",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NOT_PROMOTED",
+            "USE_AUTO_GENERATED_ASSETS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "You can promote this offer on your App Store product page. Promoted offers can also display in search results and may be featured on the Today, Games, and Apps tabs. If your win-back offer is live and `promotionIntent` is set to `USE_AUTO_GENERATED_ASSETS` you need to delete the win-back offer in order to remove it from promotion.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceName",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string of alphanumeric characters, spaces, periods, and underscores, up to 65 characters. Use a unique value that you have not used for a promotional offer, offer code, or introductory offer, when you create your win-back offer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "startDate",
+      "type": "date",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "First available date is today + 1 day.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "targetSubscriptionPlanType",
+      "type": "SubscriptionPlanType",
+      "typeId": "data:app_store_connect_api:SubscriptionPlanType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The subscription plan type that this offer applies to.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "data:app_store_connect_api:GameCenterLeaderboardSetLocalizationV2Response",
+  "title": "GameCenterLeaderboardSetLocalizationV2Response",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationV2Response",
+  "slug": "appstoreconnectapi/gamecenterleaderboardsetlocalizationv2response",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains a single Game Center leaderboard set localization v2 resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterLeaderboardSetLocalizationV2Response",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "GameCenterLeaderboardSetLocalizationV2",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardSetLocalizationV2",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "GameCenterLeaderboardSetImageV2",
+            "GameCenterLeaderboardSetVersionV2"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "data:",
+          "refs": []
+        },
+        {
+          "text": "included:",
+          "refs": []
+        },
+        {
+          "text": "links:",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationsV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationV2ImageLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationsResponse"
+      ]
+    }
+  ]
+}

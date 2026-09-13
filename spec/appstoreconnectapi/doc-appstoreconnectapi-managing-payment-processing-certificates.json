@@ -1,0 +1,175 @@
+{
+  "id": "doc:appstoreconnectapi/managing-payment-processing-certificates",
+  "title": "Managing merchant IDs and Payment Processing certificates",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/managing-payment-processing-certificates",
+  "slug": "appstoreconnectapi/managing-payment-processing-certificates",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and update certificates so your app uses Apple Pay and Wallet.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The value for `identifier` is a unique identifier for your merchant. The value for `name` is a descriptive name for the merchant.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "The `id` field in the example payload is a 10-character string that the prior request returns. The `csrContent` is your certificate-signing request.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "The “Create and activate” option also deactivates the expiring certificate by automatically setting the `activated` key to `FALSE`.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Managing your merchant Identifier (ID) and Payment Processing certificates keeps the Apple Pay service active in your app. To set up your Apple developer account and Xcode to implement Apple Pay in your apps, complete three steps:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Create a merchant ID.",
+          "refs": []
+        },
+        {
+          "text": "Create a Payment Processing certificate. To learn more about certificates for Apple Pay and Wallet, see `https://developer.apple.com/help/account/configure-app-capabilities/configure-apple-pay/`.",
+          "refs": [
+            "https://developer.apple.com/help/account/configure-app-capabilities/configure-apple-pay/"
+          ]
+        },
+        {
+          "text": "Enable Apple Pay in Xcode. To learn more see, `https://developer.apple.com/documentation/passkit/setting-up-apple-pay` Once you set up Apple Pay in your apps, you then can replace Payment Processing certificates as they near their expiration date — 25 months after you create them. To learn more, see `https://developer.apple.com/documentation/apple_pay_on_the_web/maintaining_your_environment#overview`.",
+          "refs": [
+            "https://developer.apple.com/documentation/passkit/setting-up-apple-pay",
+            "https://developer.apple.com/documentation/apple_pay_on_the_web/maintaining_your_environment#overview"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create a merchant ID",
+      "paragraphs": [
+        {
+          "text": "A merchant ID uniquely identifies you to Apple Pay as a merchant who is able to accept payments. A merchant ID never expires, and you can use the same one for multiple apps.",
+          "refs": []
+        },
+        {
+          "text": "To create a merchant ID, use `POST-v1-merchantIds`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-merchantIds"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```json\n\"data\": {\n        \"type\": \"merchantIds\",\n        \"attributes\": {\n            \"identifier\": \"com.myapp.merchant1\",\n            \"name\": \"MyMerchantName\"\n        }\n    }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n> The value for `identifier` is a unique identifier for your merchant. The value for `name` is a descriptive name for the merchant.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create Payment Processing certificate",
+      "paragraphs": [
+        {
+          "text": "To create a certificate to use with Apple Pay, use `POST-v1-certificates`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-certificates"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"certificates\",\n    \"attributes\": {\n        \"certificateType\": \"APPLE_PAY\",\n        \"csrContent\" : \"<PEM-CSR-Content>\"\n    },\n    \"relationships\": {\n      \"merchantId\": {\n        \"data\": {\n          \"type\": \"merchantIds\",\n          \"id\": \"1234567890\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n> The `id` field in the example payload is a 10-character string that the prior request returns. The `csrContent` is your certificate-signing request.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Rotate a Payment Processing certificate",
+      "paragraphs": [
+        {
+          "text": "Use one of three options to replace a payment-processing certificate nearing its 25-month expiration date. Each option takes into account that you can have more than one payment processing certificate, but only one can be `activated` for use at any time:",
+          "refs": []
+        },
+        {
+          "text": "- **Expire and create** — Let the existing Payment Process certificate expire. Then create a new Payment Processing certificate using `POST-v1-certificates`. The created certificate automatically has the `activated` key set to `TRUE`.\n- ** Create then revoke** — Create a new Payment Processing certificate using `POST-v1-certificates`. Revoke the existing certificate nearing expiration by using `DELETE-v1-certificates-_id_`. The new Payment Processing certificate automatically has the `activated` key set to `TRUE`.\n- ** Create and activate** — Create a new Payment Processing certificate using `POST-v1-certificates`. Then explicitly “activate” the new certificate using `PATCH-v1-certificates-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-certificates",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-certificates-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-certificates-_id_"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> The “Create and activate” option also deactivates the expiring certificate by automatically setting the `activated` key to `FALSE`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing merchant IDs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_-relationships-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-merchantIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-merchantIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-merchantIds-_id_"
+      ]
+    }
+  ]
+}

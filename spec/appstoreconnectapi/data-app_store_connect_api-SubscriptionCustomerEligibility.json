@@ -1,0 +1,77 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionCustomerEligibility",
+  "title": "SubscriptionCustomerEligibility",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionCustomerEligibility",
+  "slug": "appstoreconnectapi/subscriptioncustomereligibility",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that represents a customer’s eligibility for a subscription offer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string SubscriptionCustomerEligibility",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "NEW",
+      "abstract": {
+        "text": "A customer who has not previously subscribed to this subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "EXISTING",
+      "abstract": {
+        "text": "A customer who is currently subscribed to this subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "EXPIRED",
+      "abstract": {
+        "text": "A customer who was but is not currently subscribed to this subscription.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCode/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferDuration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferEligibility",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferMode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionOfferCode/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

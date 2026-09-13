@@ -1,0 +1,113 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseLocalizationResponse",
+  "title": "InAppPurchaseLocalizationResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationResponse",
+  "slug": "appstoreconnectapi/inapppurchaselocalizationresponse",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `InAppPurchaseLocalizationV2Response` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseLocalizationV2Response"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify a single in-app purchase localization.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseLocalizationResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "InAppPurchaseLocalization",
+      "typeId": "data:app_store_connect_api:InAppPurchaseLocalization",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[InAppPurchaseV2]",
+      "typeId": "data:app_store_connect_api:InAppPurchaseV2",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasesV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseContentResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePricePointsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePricePoint",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePrice",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePriceInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInAppPurchasesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInAppPurchasesV2LinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePricePointEqualizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2AppStoreReviewScreenshotLinkageResponse"
+      ]
+    }
+  ]
+}

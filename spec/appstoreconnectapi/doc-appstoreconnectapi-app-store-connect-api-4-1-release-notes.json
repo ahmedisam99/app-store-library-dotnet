@@ -1,0 +1,203 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-4-1-release-notes",
+  "title": "App Store Connect API 4.1 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-4-1-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 4.1 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "You can now use `build-uploads` to upload and manage build uploads for your apps.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-uploads"
+          ]
+        },
+        {
+          "text": "You can now use the `app-tags` resource to review the Apple created app tags for your app and opt out of certain app tags. To learn more, see `https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-tags`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+            "https://developer.apple.com/help/app-store-connect/manage-app-information/manage-app-tags"
+          ]
+        },
+        {
+          "text": "Background assets has three new webhook event types for background assets, `BACKGROUND_ASSET_VERSION_INTERNAL_BETA_RELEASE_CREATED`, `BACKGROUND_ASSET_VERSION_EXTERNAL_BETA_RELEASE_STATE_UPDATED`, and `BACKGROUND_ASSET_VERSION_APP_STORE_RELEASE_STATE_UPDATED`. To learn more, see `webhook-events`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+          ]
+        },
+        {
+          "text": "`webhook-notifications` now includes events for build uploads and build beta details. To learn more see, `configuring-webhook-notifications` and `webhook-events`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+          ]
+        },
+        {
+          "text": "You can now use composite or sequential checksum on upload of asset packs. Checksums are not required for upload. For more information about these assets, see `managing-apple-hosted-background-assets`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-apple-hosted-background-assets"
+          ]
+        },
+        {
+          "text": "You can now use the resource `backgroundAssetVersionExternalBetaReleases` to manage asset packs for external betas, and `backgroundAssetVersionAppStoreReleases` to manage asset packs for App store releases. To learn more, see `background-assets`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/background-assets"
+          ]
+        },
+        {
+          "text": "You can now read age ratings per territory by using `GET-v1-appInfos-_id_-territoryAgeRatings`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-territoryAgeRatings"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Improvements",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The attribute `platform` is no longer required when using `POST-v1-reviewSubmissions`. You can optionally add the attribute `platform` when using `PATCH-v1-reviewSubmissions-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_"
+          ]
+        },
+        {
+          "text": "The attribute `streamlinedPurchasingEnabled` has a default value of `true` for the object `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/App/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The attribute `APPLE_VISION_PRO` is now documented for `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Device/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The attributes `baDownloadAllowance` and `baMaxInstallSize` are now documented for `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The attributes `usesNonExemptEncryption` and `computedMinVisionOsVersion` are now documented for `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The filter `buildAudienceType` is now available for `GET-v1-preReleaseVersions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-preReleaseVersions"
+          ]
+        },
+        {
+          "text": "The attribute `masked` is now available for `Attributes-data.dictionary`. This boolean value that returns true if an icon has Liquid Glass treatment applied.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildIcon/Attributes-data.dictionary"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The attributes for `Attributes-data.dictionary`, `INFREQUENT_OR_MILD` and `FREQUENT_OR_INTENSE` are deprecated. When you `PATCH-v1-ageRatingDeclarations-_id_`, use the values use `INFREQUENT` or `FREQUENT` to update the age rating declarations for your app.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclaration/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-ageRatingDeclarations-_id_"
+          ]
+        },
+        {
+          "text": "The `sourceFileChecksum` attribute is deprecated for `PATCH-v1-backgroundAssetUploadFiles-_id_`. Use `sourceFileChecksums` with the new `Checksums` type instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-backgroundAssetUploadFiles-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Checksums"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `allowedDurations` properties is now removed from `POST-v1-gameCenterChallenges` and `PATCH-v1-gameCenterChallenges-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallenges",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterChallenges-_id_"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_connect_api:AppStoreVersionExperimentTreatmentResponse",
+  "title": "AppStoreVersionExperimentTreatmentResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentResponse",
+  "slug": "appstoreconnectapi/appstoreversionexperimenttreatmentresponse",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify an App Store version experiment treatment.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppStoreVersionExperimentTreatmentResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppStoreVersionExperimentTreatment",
+      "typeId": "data:app_store_connect_api:AppStoreVersionExperimentTreatment",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppStoreVersionExperimentTreatmentLocalization",
+            "AppStoreVersionExperiment"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatment",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentAppStoreVersionExperimentTreatmentsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentAppStoreVersionExperimentTreatmentLocalizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentLocalizationAppPreviewSetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentTreatmentLocalizationAppScreenshotSetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionExperimentV2AppStoreVersionExperimentTreatmentsLinkagesResponse"
+      ]
+    }
+  ]
+}

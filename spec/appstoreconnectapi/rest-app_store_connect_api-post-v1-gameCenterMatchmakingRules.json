@@ -1,0 +1,153 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterMatchmakingRules",
+  "title": "Create a Rule",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRules",
+  "slug": "appstoreconnectapi/post-v1-gamecentermatchmakingrules",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add a matchmaking rule to a rule set.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingRules",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterMatchmakingRuleCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingRuleResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRules”,\n        “attributes”: {\n            “type”: “COMPATIBLE”,\n            “description”: “Check whether the players use the same game settings.”,\n            “referenceName”: “SameTheme”,\n            “expression”: “requests[0].properties.theme == requests[1].properties.theme”\n        },\n        “relationships”: {\n            “ruleSet”: {\n                “data”: {\n                    “type”: “gameCenterMatchmakingRuleSets”,\n                    “id”: “7353266e-8c6f-4cbe-8f0f-5108332a1146”\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRules”,\n        “id”: “2fd4bb73-3cca-46ca-aced-395c54ab11bc”,\n        “attributes”: {\n            “referenceName”: “SameTheme”,\n            “description”: “Check whether the players use the same game settings.”,\n            “type”: “COMPATIBLE”,\n            “expression”: “requests[0].properties.theme == requests[1].properties.theme”,\n            “weight”: null\n        },\n        “links”: {\n            “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/2fd4bb73-3cca-46ca-aced-395c54ab11bc”\n        }\n    },\n    “links”: {\n        “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules”\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, modifying, and deleting rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingRules-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingRules-_id_"
+      ]
+    }
+  ]
+}

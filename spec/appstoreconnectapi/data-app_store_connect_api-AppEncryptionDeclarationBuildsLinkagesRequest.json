@@ -1,0 +1,91 @@
+{
+  "id": "data:app_store_connect_api:AppEncryptionDeclarationBuildsLinkagesRequest",
+  "title": "AppEncryptionDeclarationBuildsLinkagesRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppEncryptionDeclarationBuildsLinkagesRequest",
+  "slug": "appstoreconnectapi/appencryptiondeclarationbuildslinkagesrequest",
+  "introducedAt": "1.0",
+  "deprecated": {
+    "at": "2.4",
+    "summary": {
+      "text": "This object is deprecated. Use `AppEncryptionDeclaration-data.dictionary` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUpdateRequest/Data-data.dictionary/Relationships-data.dictionary/AppEncryptionDeclaration-data.dictionary"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A request body you use to add builds to an app encryption declaration.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppEncryptionDeclarationBuildsLinkagesRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AppEncryptionDeclarationBuildsLinkagesRequest.Data]",
+      "typeId": "data:app_store_connect_api:AppEncryptionDeclarationBuildsLinkagesRequest.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The object types and IDs of the related resources.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationBuildsLinkagesRequest/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationDocument",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationDocumentCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationDocumentResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationDocumentUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationAppEncryptionDeclarationDocumentLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclarationAppLinkageResponse"
+      ]
+    }
+  ]
+}

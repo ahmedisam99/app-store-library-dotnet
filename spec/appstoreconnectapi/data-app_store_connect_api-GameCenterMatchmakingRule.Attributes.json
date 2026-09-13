@@ -1,0 +1,121 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingRule.Attributes",
+  "title": "GameCenterMatchmakingRule.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingRule/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingrule/attributes-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes of a matchmaking rule.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingRule.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "description",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A human-readable description of the rule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expression",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Code that returns a Boolean or numeric value that the matchmaking rules algorithm executes to compare or filter match requests.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A name for the rule that’s unique within the scope of its rule set.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "COMPATIBLE",
+            "DISTANCE",
+            "MATCH",
+            "TEAM"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The type or category of the rule that determines the return value and properties available in the expression.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "weight",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A numeric value for the rule when `type` is either `DISTANCE` or `MATCH`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

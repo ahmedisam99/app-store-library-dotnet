@@ -1,0 +1,162 @@
+{
+  "id": "data:app_store_connect_api:BetaTester.Attributes",
+  "title": "BetaTester.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaTester/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/betatester/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a beta tester resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BetaTester.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appDevices",
+      "type": "[BetaTester.Attributes.AppDevices]",
+      "typeId": "data:app_store_connect_api:BetaTester.Attributes.AppDevices",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "email",
+      "type": "email",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The beta tester’s email address, used for sending beta testing invitations.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "firstName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The beta tester’s first name.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "inviteType",
+      "type": "BetaInviteType",
+      "typeId": "data:app_store_connect_api:BetaInviteType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An invite type that indicates if a beta tester was invited by an email invite or used a TestFlight public link to join a beta test.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lastName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The beta tester’s last name.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "BetaTesterState",
+      "typeId": "data:app_store_connect_api:BetaTesterState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The status of a beta tester.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Attributes-data.dictionary/AppDevices-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-testers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaInviteType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTesterState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Relationships-data.dictionary"
+      ]
+    },
+    {
+      "title": "Attributes and Relationships",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaInviteType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTesterState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

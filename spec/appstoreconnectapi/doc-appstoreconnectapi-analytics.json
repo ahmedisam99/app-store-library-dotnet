@@ -1,0 +1,207 @@
+{
+  "id": "doc:appstoreconnectapi/analytics",
+  "title": "Analytics",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/analytics",
+  "slug": "appstoreconnectapi/analytics",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get data about your apps and usage.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " If you have any questions about the data made available in this API, including about how Apple applies privacy measures to protect user privacy and complies with legal obligations, contact Apple through Feedback Assistant by selecting the following option:\n\nDeveloper Tools & Resources > App Store Connect API > Data Request\n\n`https://support.apple.com/guide/feedback-assistant/welcome/mac` about how to use Feedback Assistant.",
+        "refs": [
+          "https://support.apple.com/guide/feedback-assistant/welcome/mac"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Role",
+        "Manage requests",
+        "List and download reports"
+      ],
+      "rows": [
+        [
+          "Admin",
+          "`POST-v1-analyticsReportRequests` and `DELETE-v1-analyticsReportRequests-_id_`",
+          "`GET-v1-analyticsReportRequests-_id_-reports`"
+        ],
+        [
+          "Finance",
+          "",
+          "`GET-v1-analyticsReportRequests-_id_-reports`"
+        ],
+        [
+          "Sales and Reports",
+          "",
+          "`GET-v1-analyticsReportRequests-_id_-reports`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the Analytics Reports API to analyze your app’s performance on iOS and the App Store and find opportunities for improvement. To learn more about interpreting the data using the glossary of report fields and definitions, see `analytics-reports`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/analytics-reports"
+          ]
+        },
+        {
+          "text": "To help protect user privacy, where appropriate, Apple is applying measures to protect personally identifable infomation. For specific reports, Apple adds noise or applies crowd anonymity, and uses both approaches for other reports. Apple only reports totals when a specific number of data points are available. For more infomation about these measures, see `privacy`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/Analytics-Reports/privacy"
+          ]
+        },
+        {
+          "text": "To download analytics reports, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "This table outlines which roles can use which resources:",
+          "refs": []
+        },
+        {
+          "text": "| Role | Manage requests | List and download reports |\n| --- | --- | --- |\n| Admin | `POST-v1-analyticsReportRequests` and `DELETE-v1-analyticsReportRequests-_id_` | `GET-v1-analyticsReportRequests-_id_-reports` |\n| Finance |  | `GET-v1-analyticsReportRequests-_id_-reports` |\n| Sales and Reports |  | `GET-v1-analyticsReportRequests-_id_-reports` |",
+          "refs": []
+        },
+        {
+          "text": "The Sales and Reports role can also read `GET-v1-salesReports` in addition to Analytics Reports.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-salesReports"
+          ]
+        },
+        {
+          "text": "To learn more about roles, see `https://developer.apple.com/support/roles/`.",
+          "refs": [
+            "https://developer.apple.com/support/roles/"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  If you have any questions about the data made available in this API, including about how Apple applies privacy measures to protect user privacy and complies with legal obligations, contact Apple through Feedback Assistant by selecting the following option:\n> \n> Developer Tools & Resources > App Store Connect API > Data Request\n> \n> `https://support.apple.com/guide/feedback-assistant/welcome/mac` about how to use Feedback Assistant.",
+          "refs": [
+            "https://support.apple.com/guide/feedback-assistant/welcome/mac"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "ADMIN",
+          "refs": []
+        },
+        {
+          "text": "SALES AND REPORTS",
+          "refs": []
+        },
+        {
+          "text": "FINANCE",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/downloading-analytics-reports"
+      ]
+    },
+    {
+      "title": "Making, Reading, and Deleting Requests",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-analyticsReportRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-analyticsReportRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_-reports",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_-relationships-reports",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-analyticsReportRequests-_id_"
+      ]
+    },
+    {
+      "title": "Reading Reports, Instances, and Segments",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_-instances",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_-segments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_-relationships-segments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportSegments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_-relationships-instances"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReport",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstance",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstanceResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstancesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegment",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegmentResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportSegmentsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstanceSegmentsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportInstancesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequestReportsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAnalyticsReportRequestsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Reporting",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sales-and-finance",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/power-and-performance-metrics-and-logs"
+      ]
+    }
+  ]
+}

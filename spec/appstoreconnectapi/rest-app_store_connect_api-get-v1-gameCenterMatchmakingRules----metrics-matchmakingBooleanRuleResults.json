@@ -1,0 +1,276 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-gameCenterMatchmakingRules-{}-metrics-matchmakingBooleanRuleResults",
+  "title": "Get boolean rule results",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingBooleanRuleResults",
+  "slug": "appstoreconnectapi/get-v1-gamecentermatchmakingrules-_id_-metrics-matchmakingbooleanruleresults",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the results of a specific matchmaking rule that returns Boolean values.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingRules/{id}/metrics/matchmakingBooleanRuleResults",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The unique identifier for the rule.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[gameCenterMatchmakingQueue]",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The fields of the queues to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[result]",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The types of the results to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "granularity",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P1D",
+            "PT1H",
+            "PT15M"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The level of information you want in the response, specified as a time interval for the data collection, using the ISO 8601 format for durations.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "groupBy",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "result",
+            "gameCenterMatchmakingQueue"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Organizes the results by queue or outcome.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of results to include.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "sort",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "count",
+            "-count"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Sort results by decreasing or increasing count. For example, `count` sorts the results by decreasing number of players that Game Center finds.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingBooleanRuleResultsV1MetricResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingBooleanRuleResultsV1MetricResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?granularity=PT15M&groupBy=result\n\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"gameCenterMatchmakingBooleanRuleResults\",\n      \"dataPoints\": [\n        {\n          \"start\": \"2023-10-07T02:15:00Z\",\n          \"end\": \"2023-10-07T02:30:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T02:00:00Z\",\n          \"end\": \"2023-10-07T02:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:45:00Z\",\n          \"end\": \"2023-10-07T02:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:30:00Z\",\n          \"end\": \"2023-10-07T01:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:15:00Z\",\n          \"end\": \"2023-10-07T01:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:00:00Z\",\n          \"end\": \"2023-10-07T01:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:45:00Z\",\n          \"end\": \"2023-10-07T01:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:30:00Z\",\n          \"end\": \"2023-10-07T00:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:15:00Z\",\n          \"end\": \"2023-10-07T00:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:00:00Z\",\n          \"end\": \"2023-10-07T00:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:45:00Z\",\n          \"end\": \"2023-10-07T00:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:30:00Z\",\n          \"end\": \"2023-10-06T23:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:15:00Z\",\n          \"end\": \"2023-10-06T23:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:00:00Z\",\n          \"end\": \"2023-10-06T23:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:45:00Z\",\n          \"end\": \"2023-10-06T23:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:30:00Z\",\n          \"end\": \"2023-10-06T22:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:15:00Z\",\n          \"end\": \"2023-10-06T22:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:00:00Z\",\n          \"end\": \"2023-10-06T22:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:45:00Z\",\n          \"end\": \"2023-10-06T22:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:30:00Z\",\n          \"end\": \"2023-10-06T21:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:15:00Z\",\n          \"end\": \"2023-10-06T21:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:00:00Z\",\n          \"end\": \"2023-10-06T21:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:45:00Z\",\n          \"end\": \"2023-10-06T21:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:30:00Z\",\n          \"end\": \"2023-10-06T20:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:15:00Z\",\n          \"end\": \"2023-10-06T20:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:00:00Z\",\n          \"end\": \"2023-10-06T20:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:45:00Z\",\n          \"end\": \"2023-10-06T20:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:30:00Z\",\n          \"end\": \"2023-10-06T19:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:15:00Z\",\n          \"end\": \"2023-10-06T19:30:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:00:00Z\",\n          \"end\": \"2023-10-06T19:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T18:45:00Z\",\n          \"end\": \"2023-10-06T19:00:00Z\",\n          \"values\": {\n            \"count\": 14\n          }\n        },\n        {\n          \"start\": \"2023-10-06T18:30:00Z\",\n          \"end\": \"2023-10-06T18:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        }\n      ],\n      \"dimensions\": {\n        \"result\": {\n          \"data\": true,\n          \"links\": {\n            \"groupBy\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?groupBy=result\"\n          }\n        },\n        \"gameCenterMatchmakingQueue\": {\n          \"links\": {\n            \"groupBy\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?groupBy=gameCenterMatchmakingQueue\"\n          }\n        }\n      },\n      \"granularity\": 900\n    },\n    {\n      \"type\": \"gameCenterMatchmakingBooleanRuleResults\",\n      \"dataPoints\": [\n        {\n          \"start\": \"2023-10-07T02:15:00Z\",\n          \"end\": \"2023-10-07T02:30:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T02:00:00Z\",\n          \"end\": \"2023-10-07T02:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:45:00Z\",\n          \"end\": \"2023-10-07T02:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:30:00Z\",\n          \"end\": \"2023-10-07T01:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:15:00Z\",\n          \"end\": \"2023-10-07T01:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-07T01:00:00Z\",\n          \"end\": \"2023-10-07T01:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:45:00Z\",\n          \"end\": \"2023-10-07T01:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:30:00Z\",\n          \"end\": \"2023-10-07T00:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:15:00Z\",\n          \"end\": \"2023-10-07T00:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-07T00:00:00Z\",\n          \"end\": \"2023-10-07T00:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:45:00Z\",\n          \"end\": \"2023-10-07T00:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:30:00Z\",\n          \"end\": \"2023-10-06T23:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:15:00Z\",\n          \"end\": \"2023-10-06T23:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T23:00:00Z\",\n          \"end\": \"2023-10-06T23:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:45:00Z\",\n          \"end\": \"2023-10-06T23:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:30:00Z\",\n          \"end\": \"2023-10-06T22:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:15:00Z\",\n          \"end\": \"2023-10-06T22:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T22:00:00Z\",\n          \"end\": \"2023-10-06T22:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:45:00Z\",\n          \"end\": \"2023-10-06T22:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:30:00Z\",\n          \"end\": \"2023-10-06T21:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:15:00Z\",\n          \"end\": \"2023-10-06T21:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T21:00:00Z\",\n          \"end\": \"2023-10-06T21:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:45:00Z\",\n          \"end\": \"2023-10-06T21:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:30:00Z\",\n          \"end\": \"2023-10-06T20:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:15:00Z\",\n          \"end\": \"2023-10-06T20:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T20:00:00Z\",\n          \"end\": \"2023-10-06T20:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:45:00Z\",\n          \"end\": \"2023-10-06T20:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:30:00Z\",\n          \"end\": \"2023-10-06T19:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:15:00Z\",\n          \"end\": \"2023-10-06T19:30:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T19:00:00Z\",\n          \"end\": \"2023-10-06T19:15:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-06T18:45:00Z\",\n          \"end\": \"2023-10-06T19:00:00Z\",\n          \"values\": {\n            \"count\": 4\n          }\n        },\n        {\n          \"start\": \"2023-10-06T18:30:00Z\",\n          \"end\": \"2023-10-06T18:45:00Z\",\n          \"values\": {\n            \"count\": 0\n          }\n        }\n      ],\n      \"dimensions\": {\n        \"result\": {\n          \"data\": false,\n          \"links\": {\n            \"groupBy\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?groupBy=result\"\n          }\n        },\n        \"gameCenterMatchmakingQueue\": {\n          \"links\": {\n            \"groupBy\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?groupBy=gameCenterMatchmakingQueue\"\n          }\n        }\n      },\n      \"granularity\": 900\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRules/0f0fcbf9-43b6-429d-8c08-fcaf66a52872/metrics/matchmakingBooleanRuleResults?granularity=PT15M&groupBy=result\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 2,\n      \"limit\": 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting rule results and errors",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingNumberRuleResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingRuleErrors"
+      ]
+    }
+  ]
+}

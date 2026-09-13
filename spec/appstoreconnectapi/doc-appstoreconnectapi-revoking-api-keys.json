@@ -1,0 +1,167 @@
+{
+  "id": "doc:appstoreconnectapi/revoking-api-keys",
+  "title": "Revoking API Keys",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/revoking-api-keys",
+  "slug": "appstoreconnectapi/revoking-api-keys",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Revoke unused, lost, or compromised private keys.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Once you revoke an API key, you can’t reinstate it. Revoked keys are displayed for 30 days on the API Keys page under the Revoked heading.",
+        "refs": []
+      }
+    },
+    {
+      "style": "tip",
+      "prose": {
+        "text": " Admins can prevent a user from creating an Individual Key by removing the Generate Individual API Keys permission.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Revoke an API key immediately if it becomes inactive, lost, or compromised. A revoked API key denies access to the App Store Connect API on your organization’s behalf.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Once you revoke an API key, you can’t reinstate it. Revoked keys are displayed for 30 days on the API Keys page under the Revoked heading.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Revoking Team Keys",
+      "paragraphs": [
+        {
+          "text": "To revoke a team API key, log in to `https://appstoreconnect.apple.com/` with an Admin account.",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Select Users and Access, then select the Keys tab.",
+          "refs": []
+        },
+        {
+          "text": "Click Edit next to the list of Active keys.",
+          "refs": []
+        },
+        {
+          "text": "Select the API keys to revoke, and click Revoke Key.",
+          "refs": []
+        },
+        {
+          "text": "Click the Revoke button to confirm.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Revoking Individual Keys",
+      "paragraphs": [
+        {
+          "text": "There are two ways to revoke an individual API key, depending on your role. Begin both methods by logging in to App Store Connect.",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "To revoke keys for another user, as an Admin:",
+          "refs": []
+        },
+        {
+          "text": "To revoke your own key:",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n>  Admins can prevent a user from creating an Individual Key by removing the Generate Individual API Keys permission.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Select Users and Access, then select the Keys tab.",
+          "refs": []
+        },
+        {
+          "text": "Click Individual Keys.",
+          "refs": []
+        },
+        {
+          "text": "Click Edit next to the list of Active keys.",
+          "refs": []
+        },
+        {
+          "text": "Select the API keys to revoke, and click Revoke Key.",
+          "refs": []
+        },
+        {
+          "text": "Click the Revoke button to confirm.",
+          "refs": []
+        },
+        {
+          "text": "Go to your user profile.",
+          "refs": []
+        },
+        {
+          "text": "Scroll down to Individual API Key.",
+          "refs": []
+        },
+        {
+          "text": "Click Revoke.",
+          "refs": []
+        },
+        {
+          "text": "Click the Revoke button to confirm.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/identifying-rate-limits",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-release-notes"
+      ]
+    }
+  ]
+}

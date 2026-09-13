@@ -1,0 +1,256 @@
+{
+  "id": "data:app_store_connect_api:CiWorkflowUpdateRequest.Data.Attributes",
+  "title": "CiWorkflowUpdateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/ciworkflowupdaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes of the Workflows resource you’re changing with the update request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiWorkflowUpdateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "actions",
+      "type": "[CiAction]",
+      "typeId": "data:app_store_connect_api:CiAction",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s actions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "clean",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether Xcode Cloud should perform a clean build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "containerFilePath",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The path to your Xcode project or workspace.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "description",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow description.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isEnabled",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the workflow is active or deactivated.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "name",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the workflow you want to create; for example, `My Workflow`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isLockedForEditing",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether edits to the workflow are restricted.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "pullRequestStartCondition",
+      "type": "CiPullRequestStartCondition",
+      "typeId": "data:app_store_connect_api:CiPullRequestStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s start condition for pull request changes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "scheduledStartCondition",
+      "type": "CiScheduledStartCondition",
+      "typeId": "data:app_store_connect_api:CiScheduledStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s start condition that starts new builds on a custom schedule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "branchStartCondition",
+      "type": "CiBranchStartCondition",
+      "typeId": "data:app_store_connect_api:CiBranchStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s start condition that starts new builds for changes to a branch.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "tagStartCondition",
+      "type": "CiTagStartCondition",
+      "typeId": "data:app_store_connect_api:CiTagStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s start condition that starts new builds for changes to a tag.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "manualBranchStartCondition",
+      "type": "CiManualBranchStartCondition",
+      "typeId": "data:app_store_connect_api:CiManualBranchStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "manualPullRequestStartCondition",
+      "type": "CiManualPullRequestStartCondition",
+      "typeId": "data:app_store_connect_api:CiManualPullRequestStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "manualTagStartCondition",
+      "type": "CiManualTagStartCondition",
+      "typeId": "data:app_store_connect_api:CiManualTagStartCondition",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseImageCreateRequest",
+  "title": "InAppPurchaseImageCreateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseImageCreateRequest",
+  "slug": "appstoreconnectapi/inapppurchaseimagecreaterequest",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `InAppPurchaseImageV2CreateRequest` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageV2CreateRequest"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create an in-app purchase image reservation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseImageCreateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "InAppPurchaseImageCreateRequest.Data",
+      "typeId": "data:app_store_connect_api:InAppPurchaseImageCreateRequest.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageCreateRequest/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImagesResponse"
+      ]
+    }
+  ]
+}

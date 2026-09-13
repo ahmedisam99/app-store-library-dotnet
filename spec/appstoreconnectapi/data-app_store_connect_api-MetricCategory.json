@@ -1,0 +1,128 @@
+{
+  "id": "data:app_store_connect_api:MetricCategory",
+  "title": "MetricCategory",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/MetricCategory",
+  "slug": "appstoreconnectapi/metriccategory",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Categories of metric reports for apps that you distribute through the App Store.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string MetricCategory",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "HANG",
+      "abstract": {
+        "text": "The number of seconds per hour that the main thread of the app is unresponsive for more than 250 ms (the maximum time an app can respond to a typical event before a person perceives it as slow).",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "LAUNCH",
+      "abstract": {
+        "text": "The average launch time (the time between a person tapping your app icon and the system drawing a screen other than the launch screen), measured in milliseconds.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "MEMORY",
+      "abstract": {
+        "text": "The amount of memory the app uses, in megabytes.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DISK",
+      "abstract": {
+        "text": "The number of megabytes per day that the app writes to long-term storage.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "BATTERY",
+      "abstract": {
+        "text": "The amount of battery power the app uses over a 24-hour period when the device is disconnected from power.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "TERMINATION",
+      "abstract": {
+        "text": "The average number of app terminations that people don’t initiate, including background terminations, per day.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ANIMATION",
+      "abstract": {
+        "text": "The hitch rate of your app over time. The hitch rate tracks animation interruptions across all animated interactions, including scrolling, transitions, and other continuous motion.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "STORAGE",
+      "abstract": {
+        "text": "The data usage and binary size of your app.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignaturesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignature",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLogCallStackNode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricsInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PerfPowerMetric",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPerfPowerMetricsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignatureLogsLinkagesResponse"
+      ]
+    }
+  ]
+}

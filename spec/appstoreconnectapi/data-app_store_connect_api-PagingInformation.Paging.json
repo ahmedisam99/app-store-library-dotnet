@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:PagingInformation.Paging",
+  "title": "PagingInformation.Paging",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PagingInformation/Paging-data.dictionary",
+  "slug": "appstoreconnectapi/paginginformation/paging-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Paging details such as the total number of resources and the per-page limit.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PagingInformation.Paging",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "total",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The total number of resources matching your request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of resources to return per page, from 0 to 200.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "nextCursor",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Adjust the number of resources returned per page by using the `limit` query parameter in your request. For example, the following request  returns the first 10 testers:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nGET /v1/betaTesters?limit=10\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

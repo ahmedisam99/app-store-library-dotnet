@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:MarketplaceWebhookResponse",
+  "title": "MarketplaceWebhookResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/MarketplaceWebhookResponse",
+  "slug": "appstoreconnectapi/marketplacewebhookresponse",
+  "introducedAt": "3.3",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single marketplace webhook endpoint configuration.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object MarketplaceWebhookResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "MarketplaceWebhook",
+      "typeId": "data:app_store_connect_api:MarketplaceWebhook",
+      "required": true,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this object with `POST-v1-marketplaceWebhooks`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceWebhooks"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhook",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhookCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhooksResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhookUpdateRequest"
+      ]
+    }
+  ]
+}

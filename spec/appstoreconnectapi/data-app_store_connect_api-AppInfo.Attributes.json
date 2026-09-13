@@ -1,0 +1,270 @@
+{
+  "id": "data:app_store_connect_api:AppInfo.Attributes",
+  "title": "AppInfo.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppInfo/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/appinfo/attributes-data.dictionary",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe an App Infos resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppInfo.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "appStoreAgeRating",
+      "type": "AppStoreAgeRating",
+      "typeId": "data:app_store_connect_api:AppStoreAgeRating",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The app’s age rating as it appears on the App Store for all platforms.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appStoreState",
+      "type": "AppStoreVersionState",
+      "typeId": "data:app_store_connect_api:AppStoreVersionState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "This attribute is deprecated. Use `state` instead.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "australiaAgeRating",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "FIFTEEN",
+            "EIGHTEEN"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "brazilAgeRating",
+      "type": "BrazilAgeRating",
+      "typeId": "data:app_store_connect_api:BrazilAgeRating",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "This attribute is deprecated. Use `brazilAgeRatingV2` instead.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "brazilAgeRatingV2",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "SELF_RATED_L",
+            "SELF_RATED_TEN",
+            "SELF_RATED_TWELVE",
+            "SELF_RATED_FOURTEEN",
+            "SELF_RATED_SIXTEEN",
+            "SELF_RATED_EIGHTEEN",
+            "OFFICIAL_L",
+            "OFFICIAL_TEN",
+            "OFFICIAL_TWELVE",
+            "OFFICIAL_FOURTEEN",
+            "OFFICIAL_SIXTEEN",
+            "OFFICIAL_EIGHTEEN"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The app’s age rating as it appears on the App Store in Brazil for all platforms.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "franceAgeRating",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "EIGHTEEN"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "kidsAgeBand",
+      "type": "KidsAgeBand",
+      "typeId": "data:app_store_connect_api:KidsAgeBand",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "This attribute is deprecated. Use ‘ageRatingDeclarations#kidsAgeBand’ instead.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "koreaAgeRating",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ALL",
+            "TWELVE",
+            "FIFTEEN",
+            "NINETEEN",
+            "NOT_APPLICABLE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ACCEPTED",
+            "DEVELOPER_REJECTED",
+            "IN_REVIEW",
+            "PENDING_RELEASE",
+            "PREPARE_FOR_SUBMISSION",
+            "READY_FOR_DISTRIBUTION",
+            "READY_FOR_REVIEW",
+            "REJECTED",
+            "REPLACED_WITH_NEW_INFO",
+            "WAITING_FOR_REVIEW"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "For more information about `australiaAgeRating` and `koreaAgeRating`, see `https://developer.apple.com/help/app-store-connect/reference/age-ratings`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/reference/age-ratings"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n> For more information about `australiaAgeRating` and `koreaAgeRating`, see `https://developer.apple.com/help/app-store-connect/reference/age-ratings`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/age-ratings"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfo/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

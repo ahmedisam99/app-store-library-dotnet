@@ -1,0 +1,86 @@
+{
+  "id": "doc:appstoreconnectapi/computing-numeric-differences",
+  "title": "Computing numeric differences",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/computing-numeric-differences",
+  "slug": "appstoreconnectapi/computing-numeric-differences",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Return the absolute difference between the maximum and minimum numerical values in an array.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `diff()` function in the expression of a matchmaking rule to compute the greatest difference between two or more values. For example, `diff([ `4`, `3`, `2`, `1` ])` returns `3`, and  `diff([ `50`, `19`, `21`, `61` ]` returns `42`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Declaration",
+      "paragraphs": [
+        {
+          "text": "```other\nnumber diff(array[number] $values)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Parameters",
+      "paragraphs": [
+        {
+          "text": "-`values`: An array that contains the numeric values to compare.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Return value",
+      "paragraphs": [
+        {
+          "text": "The absolute difference between the maximum and minimum items in the `values` array.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Array functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/converting-arrays-to-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/intersecting-sets"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-1-5-release-notes",
+  "title": "App Store Connect API 1.5 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-1-5-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-1-5-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 1.5 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "`xcode-cloud-workflows-and-builds` can now automate reading Xcode Cloud data, managing workflows, and starting builds.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcode-cloud-workflows-and-builds"
+          ]
+        },
+        {
+          "text": "`app-store-version-release-requests` now support manually releasing an App Store-approved version of your app to the App Store.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-release-requests"
+          ]
+        },
+        {
+          "text": "The `Attributes-data.dictionary` adds an `isInternalGroup` property to support creating internal beta tester groups for TestFlight, in `beta-groups`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroup/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-groups"
+          ]
+        },
+        {
+          "text": "The `Attributes-data.dictionary` in `app-metadata` adds a `privacyChoicesURL` property.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalization/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-metadata"
+          ]
+        },
+        {
+          "text": "The API now supports JSON web tokens that can last longer than 20 minutes for resources that meet the required criteria. For more information, see `generating-tokens-for-api-requests`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `Advertising Identifier (IDFA) Declarations` resource and all its associated endpoints and objects are now deprecated, including: `Create an IDFA Declaration`, `Modify an IDFA Declaration`, `Delete an IDFA Declaration`, `Read the IDFA Declaration Information of an App Store Version`, `IdfaDeclaration`, `IdfaDeclarationCreateRequest`, `IdfaDeclarationUpdateRequest`, and `IdfaDeclarationResponse`.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes"
+      ]
+    }
+  ]
+}

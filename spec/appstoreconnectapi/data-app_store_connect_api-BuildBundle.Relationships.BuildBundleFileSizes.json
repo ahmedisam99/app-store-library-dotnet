@@ -1,0 +1,104 @@
+{
+  "id": "data:app_store_connect_api:BuildBundle.Relationships.BuildBundleFileSizes",
+  "title": "BuildBundle.Relationships.BuildBundleFileSizes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary/BuildBundleFileSizes-data.dictionary",
+  "slug": "appstoreconnectapi/buildbundle/relationships-data.dictionary/buildbundlefilesizes-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data, links, and paging information that describe the relationship between the Build Bundles and the Build Bundle File Sizes resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildBundle.Relationships.BuildBundleFileSizes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[BuildBundle.Relationships.BuildBundleFileSizes.Data]",
+      "typeId": "data:app_store_connect_api:BuildBundle.Relationships.BuildBundleFileSizes.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The ID and type of the related Build Bundle File Sizes resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "RelationshipLinks",
+      "typeId": "data:app_store_connect_api:RelationshipLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary/BuildBundleFileSizes-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary/AppClipDomainCacheStatus-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary/AppClipDomainDebugStatus-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary/BetaAppClipInvocations-data.dictionary"
+      ]
+    }
+  ]
+}

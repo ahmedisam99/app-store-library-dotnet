@@ -1,0 +1,136 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-3-2-release-notes",
+  "title": "App Store Connect API 3.2 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-3-2-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 3.2 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "visionOS is now available in multiple endpoints. App Store Connect API now supports `APP_APPLE_VISION_PRO` for `ScreenshotDisplayType`, and `APPLE_VISION_PRO` for `PreviewType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScreenshotDisplayType",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewType"
+          ]
+        },
+        {
+          "text": "A new `Installs` report type is available with four subtypes: `SUMMARY_INSTALL_TYPE, SUMMARY_TERRITORY, SUMMARY_CHANNEL,` and `DETAILED.` For more information see `GET-v1-salesReports`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-salesReports"
+          ]
+        },
+        {
+          "text": "You can now add achievements and leaderboard entries with `POST-v1-gameCenterPlayerAchievementSubmissions` and  `POST-v1-gameCenterLeaderboardEntrySubmissions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterPlayerAchievementSubmissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboardEntrySubmissions"
+          ]
+        },
+        {
+          "text": "`GameCenterMatchmakingQueue` now supports backwards compatibility with the addition of a new attribute `classicMatchmakingBundleIds`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueue"
+          ]
+        },
+        {
+          "text": "You can now download Xcode Cloud `Notarized and Stapled App` artifacts through the Public API. For more information, see `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiArtifact/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The attribute `baseTerritory` is now required when creating an In App Purchase. For more information, see `InAppPurchasePriceScheduleCreateRequest`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePriceScheduleCreateRequest"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The enum `availableInAllTerritories` is no longer available for pricing related endpoints. For more information, see `InAppPurchasePriceScheduleCreateRequest`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasePriceScheduleCreateRequest"
+          ]
+        },
+        {
+          "text": "The player attribute is now removed from `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardEntrySubmissionCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "The `notarizations` value type is now removed from `CiActionType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiActionType"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

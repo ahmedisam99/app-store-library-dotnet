@@ -1,0 +1,201 @@
+{
+  "id": "doc:appstoreconnectapi/managing-apple-hosted-background-assets",
+  "title": "Uploading and versioning Apple hosted background assets",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/managing-apple-hosted-background-assets",
+  "slug": "appstoreconnectapi/managing-apple-hosted-background-assets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage background assets for your App store apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "This operation automatically increases the version number based on existing versions.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the Background assets API to manage content that Apple hosts, so people can download that content outside your main app bundle, for apps distributed through the App Store. You can also update additional content without creating a new app version.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Create an asset pack record",
+      "paragraphs": [
+        {
+          "text": "Once you create your asset pack, you can start configuring your Apple hosted background assets. Begin by using `POST-v1-backgroundAssets`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssets"
+          ]
+        },
+        {
+          "text": "In the request body, add the name of the asset pack as the `assetPackIdentifier` and add your app’s Apple ID In the relationships section.",
+          "refs": []
+        },
+        {
+          "text": "This sample payload shows the structure of a `POST-v1-backgroundAssets` request:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssets"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"backgroundAssets\",\n    \"attributes\": {\n      \"assetPackIdentifier\": \"Tutorial\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"123456789\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "This call’s response returns a UUID to your asset pack, which you can use in later API calls.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Create an asset pack version record",
+      "paragraphs": [
+        {
+          "text": "Next, you create a new version for your asset pack by using `POST-v1-backgroundAssetVersions`. In the relationships section, use the ID of the asset pack that the previous API response returned.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetVersions"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> This operation automatically increases the version number based on existing versions.",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"backgroundAssetVersions\",\n    \"relationships\": {\n      \"backgroundAsset\": {\n        \"data\": {\n          \"type\": \"backgroundAssets\",\n          \"id\": \"1930fc63-0466-4a4a-bcfd-e0a3cc7a341a\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Upload an asset pack archive",
+      "paragraphs": [
+        {
+          "text": "This process is similar to uploading screenshots or app previews. First, you use `POST-v1-backgroundAssetUploadFiles` with a payload like this, where you use the UUID from the response when using `POST-v1-backgroundAssetVersions`:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetUploadFiles",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"backgroundAssetUploadFiles\",\n    \"attributes\": {\n      \"assetType\": \"ASSET\",\n      \"fileName\": \"Tutorial.aar\",\n      \"fileSize\": 59587\n    },\n    \"relationships\": {\n      \"backgroundAssetVersion\": {\n        \"data\": {\n          \"type\": \"backgroundAssetVersions\",\n          \"id\": \"5934fd14-5123-gbgb-9090-01a2GYhg213z\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "You can optionally upload the asset manifest, to check its validity, by using `POST-v1-backgroundAssetUploadFiles` before you upload your full asset pack. The system checks the validity of your manifest and returns an error, if there is an issue. Use a payload like this to verify your manifest:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetUploadFiles"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"backgroundAssetUploadFiles\",\n    \"attributes\": {\n      \"assetType\": \"MANIFEST\",\n      \"fileName\": \"Manifest.json\",\n      \"fileSize\": 9675\n    },\n    \"relationships\": {\n      \"backgroundAssetVersion\": {\n        \"data\": {\n          \"type\": \"backgroundAssetVersions\",\n          \"id\": \"5934fd14-5123-gbgb-9090-01a2GYhg213z\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Then, you upload the file with `PUT` request or requests, as necessary, which are included in the response of `POST-v1-backgroundAssetUploadFiles`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetUploadFiles"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Commit your asset pack to begin processing",
+      "paragraphs": [
+        {
+          "text": "When you successfully upload your archive, you use `PATCH-v1-backgroundAssetUploadFiles-_id_` to commit the upload. After this call, your upload starts processing. Use a payload like this including the upload file ID:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-backgroundAssetUploadFiles-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"backgroundAssetUploadFiles\",\n    \"id\": \"string\",\n    \"attributes\": {\n      \"uploaded\": true\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Test your asset pack",
+      "paragraphs": [
+        {
+          "text": "When the asset pack version is successfully processed by the App Store, you see an Internal Beta Release resource created with the “Ready for testing” state in App Store Connect. This means the new version is ready for use in your app builds in internal TestFlight.",
+          "refs": []
+        },
+        {
+          "text": "After successful upload and internal testing, to test your asset pack version with a wider audience via external TestFlight, submit it to beta-asset pack review using `POST-v1-betaAppReviewSubmissions` or in App Store Connect.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaAppReviewSubmissions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Submit your asset pack",
+      "paragraphs": [
+        {
+          "text": "When you are ready to publish the asset pack version to the App Store, you can submit it to review using `POST-v1-reviewSubmissions`. You can submit the asset pack version by itself, with other asset packs, and as an app build with all files.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+          ]
+        },
+        {
+          "text": "In this example, when the review submission state is `APPROVED`, version `1` of the asset pack is available to any version of your app live on the App Store.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Update and version your asset packs",
+      "paragraphs": [
+        {
+          "text": "Once you have live app versions and asset packs for TestFlight and the App Store, you can also  update either the app binary or the asset pack content.",
+          "refs": []
+        },
+        {
+          "text": "- **Update app binary** — To update the app binary without changing any asset pack content, the new app binary needs to continue to work with the existing available asset packs. When you upload the new app build and it becomes ready for internal testing, it can download the internal testing versions of the existing asset pack. Similarly, when you submit the build for external TestFlight or the App Store, it continues to work with the asset pack versions that are live for external TestFlight and the App Store, respectively.\n- **Update asset pack** — To switch out some contents in the Tutorial asset pack, you can upload a new version for the same asset pack. The system assigns a higher version number; in this case it is version 2. When the system processes version 2, it replaces version 1 for internal testing, but version 1 is still live for external TestFlight and the App Store. If you are satisfied with version 2, you can submit to review to replace version 1 in external TestFlight and the App Store. As a result, the devices downloads version 2 instead of version 1 when someone requests the tutorial asset pack and when the system updates the asset pack in the background.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

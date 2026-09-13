@@ -1,0 +1,231 @@
+{
+  "id": "doc:appstoreconnectapi/configuring-webhook-notifications",
+  "title": "Configuring and parsing App Store Connect API webhook notifications",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/configuring-webhook-notifications",
+  "slug": "appstoreconnectapi/configuring-webhook-notifications",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the configuration, testing, and processing of App Store Connect API notifications for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A notification webhook is an endpoint that you create on your server, which receives `HTTP POST` requests from App Store Connect. The `POST` requests describe important events about your app. Your app can have many webhooks.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Configure your webhook notifications",
+      "paragraphs": [
+        {
+          "text": "To invoke your webhook, App Store Connect needs to know your server’s webhook endpoint URL. To set up your webhook endpoint the first time, provide the URL to the `POST-v1-webhooks` endpoint:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhooks"
+          ]
+        },
+        {
+          "text": "```other\nPOST https://api.appstoreconnect.apple.com/v1/webhooks\n```",
+          "refs": []
+        },
+        {
+          "text": "with a payload like this:",
+          "refs": []
+        },
+        {
+          "text": "```json\n\n{\n  \"data\": {\n    \"type\": \"webhooks\",\n    \"attributes\": {\n      \"enabled\": true,\n      \"eventTypes\": [\n        \"APP_STORE_VERSION_APP_VERSION_STATE_UPDATED\"\n      ],\n      \"name\": \"APP_STORE_VERSION_STATE_APP_NAME\",\n      \"secret\": \"my_secret_string\",\n      \"url\": \"https://example.com\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n\n```",
+          "refs": []
+        },
+        {
+          "text": "Any time you reconfigure your web server, use the `PATCH-v1-webhooks-_id_` endpoint to update App Store Connect. The attributes you can modify are `enabled`, `name`, `url`, `secret`, and `eventTypes`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-webhooks-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Set up notification authentication",
+      "paragraphs": [
+        {
+          "text": "Secure your webhook by verifying that a request to your endpoint comes from App Store Connect. The security protocol for webhooks is hash-based message authentication code (HMAC), which requires that you:",
+          "refs": []
+        },
+        {
+          "text": "When you register your webhook URL with App Store Connect, define the secret phrase using the secret key in `Attributes-data.dictionary`. Choose a `String` value for `secret` that’s difficult to guess.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "App Store Connect creates a hash signature using the secret and includes it in each `POST`. The signature resides in the payload header as `x-apple-signature`.",
+          "refs": []
+        },
+        {
+          "text": "Verify the signature by implementing code in your webhook endpoint that:",
+          "refs": []
+        },
+        {
+          "text": "For example, applying `HMAC-SHA256` to the secret “This is my secret” and payload body “Hello, World!” produces this hash:",
+          "refs": []
+        },
+        {
+          "text": "```other\n7f062172b01cb00b53ca068614674a3d982a34062a0f5d37687d5e3377e54657\n```",
+          "refs": []
+        },
+        {
+          "text": "This result verifies a `POST` is authentic — the sender knows the secret — if the payload contains the header:",
+          "refs": []
+        },
+        {
+          "text": "```other\nx-apple-signature:hmacsha256=7f062172b01cb00b53ca068614674a3d982a34062a0f5d37687d5e3377e54657\n```",
+          "refs": []
+        },
+        {
+          "text": "Use an implementation of HMAC `hex digest` to generate the hash. For more information, see `https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries`.",
+          "refs": [
+            "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Share a secret phrase with the request sender (App Store Connect).",
+          "refs": []
+        },
+        {
+          "text": "Verify that each POST to your endpoint has the HMAC header and validate it with your secret.",
+          "refs": []
+        },
+        {
+          "text": "Creates a hash from the payload body using your secret token.",
+          "refs": []
+        },
+        {
+          "text": "Compares the hash to the one App Store Connect sends in the header to ensure they match.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Review your configured webhook notifications",
+      "paragraphs": [
+        {
+          "text": "Use `GET-v1-apps-_id_-webhooks` to view a list of webhooks for an app. The response includes the unique IDs and details of your webhook configurations. Use those unique IDs with `GET-v1-webhooks-_id_` to read details for a specific webhook.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-webhooks",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-webhooks-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Verify your server is receiving notifications",
+      "paragraphs": [
+        {
+          "text": "Once you establish your webhook configuration and your listener, you can verify you are receiving notifications by using `POST-v1-webhookPings`, with a payload like this, where the `id` for type `webhooks` is the unique identifier found in the response from `POST-v1-webhooks` or  `GET-v1-apps-_id_-webhooks`:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhookPings",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhooks",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-webhooks"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"webhookPings\",\n    \"relationships\": {\n      \"webhook\": {\n        \"data\": {\n          \"type\": \"webhooks\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read a list of past deliveries",
+      "paragraphs": [
+        {
+          "text": "You can see past notification deliveries sent from App Store Connect to your server,  by using the `GET-v1-webhooks-_id_-deliveries` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-webhooks-_id_-deliveries"
+          ]
+        },
+        {
+          "text": "The response looks like this:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": [\n    {\n      \"type\": \"webhookDeliveries\",\n      \"id\": \"string\",\n      \"attributes\": {\n        \"createdDate\": \"1970-01-01T00:00:00.000Z\",\n        \"deliveryState\": \"SUCCEEDED\",\n        \"errorMessage\": \"string\",\n        \"redelivery\": false,\n        \"sentDate\": \"1970-01-01T00:00:00.000Z\",\n        \"request\": {\n          \"url\": \"https://example.com\"\n        },\n        \"response\": {\n          \"httpStatusCode\": 0,\n          \"body\": \"string\"\n        }\n      },\n      \"relationships\": {\n        \"event\": {\n          \"data\": {\n            \"type\": \"webhookEvents\",\n            \"id\": \"string\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"\"\n      }\n    }\n  ],\n  \"included\": [\n    {\n      \"type\": \"webhookEvents\",\n      \"id\": \"string\",\n      \"attributes\": {\n        \"eventType\": \"APP_STORE_VERSION_APP_VERSION_STATE_UPDATED\",\n        \"payload\": \"string\",\n        \"ping\": false,\n        \"createdDate\": \"1970-01-01T00:00:00.000Z\"\n      },\n      \"links\": {\n        \"self\": \"\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"\",\n    \"first\": \"\",\n    \"next\": \"\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 0,\n      \"limit\": 0\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Parse webhook notifications",
+      "paragraphs": [
+        {
+          "text": "When App Store Connect sends a notification to your webhook, it does so in the form of an HTTP POST. When you receive a notification, check its type to process it accordingly. The action you perform depends on the notification type. Each type has a specific dataset, or schema, composed of attributes that drive the different action you take. There are several types of webhook events; for more information about these events, see `webhook-events`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Process a specific notification",
+      "paragraphs": [
+        {
+          "text": "This example uses the notification type `appStoreVersionAppVersionStateUpdated`. The attributes include the `version`, states, and a `timestamp` that shows when the state change. The payload includes a relationship to the `appStoreVersions id`. Use this information to read more about your app’s version using `GET-v1-appStoreVersions-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"appStoreVersionAppVersionStateUpdated\",\n    \"id\": \"7c813492-9516-4c79-903e-224effdd57ac\",\n    \"version\": 1,\n    \"attributes\": {\n      \"newValue\": \"READY_FOR_REVIEW\",\n      \"oldValue\": \"PREPARE_FOR_SUBMISSION\",\n      \"timestamp\": \"2025-04-16T05:00:52.745Z\"\n    },\n    \"relationships\": {\n      \"instance\": {\n        \"data\": {\n          \"type\": \"appStoreVersions\",\n          \"id\": \"ad7e6298-2570-4ca6-b3cc-f81788e40bdc\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "id": "doc:appstoreconnectapi/beta-groups",
+  "title": "Beta Groups",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-groups",
+  "slug": "appstoreconnectapi/beta-groups",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Groups of beta testers that have access to one or more builds.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `betaGroups` resource represents the group of testers that have access to builds for testing. Each beta group is associated with a single app and contains one or more builds. Every tester has access to every build in the group.",
+          "refs": []
+        },
+        {
+          "text": "There are two types of beta tester groups:",
+          "refs": []
+        },
+        {
+          "text": "Add beta testers to a group through App Store Connect or with this API.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Internal beta tester — Contains members of your App Store Connect team whom you’ve designated as beta testers. For more information about internal testers, see`https://developer.apple.com/help/app-store-connect/test-a-beta-version/add-internal-testers`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/test-a-beta-version/add-internal-testers"
+          ]
+        },
+        {
+          "text": "External beta tester — You create and manage these groups. They may contain individuals from your company who don’t qualify as internal testers, or people outside of your organization that you’ve invited to test your app. For more information about external testers, see `https://developer.apple.com/help/app-store-connect/test-a-beta-version/invite-external-testers`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/test-a-beta-version/invite-external-testers"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, Modifying, and Deleting Beta Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaGroups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-betaGroups-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaGroups-_id_"
+      ]
+    },
+    {
+      "title": "Getting Beta Group Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-metrics-betaTesterUsages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-betaRecruitmentCriteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaRecruitmentCriterionCompatibleBuildCheck",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-betaRecruitmentCriterionCompatibleBuildCheck"
+      ]
+    },
+    {
+      "title": "Adding and Removing Builds and Testers",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaGroups-_id_-relationships-betaTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaGroups-_id_-relationships-betaTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaGroups-_id_-relationships-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaGroups-_id_-relationships-builds"
+      ]
+    },
+    {
+      "title": "Reading Build and Beta Tester Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-betaTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-relationships-betaTesters"
+      ]
+    },
+    {
+      "title": "Measuring public link usage",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaGroups-_id_-metrics-publicLinkUsages"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroup",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBuildsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBetaTestersLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBetaTestersLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBuildsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaPublicLinkUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBetaRecruitmentCriteriaLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaGroupBetaRecruitmentCriterionCompatibleBuildCheckLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Beta Testers and Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-testers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-tester-invitations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-recruitment-criteria"
+      ]
+    }
+  ]
+}

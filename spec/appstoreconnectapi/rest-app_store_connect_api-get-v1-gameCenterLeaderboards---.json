@@ -1,0 +1,531 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-gameCenterLeaderboards-{}",
+  "title": "Read Leaderboard Information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_",
+  "slug": "appstoreconnectapi/get-v1-gamecenterleaderboards-_id_",
+  "introducedAt": "3.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Read information about a specific leaderboard.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterLeaderboards/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the leaderboard resource ID from the `GET-v1-gameCenterDetails-_id_-gameCenterLeaderboards` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-gameCenterLeaderboards"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "locale",
+            "name",
+            "formatterOverride",
+            "formatterSuffix",
+            "formatterSuffixSingular",
+            "description",
+            "gameCenterLeaderboard",
+            "gameCenterLeaderboardImage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardReleases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "live",
+            "gameCenterDetail",
+            "gameCenterLeaderboard"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboards]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "defaultFormatter",
+            "referenceName",
+            "vendorIdentifier",
+            "submissionType",
+            "scoreSortType",
+            "scoreRangeStart",
+            "scoreRangeEnd",
+            "recurrenceStartDate",
+            "recurrenceDuration",
+            "recurrenceRule",
+            "archived",
+            "activityProperties",
+            "visibility",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupLeaderboard",
+            "gameCenterLeaderboardSets",
+            "localizations",
+            "releases",
+            "activity",
+            "challenge"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupLeaderboard",
+            "gameCenterLeaderboardSets",
+            "localizations",
+            "releases",
+            "activity",
+            "challenge"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterLeaderboardSets]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[localizations]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[releases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterActivities]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "playStyle",
+            "minimumPlayersCount",
+            "maximumPlayersCount",
+            "supportsPartyCode",
+            "archived",
+            "properties",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "achievements",
+            "achievementsV2",
+            "leaderboards",
+            "leaderboardsV2",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterChallenges]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "archived",
+            "challengeType",
+            "repeatable",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "versions",
+            "leaderboard",
+            "leaderboardV2"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "arcadeEnabled",
+            "challengeEnabled",
+            "app",
+            "gameCenterAppVersions",
+            "gameCenterGroup",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges",
+            "defaultLeaderboard",
+            "defaultLeaderboardV2",
+            "defaultGroupLeaderboard",
+            "defaultGroupLeaderboardV2",
+            "achievementReleases",
+            "activityReleases",
+            "challengeReleases",
+            "leaderboardReleases",
+            "leaderboardSetReleases",
+            "challengesMinimumPlatformVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterGroups]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "gameCenterDetails",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterLeaderboardSets]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "vendorIdentifier",
+            "gameCenterDetail",
+            "gameCenterGroup",
+            "groupLeaderboardSet",
+            "localizations",
+            "gameCenterLeaderboards",
+            "releases"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterLeaderboardResponse",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829\n```\n\n**Response**\n\n```json\n{\n  “data” : {\n    “type” : “gameCenterLeaderboards”,\n    “id” : “843189c3-61a6-480a-a9d2-760a41299829”,\n    “attributes” : {\n      “defaultFormatter” : “INTEGER”,\n      “referenceName” : “Latte Art”,\n      “vendorIdentifier” : “LA_LB”,\n      “submissionType” : “BEST_SCORE”,\n      “scoreSortType” : “DESC”,\n      “scoreRangeStart” : “1”,\n      “scoreRangeEnd” : “100”,\n      “recurrenceStartDate” : “2023-09-02T07:00:00Z”,\n      “recurrenceDuration” : “PT168H”,\n      “recurrenceRule” : “FREQ=DAILY;INTERVAL=7”,\n      “archived” : false\n    },\n    “relationships” : {\n      “groupLeaderboard” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/relationships/groupLeaderboard”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/groupLeaderboard”\n        }\n      },\n      “localizations” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/relationships/localizations”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/localizations”\n        }\n      },\n      “releases” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/relationships/releases”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/releases”\n        }\n      },\n      “leaderboardScores” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/relationships/leaderboardScores”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829/leaderboardScores”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829”\n    }\n  },\n  “links” : {\n    “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/843189c3-61a6-480a-a9d2-760a41299829”\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Reading leaderboards",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboards-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboards-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboards-_id_-relationships-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-groupLeaderboard",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-relationships-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-relationships-groupLeaderboard",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboards-_id_-relationships-releases"
+      ]
+    }
+  ]
+}

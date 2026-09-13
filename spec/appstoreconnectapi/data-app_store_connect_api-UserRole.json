@@ -1,0 +1,182 @@
+{
+  "id": "data:app_store_connect_api:UserRole",
+  "title": "UserRole",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/UserRole",
+  "slug": "appstoreconnectapi/userrole",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that represents user roles and permissions in App Store Connect.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string UserRole",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "ACCESS_TO_REPORTS",
+      "abstract": {
+        "text": "**This permission is deprecated.** Permission to download reports associated with a role. The Access To Reports permission is an additional permission for users with the App Manager, Developer, Marketing, or Sales role. If you add this permission, the user has access to all of your apps.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ACCOUNT_HOLDER",
+      "abstract": {
+        "text": "Role responsible for entering into legal agreements with Apple. The person who completes program enrollment has the Account Holder role in their Apple Developer account and their App Store Connect account.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ADMIN",
+      "abstract": {
+        "text": "Role that serves as a secondary contact for teams and has many of the same responsibilities as the Account Holder role. Admins have access to all apps.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "APP_MANAGER",
+      "abstract": {
+        "text": "Role that manages all aspects of an app, such as pricing, App Store information, and app development and delivery.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CLOUD_MANAGED_APP_DISTRIBUTION",
+      "abstract": {
+        "text": "Permission to submit requests for apps and software that is then signed by a cloud-managed Apple Distribution certificate. App Store Connect automatically creates a certificate if one doesn’t exist. The system grants this permission by default to Account Holder and Admin roles. Account Holder, Admin, and App Manager roles may grant access to this permission to other users with App Manager or Developer roles. This permission requires that the user has access to Certificates, Identifiers & Profiles.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CLOUD_MANAGED_DEVELOPER_ID",
+      "abstract": {
+        "text": "Permission to submit requests for apps and software that is then cloud signed by a cloud-managed Developer ID certificate. App Store Connect automatically creates a certificate if one doesn’t exist. The system grants this permission by default to the Account Holder role. The Account Holder may grant access to this permission to users with the Admin role, who may grant it to other Admins. This permission requires that the user has access to Certificates, Identifiers & Profiles.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CREATE_APPS",
+      "abstract": {
+        "text": "A permission that enables users with Developer or Marketing roles to create app records.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CUSTOMER_SUPPORT",
+      "abstract": {
+        "text": "Role that analyzes and responds to customer reviews on the App Store. If a user has only the Customer Support role, they go straight to the Ratings and Reviews section when they click on an app in My Apps.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "DEVELOPER",
+      "abstract": {
+        "text": "Role that manages development and delivery of an app.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FINANCE",
+      "abstract": {
+        "text": "Role that manages financial information, including reports and tax forms. A user that has this role can view all apps in Payments and Financial Reports, Sales and Trends, and App Analytics.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "GENERATE_INDIVIDUAL_KEYS",
+      "abstract": {
+        "text": "Permission that allows a person to generate an individual API key.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "MARKETING",
+      "abstract": {
+        "text": "Role that manages marketing materials and promotional artwork. If an app is in consideration for featuring on the App Store, Apple contacts the user with this role.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SALES",
+      "abstract": {
+        "text": "Role that analyzes sales, downloads, and other analytics for the app.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information about roles and permissions, see `https://developer.apple.com/support/roles/`.",
+          "refs": [
+            "https://developer.apple.com/support/roles/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/User",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UsersResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserVisibleAppsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserVisibleAppsLinkagesResponse"
+      ]
+    }
+  ]
+}

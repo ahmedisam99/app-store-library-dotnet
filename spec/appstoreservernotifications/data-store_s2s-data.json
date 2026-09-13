@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The unique identifier of the app that the notification applies to. This property is available for apps that users download from the App Store. It isn’t present in the sandbox environment.",
         "refs": []
@@ -45,6 +46,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The bundle identifier of the app.",
         "refs": []
@@ -59,6 +61,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The version of the build that identifies an iteration of the bundle.",
         "refs": []
@@ -73,6 +76,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The reason the customer requested the refund. This field appears only for `CONSUMPTION_REQUEST` notifications, which the server sends when a customer initiates a refund request for a consumable in-app purchase or auto-renewable subscription.",
         "refs": []
@@ -87,6 +91,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The server environment that the notification applies to, either `sandbox` or `production`.",
         "refs": []
@@ -101,6 +106,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "Subscription renewal information signed by the App Store, in JSON Web Signature (JWS) format. This field appears only for notifications that apply to auto-renewable subscriptions.",
         "refs": []
@@ -115,6 +121,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "Transaction information signed by the App Store, in JSON Web Signature (JWS) format.",
         "refs": []
@@ -129,6 +136,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The status of an auto-renewable subscription as of the `signedDate` in the `responseBodyV2DecodedPayload`. This field appears only for notifications sent for auto-renewable subscriptions.",
         "refs": [
@@ -167,6 +175,10 @@
   "topics": [
     {
       "title": "App metadata and environment",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appAppleId",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/bundleId",
@@ -177,6 +189,10 @@
     },
     {
       "title": "JWS transaction and renewal info",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfo",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
@@ -186,6 +202,10 @@
     },
     {
       "title": "Consumption request info",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/consumptionRequestReason"
       ]
@@ -194,6 +214,10 @@
   "seeAlso": [
     {
       "title": "Response objects for in-app purchases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/appData"

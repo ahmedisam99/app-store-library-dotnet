@@ -1,0 +1,609 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}-customerReviews",
+  "title": "List all customer reviews for an app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-customerReviews",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_-customerreviews",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of customer reviews for a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}/customerReviews",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the `apps` resource that represents your app. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[customerReviewResponses]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "responseBody",
+            "lastModifiedDate",
+            "state",
+            "review"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for the included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[customerReviews]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "rating",
+            "title",
+            "body",
+            "reviewerNickname",
+            "createdDate",
+            "territory",
+            "response",
+            "reviewTerritory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for the included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[rating]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of numerical rating values by which to filter. For example, filtering for 1,2,5 shows only reviews with ratings of 1, 2, or 5. The minimum numeric rating value is 1, and the maximum is 5.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "response",
+            "reviewTerritory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "sort",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "rating",
+            "-rating",
+            "createdDate",
+            "-createdDate"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Attributes by which to sort. Supports one sort parameter at a time.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[territory]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ABW",
+            "AFG",
+            "AGO",
+            "AIA",
+            "ALB",
+            "AND",
+            "ANT",
+            "ARE",
+            "ARG",
+            "ARM",
+            "ASM",
+            "ATG",
+            "AUS",
+            "AUT",
+            "AZE",
+            "BDI",
+            "BEL",
+            "BEN",
+            "BES",
+            "BFA",
+            "BGD",
+            "BGR",
+            "BHR",
+            "BHS",
+            "BIH",
+            "BLR",
+            "BLZ",
+            "BMU",
+            "BOL",
+            "BRA",
+            "BRB",
+            "BRN",
+            "BTN",
+            "BWA",
+            "CAF",
+            "CAN",
+            "CHE",
+            "CHL",
+            "CHN",
+            "CIV",
+            "CMR",
+            "COD",
+            "COG",
+            "COK",
+            "COL",
+            "COM",
+            "CPV",
+            "CRI",
+            "CUB",
+            "CUW",
+            "CXR",
+            "CYM",
+            "CYP",
+            "CZE",
+            "DEU",
+            "DJI",
+            "DMA",
+            "DNK",
+            "DOM",
+            "DZA",
+            "ECU",
+            "EGY",
+            "ERI",
+            "ESP",
+            "EST",
+            "ETH",
+            "FIN",
+            "FJI",
+            "FLK",
+            "FRA",
+            "FRO",
+            "FSM",
+            "GAB",
+            "GBR",
+            "GEO",
+            "GGY",
+            "GHA",
+            "GIB",
+            "GIN",
+            "GLP",
+            "GMB",
+            "GNB",
+            "GNQ",
+            "GRC",
+            "GRD",
+            "GRL",
+            "GTM",
+            "GUF",
+            "GUM",
+            "GUY",
+            "HKG",
+            "HND",
+            "HRV",
+            "HTI",
+            "HUN",
+            "IDN",
+            "IMN",
+            "IND",
+            "IRL",
+            "IRQ",
+            "ISL",
+            "ISR",
+            "ITA",
+            "JAM",
+            "JEY",
+            "JOR",
+            "JPN",
+            "KAZ",
+            "KEN",
+            "KGZ",
+            "KHM",
+            "KIR",
+            "KNA",
+            "KOR",
+            "KWT",
+            "LAO",
+            "LBN",
+            "LBR",
+            "LBY",
+            "LCA",
+            "LIE",
+            "LKA",
+            "LSO",
+            "LTU",
+            "LUX",
+            "LVA",
+            "MAC",
+            "MAR",
+            "MCO",
+            "MDA",
+            "MDG",
+            "MDV",
+            "MEX",
+            "MHL",
+            "MKD",
+            "MLI",
+            "MLT",
+            "MMR",
+            "MNE",
+            "MNG",
+            "MNP",
+            "MOZ",
+            "MRT",
+            "MSR",
+            "MTQ",
+            "MUS",
+            "MWI",
+            "MYS",
+            "MYT",
+            "NAM",
+            "NCL",
+            "NER",
+            "NFK",
+            "NGA",
+            "NIC",
+            "NIU",
+            "NLD",
+            "NOR",
+            "NPL",
+            "NRU",
+            "NZL",
+            "OMN",
+            "PAK",
+            "PAN",
+            "PER",
+            "PHL",
+            "PLW",
+            "PNG",
+            "POL",
+            "PRI",
+            "PRT",
+            "PRY",
+            "PSE",
+            "PYF",
+            "QAT",
+            "REU",
+            "ROU",
+            "RUS",
+            "RWA",
+            "SAU",
+            "SEN",
+            "SGP",
+            "SHN",
+            "SLB",
+            "SLE",
+            "SLV",
+            "SMR",
+            "SOM",
+            "SPM",
+            "SRB",
+            "SSD",
+            "STP",
+            "SUR",
+            "SVK",
+            "SVN",
+            "SWE",
+            "SWZ",
+            "SXM",
+            "SYC",
+            "TCA",
+            "TCD",
+            "TGO",
+            "THA",
+            "TJK",
+            "TKM",
+            "TLS",
+            "TON",
+            "TTO",
+            "TUN",
+            "TUR",
+            "TUV",
+            "TWN",
+            "TZA",
+            "UGA",
+            "UKR",
+            "UMI",
+            "URY",
+            "USA",
+            "UZB",
+            "VAT",
+            "VCT",
+            "VEN",
+            "VGB",
+            "VIR",
+            "VNM",
+            "VUT",
+            "WLF",
+            "WSM",
+            "XKS",
+            "YEM",
+            "ZAF",
+            "ZMB",
+            "ZWE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A filter of territories to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "exists[publishedResponse]",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that filters the reviews based on whether the review has a published response in the App Store. Use `true` to return the customer reviews that already have a published response in the App Store. Use `false` to return the customer reviews that don’t have a published response. Note that it’s possible that a review has a response that isn’t yet published.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[territories]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "currency"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reviewTerritory]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CustomerReviewsResponse",
+      "typeId": "data:app_store_connect_api:CustomerReviewsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example below limits the number of reviews returned in the response.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/682658836/customerReviews?limit=1\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"customerReviews\",\n      \"id\": \"00000028-b08c-0014-729e-fbd500000000\",\n      \"attributes\": {\n        \"rating\": 5,\n        \"title\": \"Awesome!!!\",\n        \"body\": \"It's a really fantastic app!\",\n        \"reviewerNickname\": \"Anne Johnson\",\n        \"createdDate\": \"2017-11-15T08:10:34-08:00\",\n        \"territory\": \"USA\"\n      },\n      \"relationships\": {\n        \"response\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/customerReviews/00000028-b08c-0014-729e-fbd500000000/relationships/response\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/customerReviews/00000028-b08c-0014-729e-fbd500000000/response\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/customerReviews/00000028-b08c-0014-729e-fbd500000000\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/682658836/customerReviews?limit=1\",\n    \"next\": \"https://api.appstoreconnect.apple.com/v1/apps/682658836/customerReviews?cursor=AQ.AMt2C-U&limit=1\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 4326,\n      \"limit\": 1\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting customer reviews",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-customerReviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-customerReviewSummarizations"
+      ]
+    }
+  ]
+}

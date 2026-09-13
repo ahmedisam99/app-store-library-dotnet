@@ -1,0 +1,197 @@
+{
+  "id": "rest:app_store_connect_api:patch:v2-appStoreVersionExperiments-{}",
+  "title": "Modify an app store experiment",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v2-appStoreVersionExperiments-_id_",
+  "slug": "appstoreconnectapi/patch-v2-appstoreversionexperiments-_id_",
+  "introducedAt": "2.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update the name, the started state, and the proportion of traffic to send to an App Store experiment.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v2/appStoreVersionExperiments/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2"
+        ]
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppStoreVersionExperimentV2UpdateRequest",
+    "typeId": "data:app_store_connect_api:AppStoreVersionExperimentV2UpdateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppStoreVersionExperimentV2Response",
+      "typeId": "data:app_store_connect_api:AppStoreVersionExperimentV2Response",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v2/appStoreVersionExperiments/1a22d9a7-f574-4669-b1ca-1ba88f786c19 -d\n'{\n  \"data\": {\n    \"id\": \"1a22d9a7-f574-4669-b1ca-1ba88f786c19\",\n    \"type\": \"appStoreVersionExperiments\",\n    \"attributes\": {\n      \"name\": \"PPO Test 1\",\n      \"trafficProportion\": 50\n    }\n  }\n}'\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"appStoreVersionExperiments\",\n    \"id\" : \"1a22d9a7-f574-4669-b1ca-1ba88f786c19\",\n    \"attributes\" : {\n      \"name\" : \"PPO Test 1\",\n      \"platform\" : \"IOS\",\n      \"trafficProportion\" : 50,\n      \"state\" : \"PREPARE_FOR_SUBMISSION\",\n      \"reviewRequired\" : true,\n      \"startDate\" : null,\n      \"endDate\" : null\n    },\n    \"relationships\" : {\n      \"appStoreVersionExperimentTreatments\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v2/appStoreVersionExperiments/1a22d9a7-f574-4669-b1ca-1ba88f786c19/relationships/appStoreVersionExperimentTreatments\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v2/appStoreVersionExperiments/1a22d9a7-f574-4669-b1ca-1ba88f786c19/appStoreVersionExperimentTreatments\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appStoreVersionExperiments/1a22d9a7-f574-4669-b1ca-1ba88f786c19\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v2/appStoreVersionExperiments/1a22d9a7-f574-4669-b1ca-1ba88f786c19\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing App Store version experiments",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperiments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionExperiments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionExperimentsV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-relationships-appStoreVersionExperimentsV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-appStoreVersionExperiments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-appStoreVersionExperiments-_id_-appStoreVersionExperimentTreatments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-appStoreVersionExperiments-_id_-relationships-appStoreVersionExperimentTreatments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-appStoreVersionExperiments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-appStoreVersionExperiments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperiments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperiments-_id_-appStoreVersionExperimentTreatments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionExperiments-_id_-relationships-appStoreVersionExperimentTreatments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersionExperiments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionExperiments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionExperiments-_id_"
+      ]
+    }
+  ]
+}

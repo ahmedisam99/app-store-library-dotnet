@@ -1,0 +1,127 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-2-0-release-notes",
+  "title": "App Store Connect API 2.0 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-2-0-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-2-0-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 2.0 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Added support for creating, managing, and submitting for review your in-app purchases and auto-renewable subscriptions, using the resources now available in the `in-app-purchase` and `auto-renewable-subscriptions` collections. The `promoted-purchases` resources can now manage promoted in-app purchases and auto-renewable subscriptions, including their visibility and images. The resources in the `in-app-purchase-and-subscription-app-store-review-submissions` collection manage submissions for review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/auto-renewable-subscriptions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/promoted-purchases",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-and-subscription-app-store-review-submissions"
+          ]
+        },
+        {
+          "text": "The `customer-reviews` and `customer-review-responses` resources support retrieving customer reviews for your app that appear on the App Store, and managing your responses to the customer reviews.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/customer-reviews",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/customer-review-responses"
+          ]
+        },
+        {
+          "text": "`power-and-performance-metrics-and-logs` adds a new `HANGS` diagnostic type filter for `GET-v1-builds-_id_-diagnosticSignatures`, updates the schema for responses in `xcodeMetrics`, and adds support for long-lived tokens as described in `generating-tokens-for-api-requests`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/power-and-performance-metrics-and-logs",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `GET-v1-apps-_id_-inAppPurchases` endpoint is now deprecated and replaced with the `GET-v1-apps-_id_-inAppPurchasesV2` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-inAppPurchases",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-inAppPurchasesV2"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "App Store Connect APIs for declaring IDFA usage are now removed. In your app, APIs that offer IDFA functionality are still available but require obtaining the user’s permission using `AppTrackingTransparency`. You may also need to provide information about IDFA usage in your app’s privacy details on the App Store. For more information, see `https://developer.apple.com/app-store/user-privacy-and-data-use/` and `https://developer.apple.com/app-store/app-privacy-details/`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/AppTrackingTransparency",
+            "https://developer.apple.com/app-store/user-privacy-and-data-use/",
+            "https://developer.apple.com/app-store/app-privacy-details/"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes"
+      ]
+    }
+  ]
+}

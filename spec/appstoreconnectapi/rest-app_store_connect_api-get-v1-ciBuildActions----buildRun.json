@@ -1,0 +1,435 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-ciBuildActions-{}-buildRun",
+  "title": "Read the xcode cloud build information for a build action",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-buildRun",
+  "slug": "appstoreconnectapi/get-v1-cibuildactions-_id_-buildrun",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get Xcode Cloud build information for a given build action.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciBuildActions/{id}/buildRun",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the Build Actions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[builds]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "uploadedDate",
+            "expirationDate",
+            "expired",
+            "minOsVersion",
+            "lsMinimumSystemVersion",
+            "computedMinMacOsVersion",
+            "computedMinVisionOsVersion",
+            "iconAssetToken",
+            "processingState",
+            "buildAudienceType",
+            "usesNonExemptEncryption",
+            "preReleaseVersion",
+            "individualTesters",
+            "betaGroups",
+            "betaBuildLocalizations",
+            "appEncryptionDeclaration",
+            "betaAppReviewSubmission",
+            "app",
+            "buildBetaDetail",
+            "appStoreVersion",
+            "icons",
+            "buildBundles",
+            "buildUpload",
+            "perfPowerMetrics",
+            "diagnosticSignatures"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Build Runs resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciBuildRuns]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "number",
+            "createdDate",
+            "startedDate",
+            "finishedDate",
+            "sourceCommit",
+            "destinationCommit",
+            "isPullRequestBuild",
+            "issueCounts",
+            "executionProgress",
+            "completionStatus",
+            "startReason",
+            "cancelReason",
+            "builds",
+            "workflow",
+            "product",
+            "sourceBranchOrTag",
+            "destinationBranch",
+            "actions",
+            "pullRequest"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each Build Runs resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "builds",
+            "workflow",
+            "product",
+            "sourceBranchOrTag",
+            "destinationBranch",
+            "pullRequest"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[builds]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The number of included Build Runs resources to return if the builds relationship is included.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[scmGitReferences]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "canonicalName",
+            "isDeleted",
+            "kind",
+            "repository"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciWorkflows]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "description",
+            "branchStartCondition",
+            "tagStartCondition",
+            "pullRequestStartCondition",
+            "scheduledStartCondition",
+            "manualBranchStartCondition",
+            "manualTagStartCondition",
+            "manualPullRequestStartCondition",
+            "actions",
+            "isEnabled",
+            "isLockedForEditing",
+            "clean",
+            "containerFilePath",
+            "lastModifiedDate",
+            "product",
+            "repository",
+            "xcodeVersion",
+            "macOsVersion",
+            "buildRuns"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[scmPullRequests]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "title",
+            "number",
+            "webUrl",
+            "sourceRepositoryOwner",
+            "sourceRepositoryName",
+            "sourceBranchName",
+            "destinationRepositoryOwner",
+            "destinationRepositoryName",
+            "destinationBranchName",
+            "isClosed",
+            "isCrossRepository",
+            "repository"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciProducts]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "createdDate",
+            "productType",
+            "app",
+            "bundleId",
+            "workflows",
+            "primaryRepositories",
+            "additionalRepositories",
+            "buildRuns"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CiBuildRunResponse",
+      "typeId": "data:app_store_connect_api:CiBuildRunResponse",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below retrieves detailed information for a specific action Xcode Cloud performed. Use the data provided in the response to display detailed build information on a dashboard or to access related information.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/ciBuildActions/6034552c-6cc0-4ac3-ad18-c3d24970882d/buildRun\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciBuildRuns\",\n        \"id\": \"56c512e6-111e-4067-8e88-640c28ce91a7\",\n        \"attributes\": {\n            \"number\": 1,\n            \"createdDate\": \"2021-08-17T17:48:11.806Z\",\n            \"startedDate\": null,\n            \"finishedDate\": null,\n            \"sourceCommit\": {\n                \"commitSha\": \"SHA\",\n                \"message\": \"Summary Message.\\n\\nSome more details about the commit.\",\n                \"author\": {\n                    \"displayName\": \"Source Author\",\n                    \"avatarUrl\": \"\"\n                },\n                \"committer\": {\n                    \"displayName\": \"Source Committer\",\n                    \"avatarUrl\": \"\"\n                },\n                \"webUrl\": \"https://example.com/commit/abc123\"\n            },\n            \"destinationCommit\": {\n                \"commitSha\": \"A commit hash.\",\n                \"message\": \"BASE MESSAGE\",\n                \"author\": {\n                    \"displayName\": \"Base Author\",\n                    \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                },\n                \"committer\": {\n                    \"displayName\": \"Base Committer\",\n                    \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                },\n                \"webUrl\": \"https://example.com/commit/xyz987\"\n            },\n            \"isPullRequestBuild\": false,\n            \"issueCounts\": null,\n            \"executionProgress\": \"PENDING\",\n            \"completionStatus\": null,\n            \"startReason\": \"MANUAL\",\n            \"cancelReason\": null\n        },\n        \"relationships\": {\n            \"builds\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7/relationships/builds\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7/builds\"\n                }\n            },\n            \"actions\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7/relationships/actions\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7/actions\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/56c512e6-111e-4067-8e88-640c28ce91a7\"\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Build Actions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-testResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-buildRun",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-issues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciBuildActions-_id_-relationships-testResults"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-financeReports",
+  "title": "Download finance reports",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-financeReports",
+  "slug": "appstoreconnectapi/get-v1-financereports",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Download finance reports filtered by your specified criteria.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/financeReports",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "filter[regionCode]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "You can download consolidated or separate financial reports per territory. For a complete list of possible values, see `https://developer.apple.com/help/app-store-connect/reference/financial-report-regions-and-currencies`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/reference/financial-report-regions-and-currencies"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reportDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The fiscal month of the report you wish to download based on the `https://appstoreconnect.apple.com/WebObjects/iTunesConnect.woa/wa/jumpTo?page=fiscalcalendar`. The fiscal month is specified in the `YYYY-MM` format.",
+        "refs": [
+          "https://appstoreconnect.apple.com/WebObjects/iTunesConnect.woa/wa/jumpTo?page=fiscalcalendar"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reportType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "FINANCIAL",
+            "FINANCE_DETAIL"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "This value is always `FINANCIAL`.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[vendorNumber]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "You can find your vendor number in `https://developer.apple.com/help/app-store-connect/getting-paid/view-payments-and-proceeds`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/getting-paid/view-payments-and-proceeds"
+        ]
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/a-gzip",
+      "type": "gzip",
+      "typeId": "data:app_store_connect_api:gzip",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information see `https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/getting-paid/download-financial-reports"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Downloading Reports",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-salesReports"
+      ]
+    }
+  ]
+}

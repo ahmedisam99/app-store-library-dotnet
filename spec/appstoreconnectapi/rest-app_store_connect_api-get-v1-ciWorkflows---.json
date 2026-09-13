@@ -1,0 +1,340 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-ciWorkflows-{}",
+  "title": "Read xcode cloud workflow information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_",
+  "slug": "appstoreconnectapi/get-v1-ciworkflows-_id_",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get information about a specific Xcode Cloud workflow.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciWorkflows/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the Workflows resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciWorkflows]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "description",
+            "branchStartCondition",
+            "tagStartCondition",
+            "pullRequestStartCondition",
+            "scheduledStartCondition",
+            "manualBranchStartCondition",
+            "manualTagStartCondition",
+            "manualPullRequestStartCondition",
+            "actions",
+            "isEnabled",
+            "isLockedForEditing",
+            "clean",
+            "containerFilePath",
+            "lastModifiedDate",
+            "product",
+            "repository",
+            "xcodeVersion",
+            "macOsVersion",
+            "buildRuns"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Workflows resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "product",
+            "repository",
+            "xcodeVersion",
+            "macOsVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[scmRepositories]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "lastAccessedDate",
+            "httpCloneUrl",
+            "sshCloneUrl",
+            "ownerName",
+            "repositoryName",
+            "scmProvider",
+            "defaultBranch",
+            "gitReferences",
+            "pullRequests"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Workflows resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciMacOsVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "name",
+            "xcodeVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciProducts]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "createdDate",
+            "productType",
+            "app",
+            "bundleId",
+            "workflows",
+            "primaryRepositories",
+            "additionalRepositories",
+            "buildRuns"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciXcodeVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "name",
+            "testDestinations",
+            "macOsVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CiWorkflowResponse",
+      "typeId": "data:app_store_connect_api:CiWorkflowResponse",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below accesses information about an Xcode Cloud workflow. Display the workflow data provided in the response on a dashboard or use it to read additional information; for example, detailed data about builds Xcode Cloud performed.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciWorkflows\",\n        \"id\": \"3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\",\n        \"attributes\": {\n            \"name\": \"My Workflow\",\n            \"description\": \"\",\n            \"branchStartCondition\": {\n                \"source\": {\n                    \"isAllMatch\": false,\n                    \"patterns\": [\n                        {\n                            \"pattern\": \"main\",\n                            \"isPrefix\": false\n                        }\n                    ]\n                },\n                \"filesAndFoldersRule\": {\n                    \"mode\": \"START_IF_ANY_FILE_MATCHES\",\n                    \"matchers\": []\n                },\n                \"autoCancel\": true\n            },\n            \"tagStartCondition\": null,\n            \"pullRequestStartCondition\": null,\n            \"scheduledStartCondition\": null,\n            \"actions\": [\n                {\n                    \"name\": \"Archive iOS\",\n                    \"actionType\": \"ARCHIVE\",\n                    \"destination\": null,\n                    \"buildDistributionAudience\": null,\n                    \"testConfiguration\": null,\n                    \"scheme\": \"MyApp\",\n                    \"platform\": \"IOS\",\n                    \"isRequiredToPass\": true\n                }\n            ],\n            \"isEnabled\": true,\n            \"isLockedForEditing\": false,\n            \"clean\": false,\n            \"containerFilePath\": \"MyXcodeProject.xcodeproj\",\n            \"lastModifiedDate\": null\n        },\n        \"relationships\": {\n            \"product\": {\n                \"data\": {\n                    \"type\": \"ciProducts\",\n                    \"id\": \"8ca28eb1-2948-4848-813b-07c500665157\"\n                }\n            },\n            \"repository\": {\n                \"data\": {\n                    \"type\": \"scmRepositories\",\n                    \"id\": \"195430ae-7262-4b24-abd2-cbb6891feab8\"\n                },\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/relationships/repository\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/repository\"\n                }\n            },\n            \"xcodeVersion\": {\n                \"data\": {\n                    \"type\": \"ciXcodeVersions\",\n                    \"id\": \"Xcode12E507:stable\"\n                }\n            },\n            \"macOsVersion\": {\n                \"data\": {\n                    \"type\": \"ciMacOsVersions\",\n                    \"id\": \"20G95\"\n                }\n            },\n            \"buildRuns\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/relationships/buildRuns\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f/buildRuns\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciWorkflows/3fa0575f-4de0-44cb-bf0f-9aa2651c2f1f?include=macOsVersion%2Cproduct%2Crepository%2CxcodeVersion\"\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Xcode Cloud Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-repository",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-relationships-buildRuns",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciWorkflows-_id_-relationships-repository"
+      ]
+    }
+  ]
+}

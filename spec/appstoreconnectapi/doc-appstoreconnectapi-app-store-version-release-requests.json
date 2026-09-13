@@ -1,0 +1,85 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-version-release-requests",
+  "title": "App Store Version Release Requests",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-version-release-requests",
+  "slug": "appstoreconnectapi/app-store-version-release-requests",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manually release an App Store approved version of your app to the App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `appStoreVersionReleaseRequests` resource handles requests to manually release a version of your app that’s in the Pending Developer Release state. For more information about app states, see `https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses"
+          ]
+        },
+        {
+          "text": "For more information about version releases, see `https://devcms.apple.com/help/app-store-connect/manage-your-apps-availability/select-a-version-release-option`.",
+          "refs": [
+            "https://devcms.apple.com/help/app-store-connect/manage-your-apps-availability/select-a-version-release-option"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Releasing Approved Versions Manually",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionReleaseRequests"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequestCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequestResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionReleaseRequest"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Publishing",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-phased-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-pre-orders",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-availability"
+      ]
+    }
+  ]
+}

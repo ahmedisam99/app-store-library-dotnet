@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_connect_api:AlternativeDistributionPackageDeltaResponse",
+  "title": "AlternativeDistributionPackageDeltaResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltaResponse",
+  "slug": "appstoreconnectapi/alternativedistributionpackagedeltaresponse",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a single delta update for an alternative distribution package.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AlternativeDistributionPackageDeltaResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AlternativeDistributionPackageDelta",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionPackageDelta",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This object is the response that contains a single alternative distribution package delta. For more information about alternative distribution package deltas see `GET-v1-alternativeDistributionPackageDeltas-_id_`. The schema of the response body is below.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageDeltas-_id_"
+          ]
+        },
+        {
+          "text": "```javascript\n{\n  \"data\": {\n    \"type\": \"alternativeDistributionPackageDeltas\",\n    \"id\": \"string\",\n    \"attributes\": {\n      \"url\": \"string\",\n      \"urlExpirationDate\": \"2024-02-23T06:50:07.723Z\",\n      \"alternativeDistributionKeyBlob\": \"string\"\n    },\n    \"links\": {\n      \"self\": \"string\"\n    }\n  },\n  \"links\": {\n    \"self\": \"string\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDelta",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltasResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariant",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionDeltasLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionVariantsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsLinkagesResponse"
+      ]
+    }
+  ]
+}

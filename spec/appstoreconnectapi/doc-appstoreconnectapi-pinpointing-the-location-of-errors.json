@@ -1,0 +1,103 @@
+{
+  "id": "doc:appstoreconnectapi/pinpointing-the-location-of-errors",
+  "title": "Pinpointing the Location of Errors",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/pinpointing-the-location-of-errors",
+  "slug": "appstoreconnectapi/pinpointing-the-location-of-errors",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Locate the specific source of the error.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Some errors are produced by a specific element of the request. In that case, the `ErrorResponse` includes `source.parameter` or `source.pointer` values to indicate the exact location of the error. When the location of the error cannot be determined, the error response does not include those parameters. In some cases, the JSON pointer may indicate an element that isn’t in the request entity, but should be.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Use the Error Response to Pinpoint Parameter Errors",
+      "paragraphs": [
+        {
+          "text": "When an error occurs due to a problem with a parameter, the `source` property contains `source.parameter`, whose value contains the parameter with the error.",
+          "refs": []
+        },
+        {
+          "text": "``For example, in this request, the `“emaill”` query parameter is misspelled:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nGET /v1/betaTesters?filter[emaill]=kate-bell%22mac.com\n```",
+          "refs": []
+        },
+        {
+          "text": "The API responds with an error that includes `source.parameter`:",
+          "refs": []
+        },
+        {
+          "text": "```javascript\nHTTP/1.1 400 Bad Request\n{\n    \"errors\": [\n        {\n            \"status\": \"400\",\n            \"id\": \"5becf2db-2f12-4d6a-9dc2-6ceb33c683b4\",\n            \"title\": \"A parameter has an invalid value\",\n            \"detail\": \"'emaill' is not a valid filter type\",\n            \"code\": \"PARAMETER_ERROR.INVALID\",\n            \"source\": {\n                \"parameter\": \"filter[emaill]\"\n             }\n        }\n    ]\n}\n\n```",
+          "refs": []
+        },
+        {
+          "text": "The `source.parameter` value indicates that the error is located in the `filter[emaill]` parameter.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Use the Error Response to Pinpoint Entity Errors",
+      "paragraphs": [
+        {
+          "text": "When an error occurs due to a problem with an entity, the `source` property contains a JSON pointer that describes the place in the request entity where the error originates. In some cases, this pointer may indicate an element that is not in the request entity but should be.",
+          "refs": []
+        },
+        {
+          "text": "For more information about JSON pointers, see the `https://tools.ietf.org/html/rfc6901` proposed standards document.",
+          "refs": [
+            "https://tools.ietf.org/html/rfc6901"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Handling Errors",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/about-the-http-status-code",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/parsing-the-error-response-code"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,166 @@
+{
+  "id": "doc:appstoreconnectapi/getting-value-based-on-age-using-an-array",
+  "title": "Getting value based on age using an array",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/getting-value-based-on-age-using-an-array",
+  "slug": "appstoreconnectapi/getting-value-based-on-age-using-an-array",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Return a value that changes according to an array of values as a function of the age of the requests.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "Age range",
+        "Return value"
+      ],
+      "rows": [
+        [
+          "`[0, 4]`",
+          "`5`"
+        ],
+        [
+          "`[5, 9]`",
+          "`20`"
+        ],
+        [
+          "`[10, 14]`",
+          "`30`"
+        ],
+        [
+          "`[15, 19]`",
+          "`40`"
+        ],
+        [
+          "`[20, 24]`",
+          "`50`"
+        ],
+        [
+          "`[25, 29]`",
+          "`60`"
+        ],
+        [
+          "`[30, 30+]`",
+          "`100`"
+        ]
+      ]
+    },
+    {
+      "headers": [
+        "`ageSeconds`",
+        "The average, maximum, or minimum age of match requests in the queue."
+      ],
+      "rows": [
+        [
+          "`initialValue`",
+          "The value for `ages` that are less than the first item in the `ages` array"
+        ],
+        [
+          "`values`",
+          "The values to map the age ranges to."
+        ],
+        [
+          "`ages`",
+          "The age ranges to map to the values."
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `agedValues()` function in the expression of a matchmaking rule to loosen matchmaking criteria over time. This function returns a value that changes based on the given arrays and depending on the age of requests. Use this function instead of `agedAsSteppedValue()` when you want more control over the values.",
+          "refs": []
+        },
+        {
+          "text": "For example, pass the following parameters to this function:",
+          "refs": []
+        },
+        {
+          "text": "```other\nagedValues(age, `5`, [ `20`, `30`, `40`, `50`, `60`, `100` ], \n                     [  `5`, `10`, `15`, `20`, `25`, `30` ])\n```",
+          "refs": []
+        },
+        {
+          "text": "If the `ageSeconds` parameter is `3` (less than the first item in the `ages` array), the value is `5`. If `ageSeconds` is `17`, the value is `40`. If `ageSeconds` is `32` (greater than the last item in the `ages` array), the value is `100`.",
+          "refs": []
+        },
+        {
+          "text": "| Age range | Return value |\n| --- | --- |\n| `[0, 4]` | `5` |\n| `[5, 9]` | `20` |\n| `[10, 14]` | `30` |\n| `[15, 19]` | `40` |\n| `[20, 24]` | `50` |\n| `[25, 29]` | `60` |\n| `[30, 30+]` | `100` |",
+          "refs": []
+        },
+        {
+          "text": "To loosen constraints over time, use the results of this function in comparisons. For example, compare the sum of all the player counts to a value that decreases with the average age of candidate requests that the matchmaking algorithm selects.",
+          "refs": []
+        },
+        {
+          "text": "```other\nagedValues(avg(requests[].secondsInQueue), 8, [ 6, 4, 2], [ 10, 15, 20 ]) <= sum(requests[].playerCount)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Declaration",
+      "paragraphs": [
+        {
+          "text": "```other\nnumber agedValues(number        $ageSeconds, \n                  number        $initialValue,\n                  array[number] $values, \n                  array[number] $ages)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Parameters",
+      "paragraphs": [
+        {
+          "text": "| `ageSeconds` | The average, maximum, or minimum age of match requests in the queue. |\n| --- | --- |\n| `initialValue` | The value for `ages` that are less than the first item in the `ages` array |\n| `values` | The values to map the age ranges to. |\n| `ages` | The age ranges to map to the values. |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Return value",
+      "paragraphs": [
+        {
+          "text": "If `ageSeconds` is less than the first item in the `ages` array (`ages[0]`), `initialValue`. If `ageSeconds` is in the range between two items in the `ages` array (`ages[n] <= ageSeconds < ages[n+1]`), the corresponding item in the `values` array (`values[n]`). If `ageSeconds` is greater than the last item in the `ages` array, `initialValue`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Match functions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/getting-value-based-on-age"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "id": "doc:appstoreconnectapi/sandbox-testers",
+  "title": "Sandbox Testers",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/sandbox-testers",
+  "slug": "appstoreconnectapi/sandbox-testers",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage sandbox testers on your App Store Connect team.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `sandboxTesters` resource represents a Sandbox Apple Account, which is an account you use to test your app in the sandbox environment. Using this resource you can read and modify Sandbox Apple Accounts and their data. Use App Store Connect to create or delete Sandbox Apple Account. For more information, see `https://developer.apple.com/help/app-store-connect/test-in-app-purchases/create-sandbox-apple-ids`. For more information about testing in-app purchase in the sandbox environment, see `https://developer.apple.com/help/app-store-connect/test-in-app-purchases/overview-of-testing-in-sandbox`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/test-in-app-purchases/create-sandbox-apple-ids",
+            "https://developer.apple.com/help/app-store-connect/test-in-app-purchases/overview-of-testing-in-sandbox"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Sandbox Tester Lookup and Modification",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-sandboxTesters",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-sandboxTesters-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-sandboxTestersClearPurchaseHistoryRequest"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Users and Access",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/users",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/user-invitations"
+      ]
+    }
+  ]
+}

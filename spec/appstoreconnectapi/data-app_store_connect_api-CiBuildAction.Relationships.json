@@ -1,0 +1,129 @@
+{
+  "id": "data:app_store_connect_api:CiBuildAction.Relationships",
+  "title": "CiBuildAction.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildaction/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships of the Build Actions resource you included in the request and those on which you can operate.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildAction.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "artifacts",
+      "type": "CiBuildAction.Relationships.Artifacts",
+      "typeId": "data:app_store_connect_api:CiBuildAction.Relationships.Artifacts",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildRun",
+      "type": "CiBuildAction.Relationships.BuildRun",
+      "typeId": "data:app_store_connect_api:CiBuildAction.Relationships.BuildRun",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Actions and the Build Runs resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "issues",
+      "type": "CiBuildAction.Relationships.Issues",
+      "typeId": "data:app_store_connect_api:CiBuildAction.Relationships.Issues",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "testResults",
+      "type": "CiBuildAction.Relationships.TestResults",
+      "typeId": "data:app_store_connect_api:CiBuildAction.Relationships.TestResults",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary/BuildRun-data.dictionary"
+      ]
+    },
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary/Artifacts-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary/Issues-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary/TestResults-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

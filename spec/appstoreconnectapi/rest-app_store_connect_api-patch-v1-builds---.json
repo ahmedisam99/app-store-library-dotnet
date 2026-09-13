@@ -1,0 +1,183 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-builds-{}",
+  "title": "Modify a build",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-builds-_id_",
+  "slug": "appstoreconnectapi/patch-v1-builds-_id_",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Expire a build or change its encryption exemption setting.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/builds/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the build resource ID from the `GET-v1-builds` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds"
+        ]
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "BuildUpdateRequest",
+    "typeId": "data:app_store_connect_api:BuildUpdateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "BuildResponse",
+      "typeId": "data:app_store_connect_api:BuildResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee\n-d {\n  “data” : {\n    “type”: “builds”,\n    “id”: “932eff64-a144-4350-8d10-9e54d5834aee”,\n    “attributes”: {\n      “usesNonExemptEncryption” : true      \n    },\n    “relationships”: {\n      “appEncryptionDeclaration”: {\n        “data”: {\n          “type”: “appEncryptionDeclarations”,\n          “id”: “51f19f70-ccd2-4ab9-986b-d7c38ee3e60c”\n        }\n      }\n    }\n  }\n}’\n\n```\n\n**Response**\n\n```json\n{\n  “data” : {\n    “type” : “builds”,\n    “id” : “932eff64-a144-4350-8d10-9e54d5834aee”,\n    “attributes” : {\n      “version” : “153”,\n      “uploadedDate” : “2022-04-14T11:11:14-07:00”,\n      “expirationDate” : “2022-07-13T11:11:14-07:00”,\n      “expired” : false,\n      “minOsVersion” : “14.3”,\n      “lsMinimumSystemVersion” : “11.0”,\n      “computedMinMacOsVersion” : “11.0”,\n      “iconAssetToken” : {\n        “templateUrl” : “httpss://isq11.mzstatic.com/image/thumb/Purple123/v4/0b/84/ee/0b84eed1-e323-8b13-591b-163e1cfa8d67/Icon-83.5@2x.png.png/{w}x{h}bb.{f}”,\n        “width” : 167,\n        “height” : 167\n      },\n      “processingState” : “VALID”,\n      “buildAudienceType” : null,\n      “usesNonExemptEncryption” : true,\n      “isWatchOnly” : false,\n      “hasMessagesExtension” : false,\n      “hasStickers” : false,\n      “isLaunchProhibited” : false,\n      “qcState” : “BETA_INTERNAL_TESTING”,\n      “deviceFamilies” : [ “IPHONE”, “IPAD” ]\n    },\n    “relationships” : {\n      “ciBuildGroup” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/ciBuildGroup”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/ciBuildGroup”\n        }\n      },\n      “preReleaseVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/preReleaseVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/preReleaseVersion”\n        }\n      },\n      “individualTesters” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/individualTesters”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/individualTesters”\n        }\n      },\n      “betaBuildMetrics” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/betaBuildMetrics”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/betaBuildMetrics”\n        }\n      },\n      “betaGroups” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/betaGroups”\n        }\n      },\n      “betaBuildLocalizations” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/betaBuildLocalizations”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/betaBuildLocalizations”\n        }\n      },\n      “appEncryptionDeclaration” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/appEncryptionDeclaration”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/appEncryptionDeclaration”\n        }\n      },\n      “betaAppReviewSubmission” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/betaAppReviewSubmission”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/betaAppReviewSubmission”\n        }\n      },\n      “app” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/app”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/app”\n        }\n      },\n      “buildBetaDetail” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/buildBetaDetail”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/buildBetaDetail”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/appStoreVersion”\n        }\n      },\n      “icons” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/icons”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/icons”\n        }\n      },\n      “perfPowerMetrics” : {\n        “links” : {\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/perfPowerMetrics”\n        }\n      },\n      “diagnosticSignatures” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/relationships/diagnosticSignatures”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee/diagnosticSignatures”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee”\n    }\n  },\n  “links” : {\n    “self” : “https://api.appstoreconnect.apple.com/v1/builds/932eff64-a144-4350-8d10-9e54d5834aee”\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Modifying Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-builds-_id_-relationships-appEncryptionDeclaration"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-appPriceSchedules-{}-automaticPrices",
+  "title": "List Automatically Generated Prices for an App",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-automaticPrices",
+  "slug": "appstoreconnectapi/get-v1-apppriceschedules-_id_-automaticprices",
+  "introducedAt": "2.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List the automatically calculated prices for an app generated from a base territory.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appPriceSchedules/{id}/automaticPrices",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPricePoints]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "customerPrice",
+            "proceeds",
+            "app",
+            "equalizations",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app price point resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appPrices]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "manual",
+            "startDate",
+            "endDate",
+            "appPricePoint",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app price resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[territories]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "currency"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each territory resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[endDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by end date.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[startDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by start date.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[territory]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app prices by territory.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appPricePoint",
+            "territory"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of app price resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppPricesV2Response",
+      "typeId": "data:app_store_connect_api:AppPricesV2Response",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/appPriceSchedules/6447402192/automaticPrices\n```\n\n**Response**\n\n```json\n{\n  \"data\" : [ {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBRkciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBRkciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBR08iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBR08iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBSUEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBSUEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBUkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBUkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBUk0iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBUk0iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVEciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVEciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVVMiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVVMiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVVQiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBVVQiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBWkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJBWkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRUwiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRUwiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRU4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRU4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCRkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCR1IiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCR1IiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSFIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSFIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSFMiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSFMiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSUgiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCSUgiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTFIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTFIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTFoiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTFoiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTVUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCTVUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCT0wiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCT0wiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUkIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUkIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUk4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCUk4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCVE4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCVE4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCV0EiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJCV0EiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSEUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSEUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSEwiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSEwiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSE4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSE4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSVYiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDSVYiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDTVIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDTVIiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0QiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0QiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0ciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0ciLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0wiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDT0wiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDUFYiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDUFYiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDUkkiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDUkkiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWU0iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWU0iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWVAiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWVAiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJDWkUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJERVUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJERVUiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJETUEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJETUEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJETksiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJETksiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJET00iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJET00iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJEWkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJEWkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFQ1UiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFQ1UiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFR1kiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFR1kiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFU1AiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFU1AiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFU1QiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJFU1QiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGSU4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGSU4iLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGSkkiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGSkkiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  }, {\n    \"type\" : \"appPrices\",\n    \"id\" : \"eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGUkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\",\n    \"attributes\" : {\n      \"manual\" : false,\n      \"startDate\" : \"2023-02-28\",\n      \"endDate\" : null\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/appPrices/eyJzIjoiNjQ0NzQwMjE5MiIsInQiOiJGUkEiLCJwIjoiMTAwMDciLCJzZCI6MTY3NzU3MTIwMC4wMDAwMDAwMDAsImVkIjowLjB9\"\n    }\n  } ],\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/appPriceSchedules/6447402192/automaticPrices\",\n    \"next\" : \"https://api.appstoreconnect.apple.com/v1/appPriceSchedules/6447402192/automaticPrices?cursor=Mg.AKwzESA\"\n  },\n  \"meta\" : {\n    \"paging\" : {\n      \"total\" : 172,\n      \"limit\" : 50\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting and managing an app’s price schedules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-appPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-manualPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-automaticPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-baseTerritory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPriceSchedules-_id_-relationships-manualPrices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPriceSchedules"
+      ]
+    }
+  ]
+}

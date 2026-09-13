@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperiencesResponse",
+  "title": "AppClipAdvancedExperiencesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperiencesResponse",
+  "slug": "appstoreconnectapi/appclipadvancedexperiencesresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a list of configured App Clip advanced experiences.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperiencesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AppClipAdvancedExperience]",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperience",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AppClipAdvancedExperienceImage",
+            "AppClipAdvancedExperienceLocalization",
+            "AppClip"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClip",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDefaultExperiencesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppClipAdvancedExperiencesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppClipDefaultExperiencesLinkagesResponse"
+      ]
+    }
+  ]
+}

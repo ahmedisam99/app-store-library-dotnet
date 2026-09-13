@@ -1,0 +1,196 @@
+{
+  "id": "doc:appstoreconnectapi/working-with-subscription-group-versions",
+  "title": "Working with subscription group versions",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/working-with-subscription-group-versions",
+  "slug": "appstoreconnectapi/working-with-subscription-group-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage draft versions of a subscription group’s localized metadata before submitting for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The pre-4.4.1 workflow that posts localizations directly to the subscription group (`POST /v1/subscriptionGroupLocalizations`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A subscription group version is a draft container for the group’s localized names — the display names and optional custom app names that customers see for the whole subscription group. Group versions carry only localizations; they don’t have review images. Create a version, attach localizations to it, then submit the version through the review submissions workflow. The parent subscription group holds properties that stay stable across versions — its reference name and app relationship — while each version captures the reviewable metadata for a single review cycle.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The pre-4.4.1 workflow that posts localizations directly to the subscription group (`POST /v1/subscriptionGroupLocalizations`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+          ]
+        },
+        {
+          "text": "Group-level localizations submit to App Review with the subscriptions they belong to. Submit a subscription group version independently only when you change group-level localization without changing any subscription in the group.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Understand the version lifecycle",
+      "paragraphs": [
+        {
+          "text": "A version moves through these states, exposed on `SubscriptionGroupVersion/Attributes/state`:",
+          "refs": []
+        },
+        {
+          "text": "Versions are read-only after creation. To change a version’s contents, create a new version.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`PREPARE_FOR_SUBMISSION`: the version is being edited. Localizations can be added, changed, or removed.",
+          "refs": []
+        },
+        {
+          "text": "`READY_FOR_REVIEW`: the version is attached to a review submission and awaiting the submission to be marked `submitted`.",
+          "refs": []
+        },
+        {
+          "text": "`WAITING_FOR_REVIEW`: the review submission has been submitted and the version is queued.",
+          "refs": []
+        },
+        {
+          "text": "`IN_REVIEW`: App Review is actively reviewing the version.",
+          "refs": []
+        },
+        {
+          "text": "`ACCEPTED` or `APPROVED`: the version passed review.",
+          "refs": []
+        },
+        {
+          "text": "`REJECTED` or `DEVELOPER_REJECTED`: the version was rejected by App Review or withdrawn by the developer.",
+          "refs": []
+        },
+        {
+          "text": "`REPLACED_WITH_NEW_VERSION`: a newer version supersedes this one.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create a version",
+      "paragraphs": [
+        {
+          "text": "Create a draft version with `POST /v1/subscriptionGroupVersions` (`POST-v1-subscriptionGroupVersions`). Relate it to the subscription group whose metadata you’re updating:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionGroupVersions\",\n    \"relationships\": {\n      \"subscriptionGroup\": {\n        \"data\": {\n          \"type\": \"subscriptionGroups\",\n          \"id\": \"2000036297\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response returns the new version’s `id` and a `state` of `PREPARE_FOR_SUBMISSION`. Note the `id` — every subsequent step references it.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Attach a localization to the version",
+      "paragraphs": [
+        {
+          "text": "Add a localized display name and optional custom app name with `POST /v2/subscriptionGroupLocalizations` (`POST-v2-subscriptionGroupLocalizations`). The payload relates the localization to the version, not the parent subscription group:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionGroupLocalizations"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionGroupLocalizations\",\n    \"attributes\": {\n      \"locale\": \"en-AU\",\n      \"name\": \"Ukulele Lessons\",\n      \"customAppName\": \"The Best Ukulele Lessons\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"subscriptionGroupVersions\",\n          \"id\": \"${subscriptionGroupVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Repeat for each locale you support. To list the localizations attached to a version, use `GET /v1/subscriptionGroupVersions/{id}/localizations` (`GET-v1-subscriptionGroupVersions-_id_-localizations`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupVersions-_id_-localizations"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "List all versions for a subscription group",
+      "paragraphs": [
+        {
+          "text": "To see every version on a parent subscription group, use `GET /v1/subscriptionGroups/{id}/versions` (`GET-v1-subscriptionGroups-_id_-versions`). The response includes each version’s state, so you can find the current draft, the most recently approved version, and any versions currently in review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroups-_id_-versions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Submit the version",
+      "paragraphs": [
+        {
+          "text": "Submit a completed version through the review submissions workflow. Create a review submission for the app, add the version as an item, and mark the submission as `submitted`. For step-by-step instructions, see `submitting-subscriptions-and-subscription-groups-for-app-review`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/submitting-subscriptions-and-subscription-groups-for-app-review"
+          ]
+        },
+        {
+          "text": "When you mark the submission `submitted`, the version moves from `READY_FOR_REVIEW` to `WAITING_FOR_REVIEW`. Poll `GET /v1/subscriptionGroupVersions/{id}` (`GET-v1-subscriptionGroupVersions-_id_`) to watch it continue to `IN_REVIEW` and then `APPROVED` or `REJECTED`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupVersions-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Subscription Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-auto-renewable-subscription-groups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-groups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations-v1"
+      ]
+    }
+  ]
+}

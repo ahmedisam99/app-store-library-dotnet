@@ -1,0 +1,89 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-version-submissions",
+  "title": "App Store version submissions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-version-submissions",
+  "slug": "appstoreconnectapi/app-store-version-submissions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Submit versions of your app to App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An `appStoreVersionSubmissions` resource enables you to submit a version of your app to App Review. This resource is the equivalent of clicking the Submit for Review button in the App Store Connect UI.",
+          "refs": []
+        },
+        {
+          "text": "If your version submission is incomplete due to missing required information or other issues, you receive an error when you attempt to submit to App Review.",
+          "refs": []
+        },
+        {
+          "text": "The `appStoreVersionSubmissions` resource is available while your submission request is live. For more information, see `https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-for-review`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-for-review"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing Review Submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionSubmissions-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionSubmissionResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Review Submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submission-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-clip-app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-attachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/actors"
+      ]
+    }
+  ]
+}

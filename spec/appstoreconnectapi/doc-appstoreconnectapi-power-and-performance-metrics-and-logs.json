@@ -1,0 +1,126 @@
+{
+  "id": "doc:appstoreconnectapi/power-and-performance-metrics-and-logs",
+  "title": "Power and Performance Metrics and Logs",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/power-and-performance-metrics-and-logs",
+  "slug": "appstoreconnectapi/power-and-performance-metrics-and-logs",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get power and performance metrics, logs, and signatures.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `perfPowerMetricsresource` resource is a read-only resource where you get the power and performance metrics and diagnostics for App Store versions of your app. Use this information to improve your app’s performance. Customers can opt-in to share this information with you on their devices.",
+          "refs": []
+        },
+        {
+          "text": "A *metric* is a measurement of the power and performance impact of an app running on a device. The `MetricCategory` type lists the categories of measurements the system makes; for example, the `LAUNCH` metric measures how long it takes an app to present its first frame. Use the `GET-v1-apps-_id_-perfPowerMetrics` and `GET-v1-builds-_id_-perfPowerMetrics` endpoints to get the metrics reports for the most recent version of your app or for a specific build.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics"
+          ]
+        },
+        {
+          "text": "An *insight* is an automatically generated analysis that shows a trend based on a set of metrics data. Insights compare the performance of the most recent app version with previous versions. Look for insights in the response body object, `xcodeMetrics`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics"
+          ]
+        },
+        {
+          "text": "A *diagnostic signature* is a recurring pattern of function calls your app makes that are associated with a metric. To get a diagnostic log for a signature, first call the `GET-v1-builds-_id_-diagnosticSignatures` endpoint to get the resource IDs for signatures you’re interested in. Then call `GET-v1-diagnosticSignatures-_id_-logs` using the signature resource IDs to download the logs.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs"
+          ]
+        },
+        {
+          "text": "To learn more about power and performance metrics, see `https://help.apple.com/xcode/mac/current/#/devb642b28ac`, and `Improving Your App's Performance`.",
+          "refs": [
+            "https://help.apple.com/xcode/mac/current/#/devb642b28ac"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Metrics and Diagnostic Logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/retrieve-power-and-performance-metrics-and-log-insights",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignaturesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignature",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLogCallStackNode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricsInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PerfPowerMetric",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPerfPowerMetricsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignatureLogsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests"
+      ]
+    },
+    {
+      "title": "Reporting",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sales-and-finance",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/analytics"
+      ]
+    }
+  ]
+}

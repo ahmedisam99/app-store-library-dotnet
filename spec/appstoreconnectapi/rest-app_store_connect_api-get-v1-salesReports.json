@@ -1,0 +1,384 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-salesReports",
+  "title": "Download sales and trends reports",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-salesReports",
+  "slug": "appstoreconnectapi/get-v1-salesreports",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Download sales and trends reports filtered by your specified criteria.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/salesReports",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "filter[frequency]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DAILY",
+            "WEEKLY",
+            "MONTHLY",
+            "YEARLY"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Frequency of the report to download. For a list of values, see Allowed values based on sales report type table below.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reportDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The report date to download. Specify the date in the `YYYY-MM-DD` format for all report frequencies except `DAILY`, which doesn’t require a date. For more information, see `https://help.apple.com/itc/appssalesandtrends/#/itc48f999955`.",
+        "refs": [
+          "https://help.apple.com/itc/appssalesandtrends/#/itc48f999955"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reportSubType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "SUMMARY",
+            "DETAILED",
+            "SUMMARY_INSTALL_TYPE",
+            "SUMMARY_TERRITORY",
+            "SUMMARY_CHANNEL"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The report sub type to download. For a list of values, see Allowed values based on sales report type table below.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[reportType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "SALES",
+            "PRE_ORDER",
+            "NEWSSTAND",
+            "SUBSCRIPTION",
+            "SUBSCRIPTION_EVENT",
+            "SUBSCRIBER",
+            "SUBSCRIPTION_OFFER_CODE_REDEMPTION",
+            "INSTALLS",
+            "FIRST_ANNUAL",
+            "WIN_BACK_ELIGIBILITY"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The report to download. For more details on each report type see `https://help.apple.com/itc/appssalesandtrends/#/itc37a18bcbf`.",
+        "refs": [
+          "https://help.apple.com/itc/appssalesandtrends/#/itc37a18bcbf"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[vendorNumber]",
+      "type": "[string]",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "You can find your vendor number in `https://developer.apple.com/help/app-store-connect/getting-paid/view-payments-and-proceeds`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/getting-paid/view-payments-and-proceeds"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[version]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The version of the report. For a list of values, see Allowed values based on sales report type table below.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/a-gzip",
+      "type": "gzip",
+      "typeId": "data:app_store_connect_api:gzip",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " Version 1_2 of the Subscription, Subscription Event, and Subscriber reports in Sales and Trends is no longer available for download.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "`reportType`",
+        "`reportSubType`",
+        "`frequency`",
+        "`version`"
+      ],
+      "rows": [
+        [
+          "FIRST_ANNUAL",
+          "DETAILED",
+          "DAILY",
+          "1_0"
+        ],
+        [
+          "FIRST_ANNUAL",
+          "SUMMARY",
+          "YEARLY",
+          "1_0"
+        ],
+        [
+          "INSTALLS",
+          "SUMMARY_CHANNEL",
+          "YEARLY",
+          "1_0, 1_1"
+        ],
+        [
+          "INSTALLS",
+          "SUMMARY_INSTALL_TYPE",
+          "YEARLY",
+          "1_0, 1_1"
+        ],
+        [
+          "INSTALLS",
+          "SUMMARY",
+          "MONTHLY",
+          "1_2"
+        ],
+        [
+          "INSTALLS",
+          "SUMMARY_TERRITORY",
+          "YEARLY",
+          "1_0, 1_1"
+        ],
+        [
+          "INSTALLS",
+          "DETAILED",
+          "MONTHLY",
+          "1_2"
+        ],
+        [
+          "INSTALLS",
+          "DETAILED",
+          "YEARLY",
+          "1_0, 1_1"
+        ],
+        [
+          "NEWSSTAND",
+          "DETAILED",
+          "DAILY, WEEKLY",
+          "1_0"
+        ],
+        [
+          "PRE_ORDER",
+          "SUMMARY",
+          "DAILY, WEEKLY, MONTHLY, YEARLY",
+          "1_0"
+        ],
+        [
+          "SALES",
+          "SUMMARY",
+          "DAILY, WEEKLY, MONTHLY, YEARLY",
+          "1_0"
+        ],
+        [
+          "SUBSCRIBER",
+          "DETAILED",
+          "DAILY",
+          "1_3"
+        ],
+        [
+          "SUBSCRIPTION",
+          "SUMMARY",
+          "DAILY",
+          "1_3"
+        ],
+        [
+          "SUBSCRIPTION_EVENT",
+          "SUMMARY",
+          "DAILY",
+          "1_3"
+        ],
+        [
+          "SUBSCRIPTION_OFFER_CODE_REDEMPTION",
+          "SUMMARY",
+          "DAILY",
+          "1_0"
+        ],
+        [
+          "WIN_BACK_ELIGIBILITY",
+          "SUMMARY",
+          "DAILY",
+          "1_0"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Allowed values based on sales report type",
+      "paragraphs": [
+        {
+          "text": "Each sales report type has specific valid values for `reportType`, `reportSubType`, `frequency`, and `version`. If you use other types, it results in an error. For more details on each report type, see `https://developer.apple.com/help/app-store-connect/view-sales-and-trends/download-and-view-reports`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/view-sales-and-trends/download-and-view-reports"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Version 1_2 of the Subscription, Subscription Event, and Subscriber reports in Sales and Trends is no longer available for download.",
+          "refs": []
+        },
+        {
+          "text": "| `reportType` | `reportSubType` | `frequency` | `version` |\n| --- | --- | --- | --- |\n| FIRST_ANNUAL | DETAILED | DAILY | 1_0 |\n| FIRST_ANNUAL | SUMMARY | YEARLY | 1_0 |\n| INSTALLS | SUMMARY_CHANNEL | YEARLY | 1_0, 1_1 |\n| INSTALLS | SUMMARY_INSTALL_TYPE | YEARLY | 1_0, 1_1 |\n| INSTALLS | SUMMARY | MONTHLY | 1_2 |\n| INSTALLS | SUMMARY_TERRITORY | YEARLY | 1_0, 1_1 |\n| INSTALLS | DETAILED | MONTHLY | 1_2 |\n| INSTALLS | DETAILED | YEARLY | 1_0, 1_1 |\n| NEWSSTAND | DETAILED | DAILY, WEEKLY | 1_0 |\n| PRE_ORDER | SUMMARY | DAILY, WEEKLY, MONTHLY, YEARLY | 1_0 |\n| SALES | SUMMARY | DAILY, WEEKLY, MONTHLY, YEARLY | 1_0 |\n| SUBSCRIBER | DETAILED | DAILY | 1_3 |\n| SUBSCRIPTION | SUMMARY | DAILY | 1_3 |\n| SUBSCRIPTION_EVENT | SUMMARY | DAILY | 1_3 |\n| SUBSCRIPTION_OFFER_CODE_REDEMPTION | SUMMARY | DAILY | 1_0 |\n| WIN_BACK_ELIGIBILITY | SUMMARY | DAILY | 1_0 |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Downloading Reports",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-financeReports"
+      ]
+    }
+  ]
+}

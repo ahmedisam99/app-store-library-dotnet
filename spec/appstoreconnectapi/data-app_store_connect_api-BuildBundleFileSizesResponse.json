@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:BuildBundleFileSizesResponse",
+  "title": "BuildBundleFileSizesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildBundleFileSizesResponse",
+  "slug": "appstoreconnectapi/buildbundlefilesizesresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing a list of download and install size estimates for a build’s bundles.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildBundleFileSizesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[BuildBundleFileSize]",
+      "typeId": "data:app_store_connect_api:BuildBundleFileSize",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleFileSize",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatusResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocationsResponse"
+      ]
+    }
+  ]
+}

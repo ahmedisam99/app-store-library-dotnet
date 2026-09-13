@@ -1,0 +1,245 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-analyticsReportRequests-{}-reports",
+  "title": "Read Reports for a Specific Request",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_-reports",
+  "slug": "appstoreconnectapi/get-v1-analyticsreportrequests-_id_-reports",
+  "introducedAt": "3.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of reports generated from a specific analytics report request.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/analyticsReportRequests/{id}/reports",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the analytics report request resource ID from the `GET-v1-apps-_id_-analyticsReportRequests` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-analyticsReportRequests"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[analyticsReports]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "category",
+            "instances"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each analytics reports resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[category]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "APP_USAGE",
+            "APP_STORE_ENGAGEMENT",
+            "COMMERCE",
+            "FRAMEWORK_USAGE",
+            "PERFORMANCE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned reports by category. Possible values: -`APP_USAGE`: A string representing the App Usage category. -`APP_STORE_ENGAGEMENT`: A string representing the App Store Engagement category. -`COMMERCE`: A string representing the App Store Commerce category. -`FRAMEWORK_USAGE`: A string representing the Framework Usage category. -`PERFORMANCE`: A string representing the Performance category.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[name]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned reports by name.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of analytics reports resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AnalyticsReportsResponse",
+      "typeId": "data:app_store_connect_api:AnalyticsReportsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Examples Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/analyticsReportRequests/d48c69c5-9bcb-4592-abbd-08a9411b0231/reports?limit=5\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"analyticsReports\",\n      \"id\": \"r19-d48c69c5-9bcb-4592-abbd-08a9411b0231\",\n      \"attributes\": {\n        \"name\": \"Streaming Playback Performance\",\n        \"category\": \"PERFORMANCE\"\n      },\n      \"relationships\": {\n        \"instances\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r19-d48c69c5-9bcb-4592-abbd-08a9411b0231/relationships/instances\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r19-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r19-d48c69c5-9bcb-4592-abbd-08a9411b0231\"\n      }\n    },\n    {\n      \"type\": \"analyticsReports\",\n      \"id\": \"r20-d48c69c5-9bcb-4592-abbd-08a9411b0231\",\n      \"attributes\": {\n        \"name\": \"Streaming Downloads Performance\",\n        \"category\": \"PERFORMANCE\"\n      },\n      \"relationships\": {\n        \"instances\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r20-d48c69c5-9bcb-4592-abbd-08a9411b0231/relationships/instances\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r20-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r20-d48c69c5-9bcb-4592-abbd-08a9411b0231\"\n      }\n    },\n    {\n      \"type\": \"analyticsReports\",\n      \"id\": \"r142-d48c69c5-9bcb-4592-abbd-08a9411b0231\",\n      \"attributes\": {\n        \"name\": \"App Crashes Expanded\",\n        \"category\": \"PERFORMANCE\"\n      },\n      \"relationships\": {\n        \"instances\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r142-d48c69c5-9bcb-4592-abbd-08a9411b0231/relationships/instances\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r142-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r142-d48c69c5-9bcb-4592-abbd-08a9411b0231\"\n      }\n    },\n    {\n      \"type\": \"analyticsReports\",\n      \"id\": \"r143-d48c69c5-9bcb-4592-abbd-08a9411b0231\",\n      \"attributes\": {\n        \"name\": \"App Storage Reads and Writes\",\n        \"category\": \"PERFORMANCE\"\n      },\n      \"relationships\": {\n        \"instances\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r143-d48c69c5-9bcb-4592-abbd-08a9411b0231/relationships/instances\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r143-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r143-d48c69c5-9bcb-4592-abbd-08a9411b0231\"\n      }\n    },\n    {\n      \"type\": \"analyticsReports\",\n      \"id\": \"r23-d48c69c5-9bcb-4592-abbd-08a9411b0231\",\n      \"attributes\": {\n        \"name\": \"AirPlay Performance\",\n        \"category\": \"PERFORMANCE\"\n      },\n      \"relationships\": {\n        \"instances\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r23-d48c69c5-9bcb-4592-abbd-08a9411b0231/relationships/instances\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r23-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r23-d48c69c5-9bcb-4592-abbd-08a9411b0231\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportRequests/d48c69c5-9bcb-4592-abbd-08a9411b0231/reports?limit=5\",\n    \"next\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportRequests/d48c69c5-9bcb-4592-abbd-08a9411b0231/reports?cursor=BQ.ALHoGBE&limit=5\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 116,\n      \"limit\": 5\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Making, Reading, and Deleting Requests",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-analyticsReportRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-analyticsReportRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_-relationships-reports",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-analyticsReportRequests-_id_"
+      ]
+    }
+  ]
+}

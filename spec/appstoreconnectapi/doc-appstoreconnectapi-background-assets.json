@@ -1,0 +1,182 @@
+{
+  "id": "doc:appstoreconnectapi/background-assets",
+  "title": "Background assets",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/background-assets",
+  "slug": "appstoreconnectapi/background-assets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Assets for your app that you can upload and download separately from the Apple hosted app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the Background Assets API to manage content that Apple hosts, so people can download that content outside your main app bundle on the App Store. You submit asset packs to app review; your app can have:",
+          "refs": []
+        },
+        {
+          "text": "To learn more about integrating Apple-hosted background assets into your app, see `https://developer.apple.com/documentation/backgroundassets/downloading-asset-packs-hosted-by-apple` and to learn more about validating the behavior of your background assets, see `https://developer.apple.com/documentation/backgroundassets/testing-asset-packs-locally`.",
+          "refs": [
+            "https://developer.apple.com/documentation/backgroundassets/downloading-asset-packs-hosted-by-apple",
+            "https://developer.apple.com/documentation/backgroundassets/testing-asset-packs-locally"
+          ]
+        },
+        {
+          "text": "To manage Apple-hosted background assets, be sure you have one of the following user roles:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Multiple background asset packs",
+          "refs": []
+        },
+        {
+          "text": "Versions of asset packs, each with unique content",
+          "refs": []
+        },
+        {
+          "text": "One active beta version and one App Store version per asset pack",
+          "refs": []
+        },
+        {
+          "text": "Updates to content without creating a new app version",
+          "refs": []
+        },
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP MANAGER`",
+          "refs": []
+        },
+        {
+          "text": "`DEVELOPER`",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-apple-hosted-background-assets"
+      ]
+    },
+    {
+      "title": "Relating background assets to your app",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetVersions"
+      ]
+    },
+    {
+      "title": "Uploading background asset files",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetUploadFiles-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-backgroundAssetUploadFiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-backgroundAssetUploadFiles-_id_"
+      ]
+    },
+    {
+      "title": "Reading background asset information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-backgroundAssets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-backgroundAssets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssets-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssets-_id_-relationships-versions"
+      ]
+    },
+    {
+      "title": "Reading background asset version information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersionAppStoreReleases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersionExternalBetaReleases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersionInternalBetaReleases-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersions-_id_-backgroundAssetUploadFiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersions-_id_-relationships-backgroundAssetUploadFiles"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppBackgroundAssetsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAsset",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetUploadFile",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetUploadFileCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetUploadFileResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetUploadFilesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetUploadFileUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionAppStoreRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionAppStoreReleaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionAppStoreReleaseState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionBackgroundAssetUploadFilesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionExternalBetaRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionExternalBetaReleaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionExternalBetaReleaseState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionInternalBetaRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionInternalBetaReleaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAssetVersionState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ChecksumAlgorithm",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Checksums",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/StateDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeliveryFileUploadOperation"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

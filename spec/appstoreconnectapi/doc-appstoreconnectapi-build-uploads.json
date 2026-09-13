@@ -1,0 +1,121 @@
+{
+  "id": "doc:appstoreconnectapi/build-uploads",
+  "title": "Build uploads",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/build-uploads",
+  "slug": "appstoreconnectapi/build-uploads",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read metadata for app builds you upload to App Store Connect.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this resource to upload and manage build uploads for your apps. Use the `BUILD_UPLOAD_STATE_UPDATED` webhook event type to get information about build upload status changes. To learn more, see `WebhookEventType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEventType"
+          ]
+        },
+        {
+          "text": "The `buildUploads` resource represents the overall concept of the upload, whereas the `buildUploadFiles` resource represents the actual files that you upload. You can also use Xcode or Transporter to upload app binaries. To learn more, see `https://apps.apple.com/us/app/transporter/id1450874784`.",
+          "refs": [
+            "https://apps.apple.com/us/app/transporter/id1450874784"
+          ]
+        },
+        {
+          "text": "To read information about your builds after a successful upload, use the `builds` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/builds"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing build uploads",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-buildUploads",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-buildUploads",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildUploads-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-buildUploads",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-buildUploads-_id_"
+      ]
+    },
+    {
+      "title": "Reading and uploading build files",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildUploadFiles-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildUploads-_id_-buildUploadFiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildUploads-_id_-relationships-buildUploadFiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-buildUploadFiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-buildUploadFiles-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUpload",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadBuildUploadFilesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFile",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFilesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadFileUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildUploadState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppBuildUploadsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/StateDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeliveryFileUploadOperation"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-bundles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-icons",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-encryption-declarations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-apps-{}",
+  "title": "Modify an app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-apps-_id_",
+  "slug": "appstoreconnectapi/patch-v1-apps-_id_",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update app information, including bundle ID, primary locale, price schedule, and global availability.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppUpdateRequest",
+    "typeId": "data:app_store_connect_api:AppUpdateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppResponse",
+      "typeId": "data:app_store_connect_api:AppResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/6446998023 -d\n\"{\n  \"data\": {\n    \"type\": \"apps\",\n    \"id\": \"6446998023\",\n    \"attributes\": {\n      \"availableInNewTerritories\": true,\n      \"contentRightsDeclaration\": \"DOES_NOT_USE_THIRD_PARTY_CONTENT\"\n    }\n  }\n}\n\"\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"apps\",\n    \"id\": \"6446998023\",\n    \"attributes\": {\n      \"name\": \"Your Next Cortado\",\n      \"bundleId\": \"com.bdt.ync\",\n      \"sku\": \"YNC\",\n      \"primaryLocale\": \"en-US\",\n      \"isOrEverWasMadeForKids\": false,\n      \"subscriptionStatusUrl\": null,\n      \"subscriptionStatusUrlVersion\": null,\n      \"subscriptionStatusUrlForSandbox\": null,\n      \"subscriptionStatusUrlVersionForSandbox\": null,\n      \"availableInNewTerritories\": true,\n      \"contentRightsDeclaration\": \"DOES_NOT_USE_THIRD_PARTY_CONTENT\"\n    },\n    \"relationships\": {\n      \"ciProduct\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/ciProduct\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/ciProduct\"\n        }\n      },\n      \"betaTesters\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaTesters\"\n        }\n      },\n      \"betaGroups\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaGroups\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaGroups\"\n        }\n      },\n      \"appStoreVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appStoreVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appStoreVersions\"\n        }\n      },\n      \"preReleaseVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/preReleaseVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/preReleaseVersions\"\n        }\n      },\n      \"betaAppLocalizations\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaAppLocalizations\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaAppLocalizations\"\n        }\n      },\n      \"builds\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/builds\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/builds\"\n        }\n      },\n      \"betaLicenseAgreement\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaLicenseAgreement\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaLicenseAgreement\"\n        }\n      },\n      \"betaAppReviewDetail\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaAppReviewDetail\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaAppReviewDetail\"\n        }\n      },\n      \"appInfos\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appInfos\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appInfos\"\n        }\n      },\n      \"appClips\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appClips\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appClips\"\n        }\n      },\n      \"appPricePoints\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appPricePoints\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appPricePoints\"\n        }\n      },\n      \"pricePoints\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/pricePoints\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/pricePoints\"\n        }\n      },\n      \"endUserLicenseAgreement\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/endUserLicenseAgreement\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/endUserLicenseAgreement\"\n        }\n      },\n      \"preOrder\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/preOrder\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/preOrder\"\n        }\n      },\n      \"prices\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/prices\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/prices\"\n        }\n      },\n      \"appPriceSchedule\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appPriceSchedule\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appPriceSchedule\"\n        }\n      },\n      \"availableTerritories\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/availableTerritories\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/availableTerritories\"\n        }\n      },\n      \"appAvailability\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appAvailability\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appAvailability\"\n        }\n      },\n      \"inAppPurchases\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/inAppPurchases\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/inAppPurchases\"\n        }\n      },\n      \"subscriptionGroups\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/subscriptionGroups\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/subscriptionGroups\"\n        }\n      },\n      \"gameCenterEnabledVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/gameCenterEnabledVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/gameCenterEnabledVersions\"\n        }\n      },\n      \"perfPowerMetrics\": {\n        \"links\": {\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/perfPowerMetrics\"\n        }\n      },\n      \"appCustomProductPages\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appCustomProductPages\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appCustomProductPages\"\n        }\n      },\n      \"inAppPurchasesV2\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/inAppPurchasesV2\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/inAppPurchasesV2\"\n        }\n      },\n      \"promotedPurchases\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/promotedPurchases\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/promotedPurchases\"\n        }\n      },\n      \"appEvents\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appEvents\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appEvents\"\n        }\n      },\n      \"reviewSubmissions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/reviewSubmissions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/reviewSubmissions\"\n        }\n      },\n      \"subscriptionGracePeriod\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/subscriptionGracePeriod\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/subscriptionGracePeriod\"\n        }\n      },\n      \"customerReviews\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/customerReviews\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/customerReviews\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting and modifying app information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appEncryptionDeclarations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-appEncryptionDeclarations"
+      ]
+    }
+  ]
+}

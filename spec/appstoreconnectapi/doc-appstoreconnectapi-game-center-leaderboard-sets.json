@@ -1,0 +1,153 @@
+{
+  "id": "doc:appstoreconnectapi/game-center-leaderboard-sets",
+  "title": "Game Center leaderboard sets",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center-leaderboard-sets",
+  "slug": "appstoreconnectapi/game-center-leaderboard-sets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage Game Center leaderboard sets for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Leaderboard sets organize several leaderboards into a single unit. For example, in a game that includes many levels, you might define a leaderboard set to organize the leaderboards for each level. A single app can have 100 leaderboard sets, and a set can have a maximum of 100 leaderboards. You must have at least one leaderboard for your app before you can create a leaderboard set. Once you add leaderboard sets to your app, all future leaderboards that you configure for the app must be included in a leaderboard set.",
+          "refs": []
+        },
+        {
+          "text": "The process to start using leaderboard sets to organize your app’s leaderboards includes these steps:",
+          "refs": []
+        },
+        {
+          "text": "For more information about how to use Leaderboard sets in your app, see `https://developer.apple.com/help/app-store-connect/configure-game-center/configure-leaderboard-sets`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/configure-game-center/configure-leaderboard-sets"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Create the first leaderboard set.",
+          "refs": []
+        },
+        {
+          "text": "Create additional leaderboard sets.",
+          "refs": []
+        },
+        {
+          "text": "Add new leaderboards directly into leaderboard sets.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading leaderboard sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboardSets-_id_-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboardSets-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-gameCenterLeaderboardSets-_id_-relationships-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-groupLeaderboardSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-relationships-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-relationships-groupLeaderboardSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterLeaderboardSets-_id_-relationships-releases"
+      ]
+    },
+    {
+      "title": "Creating, editing, and deleting leaderboard sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-gameCenterLeaderboardSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboardSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboardSets-_id_-relationships-groupLeaderboardSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterLeaderboardSets-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterLeaderboardSets-_id_-relationships-gameCenterLeaderboards"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetsV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2GameCenterLeaderboardsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2GameCenterLeaderboardsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetV2VersionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetGameCenterLeaderboardsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetGameCenterLeaderboardsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetGroupLeaderboardSetLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetGroupLeaderboardSetLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationGameCenterLeaderboardSetImageLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardSetLocalizationsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Leaderboard sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-member-localizations"
+      ]
+    }
+  ]
+}

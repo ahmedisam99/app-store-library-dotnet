@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_connect_api:CiTestStatus",
+  "title": "CiTestStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiTestStatus",
+  "slug": "appstoreconnectapi/citeststatus",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that represents test status information.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string CiTestStatus",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "SUCCESS",
+      "abstract": {
+        "text": "The tests passed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FAILURE",
+      "abstract": {
+        "text": "The tests failed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "MIXED",
+      "abstract": {
+        "text": "Some tests passed and some failed.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SKIPPED",
+      "abstract": {
+        "text": "Xcode Cloud skipped some tests.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "EXPECTED_FAILURE",
+      "abstract": {
+        "text": "Tests failed that you marked as expected to fail with\u00A0`https://developer.apple.com/documentation/xctest/xctexpectfailure`.",
+        "refs": [
+          "https://developer.apple.com/documentation/xctest/xctexpectfailure"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAdditionalRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductPrimaryRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductWorkflowsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiFilesAndFoldersRule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiScheduledStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTagStartCondition"
+      ]
+    }
+  ]
+}

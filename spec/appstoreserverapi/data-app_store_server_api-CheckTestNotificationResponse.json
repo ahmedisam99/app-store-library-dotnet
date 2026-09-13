@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "An array of information the App Store server records for its attempts to send the `TEST` notification to your server. The array may contain a maximum of six `sendAttemptItem` objects.",
         "refs": [
@@ -47,6 +48,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The signed payload, in JWS format, that contains the `TEST` notification that the App Store server sent to your server.",
         "refs": []
@@ -61,6 +63,7 @@
       "deprecated": true,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The result of the App Store server’s first attempt to send the `TEST` notification to your server.\n\nUse the first `sendAttemptItem` in the `sendAttempts` array instead.",
         "refs": [
@@ -104,6 +107,10 @@
   "topics": [
     {
       "title": "Data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/signedPayload"
@@ -113,6 +120,10 @@
   "seeAlso": [
     {
       "title": "App Store Server Notifications testing",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Request-a-Test-Notification",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Test-Notification-Status",

@@ -1,0 +1,104 @@
+{
+  "id": "doc:appstoreconnectapi/routing-app-coverages",
+  "title": "Routing App Coverages",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/routing-app-coverages",
+  "slug": "appstoreconnectapi/routing-app-coverages",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage geographic coverage files for apps that use location to provide routing information.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use `routingAppCoverages` to upload, replace, or delete a geographic coverage file for App Review. If your app uses location to provide routing information, you must supply a geographic coverage file before submitting your app to App Review. For more information see `https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/upload-a-geographic-coverage-file`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/upload-a-geographic-coverage-file"
+          ]
+        },
+        {
+          "text": "For information about creating a geographic coverage file, see “Specifying the Geographic Coverage File Contents” in `https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/ProvidingDirections/ProvidingDirections.html`.",
+          "refs": [
+            "https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/LocationAwarenessPG/ProvidingDirections/ProvidingDirections.html"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading and Creating Routing App Coverages",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-routingAppCoverage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-routingAppCoverages-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-routingAppCoverages"
+      ]
+    },
+    {
+      "title": "Modifying and Deleting Routing App Coverages",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-routingAppCoverages-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-routingAppCoverages-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaStateError",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaAssetState"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-info-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/accessibility-declarations"
+      ]
+    }
+  ]
+}

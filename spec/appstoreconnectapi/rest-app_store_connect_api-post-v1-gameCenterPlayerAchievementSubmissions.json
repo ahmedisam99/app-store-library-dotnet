@@ -1,0 +1,146 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterPlayerAchievementSubmissions",
+  "title": "Add a Player's Score",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterPlayerAchievementSubmissions",
+  "slug": "appstoreconnectapi/post-v1-gamecenterplayerachievementsubmissions",
+  "introducedAt": "3.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add a new entry for a player’s score for a Game Center achievement.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterPlayerAchievementSubmissions",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterPlayerAchievementSubmissionCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterPlayerAchievementSubmissionCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterPlayerAchievementSubmissionResponse",
+      "typeId": "data:app_store_connect_api:GameCenterPlayerAchievementSubmissionResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use the `preReleased` attribute to indicate whether the requested change applies to the game’s release version or its prerelease version. Set `preReleased` to `true` to indicate that the change applies to the game’s prerelease version.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/gameCenterPlayerAchievementSubmissions\n{\n  “data”: {\n    “type”: “gameCenterPlayerAchievementSubmissions”,\n    “attributes”: {\n      “percentageAchieved”: 30,\n      “scopedPlayerId”: “A:_5f21e308073d18f9b3afdc37f646e851”,\n      “bundleId”: “com.apple.sample.actionship”,\n      “vendorIdentifier”: “com.apple.sample.actionship.perfectaim”,\n      \"preReleased\": true\n    }\n  }\n}\n\n```\n\n**Response**\n\n```json\n{\n  “data”: {\n    “type”: “gameCenterPlayerAchievementSubmissions”,\n    “id”: “d9f8b8dd-6050-45c6-a8e3-c6b97c186583”,\n    “attributes”: {\n      “bundleId”: “com.apple.sample.actionship”,\n      “challengeIds”: null,\n      “percentageAchieved”: 30,\n      “scopedPlayerId”: “A:_5f21e308073d18f9b3afdc37f646e851”,\n      “submittedDate”: null,\n      “vendorIdentifier”: “com.apple.sample.actionship.perfectaim”,\n      \"preReleased\": true\n    },\n    “links”: {\n      “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterPlayerAchievementSubmissions/d9f8b8dd-6050-45c6-a8e3-c6b97c186583”\n    }\n  },\n  “links”: {\n    “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterPlayerAchievementSubmissions”\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

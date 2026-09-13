@@ -1,0 +1,102 @@
+{
+  "id": "data:app_store_connect_api:AppClip.Relationships.AppClipDefaultExperiences",
+  "title": "AppClip.Relationships.AppClipDefaultExperiences",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClip/Relationships-data.dictionary/AppClipDefaultExperiences-data.dictionary",
+  "slug": "appstoreconnectapi/appclip/relationships-data.dictionary/appclipdefaultexperiences-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data and links that describe the relationship between the App Clips and the Default App Clip Experiences resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClip.Relationships.AppClipDefaultExperiences",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AppClip.Relationships.AppClipDefaultExperiences.Data]",
+      "typeId": "data:app_store_connect_api:AppClip.Relationships.AppClipDefaultExperiences.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The ID and type of the related Default App Clip Experiences resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "RelationshipLinks",
+      "typeId": "data:app_store_connect_api:RelationshipLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClip/Relationships-data.dictionary/AppClipDefaultExperiences-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClip/Relationships-data.dictionary/App-data.dictionary"
+      ]
+    }
+  ]
+}

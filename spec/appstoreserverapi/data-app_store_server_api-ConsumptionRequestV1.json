@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** The age of the customer’s account.",
         "refs": []
@@ -45,6 +46,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** The UUID of the in-app user account that completed the in-app purchase transaction.",
         "refs": []
@@ -59,6 +61,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates the extent to which the customer consumed the in-app purchase.",
         "refs": []
@@ -73,6 +76,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A Boolean value of `true` or `false` that indicates whether the customer consented to provide consumption data.\n\nNote: The App Store server rejects requests that have a `customerConsented` value other than `true` by returning an `HTTP 400` error with an `InvalidCustomerConsentedError`.",
         "refs": [
@@ -90,6 +94,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates whether the app successfully delivered an in-app purchase that works properly.",
         "refs": []
@@ -104,6 +109,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates the total amount, in USD, of in-app purchases the customer has made in your app, across all platforms.",
         "refs": []
@@ -118,6 +124,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates the total amount, in USD, of refunds the customer has received, in your app, across all platforms.",
         "refs": []
@@ -132,6 +139,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates the platform on which the customer consumed the in-app purchase.",
         "refs": []
@@ -146,6 +154,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A value that indicates the amount of time that the customer used the app.",
         "refs": []
@@ -160,6 +169,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A value that indicates your preference, based on your operational logic, as to whether Apple should grant the refund.",
         "refs": []
@@ -174,6 +184,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** A Boolean value of `true` or `false` that indicates whether you provided, prior to its purchase, a free sample or trial of the content, or information about its functionality.",
         "refs": []
@@ -188,6 +199,7 @@
       "deprecated": false,
       "introducedVersion": "1.0.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "**(Required)** The status of the customer’s account.",
         "refs": []
@@ -316,6 +328,10 @@
   "topics": [
     {
       "title": "Consumption data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/accountTenure",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/appAccountToken",
@@ -335,6 +351,10 @@
   "seeAlso": [
     {
       "title": "Consumption information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Send-Consumption-Information",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/ConsumptionRequest",

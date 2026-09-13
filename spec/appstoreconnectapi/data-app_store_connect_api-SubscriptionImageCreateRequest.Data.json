@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionImageCreateRequest.Data",
+  "title": "SubscriptionImageCreateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionImageCreateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/subscriptionimagecreaterequest/data-data.dictionary",
+  "introducedAt": "3.6",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `SubscriptionImageV2CreateRequest` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionImageV2CreateRequest"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create a subscription purchase image reservation.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionImageCreateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "SubscriptionImageCreateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:SubscriptionImageCreateRequest.Data.Attributes",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "SubscriptionImageCreateRequest.Data.Relationships",
+      "typeId": "data:app_store_connect_api:SubscriptionImageCreateRequest.Data.Relationships",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links to related data and included resource types and IDs.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "subscriptionImages"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionImageCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionImageCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

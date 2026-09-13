@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchaseImageUpdateRequest.Data",
+  "title": "InAppPurchaseImageUpdateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchaseImageUpdateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/inapppurchaseimageupdaterequest/data-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": {
+    "at": "4.4.1",
+    "summary": {
+      "text": "This object is deprecated. Use `InAppPurchaseImageV2UpdateRequest` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageV2UpdateRequest"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to update an in-app purchase image.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchaseImageUpdateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "InAppPurchaseImageUpdateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:InAppPurchaseImageUpdateRequest.Data.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource’s attributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "inAppPurchaseImages"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseImageUpdateRequest/Data-data.dictionary/Attributes-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

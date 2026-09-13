@@ -1,0 +1,114 @@
+{
+  "id": "doc:appstoreconnectapi/metrics",
+  "title": "Metrics",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/metrics",
+  "slug": "appstoreconnectapi/metrics",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Analyze data about matchmaking rules.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the Metrics APIs to diagnose performance and other issues with matchmaking rules. For more information, see `troubleshooting-matchmaking-rules-using-metrics` and `testing-rule-sets-with-player-traffic-using-metrics`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/troubleshooting-matchmaking-rules-using-metrics",
+            "doc://com.apple.documentation/documentation/GameKit/testing-rule-sets-with-player-traffic-using-metrics"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting match request metrics",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-metrics-ruleBasedMatchmakingRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-metrics-classicMatchmakingRequests"
+      ]
+    },
+    {
+      "title": "Getting rule results and errors",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingBooleanRuleResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingNumberRuleResults",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingRules-_id_-metrics-matchmakingRuleErrors"
+      ]
+    },
+    {
+      "title": "Getting queue information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingQueueSizes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-experimentMatchmakingQueueSizes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-experimentMatchmakingRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingSessions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingAppRequestsV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingBooleanRuleResultsV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingNumberRuleResultsV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleErrorsV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueSizesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueRequestsV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingSessionsV1MetricResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/expressions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rule-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing"
+      ]
+    }
+  ]
+}

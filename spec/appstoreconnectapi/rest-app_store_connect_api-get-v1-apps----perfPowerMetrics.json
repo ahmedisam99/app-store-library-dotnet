@@ -1,0 +1,233 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}-perfPowerMetrics",
+  "title": "Get power and performance metrics for an app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_-perfpowermetrics",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the performance and power metrics data for the most recent version of an app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}/perfPowerMetrics",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource ID that uniquely identifies the app to return metrics data for. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[deviceType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The device types by which to filter. Use `all_iphones` for all iPhone models. Use `all_ipads` for all iPad models.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[metricType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DISK",
+            "HANG",
+            "BATTERY",
+            "LAUNCH",
+            "MEMORY",
+            "ANIMATION",
+            "TERMINATION",
+            "STORAGE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Types of metrics by which to filter. For more information about metric types, see `MetricCategory`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[platform]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "IOS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Platforms by which to filter.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/vnd.apple.xcode-metrics+json",
+      "type": "xcodeMetrics",
+      "typeId": "data:app_store_connect_api:xcodeMetrics",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example below requests iOS app launch metrics on all iPhones for the most-recent app versions. To get metrics for a specific app version instead, use the `GET-v1-builds-_id_-perfPowerMetrics` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/161309721/perfPowerMetrics?filter[deviceType]=all_iphones&filter[metricType]=LAUNCH&filter[platform]=iOS\n```\n\n**Response**\n\n```json\n{\n  \"version\": \"1.0.0\",\n  \"insights\": {\n    \"regressions\": [\n      {\n        \"latestVersion\": \"2.0\",\n        \"maxLatestVersionValue\": 2014.3,\n        \"metric\": \"launchTime\",\n        \"metricCategory\": \"LAUNCH\",\n        \"populations\": [\n          {\n            \"deltaPercentage\": 10,\n            \"device\": \"all_iphones\",\n            \"latestVersionValue\": 997.8,\n            \"percentile\": \"percentile.fifty\",\n            \"referenceAverageValue\": 907.48,\n            \"summaryString\": \"Increased 10% across iPhone (All)\"\n          },\n          {\n            \"deltaPercentage\": 13,\n            \"device\": \"all_iphones\",\n            \"latestVersionValue\": 2014.3,\n            \"percentile\": \"percentile.ninety\",\n            \"referenceAverageValue\": 1777.88,\n            \"summaryString\": \"Increased 13% across iPhone (All)\"\n          }\n        ],\n        \"referenceVersions\": [\"1.0\", \"1.1\", \"1.2\", \"1.3\"],\n        \"summaryString\": \"Top (90th percentile) and typical (50th percentile) Launch Time trended up between app versions 1.0 to 2.0 on iPhone (All). The maximum value for the latest app version is at 2014.30 ms and increased between 10% to 13% compared to the average for previous 4 app versions.\"\n      }\n    ],\n    \"trendingUp\": []\n  },\n  \"productData\": [\n    {\n      \"platform\": \"iOS\",\n      \"metricCategories\": [\n        {\n          \"identifier\": \"LAUNCH\",\n          \"metrics\": [\n            {\n              \"identifier\": \"launchTime\",\n              \"unit\": {\n                \"displayName\": \"ms\",\n                \"identifier\": \"milliseconds\"\n              },\n              \"datasets\": [\n                {\n                  \"filterCriteria\": {\n                    \"device\": \"all_iphones\",\n                    \"deviceMarketingName\": \"All iPhones\",\n                    \"percentile\": \"percentile.fifty\"\n                  },\n                  \"points\": [\n                    {\n                      \"value\": 768.7,\n                      \"version\": \"1.0\"\n                    },\n                    {\n                      \"value\": 750,\n                      \"version\": \"1.1\"\n                    },\n                    {\n                      \"value\": 992.3,\n                      \"version\": \"1.2\"\n                    },\n                    {\n                      \"value\": 1118.9,\n                      \"version\": \"1.3\"\n                    },\n                    {\n                      \"value\": 997.8,\n                      \"version\": \"2.0\"\n                    }\n                  ]\n                },\n                {\n                  \"filterCriteria\": {\n                    \"device\": \"all_iphones\",\n                    \"deviceMarketingName\": \"All iPhones\",\n                    \"percentile\": \"percentile.ninety\"\n                  },\n                  \"points\": [\n                    {\n                      \"value\": 1532.1,\n                      \"version\": \"1.0\"\n                    },\n                    {\n                      \"value\": 1390.2,\n                      \"version\": \"1.1\"\n                    },\n                    {\n                      \"value\": 2030.8,\n                      \"version\": \"1.2\"\n                    },\n                    {\n                      \"value\": 2158.4,\n                      \"version\": \"1.3\"\n                    },\n                    {\n                      \"value\": 2014.3,\n                      \"version\": \"2.0\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ]\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Metrics and Diagnostic Logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/retrieve-power-and-performance-metrics-and-log-insights",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs"
+      ]
+    }
+  ]
+}

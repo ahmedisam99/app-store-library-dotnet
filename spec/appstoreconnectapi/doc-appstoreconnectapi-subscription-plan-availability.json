@@ -1,0 +1,142 @@
+{
+  "id": "doc:appstoreconnectapi/subscription-plan-availability",
+  "title": "Subscription plan availability",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/subscription-plan-availability",
+  "slug": "appstoreconnectapi/subscription-plan-availability",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and manage subscription plan availability for auto-renewable subscriptions.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `subscriptionPlanAvailabilities` resource lets you control which subscription plan type — monthly or up-front — is available for a subscription in specific territories.",
+          "refs": []
+        },
+        {
+          "text": "There are two possible values for the subscription plan type: `MONTHLY` and `UPFRONT`. To learn more, see `SubscriptionPlanType` and `https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-availability-for-an-auto-renewable-subscription`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanType",
+            "https://developer.apple.com/help/app-store-connect/manage-subscriptions/set-availability-for-an-auto-renewable-subscription"
+          ]
+        },
+        {
+          "text": "Use it to:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Create a plan availability configuration for a subscription.",
+          "refs": []
+        },
+        {
+          "text": "Read or modify the available territories for a plan availability.",
+          "refs": []
+        },
+        {
+          "text": "Update available territories for a subscription plan availability.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating and modifying plan availability",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPlanAvailabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPlanAvailabilities-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionPlanAvailabilities-_id_"
+      ]
+    },
+    {
+      "title": "Managing available territories",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPlanAvailabilities-_id_-availableTerritories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPlanAvailabilities-_id_-relationships-availableTerritories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionPlanAvailabilities-_id_-relationships-availableTerritories"
+      ]
+    },
+    {
+      "title": "Reading plan availability from a subscription",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-planAvailabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-relationships-planAvailabilities"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilitiesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilitiesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityAvailableTerritoriesLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityAvailableTerritoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Auto-Renewable Subscriptions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-subscription-prices-across-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/querying-adjusted-subscription-price-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/billing-grace-periods"
+      ]
+    }
+  ]
+}

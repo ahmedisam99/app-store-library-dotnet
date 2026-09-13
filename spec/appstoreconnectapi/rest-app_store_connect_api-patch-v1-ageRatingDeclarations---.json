@@ -1,0 +1,214 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-ageRatingDeclarations-{}",
+  "title": "Modify an age rating declaration",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-ageRatingDeclarations-_id_",
+  "slug": "appstoreconnectapi/patch-v1-ageratingdeclarations-_id_",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Provide age-related information so the App Store can determine the age rating for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ageRatingDeclarations/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the age rating declaration resource ID from the `GET-v1-appStoreVersions-{id}-ageRatingDeclaration` response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AgeRatingDeclarationUpdateRequest",
+    "typeId": "data:app_store_connect_api:AgeRatingDeclarationUpdateRequest",
+    "abstract": {
+      "text": "The request body you use to update an Age Rating Declaration.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AgeRatingDeclarationResponse",
+      "typeId": "data:app_store_connect_api:AgeRatingDeclarationResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data isn’t valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Every App Store version has an age rating declaration. Use this endpoint to edit the declaration and provide app-characteristic information so App Store Connect can determine the appropriate age rating for the app.",
+          "refs": []
+        },
+        {
+          "text": "Use this endpoint to indicate whether an app is Made for Kids.",
+          "refs": []
+        },
+        {
+          "text": "When calling this endpoint, only include the attributes that you’re modifying.",
+          "refs": []
+        },
+        {
+          "text": "The attributes for age-rating declarations, `INFREQUENT_OR_MILD` and `FREQUENT_OR_INTENSE` are deprecated. Instead, use `INFREQUENT` or `FREQUENT`.",
+          "refs": []
+        },
+        {
+          "text": "For example, in an app that has a `FREQUENT` declaration for contests, the age rating for the `AppInfos` is 12+. If you declare a value of true for `gambling`, the age rating for the `AppInfos` is 17+.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Modify an age rating declaration",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\n\n{\n  \"data\": {\n    \"type\": \"ageRatingDeclarations\",\n    \"id\": \"string\",\n    \"attributes\": {\n      \"alcoholTobaccoOrDrugUseOrReferences\": \"NONE\",\n      \"contests\": \"NONE\",\n      \"gambling\": true,\n      \"gamblingSimulated\": \"NONE\",\n      \"medicalOrTreatmentInformation\": \"NONE\",\n      \"profanityOrCrudeHumor\": \"NONE\",\n      \"sexualContentGraphicAndNudity\": \"NONE\",\n      \"sexualContentOrNudity\": \"NONE\",\n      \"horrorOrFearThemes\": \"NONE\",\n      \"matureOrSuggestiveThemes\": \"NONE\",\n      \"unrestrictedWebAccess\": true,\n      \"violenceCartoonOrFantasy\": \"NONE\",\n      \"violenceRealisticProlongedGraphicOrSadistic\": \"NONE\",\n      \"violenceRealistic\": \"NONE\",\n      \"kidsAgeBand\": null\n    }\n  }\n}\n\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"ageRatingDeclarations\",\n    \"id\": \"26b5c300-1814-4b7a-8ec9-5411ecf36305\",\n    \"attributes\": {\n      \"alcoholTobaccoOrDrugUseOrReferences\": \"NONE\",\n      \"contests\": \"NONE\",\n      \"gambling\": true,\n      \"gamblingSimulated\": \"NONE\",\n      \"medicalOrTreatmentInformation\": \"NONE\",\n      \"profanityOrCrudeHumor\": \"NONE\",\n      \"sexualContentGraphicAndNudity\": \"NONE\",\n      \"sexualContentOrNudity\": \"NONE\",\n      \"horrorOrFearThemes\": \"NONE\",\n      \"matureOrSuggestiveThemes\": \"NONE\",\n      \"unrestrictedWebAccess\": true,\n      \"violenceCartoonOrFantasy\": \"NONE\",\n      \"violenceRealisticProlongedGraphicOrSadistic\": \"NONE\",\n      \"violenceRealistic\": \"NONE\",\n      \"kidsAgeBand\": null\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\"\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Mark an App as Made for Kids",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\n\n{\n  \"data\": {\n    \"type\": \"ageRatingDeclarations\",\n    \"id\": \"string\",\n    \"attributes\": {\n      \"kidsAgeBand\": \"FIVE_AND_UNDER\"\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"ageRatingDeclarations\",\n    \"id\": \"26b5c300-1814-4b7a-8ec9-5411ecf36305\",\n    \"attributes\": {\n      \"alcoholTobaccoOrDrugUseOrReferences\": \"NONE\",\n      \"contests\": “NONE”,\n      \"gambling\": false,\n      \"gamblingSimulated\": \"NONE\",\n      \"medicalOrTreatmentInformation\": \"NONE\",\n      \"profanityOrCrudeHumor\": \"NONE\",\n      \"sexualContentGraphicAndNudity\": \"NONE\",\n      \"sexualContentOrNudity\": \"NONE\",\n      \"horrorOrFearThemes\": \"NONE\",\n      \"matureOrSuggestiveThemes\": \"NONE\",\n      \"unrestrictedWebAccess\": true,\n      \"violenceCartoonOrFantasy\": \"NONE\",\n      \"violenceRealisticProlongedGraphicOrSadistic\": \"NONE\",\n      \"violenceRealistic\": \"NONE\",\n      \"kidsAgeBand\": \"FIVE_AND_UNDER\"\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/ageRatingDeclarations/26b5c300-1814-4b7a-8ec9-5411ecf36305\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Reading and modifying declarations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-ageRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-relationships-ageRatingDeclaration"
+      ]
+    }
+  ]
+}

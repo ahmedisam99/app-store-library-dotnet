@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:SubscriptionPlanAvailabilityCreateRequest.Data",
+  "title": "SubscriptionPlanAvailabilityCreateRequest.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityCreateRequest/Data-data.dictionary",
+  "slug": "appstoreconnectapi/subscriptionplanavailabilitycreaterequest/data-data.dictionary",
+  "introducedAt": "4.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create a subscription plan availability.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SubscriptionPlanAvailabilityCreateRequest.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "SubscriptionPlanAvailabilityCreateRequest.Data.Attributes",
+      "typeId": "data:app_store_connect_api:SubscriptionPlanAvailabilityCreateRequest.Data.Attributes",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "SubscriptionPlanAvailabilityCreateRequest.Data.Relationships",
+      "typeId": "data:app_store_connect_api:SubscriptionPlanAvailabilityCreateRequest.Data.Relationships",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "subscriptionPlanAvailabilities"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionPlanAvailabilityCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

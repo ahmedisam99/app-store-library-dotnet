@@ -1,0 +1,127 @@
+{
+  "id": "doc:appstoreconnectapi/bundle-ids",
+  "title": "Bundle IDs",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/bundle-ids",
+  "slug": "appstoreconnectapi/bundle-ids",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the bundle IDs that uniquely identify your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `bundleIds` resource represents the app’s unique identifier that you can register, modify, and delete. You need a bundle ID before you can assign capabilities with the `bundle-id-capabilities` resource or create a provisioning profile with the `profiles` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Registering Bundle IDs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-bundleIds"
+      ]
+    },
+    {
+      "title": "Modifying and Removing Bundle IDs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-bundleIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-bundleIds-_id_"
+      ]
+    },
+    {
+      "title": "Getting Bundle ID Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_"
+      ]
+    },
+    {
+      "title": "Getting Related Data",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-bundleIdCapabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-bundleIdCapabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-bundleIds-_id_-relationships-profiles"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdPlatform",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdBundleIdCapabilitiesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdProfilesLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

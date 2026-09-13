@@ -1,0 +1,115 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingRuleSetCreateRequest.Data.Attributes",
+  "title": "GameCenterMatchmakingRuleSetCreateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleSetCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingrulesetcreaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes for a rule set that you create.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingRuleSetCreateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "maxPlayers",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of players who can join the matches that Game Center finds using these rules.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "minPlayers",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The minimum number of players who can join the matches that Game Center finds using these rules.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceName",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A name for the rule set that’s unique within the scope of your development team.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "ruleLanguageVersion",
+      "type": "integer",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The version of the expression language that all the rules in this rule set use. The only possible value is `1`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The `minPlayers` and `maxPlayers` attributes constrain the range of players in the match requests. If you don’t set the `GKMatchRequest.``minPlayers` and `GKMatchRequest.``maxPlayers` properties in your code, the properties default to the rule set `minPlayers` and `maxPlayers` attributes. If you set the `GKMatchRequest` properties, use values that are in the rule set range.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/minPlayers",
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest/maxPlayers",
+            "doc://com.apple.documentation/documentation/GameKit/GKMatchRequest"
+          ]
+        },
+        {
+          "text": "For example, if the match request range is `[2, 4]` and the rule set range is `[2,8]`, Game Center finds players within the `[2, 4]` match request range. However, if the match request range is `[2, 8]` and the rule set range is `[3, 4]`, Game Center ignores the match request properties and finds players within the `[3, 4]` rule set range. If the match request range is `[8, 8]` and the rule set range is `[2, 4]` (outside of the rule set range), Game Center never finds players for that request.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

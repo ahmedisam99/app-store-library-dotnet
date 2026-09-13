@@ -1,0 +1,125 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRun.Attributes.SourceCommit",
+  "title": "CiBuildRun.Attributes.SourceCommit",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary/SourceCommit-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildrun/attributes-data.dictionary/sourcecommit-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The latest commit of a Git branch or tag, or of a pull request’s source branch.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRun.Attributes.SourceCommit",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "author",
+      "type": "CiGitUser",
+      "typeId": "data:app_store_connect_api:CiGitUser",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The author of the commit.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "commitSha",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The commit hash.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "committer",
+      "type": "CiGitUser",
+      "typeId": "data:app_store_connect_api:CiGitUser",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The commit’s Git committer.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "message",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The commit message.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "webUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The commit URL.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary/DestinationCommit-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiCompletionStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiExecutionProgress"
+      ]
+    }
+  ]
+}

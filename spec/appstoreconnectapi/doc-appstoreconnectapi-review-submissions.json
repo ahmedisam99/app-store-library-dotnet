@@ -1,0 +1,94 @@
+{
+  "id": "doc:appstoreconnectapi/review-submissions",
+  "title": "Review submissions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/review-submissions",
+  "slug": "appstoreconnectapi/review-submissions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and manage your submissions for review, which can include your App Store version, App Store version experiments, custom product page versions, and in-app events.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The attribute `platform` is no longer required when using `POST-v1-reviewSubmissions`. You can optionally add the attribute platform when using `PATCH-v1-reviewSubmissions-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-reviewSubmissions-_id_-relationships-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-reviewSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionItem",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppReviewSubmissionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionItemsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Review Submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submission-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-clip-app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-attachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/actors"
+      ]
+    }
+  ]
+}

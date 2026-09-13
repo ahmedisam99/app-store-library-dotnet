@@ -1,0 +1,174 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-alternativeDistributionKeys",
+  "title": "Add an Alternative Distribution Key",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionKeys",
+  "slug": "appstoreconnectapi/post-v1-alternativedistributionkeys",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add an alternative distribution key for your alternative marketplace app or web distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/alternativeDistributionKeys",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AlternativeDistributionKeyCreateRequest",
+    "typeId": "data:app_store_connect_api:AlternativeDistributionKeyCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AlternativeDistributionKeyResponse",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionKeyResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "You can use a single alternative distribution key for all alternative distribution apps on your account. You can optionally use an app specific alternative distribution key, by adding a relationship to a specific app in the JSON payload used with this endpoint.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/alternativeDistributionKeys\n{\n  \"data\": {\n    \"type\": \"alternativeDistributionKeys\",\n    \"id\": null,\n    \"attributes\": {\n      \"publicKey\": \"-----BEGIN PUBLIC KEY-----MFkwEwYHKoZIzj0CAQYIKoZIzj0DA7021gAEFQUkD1YB67wg3e0VD/2c3N3Wf92nuQqDgFZuYG/NcYLwT3Zdw77s6//8XSI2NYv7WNgUONxMj+j65Qijq4/fhw==-----END PUBLIC KEY-----\"\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  “data” : {\n    “type” : “alternativeDistributionKeys”,\n    “id” : “52c5cb04-1163-65ar-36aa-a3433cd6a4f6”,\n    “attributes” : {\n      “publicKey” : “-----BEGIN PUBLIC KEY-----MFkwEwYHKoZIzj0CAQYIKoZIzj0DA7021gAEFQUkD1YB67wg3e0VD/2c3N3Wf92nuQqDgFZuYG/NcYLwT3Zdw77s6//8XSI2NYv7WNgUONxMj+j65Qijq4/fhw==-----END PUBLIC KEY-----”\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/alternativeDistributionKeys/52c5cb04-1163-4a30-ad4f-a3433cd6a4f6”\n    }\n  },\n  “links” : {\n    “self” : “https://api.appstoreconnect.apple.com/v1/apps/6476788026/alternativeDistributionKeys”\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/alternativeDistributionKeys\n{\n  \"data\": {\n    \"type\": \"alternativeDistributionKeys\",\n    \"id\": null,\n    \"attributes\": {\n      \"publicKey\": \"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFQUkD1YB67wg3e0VD/2c3N3Wf92n\nuQqDgFZuYG/NcYLwT3Zdw77s6//8XSI2NYv7WNgUONxMj+j65Qijq4/fhw==\n-----END PUBLIC KEY-----\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"6476788026\"\n        }\n      }\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"alternativeDistributionKeys\",\n    \"id\" : \"52c5cb04-1163-4a30-ad4f-a3433cd6a4f6\",\n    \"attributes\" : {\n      \"publicKey\" : \"-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEFQUkD1YB67wg3e0VD/2c3N3Wf92n\nuQqDgFZuYG/NcYLwT3Zdw77s6//8XSI2NYv7WNgUONxMj+j65Qijq4/fhw==\n-----END PUBLIC KEY-----\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/alternativeDistributionKeys/52c5cb04-1163-4a30-ad4f-a3433cd6a4f6\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/apps/6476788026/alternativeDistributionKeys\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating and reading keys",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-keys-and-establishing-alternative-marketplace-connections",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-and-configuring-keys-for-web-distribution",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionKeys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionKeys-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-alternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-alternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-alternativeDistributionKeys-_id_"
+      ]
+    }
+  ]
+}

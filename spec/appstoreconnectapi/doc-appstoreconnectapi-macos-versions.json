@@ -1,0 +1,103 @@
+{
+  "id": "doc:appstoreconnectapi/macos-versions",
+  "title": "macOS Versions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/macos-versions",
+  "slug": "appstoreconnectapi/macos-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read macOS version information you configure for an Xcode Cloud workflow.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciMacOsVersions` resource represents the version of macOS you configure for an Xcode Cloud workflow.",
+          "refs": []
+        },
+        {
+          "text": "To change a workflow’s build environment, use the `workflows` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/workflows"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting macOS Version Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciMacOsVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciMacOsVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciMacOsVersions-_id_-xcodeVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciMacOsVersions-_id_-relationships-xcodeVersions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiMacOsVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiMacOsVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiMacOsVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiMacOsVersionXcodeVersionsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Xcode Cloud Products and Workflows",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/products",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/workflows",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcode-versions"
+      ]
+    }
+  ]
+}

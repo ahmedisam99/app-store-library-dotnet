@@ -37,6 +37,7 @@
           "values": null
         }
       ],
+      "typeDetails": null,
       "abstract": {
         "text": "The `UUID` that represents your request for a subscription-renewal-date extension.",
         "refs": []
@@ -51,6 +52,7 @@
       "deprecated": false,
       "introducedVersion": "1.7.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A Boolean value that’s `TRUE` to indicate that the App Store completed your request to extend a subscription renewal date for all eligible subscribers.\n\nThe value is `FALSE` if the request is in progress.",
         "refs": []
@@ -65,6 +67,7 @@
       "deprecated": false,
       "introducedVersion": "1.7.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The date that the App Store completes the request.\n\nAppears only if `complete` is `TRUE`.",
         "refs": []
@@ -79,6 +82,7 @@
       "deprecated": false,
       "introducedVersion": "1.7.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The final count of subscribers that fail to receive a subscription-renewal-date extension.\n\nAppears only if `complete` is `TRUE`.",
         "refs": []
@@ -93,6 +97,7 @@
       "deprecated": false,
       "introducedVersion": "1.7.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The final count of subscribers that successfully receive a subscription-renewal-date extension.\n\nAppears only if `complete` is `TRUE`.",
         "refs": []
@@ -132,6 +137,10 @@
   "topics": [
     {
       "title": "Data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/complete",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/completeDate",
@@ -143,6 +152,10 @@
   "seeAlso": [
     {
       "title": "Subscription-renewal-date extension",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/extending-the-renewal-date-for-auto-renewable-subscriptions",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Extend-a-Subscription-Renewal-Date",

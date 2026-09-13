@@ -1,0 +1,174 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-4-2-release-notes",
+  "title": "App Store Connect API 4.2 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-4-2-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 4.2 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "You can now submit Game Center content directly to review without including an app version by using `review-submissions`. Use `POST-v1-reviewSubmissionItems` to submit achievement versions, leaderboard versions, leaderboard set versions, activity versions, and challenge versions for independent review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissionItems"
+          ]
+        },
+        {
+          "text": "Game Center resources now support versioning for achievements, leaderboards, and leaderboard sets. To learn more, see `game-center-achievements`, `game-center-leaderboards`, and `game-center-leaderboard-sets`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboards",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-sets"
+          ]
+        },
+        {
+          "text": "Added support for In-App Purchase offer codes for consumable, non-consumable, and non-renewing subscriptions. Create and manage promotional offer codes using `POST-v1-inAppPurchaseOfferCodes`, `POST-v1-inAppPurchaseOfferCodeCustomCodes`, and `POST-v1-inAppPurchaseOfferCodeOneTimeUseCodes`. To learn more, see `in-app-purchase-offers`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseOfferCodes",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseOfferCodeCustomCodes",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseOfferCodeOneTimeUseCodes",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-offers"
+          ]
+        },
+        {
+          "text": "The `appDevices` attribute is now available on the `Attributes-data.dictionary` resource, enabling you to view the device models used by beta testers for your app’s TestFlight testing.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "Background asset versions now include a `stateDetails` attribute that provides additional context about the asset state, including errors, warnings, and informational messages for failed imports. Access this information using `GET-v1-backgroundAssetVersions-_id_`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-backgroundAssetVersions-_id_"
+          ]
+        },
+        {
+          "text": "There is a new string `PAY_TO_PARK` available for `mapAction` when creating or modifying an App Clip advanced experience. To learn more, see `Place-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperience/Attributes-data.dictionary/Place-data.dictionary"
+          ]
+        },
+        {
+          "text": "You can now map your Android apps to your iOS apps using the `android-to-ios-app-mapping` resource. This mapping enables data and app migration between Android and iOS devices during device setup. Use `POST-v1-androidToIosAppMappingDetails` to create mappings with your Android app’s package name and signing certificate fingerprints.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/android-to-ios-app-mapping",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-androidToIosAppMappingDetails"
+          ]
+        },
+        {
+          "text": "`webhook-notifications` now includes events for alternative app distribution. To learn more see, `configuring-webhook-notifications` and `webhook-events`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+          ]
+        },
+        {
+          "text": "Alternative distribution packages now include a `sourceFileChecksum` attribute, allowing alternative marketplaces to verify builds with developers. Use `GET-v1-alternativeDistributionPackages-_id_` to access the checksum of the developer-submitted package.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `kidsAgeBand` attribute is now deprecated from `Attributes-data.dictionary`. Use `PATCH-v1-ageRatingDeclarations-_id_` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfo/Attributes-data.dictionary",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-ageRatingDeclarations-_id_"
+          ]
+        },
+        {
+          "text": "The alternative distribution `notifications` are deprecated. Use `webhook-notifications` instead. To learn more, see `configuring-webhook-notifications` and `webhook-events`",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-webhook-notifications",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The attribute `challengeEnabled` is now removed from `POST-v1-gameCenterDetails` and `PATCH-v1-gameCenterDetails-_id_`. To create a challenge on an existing Game Center detail, use `POST-v1-gameCenterChallenges`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterDetails",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterDetails-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallenges"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

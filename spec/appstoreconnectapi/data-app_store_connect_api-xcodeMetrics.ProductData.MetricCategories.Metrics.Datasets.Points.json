@@ -1,0 +1,134 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.Points",
+  "title": "xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.Points",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Datasets-data.dictionary/Points-data.dictionary",
+  "slug": "appstoreconnectapi/xcodemetrics/productdata-data.dictionary/metriccategories-data.dictionary/metrics-data.dictionary/datasets-data.dictionary/points-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A metric value of a goal for a specific app version, with a breakdown by metric subtypes.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.Points",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errorMargin",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The margin of error estimated based on the sample size and metric type, for metrics with an insufficient data volume. Note: For the system to provide a metric, the number of samples must meet a minimum threshold size. The `errorMargin` is present if a metric meets the minimum, but is inaccurate within a margin. If the metric surpasses a high enough threshold, the `errorMargin` isn’t present.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "goal",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The metric value’s classification in terms of a goal key, such as `\"good\",` `\"fair\"`, or `\"poor\"`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "percentageBreakdown",
+      "type": "xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.Points.PercentageBreakdown",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.Points.PercentageBreakdown",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The percentage of the metric value each metric subtype contributes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "value",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The metric value. The `unit` field of the `Metrics-data.dictionary` object specifies the units.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The app version.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Datasets-data.dictionary/Points-data.dictionary/PercentageBreakdown-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Datasets-data.dictionary/FilterCriteria-data.dictionary"
+      ]
+    }
+  ]
+}

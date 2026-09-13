@@ -1,0 +1,116 @@
+{
+  "id": "doc:appstoreconnectapi/devices",
+  "title": "Devices",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/devices",
+  "slug": "appstoreconnectapi/devices",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Register devices for development and testing.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " You can only remove registered devices through the Apple Developer website.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `devices` resource represents the iOS, Apple TV, Apple Watch, and Mac devices that you register to use for development and testing. You can register a limited number of new devices and get information about them.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  You can only remove registered devices through the Apple Developer website.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Registering a Device",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-devices"
+      ]
+    },
+    {
+      "title": "Getting Device Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-devices-_id_"
+      ]
+    },
+    {
+      "title": "Modifying Device Metadata",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-devices-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Device",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DevicesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DevicesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

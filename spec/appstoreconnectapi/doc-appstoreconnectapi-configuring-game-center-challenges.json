@@ -1,0 +1,263 @@
+{
+  "id": "doc:appstoreconnectapi/configuring-game-center-challenges",
+  "title": "Configuring Game Center challenges",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/configuring-game-center-challenges",
+  "slug": "appstoreconnectapi/configuring-game-center-challenges",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Setup and configure social experiences around leaderboards for friendly competition.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The system uses the challenge version `id` in this response in the version localization, so this `id` is a possible relationship to the challenge image.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": "One localization and a default image are required for submission.",
+        "refs": []
+      }
+    },
+    {
+      "style": "tip",
+      "prose": {
+        "text": "You can read a list of the past challenge version releases and their states using `GET-v1-gameCenterDetails-_id_-challengeReleases`. Use the optional include `version` to get more details and to read the `id` of the Game Center challenge version that is currently `LIVE`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-challengeReleases"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the challenges API to create and configure ways to link players directly to your content in your game. Once you create a challenge, you can link it an activity, by relating the activity to the challenge’s leaderboard. To learn more about activities, see `configuring-game-center-activities`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-game-center-activities"
+          ]
+        },
+        {
+          "text": "Challenges encourage your players to invite their friends into your game for friendly competitions in score-based rounds. Players will see challenges promoted throughout the Games app and other places around the OS as suggestions for enjoying their games with friends. They can invite their Game Center friends and anyone from their contacts, see scores appear in real-time, get notified at key moments until a winner is crowned, and have a rematch. Challenges are built on top of leaderboards, turning single-player game activities into a social experience players can share with their friends.",
+          "refs": []
+        },
+        {
+          "text": "Before you begin creating your challenges, you need these items:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "An approved or draft leaderboard for your game",
+          "refs": []
+        },
+        {
+          "text": "Game Center enabled in your binary",
+          "refs": []
+        },
+        {
+          "text": "Game Center detail enabled",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create the challenge",
+      "paragraphs": [
+        {
+          "text": "Begin creating the challenge by using the `POST-v1-gameCenterChallenges` endpoint. Provide these attributes in your payload: -`referenceName`: A 40 character or less alphanumeric string. -`vendorIdentifier`: A reverse url scheme label for this challenge. -`challengeType`: This value is always the string `leaderboard`. -`allowedDurations`: Use all 3 values for this attribute. If the related leaderboard is reoccurring, omit this attribute.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallenges"
+          ]
+        },
+        {
+          "text": "Additionally provide:",
+          "refs": []
+        },
+        {
+          "text": "When you create a challenge you use a payload like this:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallenges\",\n    \"attributes\": {\n      \"referenceName\": \"string\",\n      \"vendorIdentifier\": \"string\",\n      \"allowedDurations\": [\n        \"ONE_DAY\",\"THREE_DAYS\",\"ONE_WEEK\"\n      ],\n      \"challengeType\": \"LEADERBOARD\",\n      \"repeatable\": false\n    },\n    \"relationships\": {\n      \"gameCenterDetail\": {\n        \"data\": {\n          \"type\": \"gameCenterDetails\",\n          \"id\": \"string\"\n        }\n      },\n      \"leaderboard\": {\n        \"data\": {\n          \"type\": \"gameCenterLeaderboards\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "In the response you get an `id` in the top-level data object. This `id` represents the Game Center challenge. You can find this `id` at anytime using `GET-v1-gameCenterDetails-_id_-gameCenterChallenges`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-gameCenterChallenges"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A relationship to a `leaderboard`\n\n- Obtain the leaderboard resource ID from the `GET-v1-gameCenterDetails-_id_-relationships-gameCenterLeaderboards` or `GET-v1-gameCenterGroups-_id_-relationships-gameCenterLeaderboards` response.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-relationships-gameCenterLeaderboards",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterGroups-_id_-relationships-gameCenterLeaderboards"
+          ]
+        },
+        {
+          "text": "A relationship to a `gameCenterDetail` or a `gameCenterGroup`\n\n- If your leaderboard is in a Game Center group, use `gameCenterGroup`.\n- If you’re relating this challenge to a Game Center group, you need to use the `grp.` prefix.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create the challenge version",
+      "paragraphs": [
+        {
+          "text": "Next, you need to create a version for your Game Center challenge. The version is the parent object for localizations and the challenge default image. Create the challenge version using `POST-v1-gameCenterChallengeVersions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallengeVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallengeVersions\",\n    \"relationships\": {\n      \"challenge\": {\n        \"data\": {\n          \"type\": \"gameCenterChallenges\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n> The system uses the challenge version `id` in this response in the version localization, so this `id` is a possible relationship to the challenge image.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Add a challenge version localization",
+      "paragraphs": [
+        {
+          "text": "You next add a challenge version localization by using `POST-v1-gameCenterChallengeLocalizations`. The `locale` and `name` attributes are required. The `name` represent the label shown for the activity inside the Games app. For a list of possible `locale` values, see `managing-metadata-in-your-app-by-using-locale-shortcodes`. The `description` attribute is optional but can help a player better understand the challenge. The localization requires a relationship to its parent challenge version. At minimum, one challenge version localization is required for submission to review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallengeLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-metadata-in-your-app-by-using-locale-shortcodes"
+          ]
+        },
+        {
+          "text": "Use a payload like this:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallengeLocalizations\",\n    \"attributes\": {\n      \"locale\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"gameCenterChallengeVersions\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Add the challenge version image",
+      "paragraphs": [
+        {
+          "text": "Adding a default challenge image is very similar to adding an App Store screenshot or app review image. You can associate the challenge version default image with a challenge version or a challenge localization. When you create a new challenge version the default image is inherited. At minimum, one challenge version image is required for submission to review.",
+          "refs": []
+        },
+        {
+          "text": "Start by using `POST-v1-gameCenterChallengeImages` with a payload that looks like this:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallengeImages"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallengeImages\",\n    \"attributes\": {\n      \"fileSize\": 0,\n      \"fileName\": \"string\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"gameCenterChallengeVersions\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response includes one or more `PUT` requests; use these URL’s to upload your image.",
+          "refs": []
+        },
+        {
+          "text": "After uploading, use `PATCH-v1-gameCenterChallengeImages-_id_` to commit your image to the related resource with a payload like this:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterChallengeImages-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallengeImages\",\n    \"id\": \"string\",\n    \"attributes\": {\n      \"uploaded\": true\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "To learn more uploading images, see `uploading-assets-to-app-store-connect`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Submit your challenge version for review",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n> One localization and a default image are required for submission.",
+          "refs": []
+        },
+        {
+          "text": "Now, you’re ready to submit your challenge version for review. Use `POST-v1-gameCenterChallengeVersionReleases` to attach your challenge version to a `gameCenterDetail`. To find the `gameCenterDetail` id, use `GET-v1-apps-_id_-gameCenterDetail`. Then, use `POST-v1-reviewSubmissions` to send the `appStoreVersion`, and your associated challenge version to app review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallengeVersionReleases",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-gameCenterDetail",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+          ]
+        },
+        {
+          "text": "Use a payload like this:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"gameCenterChallengeVersionReleases\",\n    \"relationships\": {\n      \"gameCenterDetail\": {\n        \"data\": {\n          \"type\": \"gameCenterDetails\",\n          \"id\": \"string\"\n        }\n      },\n      \"version\": {\n        \"data\": {\n          \"type\": \"gameCenterChallengeVersions\",\n          \"id\": \"string\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n> You can read a list of the past challenge version releases and their states using `GET-v1-gameCenterDetails-_id_-challengeReleases`. Use the optional include `version` to get more details and to read the `id` of the Game Center challenge version that is currently `LIVE`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-challengeReleases"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Challenges",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-version-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenge-images"
+      ]
+    }
+  ]
+}

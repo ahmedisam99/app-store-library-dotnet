@@ -1,0 +1,75 @@
+{
+  "id": "doc:appstoreconnectapi/marketplace-search-configurations",
+  "title": "Marketplace Search Configurations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/marketplace-search-configurations",
+  "slug": "appstoreconnectapi/marketplace-search-configurations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add and read information for alternative marketplace search configurations.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Alternative marketplaces can use a sitemap that uses an industry-standard specification, with additional features specified by Apple. To learn more about the data structure for the sitemap, see `building-a-searchable-catalog-for-your-marketplace-app-for-inclusion-in-spotlight`. To add the URL for this sitemap to `https://support.apple.com/en-us/HT204683` web crawler use the `POST-v1-marketplaceSearchDetails` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/building-a-searchable-catalog-for-your-marketplace-app-for-inclusion-in-spotlight",
+            "https://support.apple.com/en-us/HT204683",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceSearchDetails"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing search URLs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/building-a-searchable-catalog-for-your-marketplace-app-for-inclusion-in-spotlight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceSearchDetails",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-marketplaceSearchDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-marketplaceSearchDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-marketplaceSearchDetails-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-marketplaceSearchDetails-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceSearchDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceSearchDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceSearchDetailResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceSearchDetailUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMarketplaceSearchDetailLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

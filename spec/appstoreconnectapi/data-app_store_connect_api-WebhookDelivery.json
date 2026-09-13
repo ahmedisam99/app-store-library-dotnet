@@ -1,0 +1,155 @@
+{
+  "id": "data:app_store_connect_api:WebhookDelivery",
+  "title": "WebhookDelivery",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WebhookDelivery",
+  "slug": "appstoreconnectapi/webhookdelivery",
+  "introducedAt": "4.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A recorded delivery attempt of an event notification to a webhook endpoint, including the request and response details.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WebhookDelivery",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "WebhookDelivery.Attributes",
+      "typeId": "data:app_store_connect_api:WebhookDelivery.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "WebhookDelivery.Relationships",
+      "typeId": "data:app_store_connect_api:WebhookDelivery.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "webhookDeliveries"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDelivery/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDelivery/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Webhook",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveriesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveryCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveryResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEvent",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPingCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPingResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhooksResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEventType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppWebhooksLinkagesResponse"
+      ]
+    }
+  ]
+}

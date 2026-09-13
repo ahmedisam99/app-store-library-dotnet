@@ -1,0 +1,112 @@
+{
+  "id": "doc:appstoreconnectapi/build-bundles",
+  "title": "Build Bundles",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/build-bundles",
+  "slug": "appstoreconnectapi/build-bundles",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read metadata for app and App Clip binaries included in a build you upload to App Store Connect.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `buildBundles` resource represents metadata for binaries you upload to App Store Connect as a build. It provides detailed information like capabilities an app uses, supported CPU architectures, and more. For a full list of available attributes, see `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "When you upload a build that contains an App Clip, use the APIs provided by the `buildBundles` resource to read:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Cache status information for domains you associated with your App Clip",
+          "refs": []
+        },
+        {
+          "text": "Debug status information for domains you associated with your App Clip",
+          "refs": []
+        },
+        {
+          "text": "App Clip invocations you configured for testers who use the TestFlight app to launch your App Clip",
+          "refs": []
+        },
+        {
+          "text": "File size information for a build bundle",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Build Bundle Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-appClipDomainCacheStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-appClipDomainDebugStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-betaAppClipInvocations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-buildBundleFileSizes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-relationships-appClipDomainCacheStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-relationships-appClipDomainDebugStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-relationships-betaAppClipInvocations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-buildBundles-_id_-relationships-buildBundleFileSizes"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleFileSize",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatusResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppClipInvocationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundleFileSizesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Builds",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-icons",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-uploads",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-encryption-declarations"
+      ]
+    }
+  ]
+}

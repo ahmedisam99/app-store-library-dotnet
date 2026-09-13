@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_connect_api:AppAndroidToIosAppMappingDetailsLinkagesResponse",
+  "title": "AppAndroidToIosAppMappingDetailsLinkagesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppAndroidToIosAppMappingDetailsLinkagesResponse",
+  "slug": "appstoreconnectapi/appandroidtoiosappmappingdetailslinkagesresponse",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains a list of IDs of related resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppAndroidToIosAppMappingDetailsLinkagesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AppAndroidToIosAppMappingDetailsLinkagesResponse.Data]",
+      "typeId": "data:app_store_connect_api:AppAndroidToIosAppMappingDetailsLinkagesResponse.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAndroidToIosAppMappingDetailsLinkagesResponse/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Mapping Requests and Responses",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AndroidToIosAppMappingDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AndroidToIosAppMappingDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AndroidToIosAppMappingDetailResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AndroidToIosAppMappingDetailUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AndroidToIosAppMappingDetailsResponse"
+      ]
+    }
+  ]
+}

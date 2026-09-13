@@ -1,0 +1,142 @@
+{
+  "id": "doc:appstoreconnectapi/webhook-notifications",
+  "title": "Webhook notifications",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/webhook-notifications",
+  "slug": "appstoreconnectapi/webhook-notifications",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage notifications from App Store about your apps and their statuses.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Webhooks enable a system to send real-time data to another system over the web. Unlike traditional APIs, where one system must make a request when receiving data, a webhook enables you to push data to the receiving system as soon as an event occurs. Webhooks are *event-driven*, meaning they are triggered by a specific action or event and immediately send the relevant data to a predefined URL, also called the “webhook URL” or “callback URL”.",
+          "refs": []
+        },
+        {
+          "text": "A notification webhook is an endpoint you create on your server. This webhook endpoint receives `HTTP POST` requests from App Store Connect. The `POST` requests describe important events about your app. Use the webhooks notifications endpoint to configure the notifications for events happening to your apps.",
+          "refs": []
+        },
+        {
+          "text": "To invoke your webhook, App Store Connect needs to know your server’s webhook endpoint URL. To set up your webhook endpoint the first time, provide the URL to the `POST-v1-webhooks` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhooks"
+          ]
+        },
+        {
+          "text": "To learn more about:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Configuring a webhook URL using the API, see `configuring-webhook-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-webhook-notifications"
+          ]
+        },
+        {
+          "text": "Events that can trigger a webhook notification, see `webhook-events` and `WebhookEventType`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEventType"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-webhook-notifications",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-events"
+      ]
+    },
+    {
+      "title": "Managing webhook notifications",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-webhooks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-webhooks-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhooks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-webhooks-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-webhooks-_id_"
+      ]
+    },
+    {
+      "title": "Managing webhook deliveries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-webhooks-_id_-deliveries",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-webhooks-_id_-relationships-deliveries",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhookDeliveries"
+      ]
+    },
+    {
+      "title": "Testing webhook configuration",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-webhookPings"
+      ]
+    },
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Webhook",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveriesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDelivery",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveryCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveryResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEvent",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPingCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookPingResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhooksResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookEventType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WebhookDeliveriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppWebhooksLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

@@ -1,0 +1,99 @@
+{
+  "id": "doc:appstoreconnectapi/bundle-id-capabilities",
+  "title": "Bundle ID Capabilities",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+  "slug": "appstoreconnectapi/bundle-id-capabilities",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the app capabilities for a bundle ID.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `bundleIdCapabilities` resource represents capabilities that you can enable or disable for a bundle ID. To learn about capabilities, see `https://developer.apple.com/support/app-capabilities/`.",
+          "refs": [
+            "https://developer.apple.com/support/app-capabilities/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Enabling and Disabling Capabilities",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-bundleIdCapabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-bundleIdCapabilities-_id_"
+      ]
+    },
+    {
+      "title": "Updating Capabiities",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-bundleIdCapabilities-_id_"
+      ]
+    },
+    {
+      "title": "Object and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilityCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilityUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilityResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilitiesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilitiesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilityOption",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilitySetting",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilityType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

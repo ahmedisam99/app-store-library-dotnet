@@ -1,0 +1,126 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-4-3-release-notes",
+  "title": "App Store Connect API 4.3 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-4-3-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 4.3 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "To get the size usage of a background asset, reference the `usedBytes` attribute on `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BackgroundAsset/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "To specify the initial `gameCenterChallengeVersion` when creating a challenge, call `POST-v1-gameCenterChallenges` using `GameCenterChallengeVersionInlineCreate`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallenges",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionInlineCreate"
+          ]
+        },
+        {
+          "text": "To specify the initial `gameCenterActivityVersion` when creating an activity, call `POST-v1-gameCenterActivities` using `GameCenterActivityVersionInlineCreate`. You can also specify a `fallbackUrl` for the initial activity version during the operation.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterActivities",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterActivityVersionInlineCreate"
+          ]
+        },
+        {
+          "text": "Use the `preReleased` attribute with `POST-v1-gameCenterPlayerAchievementSubmissions` and `POST-v1-gameCenterLeaderboardEntrySubmissions` to indicate whether the requested change applies to the game’s release version or its prerelease version.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterPlayerAchievementSubmissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboardEntrySubmissions"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The user role permission `ACCESS_TO_REPORTS` for App Store Connect API is deprecated.  See `UserRole` for available alternatives.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserRole"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Removed the endpoints `GET /v1/appStoreVersions/{id}/relationships/ageRatingDeclaration` and `GET /v1/appStoreVersions/{id}/ageRatingDeclaration`. Use `GET-v1-appInfos-_id_-ageRatingDeclaration` instead.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-ageRatingDeclaration"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

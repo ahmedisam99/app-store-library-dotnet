@@ -1,0 +1,106 @@
+{
+  "id": "doc:appstoreconnectapi/pull-requests",
+  "title": "Pull Requests",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/pull-requests",
+  "slug": "appstoreconnectapi/pull-requests",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read pull request information such as source and destination branches.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `scmPullRequests` resource represents pull requests (PRs) for repositories Xcode Cloud can access. Use it to access:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A PR’s number, URL, title, and status",
+          "refs": []
+        },
+        {
+          "text": "The destination and source branches",
+          "refs": []
+        },
+        {
+          "text": "A value that indicates whether the PR involves more than one repository",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Pull Request Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmPullRequests-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmPullRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmPullRequestResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmPullRequestsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Source Code Management",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/providers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/repositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/git-references"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships.SourceBranchOrTag.Data",
+  "title": "CiBuildRunCreateRequest.Data.Relationships.SourceBranchOrTag.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary/SourceBranchOrTag-data.dictionary/Data-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildruncreaterequest/data-data.dictionary/relationships-data.dictionary/sourcebranchortag-data.dictionary/data-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The type and ID of the Git References resource that represents the source branch or tag you relate with the Build Runs resource you’re creating.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRunCreateRequest.Data.Relationships.SourceBranchOrTag.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the related Git References resource that represents the source branch or tag.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "scmGitReferences"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource type.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

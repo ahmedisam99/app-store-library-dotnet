@@ -1,0 +1,113 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics",
+  "title": "xcodeMetrics",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics",
+  "slug": "appstoreconnectapi/xcodemetrics",
+  "introducedAt": "1.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response that contains power and performance measurements for your app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "insights",
+      "type": "xcodeMetrics.Insights",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.Insights",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Analysis of data collected about the power and performance of your app that includes regressions and trends.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "productData",
+      "type": "[xcodeMetrics.ProductData]",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of metrics data containing power and performance measurements for your app, organized by platform.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "version",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The current App Store Connect API version.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/Insights-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignaturesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignature",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticLogCallStackNode",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricsInsight",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PerfPowerMetric",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPerfPowerMetricsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticSignatureLogsLinkagesResponse"
+      ]
+    }
+  ]
+}

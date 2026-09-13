@@ -1,0 +1,75 @@
+{
+  "id": "data:app_store_connect_api:AlternativeDistributionPackageCreateRequest.Data.Relationships.AppStoreVersion.Data",
+  "title": "AlternativeDistributionPackageCreateRequest.Data.Relationships.AppStoreVersion.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AlternativeDistributionPackageCreateRequest/Data-data.dictionary/Relationships-data.dictionary/AppStoreVersion-data.dictionary/Data-data.dictionary",
+  "slug": "appstoreconnectapi/alternativedistributionpackagecreaterequest/data-data.dictionary/relationships-data.dictionary/appstoreversion-data.dictionary/data-data.dictionary",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create an alternative distribution package.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AlternativeDistributionPackageCreateRequest.Data.Relationships.AppStoreVersion.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Obtain the `appStoreVersion` resource ID from the `GET-v1-apps-_id_-appStoreVersions` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appStoreVersions"
+        ]
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

@@ -1,0 +1,250 @@
+{
+  "id": "AppStoreConnectAPI",
+  "title": "App Store Connect API",
+  "kind": "module",
+  "role": "collection",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI",
+  "slug": "appstoreconnectapi",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data structure that represents an app store connect api resource.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Changes you make using the App Store Connect API affect the production data you use for development and distribution.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Automate the tasks you perform on the Apple Developer website and in App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "The App Store Connect API is a REST API that enables the automation of actions you take in App Store Connect. Click `https://developer.apple.com/sample-code/app-store-connect/app-store-connect-openapi-specification.zip` to download the specification file.",
+          "refs": [
+            "https://developer.apple.com/sample-code/app-store-connect/app-store-connect-openapi-specification.zip"
+          ]
+        },
+        {
+          "text": "Calls to the API require JSON Web Tokens (JWT) for authorization; you obtain keys to create the tokens from your organization’s App Store Connect account. See `creating-api-keys-for-app-store-connect-api` to create your keys and tokens.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Changes you make using the App Store Connect API affect the production data you use for development and distribution.",
+          "refs": []
+        },
+        {
+          "text": "The API provides resources to automate these areas of App Store Connect:",
+          "refs": []
+        },
+        {
+          "text": "The App Store Connect API returns responses from resources that are consistent JSON data and contain links to additional related resources. Use these relationships to navigate to the related resources—for example, to find beta testers within specific beta groups in TestFlight. Apply filtering to requests on specific resources to refine the response.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "**In-App Purchases and Subscriptions.** Manage in-app purchases and auto-renewable subscriptions for your app.",
+          "refs": []
+        },
+        {
+          "text": "**TestFlight.** Manage beta builds of your app, testers, and groups.",
+          "refs": []
+        },
+        {
+          "text": "**Xcode Cloud.** Read Xcode Cloud data, manage workflows, and start builds.",
+          "refs": []
+        },
+        {
+          "text": "**Users and Access.** Send invitations for users to join your team. Adjust their level of access or remove users.",
+          "refs": []
+        },
+        {
+          "text": "**Provisioning.** Manage bundle IDs, capabilities, signing certificates, devices, and provisioning profiles.",
+          "refs": []
+        },
+        {
+          "text": "**App Metadata.** Create new versions, manage App Store information, and submit your app to the App Store.",
+          "refs": []
+        },
+        {
+          "text": "**App Clip Experiences.** Create an App Clip and manage App Clip experiences.",
+          "refs": []
+        },
+        {
+          "text": "**Reporting.** Download sales and financial reports.",
+          "refs": []
+        },
+        {
+          "text": "**Power and Performance Metrics.** Download aggregate metrics and diagnostics for App Store versions of your app.",
+          "refs": []
+        },
+        {
+          "text": "**Customer Reviews and Review Responses.** Get the customer reviews for your app and manage your responses to the customer reviews.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/identifying-rate-limits",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-release-notes"
+      ]
+    },
+    {
+      "title": "App Store",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store"
+      ]
+    },
+    {
+      "title": "TestFlight",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/prerelease-versions-and-beta-testers"
+      ]
+    },
+    {
+      "title": "Game Center",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center"
+      ]
+    },
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    },
+    {
+      "title": "Xcode Cloud",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcode-cloud-workflows-and-builds"
+      ]
+    },
+    {
+      "title": "Webhooks",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications"
+      ]
+    },
+    {
+      "title": "Reporting",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sales-and-finance",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/power-and-performance-metrics-and-logs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/analytics"
+      ]
+    },
+    {
+      "title": "Users and Access",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/users",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/user-invitations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sandbox-testers"
+      ]
+    },
+    {
+      "title": "Error Handling",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/interpreting-and-handling-errors"
+      ]
+    },
+    {
+      "title": "Paging",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/large-data-sets"
+      ]
+    },
+    {
+      "title": "Alternative App Distribution",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/alternative-marketplaces-and-web-distribution"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

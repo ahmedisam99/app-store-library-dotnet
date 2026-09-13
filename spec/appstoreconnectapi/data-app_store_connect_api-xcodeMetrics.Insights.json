@@ -1,0 +1,76 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics.Insights",
+  "title": "xcodeMetrics.Insights",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics/Insights-data.dictionary",
+  "slug": "appstoreconnectapi/xcodemetrics/insights-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Analysis of power and performance data collected for your app that includes regressions and trends.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics.Insights",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "regressions",
+      "type": "[MetricsInsight]",
+      "typeId": "data:app_store_connect_api:MetricsInsight",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of metrics that have significantly increased between app versions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "trendingUp",
+      "type": "[MetricsInsight]",
+      "typeId": "data:app_store_connect_api:MetricsInsight",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of metrics that have moderately increased between app versions.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary"
+      ]
+    }
+  ]
+}

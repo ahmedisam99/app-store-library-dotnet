@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_connect_api:CiWorkflowCreateRequest.Data.Relationships",
+  "title": "CiWorkflowCreateRequest.Data.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/ciworkflowcreaterequest/data-data.dictionary/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships to other resources that you can set with this request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiWorkflowCreateRequest.Data.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "product",
+      "type": "CiWorkflowCreateRequest.Data.Relationships.Product",
+      "typeId": "data:app_store_connect_api:CiWorkflowCreateRequest.Data.Relationships.Product",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Products resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "repository",
+      "type": "CiWorkflowCreateRequest.Data.Relationships.Repository",
+      "typeId": "data:app_store_connect_api:CiWorkflowCreateRequest.Data.Relationships.Repository",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Repositories resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "xcodeVersion",
+      "type": "CiWorkflowCreateRequest.Data.Relationships.XcodeVersion",
+      "typeId": "data:app_store_connect_api:CiWorkflowCreateRequest.Data.Relationships.XcodeVersion",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Xcode Versions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "macOsVersion",
+      "type": "CiWorkflowCreateRequest.Data.Relationships.MacOsVersion",
+      "typeId": "data:app_store_connect_api:CiWorkflowCreateRequest.Data.Relationships.MacOsVersion",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related macOS Versions resource.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Relationships-data.dictionary/MacOsVersion-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Relationships-data.dictionary/Product-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Relationships-data.dictionary/Repository-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Relationships-data.dictionary/XcodeVersion-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

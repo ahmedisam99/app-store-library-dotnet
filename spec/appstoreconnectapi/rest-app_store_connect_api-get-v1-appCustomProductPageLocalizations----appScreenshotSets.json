@@ -1,0 +1,468 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-appCustomProductPageLocalizations-{}-appScreenshotSets",
+  "title": "List App Screenshot Sets for a Custom Product Page Localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-appScreenshotSets",
+  "slug": "appstoreconnectapi/get-v1-appcustomproductpagelocalizations-_id_-appscreenshotsets",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "List the app screenshot sets for a specific custom product page localization.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appCustomProductPageLocalizations/{id}/appScreenshotSets",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app custom product page localization resource ID from the `GET-v1-appCustomProductPageVersions-_id_-appCustomProductPageLocalizations` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageVersions-_id_-appCustomProductPageLocalizations"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appScreenshotSets]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "screenshotDisplayType",
+            "appStoreVersionLocalization",
+            "appCustomProductPageLocalization",
+            "appStoreVersionExperimentTreatmentLocalization",
+            "appScreenshots"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app screenshot set resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appScreenshots]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "fileSize",
+            "fileName",
+            "sourceFileChecksum",
+            "imageAsset",
+            "assetToken",
+            "assetType",
+            "uploadOperations",
+            "assetDeliveryState",
+            "appScreenshotSet"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app screenshot resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[appStoreVersionExperimentTreatmentLocalization]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app screenshot sets by App Store version experiment treatment localization.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[appStoreVersionLocalization]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app screenshot sets by App Store version localization.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[screenshotDisplayType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "APP_IPHONE_67",
+            "APP_IPHONE_61",
+            "APP_IPHONE_65",
+            "APP_IPHONE_58",
+            "APP_IPHONE_55",
+            "APP_IPHONE_47",
+            "APP_IPHONE_40",
+            "APP_IPHONE_35",
+            "APP_IPAD_PRO_3GEN_129",
+            "APP_IPAD_PRO_3GEN_11",
+            "APP_IPAD_PRO_129",
+            "APP_IPAD_105",
+            "APP_IPAD_97",
+            "APP_DESKTOP",
+            "APP_WATCH_ULTRA",
+            "APP_WATCH_SERIES_10",
+            "APP_WATCH_SERIES_7",
+            "APP_WATCH_SERIES_4",
+            "APP_WATCH_SERIES_3",
+            "APP_APPLE_TV",
+            "APP_APPLE_VISION_PRO",
+            "IMESSAGE_APP_IPHONE_67",
+            "IMESSAGE_APP_IPHONE_61",
+            "IMESSAGE_APP_IPHONE_65",
+            "IMESSAGE_APP_IPHONE_58",
+            "IMESSAGE_APP_IPHONE_55",
+            "IMESSAGE_APP_IPHONE_47",
+            "IMESSAGE_APP_IPHONE_40",
+            "IMESSAGE_APP_IPAD_PRO_3GEN_129",
+            "IMESSAGE_APP_IPAD_PRO_3GEN_11",
+            "IMESSAGE_APP_IPAD_PRO_129",
+            "IMESSAGE_APP_IPAD_105",
+            "IMESSAGE_APP_IPAD_97"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned app screenshot sets by screenshot display type.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreVersionLocalization",
+            "appCustomProductPageLocalization",
+            "appStoreVersionExperimentTreatmentLocalization",
+            "appScreenshots"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of app screenshot set resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appScreenshots]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of related app screenshots resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appCustomProductPageLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "locale",
+            "promotionalText",
+            "appCustomProductPageVersion",
+            "appScreenshotSets",
+            "appPreviewSets",
+            "searchKeywords"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each app custom product page localization resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionExperimentTreatmentLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "locale",
+            "appStoreVersionExperimentTreatment",
+            "appScreenshotSets",
+            "appPreviewSets"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each App Store version experiment treatment localization resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "description",
+            "locale",
+            "keywords",
+            "marketingUrl",
+            "promotionalText",
+            "supportUrl",
+            "whatsNew",
+            "appStoreVersion",
+            "appScreenshotSets",
+            "appPreviewSets",
+            "searchKeywords"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each App Store version localization resource returned by the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppScreenshotSetsResponse",
+      "typeId": "data:app_store_connect_api:AppScreenshotSetsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Other**\n\n```not specified\nhttps://api.appstoreconnect.apple.com/v1/appCustomProductPageVersions/e0e9216a-338c-4616-9fd5-0ec6c14c6950/appCustomProductPageLocalizations\n```\n\n**Other**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"appScreenshotSets\",\n      \"id\": \"3d87ecbb-bcdc-4c2f-b34f-ced3cf666de7\",\n      \"attributes\": {\n        \"screenshotDisplayType\": \"APP_IPHONE_65\"\n      },\n      \"relationships\": {\n        \"appScreenshots\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/3d87ecbb-bcdc-4c2f-b34f-ced3cf666de7/relationships/appScreenshots\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/3d87ecbb-bcdc-4c2f-b34f-ced3cf666de7/appScreenshots\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/3d87ecbb-bcdc-4c2f-b34f-ced3cf666de7\"\n      }\n    },\n    {\n      \"type\": \"appScreenshotSets\",\n      \"id\": \"a59be7c9-8f97-45cc-939d-09c101c483e3\",\n      \"attributes\": {\n        \"screenshotDisplayType\": \"APP_IPHONE_55\"\n      },\n      \"relationships\": {\n        \"appScreenshots\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/a59be7c9-8f97-45cc-939d-09c101c483e3/relationships/appScreenshots\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/a59be7c9-8f97-45cc-939d-09c101c483e3/appScreenshots\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/a59be7c9-8f97-45cc-939d-09c101c483e3\"\n      }\n    },\n    {\n      \"type\": \"appScreenshotSets\",\n      \"id\": \"69a9c45d-4508-4b4a-a08e-03e0bc018903\",\n      \"attributes\": {\n        \"screenshotDisplayType\": \"APP_IPAD_PRO_3GEN_129\"\n      },\n      \"relationships\": {\n        \"appScreenshots\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/69a9c45d-4508-4b4a-a08e-03e0bc018903/relationships/appScreenshots\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/69a9c45d-4508-4b4a-a08e-03e0bc018903/appScreenshots\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/69a9c45d-4508-4b4a-a08e-03e0bc018903\"\n      }\n    },\n    {\n      \"type\": \"appScreenshotSets\",\n      \"id\": \"51bc2274-7517-4e56-82e4-c80f6014d44a\",\n      \"attributes\": {\n        \"screenshotDisplayType\": \"APP_IPAD_PRO_129\"\n      },\n      \"relationships\": {\n        \"appScreenshots\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/51bc2274-7517-4e56-82e4-c80f6014d44a/relationships/appScreenshots\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/51bc2274-7517-4e56-82e4-c80f6014d44a/appScreenshots\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appScreenshotSets/51bc2274-7517-4e56-82e4-c80f6014d44a\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0d95bf9e-8256-4abf-83e2-9b428919100f/appScreenshotSets\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 4,\n      \"limit\": 50\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appCustomProductPageLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appCustomProductPageLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageVersions-_id_-appCustomProductPageLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-relationships-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-relationships-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appCustomProductPageLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Getting screenshot information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-relationships-appScreenshotSets"
+      ]
+    }
+  ]
+}

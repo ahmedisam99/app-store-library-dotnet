@@ -1,0 +1,253 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place",
+  "title": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary",
+  "slug": "appstoreconnectapi/appclipadvancedexperiencecreaterequest/data-data.dictionary/attributes-data.dictionary/place-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The place information of an advanced App Clip experience you create with this request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "categories",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A list of categories for a place in Apple Maps you associate with the Advanced App Clip experience.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "displayPoint",
+      "type": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Coordinates of a place in Apple Maps you associate with an advanced App Clip experience.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "homePage",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The optional website URL for a place.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "mainAddress",
+      "type": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.MainAddress",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.MainAddress",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The main address of a place in Apple Maps. This value is required if you don’t provide coordinates for a place.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "mapAction",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "BUY_TICKETS",
+            "VIEW_AVAILABILITY",
+            "VIEW_PRICING",
+            "HOTEL_BOOK_ROOM",
+            "PARKING_RESERVE_PARKING",
+            "RESTAURANT_JOIN_WAITLIST",
+            "RESTAURANT_ORDER_DELIVERY",
+            "RESTAURANT_ORDER_FOOD",
+            "RESTAURANT_ORDER_TAKEOUT",
+            "RESTAURANT_RESERVATION",
+            "SCHEDULE_APPOINTMENT",
+            "RESTAURANT_VIEW_MENU",
+            "THEATER_NOW_PLAYING",
+            "AIRLINE_BOOK_TRAVEL",
+            "AIRLINE_CHECK_IN",
+            "AIRLINE_FLIGHT_STATUS",
+            "APPLY",
+            "BOOK",
+            "BOOK_ACTIVITIES",
+            "BOOK_RIDES",
+            "BOOK_TEETIMES",
+            "BOOK_TOURS",
+            "CAREERS",
+            "CHARGE_EV",
+            "COUPONS",
+            "DONATE",
+            "EVENTS",
+            "EVENTS_SHOWS",
+            "EVENTS_SPORTS",
+            "GIFT_CARD",
+            "HOTEL_AMENITIES",
+            "JOIN",
+            "PARKING_AVAILABLE",
+            "RESTAURANT_PICKUP",
+            "RETAIL_SERVICE_QUOTE",
+            "RETAIL_STORE_DELIVERY",
+            "RETAIL_STORE_PICKUP",
+            "RETAIL_STORE_SHOP",
+            "SERVICES",
+            "SUPPORT",
+            "PAY_TO_PARK"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes the intent behind an App Clip invocation from location-based suggestions from Siri Suggestions and the Maps app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "names",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of names as strings for a place in Apple Maps.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "phoneNumber",
+      "type": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.PhoneNumber",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.PhoneNumber",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The phone number that’s associated with a place in Apple Maps as a string.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "placeId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque ID that uniquely identifies a place. If you previously created a place in Apple Maps for the place you associate with your advanced App Clip experience, use its ID instead of creating a new ID.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationship",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "OWNER",
+            "AUTHORIZED",
+            "OTHER"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A navigational link to related data and included resource types and IDs.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Apple Maps uses any location data that you provide solely for matching an App Clip experience to an existing location. If it can’t find a match, Apple Maps doesn’t use the provided location data.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/DisplayPoint-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/MainAddress-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/PhoneNumber-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

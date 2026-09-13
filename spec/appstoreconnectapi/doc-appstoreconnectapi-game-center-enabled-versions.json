@@ -1,0 +1,91 @@
+{
+  "id": "doc:appstoreconnectapi/game-center-enabled-versions",
+  "title": "Game Center Enabled Versions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center-enabled-versions",
+  "slug": "appstoreconnectapi/game-center-enabled-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage compatible Game Center-enabled versions.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use a `gameCenterEnabledVersions` resource to indicate which versions of your app support Game Center. For more information see `https://developer.apple.com/help/app-store-connect/configure-game-center/overview-of-game-center`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/configure-game-center/overview-of-game-center"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Listing Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-gameCenterEnabledVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterEnabledVersions-_id_-compatibleVersions"
+      ]
+    },
+    {
+      "title": "Getting and Adding Compatible Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterEnabledVersions-_id_-relationships-compatibleVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterEnabledVersions-_id_-relationships-compatibleVersions"
+      ]
+    },
+    {
+      "title": "Removing and Replacing Compatible Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterEnabledVersions-_id_-relationships-compatibleVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterEnabledVersions-_id_-relationships-compatibleVersions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionCompatibleVersionsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionCompatibleVersionsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppGameCenterEnabledVersionsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

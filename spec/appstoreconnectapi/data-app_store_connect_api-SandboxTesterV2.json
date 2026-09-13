@@ -1,0 +1,130 @@
+{
+  "id": "data:app_store_connect_api:SandboxTesterV2",
+  "title": "SandboxTesterV2",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SandboxTesterV2",
+  "slug": "appstoreconnectapi/sandboxtesterv2",
+  "introducedAt": "2.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A sandbox Apple ID you use to test in-app purchases and subscriptions in the Xcode sandbox environment.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SandboxTesterV2",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "SandboxTesterV2.Attributes",
+      "typeId": "data:app_store_connect_api:SandboxTesterV2.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "sandboxTesters"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2/Attributes-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersV2Response"
+      ]
+    }
+  ]
+}

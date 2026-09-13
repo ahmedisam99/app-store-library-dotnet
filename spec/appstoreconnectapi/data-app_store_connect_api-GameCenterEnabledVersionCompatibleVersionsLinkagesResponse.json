@@ -1,0 +1,113 @@
+{
+  "id": "data:app_store_connect_api:GameCenterEnabledVersionCompatibleVersionsLinkagesResponse",
+  "title": "GameCenterEnabledVersionCompatibleVersionsLinkagesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterEnabledVersionCompatibleVersionsLinkagesResponse",
+  "slug": "appstoreconnectapi/gamecenterenabledversioncompatibleversionslinkagesresponse",
+  "introducedAt": "1.2",
+  "deprecated": {
+    "at": "3.0",
+    "summary": {
+      "text": "This object is deprecated. Use `GameCenterAppVersionCompatibilityVersionsLinkagesResponse` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterAppVersionCompatibilityVersionsLinkagesResponse"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "A response body that contains a list of related resource IDs.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterEnabledVersionCompatibleVersionsLinkagesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[GameCenterEnabledVersionCompatibleVersionsLinkagesResponse.Data]",
+      "typeId": "data:app_store_connect_api:GameCenterEnabledVersionCompatibleVersionsLinkagesResponse.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionCompatibleVersionsLinkagesResponse/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionCompatibleVersionsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterEnabledVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppGameCenterEnabledVersionsLinkagesResponse"
+      ]
+    }
+  ]
+}

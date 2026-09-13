@@ -1,0 +1,149 @@
+{
+  "id": "doc:appstoreconnectapi/app-info-localizations",
+  "title": "App Info Localizations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-info-localizations",
+  "slug": "appstoreconnectapi/app-info-localizations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the app metadata that is localized and appears on the App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The languages you add to an `appInfoLocalizations` resource only affect your app’s metadata. To add languages to your app’s binary, see `https://help.apple.com/xcode/mac/current/#/deve2bc11fab`.",
+        "refs": [
+          "https://help.apple.com/xcode/mac/current/#/deve2bc11fab"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`appInfoLocalizations` represent your app’s localized metadata that is displayed in the App Store. You can create, read, update, and remove the localized metadata. It includes the following attributes for each localization:",
+          "refs": []
+        },
+        {
+          "text": "You can update localized metadata when your app is in an editable state. For more information about the metadata, see `https://developer.apple.com/help/app-store-connect/manage-app-information/localize-app-store-information`. For a list of supported languages, see `https://developer.apple.com/help/app-store-connect/reference/app-store-localizations`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-app-information/localize-app-store-information",
+            "https://developer.apple.com/help/app-store-connect/reference/app-store-localizations"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  The languages you add to an `appInfoLocalizations` resource only affect your app’s metadata. To add languages to your app’s binary, see `https://help.apple.com/xcode/mac/current/#/deve2bc11fab`.",
+          "refs": [
+            "https://help.apple.com/xcode/mac/current/#/deve2bc11fab"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Locale",
+          "refs": []
+        },
+        {
+          "text": "Name",
+          "refs": []
+        },
+        {
+          "text": "Subtitle",
+          "refs": []
+        },
+        {
+          "text": "Privacy policy URL",
+          "refs": []
+        },
+        {
+          "text": "Privacy policy text (for tvOS apps)",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-metadata-in-your-app-by-using-locale-shortcodes"
+      ]
+    },
+    {
+      "title": "Reading App Localization Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-appInfoLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfoLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Creating, Modifying, and Deleting Localized App Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appInfoLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appInfoLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appInfoLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoLocalizationsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/routing-app-coverages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/accessibility-declarations"
+      ]
+    }
+  ]
+}

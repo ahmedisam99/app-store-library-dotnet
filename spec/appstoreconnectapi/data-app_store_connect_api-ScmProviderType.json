@@ -1,0 +1,104 @@
+{
+  "id": "data:app_store_connect_api:ScmProviderType",
+  "title": "ScmProviderType",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ScmProviderType",
+  "slug": "appstoreconnectapi/scmprovidertype",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The source code management provider’s type.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ScmProviderType",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "displayName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The source code management provider’s display name; for example, `Bitbucket Server`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isOnPremise",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether it’s a self-hosted source code management provider.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "kind",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "BITBUCKET_CLOUD",
+            "BITBUCKET_SERVER",
+            "GITHUB_CLOUD",
+            "GITHUB_ENTERPRISE",
+            "GITLAB_CLOUD",
+            "GITLAB_SELF_MANAGED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that represents the kind of a Providers resource.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmProvider/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

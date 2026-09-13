@@ -1,0 +1,122 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-review-details",
+  "title": "App Store review details",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-review-details",
+  "slug": "appstoreconnectapi/app-store-review-details",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the required information you provide for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use `appStoreReviewDetails` to provide information required for App Review. This information isn’t displayed on the App Store. Required attributes for App Review are:",
+          "refs": []
+        },
+        {
+          "text": "Optionally, provide notes for the review team using the notes attribute. If you need to attach a file for App Review, use the `app-store-review-attachments` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-attachments"
+          ]
+        },
+        {
+          "text": "For more information see `https://developer.apple.com/help/app-store-connect/reference/app-review-information`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-review-information"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Contact first and last name",
+          "refs": []
+        },
+        {
+          "text": "Contact phone number",
+          "refs": []
+        },
+        {
+          "text": "Contact email address",
+          "refs": []
+        },
+        {
+          "text": "Whether testing your app requires a demo account",
+          "refs": []
+        },
+        {
+          "text": "Demo account name (if your app uses a single sign-on service)",
+          "refs": []
+        },
+        {
+          "text": "Demo account password (if your app uses a single sign-on service)",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, Modifying, and Reading Review Details",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreReviewDetails",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreReviewDetails-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreReviewDetails-_id_-relationships-appStoreReviewAttachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreReviewDetails-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewDetailUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewDetailResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewDetailAppStoreReviewAttachmentsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Review Submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submission-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-clip-app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-attachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/actors"
+      ]
+    }
+  ]
+}

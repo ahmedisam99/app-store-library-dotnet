@@ -1,0 +1,107 @@
+{
+  "id": "data:app_store_connect_api:AppMediaPreviewFrameImageState",
+  "title": "AppMediaPreviewFrameImageState",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppMediaPreviewFrameImageState",
+  "slug": "appstoreconnectapi/appmediapreviewframeimagestate",
+  "introducedAt": "3.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The properties that describe the state of a preview frame image for an app preveiew or app event video.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppMediaPreviewFrameImageState",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errors",
+      "type": "[AppMediaStateError]",
+      "typeId": "data:app_store_connect_api:AppMediaStateError",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "PROCESSING",
+            "COMPLETE",
+            "FAILED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "warnings",
+      "type": "[AppMediaStateError]",
+      "typeId": "data:app_store_connect_api:AppMediaStateError",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClip",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewFrameImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaVideoState"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": "doc:appstoreconnectapi/sales-and-finance",
+  "title": "Sales and Finance",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/sales-and-finance",
+  "slug": "appstoreconnectapi/sales-and-finance",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Download your sales and financial reports.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect provides data that allows you to measure the performance of your app and view payments from Apple. Use the App Store Connect API to apply filters to select and configure the data, and automate the download of sales and financial reports. For detailed information on reports, see `https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/measure-app-performance/overview-of-reporting-tools"
+          ]
+        },
+        {
+          "text": "These endpoints require a Team key and aren’t usable with an Individual key. To learn more about keys and roles, see `creating-api-keys-for-app-store-connect-api`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Downloading Reports",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-financeReports",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-salesReports"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/gzip"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Reporting",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/power-and-performance-metrics-and-logs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/analytics"
+      ]
+    }
+  ]
+}

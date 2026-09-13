@@ -1,0 +1,277 @@
+{
+  "id": "doc:appstoreconnectapi/creating-api-keys-for-app-store-connect-api",
+  "title": "Creating API Keys for App Store Connect API",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api",
+  "slug": "appstoreconnectapi/creating-api-keys-for-app-store-connect-api",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create API keys to sign JSON Web Tokens (JWTs) and authorize API requests.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Secure your private keys as you do for other credentials, such as usernames and passwords. If you suspect a private key is compromised, immediately revoke the key in App Store Connect. See `revoking-api-keys` for details.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys"
+        ]
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " Team keys give access that’s not isolated to a single app, but individual key access is tied to the apps and permissions of the user.",
+        "refs": []
+      }
+    },
+    {
+      "style": "important",
+      "prose": {
+        "text": " Keep your API keys secure and private. Don’t share your keys, store keys in a code repository, or include keys in client-side code. If the key becomes lost or compromised, remember to revoke it immediately. See `revoking-api-keys` for more information.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys"
+        ]
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " If you don’t have the Generate Individual API Keys permission, the Generate API Key button won’t show on your profile. A team Admin can grant you this permission.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store Connect API requires a JSON Web Token (JWT) to authorize each request you make to the API. You generate JWTs using an API key downloaded from App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "An API key has two parts: a public portion that Apple keeps, and a private key that you download. You can use the private key to sign tokens that authorize access to your data in App Store Connect and the Apple Developer website.",
+          "refs": []
+        },
+        {
+          "text": "There are two types of API keys:",
+          "refs": []
+        },
+        {
+          "text": "-Team: Access to all apps, with varying levels of access based on selected roles. -Individual: Access and roles of the associated user. Individual keys aren’t able to use Provisioning endpoints, access `sales-and-finance`, or `notaryTool`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/sales-and-finance"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Secure your private keys as you do for other credentials, such as usernames and passwords. If you suspect a private key is compromised, immediately revoke the key in App Store Connect. See `revoking-api-keys` for details.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys"
+          ]
+        },
+        {
+          "text": "App Store Connect API keys are unique to the App Store Connect API and you can’t use them for other Apple services.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Generate a Team Key and Assign It a Role",
+      "paragraphs": [
+        {
+          "text": "When you create an API key, assign it a role that determines the key’s access to areas of the App Store Connect API and permissions for performing tasks. For example, keys with the Admin role have broad permissions and can do things like create new users and delete users. Team API keys can access all apps, regardless of their role. The roles that apply to keys are the same roles that apply to users on your team; for more information, see `https://developer.apple.com/support/roles/`.",
+          "refs": [
+            "https://developer.apple.com/support/roles/"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  Team keys give access that’s not isolated to a single app, but individual key access is tied to the apps and permissions of the user.",
+          "refs": []
+        },
+        {
+          "text": "To generate team keys, you must have an Admin account in App Store Connect. You can generate multiple API keys with any roles you choose.",
+          "refs": []
+        },
+        {
+          "text": "To generate a team API key to use with the App Store Connect API, log in to `https://appstoreconnect.apple.com/` and:",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "The new key’s name, key ID, a download link, and other information appears on the page.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Select Users and Access, and then select the Integrations tab.",
+          "refs": []
+        },
+        {
+          "text": "Select App Store Connect API in the left column.",
+          "refs": []
+        },
+        {
+          "text": "Make sure the Team Keys tab is selected.",
+          "refs": []
+        },
+        {
+          "text": "Click Generate API Key or the Add (+) button.",
+          "refs": []
+        },
+        {
+          "text": "Enter a name for the key. The name is for your reference only and isn’t part of the key itself.",
+          "refs": []
+        },
+        {
+          "text": "Under Access, select the role for the key.",
+          "refs": []
+        },
+        {
+          "text": "Click Generate.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Download and Store a Team Private Key",
+      "paragraphs": [
+        {
+          "text": "Once you generate your API key, you can download the private half of the key. The private key is available for download a single time, to begin log in to App Store Connect and:",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "The download link only appears if you haven’t downloaded the private key. Apple doesn’t keep a copy of the private key.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Keep your API keys secure and private. Don’t share your keys, store keys in a code repository, or include keys in client-side code. If the key becomes lost or compromised, remember to revoke it immediately. See `revoking-api-keys` for more information.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Select Users and Access, and then select the Integrations tab.",
+          "refs": []
+        },
+        {
+          "text": "Select App Store Connect API in the left column.",
+          "refs": []
+        },
+        {
+          "text": "Select Team Keys if it is not already selected.",
+          "refs": []
+        },
+        {
+          "text": "Click Download API Key link next to the new API key.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Generate an Individual Key",
+      "paragraphs": [
+        {
+          "text": "To generate an individual API key, which has access and permissions of the associated user, for the App Store Connect API, log in to App Store Connect and:",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "The key ID, a download link, and other information appears on the page.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  If you don’t have the Generate Individual API Keys permission, the Generate API Key button won’t show on your profile. A team Admin can grant you this permission.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Go to your user profile.",
+          "refs": []
+        },
+        {
+          "text": "Scroll down to Individual API Key.",
+          "refs": []
+        },
+        {
+          "text": "Click Generate API Key.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Download and Store an Individual Private Key",
+      "paragraphs": [
+        {
+          "text": "Once you’ve generated your API key, you can download the private half of the key. The private key is available for download a single time, to begin log in to App Store Connect and:",
+          "refs": [
+            "https://appstoreconnect.apple.com/"
+          ]
+        },
+        {
+          "text": "The download link only appears if you haven’t downloaded the private key. Apple doesn’t keep a copy of the private key.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Go to your user profile.",
+          "refs": []
+        },
+        {
+          "text": "Scroll down to Individual API Key.",
+          "refs": []
+        },
+        {
+          "text": "Click Download API Key link.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/identifying-rate-limits",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-release-notes"
+      ]
+    }
+  ]
+}

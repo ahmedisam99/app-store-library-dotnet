@@ -1,0 +1,253 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-ciXcodeVersions-{}",
+  "title": "Read xcode version information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-ciXcodeVersions-_id_",
+  "slug": "appstoreconnectapi/get-v1-cixcodeversions-_id_",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get information about a specific Xcode version that’s available to Xcode Cloud workflows.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciXcodeVersions/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies the Xcode Versions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciXcodeVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "name",
+            "testDestinations",
+            "macOsVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Xcode Versions resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "macOsVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[macOsVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The number of included Xcode Versions resources to return if the macOS versions relationship is included.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciMacOsVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "name",
+            "xcodeVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for the Xcode Versions resource returned by the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "CiXcodeVersionResponse",
+      "typeId": "data:app_store_connect_api:CiXcodeVersionResponse",
+      "abstract": {
+        "text": "The request completed successfully.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below accesses detailed information for a specific Xcode version available to Xcode Cloud workflows. Use the data provided in the response to display available Xcode versions and test destinations on a dashboard or to read additional information; for example, macOS version information.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/ciXcodeVersions/Xcode12E507:stable\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciXcodeVersions\",\n        \"id\": \"Xcode12E507:stable\",\n        \"attributes\": {\n            \"version\": \"Xcode12E507:stable\",\n            \"name\": \"Xcode 12.5.1 (12E507)\",\n            \"testDestinations\": [\n                {\n                    \"deviceTypeName\": \"iPhone 8\",\n                    \"deviceTypeIdentifier\": \"com.apple.CoreSimulator.SimDeviceType.iPhone-8\",\n                    \"availableRuntimes\": [\n                        {\n                            \"runtimeName\": \"iOS 13.0\",\n                            \"runtimeIdentifier\": \"com.apple.CoreSimulator.SimRuntime.iOS-13-0\"\n                        }\n                    ],\n                    \"kind\": \"SIMULATOR\"\n                },\n                {\n                    \"deviceTypeName\": \"Mac\",\n                    \"deviceTypeIdentifier\": \"mac\",\n                    \"availableRuntimes\": [\n                        {\n                            \"runtimeName\": \"Same as Selected macOS Version\",\n                            \"runtimeIdentifier\": \"builder\"\n                        },\n                        {\n                            \"runtimeName\": \"Latest Beta or Release (Currently macOS Big Sur 11.5.2 (20G95))\",\n                            \"runtimeIdentifier\": \"latest:all\"\n                        },\n                        {\n                            \"runtimeName\": \"macOS Big Sur 11.5.2 (20G95)\",\n                            \"runtimeIdentifier\": \"20G95\"\n                        }\n                    ],\n                    \"kind\": \"MAC\"\n                },\n                {\n                    \"deviceTypeName\": \"Mac (Mac Catalyst)\",\n                    \"deviceTypeIdentifier\": \"mac_catalyst\",\n                    \"availableRuntimes\": [\n                        {\n                            \"runtimeName\": \"Same as Selected macOS Version\",\n                            \"runtimeIdentifier\": \"builder\"\n                        },\n                        {\n                            \"runtimeName\": \"Latest Beta or Release (Currently macOS Big Sur 11.5.2 (20G95))\",\n                            \"runtimeIdentifier\": \"latest:all\"\n                        },\n                        {\n                            \"runtimeName\": \"macOS Big Sur 11.5.2 (20G95)\",\n                            \"runtimeIdentifier\": \"20G95\"\n                        }\n                    ],\n                    \"kind\": \"MAC\"\n                }\n            ]\n        },\n        \"relationships\": {\n            \"macOsVersions\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciXcodeVersions/Xcode12E507:stable/relationships/macOsVersions\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciXcodeVersions/Xcode12E507:stable/macOsVersions\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciXcodeVersions/Xcode12E507:stable\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciXcodeVersions/Xcode12E507:stable\"\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Xcode Version Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciXcodeVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciXcodeVersions-_id_-macOsVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciXcodeVersions-_id_-relationships-macOsVersions"
+      ]
+    }
+  ]
+}

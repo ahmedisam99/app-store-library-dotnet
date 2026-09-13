@@ -1,0 +1,86 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingSessionsV1MetricResponse.Data",
+  "title": "GameCenterMatchmakingSessionsV1MetricResponse.Data",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingSessionsV1MetricResponse/Data-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingsessionsv1metricresponse/data-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data structure for the results of a successful matchmaking session.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingSessionsV1MetricResponse.Data",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "dataPoints",
+      "type": "[GameCenterMatchmakingSessionsV1MetricResponse.Data.DataPoints]",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingSessionsV1MetricResponse.Data.DataPoints",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "granularity",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P1D",
+            "PT1H",
+            "PT15M"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The granularity of the data using the ISO 8601 format for durations.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingSessionsV1MetricResponse/Data-data.dictionary/DataPoints-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

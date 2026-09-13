@@ -1,0 +1,266 @@
+{
+  "id": "data:app_store_connect_api:AppEncryptionDeclaration.Attributes",
+  "title": "AppEncryptionDeclaration.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppEncryptionDeclaration/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/appencryptiondeclaration/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe an App Encryption Declarations resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppEncryptionDeclaration.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "availableOnFrenchStore",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates the intent to distribute your app on the French App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "codeValue",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A unique identifier that can be added to your app to associate it with a given declaration.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "containsProprietaryCryptography",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates your app implements any proprietary encryption algorithms.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "containsThirdPartyCryptography",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates your app implements any standard encryption algorithms instead of, or in addition to, using or accessing the encryption in Apple’s operating systems.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "documentName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The document name of your submitted export compliance documentation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "documentType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The file type of your submitted export compliance documentation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "documentUrl",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The URL to the file of your submitted export compliance documentation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "exempt",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates your app is exempt based on your use of encryption and the app’s availability.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "platform",
+      "type": "Platform",
+      "typeId": "data:app_store_connect_api:Platform",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The platform of the declaration.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "usesEncryption",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether your app uses, contains, or incorporates cryptography.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appEncryptionDeclarationState",
+      "type": "AppEncryptionDeclarationState",
+      "typeId": "data:app_store_connect_api:AppEncryptionDeclarationState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The approval state of your export compliance documentation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "uploadedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time you submitted your declaration.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "appDescription",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "createdDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-encryption-declarations"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEncryptionDeclaration/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-4-4-1-release-notes",
+  "title": "App Store Connect API 4.4.1 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-4-4-1-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 4.4.1 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 2,
+      "heading": "Added",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Manage in-app purchase metadata as discrete versions. Use `POST-v1-inAppPurchaseVersions` to create a new version, `GET-v1-inAppPurchaseVersions-_id_` to read a version, and `GET-v2-inAppPurchases-_id_-versions` to list all versions for an in-app purchase. Each version exposes its own localizations and review screenshot through `GET-v1-inAppPurchaseVersions-_id_-localizations` and `GET-v1-inAppPurchaseVersions-_id_-image`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseVersions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-versions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-image"
+          ]
+        },
+        {
+          "text": "Manage subscription metadata as discrete versions. Use `POST-v1-subscriptionVersions` to create a new version, `GET-v1-subscriptionVersions-_id_` to read a version, and `GET-v1-subscriptions-_id_-versions` to list all versions for a subscription. Each version exposes its own localizations and promotional images through `GET-v1-subscriptionVersions-_id_-localizations` and `GET-v1-subscriptionVersions-_id_-images`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionVersions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-versions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_-images"
+          ]
+        },
+        {
+          "text": "Manage subscription group metadata as discrete versions. Use `POST-v1-subscriptionGroupVersions` to create a new version, `GET-v1-subscriptionGroupVersions-_id_` to read a version, and `GET-v1-subscriptionGroups-_id_-versions` to list all versions for a subscription group. Each version exposes its own localizations through `GET-v1-subscriptionGroupVersions-_id_-localizations`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupVersions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupVersions-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroups-_id_-versions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupVersions-_id_-localizations"
+          ]
+        },
+        {
+          "text": "Submit an in-app purchase version, subscription version, or subscription group version to App Review. Use `POST-v1-reviewSubmissionItems` with an `inAppPurchaseVersion`, `subscriptionVersion`, or `subscriptionGroupVersion` relationship to add the version to a review submission.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissionItems"
+          ]
+        },
+        {
+          "text": "Use `POST-v2-inAppPurchaseLocalizations`, `PATCH-v2-inAppPurchaseLocalizations-_id_`, and `DELETE-v2-inAppPurchaseLocalizations-_id_` to manage in-app purchase localizations, and `POST-v2-inAppPurchaseImages`, `PATCH-v2-inAppPurchaseImages-_id_`, and `DELETE-v2-inAppPurchaseImages-_id_` to manage review screenshots. These v2 endpoints are scoped to an `InAppPurchaseVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-inAppPurchaseLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-inAppPurchaseLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-inAppPurchaseLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-inAppPurchaseImages",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-inAppPurchaseImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-inAppPurchaseImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersion"
+          ]
+        },
+        {
+          "text": "Use `POST-v2-subscriptionLocalizations`, `PATCH-v2-subscriptionLocalizations-_id_`, and `DELETE-v2-subscriptionLocalizations-_id_` to manage subscription localizations, and `POST-v2-subscriptionImages`, `PATCH-v2-subscriptionImages-_id_`, and `DELETE-v2-subscriptionImages-_id_` to manage promotional images. These v2 endpoints are scoped to a `SubscriptionVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-subscriptionLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-subscriptionLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionImages",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-subscriptionImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-subscriptionImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionVersion"
+          ]
+        },
+        {
+          "text": "Use `POST-v2-subscriptionGroupLocalizations`, `PATCH-v2-subscriptionGroupLocalizations-_id_`, and `DELETE-v2-subscriptionGroupLocalizations-_id_` to manage subscription group localizations, including localized custom app names. These v2 endpoints are scoped to a `SubscriptionGroupVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionGroupLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-subscriptionGroupLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-subscriptionGroupLocalizations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionGroupVersion"
+          ]
+        },
+        {
+          "text": "Use `GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations` to read the price points that App Store Connect uses to equalize a subscription’s price across territories when the base price point changes. Filter the endpoint with `filter[upfrontPricePointId]` and `filter[planType]` to identify a specific adjusted equalization.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations"
+          ]
+        },
+        {
+          "text": "Added the `socialMedia` and `socialMediaAgeRestricted` Boolean attributes to `AgeRatingDeclaration` and `AgeRatingDeclarationUpdateRequest`, so you can declare whether your app includes social media features and whether those features are age-restricted.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclaration",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclarationUpdateRequest"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Deprecated",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `in-app-purchase-localizations-v1` resource is deprecated. Use `in-app-purchase-localizations` instead, which scopes localizations to an `InAppPurchaseVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations-v1",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersion"
+          ]
+        },
+        {
+          "text": "The `in-app-purchase-images-v1` resource is deprecated. Use `in-app-purchase-images` instead, which scopes review screenshots to an `InAppPurchaseVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images-v1",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersion"
+          ]
+        },
+        {
+          "text": "The `in-app-purchase-submissions` resource is deprecated. Use `review-submissions` instead to submit an in-app purchase version for App Review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-submissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions"
+          ]
+        },
+        {
+          "text": "The `subscription-localizations-v1` resource is deprecated. Use `subscription-localizations` instead, which scopes localizations to a `SubscriptionVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionVersion"
+          ]
+        },
+        {
+          "text": "The `subscription-images-v1` resource is deprecated. Use `subscription-images` instead, which scopes promotional images to a `SubscriptionVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionVersion"
+          ]
+        },
+        {
+          "text": "The `subscription-group-localizations-v1` resource is deprecated. Use `subscription-group-localizations` instead, which scopes localizations to a `SubscriptionGroupVersion`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations-v1",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionGroupVersion"
+          ]
+        },
+        {
+          "text": "The `subscription-and-subscription-group-submissions` resource is deprecated. Use `review-submissions` instead to submit a subscription version or subscription group version for App Review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-and-subscription-group-submissions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "doc:appstoreconnectapi/querying-adjusted-subscription-price-equalizations",
+  "title": "Querying adjusted subscription price equalizations",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/querying-adjusted-subscription-price-equalizations",
+  "slug": "appstoreconnectapi/querying-adjusted-subscription-price-equalizations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Compare a subscription price point against the equalized price points that Apple recommends across territories, adjusted for local pricing rules.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Every subscription price point has a territory and a customer price. When you set a price in one territory, Apple can equalize equivalent price points across all other territories so customers see a consistent price relative to their local currency. The equalizations endpoint returns those matching price points. The adjusted equalizations endpoint returns the same set with adjustments applied for territories where the direct equalization would violate a local pricing rule — for example, a territory that requires rounded prices or that limits price bands.",
+          "refs": []
+        },
+        {
+          "text": "Use the adjusted equalizations endpoint when you plan a price change and need to see the actual per-territory prices customers would pay, not the raw currency conversion.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read adjusted equalizations for a price point",
+      "paragraphs": [
+        {
+          "text": "Use `GET /v1/subscriptionPricePoints/{id}/adjustedEqualizations` (`GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations`) with the `id` of the source price point:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-adjustedEqualizations"
+          ]
+        },
+        {
+          "text": "```other\nGET /v1/subscriptionPricePoints/${sourcePricePointId}/adjustedEqualizations?include=territory&fields[subscriptionPricePoints]=customerPrice,territory\n```",
+          "refs": []
+        },
+        {
+          "text": "The response is a list of `SubscriptionPricePoints` — one per territory — where each price reflects the adjusted equalization for that territory. Compare each `customerPrice` against the source price to see where adjustments occur.",
+          "refs": []
+        },
+        {
+          "text": "To read the raw equalizations without adjustments, use `GET /v1/subscriptionPricePoints/{id}/equalizations` (`GET-v1-subscriptionPricePoints-_id_-equalizations`) with the same `id`. Compare the two responses to see which territories required an adjustment.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-equalizations"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Auto-Renewable Subscriptions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-subscription-prices-across-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-plan-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/billing-grace-periods"
+      ]
+    }
+  ]
+}

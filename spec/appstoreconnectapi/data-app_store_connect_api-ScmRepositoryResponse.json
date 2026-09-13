@@ -1,0 +1,103 @@
+{
+  "id": "data:app_store_connect_api:ScmRepositoryResponse",
+  "title": "ScmRepositoryResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ScmRepositoryResponse",
+  "slug": "appstoreconnectapi/scmrepositoryresponse",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that read a single SCM repository connected to Xcode Cloud.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ScmRepositoryResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "ScmRepository",
+      "typeId": "data:app_store_connect_api:ScmRepository",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "ScmGitReference",
+            "ScmProvider"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoriesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoryGitReferencesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoryPullRequestsLinkagesResponse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "id": "doc:appstoreconnectapi/creating-auto-renewable-subscription-groups",
+  "title": "Creating auto-renewable subscription groups",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/creating-auto-renewable-subscription-groups",
+  "slug": "appstoreconnectapi/creating-auto-renewable-subscription-groups",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Configure subscription groups with the App Store Connect API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " You can also get the Apple ID of the app in App Store Connect.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " The `referenceName` field is internal and isn’t displayed to people. Use a descriptive string that’s useful for your own organization and recognition purposes.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Subscription Name",
+        "Duration",
+        "Level of Detail (1 is greatest)",
+        "Price (in USD)"
+      ],
+      "rows": [
+        [
+          "All Access",
+          "1 Month",
+          "1",
+          "24.99"
+        ],
+        [
+          "All Access",
+          "1 Year",
+          "1",
+          "149.99"
+        ],
+        [
+          "Ukulele Beginner Lessons",
+          "1 Month",
+          "3",
+          "9.99"
+        ],
+        [
+          "Ukulele Beginner Lessons",
+          "1 Year",
+          "3",
+          "49.99"
+        ],
+        [
+          "Ukulele Advanced Lessons",
+          "1 Month",
+          "2",
+          "19.99"
+        ],
+        [
+          "Ukulele Advanced Lessons",
+          "1 Year",
+          "2",
+          "99.99"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store Connect API lets you create and configure auto-renewable subscriptions for your app. After you create an auto-renewable subscription, you can add metadata, such as a display name, description, and duration. You can also choose your subscription pricing, create promotional and introductory offers, and set up subscription offer codes. When your app is fully configured, you can submit your subscription for review. After you receive approval, you can make pricing changes and edit some metadata for your subscription.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Review App Store Connect API usage",
+      "paragraphs": [
+        {
+          "text": "To manage auto-renewable subscriptions with the App Store Connect API, you need to understand key concepts for using the API. If you’re new to using the App Store Connect API, make sure to read the documentation in the Essentials section of `AppStoreConnectAPI` and learn how to create API keys, generate JWTs, identify rate limits, and more.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI"
+          ]
+        },
+        {
+          "text": "To create and manage auto-renewable subscriptions, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "For the full list of App Store Connect user roles, see `UserRole` and `https://developer.apple.com/support/roles`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserRole",
+            "https://developer.apple.com/support/roles"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`ACCOUNT_HOLDER`",
+          "refs": []
+        },
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP_MANAGER`",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Plan your subscription offerings",
+      "paragraphs": [
+        {
+          "text": "Before you get started with creating your subscription, first identify which app to include this subscription in. To get the Apple ID of the app, use `GET /v1/apps` (`GET-v1-apps`) and search the resulting pages for the name of the app you want to use. In the response, make note of the `id` of that app, which appears in the following format:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+          ]
+        },
+        {
+          "text": "```json\n{\n\"data\" : [ {\n\"type\" : \"apps\",\n\"id\" : \"525463029\",\n....\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n>  You can also get the Apple ID of the app in App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "To arrange your subscription groups, make sure to map out all your offerings clearly. The following table shows an example for planning your subscriptions in a subscription group. The example uses subscriptions for a series of ukulele lessons with different levels of instructor feedback and detail, available for various time periods.",
+          "refs": []
+        },
+        {
+          "text": "| Subscription Name | Duration | Level of Detail (1 is greatest) | Price (in USD) |\n| --- | --- | --- | --- |\n| All Access | 1 Month | 1 | 24.99 |\n| All Access | 1 Year | 1 | 149.99 |\n| Ukulele Beginner Lessons | 1 Month | 3 | 9.99 |\n| Ukulele Beginner Lessons | 1 Year | 3 | 49.99 |\n| Ukulele Advanced Lessons | 1 Month | 2 | 19.99 |\n| Ukulele Advanced Lessons | 1 Year | 2 | 99.99 |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create your subscription group",
+      "paragraphs": [
+        {
+          "text": "After you plan your subscription offerings, create a subscription group, which is the container for your subscriptions. You can create your subscription group by using `POST /v1/subscriptionGroups` (`POST-v1-subscriptionGroups`) with a payload.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroups"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionGroups\",\n    \"attributes\": {\n      \"referenceName\": \"Ukulele Lessons\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"6446148572\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The `referenceName` field is internal and isn’t displayed to people. Use a descriptive string that’s useful for your own organization and recognition purposes.",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example response, truncated for clarity:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\" : {\n    \"type\" : \"subscriptionGroups\",\n    \"id\" : \"2000036297\",\n    \"attributes\" : {\n      \"referenceName\" : \"Ukulele Lessons\"\n    },\n```",
+          "refs": []
+        },
+        {
+          "text": "The response contains an `id` field in the primary `data` object. You need this ID for subsequent steps.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create a version for your subscription group",
+      "paragraphs": [
+        {
+          "text": "Localized names for a subscription group live on a *subscription group version* — a draft container for the metadata that goes through App Review together. Create a version first, then attach localizations to it. The pre-4.4.1 workflow that posts localizations directly to the subscription group (`POST /v1/subscriptionGroupLocalizations`) is deprecated as of 4.4.1 but remains available for existing integrations.",
+          "refs": []
+        },
+        {
+          "text": "Create a draft version with `POST /v1/subscriptionGroupVersions` (`POST-v1-subscriptionGroupVersions`), relating it to the subscription group you just created:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionGroupVersions\",\n    \"relationships\": {\n      \"subscriptionGroup\": {\n        \"data\": {\n          \"type\": \"subscriptionGroups\",\n          \"id\": \"2000036297\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Note the version `id` in the response. You use it to attach localizations in the next step.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create your subscription group localization",
+      "paragraphs": [
+        {
+          "text": "Your localized subscription group name shows up in your app when someone reviews or purchases your auto-renewable subscription. To add a localization, use `POST /v2/subscriptionGroupLocalizations` (`POST-v2-subscriptionGroupLocalizations`) with a payload that specifies the localized name of the subscription group, the locale, and an optional custom app name. The payload relates the localization to the *version* — not the parent subscription group.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionGroupLocalizations"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionGroupLocalizations\",\n    \"attributes\": {\n      \"name\": \"Ukulele Lessons\",\n      \"locale\": \"en-AU\",\n      \"customAppName\": \"The Best Ukulele Lessons\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"subscriptionGroupVersions\",\n          \"id\": \"${subscriptionGroupVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Add each locale you support with its own `POST`. To list every localization attached to a version, use `GET /v1/subscriptionGroupVersions/{id}/localizations` (`GET-v1-subscriptionGroupVersions-_id_-localizations`). To list every version on the parent subscription group, use `GET /v1/subscriptionGroups/{id}/versions` (`GET-v1-subscriptionGroups-_id_-versions`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroupVersions-_id_-localizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionGroups-_id_-versions"
+          ]
+        },
+        {
+          "text": "After you configure your subscription group, create your subscription following the steps in `managing-auto-renewable-subscriptions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Subscription Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-subscription-group-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-groups",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-group-localizations-v1"
+      ]
+    }
+  ]
+}

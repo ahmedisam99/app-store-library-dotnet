@@ -1,0 +1,98 @@
+{
+  "id": "doc:appstoreconnectapi/in-app-purchase-versions",
+  "title": "In-App Purchase Versions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/in-app-purchase-versions",
+  "slug": "appstoreconnectapi/in-app-purchase-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and read draft versions of an in-app purchase, with their localized metadata and review images.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Each in-app purchase has a version, which is the container for the localizations and images related to that in-app purchase. Use the in-app purchase version for submitting to review.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-image",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-relationships-image",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-relationships-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-relationships-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-relationships-versions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionImageLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionImagesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionLocalizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseVersionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseV2VersionsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing In-App Purchases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-in-app-purchases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-in-app-purchase-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-price-schedules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images-v1"
+      ]
+    }
+  ]
+}

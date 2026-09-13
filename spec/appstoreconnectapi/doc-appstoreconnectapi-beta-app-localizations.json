@@ -1,0 +1,97 @@
+{
+  "id": "doc:appstoreconnectapi/beta-app-localizations",
+  "title": "Beta App Localizations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-app-localizations",
+  "slug": "appstoreconnectapi/beta-app-localizations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Beta test information about apps, specific to a locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `betaAppLocalization` resource represents one localized set of information about an app that is visible to beta testers. When distributing a prerelease app, the TestFlight app on the beta tester’s device displays information such as descriptions, URLs, and privacy policies. The information can be localized for the languages listed in `https://help.apple.com/app-store-connect/#/dev656087953`.",
+          "refs": [
+            "https://help.apple.com/app-store-connect/#/dev656087953"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Localization Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaAppLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaAppLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaAppLocalizations-_id_-app",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaAppLocalizations-_id_-relationships-app"
+      ]
+    },
+    {
+      "title": "Creating, Modifying, and Deleting Localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaAppLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-betaAppLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaAppLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationAppLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Resources",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/prerelease-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-license-agreements"
+      ]
+    }
+  ]
+}

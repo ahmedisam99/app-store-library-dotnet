@@ -1,0 +1,147 @@
+{
+  "id": "data:app_store_connect_api:AlternativeDistributionPackageVersionsResponse",
+  "title": "AlternativeDistributionPackageVersionsResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsResponse",
+  "slug": "appstoreconnectapi/alternativedistributionpackageversionsresponse",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list versions of an alternative distribution package.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AlternativeDistributionPackageVersionsResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AlternativeDistributionPackageVersion]",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionPackageVersion",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "AlternativeDistributionPackageDelta",
+            "AlternativeDistributionPackageVariant",
+            "AlternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This object is the response that contains a list of alternative distribution package versions. For more information, see `GET-v1-alternativeDistributionPackages-_id_-versions`. The schema of the response body is below.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackages-_id_-versions"
+          ]
+        },
+        {
+          "text": "```javascript\n{\n  \"data\": [\n    {\n      \"type\": \"alternativeDistributionPackageVersions\",\n      \"id\": \"string\",\n      \"attributes\": {\n        \"url\": \"string\",\n        \"urlExpirationDate\": \"2025-02-23T06:55:44.288Z\",\n        \"version\": \"string\",\n        \"state\": \"COMPLETED\"\n      },\n      \"relationships\": {\n        \"variants\": {\n          \"links\": {\n            \"self\": \"string\",\n            \"related\": \"string\"\n          },\n          \"meta\": {\n            \"paging\": {\n              \"total\": 0,\n              \"limit\": 0\n            }\n          },\n          \"data\": [\n            {\n              \"type\": \"alternativeDistributionPackageVariants\",\n              \"id\": \"string\"\n            }\n          ]\n        },\n        \"deltas\": {\n          \"links\": {\n            \"self\": \"string\",\n            \"related\": \"string\"\n          },\n          \"meta\": {\n            \"paging\": {\n              \"total\": 0,\n              \"limit\": 0\n            }\n          },\n          \"data\": [\n            {\n              \"type\": \"alternativeDistributionPackageDeltas\",\n              \"id\": \"string\"\n            }\n          ]\n        },\n        \"alternativeDistributionPackage\": {\n          \"links\": {\n            \"self\": \"string\",\n            \"related\": \"string\"\n          },\n          \"data\": {\n            \"type\": \"alternativeDistributionPackages\",\n            \"id\": \"string\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"string\"\n      }\n    },\n    \"included\": [\n      {\n        \"type\": \"alternativeDistributionPackageVariants\",\n        \"id\": \"string\",\n        \"attributes\": {\n          \"url\": \"string\",\n          \"urlExpirationDate\": \"2025-02-23T06:55:44.288Z\",\n          \"alternativeDistributionKeyBlob\": \"string\"\n        },\n        \"links\": {\n          \"self\": \"string\"\n        }\n      },\n      {\n        \"type\": \"alternativeDistributionPackageDeltas\",\n        \"id\": \"string\",\n        \"attributes\": {\n          \"url\": \"string\",\n          \"urlExpirationDate\": \"2025-02-23T06:55:44.288Z\",\n          \"alternativeDistributionKeyBlob\": \"string\"\n        },\n        \"links\": {\n          \"self\": \"string\"\n        }\n      },\n      {\n        \"type\": \"alternativeDistributionPackages\",\n        \"id\": \"string\",\n          \"relationships\": {\n          \"versions\": {\n            \"links\": {\n              \"self\": \"string\",\n              \"related\": \"string\"\n            },\n            \"meta\": {\n              \"paging\": {\n                \"total\": 0,\n                \"limit\": 0\n              }\n            },\n            \"data\": [\n              {\n                \"type\": \"alternativeDistributionPackageVersions\",\n                \"id\": \"string\"\n              }\n            ]\n          }\n        },\n        \"links\": {\n          \"self\": \"string\"\n        }\n      }\n    ],\n    \"links\": {\n      \"self\": \"string\",\n      \"first\": \"string\",\n      \"next\": \"string\"\n    },\n    \"meta\": {\n      \"paging\": {\n        \"total\": 0,\n        \"limit\": 0\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDelta",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltaResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageDeltasResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariant",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVariantsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionDeltasLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionVariantsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionPackageVersionsLinkagesResponse"
+      ]
+    }
+  ]
+}

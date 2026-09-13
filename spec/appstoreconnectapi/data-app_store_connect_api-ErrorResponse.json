@@ -1,0 +1,74 @@
+{
+  "id": "data:app_store_connect_api:ErrorResponse",
+  "title": "ErrorResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ErrorResponse",
+  "slug": "appstoreconnectapi/errorresponse",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The error details that an API returns in the response body whenever the API request isn’t successful.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ErrorResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errors",
+      "type": "[ErrorResponse.Errors]",
+      "typeId": "data:app_store_connect_api:ErrorResponse.Errors",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of one or more errors.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse/Errors-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/JsonPointer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Parameter"
+      ]
+    }
+  ]
+}

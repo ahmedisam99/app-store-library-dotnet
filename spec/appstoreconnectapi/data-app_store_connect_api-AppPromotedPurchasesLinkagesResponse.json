@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_connect_api:AppPromotedPurchasesLinkagesResponse",
+  "title": "AppPromotedPurchasesLinkagesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppPromotedPurchasesLinkagesResponse",
+  "slug": "appstoreconnectapi/apppromotedpurchaseslinkagesresponse",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing the resource identifiers of in-app purchases and subscriptions promoted on an app’s product page.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppPromotedPurchasesLinkagesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[AppPromotedPurchasesLinkagesResponse.Data]",
+      "typeId": "data:app_store_connect_api:AppPromotedPurchasesLinkagesResponse.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPromotedPurchasesLinkagesResponse/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PromotedPurchaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PromotedPurchasesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PromotedPurchaseCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PromotedPurchaseUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPromotedPurchasesLinkagesRequest"
+      ]
+    }
+  ]
+}

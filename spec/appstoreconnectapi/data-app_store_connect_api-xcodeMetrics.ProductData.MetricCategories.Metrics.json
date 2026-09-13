@@ -1,0 +1,108 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics",
+  "title": "xcodeMetrics.ProductData.MetricCategories.Metrics",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary",
+  "slug": "appstoreconnectapi/xcodemetrics/productdata-data.dictionary/metriccategories-data.dictionary/metrics-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Data that relates to power and performance measurements for an app, including its datasets, goal keys, metrics identifier, and unit of measurement.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics.ProductData.MetricCategories.Metrics",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "datasets",
+      "type": "[xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets]",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of datasets containing metric values by app version filtered by percentile and device type.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "goalKeys",
+      "type": "[xcodeMetrics.ProductData.MetricCategories.Metrics.GoalKeys]",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.GoalKeys",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "This property is deprecated. An array of terms used to classify a metric value, and the range of values for each classification.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "identifier",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The identifier of the specific metric within the contained metric category.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "unit",
+      "type": "xcodeMetrics.ProductData.MetricCategories.Metrics.Unit",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.Unit",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The metric’s unit of measurement.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Datasets-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/GoalKeys-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Unit-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

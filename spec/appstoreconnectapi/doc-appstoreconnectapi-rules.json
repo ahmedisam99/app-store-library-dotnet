@@ -1,0 +1,93 @@
+{
+  "id": "doc:appstoreconnectapi/rules",
+  "title": "Rules",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/rules",
+  "slug": "appstoreconnectapi/rules",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the matchmaking rules that Game Center uses to find players.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `rules` resource represents a matchmaking rule that Game Center applies to match requests in a queue.",
+          "refs": []
+        },
+        {
+          "text": "With matchmaking rules, you have finer control over automatch of players to fill empty slots in a match request. For example, use matchmaking rules to find compatible players and assign them to teams using game-specific information, such as skill level and other criteria. During development, you use the matchmaking rules APIs to upload your rules to the Game Center server. In your game code, you configure match requests to use your set of matchmaking rules. When you submit the match requests, Game Center applies your rules to the collective match requests from multiple game instances in the queue to fill the empty slots.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `matchmaking-rules` in the GameKit framework.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/matchmaking-rules"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, modifying, and deleting rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterMatchmakingRules-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterMatchmakingRules-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRule"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/expressions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rule-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/metrics"
+      ]
+    }
+  ]
+}

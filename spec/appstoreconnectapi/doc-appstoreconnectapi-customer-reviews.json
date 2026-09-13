@@ -1,0 +1,132 @@
+{
+  "id": "doc:appstoreconnectapi/customer-reviews",
+  "title": "Customer Reviews",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/customer-reviews",
+  "slug": "appstoreconnectapi/customer-reviews",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the customer reviews for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `customerReviews` resource represents the ratings and reviews that customers write for your app that the App Store displays. Customers can provide reviews for your app in the App Store, or when your app requests a review. For more information about reviews, see `https://developer.apple.com/app-store/ratings-and-reviews/`.",
+          "refs": [
+            "https://developer.apple.com/app-store/ratings-and-reviews/"
+          ]
+        },
+        {
+          "text": "Use this API to read the customer reviews for your app as follows:",
+          "refs": []
+        },
+        {
+          "text": "To manage your responses to the customers reviews, use the endpoints in `customer-review-responses`. For example, call `GET-v1-customerReviews-_id_-response` using the resource ID of the customer review to read your response to that review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/customer-review-responses",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-customerReviews-_id_-response"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Call the `GET-v1-apps-_id_-customerReviews` endpoint to get all customer reviews for your app. Filter the reviews by territory and rating, and sort them by date or rating. You can also get a list of the reviews with or without published responses.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-customerReviews"
+          ]
+        },
+        {
+          "text": "Call the `GET-v1-appStoreVersions-_id_-customerReviews` endpoint to get the customer reviews for a specific app version.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-customerReviews"
+          ]
+        },
+        {
+          "text": "Call the `GET-v1-customerReviews-_id_` endpoint using the resource ID of the review to read the details of a specific review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-customerReviews-_id_"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting customer reviews for an app or app version",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-customerReviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-customerReviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-customerReviews"
+      ]
+    },
+    {
+      "title": "Reading customer reviews",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-customerReviews-_id_"
+      ]
+    },
+    {
+      "title": "Reading review summariztions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-customerReviewSummarizations"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReviewsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReviewResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReview",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCustomerReviewsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReviewSummarization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReviewSummarizationsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Customer Reviews and Responses",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/customer-review-responses"
+      ]
+    }
+  ]
+}

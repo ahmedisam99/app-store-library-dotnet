@@ -1,0 +1,93 @@
+{
+  "id": "data:app_store_connect_api:AppClipAppStoreReviewDetailResponse",
+  "title": "AppClipAppStoreReviewDetailResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailResponse",
+  "slug": "appstoreconnectapi/appclipappstorereviewdetailresponse",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A response containing the App Store review details for a single App Clip.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAppStoreReviewDetailResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppClipAppStoreReviewDetail",
+      "typeId": "data:app_store_connect_api:AppClipAppStoreReviewDetail",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[AppClipDefaultExperience]",
+      "typeId": "data:app_store_connect_api:AppClipDefaultExperience",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetail",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAppStoreReviewDetailUpdateRequest"
+      ]
+    }
+  ]
+}

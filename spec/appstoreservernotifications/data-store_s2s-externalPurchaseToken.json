@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The unique identifier of the token. Use this value to report tokens and their associated transactions in the `Send-External-Purchase-Report` endpoint.",
         "refs": [
@@ -47,6 +48,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The UNIX time, in milliseconds, when the system created the token.",
         "refs": []
@@ -61,6 +63,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The app Apple ID for which the system generated the token.",
         "refs": []
@@ -75,6 +78,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The bundle ID of the app for which the system generated the token.",
         "refs": []
@@ -89,6 +93,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The UNIX time, in milliseconds, when a token expires. This field is present only for custom link tokens.",
         "refs": []
@@ -103,6 +108,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The custom link token type, either `SERVICES` or `ACQUISITION`. This field is present only for custom link tokens.",
         "refs": []
@@ -148,6 +154,10 @@
   "topics": [
     {
       "title": "External purchase token fields",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseId",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/tokenCreationDate",

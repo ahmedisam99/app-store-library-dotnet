@@ -1,0 +1,248 @@
+{
+  "id": "doc:appstoreconnectapi/working-with-subscription-versions",
+  "title": "Working with subscription versions",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/working-with-subscription-versions",
+  "slug": "appstoreconnectapi/working-with-subscription-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage draft versions of an auto-renewable subscription’s localized metadata and review images before submitting for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The pre-4.4.1 workflow that posts localizations and images directly to the subscription (`POST /v1/subscriptionLocalizations`, `POST /v1/subscriptionImages`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A subscription version is a draft container that groups the localized metadata and review images that go through App Review together. Create a version, attach localizations and images to it, then submit the version through the review submissions workflow. The parent subscription resource holds properties that stay stable across versions — its product ID, subscription duration, group, and pricing — while each version captures the reviewable metadata for a single review cycle.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The pre-4.4.1 workflow that posts localizations and images directly to the subscription (`POST /v1/subscriptionLocalizations`, `POST /v1/subscriptionImages`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Understand the version lifecycle",
+      "paragraphs": [
+        {
+          "text": "A version moves through these states, exposed on `SubscriptionVersion/Attributes/state`:",
+          "refs": []
+        },
+        {
+          "text": "Versions are read-only after creation. To change a version’s contents, create a new version.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`PREPARE_FOR_SUBMISSION`: the version is being edited. Localizations and images can be added, changed, or removed.",
+          "refs": []
+        },
+        {
+          "text": "`READY_FOR_REVIEW`: the version is attached to a review submission and awaiting the submission to be marked `submitted`.",
+          "refs": []
+        },
+        {
+          "text": "`WAITING_FOR_REVIEW`: the review submission has been submitted and the version is queued.",
+          "refs": []
+        },
+        {
+          "text": "`IN_REVIEW`: App Review is actively reviewing the version.",
+          "refs": []
+        },
+        {
+          "text": "`ACCEPTED` or `APPROVED`: the version passed review.",
+          "refs": []
+        },
+        {
+          "text": "`REJECTED` or `DEVELOPER_REJECTED`: the version was rejected by App Review or withdrawn by the developer.",
+          "refs": []
+        },
+        {
+          "text": "`REPLACED_WITH_NEW_VERSION`: a newer version supersedes this one.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create a version",
+      "paragraphs": [
+        {
+          "text": "Create a draft version with `POST /v1/subscriptionVersions` (`POST-v1-subscriptionVersions`). Relate it to the subscription whose metadata you’re updating:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionVersions\",\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6446671421\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response returns the new version’s `id` and a `state` of `PREPARE_FOR_SUBMISSION`. Note the `id` — every subsequent step references it.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Attach a localization to the version",
+      "paragraphs": [
+        {
+          "text": "Add a localized display name and description with `POST /v2/subscriptionLocalizations` (`POST-v2-subscriptionLocalizations`). The payload relates the localization to the version, not the parent subscription:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionLocalizations"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionLocalizations\",\n    \"attributes\": {\n      \"locale\": \"en-US\",\n      \"name\": \"All Access — Monthly\",\n      \"description\": \"Unlimited lessons across every instrument.\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"subscriptionVersions\",\n          \"id\": \"${subscriptionVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Repeat for each locale you support. To list the localizations attached to a version, use `GET /v1/subscriptionVersions/{id}/localizations` (`GET-v1-subscriptionVersions-_id_-localizations`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_-localizations"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Attach a review image to the version",
+      "paragraphs": [
+        {
+          "text": "A subscription version can carry review images that show the promotion image customers see on the App Store product page. Reserve, upload, and commit each image in three steps.",
+          "refs": []
+        },
+        {
+          "text": "Reserve an image with `POST /v2/subscriptionImages` (`POST-v2-subscriptionImages`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionImages"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionImages\",\n    \"attributes\": {\n      \"fileName\": \"all-access-promo.png\",\n      \"fileSize\": 245670\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"subscriptionVersions\",\n          \"id\": \"${subscriptionVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response returns an `id` for the image and a set of `uploadOperations` describing how to `PUT` the file bytes.",
+          "refs": []
+        },
+        {
+          "text": "Upload the image bytes to the URL from `uploadOperations`. Then commit the upload with `PATCH /v2/subscriptionImages/{id}` (`PATCH-v2-subscriptionImages-_id_`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-subscriptionImages-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionImages\",\n    \"id\": \"${subscriptionImageId}\",\n    \"attributes\": {\n      \"uploaded\": true\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Read image metadata with `GET /v2/subscriptionImages/{id}` (`GET-v2-subscriptionImages-_id_`). Remove an image with `DELETE /v2/subscriptionImages/{id}` (`DELETE-v2-subscriptionImages-_id_`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-subscriptionImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-subscriptionImages-_id_"
+          ]
+        },
+        {
+          "text": "For more on the reserve-upload-commit pattern, see `uploading-assets-to-app-store-connect`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "List all versions for a subscription",
+      "paragraphs": [
+        {
+          "text": "To see every version on a parent subscription, use `GET /v1/subscriptions/{id}/versions` (`GET-v1-subscriptions-_id_-versions`). The response includes each version’s state, so you can find the current draft, the most recently approved version, and any versions currently in review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-versions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Submit the version",
+      "paragraphs": [
+        {
+          "text": "Submit a completed version through the review submissions workflow. Create a review submission for the app, add the version as an item, and mark the submission as `submitted`. For step-by-step instructions, see `submitting-subscriptions-and-subscription-groups-for-app-review`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/submitting-subscriptions-and-subscription-groups-for-app-review"
+          ]
+        },
+        {
+          "text": "When you mark the submission `submitted`, the version moves from `READY_FOR_REVIEW` to `WAITING_FOR_REVIEW`. Poll `GET /v1/subscriptionVersions/{id}` (`GET-v1-subscriptionVersions-_id_`) to watch it continue to `IN_REVIEW` and then `APPROVED` or `REJECTED`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Auto-Renewable Subscriptions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-subscription-prices-across-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/querying-adjusted-subscription-price-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-plan-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/billing-grace-periods"
+      ]
+    }
+  ]
+}

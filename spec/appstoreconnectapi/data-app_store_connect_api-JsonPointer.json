@@ -1,0 +1,77 @@
+{
+  "id": "data:app_store_connect_api:JsonPointer",
+  "title": "JsonPointer",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/JsonPointer",
+  "slug": "appstoreconnectapi/jsonpointer",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "An object that contains the JSON pointer that indicates the location of the error.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object JsonPointer",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "pointer",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A JSON pointer that indicates the location in the request entity where the error originates.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "In some cases, the JSON pointer may indicate an element that isn’t in the request entity, but should be. For more information about JSON pointers, see the `https://tools.ietf.org/html/rfc6901` proposed standards document.",
+          "refs": [
+            "https://tools.ietf.org/html/rfc6901"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Parameter"
+      ]
+    }
+  ]
+}

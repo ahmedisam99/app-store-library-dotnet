@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_connect_api:AppMediaAssetState",
+  "title": "AppMediaAssetState",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppMediaAssetState",
+  "slug": "appstoreconnectapi/appmediaassetstate",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The state of an app or media upload, including any errors and warnings.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppMediaAssetState",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "errors",
+      "type": "[AppMediaStateError]",
+      "typeId": "data:app_store_connect_api:AppMediaStateError",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "state",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AWAITING_UPLOAD",
+            "UPLOAD_COMPLETE",
+            "COMPLETE",
+            "FAILED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "warnings",
+      "type": "[AppMediaStateError]",
+      "typeId": "data:app_store_connect_api:AppMediaStateError",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RoutingAppCoverageUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaStateError"
+      ]
+    }
+  ]
+}

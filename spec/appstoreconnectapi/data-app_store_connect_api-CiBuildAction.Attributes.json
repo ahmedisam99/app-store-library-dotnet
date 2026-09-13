@@ -1,0 +1,177 @@
+{
+  "id": "data:app_store_connect_api:CiBuildAction.Attributes",
+  "title": "CiBuildAction.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildAction/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildaction/attributes-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe a Build Actions resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildAction.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "actionType",
+      "type": "CiActionType",
+      "typeId": "data:app_store_connect_api:CiActionType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The type of the build action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "completionStatus",
+      "type": "CiCompletionStatus",
+      "typeId": "data:app_store_connect_api:CiCompletionStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The status of the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "executionProgress",
+      "type": "CiExecutionProgress",
+      "typeId": "data:app_store_connect_api:CiExecutionProgress",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates the progress of the build action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "finishedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time when Xcode Cloud finished performing the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isRequiredToPass",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the action must succeed in order for a build to succeed.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "issueCounts",
+      "type": "CiIssueCounts",
+      "typeId": "data:app_store_connect_api:CiIssueCounts",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An integer value that represents the number of issues Xcode Cloud encountered when it performed the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "name",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the build action; for example, `Archive iOS`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "startedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time when Xcode Cloud started performing the action.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiActionType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildAction/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

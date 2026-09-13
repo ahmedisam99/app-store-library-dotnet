@@ -1,0 +1,90 @@
+{
+  "id": "data:app_store_connect_api:diagnosticLogs.ProductData.DiagnosticLogs",
+  "title": "diagnosticLogs.ProductData.DiagnosticLogs",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticLogs-data.dictionary",
+  "slug": "appstoreconnectapi/diagnosticlogs/productdata-data.dictionary/diagnosticlogs-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The call stack representation and metadata of the diagnostic log.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object diagnosticLogs.ProductData.DiagnosticLogs",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "callStackTree",
+      "type": "[diagnosticLogs.ProductData.DiagnosticLogs.CallStackTree]",
+      "typeId": "data:app_store_connect_api:diagnosticLogs.ProductData.DiagnosticLogs.CallStackTree",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The call stack representation of the diagnostic log.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "diagnosticMetaData",
+      "type": "diagnosticLogs.ProductData.DiagnosticLogs.DiagnosticMetaData",
+      "typeId": "data:app_store_connect_api:diagnosticLogs.ProductData.DiagnosticLogs.DiagnosticMetaData",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Information about the diagnostic log the system captured.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticLogs-data.dictionary/CallStackTree-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticLogs-data.dictionary/DiagnosticMetaData-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticInsights-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightDirection",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightType"
+      ]
+    }
+  ]
+}

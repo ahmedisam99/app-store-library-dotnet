@@ -1,0 +1,113 @@
+{
+  "id": "doc:appstoreconnectapi/repositories",
+  "title": "Repositories",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/repositories",
+  "slug": "appstoreconnectapi/repositories",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read detailed information for each repository Xcode Cloud can access, including Git references and pull requests.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `scmRepositories` resource represents Git repositories Xcode Cloud can access. Use it to retrieve all repositories for a source code management provider you connected to Xcode Cloud and read:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The name and owner of the repository",
+          "refs": []
+        },
+        {
+          "text": "The date when Xcode Cloud last accessed the repository",
+          "refs": []
+        },
+        {
+          "text": "The HTTP and SSH URLs for cloning the repository",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Repository Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories-_id_-gitReferences",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories-_id_-relationships-gitReferences",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories-_id_-pullRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmRepositories-_id_-relationships-pullRequests"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepository",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoryResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoriesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoryGitReferencesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmRepositoryPullRequestsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Source Code Management",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/providers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pull-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/git-references"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "data:app_store_connect_api:CiProductResponse",
+  "title": "CiProductResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiProductResponse",
+  "slug": "appstoreconnectapi/ciproductresponse",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that read a single Xcode Cloud product.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiProductResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "CiProduct",
+      "typeId": "data:app_store_connect_api:CiProduct",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[*]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "App",
+            "BundleId",
+            "ScmRepository"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The requested relationship data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAdditionalRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductPrimaryRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductWorkflowsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiFilesAndFoldersRule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiScheduledStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestination"
+      ]
+    }
+  ]
+}

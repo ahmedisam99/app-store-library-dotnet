@@ -1,0 +1,159 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterAchievementLocalizations",
+  "title": "Create an Achievement Localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterAchievementLocalizations",
+  "slug": "appstoreconnectapi/post-v1-gamecenterachievementlocalizations",
+  "introducedAt": "3.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Add Game Center achievement localized information for a new locale.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterAchievementLocalizations",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterAchievementLocalizationCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterAchievementLocalizationCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterAchievementLocalizationResponse",
+      "typeId": "data:app_store_connect_api:GameCenterAchievementLocalizationResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations -d {\n    “data”: {\n        “type”: “gameCenterAchievementLocalizations”,\n        “attributes”: {\n            “locale”: “en-US”,\n            “name”: “Perfectly steamed milk”,\n            “afterEarnedDescription”: “You did it! The milk had the perfect texture.”,\n            “beforeEarnedDescription”: “You will earn this achievement upon steaming milk to the perfect texture.”\n        },\n        “relationships”: {\n            “gameCenterAchievement”: {\n                “data”: {\n                    “type”: “gameCenterAchievements”,\n                    “id”: “304e0f56-63b2-492f-980e-bce6fafb8502”\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n  “data” : {\n    “type” : “gameCenterAchievementLocalizations”,\n    “id” : “ca329301-e7ad-4784-97cd-02faade43c2f”,\n    “attributes” : {\n      “locale” : “en-US”,\n      “name” : “Perfectly steamed milk”,\n      “beforeEarnedDescription” : “You will earn this achievement upon steaming milk to the perfect texture.”,\n      “afterEarnedDescription” : “You did it! The milk had the perfect texture.”\n    },\n    “relationships” : {\n      “gameCenterAchievement” : {\n        “links” : {\n          “self” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations/ca329301-e7ad-4784-97cd-02faade43c2f/relationships/gameCenterAchievement”,\n          “related” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations/ca329301-e7ad-4784-97cd-02faade43c2f/gameCenterAchievement”\n        }\n      },\n      “gameCenterAchievementImage” : {\n        “links” : {\n          “self” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations/ca329301-e7ad-4784-97cd-02faade43c2f/relationships/gameCenterAchievementImage”,\n          “related” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations/ca329301-e7ad-4784-97cd-02faade43c2f/gameCenterAchievementImage”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations/ca329301-e7ad-4784-97cd-02faade43c2f”\n    }\n  },\n  “links” : {\n    “self” : “https://appstoreconnect.apple.com/v1/gameCenterAchievementLocalizations”\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, modifying, and deleting achievements localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-gameCenterAchievementLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterAchievementLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-gameCenterAchievementLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterAchievementLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterAchievementLocalizations-_id_"
+      ]
+    }
+  ]
+}

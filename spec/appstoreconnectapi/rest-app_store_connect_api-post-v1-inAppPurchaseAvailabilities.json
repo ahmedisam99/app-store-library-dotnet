@@ -1,0 +1,154 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-inAppPurchaseAvailabilities",
+  "title": "Modify the Territory Availablity of an In-App Purchase",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseAvailabilities",
+  "slug": "appstoreconnectapi/post-v1-inapppurchaseavailabilities",
+  "introducedAt": "2.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update the territory availablity of a specific in-app purchase.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/inAppPurchaseAvailabilities",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "InAppPurchaseAvailabilityCreateRequest",
+    "typeId": "data:app_store_connect_api:InAppPurchaseAvailabilityCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "InAppPurchaseAvailabilityResponse",
+      "typeId": "data:app_store_connect_api:InAppPurchaseAvailabilityResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/inAppPurchaseAvailabilities -d\n{\n  \"data\": {\n    \"type\": \"inAppPurchaseAvailabilities\",\n    \"attributes\": {\n      \"availableInNewTerritories\": true\n    },\n    \"relationships\": {\n      \"availableTerritories\": {\n        \"data\": [\n          {\n            \"type\": \"territories\",\n            \"id\": \"USA\"\n          },\n          {\n            \"type\": \"territories\",\n            \"id\": \"CAN\"\n          },\n          {\n            \"type\": \"territories\",\n            \"id\": \"ISL\"\n          }\n        ]\n      },\n      \"inAppPurchase\": {\n        \"data\": {\n          \"id\": \"6447501593\",\n          \"type\": \"inAppPurchases\"\n        }\n      }\n    }\n  }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"inAppPurchaseAvailabilities\",\n    \"id\" : \"6447501593\",\n    \"attributes\" : {\n      \"availableInNewTerritories\" : true\n    },\n    \"relationships\" : {\n      \"availableTerritories\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/inAppPurchaseAvailabilities/6447501593/relationships/availableTerritories\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/inAppPurchaseAvailabilities/6447501593/availableTerritories\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/inAppPurchaseAvailabilities/6447501593\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/inAppPurchaseAvailabilities\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseAvailabilities-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseAvailabilities-_id_-availableTerritories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseAvailabilities-_id_-relationships-availableTerritories"
+      ]
+    }
+  ]
+}

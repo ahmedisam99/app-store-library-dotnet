@@ -1,0 +1,101 @@
+{
+  "id": "data:app_store_connect_api:BuildBetaDetail.Attributes",
+  "title": "BuildBetaDetail.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildBetaDetail/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/buildbetadetail/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a Build Beta Details resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildBetaDetail.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "autoNotifyEnabled",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that enables you to send test invitations to users automatically when the build is available to external groups.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "externalBuildState",
+      "type": "ExternalBetaState",
+      "typeId": "data:app_store_connect_api:ExternalBetaState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A state that indicates if the build is available for external testing.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "internalBuildState",
+      "type": "InternalBetaState",
+      "typeId": "data:app_store_connect_api:InternalBetaState",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A state that indicates if the build is available for internal testing.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-beta-details"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBetaDetail/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

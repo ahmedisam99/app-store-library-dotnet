@@ -1,0 +1,662 @@
+{
+  "id": "data:app_store_connect_api:AgeRatingDeclaration.Attributes",
+  "title": "AgeRatingDeclaration.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AgeRatingDeclaration/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/ageratingdeclaration/attributes-data.dictionary",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe an Age Rating Declarations resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AgeRatingDeclaration.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "advertising",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app contains advertising.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "alcoholTobaccoOrDrugUseOrReferences",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for alcohol, tobacco, or drug use.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "contests",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for contests.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "gambling",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for gambling, provided as a Boolean value.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "gamblingSimulated",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for simulated gambling.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "gunsOrOtherWeapons",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for guns or other weapons. Allowed values are NONE, INFREQUENT_OR_MILD, FREQUENT_OR_INTENSE, INFREQUENT, and FREQUENT.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "healthOrWellnessTopics",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app contains health or wellness topics.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "kidsAgeBand",
+      "type": "KidsAgeBand",
+      "typeId": "data:app_store_connect_api:KidsAgeBand",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for the Kids Age Band value.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lootBox",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app contains loot boxes or other randomized virtual item mechanics.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "medicalOrTreatmentInformation",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for medical or treatment-focused content.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "messagingAndChat",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app includes messaging or chat functionality.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "parentalControls",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app offers parental controls.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "profanityOrCrudeHumor",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for profanity or crude humor.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "ageAssurance",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app uses age assurance to verify a person’s age.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sexualContentGraphicAndNudity",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for graphic sexual content and nudity.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sexualContentOrNudity",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for sexual content or nudity.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "socialMedia",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app includes social media features.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "socialMediaAgeRestricted",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app’s social media features are age restricted.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "horrorOrFearThemes",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for horror or fear themed content.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "matureOrSuggestiveThemes",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for mature or suggestive themes.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "unrestrictedWebAccess",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for unrestricted web access, such as with an embedded browser, provided as a Boolean value.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "userGeneratedContent",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app includes user-generated content.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "violenceCartoonOrFantasy",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for cartoon or fantasy violence.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "violenceRealisticProlongedGraphicOrSadistic",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for prolonged realistic or sadistic violence.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "violenceRealistic",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "INFREQUENT_OR_MILD",
+            "FREQUENT_OR_INTENSE",
+            "INFREQUENT",
+            "FREQUENT"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Declaration for realistic violence.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "ageRatingOverride",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "NINE_PLUS",
+            "THIRTEEN_PLUS",
+            "SIXTEEN_PLUS",
+            "SEVENTEEN_PLUS",
+            "UNRATED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An override you set for the app’s calculated age rating. Allowed values are NONE, NINE_PLUS, THIRTEEN_PLUS, SIXTEEN_PLUS, SEVENTEEN_PLUS, and UNRATED. This attribute is deprecated; use ageRatingOverrideV2 instead.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "ageRatingOverrideV2",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "NINE_PLUS",
+            "THIRTEEN_PLUS",
+            "SIXTEEN_PLUS",
+            "EIGHTEEN_PLUS",
+            "UNRATED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An override you set for the app’s calculated age rating. Allowed values are NONE, NINE_PLUS, THIRTEEN_PLUS, SIXTEEN_PLUS, EIGHTEEN_PLUS, and UNRATED.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "koreaAgeRatingOverride",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NONE",
+            "FIFTEEN_PLUS",
+            "NINETEEN_PLUS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An override you set for the app’s calculated age rating in Korea. Allowed values are NONE, FIFTEEN_PLUS, and NINETEEN_PLUS.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "developerAgeRatingInfoUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The URL where people can find more information about how you determine the app’s age rating.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

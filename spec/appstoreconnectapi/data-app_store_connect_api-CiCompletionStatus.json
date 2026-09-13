@@ -1,0 +1,109 @@
+{
+  "id": "data:app_store_connect_api:CiCompletionStatus",
+  "title": "CiCompletionStatus",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiCompletionStatus",
+  "slug": "appstoreconnectapi/cicompletionstatus",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A string that represents the completion status of an Xcode Cloud build.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string CiCompletionStatus",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "SUCCEEDED",
+      "abstract": {
+        "text": "Xcode Cloud successfully completed a build.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "FAILED",
+      "abstract": {
+        "text": "The Xcode Cloud build failed; for example, if you configure the Required to Pass setting for a test action and a unit test fails. For more information, see `https://developer.apple.com/documentation/xcode/configuring-your-xcode-cloud-workflow-s-actions#Add-a-test-action`.",
+        "refs": [
+          "https://developer.apple.com/documentation/xcode/configuring-your-xcode-cloud-workflow-s-actions#Add-a-test-action"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ERRORED",
+      "abstract": {
+        "text": "Xcode Cloud encountered an internal error when it performed the build.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "CANCELED",
+      "abstract": {
+        "text": "Xcode Cloud canceled the build because you manually canceled an ongoing build or because you enabled the Auto-cancel Builds setting for a workflow. For more information about the Auto-cancel Builds setting, see `https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference`.",
+        "refs": [
+          "https://developer.apple.com/documentation/xcode/xcode-cloud-workflow-reference"
+        ]
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "SKIPPED",
+      "abstract": {
+        "text": "Xcode Cloud skipped the build; for example, if you configure the Auto-cancel Builds setting for a workflow and push many changes in quick succession.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAdditionalRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductAppLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductPrimaryRepositoriesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProductWorkflowsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiFilesAndFoldersRule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiScheduledStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTagStartCondition"
+      ]
+    }
+  ]
+}

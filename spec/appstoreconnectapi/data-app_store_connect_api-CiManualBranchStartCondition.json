@@ -1,0 +1,71 @@
+{
+  "id": "data:app_store_connect_api:CiManualBranchStartCondition",
+  "title": "CiManualBranchStartCondition",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiManualBranchStartCondition",
+  "slug": "appstoreconnectapi/cimanualbranchstartcondition",
+  "introducedAt": "3.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A workflow start condition that triggers an Xcode Cloud build when a specified branch is manually selected.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiManualBranchStartCondition",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "source",
+      "type": "CiBranchPatterns",
+      "typeId": "data:app_store_connect_api:CiBranchPatterns",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiAction",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowRepositoryLinkageResponse"
+      ]
+    }
+  ]
+}

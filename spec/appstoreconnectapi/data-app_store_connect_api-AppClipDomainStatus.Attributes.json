@@ -1,0 +1,76 @@
+{
+  "id": "data:app_store_connect_api:AppClipDomainStatus.Attributes",
+  "title": "AppClipDomainStatus.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipDomainStatus/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/appclipdomainstatus/attributes-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe the App Clip Domain Status resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipDomainStatus.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "domains",
+      "type": "[AppClipDomainStatus.Attributes.Domains]",
+      "typeId": "data:app_store_connect_api:AppClipDomainStatus.Attributes.Domains",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of domains you associated with your app or App Clip.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lastUpdatedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date when App Store Connect last verified the status of an associated domain.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipDomainStatus/Attributes-data.dictionary/Domains-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

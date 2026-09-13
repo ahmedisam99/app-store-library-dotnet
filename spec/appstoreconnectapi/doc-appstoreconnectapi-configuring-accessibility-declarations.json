@@ -1,0 +1,277 @@
+{
+  "id": "doc:appstoreconnectapi/configuring-accessibility-declarations",
+  "title": "Configuring accessibility declarations for your app",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/configuring-accessibility-declarations",
+  "slug": "appstoreconnectapi/configuring-accessibility-declarations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage accessibility metadata for your apps per device family.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "The response value for `GET-v1-accessibilityDeclarations-_id_` includes the `state` attribute, which indicates whether your accessibility declaration appears on your App Store page.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-accessibilityDeclarations-_id_"
+        ]
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Accessibility\u00A0Feature",
+        "Attribute\u00A0Name\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0",
+        "iOS/iPadOS",
+        "tvOS",
+        "macOS",
+        "visionOS",
+        "watchOS"
+      ],
+      "rows": [
+        [
+          "VoiceOver",
+          "`supportsVoiceover`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Voice\u00A0Control",
+          "`supportsVoiceControl`",
+          "✔",
+          "",
+          "✔",
+          "✔",
+          ""
+        ],
+        [
+          "Larger Text",
+          "`supportsLargerText`",
+          "✔",
+          "✔",
+          "",
+          "✔",
+          "✔"
+        ],
+        [
+          "Sufficient Contrast",
+          "`supportsSufficientContrast`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Dark Interface",
+          "`supportsDarkInterface`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Differentiate Without Color Alone",
+          "`supportsDifferentiateWithoutColorAlone`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Reduced Motion",
+          "`supportsReducedMotion`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Captions",
+          "`supportsCaptions`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ],
+        [
+          "Audio Descriptions",
+          "`supportsAudioDescriptions`",
+          "✔",
+          "✔",
+          "✔",
+          "✔",
+          "✔"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "You use the App Store Connect API to create and configure accessibility declarations for your app. After you create an accessibility declaration, you can update the list of supported features, and also remove the accessibility declaration. Accessibility declarations enable you to show the accessibility modalities and the specific features that your app supports. Once you create an accessibility declaration, your App Store page shows the accessibility details for your app. You make accessibility declarations for each app and these apply to a device family, such as `IPHONE`, `IPAD`, or `VISION`, to learn more, see `DeviceFamily`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily"
+          ]
+        },
+        {
+          "text": "Use this term list and table to understand what details to include in your app’s accessibility declaration.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read accessibility feature details",
+      "paragraphs": [
+        {
+          "text": "Here’s what each accessibility feature provides:",
+          "refs": []
+        },
+        {
+          "text": "- **`supportsVoiceover`** — Navigate and explore the app using gestures, braille, and speech output.\n- **`supportsVoiceControl`** — Navigate and interact with the app using your voice to tap, swipe, type, and more.\n- **`supportsLargerText`** — Increase the text size in the app to 200 percent or more.\n- **`supportsSufficientContrast`** — Increase or adjust the contrast between text or iconography and background.\n- **`supportsDarkInterface`** — Apply a dark color scheme to the screens, menus, and controls to reduce eye strain.\n- **`supportsDifferentiateWithoutColorAlone`** — Use shapes or text, in addition to or instead of color, to distinguish key information.\n- **`supportsReducedMotion`** — Modify or reduce certain types of animation that may cause motion sickness or discomfort.\n- **`supportsCaptions`** — Display the dialog and relevant sounds of video or audio-only content with time-synchronized text.\n- **`supportsAudioDescriptions`** — Hear audio descriptions of video content in a clip, show, or movie with time-synchronized narration.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read accessibility feature device family compatibility",
+      "paragraphs": [
+        {
+          "text": "This table shows the compatibility for each accessibility feature and platform:",
+          "refs": []
+        },
+        {
+          "text": "| Accessibility\u00A0Feature | Attribute\u00A0Name\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0 | iOS/iPadOS | tvOS | macOS | visionOS | watchOS |\n| --- | --- | --- | --- | --- | --- | --- |\n| VoiceOver | `supportsVoiceover` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Voice\u00A0Control | `supportsVoiceControl` | ✔ |  | ✔ | ✔ |  |\n| Larger Text | `supportsLargerText` | ✔ | ✔ |  | ✔ | ✔ |\n| Sufficient Contrast | `supportsSufficientContrast` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Dark Interface | `supportsDarkInterface` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Differentiate Without Color Alone | `supportsDifferentiateWithoutColorAlone` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Reduced Motion | `supportsReducedMotion` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Captions | `supportsCaptions` | ✔ | ✔ | ✔ | ✔ | ✔ |\n| Audio Descriptions | `supportsAudioDescriptions` | ✔ | ✔ | ✔ | ✔ | ✔ |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create an accessibility declarations for your app",
+      "paragraphs": [
+        {
+          "text": "After you determine the accessibility features your app supoorts, create an accessibility declaration, by using `POST-v1-accessibilityDeclarations` with a payload.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-accessibilityDeclarations"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"accessibilityDeclarations\",\n    \"attributes\": {\n      \"deviceFamily\": \"IPHONE\",\n      \"supportsAudioDescriptions\": true,\n      \"supportsCaptions\": true,\n      \"supportsDarkInterface\": true,\n      \"supportsDifferentiateWithoutColorAlone\": true,\n      \"supportsLargerText\": true,\n      \"supportsReducedMotion\": true,\n      \"supportsSufficientContrast\": true,\n      \"supportsVoiceControl\": false,\n      \"supportsVoiceover\": false\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"{appID}\"\n        }\n      }\n    }\n  }\n}\n\n```",
+          "refs": []
+        },
+        {
+          "text": "The response includes a unique identifier.",
+          "refs": []
+        },
+        {
+          "text": "Each device family your app supports can have their own accessibility declaration. To learn more, see `DeviceFamily`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Read the accessibility declarations for your app",
+      "paragraphs": [
+        {
+          "text": "You can use `GET-v1-accessibilityDeclarations-_id_` with the unique identifier from the `POST` call you made, to look up the details of your current accessibility declaration. You can also get that unqiue identifier by using `GET-v1-apps-_id_-accessibilityDeclarations`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-accessibilityDeclarations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-accessibilityDeclarations"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> The response value for `GET-v1-accessibilityDeclarations-_id_` includes the `state` attribute, which indicates whether your accessibility declaration appears on your App Store page.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-accessibilityDeclarations-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Modify the accessibility declarations for your app",
+      "paragraphs": [
+        {
+          "text": "If you need to update your accessibility declaration, use `PATCH-v1-accessibilityDeclarations-_id_`. You can supply any number of the available attributes with a corresponding Boolean value when modifying an accessibility declaration when it is in `DRAFT` state.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-accessibilityDeclarations-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Publishing the accessibility declarations for your app",
+      "paragraphs": [
+        {
+          "text": "When you are ready to show your accessibility declarations on your app’s page in the App Store, use `PATCH-v1-accessibilityDeclarations-_id_` with a payload like this:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-accessibilityDeclarations-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"accessibilityDeclarations\",\n    \"id\": \"<id>\",\n    \"attributes\": {\n      \"publish\": true\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Remove an accessibility declaration for your app",
+      "paragraphs": [
+        {
+          "text": "If you need to remove an accessibility declaration for an app, use `DELETE-v1-accessibilityDeclarations-_id_`. You can only remove accessibility declarations that are in the `DRAFT` state. This deletes the declaration details. To create a new accessibility declaration, use `POST-v1-accessibilityDeclarations`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-accessibilityDeclarations-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-accessibilityDeclarations"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

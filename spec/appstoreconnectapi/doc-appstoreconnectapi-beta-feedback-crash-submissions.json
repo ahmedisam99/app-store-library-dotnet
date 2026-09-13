@@ -1,0 +1,129 @@
+{
+  "id": "doc:appstoreconnectapi/beta-feedback-crash-submissions",
+  "title": "Beta feedback crash submissions",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-feedback-crash-submissions",
+  "slug": "appstoreconnectapi/beta-feedback-crash-submissions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get TestFlight feedback crashes from beta testers for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use this API to read details about crashes submitted by testers while testing your beta app builds. There are many filters available for these endpoints to help you identify patterns and isolate issues.",
+          "refs": []
+        },
+        {
+          "text": "You can get new beta feedback crash submissions in two ways:",
+          "refs": []
+        },
+        {
+          "text": "To manage beta feedback crash submissions, be sure you have one of the following user roles:",
+          "refs": []
+        },
+        {
+          "text": "Both Team and Individual keys can use these endpoints with the correct role.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Make active `GET` request to look up new beta feedback crash submissions.",
+          "refs": []
+        },
+        {
+          "text": "Set up a webhook to get a notification when there is new beta feedback crash submissions. Then look up the corresponding feedback. To learn more, see `webhook-notifications`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/webhook-notifications"
+          ]
+        },
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP MANAGER`",
+          "refs": []
+        },
+        {
+          "text": "`DEVELOPER`",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading and deleting beta feedback crash submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-betaFeedbackCrashSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-betaFeedbackCrashSubmissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaFeedbackCrashSubmissions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaFeedbackCrashSubmissions-_id_-crashLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaFeedbackCrashSubmissions-_id_-relationships-crashLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-betaFeedbackCrashSubmissions-_id_"
+      ]
+    },
+    {
+      "title": "Read beta crash logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-betaCrashLogs-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaCrashLog",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaCrashLogResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackCrashSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackCrashSubmissionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackCrashSubmissionsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaFeedbackCrashSubmissionCrashLogLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceConnectionType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Beta Feedback",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-feedback-screenshot-submissions"
+      ]
+    }
+  ]
+}

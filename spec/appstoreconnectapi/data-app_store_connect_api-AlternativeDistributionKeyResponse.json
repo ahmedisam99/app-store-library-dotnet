@@ -1,0 +1,95 @@
+{
+  "id": "data:app_store_connect_api:AlternativeDistributionKeyResponse",
+  "title": "AlternativeDistributionKeyResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AlternativeDistributionKeyResponse",
+  "slug": "appstoreconnectapi/alternativedistributionkeyresponse",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create or read a single alternative distribution key.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AlternativeDistributionKeyResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AlternativeDistributionKey",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionKey",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "This object is the response from the alternative distribution key endpoints. For more information about alternative distribution keys, see Creating and reading keys.",
+          "refs": []
+        },
+        {
+          "text": "```javascript\n{\n  \"data\": {\n     \"type\": \"alternativeDistributionKeys\",\n     \"id\": \"string\",\n     \"attributes\": {\n       \"publicKey\": \"string\"\n     },\n     \"links\": {\n       \"self\": \"string\"\n     }\n  },\n  \"links\": {\n    \"self\": \"string\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKeysResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKeyCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAlternativeDistributionKeyLinkageResponse"
+      ]
+    }
+  ]
+}

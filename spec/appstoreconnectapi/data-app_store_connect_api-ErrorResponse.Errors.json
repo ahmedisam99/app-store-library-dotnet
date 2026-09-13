@@ -1,0 +1,192 @@
+{
+  "id": "data:app_store_connect_api:ErrorResponse.Errors",
+  "title": "ErrorResponse.Errors",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/ErrorResponse/Errors-data.dictionary",
+  "slug": "appstoreconnectapi/errorresponse/errors-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The details about an error that are returned when an API request isn’t successful.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object ErrorResponse.Errors",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "code",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A machine-readable code indicating the type of error. The code is a hierarchical value with levels of specificity separated by the ‘`.`’ character. This value is parseable for programmatic error handling in code.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "status",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The HTTP status code of the error. This status code usually matches the response’s status code; however, if the request produces multiple errors, these two codes may differ.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The unique ID of a specific instance of an error, request, and response. Use this ID when providing feedback to or debugging issues with Apple.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "title",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A summary of the error. Do not use this field for programmatic error handling.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "detail",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A detailed explanation of the error. Do not use this field for programmatic error handling.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "source",
+      "type": "*",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedTypes",
+          "value": null,
+          "values": [
+            "JsonPointer",
+            "Parameter"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "One of two possible types of values: `source.Parameter`, provided when a query parameter produced the error, or `source.JsonPointer`, provided when a problem with the entity produced the error.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "ErrorResponse.Errors.Meta",
+      "typeId": "data:app_store_connect_api:ErrorResponse.Errors.Meta",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ErrorLinks",
+      "typeId": "data:app_store_connect_api:ErrorLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use the `code` parameter for programmatic error handling. See `parsing-the-error-response-code` for more information. For more information about using the `source` parameter, see `pinpointing-the-location-of-errors`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/parsing-the-error-response-code",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pinpointing-the-location-of-errors"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/JsonPointer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Parameter",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ErrorResponse/Errors-data.dictionary/Meta-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

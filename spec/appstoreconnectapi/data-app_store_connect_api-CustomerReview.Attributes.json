@@ -1,0 +1,158 @@
+{
+  "id": "data:app_store_connect_api:CustomerReview.Attributes",
+  "title": "CustomerReview.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CustomerReview/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/customerreview/attributes-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes of the customer’s review including its content.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CustomerReview.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "body",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The review text that the customer wrote.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "createdDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time the customer created the review.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "rating",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "minimum",
+          "value": "1",
+          "values": null
+        },
+        {
+          "kind": "maximum",
+          "value": "5",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The rating the customer provided.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "reviewerNickname",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The customer’s nickname used in the review.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "title",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The title that the customer wrote for the review.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "territory",
+      "type": "TerritoryCode",
+      "typeId": "data:app_store_connect_api:TerritoryCode",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The App Store territory.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryCode"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CustomerReview/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

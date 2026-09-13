@@ -1,0 +1,158 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-version-localizations",
+  "title": "App Store Version Localizations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-version-localizations",
+  "slug": "appstoreconnectapi/app-store-version-localizations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and maintain version-specific App Store metadata that’s localized.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use `appStoreVersionLocalizations` to create and maintain your App Store metadata in different languages. This resource includes the following attributes:",
+          "refs": []
+        },
+        {
+          "text": "You can update the Promotional Text for your version at any time. Update other attributes when your app is in an editable state. For information about required, localized, and editable metadata, see `https://developer.apple.com/help/app-store-connect/reference/required-localizable-and-editable-properties`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/required-localizable-and-editable-properties"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Locale",
+          "refs": []
+        },
+        {
+          "text": "Description",
+          "refs": []
+        },
+        {
+          "text": "Keywords",
+          "refs": []
+        },
+        {
+          "text": "Marketing URL",
+          "refs": []
+        },
+        {
+          "text": "Promotional Text",
+          "refs": []
+        },
+        {
+          "text": "Support URL",
+          "refs": []
+        },
+        {
+          "text": "What’s New Text",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Version Localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersions-_id_-appStoreVersionLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Creating, Modifying, and Deleting Version Localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersionLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionLocalizations-_id_"
+      ]
+    },
+    {
+      "title": "Getting Information from a Localization",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-relationships-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-relationships-appScreenshotSets"
+      ]
+    },
+    {
+      "title": "Search Keywords",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-searchKeywords",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreVersionLocalizations-_id_-relationships-searchKeywords",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionLocalizations-_id_-relationships-searchKeywords",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionLocalizations-_id_-relationships-searchKeywords"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalization",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationSearchKeywordsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionLocalizationSearchKeywordsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-infos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-info-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/routing-app-coverages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/accessibility-declarations"
+      ]
+    }
+  ]
+}

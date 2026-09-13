@@ -1,0 +1,308 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-gameCenterDetails-{}-gameCenterAppVersions",
+  "title": "Read app versions for a game center detail",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-gameCenterAppVersions",
+  "slug": "appstoreconnectapi/get-v1-gamecenterdetails-_id_-gamecenterappversions",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of app versions for a Game Center detail.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterDetails/{id}/gameCenterAppVersions",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterAppVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "enabled",
+            "compatibilityVersions",
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[enabled]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "compatibilityVersions",
+            "appStoreVersion"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[compatibilityVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterAppVersionsResponse",
+      "typeId": "data:app_store_connect_api:GameCenterAppVersionsResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/gameCenterDetails/83b895ff-7bfe-5056-1208-ffd0d6a74e46/gameCenterAppVersions?limit=5\n```\n\n**Response**\n\n```json\n{\n  “data” : [ {\n    “type” : “gameCenterAppVersions”,\n    “id” : “1d9b87fb-80c4-44eb-a114-a51aeebd82fc”,\n    “attributes” : {\n      “enabled” : false\n    },\n    “relationships” : {\n      “compatibilityVersions” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/1d9b87fb-80c4-44eb-a114-a51aeebd82fc/relationships/compatibilityVersions”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/1d9b87fb-80c4-44eb-a114-a51aeebd82fc/compatibilityVersions”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/1d9b87fb-80c4-44eb-a114-a51aeebd82fc/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/1d9b87fb-80c4-44eb-a114-a51aeebd82fc/appStoreVersion”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/1d9b87fb-80c4-44eb-a114-a51aeebd82fc”\n    }\n  }, {\n    “type” : “gameCenterAppVersions”,\n    “id” : “6ee80093-de91-9073-a043-4e7dcd28ae7b”,\n    “attributes” : {\n      “enabled” : true\n    },\n    “relationships” : {\n      “compatibilityVersions” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/6ee80093-de91-9073-a043-4e7dcd28ae7b/relationships/compatibilityVersions”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/6ee80093-de91-9073-a043-4e7dcd28ae7b/compatibilityVersions”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/6ee80093-de91-9073-a043-4e7dcd28ae7b/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/6ee80093-de91-9073-a043-4e7dcd28ae7b/appStoreVersion”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/6ee80093-de91-9073-a043-4e7dcd28ae7b”\n    }\n  }, {\n    “type” : “gameCenterAppVersions”,\n    “id” : “7bb8ca27-b622-43e1-a838-15b18dc58421”,\n    “attributes” : {\n      “enabled” : true\n    },\n    “relationships” : {\n      “compatibilityVersions” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/7bb8ca27-b622-43e1-a838-15b18dc58421/relationships/compatibilityVersions”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/7bb8ca27-b622-43e1-a838-15b18dc58421/compatibilityVersions”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/7bb8ca27-b622-43e1-a838-15b18dc58421/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/7bb8ca27-b622-43e1-a838-15b18dc58421/appStoreVersion”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/7bb8ca27-b622-43e1-a838-15b18dc58421”\n    }\n  }, {\n    “type” : “gameCenterAppVersions”,\n    “id” : “97c63a59-3dee-a1b3-6bec-5f0a2245c445”,\n    “attributes” : {\n      “enabled” : true\n    },\n    “relationships” : {\n      “compatibilityVersions” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/97c63a59-3dee-a1b3-6bec-5f0a2245c445/relationships/compatibilityVersions”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/97c63a59-3dee-a1b3-6bec-5f0a2245c445/compatibilityVersions”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/97c63a59-3dee-a1b3-6bec-5f0a2245c445/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/97c63a59-3dee-a1b3-6bec-5f0a2245c445/appStoreVersion”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/97c63a59-3dee-a1b3-6bec-5f0a2245c445”\n    }\n  }, {\n    “type” : “gameCenterAppVersions”,\n    “id” : “a3d76fe2-5baf-e9e7-198f-dcec974711eb”,\n    “attributes” : {\n      “enabled” : true\n    },\n    “relationships” : {\n      “compatibilityVersions” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/a3d76fe2-5baf-e9e7-198f-dcec974711eb/relationships/compatibilityVersions”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/a3d76fe2-5baf-e9e7-198f-dcec974711eb/compatibilityVersions”\n        }\n      },\n      “appStoreVersion” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/a3d76fe2-5baf-e9e7-198f-dcec974711eb/relationships/appStoreVersion”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/a3d76fe2-5baf-e9e7-198f-dcec974711eb/appStoreVersion”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterAppVersions/a3d76fe2-5baf-e9e7-198f-dcec974711eb”\n    }\n  } ],\n  “links” : {\n    “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterDetails/83b895ff-7bfe-5056-1208-ffd0d6a74e46/gameCenterAppVersions?limit=5”,\n    “next” : “https://api.appstoreconnect.apple.com/v1/gameCenterDetails/83b895ff-7bfe-5056-1208-ffd0d6a74e46/gameCenterAppVersions?cursor=ODExNDMwNzYw.Wc8eXw&limit=5”\n  },\n  “meta” : {\n    “paging” : {\n      “total” : 14,\n      “limit” : 5\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Reading Game Center app versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-relationships-gameCenterAppVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterAppVersions-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterAppVersions-_id_-appStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterAppVersions-_id_-relationships-appStoreVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterAppVersions-_id_-compatibilityVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterAppVersions-_id_-relationships-compatibilityVersions"
+      ]
+    }
+  ]
+}

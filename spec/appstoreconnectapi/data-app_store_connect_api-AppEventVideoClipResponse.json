@@ -1,0 +1,97 @@
+{
+  "id": "data:app_store_connect_api:AppEventVideoClipResponse",
+  "title": "AppEventVideoClipResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppEventVideoClipResponse",
+  "slug": "appstoreconnectapi/appeventvideoclipresponse",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that create, read, or modify an in-app event video clip.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppEventVideoClipResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppEventVideoClip",
+      "typeId": "data:app_store_connect_api:AppEventVideoClip",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[AppEventLocalization]",
+      "typeId": "data:app_store_connect_api:AppEventLocalization",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClip",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEventVideoClipsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PreviewFrameImage",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaVideoState",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppMediaPreviewFrameImageState"
+      ]
+    }
+  ]
+}

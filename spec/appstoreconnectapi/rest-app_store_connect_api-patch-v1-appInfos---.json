@@ -1,0 +1,177 @@
+{
+  "id": "rest:app_store_connect_api:patch:v1-appInfos-{}",
+  "title": "Modify an app info",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PATCH-v1-appInfos-_id_",
+  "slug": "appstoreconnectapi/patch-v1-appinfos-_id_",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update the App Store categories and sub-categories for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "PATCH",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appInfos/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the `appInfo` resource ID from the `GET-v1-apps-_id_-appInfos` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appInfos"
+        ]
+      }
+    }
+  ],
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppInfoUpdateRequest",
+    "typeId": "data:app_store_connect_api:AppInfoUpdateRequest",
+    "abstract": {
+      "text": "The request body you use to update an App Info.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppInfoResponse",
+      "typeId": "data:app_store_connect_api:AppInfoResponse",
+      "abstract": {
+        "text": "Request succeeded.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "Use this endpoint to modify the primary and secondary categories and subcategories for an app.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Add an App to the Games Category and the Sports and Role Playing Subcategories",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPATCH https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4\n\n{\n  \"data\": {\n    \"type\": \"appInfos\",\n    \"id\": \"61d77dc2-9313-4330-b169-d179277ccfc4\",\n    \"relationships\": {\n      \"primaryCategory\": {\n        \"data\": {\n          \"type\": \"appCategories\",\n          \"id\": \"GAMES\"\n        }\n      },\n      \"primarySubcategoryOne\": {\n        \"data\": {\n          \"type\": \"appCategories\",\n          \"id\": \"GAMES_SPORTS\"\n        }\n      },\n      \"primarySubcategoryTwo\": {\n        \"data\": {\n          \"type\": \"appCategories\",\n          \"id\": \"GAMES_ROLE_PLAYING\"\n        }\n      }\n    }\n  }\n}\n\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"appInfos\",\n    \"id\": \"61d77dc2-9313-4330-b169-d179277ccfc4\",\n    \"attributes\": {\n      \"appStoreState\": \"READY_FOR_SALE\",\n      \"appStoreAgeRating\": \"TWELVE_PLUS\",\n      \"brazilAgeRating\": \"FOURTEEN\",\n      \"kidsAgeBand\": null\n    },\n    \"relationships\": {\n      \"app\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/app\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/app\"\n        }\n      },\n      \"appInfoLocalizations\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/appInfoLocalizations\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/appInfoLocalizations\"\n        }\n      },\n      \"primaryCategory\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/primaryCategory\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/primaryCategory\"\n        }\n      },\n      \"primarySubcategoryOne\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/primarySubcategoryOne\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/primarySubcategoryOne\"\n        }\n      },\n      \"primarySubcategoryTwo\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/primarySubcategoryTwo\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/primarySubcategoryTwo\"\n        }\n      },\n      \"secondaryCategory\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/secondaryCategory\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/secondaryCategory\"\n        }\n      },\n      \"secondarySubcategoryOne\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/secondarySubcategoryOne\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/secondarySubcategoryOne\"\n        }\n      },\n      \"secondarySubcategoryTwo\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/relationships/secondarySubcategoryTwo\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4/secondarySubcategoryTwo\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/appInfos/61d77dc2-9313-4330-b169-d179277ccfc4\"\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

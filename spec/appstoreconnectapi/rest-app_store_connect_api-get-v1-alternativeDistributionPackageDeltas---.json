@@ -1,0 +1,179 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-alternativeDistributionPackageDeltas-{}",
+  "title": "Read Information for Alternative Distribution Package Deltas",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageDeltas-_id_",
+  "slug": "appstoreconnectapi/get-v1-alternativedistributionpackagedeltas-_id_",
+  "introducedAt": "3.3",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get detail information about specific alternative distribution package deltas.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/alternativeDistributionPackageDeltas/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the alternative distribution package delta resource ID from the `GET-v1-alternativeDistributionPackageVersions-_id_-deltas` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-deltas"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[alternativeDistributionPackageDeltas]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "url",
+            "urlExpirationDate",
+            "alternativeDistributionKeyBlob",
+            "fileChecksum"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each alternative distribution package deltas resource returned by the response.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AlternativeDistributionPackageDeltaResponse",
+      "typeId": "data:app_store_connect_api:AlternativeDistributionPackageDeltaResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/alternativeDistributionPackageDeltas/9d53ac02-f669-4bf7-baff-019a17f33ee9\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"alternativeDistributionPackageDeltas\",\n    \"id\": \"9d53ac02-f669-4bf7-baff-019a17f33ee9\",\n    \"attributes\": {\n      \"url\": \"https://iosapps.itunes.apple.com/itunes-assets/SWDistributionArtifacts123/v4/f0/29/7d/f0297daa-4377-87b4-dfca-41846325ae48/mzpse.7668245576990498917.ipa?accessKey=1711772747_147132452048240218_jSIsjjHrkRQIgmo%2F8a0J6OTcn2K6Jl5wb5h71ZoqrTBCnFKSzX8wii4v1VVWsSQZlyDFMATURL8Zm04Hdv31kgf%2BAR%2Bhq%2BzcRmexyaAqDSdZSmQQvZ7SWyH9ivd%2BezlIEKbTgH5F9YYOO4V0dbYA30rBJ1J3LA8yNd67jdEAy1hr2eZwbXF25GhANelme6vh%2BEMAEOLhwp1vWUiCp9jPdg%3D%3D\",\n      \"urlExpirationDate\": \"2024-03-29T21:25:47-07:00\",\n      \"alternativeDistributionKeyBlob\": \"Z1HWrJd3AAAABAAAAAFUYH7ql3cAAAAEAAAAAfaWTj6EhQAAAAgxqRGW+Q0aIlvEfIGEhQAAAAgAAAAAZbrpdWGqs9GEhQAAAAgAAAACgAlM7EDAqpNQ2wAAABCdGnX0xvGnc29EV8bdzyI2jmtHAlDbAAAA0JheOha/VKuUFUIf/aTUM4YZ3lk9zuzoi1BOQ/iUG92gaalZwmTpExJ/ABFF5sV6/z02U5JgfyESnJQcGVRwsi7FMxgv8gnqakMOJD6PRPFMlJ3Yhnm4o1SG844TSHY+qFVQ4kmle+aWmMF/RXOoKwtX41Jt01Q1Js+rG7aAUrwSsZO8Sghm/XzFC5R37qqC18hmFPyqcsuGAAj+P/ZnYf4uNgCc1purbwMNRH/yLnp4wMO2ftpLbli2I6Y2md/N5s0URFxqCQSUZAG74zbf/20xOKXMUNsAAAAQhERpq5CkvNJrNdG2N6aILnZf7XBQ2wAAABCPaQxLtryi+lWeC50vE915JJC4HVDbAAAAENXtlKBSfDy8j4ovmgpsQqZo1KUAUNsAAABQDmaElYX7GUcHt/K3BAOd6bmXznNEZCv82yiwJI28WSXyAJi8KsHicnBJz29VBvpdhYvAo3pXXNOU2mBVcjB5ygMV3+zEsPzygYbIe9M7W1kHUZI1UNsAAAAgSAr3kNEBH1SjzTjuKvzge7BwD8rBX5gTdh4oSpz2JlMAAAAAUNsAAAAOAAAAAAAAAAAAAAAAAAA=\"\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/alternativeDistributionPackageDeltas/9d53ac02-f669-4bf7-baff-019a17f33ee9\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/alternativeDistributionPackageDeltas/9d53ac02-f669-4bf7-baff-019a17f33ee9\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting delta information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionPackageVersions-_id_-deltas"
+      ]
+    }
+  ]
+}

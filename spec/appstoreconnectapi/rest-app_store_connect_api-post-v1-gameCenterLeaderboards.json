@@ -1,0 +1,164 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterLeaderboards",
+  "title": "Create a Leaderboard",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboards",
+  "slug": "appstoreconnectapi/post-v1-gamecenterleaderboards",
+  "introducedAt": "3.0",
+  "deprecated": {
+    "at": null,
+    "summary": null
+  },
+  "beta": false,
+  "abstract": {
+    "text": "Add a new leaderboard to your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterLeaderboards",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterLeaderboardCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterLeaderboardCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterLeaderboardResponse",
+      "typeId": "data:app_store_connect_api:GameCenterLeaderboardResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST  https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards-d \n{\n    “data”: {\n        “type”: “gameCenterLeaderboards”,\n        “attributes”: {\n            “referenceName”: “Cortado Temp LB”,\n            “vendorIdentifier”: “CORTADOTEMP_LB”,\n            “defaultFormatter”: “INTEGER”,\n            “submissionType”: “BEST_SCORE”,\n            “scoreSortType”: “DESC”,\n            “scoreRangeStart”: “0”,\n            “scoreRangeEnd”: “100”\n        },\n        “relationships”: {\n            “gameCenterDetail”: {\n                “data”: {\n                    “type”: “gameCenterDetails”,\n                    “id”: “6fd13854-b796-4cb5-87e1-9f2d15d3d7b9”\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n  “data” : {\n    “type” : “gameCenterLeaderboards”,\n    “id” : “8e76c29a-4d4d-4b1f-9389-0dd161cab83c”,\n    “attributes” : {\n      “defaultFormatter” : “INTEGER”,\n      “referenceName” : “Cortado Temp LB”,\n      “vendorIdentifier” : “CORTADOTEMP_LB”,\n      “submissionType” : “BEST_SCORE”,\n      “scoreSortType” : “DESC”,\n      “scoreRangeStart” : “0”,\n      “scoreRangeEnd” : “100”,\n      “recurrenceStartDate” : null,\n      “recurrenceDuration” : null,\n      “recurrenceRule” : null,\n      “archived” : false,\n      “leaderboardType” : “CLASSIC”\n    },\n    “relationships” : {\n      “groupLeaderboard” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/relationships/groupLeaderboard”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/groupLeaderboard”\n        }\n      },\n      “localizations” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/relationships/localizations”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/localizations”\n        }\n      },\n      “releases” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/relationships/releases”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/releases”\n        }\n      },\n      “leaderboardScores” : {\n        “links” : {\n          “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/relationships/leaderboardScores”,\n          “related” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c/leaderboardScores”\n        }\n      }\n    },\n    “links” : {\n      “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards/8e76c29a-4d4d-4b1f-9389-0dd161cab83c”\n    }\n  },\n  “links” : {\n    “self” : “https://api.appstoreconnect.apple.com/v1/gameCenterLeaderboards”\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Creating, modifying, and deleting leaderboards",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-gameCenterLeaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterLeaderboards-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterLeaderboards-_id_-relationships-activity",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-gameCenterLeaderboards-_id_-relationships-challenge",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-gameCenterLeaderboards-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboards-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboards-_id_-relationships-groupLeaderboard",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboards-_id_-relationships-activity",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterLeaderboards-_id_-relationships-challenge",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterLeaderboards-_id_"
+      ]
+    }
+  ]
+}

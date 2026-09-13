@@ -1,0 +1,120 @@
+{
+  "id": "doc:appstoreconnectapi/app-screenshot-sets",
+  "title": "App Screenshot Sets",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-screenshot-sets",
+  "slug": "appstoreconnectapi/app-screenshot-sets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create sets of app screenshots to upload to App Store Connect.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Some screenshot sizes are required to submit your app for review. For more information, see `https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An `appScreenshotSets` resource represents a set of screenshots that you intend to upload to App Store Connect. Create an `appScreenshotSets` resource as a container for all screenshots associated with a locale and display target, for example, screenshots for Simplified Chinese on an iPhone with a 6.5” display. Next, upload individual screenshots using the `app-screenshots` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-screenshots"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Some screenshot sizes are required to submit your app for review. For more information, see `https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Screenshot Sets and Reading Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appScreenshotSets-_id_"
+      ]
+    },
+    {
+      "title": "Creating and Deleting Screenshot Sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appScreenshotSets-_id_"
+      ]
+    },
+    {
+      "title": "Listing and Reordering All Screenshots in a Set",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appScreenshotSets-_id_-relationships-appScreenshots",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appScreenshotSets-_id_-appScreenshots",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appScreenshotSets-_id_-relationships-appScreenshots"
+      ]
+    },
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetAppScreenshotsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotSetAppScreenshotsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScreenshotDisplayType"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Screenshots",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-screenshots"
+      ]
+    }
+  ]
+}

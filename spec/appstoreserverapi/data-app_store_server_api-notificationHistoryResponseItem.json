@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "An array of information the App Store server records for its attempts to send a notification to your server. The maximum number of entries in the array is six.",
         "refs": []
@@ -45,6 +46,7 @@
       "deprecated": false,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The cryptographically signed payload, in JSON Web Signature (JWS) format, containing the original response body of a version 2 notification. For more information, see `signedPayload` in `AppStoreServerNotifications`.",
         "refs": [
@@ -62,6 +64,7 @@
       "deprecated": true,
       "introducedVersion": "1.5.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The result of the App Store server’s first attempt to send the notification to your server’s `App-Store-Server-Notifications-V2` endpoint.\n\nUse the earliest `sendAttemptItem` in the `sendAttempts` array instead.",
         "refs": [
@@ -81,6 +84,10 @@
   "topics": [
     {
       "title": "Data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptResult",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/sendAttemptItem",
@@ -91,6 +98,10 @@
   "seeAlso": [
     {
       "title": "App Store Server Notifications history",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Notification-History",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/NotificationHistoryRequest",

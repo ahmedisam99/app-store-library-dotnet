@@ -1,0 +1,97 @@
+{
+  "id": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint",
+  "title": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/DisplayPoint-data.dictionary",
+  "slug": "appstoreconnectapi/appclipadvancedexperiencecreaterequest/data-data.dictionary/attributes-data.dictionary/place-data.dictionary/displaypoint-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A point-based representation of a place in Apple Maps.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "coordinates",
+      "type": "AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint.Coordinates",
+      "typeId": "data:app_store_connect_api:AppClipAdvancedExperienceCreateRequest.Data.Attributes.Place.DisplayPoint.Coordinates",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The GPS coordinates of a place in Apple Maps you associate with the Advanced App Clip experience.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "source",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "CALCULATED",
+            "MANUALLY_PLACED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes the means by which you captured the data for a display point.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/DisplayPoint-data.dictionary/Coordinates-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/MainAddress-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipAdvancedExperienceCreateRequest/Data-data.dictionary/Attributes-data.dictionary/Place-data.dictionary/PhoneNumber-data.dictionary"
+      ]
+    }
+  ]
+}

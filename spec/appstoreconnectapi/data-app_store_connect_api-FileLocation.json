@@ -1,0 +1,77 @@
+{
+  "id": "data:app_store_connect_api:FileLocation",
+  "title": "FileLocation",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/FileLocation",
+  "slug": "appstoreconnectapi/filelocation",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A source code location reference indicating the file path, line number, and column of an issue in an Xcode Cloud build.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object FileLocation",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "lineNumber",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The line number of a file that contains code.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "path",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The path to the file that caused an issue.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssue",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueResponse"
+      ]
+    }
+  ]
+}

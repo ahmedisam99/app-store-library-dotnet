@@ -1,0 +1,177 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRun.Relationships",
+  "title": "CiBuildRun.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildrun/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships of the Build Runs resource you included in the request and those on which you can operate.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRun.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "destinationBranch",
+      "type": "CiBuildRun.Relationships.DestinationBranch",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.DestinationBranch",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs resource and the Git References resource that represents the destination branch.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "product",
+      "type": "CiBuildRun.Relationships.Product",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.Product",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs and the Products resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "pullRequest",
+      "type": "CiBuildRun.Relationships.PullRequest",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.PullRequest",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs and the Pull Requests resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sourceBranchOrTag",
+      "type": "CiBuildRun.Relationships.SourceBranchOrTag",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.SourceBranchOrTag",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs resource and the Git References resource that represents the source branch or tag.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "workflow",
+      "type": "CiBuildRun.Relationships.Workflow",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.Workflow",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs and the Workflows resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "builds",
+      "type": "CiBuildRun.Relationships.Builds",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.Builds",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The data and links that describe the relationship between the Build Runs and the Builds resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "actions",
+      "type": "CiBuildRun.Relationships.Actions",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Relationships.Actions",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Builds-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/DestinationBranch-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Product-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/PullRequest-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/SourceBranchOrTag-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Workflow-data.dictionary"
+      ]
+    },
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary/Actions-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

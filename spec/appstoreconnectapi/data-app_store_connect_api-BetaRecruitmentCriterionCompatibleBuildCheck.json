@@ -1,0 +1,134 @@
+{
+  "id": "data:app_store_connect_api:BetaRecruitmentCriterionCompatibleBuildCheck",
+  "title": "BetaRecruitmentCriterionCompatibleBuildCheck",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheck",
+  "slug": "appstoreconnectapi/betarecruitmentcriterioncompatiblebuildcheck",
+  "introducedAt": "3.8",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The result of checking whether a specific build meets the device family and OS version requirements of a beta recruitment criterion.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BetaRecruitmentCriterionCompatibleBuildCheck",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "BetaRecruitmentCriterionCompatibleBuildCheck.Attributes",
+      "typeId": "data:app_store_connect_api:BetaRecruitmentCriterionCompatibleBuildCheck.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "betaRecruitmentCriterionCompatibleBuildChecks"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheck/Attributes-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCompatibleBuildCheckResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOption",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaPublicLinkUsagesV1MetricResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamily",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DeviceFamilyOsVersionFilter",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaRecruitmentCriterionOptionsResponse"
+      ]
+    }
+  ]
+}

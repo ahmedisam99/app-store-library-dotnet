@@ -1,0 +1,97 @@
+{
+  "id": "data:app_store_connect_api:WinBackOfferCreateRequest",
+  "title": "WinBackOfferCreateRequest",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest",
+  "slug": "appstoreconnectapi/winbackoffercreaterequest",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create a winback offer.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WinBackOfferCreateRequest",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "WinBackOfferCreateRequest.Data",
+      "typeId": "data:app_store_connect_api:WinBackOfferCreateRequest.Data",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[WinBackOfferPriceInlineCreate]",
+      "typeId": "data:app_store_connect_api:WinBackOfferPriceInlineCreate",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferCreateRequest/Data-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPriceInlineCreate"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffer",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPrice",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPriceInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOffersResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/IntegerRange",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/WinBackOfferPricesLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionWinBackOffersLinkagesResponse"
+      ]
+    }
+  ]
+}

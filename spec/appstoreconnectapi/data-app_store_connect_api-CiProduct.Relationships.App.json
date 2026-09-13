@@ -1,0 +1,88 @@
+{
+  "id": "data:app_store_connect_api:CiProduct.Relationships.App",
+  "title": "CiProduct.Relationships.App",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/App-data.dictionary",
+  "slug": "appstoreconnectapi/ciproduct/relationships-data.dictionary/app-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data and links that describe the relationship between the Products and Apps resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiProduct.Relationships.App",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "CiProduct.Relationships.App.Data",
+      "typeId": "data:app_store_connect_api:CiProduct.Relationships.App.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The ID and type of the related Apps resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "RelationshipLinks",
+      "typeId": "data:app_store_connect_api:RelationshipLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/App-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/BundleId-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiProduct/Relationships-data.dictionary/PrimaryRepositories-data.dictionary"
+      ]
+    }
+  ]
+}

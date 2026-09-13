@@ -1,0 +1,107 @@
+{
+  "id": "doc:appstoreconnectapi/issues",
+  "title": "Issues",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/issues",
+  "slug": "appstoreconnectapi/issues",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read information about issues that occurred when Xcode Cloud performs a build.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `ciIssues` resource represents issues that occur when Xcode Cloud performs a build. Use it to access a list of issues that occurred and read detailed issue information; for example:",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The type of issue that occurred",
+          "refs": []
+        },
+        {
+          "text": "The location in your code where the issue occurred",
+          "refs": []
+        },
+        {
+          "text": "A message describing the issue",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Xcode Cloud Build Issues",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-ciIssues-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssue",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/FileLocation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Build Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-runs",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/build-actions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/artifacts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/test-results"
+      ]
+    }
+  ]
+}

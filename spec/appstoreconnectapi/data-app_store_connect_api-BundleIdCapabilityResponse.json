@@ -1,0 +1,83 @@
+{
+  "id": "data:app_store_connect_api:BundleIdCapabilityResponse",
+  "title": "BundleIdCapabilityResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BundleIdCapabilityResponse",
+  "slug": "appstoreconnectapi/bundleidcapabilityresponse",
+  "introducedAt": "1.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that enable or modify a capability for a bundle ID.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BundleIdCapabilityResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "BundleIdCapability",
+      "typeId": "data:app_store_connect_api:BundleIdCapability",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource data.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Navigational links that include the self-link.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Object and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilityCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilityUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilitiesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BundleIdCapabilitiesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilityOption",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilitySetting",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CapabilityType"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "id": "doc:appstoreconnectapi/submitting-subscriptions-and-subscription-groups-for-app-review",
+  "title": "Submitting subscriptions and subscription groups for App Review",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/submitting-subscriptions-and-subscription-groups-for-app-review",
+  "slug": "appstoreconnectapi/submitting-subscriptions-and-subscription-groups-for-app-review",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attach localizations and screenshots to a subscription version, then submit subscriptions and subscription groups for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Submit your first subscription together with an app binary submission through `https://appstoreconnect.apple.com`. For subsequent subscriptions, submit using the API endpoints below without an associated app binary submission.",
+        "refs": [
+          "https://appstoreconnect.apple.com"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "After you create and configure an auto-renewable subscription, submit it to App Review for approval before it can be available to people. Localizations and images for a subscription attach to a *subscription version* — a draft container for the metadata that goes through App Review together — so you submit the version, not the subscription itself.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Prepare a subscription version",
+      "paragraphs": [
+        {
+          "text": "Localizations and images for a subscription live on a subscription version. Create the version before you attach any metadata. The pre-4.4.1 workflows that post localizations and images directly to the subscription are deprecated as of 4.4.1 but remain available for existing integrations.",
+          "refs": []
+        },
+        {
+          "text": "Create a draft version with `POST /v1/subscriptionVersions` (`POST-v1-subscriptionVersions`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"subscriptionVersions\",\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6446671421\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Attach localizations to the version with `POST /v2/subscriptionLocalizations` (`POST-v2-subscriptionLocalizations`) and attach images with `POST /v2/subscriptionImages` (`POST-v2-subscriptionImages`). Both payloads relate the resource to the *version* — not the parent subscription.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionLocalizations",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionImages"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Upload a subscription App Review screenshot",
+      "paragraphs": [
+        {
+          "text": "Upload a screenshot that shows what the subscription looks like to people. This workflow uses the `/v1/subscriptionAppStoreReviewScreenshots` endpoint and is similar to the existing image workflows for App Clip images and app screenshots.",
+          "refs": []
+        },
+        {
+          "text": "Submit a single image using these steps:",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `uploading-assets-to-app-store-connect`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Make an image reservation with `POST /v1/subscriptionAppStoreReviewScreenshots` (`POST-v1-subscriptionAppStoreReviewScreenshots`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionAppStoreReviewScreenshots"
+          ]
+        },
+        {
+          "text": "Upload the image using the `PUT` URL provided in the response to the previous `POST`.",
+          "refs": []
+        },
+        {
+          "text": "After your image uploads, use `PATCH /v1/subscriptionAppStoreReviewScreenshots/{id}` (`PATCH-v1-subscriptionAppStoreReviewScreenshots-_id_`) to commit the image.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionAppStoreReviewScreenshots-_id_"
+          ]
+        },
+        {
+          "text": "Finally, use `GET /v1/subscriptionAppStoreReviewScreenshots/{id}` (`GET-v1-subscriptionAppStoreReviewScreenshots-_id_`) to confirm that the image is in place.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionAppStoreReviewScreenshots-_id_"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Submit a subscription version",
+      "paragraphs": [
+        {
+          "text": "Submit a subscription version using the review submissions workflow. This is the current, non-deprecated submission path.",
+          "refs": []
+        },
+        {
+          "text": "> **Important**\n>\n>  Submit your first subscription together with an app binary submission through `https://appstoreconnect.apple.com`. For subsequent subscriptions, submit using the API endpoints below without an associated app binary submission.",
+          "refs": [
+            "https://appstoreconnect.apple.com"
+          ]
+        },
+        {
+          "text": "Create a review submission for the app with `POST /v1/reviewSubmissions` (`POST-v1-reviewSubmissions`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"reviewSubmissions\",\n    \"attributes\": {\n      \"platform\": \"IOS\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"6446148572\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Add the subscription version as an item on that review submission with `POST /v1/reviewSubmissionItems` (`POST-v1-reviewSubmissionItems`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-reviewSubmissionItems"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"reviewSubmissionItems\",\n    \"relationships\": {\n      \"reviewSubmission\": {\n        \"data\": {\n          \"type\": \"reviewSubmissions\",\n          \"id\": \"${reviewSubmissionId}\"\n        }\n      },\n      \"subscriptionVersion\": {\n        \"data\": {\n          \"type\": \"subscriptionVersions\",\n          \"id\": \"${subscriptionVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Submit the review submission by patching its `submitted` attribute to `true` with `PATCH /v1/reviewSubmissions/{id}` (`PATCH-v1-reviewSubmissions-_id_`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-reviewSubmissions-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"reviewSubmissions\",\n    \"id\": \"${reviewSubmissionId}\",\n    \"attributes\": {\n      \"submitted\": true\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The version’s state transitions from `PREPARE_FOR_SUBMISSION` to `READY_FOR_REVIEW` when you add it to a review submission, then to `WAITING_FOR_REVIEW` after you mark the submission `submitted`, then `IN_REVIEW`, and finally to `APPROVED` or `REJECTED`. Poll `GET /v1/subscriptionVersions/{id}` (`GET-v1-subscriptionVersions-_id_`) to check the current state.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionVersions-_id_"
+          ]
+        },
+        {
+          "text": "The `POST /v1/subscriptionSubmissions` (`POST-v1-subscriptionSubmissions`) endpoint is deprecated as of 4.4.1. Existing integrations that submit a subscription directly by its `id` continue to work, but new integrations use the review submissions workflow described above.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionSubmissions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Submit a subscription group version",
+      "paragraphs": [
+        {
+          "text": "Localized metadata for a subscription group submits to App Review when a subscription within the group submits. Submit a subscription group version independently when you change group-level localization without changing any subscription in the group.",
+          "refs": []
+        },
+        {
+          "text": "Create a subscription group version with `POST /v1/subscriptionGroupVersions` (`POST-v1-subscriptionGroupVersions`), attach localizations with `POST /v2/subscriptionGroupLocalizations` (`POST-v2-subscriptionGroupLocalizations`), then submit the version using the same review submissions workflow as above — with the subscription group version as the review submission item:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupVersions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-subscriptionGroupLocalizations"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"reviewSubmissionItems\",\n    \"relationships\": {\n      \"reviewSubmission\": {\n        \"data\": {\n          \"type\": \"reviewSubmissions\",\n          \"id\": \"${reviewSubmissionId}\"\n        }\n      },\n      \"subscriptionGroupVersion\": {\n        \"data\": {\n          \"type\": \"subscriptionGroupVersions\",\n          \"id\": \"${subscriptionGroupVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The `POST /v1/subscriptionGroupSubmissions` (`POST-v1-subscriptionGroupSubmissions`) endpoint is deprecated as of 4.4.1. Existing integrations that submit a subscription group directly by its `id` continue to work, but new integrations use the review submissions workflow described above.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionGroupSubmissions"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Submitting Subscriptions and Groups for App Review",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-and-subscription-group-submissions"
+      ]
+    }
+  ]
+}

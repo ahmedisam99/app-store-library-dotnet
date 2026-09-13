@@ -1,0 +1,124 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-3-5-release-notes",
+  "title": "App Store Connect API 3.5 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-3-5-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "App Store Connect API version 3.5 provides resources that enable you to automate actions you take in App Store Connect.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "New Features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Developers can optionally provide a single deep-link URL for a custom project page by adding a `deepLink` attribute to `Attributes-data.dictionary`. For more information, see `https://developer.apple.com/help/app-store-connect/create-custom-product-pages/configure-multiple-product-page-versions`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppCustomProductPageVersionCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+            "https://developer.apple.com/help/app-store-connect/create-custom-product-pages/configure-multiple-product-page-versions"
+          ]
+        },
+        {
+          "text": "`ELAPSED_TIME_CENTISECOND` is now available in `GameCenterLeaderboardFormatter`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardFormatter"
+          ]
+        },
+        {
+          "text": "Developers can now more easily debug slow-launch issues for their app with the new `LAUNCHES diagnosticType` for `GET-v1-builds-_id_-diagnosticSignatures`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures"
+          ]
+        },
+        {
+          "text": "Trending insights for disk writes signatures are now available and show the impact of\u00A0signature trends across app versions.\u00A0`GET-v1-builds-_id_-diagnosticSignatures` now includes the\u00A0`DiagnosticInsightDirection`,\u00A0`DiagnosticInsightType`,\u00A0and an impact breakdown by app version.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures"
+          ]
+        },
+        {
+          "text": "A new attribute `BetaTesterState` is available for `Attributes-data.dictionary`. For more information, see `https://developer.apple.com/help/app-store-connect/test-a-beta-version/view-and-manage-tester-information`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTester/Attributes-data.dictionary",
+            "https://developer.apple.com/help/app-store-connect/test-a-beta-version/view-and-manage-tester-information"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Removals",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "The `IMAGE_MANAGER` role is now removed from `UserRole`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserRole"
+          ]
+        },
+        {
+          "text": "The attribute `priceTier` is now removed from `GET-v2-inAppPurchases-_id_-pricePoints`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints"
+          ]
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-0-release-notes"
+      ]
+    }
+  ]
+}

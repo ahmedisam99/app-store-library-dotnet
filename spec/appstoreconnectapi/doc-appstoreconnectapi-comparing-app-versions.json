@@ -1,0 +1,76 @@
+{
+  "id": "doc:appstoreconnectapi/comparing-app-versions",
+  "title": "Comparing app versions",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/comparing-app-versions",
+  "slug": "appstoreconnectapi/comparing-app-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Return a Boolean value that indicates whether two match requests are from compatible app versions.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `areCompatibleAppVersions()` function in the expression of a matchmaking rule to determine if the version of the games that request matches are compatible. This function uses information you enter in App Store Connect — such as the bundle ID, platform, and version properties to determine compatibility. For more information, see `https://developer.apple.com/help/app-store-connect/configure-game-center/add-multiplayer-compatibility`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/configure-game-center/add-multiplayer-compatibility"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Declaration",
+      "paragraphs": [
+        {
+          "text": "```other\nboolean areCompatibleAppVersions(object $request1, object $request2)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Parameters",
+      "paragraphs": [
+        {
+          "text": "-`request1`: A match request to compare with `request2`. -`request2`: A match request to compare with `request1`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Return value",
+      "paragraphs": [
+        {
+          "text": "`true`, if the game instances that request a match are compatible; otherwise, `false`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

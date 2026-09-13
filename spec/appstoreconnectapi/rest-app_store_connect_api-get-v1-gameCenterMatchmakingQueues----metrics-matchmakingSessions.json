@@ -1,0 +1,230 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-gameCenterMatchmakingQueues-{}-metrics-matchmakingSessions",
+  "title": "Get Queue Session Information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingSessions",
+  "slug": "appstoreconnectapi/get-v1-gamecentermatchmakingqueues-_id_-metrics-matchmakingsessions",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get session information on a queue.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingQueues/{id}/metrics/matchmakingSessions",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The unique identifier for the queue.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "granularity",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P1D",
+            "PT1H",
+            "PT15M"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The level of information you want in the response, specified as a time interval for the data collection, using the ISO 8601 format for durations.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of sessions to include.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "sort",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "count",
+            "-count",
+            "averagePlayerCount",
+            "-averagePlayerCount",
+            "p50PlayerCount",
+            "-p50PlayerCount",
+            "p95PlayerCount",
+            "-p95PlayerCount"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Sort sizes by the specified order. For example, `count` sorts the results by decreasing number of players that Game Center finds.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingSessionsV1MetricResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingSessionsV1MetricResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingQueues/0df9ae63-0328-4060-9afc-53e848e8c386/metrics/matchmakingSessions?granularity=PT15M\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"gameCenterMatchmakingSessions\",\n      \"dataPoints\": [\n        {\n          \"start\": \"2023-10-10T23:30:00Z\",\n          \"end\": \"2023-10-10T23:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T23:15:00Z\",\n          \"end\": \"2023-10-10T23:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T23:00:00Z\",\n          \"end\": \"2023-10-10T23:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T22:45:00Z\",\n          \"end\": \"2023-10-10T23:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T22:30:00Z\",\n          \"end\": \"2023-10-10T22:45:00Z\",\n          \"values\": {\n            \"count\": 1,\n            \"p50PlayerCount\": 2,\n            \"averagePlayerCount\": 2,\n            \"p95PlayerCount\": 2\n          }\n        },\n        {\n          \"start\": \"2023-10-10T22:15:00Z\",\n          \"end\": \"2023-10-10T22:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T22:00:00Z\",\n          \"end\": \"2023-10-10T22:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T21:45:00Z\",\n          \"end\": \"2023-10-10T22:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T21:30:00Z\",\n          \"end\": \"2023-10-10T21:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T21:15:00Z\",\n          \"end\": \"2023-10-10T21:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T21:00:00Z\",\n          \"end\": \"2023-10-10T21:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T20:45:00Z\",\n          \"end\": \"2023-10-10T21:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T20:30:00Z\",\n          \"end\": \"2023-10-10T20:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T20:15:00Z\",\n          \"end\": \"2023-10-10T20:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T20:00:00Z\",\n          \"end\": \"2023-10-10T20:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T19:45:00Z\",\n          \"end\": \"2023-10-10T20:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T19:30:00Z\",\n          \"end\": \"2023-10-10T19:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T19:15:00Z\",\n          \"end\": \"2023-10-10T19:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T19:00:00Z\",\n          \"end\": \"2023-10-10T19:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T18:45:00Z\",\n          \"end\": \"2023-10-10T19:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T18:30:00Z\",\n          \"end\": \"2023-10-10T18:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T18:15:00Z\",\n          \"end\": \"2023-10-10T18:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T18:00:00Z\",\n          \"end\": \"2023-10-10T18:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T17:45:00Z\",\n          \"end\": \"2023-10-10T18:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T17:30:00Z\",\n          \"end\": \"2023-10-10T17:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T17:15:00Z\",\n          \"end\": \"2023-10-10T17:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T17:00:00Z\",\n          \"end\": \"2023-10-10T17:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T16:45:00Z\",\n          \"end\": \"2023-10-10T17:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T16:30:00Z\",\n          \"end\": \"2023-10-10T16:45:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T16:15:00Z\",\n          \"end\": \"2023-10-10T16:30:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T16:00:00Z\",\n          \"end\": \"2023-10-10T16:15:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        },\n        {\n          \"start\": \"2023-10-10T15:45:00Z\",\n          \"end\": \"2023-10-10T16:00:00Z\",\n          \"values\": {\n            \"count\": 0,\n            \"p50PlayerCount\": 0,\n            \"averagePlayerCount\": 0,\n            \"p95PlayerCount\": 0\n          }\n        }\n      ],\n      \"granularity\": 900\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingQueues/0df9ae63-0328-4060-9afc-53e848e8c386/metrics/matchmakingSessions?granularity=PT15M\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 1,\n      \"limit\": 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting queue information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingQueueSizes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-experimentMatchmakingQueueSizes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-matchmakingRequests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_-metrics-experimentMatchmakingRequests"
+      ]
+    }
+  ]
+}

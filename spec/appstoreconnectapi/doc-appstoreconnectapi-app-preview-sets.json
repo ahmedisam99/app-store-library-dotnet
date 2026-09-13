@@ -1,0 +1,124 @@
+{
+  "id": "doc:appstoreconnectapi/app-preview-sets",
+  "title": "App Preview Sets",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-preview-sets",
+  "slug": "appstoreconnectapi/app-preview-sets",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create sets of app previews to upload to App Store Connect.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An `appPreviewSets` resource represents a collection of app previews for an app locale and display target; for example, a set of screenshots for the Simplified Chinese listing of your app for an iPhone with a 6.5” display size. Use app preview sets to:",
+          "refs": []
+        },
+        {
+          "text": "To upload individual previews, uses the `app-previews` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-previews"
+          ]
+        },
+        {
+          "text": "For more information about app previews, see `https://developer.apple.com/help/app-store-connect/reference/app-information`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-information"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Begin the process of uploading app previews.",
+          "refs": []
+        },
+        {
+          "text": "Reorder app previews after they’re uploaded.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Preview Sets and Reading Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPreviewSets-_id_"
+      ]
+    },
+    {
+      "title": "Creating and Deleting Preview Sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPreviewSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appPreviewSets-_id_"
+      ]
+    },
+    {
+      "title": "Listing and Reordering All Previews in a Set",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPreviewSets-_id_-appPreviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appPreviewSets-_id_-relationships-appPreviews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appPreviewSets-_id_-relationships-appPreviews"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSet",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSetCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSetResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSetsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSetAppPreviewsLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPreviewSetAppPreviewsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Previews",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-app-previews",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-previews"
+      ]
+    }
+  ]
+}

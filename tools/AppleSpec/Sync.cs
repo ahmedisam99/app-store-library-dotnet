@@ -29,7 +29,7 @@ public static class Sync
             sources.Add(await SyncFrameworkAsync(paths, framework, cancellationToken).ConfigureAwait(false));
         }
 
-        sources.Add(await OpenApi.SyncAsync(paths, cancellationToken).ConfigureAwait(false));
+        sources.AddRange(await OpenApi.SyncAsync(paths, cancellationToken).ConfigureAwait(false));
 
         Directory.CreateDirectory(paths.SpecDir);
         WriteFile(paths.ManifestFile, Utf8.GetBytes(JsonSerializer.Serialize(new Manifest { Sources = sources }, Json.Options) + "\n"));
@@ -95,16 +95,15 @@ public static class Sync
         return Convert.ToHexString(digest.GetHashAndReset()).ToLowerInvariant();
     }
 
-    private static async Task<ManifestSource> SyncFrameworkAsync(SpecPaths paths, string framework, CancellationToken cancellationToken)
+    // Fetches a framework's pages and normalizes every one of them before returning, so a caller
+    // never writes a half-built directory that would read as Apple deleting the pages it never got to.
+    internal static async Task<DocumentationSet> BuildDocumentationAsync(string framework, CancellationToken cancellationToken)
     {
-        var clock = Stopwatch.StartNew();
         var slugs = await AppleDocs.ListSlugsAsync(framework, cancellationToken).ConfigureAwait(false);
         var pages = await FetchAllAsync(slugs, cancellationToken).ConfigureAwait(false);
 
         try
         {
-            // Everything is normalized before anything is written: a half-written framework would
-            // read as Apple having deleted every page the run never got to.
             var files = new SortedDictionary<string, byte[]>(StringComparer.Ordinal);
 
             foreach (var slug in slugs)
@@ -129,6 +128,27 @@ public static class Sync
                 version = Changelog.LatestVersion(changelog);
             }
 
+            return new DocumentationSet(files, pageCount, version);
+        }
+        finally
+        {
+            foreach (var page in pages.Values)
+            {
+                page.Dispose();
+            }
+        }
+    }
+
+    private static async Task<ManifestSource> SyncFrameworkAsync(SpecPaths paths, string framework, CancellationToken cancellationToken)
+    {
+        var clock = Stopwatch.StartNew();
+        var documentation = await BuildDocumentationAsync(framework, cancellationToken).ConfigureAwait(false);
+
+        {
+            var files = documentation.Files;
+            var pageCount = documentation.Pages;
+            var version = documentation.Version;
+
             var removed = WriteDirectory(paths, paths.FrameworkDir(framework), files);
             var meta = await AppleDocs.HeadAsync(AppleDocs.IndexUrl(framework), cancellationToken).ConfigureAwait(false);
 
@@ -146,16 +166,9 @@ public static class Sync
                 Sha256 = Digest(files)
             };
         }
-        finally
-        {
-            foreach (var page in pages.Values)
-            {
-                page.Dispose();
-            }
-        }
     }
 
-    private static async Task<Dictionary<string, JsonDocument>> FetchAllAsync(IReadOnlyList<string> slugs, CancellationToken cancellationToken)
+    internal static async Task<Dictionary<string, JsonDocument>> FetchAllAsync(IReadOnlyList<string> slugs, CancellationToken cancellationToken)
     {
         using var gate = new SemaphoreSlim(MaxInFlight);
         var fetched = new ConcurrentDictionary<string, JsonDocument>(StringComparer.Ordinal);

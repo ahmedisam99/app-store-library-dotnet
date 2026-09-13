@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:Build.Relationships.BuildBundles",
+  "title": "Build.Relationships.BuildBundles",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BuildBundles-data.dictionary",
+  "slug": "appstoreconnectapi/build/relationships-data.dictionary/buildbundles-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The data, links, and paging information that describe the relationship between the Builds and the Build Bundles resources.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object Build.Relationships.BuildBundles",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[Build.Relationships.BuildBundles.Data]",
+      "typeId": "data:app_store_connect_api:Build.Relationships.BuildBundles.Data",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The ID and type of the related Build Bundles resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The paging information.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BuildBundles-data.dictionary/Data-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/App-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/AppEncryptionDeclaration-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/AppStoreVersion-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BetaBuildLocalizations-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BetaGroups-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BuildBetaDetail-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/Icons-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/IndividualTesters-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/PreReleaseVersion-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Build/Relationships-data.dictionary/BetaAppReviewSubmission-data.dictionary"
+      ]
+    }
+  ]
+}

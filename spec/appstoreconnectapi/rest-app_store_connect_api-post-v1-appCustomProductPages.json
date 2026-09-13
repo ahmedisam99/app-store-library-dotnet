@@ -1,0 +1,157 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appCustomProductPages",
+  "title": "Create a Custom Product Page",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appCustomProductPages",
+  "slug": "appstoreconnectapi/post-v1-appcustomproductpages",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add a custom product page for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appCustomProductPages",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppCustomProductPageCreateRequest",
+    "typeId": "data:app_store_connect_api:AppCustomProductPageCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppCustomProductPageResponse",
+      "typeId": "data:app_store_connect_api:AppCustomProductPageResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/appCustomProductPages\n{\n  \"data\": {\n    \"type\": \"appCustomProductPages\",\n    \"attributes\": {\n      \"name\": \"Customer Product Page 1\"\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"01234\"\n        }\n      },\n      \"appStoreVersionTemplate\": {\n        \"data\": {\n          \"type\": \"appStoreVersions\",\n          \"id\": \"3b439e1a-5647-4734-9378-5e0b2b82ccb4\"\n        }\n      },\n      \"appCustomProductPageVersions\": {\n        \"data\": [\n          {\n            \"type\": \"appCustomProductPageVersions\",\n            \"id\": \"${new-appCustomProductPageVersion-id}\"\n          }\n        ]\n      }\n    }\n  },\n  \"included\": [\n    {\n      \"type\": \"appCustomProductPageVersions\",\n      \"id\": \"${new-appCustomProductPageVersion-id}\",\n      \"relationships\": {\n        \"appCustomProductPage\": {},\n        \"appCustomProductPageLocalizations\": {\n          \"data\": [\n            {\n              \"type\": \"appCustomProductPageLocalizations\",\n              \"id\": \"${new-appCustomProductPageLocalization-id}\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"type\": \"appCustomProductPageLocalizations\",\n      \"id\": \"${new-appCustomProductPageLocalization-id}\",\n      \"attributes\": {\n        \"locale\": \"en-US\",\n        \"promotionalText\": \"This app will really excite!\"\n      }\n    }\n  ]\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"appCustomProductPages\",\n    \"id\": \"eb2b3606-2fef-4aab-a54e-b2e5547c9bc3\",\n    \"attributes\": {\n      \"name\": \"Customer Product Page 1\",\n      \"url\": \"https://apps.apple.com/us/app/gersey-numba/id1526908970?ppid=eb2b3606-2fef-4aab-a54e-b2e5547c9bc3\",\n      \"visible\": true\n    },\n    \"relationships\": {\n      \"appCustomProductPageVersions\": {\n        \"meta\": {\n          \"paging\": {\n            \"total\": 1,\n            \"limit\": 10\n          }\n        },\n        \"data\": [\n          {\n            \"type\": \"appCustomProductPageVersions\",\n            \"id\": \"c7eadc0b-48d9-48c4-bdb2-109dd94a793a\"\n          }\n        ],\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPages/eb2b3606-2fef-4aab-a54e-b2e5547c9bc3/relationships/appCustomProductPageVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPages/eb2b3606-2fef-4aab-a54e-b2e5547c9bc3/appCustomProductPageVersions\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPages/eb2b3606-2fef-4aab-a54e-b2e5547c9bc3\"\n    }\n  },\n  \"included\": [\n    {\n      \"type\": \"appCustomProductPageVersions\",\n      \"id\": \"c7eadc0b-48d9-48c4-bdb2-109dd94a793a\",\n      \"attributes\": {\n        \"version\": \"1\",\n        \"state\": \"PREPARE_FOR_SUBMISSION\"\n      },\n      \"relationships\": {\n        \"appCustomProductPageLocalizations\": {\n          \"meta\": {\n            \"paging\": {\n              \"total\": 1,\n              \"limit\": 10\n            }\n          },\n          \"data\": [\n            {\n              \"type\": \"appCustomProductPageLocalizations\",\n              \"id\": \"1a0e5f2a-938a-400d-935c-7bb7c6b3476a\"\n            }\n          ],\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageVersions/c7eadc0b-48d9-48c4-bdb2-109dd94a793a/relationships/appCustomProductPageLocalizations\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageVersions/c7eadc0b-48d9-48c4-bdb2-109dd94a793a/appCustomProductPageLocalizations\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageVersions/c7eadc0b-48d9-48c4-bdb2-109dd94a793a\"\n      }\n    },\n    {\n      \"type\": \"appCustomProductPageLocalizations\",\n      \"id\": \"1a0e5f2a-938a-400d-935c-7bb7c6b3476a\",\n      \"attributes\": {\n        \"locale\": \"en-US\",\n        \"promotionalText\": \"This app will really excite!\"\n      },\n      \"relationships\": {\n        \"appScreenshotSets\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/1a0e5f2a-938a-400d-935c-7bb7c6b3476a/relationships/appScreenshotSets\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/1a0e5f2a-938a-400d-935c-7bb7c6b3476a/appScreenshotSets\"\n          }\n        },\n        \"appPreviewSets\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/1a0e5f2a-938a-400d-935c-7bb7c6b3476a/relationships/appPreviewSets\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/1a0e5f2a-938a-400d-935c-7bb7c6b3476a/appPreviewSets\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/1a0e5f2a-938a-400d-935c-7bb7c6b3476a\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/appCustomProductPages\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appCustomProductPages-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appCustomProductPages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPages-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPages-_id_-appCustomProductPageVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPages-_id_-relationships-appCustomProductPageVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appCustomProductPages-_id_"
+      ]
+    }
+  ]
+}

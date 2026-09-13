@@ -1,0 +1,128 @@
+{
+  "id": "data:app_store_connect_api:InAppPurchasesResponse",
+  "title": "InAppPurchasesResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/InAppPurchasesResponse",
+  "slug": "appstoreconnectapi/inapppurchasesresponse",
+  "introducedAt": "1.2",
+  "deprecated": {
+    "at": "3.0",
+    "summary": {
+      "text": "This object is deprecated. Use `InAppPurchasesV2Response` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchasesV2Response"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list in-app purchases for an app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object InAppPurchasesResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[InAppPurchase]",
+      "typeId": "data:app_store_connect_api:InAppPurchase",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[App]",
+      "typeId": "data:app_store_connect_api:App",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/App",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppsWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppClipsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchase",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/InAppPurchaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppBetaTestersLinkagesRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointV3",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointV3Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointsV3Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPriceSchedule",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPriceScheduleCreateRequest"
+      ]
+    }
+  ]
+}

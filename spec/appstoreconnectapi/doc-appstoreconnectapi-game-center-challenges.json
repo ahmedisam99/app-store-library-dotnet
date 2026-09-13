@@ -1,0 +1,132 @@
+{
+  "id": "doc:appstoreconnectapi/game-center-challenges",
+  "title": "Game Center challenges",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center-challenges",
+  "slug": "appstoreconnectapi/game-center-challenges",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage Game Center challenges for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the challenges API to create and configure ways to link players directly to your content in your game. Once you create a challenge you can link it to an activity. To learn more about activies, see `configuring-game-center-activities`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-game-center-activities"
+          ]
+        },
+        {
+          "text": "Challenges encourage your players to invite their friends into your game for friendly competitions in score-baseed rounds. Players will see your challenges promoted throughout the Games app and other places around the OS as suggestions for enjoying their games with friends. They can invite their Game Center friends and anyone from their contacts, see scores appear in real-time, get notified at key moments until a winner is crowned, and have a rematch. Challenges are built on top of leaderboards, turning single-player game activities into a social experience players can share with their friends. To learn more about integrating challenges into your game, see `https://developer.apple.com/documentation/gamekit/creating-engaging-challenges-from-leaderboards`.",
+          "refs": [
+            "https://developer.apple.com/documentation/gamekit/creating-engaging-challenges-from-leaderboards"
+          ]
+        },
+        {
+          "text": "To manage challenges, be sure you have one of the following user roles:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`ADMIN`",
+          "refs": []
+        },
+        {
+          "text": "`APP MANAGER`",
+          "refs": []
+        },
+        {
+          "text": "`MARKETING`",
+          "refs": []
+        },
+        {
+          "text": "`TECHNICAL`",
+          "refs": []
+        },
+        {
+          "text": "`DEVELOPER`",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing challenges",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterChallenges-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterChallenges-_id_-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterChallenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterChallenges-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterChallenges-_id_-relationships-leaderboardV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterChallenges-_id_-relationships-leaderboard",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-gameCenterDetails-_id_-relationships-challengesMinimumPlatformVersions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-gameCenterChallenges-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-gameCenterChallenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterGroups-_id_-gameCenterChallenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterGroups-_id_-relationships-gameCenterChallenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterGroups-_id_-gameCenterChallenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterGroups-_id_-relationships-gameCenterChallenges"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallenge",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersion",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionInlineCreate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeLeaderboardV2LinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeLeaderboardLinkageRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterChallengeVersionsLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Challenges",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-game-center-challenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-version-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenge-images"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}-preReleaseVersions",
+  "title": "List all prerelease versions for an app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-preReleaseVersions",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_-prereleaseversions",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of prerelease versions associated with a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}/preReleaseVersions",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[preReleaseVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "platform",
+            "builds",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "PreReleaseVersionsWithoutIncludesResponse",
+      "typeId": "data:app_store_connect_api:PreReleaseVersionsWithoutIncludesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/6446998023/preReleaseVersions\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"preReleaseVersions\",\n      \"id\": \"e5cb13d7-d732-4a57-9ef4-a42c612fc5d7\",\n      \"attributes\": {\n        \"version\": \"2.0\",\n        \"platform\": \"IOS\"\n      },\n      \"relationships\": {\n        \"builds\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e5cb13d7-d732-4a57-9ef4-a42c612fc5d7/relationships/builds\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e5cb13d7-d732-4a57-9ef4-a42c612fc5d7/builds\"\n          }\n        },\n        \"app\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e5cb13d7-d732-4a57-9ef4-a42c612fc5d7/relationships/app\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e5cb13d7-d732-4a57-9ef4-a42c612fc5d7/app\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/e5cb13d7-d732-4a57-9ef4-a42c612fc5d7\"\n      }\n    },\n    {\n      \"type\": \"preReleaseVersions\",\n      \"id\": \"152251d9-a47e-4f43-9861-b5027d721fc9\",\n      \"attributes\": {\n        \"version\": \"1.0\",\n        \"platform\": \"IOS\"\n      },\n      \"relationships\": {\n        \"builds\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/152251d9-a47e-4f43-9861-b5027d721fc9/relationships/builds\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/152251d9-a47e-4f43-9861-b5027d721fc9/builds\"\n          }\n        },\n        \"app\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/152251d9-a47e-4f43-9861-b5027d721fc9/relationships/app\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/152251d9-a47e-4f43-9861-b5027d721fc9/app\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/152251d9-a47e-4f43-9861-b5027d721fc9\"\n      }\n    },\n    {\n      \"type\": \"preReleaseVersions\",\n      \"id\": \"bf21597c-6deb-4329-9634-7d28b526156b\",\n      \"attributes\": {\n        \"version\": \"1.1\",\n        \"platform\": \"IOS\"\n      },\n      \"relationships\": {\n        \"builds\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/bf21597c-6deb-4329-9634-7d28b526156b/relationships/builds\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/bf21597c-6deb-4329-9634-7d28b526156b/builds\"\n          }\n        },\n        \"app\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/bf21597c-6deb-4329-9634-7d28b526156b/relationships/app\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/bf21597c-6deb-4329-9634-7d28b526156b/app\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/preReleaseVersions/bf21597c-6deb-4329-9634-7d28b526156b\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/preReleaseVersions\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 3,\n      \"limit\": 50\n    }\n  }\n}\n\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting app build and prerelease version information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-builds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-preReleaseVersions"
+      ]
+    }
+  ]
+}

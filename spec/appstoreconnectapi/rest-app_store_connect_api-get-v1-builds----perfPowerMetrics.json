@@ -1,0 +1,233 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-builds-{}-perfPowerMetrics",
+  "title": "Get power and performance metrics for a build",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics",
+  "slug": "appstoreconnectapi/get-v1-builds-_id_-perfpowermetrics",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the performance and power metrics data for a specific build.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/builds/{id}/perfPowerMetrics",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource ID that uniquely identifies the build to return metrics data for. Obtain the build resource ID from the `GET-v1-builds` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[deviceType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Device types by which to filter. Use `all_iphones` for all iPhone models. Use `all_ipads` for all iPad models.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[metricType]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DISK",
+            "HANG",
+            "BATTERY",
+            "LAUNCH",
+            "MEMORY",
+            "ANIMATION",
+            "TERMINATION",
+            "STORAGE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Types of metrics by which to filter. For more information about metric types, see `MetricCategory`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MetricCategory"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[platform]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "IOS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Platforms by which to filter.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/vnd.apple.xcode-metrics+json",
+      "type": "xcodeMetrics",
+      "typeId": "data:app_store_connect_api:xcodeMetrics",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example below requests iOS animation metrics on all iPads for a specific build. To get the metrics for all of the most-recent app versions instead, use the `GET-v1-apps-_id_-perfPowerMetrics` endpoint.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/builds/43d3a970-273c-4bc9-88ee-aa5c05610ac1/perfPowerMetrics?filter[deviceType]=all_ipads&filter[metricType]=ANIMATION&filter[platform]=iOS\n```\n\n**Response**\n\n```json\n{\n  \"productData\": [\n    {\n      \"platform\": \"iOS\",\n      \"metricCategories\": [\n        {\n          \"identifier\": \"ANIMATION\",\n          \"metrics\": [\n            {\n              \"identifier\": \"scrollHitchRate\",\n              \"unit\": {\n                \"identifier\": \"scrollHitchRate\",\n                \"displayName\": \"%\"\n              },\n              \"datasets\": [\n                {\n                  \"filterCriteria\": {\n                    \"percentile\": \"percentile.fifty\",\n                    \"device\": \"all_ipads\",\n                    \"deviceMarketingName\": \"All iPads\"\n                  },\n                  \"points\": [\n                    {\n                      \"version\": \"10.0\",\n                      \"value\": 6.5,\n                      \"goal\": \"fair\"\n                    }\n                  ]\n                },\n                {\n                  \"filterCriteria\": {\n                    \"percentile\": \"percentile.ninety\",\n                    \"device\": \"all_ipads\",\n                    \"deviceMarketingName\": \"All iPads\"\n                  },\n                  \"points\": [\n                    {\n                      \"version\": \"10.0\",\n                      \"value\": 29.7,\n                      \"goal\": \"poor\"\n                    }\n                  ]\n                }\n              ],\n              \"goalKeys\": [\n                {\n                  \"goalKey\": \"poor\",\n                  \"lowerBound\": 10\n                },\n                {\n                  \"upperBound\": 10,\n                  \"goalKey\": \"fair\",\n                  \"lowerBound\": 5\n                },\n                {\n                  \"upperBound\": 5,\n                  \"goalKey\": \"good\",\n                  \"lowerBound\": 0\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"version\": \"1.0.0\"\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Metrics and Diagnostic Logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/retrieve-power-and-performance-metrics-and-log-insights",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs"
+      ]
+    }
+  ]
+}

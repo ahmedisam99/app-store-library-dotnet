@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The in-app purchase event for which the App Store sends this version 2 notification.",
         "refs": []
@@ -45,6 +46,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "Additional information that identifies the notification event. The `subtype` field is present only for specific version 2 notifications.",
         "refs": []
@@ -59,6 +61,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The object that contains the app metadata and signed renewal and transaction information.\n\nThe `data`, `appData`, `summary`, and `externalPurchaseToken` fields are mutually exclusive. The payload contains only one of these fields.",
         "refs": []
@@ -73,6 +76,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The summary data that appears when the App Store server completes your request to extend a subscription renewal date for eligible subscribers. For more information, see `Extend-Subscription-Renewal-Dates-for-All-Active-Subscribers`.\n\nThe `data`, `appData`, `summary`, and `externalPurchaseToken` fields are mutually exclusive. The payload contains only one of these fields.",
         "refs": [
@@ -89,6 +93,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "This field appears when the `notificationType` is `EXTERNAL_PURCHASE_TOKEN`.\n\nThe `data`, `appData`, `summary`, and `externalPurchaseToken` fields are mutually exclusive. The payload contains only one of these fields.",
         "refs": []
@@ -103,6 +108,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The object that contains the app metadata and signed app transaction information. This field appears when the `notificationType` is `RESCIND_CONSENT`.\n\nThe `data`, `appData`, `summary`, and `externalPurchaseToken` fields are mutually exclusive. The payload contains only one of these fields.",
         "refs": [
@@ -119,6 +125,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The App Store Server Notification version number, `\"2.0\"`.",
         "refs": []
@@ -133,6 +140,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The UNIX time, in milliseconds, that the App Store signed the JSON Web Signature data.",
         "refs": []
@@ -147,6 +155,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A unique identifier for the notification. Use this value to identify a duplicate notification.",
         "refs": []
@@ -209,6 +218,10 @@
   "topics": [
     {
       "title": "Response objects for in-app purchases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/summary",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/data",
@@ -217,12 +230,20 @@
     },
     {
       "title": "Response object for an external purchase",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/externalPurchaseToken"
       ]
     },
     {
       "title": "Response types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/notificationType",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/subtype",
@@ -233,6 +254,10 @@
     },
     {
       "title": "JWS header and payload data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSTransactionDecodedPayload",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/JWSRenewalInfoDecodedPayload",
@@ -244,6 +269,10 @@
   "seeAlso": [
     {
       "title": "Server notifications version 2",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/App-Store-Server-Notifications-V2",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/responseBodyV2",

@@ -1,0 +1,145 @@
+{
+  "id": "data:app_store_connect_api:CiWorkflow.Relationships",
+  "title": "CiWorkflow.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/ciworkflow/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships of the Workflows resource you included in the request and those on which you can operate.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiWorkflow.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "product",
+      "type": "CiWorkflow.Relationships.Product",
+      "typeId": "data:app_store_connect_api:CiWorkflow.Relationships.Product",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Products resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "repository",
+      "type": "CiWorkflow.Relationships.Repository",
+      "typeId": "data:app_store_connect_api:CiWorkflow.Relationships.Repository",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The workflow’s related Git repository.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "xcodeVersion",
+      "type": "CiWorkflow.Relationships.XcodeVersion",
+      "typeId": "data:app_store_connect_api:CiWorkflow.Relationships.XcodeVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Xcode Versions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "macOsVersion",
+      "type": "CiWorkflow.Relationships.MacOsVersion",
+      "typeId": "data:app_store_connect_api:CiWorkflow.Relationships.MacOsVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related macOS Versions resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildRuns",
+      "type": "CiWorkflow.Relationships.BuildRuns",
+      "typeId": "data:app_store_connect_api:CiWorkflow.Relationships.BuildRuns",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary/MacOsVersion-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary/Product-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary/Repository-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary/XcodeVersion-data.dictionary"
+      ]
+    },
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Relationships-data.dictionary/BuildRuns-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

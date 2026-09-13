@@ -1,0 +1,125 @@
+{
+  "id": "doc:appstoreconnectapi/certificates",
+  "title": "Certificates",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/certificates",
+  "slug": "appstoreconnectapi/certificates",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create, download, and revoke signing certificates for app development and distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " You can only create Developer ID certificates for macOS through the Apple Developer website or Xcode. For more information, see `https://developer.apple.com/developer-id/`.",
+        "refs": [
+          "https://developer.apple.com/developer-id/"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `certificates` resource represents the digital certificates you use to sign your iOS or Mac apps for development and distribution. You can create new certificates, revoke existing certificates, and download certificates.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  You can only create Developer ID certificates for macOS through the Apple Developer website or Xcode. For more information, see `https://developer.apple.com/developer-id/`.",
+          "refs": [
+            "https://developer.apple.com/developer-id/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating and modifying certificates",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-certificates-_id_"
+      ]
+    },
+    {
+      "title": "Getting certificate infomation and data",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates-_id_-passTypeId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-certificates-_id_-relationships-passTypeId"
+      ]
+    },
+    {
+      "title": "Revoking certificates",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-certificates-_id_"
+      ]
+    },
+    {
+      "title": "Object and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Certificate",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificatesWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificateCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificateResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificatesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificateUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificateType",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CertificatePassTypeIdLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/merchantids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

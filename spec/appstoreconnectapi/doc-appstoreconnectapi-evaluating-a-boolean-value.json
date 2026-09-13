@@ -1,0 +1,74 @@
+{
+  "id": "doc:appstoreconnectapi/evaluating-a-boolean-value",
+  "title": "Evaluating a Boolean value",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/evaluating-a-boolean-value",
+  "slug": "appstoreconnectapi/evaluating-a-boolean-value",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Return given values for true and false results of a conditional.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use the `if()` function in the expression of a matchmaking rule to return values depending on a Boolean conditional. For example, `if (true, `0.0`, `1.0`)` returns `0.0`, and `if (false, `0.0`, `1.0`)` returns `1.0`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Declaration",
+      "paragraphs": [
+        {
+          "text": "```swift\nany if(boolean $condition, any $ifTrue, any $ifFalse)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Parameters",
+      "paragraphs": [
+        {
+          "text": "-`condition`: An expression that evaluates to a Boolean value. -`ifTrue`: The value to return if `condition` is `true`. -`ifFalse`: The value to return if `condition` is `false`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Return value",
+      "paragraphs": [
+        {
+          "text": "Returns `ifTrue` if `condition` is `true`; otherwise, `ifFalse`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

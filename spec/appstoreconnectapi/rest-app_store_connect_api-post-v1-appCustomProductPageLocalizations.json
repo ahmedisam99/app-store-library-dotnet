@@ -1,0 +1,155 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appCustomProductPageLocalizations",
+  "title": "Create a Custom Product Page Localization",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appCustomProductPageLocalizations",
+  "slug": "appstoreconnectapi/post-v1-appcustomproductpagelocalizations",
+  "introducedAt": "1.7",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add a localization for your app custom product page.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appCustomProductPageLocalizations",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppCustomProductPageLocalizationCreateRequest",
+    "typeId": "data:app_store_connect_api:AppCustomProductPageLocalizationCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppCustomProductPageLocalizationResponse",
+      "typeId": "data:app_store_connect_api:AppCustomProductPageLocalizationResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://appstoreconnect.apple.com/v1/appCustomProductPageLocalizations\n{\n    \"data\": {\n        \"type\": \"appCustomProductPageLocalizations\",\n        \"attributes\": {\n            \"locale\": \"en-CA\",\n            \"promotionalText\": \"There will be so much fun.\"\n        },\n        \"relationships\": {\n            \"appCustomProductPageVersion\": {\n                \"data\": {\n                    \"type\": \"appCustomProductPageVersions\",\n                    \"id\": \"46e3a412-7248-43f8-a6bf-cf445eafa3ef\"\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n  \"data\" : {\n    \"type\" : \"appCustomProductPageLocalizations\",\n    \"id\" : \"0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc\",\n    \"attributes\" : {\n      \"locale\" : \"en-CA\",\n      \"promotionalText\" : \"There will be so much fun.\"\n    },\n    \"relationships\" : {\n      \"appScreenshotSets\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc/relationships/appScreenshotSets\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc/appScreenshotSets\"\n        }\n      },\n      \"appPreviewSets\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc/relationships/appPreviewSets\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc/appPreviewSets\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations/0ff34f9c-e2f9-4317-a3e5-44e012c2ffbc\"\n    }\n  },\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v1/appCustomProductPageLocalizations\"\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing localizations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageVersions-_id_-appCustomProductPageLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appCustomProductPageLocalizations-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appCustomProductPageLocalizations-_id_"
+      ]
+    }
+  ]
+}

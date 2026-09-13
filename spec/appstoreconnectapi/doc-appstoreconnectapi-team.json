@@ -1,0 +1,66 @@
+{
+  "id": "doc:appstoreconnectapi/team",
+  "title": "Team",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/team",
+  "slug": "appstoreconnectapi/team",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A team that you add to a rule set.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use a `Team` object in the expression of a matchmaking rule to access the players that Game Center assigns to a team.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Properties",
+      "paragraphs": [
+        {
+          "text": "-`maxPlayers: The maximum number of players on the team. -`minPlayers: The minimum number of players on the team. -`name: The name for the team that's unique within the scope of its rule set.  -`players: An array of `player` objects representing the players that Game Center assigns to the team.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/player"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/request",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/player"
+      ]
+    }
+  ]
+}

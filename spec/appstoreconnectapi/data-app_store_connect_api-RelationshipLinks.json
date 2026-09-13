@@ -1,0 +1,79 @@
+{
+  "id": "data:app_store_connect_api:RelationshipLinks",
+  "title": "RelationshipLinks",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/RelationshipLinks",
+  "slug": "appstoreconnectapi/relationshiplinks",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Links related to the response document, including self links.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object RelationshipLinks",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "related",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The link to the related documents.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "self",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The link that produced the current document.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PagedDocumentLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PagingInformation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ResourceLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DocumentLinks"
+      ]
+    }
+  ]
+}

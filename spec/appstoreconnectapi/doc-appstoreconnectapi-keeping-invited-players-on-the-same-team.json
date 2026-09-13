@@ -1,0 +1,63 @@
+{
+  "id": "doc:appstoreconnectapi/keeping-invited-players-on-the-same-team",
+  "title": "Keeping invited players on the same team",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/keeping-invited-players-on-the-same-team",
+  "slug": "appstoreconnectapi/keeping-invited-players-on-the-same-team",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Return a Boolean value that indicates whether players in the same match requests are on the same team.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Declaration",
+      "paragraphs": [
+        {
+          "text": "```other\nboolean hasInvitedPlayersOnSameTeam(array[object] $teams, array[object] $players)\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Parameters",
+      "paragraphs": [
+        {
+          "text": "-`teams`: The teams in the rule set. Pass the\u00A0`teams`\u00A0array that’s available in team rule expressions. -`players`: The players that the rule applies to. Pass the\u00A0`players`\u00A0array that’s available in team rule expressions.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Return value",
+      "paragraphs": [
+        {
+          "text": "`true`\u00A0if the players in the same match requests are on the same team; otherwise,\u00A0`false`. The players in a match request include the local player and any recipients or other players that the local player invites.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

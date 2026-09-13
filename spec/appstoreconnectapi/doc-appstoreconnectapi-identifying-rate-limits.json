@@ -1,0 +1,125 @@
+{
+  "id": "doc:appstoreconnectapi/identifying-rate-limits",
+  "title": "Identifying Rate Limits",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/identifying-rate-limits",
+  "slug": "appstoreconnectapi/identifying-rate-limits",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Recognize the rate limits that REST API responses provide and handle them in your code.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The App Store Connect API limits the volume of requests that you can submit within a specified timeframe. The limits apply to requests you send using the same API key.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Identify Limits Provided in the HTTP Header",
+      "paragraphs": [
+        {
+          "text": "The API presents rate limits to users in an HTTP header. Every response from the API includes an `X-Rate-Limit` HTTP header. Its value has the form:",
+          "refs": []
+        },
+        {
+          "text": "```other\nuser-hour-lim:3500;user-hour-rem:500;\n```",
+          "refs": []
+        },
+        {
+          "text": "The header info includes:",
+          "refs": []
+        },
+        {
+          "text": "In this example, you are limited to 3500 requests per hour, with 500 remaining. Actual limits can vary.",
+          "refs": []
+        },
+        {
+          "text": "The time frame is a “rolling hour.” At any moment, the `user-hour-rem` value is your per-hour limit, minus the total requests you’ve made in the previous 60 minutes.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`user-hour-lim`, which indicates the number of requests you can make per hour with the same API key.",
+          "refs": []
+        },
+        {
+          "text": "`user-hour-rem`, which shows the number of requests remaining.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Interpret the Error Response",
+      "paragraphs": [
+        {
+          "text": "If you exceed a per-hour limit, the API rejects requests with an HTTP 429 response, with the `RATE_LIMIT_EXCEEDED` error code. See `about-the-http-status-code` for more information.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/about-the-http-status-code"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Handle Exceeded Limits Gracefully",
+      "paragraphs": [
+        {
+          "text": "Consider rate limits as you integrate the API:",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "If you periodically call the API to check a value, throttle your requests to avoid exceeding the per-hour limit for that endpoint.",
+          "refs": []
+        },
+        {
+          "text": "Manage the HTTP 429 `RATE_LIMIT_EXCEEDED` error in your error-handling process. For example, log the failure and queue the job to be processed again at a later time.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Essentials",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-api-keys-for-app-store-connect-api",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/revoking-api-keys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-release-notes"
+      ]
+    }
+  ]
+}

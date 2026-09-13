@@ -1,0 +1,185 @@
+{
+  "id": "doc:appstoreconnectapi/game-center",
+  "title": "Game Center",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center",
+  "slug": "appstoreconnectapi/game-center",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage Game Center data and configurations for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Game Center is an Apple service that provides social-gaming functionality to games. Game Center gives users the ability to track their scores on a leaderboard, view achievement progress, invite friends to play a game, and start a multiplayer game with friends or through auto-match.",
+          "refs": []
+        },
+        {
+          "text": "Adding support for certain Game Center features, like leaderboards and achievements, requires you to provide additional assets and metadata. Some examples include achievement images and descriptions, as well as leaderboard artwork. After you’ve implemented Game Center features into your game, you’re ready to enter metadata in App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "Using the App Store Connect API, you can automate the same tasks you perform in the Game Center section of App Store Connect; for example:",
+          "refs": []
+        },
+        {
+          "text": "For more information about all you can do with Game Center, see the `https://developer.apple.com/game-center/` page.",
+          "refs": [
+            "https://developer.apple.com/game-center/"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Enabling Game Center for your app",
+          "refs": []
+        },
+        {
+          "text": "Create and modify your achievements and leaderboards",
+          "refs": []
+        },
+        {
+          "text": "Configure localized metadata for your achievements and leaderboards",
+          "refs": []
+        },
+        {
+          "text": "Manage leaderboard sets and Game Center groups",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Details and groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-groups"
+      ]
+    },
+    {
+      "title": "Achievements",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievement-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievement-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-player-achievements"
+      ]
+    },
+    {
+      "title": "Leaderboards",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboards-scores"
+      ]
+    },
+    {
+      "title": "Leaderboard sets",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-set-member-localizations"
+      ]
+    },
+    {
+      "title": "Challenges",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-game-center-challenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-version-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenges-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-challenge-images"
+      ]
+    },
+    {
+      "title": "Activities",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-game-center-activities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-activities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-activity-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-activity-version-releases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-activity-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-activity-images"
+      ]
+    },
+    {
+      "title": "App versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-app-versions"
+      ]
+    },
+    {
+      "title": "Matchmaking rules",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/expressions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/rule-sets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/queues",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/teams",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/testing",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/metrics"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

@@ -1,0 +1,111 @@
+{
+  "id": "doc:appstoreconnectapi/merchantids",
+  "title": "Merchant ID",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/merchantids",
+  "slug": "appstoreconnectapi/merchantids",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage your merchant ID for Apple Pay.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "Apple Pay is not available for Enterprise teams.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Apple Pay developers and merchants can use this resource to automate registering both merchant ID and merchant name for interacting with Apple Pay services, and rotate required certificates to keep the service active. To learn more about developing and configuring Apple Pay, see `https://developer.apple.com/help/account/configure-app-capabilities/configure-apple-pay/`.",
+          "refs": [
+            "https://developer.apple.com/help/account/configure-app-capabilities/configure-apple-pay/"
+          ]
+        },
+        {
+          "text": "To learn more about setting up your Apple developer account and implementing Apple Pay in your apps, see `managing-payment-processing-certificates` and `https://developer.apple.com/documentation/passkit/setting-up-apple-pay`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-payment-processing-certificates",
+            "https://developer.apple.com/documentation/passkit/setting-up-apple-pay"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n> Apple Pay is not available for Enterprise teams.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing merchant IDs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-payment-processing-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-merchantIds-_id_-relationships-certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-merchantIds-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-merchantIds",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-merchantIds-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantId",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantIdResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantIdsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantIdCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantIdUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MerchantIdCertificatesLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Provisioning",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-ids",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/bundle-id-capabilities",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/certificates",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/devices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/profiles",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pass-type-id"
+      ]
+    }
+  ]
+}

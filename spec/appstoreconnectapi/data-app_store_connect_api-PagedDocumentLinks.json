@@ -1,0 +1,106 @@
+{
+  "id": "data:app_store_connect_api:PagedDocumentLinks",
+  "title": "PagedDocumentLinks",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PagedDocumentLinks",
+  "slug": "appstoreconnectapi/pageddocumentlinks",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Links related to the response document, including paging links.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object PagedDocumentLinks",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "first",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The link to the first page of documents.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "next",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The link to the next page of documents.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "self",
+      "type": "uri-reference",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The link that produced the current document.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "All the response data constitutes multiple *documents.*",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PagingInformation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ResourceLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DocumentLinks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/RelationshipLinks"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-appStoreVersionReleaseRequests",
+  "title": "Manually release an app store approved version of your app",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionReleaseRequests",
+  "slug": "appstoreconnectapi/post-v1-appstoreversionreleaserequests",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Release an approved version of your app to the App Store.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/appStoreVersionReleaseRequests",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "AppStoreVersionReleaseRequestCreateRequest",
+    "typeId": "data:app_store_connect_api:AppStoreVersionReleaseRequestCreateRequest",
+    "abstract": {
+      "text": "The request body you use to manually release an approved version of your app to the App Store.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "AppStoreVersionReleaseRequestResponse",
+      "typeId": "data:app_store_connect_api:AppStoreVersionReleaseRequestResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " Send this request only when you’re ready to publish your version. You can’t cancel this request.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "When you submit your app for review, if itʼs approved and the status changes to Pending Developer Release, then you can release a version. For more information about app review, see `https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-for-review`. For more information about manually releasing versions, see `https://devcms.apple.com/help/app-store-connect/manage-your-apps-availability/select-a-version-release-option`. For more information about app status, see `https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-submissions-to-app-review/submit-for-review",
+            "https://devcms.apple.com/help/app-store-connect/manage-your-apps-availability/select-a-version-release-option",
+            "https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Send this request only when you’re ready to publish your version. You can’t cancel this request.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

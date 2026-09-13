@@ -1,0 +1,110 @@
+{
+  "id": "doc:appstoreconnectapi/git-references",
+  "title": "Git References",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/git-references",
+  "slug": "appstoreconnectapi/git-references",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read information about the canonical reference for a Git branch or tag.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "The `scmGitReferences` resource represents the canonical Git reference for the Git commit that Xcode Cloud used to perform a build. The resource includes the following information:",
+          "refs": []
+        },
+        {
+          "text": "For example, if Xcode Cloud uses the `bug-fix` branch for a build, the canonical Git reference is `refs/heads/bug-fix` and the name is `bug-fix`. If Xcode Cloud starts a build for the `release-1.0` tag, the canonical name is `refs/tags/release-1.0` and the name is `release-1.0`.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  This resource supports JSON web tokens with a lifetime of up to six months. For more information, see `generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/generating-tokens-for-api-requests#Determine-the-Appropriate-Token-Lifetime"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The reference’s name and canonical name",
+          "refs": []
+        },
+        {
+          "text": "Whether the reference has been deleted",
+          "refs": []
+        },
+        {
+          "text": "The type of the reference",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Getting Information About Git References",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-scmGitReferences-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmGitReference",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmGitReferenceResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ScmGitReferencesResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Source Code Management",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/providers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/repositories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/pull-requests"
+      ]
+    }
+  ]
+}

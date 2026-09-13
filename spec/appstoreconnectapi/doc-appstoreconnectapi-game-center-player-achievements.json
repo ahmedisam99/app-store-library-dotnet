@@ -1,0 +1,79 @@
+{
+  "id": "doc:appstoreconnectapi/game-center-player-achievements",
+  "title": "Game Center player achievements",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center-player-achievements",
+  "slug": "appstoreconnectapi/game-center-player-achievements",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage Game Center achievements by player for your apps.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "This endpoint is different than most in App Store Connect API, this’s used to create or modify a player’s achievement in your app. Any and all data you send through this endpoint overwrites existing data for the player.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating Game Center player achievements",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterPlayerAchievementSubmissions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterPlayerAchievementSubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterPlayerAchievementSubmissionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterPlayerAchievementSubmissionResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Achievements",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievements-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievement-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-achievement-releases"
+      ]
+    }
+  ]
+}

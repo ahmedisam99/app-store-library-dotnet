@@ -1,0 +1,91 @@
+{
+  "id": "doc:appstoreconnectapi/alternative-distribution-domains",
+  "title": "Alternative Distribution Domains",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/alternative-distribution-domains",
+  "slug": "appstoreconnectapi/alternative-distribution-domains",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and read alternative distribution domains.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "You use the endpoints and objects in this API collection to add your alternative distribution app’s base domain to App Store Connect. For more information on adding a domain for your alternative distribution app, see `POST-v1-alternativeDistributionDomains`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionDomains"
+          ]
+        },
+        {
+          "text": "All the individual pages for apps that your alternative marketplace app distributes need to be on this base domain and it also needs to house your sitemap to support marketplace search. For more information about your alternative marketplace’s sitemap, see `building-a-searchable-catalog-for-your-marketplace-app-for-inclusion-in-spotlight`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/building-a-searchable-catalog-for-your-marketplace-app-for-inclusion-in-spotlight"
+          ]
+        },
+        {
+          "text": "Your web distribution app needs to be served from this base domain.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing domains",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionDomains",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionDomains-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionDomains",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-alternativeDistributionDomains-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionDomain",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionDomainCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionDomainResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionDomainsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Alternative Marketplace Setup and Configuration",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/alternative-distribution-keys"
+      ]
+    }
+  ]
+}

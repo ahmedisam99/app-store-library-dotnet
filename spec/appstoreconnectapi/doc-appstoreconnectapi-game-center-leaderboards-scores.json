@@ -1,0 +1,95 @@
+{
+  "id": "doc:appstoreconnectapi/game-center-leaderboards-scores",
+  "title": "Game Center leaderboards scores",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/game-center-leaderboards-scores",
+  "slug": "appstoreconnectapi/game-center-leaderboards-scores",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and modify Game Center leaderboards scores.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " These endpoint requires information from GameKit, specifically `gamePlayerID`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/GameKit/GKPlayer/gamePlayerID"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "This endpoint is different than most in App Store Connect API, with this you can create or modify a player’s leaderboard score in your app. Any and all data you send through this endpoint overwrites existing data for the player’s score.",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n>  These endpoint requires information from GameKit, specifically `gamePlayerID`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/GameKit/GKPlayer/gamePlayerID"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing Game Center leaderboard scores",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-gameCenterLeaderboardEntrySubmissions"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardEntrySubmission",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardEntrySubmissionCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterLeaderboardEntrySubmissionResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Leaderboards",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboards",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/game-center-leaderboard-releases"
+      ]
+    }
+  ]
+}

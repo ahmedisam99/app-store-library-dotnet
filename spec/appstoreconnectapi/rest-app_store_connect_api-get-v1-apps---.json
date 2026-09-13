@@ -1,0 +1,1428 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-apps-{}",
+  "title": "Read app information",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-apps-_id_",
+  "slug": "appstoreconnectapi/get-v1-apps-_id_",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get information about a specific app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/apps/{id}",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the app resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[apps]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "accessibilityUrl",
+            "name",
+            "bundleId",
+            "sku",
+            "primaryLocale",
+            "isOrEverWasMadeForKids",
+            "subscriptionStatusUrl",
+            "subscriptionStatusUrlVersion",
+            "subscriptionStatusUrlForSandbox",
+            "subscriptionStatusUrlVersionForSandbox",
+            "contentRightsDeclaration",
+            "streamlinedPurchasingEnabled",
+            "accessibilityDeclarations",
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaTesters",
+            "betaGroups",
+            "appStoreVersions",
+            "appTags",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "appPricePoints",
+            "endUserLicenseAgreement",
+            "appPriceSchedule",
+            "appAvailabilityV2",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "perfPowerMetrics",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "customerReviews",
+            "customerReviewSummarizations",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "alternativeDistributionKey",
+            "analyticsReportRequests",
+            "marketplaceSearchDetail",
+            "buildUploads",
+            "backgroundAssets",
+            "betaFeedbackScreenshotSubmissions",
+            "betaFeedbackCrashSubmissions",
+            "searchKeywords",
+            "webhooks",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[betaLicenseAgreements]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "agreementText",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "include",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appEncryptionDeclarations",
+            "appStoreIcon",
+            "ciProduct",
+            "betaGroups",
+            "appStoreVersions",
+            "preReleaseVersions",
+            "betaAppLocalizations",
+            "builds",
+            "betaLicenseAgreement",
+            "betaAppReviewDetail",
+            "appInfos",
+            "appClips",
+            "endUserLicenseAgreement",
+            "inAppPurchases",
+            "subscriptionGroups",
+            "gameCenterEnabledVersions",
+            "appCustomProductPages",
+            "inAppPurchasesV2",
+            "promotedPurchases",
+            "appEvents",
+            "reviewSubmissions",
+            "subscriptionGracePeriod",
+            "gameCenterDetail",
+            "appStoreVersionExperimentsV2",
+            "androidToIosAppMappingDetails"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Relationship data to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[preReleaseVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "platform",
+            "builds",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[betaAppReviewDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "contactFirstName",
+            "contactLastName",
+            "contactPhone",
+            "contactEmail",
+            "demoAccountName",
+            "demoAccountPassword",
+            "demoAccountRequired",
+            "notes",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[betaAppLocalizations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "feedbackEmail",
+            "marketingUrl",
+            "privacyPolicyUrl",
+            "tvOsPrivacyPolicy",
+            "description",
+            "locale",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[builds]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "version",
+            "uploadedDate",
+            "expirationDate",
+            "expired",
+            "minOsVersion",
+            "lsMinimumSystemVersion",
+            "computedMinMacOsVersion",
+            "computedMinVisionOsVersion",
+            "iconAssetToken",
+            "processingState",
+            "buildAudienceType",
+            "usesNonExemptEncryption",
+            "preReleaseVersion",
+            "individualTesters",
+            "betaGroups",
+            "betaBuildLocalizations",
+            "appEncryptionDeclaration",
+            "betaAppReviewSubmission",
+            "app",
+            "buildBetaDetail",
+            "appStoreVersion",
+            "icons",
+            "buildBundles",
+            "buildUpload",
+            "perfPowerMetrics",
+            "diagnosticSignatures"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[betaGroups]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "createdDate",
+            "isInternalGroup",
+            "hasAccessToAllBuilds",
+            "publicLinkEnabled",
+            "publicLinkId",
+            "publicLinkLimitEnabled",
+            "publicLinkLimit",
+            "publicLink",
+            "feedbackEnabled",
+            "iosBuildsAvailableForAppleSiliconMac",
+            "iosBuildsAvailableForAppleVision",
+            "app",
+            "builds",
+            "betaTesters",
+            "betaRecruitmentCriteria",
+            "betaRecruitmentCriterionCompatibleBuildCheck"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Fields to return for included related types.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[preReleaseVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of included related resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[builds]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of included related resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[betaGroups]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of included related resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[betaAppLocalizations]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of included related resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appStoreVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appInfos]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[endUserLicenseAgreements]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "agreementText",
+            "app",
+            "territories"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "appStoreState",
+            "appVersionState",
+            "copyright",
+            "reviewType",
+            "releaseType",
+            "earliestReleaseDate",
+            "usesIdfa",
+            "downloadable",
+            "createdDate",
+            "app",
+            "appStoreVersionLocalizations",
+            "build",
+            "appStoreVersionPhasedRelease",
+            "gameCenterAppVersion",
+            "routingAppCoverage",
+            "appStoreReviewDetail",
+            "appStoreVersionSubmission",
+            "appClipDefaultExperience",
+            "appStoreVersionExperiments",
+            "appStoreVersionExperimentsV2",
+            "customerReviews",
+            "alternativeDistributionPackage"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appInfos]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appStoreState",
+            "state",
+            "appStoreAgeRating",
+            "australiaAgeRating",
+            "brazilAgeRating",
+            "brazilAgeRatingV2",
+            "franceAgeRating",
+            "koreaAgeRating",
+            "kidsAgeBand",
+            "app",
+            "ageRatingDeclaration",
+            "appInfoLocalizations",
+            "primaryCategory",
+            "primarySubcategoryOne",
+            "primarySubcategoryTwo",
+            "secondaryCategory",
+            "secondarySubcategoryOne",
+            "secondarySubcategoryTwo",
+            "territoryAgeRatings"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[gameCenterEnabledVersions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterEnabledVersions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "versionString",
+            "iconAsset",
+            "compatibleVersions",
+            "app"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[inAppPurchases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[inAppPurchases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "productId",
+            "inAppPurchaseType",
+            "state",
+            "apps",
+            "name",
+            "reviewNote",
+            "familySharable",
+            "contentHosting",
+            "inAppPurchaseLocalizations",
+            "pricePoints",
+            "content",
+            "appStoreReviewScreenshot",
+            "promotedPurchase",
+            "iapPriceSchedule",
+            "inAppPurchaseAvailability",
+            "images",
+            "offerCodes",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[ciProducts]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "createdDate",
+            "productType",
+            "app",
+            "bundleId",
+            "workflows",
+            "primaryRepositories",
+            "additionalRepositories",
+            "buildRuns"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appClips]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appClips]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "bundleId",
+            "app",
+            "appClipDefaultExperiences",
+            "appClipAdvancedExperiences"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[reviewSubmissions]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "platform",
+            "submittedDate",
+            "state",
+            "app",
+            "items",
+            "appStoreVersionForReview",
+            "submittedByActor",
+            "lastUpdatedByActor"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appCustomProductPages]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "url",
+            "visible",
+            "app",
+            "appCustomProductPageVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appEvents]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "badge",
+            "eventState",
+            "deepLink",
+            "purchaseRequirement",
+            "primaryLocale",
+            "priority",
+            "purpose",
+            "territorySchedules",
+            "archivedTerritorySchedules",
+            "localizations"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appCustomProductPages]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appEvents]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[reviewSubmissions]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[subscriptionGracePeriods]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "optIn",
+            "sandboxOptIn",
+            "duration",
+            "renewalType"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[promotedPurchases]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "visibleForAllUsers",
+            "enabled",
+            "state",
+            "inAppPurchaseV2",
+            "subscription"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[subscriptionGroups]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "referenceName",
+            "subscriptions",
+            "subscriptionGroupLocalizations",
+            "versions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[inAppPurchasesV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[promotedPurchases]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[subscriptionGroups]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Number of resources to return.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appStoreVersionExperiments]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "name",
+            "platform",
+            "trafficProportion",
+            "state",
+            "reviewRequired",
+            "startDate",
+            "endDate",
+            "app",
+            "latestControlVersion",
+            "controlVersions",
+            "appStoreVersionExperimentTreatments"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appStoreVersionExperimentsV2]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[appEncryptionDeclarations]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "appDescription",
+            "createdDate",
+            "usesEncryption",
+            "exempt",
+            "containsProprietaryCryptography",
+            "containsThirdPartyCryptography",
+            "availableOnFrenchStore",
+            "platform",
+            "uploadedDate",
+            "documentUrl",
+            "documentName",
+            "documentType",
+            "appEncryptionDeclarationState",
+            "codeValue",
+            "app",
+            "builds",
+            "appEncryptionDeclarationDocument"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[appEncryptionDeclarations]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[gameCenterDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "arcadeEnabled",
+            "challengeEnabled",
+            "app",
+            "gameCenterAppVersions",
+            "gameCenterGroup",
+            "gameCenterLeaderboards",
+            "gameCenterLeaderboardsV2",
+            "gameCenterLeaderboardSets",
+            "gameCenterLeaderboardSetsV2",
+            "gameCenterAchievements",
+            "gameCenterAchievementsV2",
+            "gameCenterActivities",
+            "gameCenterChallenges",
+            "defaultLeaderboard",
+            "defaultLeaderboardV2",
+            "defaultGroupLeaderboard",
+            "defaultGroupLeaderboardV2",
+            "achievementReleases",
+            "activityReleases",
+            "challengeReleases",
+            "leaderboardReleases",
+            "leaderboardSetReleases",
+            "challengesMinimumPlatformVersions"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[androidToIosAppMappingDetails]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "packageName",
+            "appSigningKeyPublicCertificateSha256Fingerprints"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit[androidToIosAppMappingDetails]",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "50",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[buildIcons]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "iconAsset",
+            "iconType",
+            "masked",
+            "name"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AppResponse",
+      "typeId": "data:app_store_connect_api:AppResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v1/apps/6446998023\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"apps\",\n    \"id\": \"6446998023\",\n    \"attributes\": {\n      \"name\": \"Your Next Cortado\",\n      \"bundleId\": \"com.bdt.ync\",\n      \"sku\": \"YNC\",\n      \"primaryLocale\": \"en-US\",\n      \"isOrEverWasMadeForKids\": false,\n      \"subscriptionStatusUrl\": null,\n      \"subscriptionStatusUrlVersion\": null,\n      \"subscriptionStatusUrlForSandbox\": null,\n      \"subscriptionStatusUrlVersionForSandbox\": null,\n      \"availableInNewTerritories\": true,\n      \"contentRightsDeclaration\": \"DOES_NOT_USE_THIRD_PARTY_CONTENT\"\n    },\n    \"relationships\": {\n      \"ciProduct\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/ciProduct\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/ciProduct\"\n        }\n      },\n      \"betaTesters\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaTesters\"\n        }\n      },\n      \"betaGroups\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaGroups\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaGroups\"\n        }\n      },\n      \"appStoreVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appStoreVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appStoreVersions\"\n        }\n      },\n      \"preReleaseVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/preReleaseVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/preReleaseVersions\"\n        }\n      },\n      \"betaAppLocalizations\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaAppLocalizations\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaAppLocalizations\"\n        }\n      },\n      \"builds\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/builds\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/builds\"\n        }\n      },\n      \"betaLicenseAgreement\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaLicenseAgreement\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaLicenseAgreement\"\n        }\n      },\n      \"betaAppReviewDetail\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/betaAppReviewDetail\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/betaAppReviewDetail\"\n        }\n      },\n      \"appInfos\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appInfos\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appInfos\"\n        }\n      },\n      \"appClips\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appClips\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appClips\"\n        }\n      },\n      \"appPricePoints\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appPricePoints\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appPricePoints\"\n        }\n      },\n      \"pricePoints\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/pricePoints\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/pricePoints\"\n        }\n      },\n      \"endUserLicenseAgreement\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/endUserLicenseAgreement\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/endUserLicenseAgreement\"\n        }\n      },\n      \"preOrder\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/preOrder\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/preOrder\"\n        }\n      },\n      \"prices\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/prices\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/prices\"\n        }\n      },\n      \"appPriceSchedule\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appPriceSchedule\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appPriceSchedule\"\n        }\n      },\n      \"availableTerritories\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/availableTerritories\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/availableTerritories\"\n        }\n      },\n      \"appAvailability\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appAvailability\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appAvailability\"\n        }\n      },\n      \"inAppPurchases\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/inAppPurchases\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/inAppPurchases\"\n        }\n      },\n      \"subscriptionGroups\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/subscriptionGroups\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/subscriptionGroups\"\n        }\n      },\n      \"gameCenterEnabledVersions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/gameCenterEnabledVersions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/gameCenterEnabledVersions\"\n        }\n      },\n      \"perfPowerMetrics\": {\n        \"links\": {\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/perfPowerMetrics\"\n        }\n      },\n      \"appCustomProductPages\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appCustomProductPages\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appCustomProductPages\"\n        }\n      },\n      \"inAppPurchasesV2\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/inAppPurchasesV2\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/inAppPurchasesV2\"\n        }\n      },\n      \"promotedPurchases\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/promotedPurchases\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/promotedPurchases\"\n        }\n      },\n      \"appEvents\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/appEvents\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/appEvents\"\n        }\n      },\n      \"reviewSubmissions\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/reviewSubmissions\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/reviewSubmissions\"\n        }\n      },\n      \"subscriptionGracePeriod\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/subscriptionGracePeriod\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/subscriptionGracePeriod\"\n        }\n      },\n      \"customerReviews\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/relationships/customerReviews\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023/customerReviews\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023\"\n    }\n  },\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/apps/6446998023\"\n  }\n}\n\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting and modifying app information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-apps-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appEncryptionDeclarations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-appEncryptionDeclarations"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "id": "doc:appstoreconnectapi/age-ratings",
+  "title": "Age Ratings",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/age-ratings",
+  "slug": "appstoreconnectapi/age-ratings",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read and update age ratings and declarations for your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": "The age-rating declaration attributes `INFREQUENT_OR_MILD` and `FREQUENT_OR_INTENSE` are deprecated. Instead, use `INFREQUENT` or `FREQUENT`.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`ageRatingDeclarations` handles your answers to the app-characteristic questions that affect your app’s age rating. This resource enables you to answer the questions and update your answers. You must fill out this information before submitting your app for review.",
+          "refs": []
+        },
+        {
+          "text": "`territoryAgeRatings` allows you to read the age ratings per territory that are calculated by your age rating declaration responses.",
+          "refs": []
+        },
+        {
+          "text": "For more information about age ratings, see `https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-app-information/set-an-app-age-rating"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n> The age-rating declaration attributes `INFREQUENT_OR_MILD` and `FREQUENT_OR_INTENSE` are deprecated. Instead, use `INFREQUENT` or `FREQUENT`.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading and modifying declarations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-ageRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-relationships-ageRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-ageRatingDeclarations-_id_"
+      ]
+    },
+    {
+      "title": "Reading territory age rating",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-territoryAgeRatings",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-relationships-territoryAgeRatings"
+      ]
+    },
+    {
+      "title": "Objects and data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclarationResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AgeRatingDeclarationUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoAgeRatingDeclarationLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoTerritoryAgeRatingsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BrazilAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/KidsAgeBand",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAgeRating",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAgeRatingsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Categories and Age Declarations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-categories"
+      ]
+    }
+  ]
+}

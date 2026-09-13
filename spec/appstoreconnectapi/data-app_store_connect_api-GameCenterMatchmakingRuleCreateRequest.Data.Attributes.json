@@ -1,0 +1,169 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingRuleCreateRequest.Data.Attributes",
+  "title": "GameCenterMatchmakingRuleCreateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleCreateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingrulecreaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes for a rule that you create.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingRuleCreateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "description",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A human-readable description of the rule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expression",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Code that returns a Boolean or numeric value that the matchmaking rules algorithm executes to compare or filter match requests.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceName",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A name for the rule that’s unique within the scope of its rule set.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "COMPATIBLE",
+            "DISTANCE",
+            "MATCH",
+            "TEAM"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The type or category of the rule that determines the return value and properties available in the expression.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "weight",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A numeric value for the rule when `type` is either `DISTANCE` or `MATCH`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [
+    {
+      "headers": [
+        "`COMPATIBLE`",
+        "Rules that enforce constraints on two match requests and return a Boolean value. ![spacer] For example, a rule that requires devices to run the same version of your game, or finds players that share a common language or game settings. ![spacer] If you set the `type` field to `COMPATIBLE`, compare the two match requests in the `requests` array in your expression, as in: ![spacer] `areCompatibleAppVersions(requests[0], requests[1])`"
+      ],
+      "rows": [
+        [
+          "`DISTANCE`",
+          "Rules that evaluate the similarity of two match requests and return a numeric value between `0.0` and `1.0`. ![spacer] For example, rules that compare the latency or distance between players and find players with the exact same language and region setting. ![spacer] If you set the `type` field to `DISTANCE`, evaluate the two match requests in the `requests` array in your expression, as in: ![spacer] `geoLatency(requests[0], requests[1])`"
+        ],
+        [
+          "`MATCH`",
+          "Rules that evaluate properties across all compatible requests. ![spacer] For example, rules that prefer match candidates with more players but allows less players after a period of time, compare the difference in skill levels of players to a desired skill level that’s a function of time, and find players that have compatible game configurations that loosen over time. ![spacer] If you set the type field to `MATCH`, use the `requests` array in the expression to get all the compatible matches."
+        ],
+        [
+          "`TEAM`",
+          "Rules that evaluate the assignment of players to teams and return a Boolean value. ![spacer] For example, rules that make the number of players on each team the same, balance the skill levels on each team for a fair match, and keep invited friends on the same team. ![spacer] If you set the `type` field to `TEAM`, use the `teams` array to get all the teams associated with the rule set."
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The possible values for the `type` field are:",
+          "refs": []
+        },
+        {
+          "text": "| `COMPATIBLE` | Rules that enforce constraints on two match requests and return a Boolean value. ![spacer] For example, a rule that requires devices to run the same version of your game, or finds players that share a common language or game settings. ![spacer] If you set the `type` field to `COMPATIBLE`, compare the two match requests in the `requests` array in your expression, as in: ![spacer] `areCompatibleAppVersions(requests[0], requests[1])` |\n| --- | --- |\n| `DISTANCE` | Rules that evaluate the similarity of two match requests and return a numeric value between `0.0` and `1.0`. ![spacer] For example, rules that compare the latency or distance between players and find players with the exact same language and region setting. ![spacer] If you set the `type` field to `DISTANCE`, evaluate the two match requests in the `requests` array in your expression, as in: ![spacer] `geoLatency(requests[0], requests[1])` |\n| `MATCH` | Rules that evaluate properties across all compatible requests. ![spacer] For example, rules that prefer match candidates with more players but allows less players after a period of time, compare the difference in skill levels of players to a desired skill level that’s a function of time, and find players that have compatible game configurations that loosen over time. ![spacer] If you set the type field to `MATCH`, use the `requests` array in the expression to get all the compatible matches. |\n| `TEAM` | Rules that evaluate the assignment of players to teams and return a Boolean value. ![spacer] For example, rules that make the number of players on each team the same, balance the skill levels on each team for a fair match, and keep invited friends on the same team. ![spacer] If you set the `type` field to `TEAM`, use the `teams` array to get all the teams associated with the rule set. |",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingRuleCreateRequest/Data-data.dictionary/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

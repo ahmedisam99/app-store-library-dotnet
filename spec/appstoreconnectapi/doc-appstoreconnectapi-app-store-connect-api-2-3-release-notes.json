@@ -1,0 +1,155 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-connect-api-2-3-release-notes",
+  "title": "App Store Connect API 2.3 release notes",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-connect-api-2-3-release-notes",
+  "slug": "appstoreconnectapi/app-store-connect-api-2-3-release-notes",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Update your server-side code to use new features, and test your code against API changes.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "important",
+      "prose": {
+        "text": " If you use `POST-v1-appPriceSchedules` to add a scheduled price change to your App, you can’t use `AppPriceInlineCreate` to change your App’s price.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPriceSchedules"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "New features",
+      "paragraphs": [],
+      "listItems": [
+        {
+          "text": "Getting an app’s price points and `GET-v2-inAppPurchases-_id_-pricePoints` now support 900 price points.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-pricePoints"
+          ]
+        },
+        {
+          "text": "`GET-v3-appPricePoints-_id_-equalizations` allows for setting equalized prices.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v3-appPricePoints-_id_-equalizations"
+          ]
+        },
+        {
+          "text": "Getting and managing an app’s price schedules   and `in-app-purchase-price-schedules` support automatic prices, manual prices, and base territory configuration.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-price-schedules"
+          ]
+        },
+        {
+          "text": "Getting and managing an app’s availability, `in-app-purchase-availability` and `subscription-availability` supports configuring availability for apps, in-app purchases, and subscriptions.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-availability",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability"
+          ]
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Deprecations",
+      "paragraphs": [
+        {
+          "text": "> **Important**\n>\n>  If you use `POST-v1-appPriceSchedules` to add a scheduled price change to your App, you can’t use `AppPriceInlineCreate` to change your App’s price.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appPriceSchedules"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "The `List all price points for an app V1` endpoint is now deprecated and replaced with `GET-v1-apps-_id_-appPricePoints`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appPricePoints"
+          ]
+        },
+        {
+          "text": "The `List all prices for an app` endpoint is now deprecated and replaced with `GET-v1-apps-_id_-appPriceSchedule`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appPriceSchedule"
+          ]
+        },
+        {
+          "text": "The `List all available territories for an app` endpoint is now deprecated and replaced with `GET-v1-appAvailabilities-{id}`.",
+          "refs": []
+        },
+        {
+          "text": "The `AppPricePointV2` object deprecated and replaced with `AppPricePointV3`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppPricePointV3"
+          ]
+        },
+        {
+          "text": "The `List all price points for an app V1` endpoint is now deprecated and replaced with `List app price tiers`.",
+          "refs": []
+        },
+        {
+          "text": "The `Read app price tier information` endpoint is now deprecated and replaced with `Read App Price Point Information`.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Note to Developers",
+      "paragraphs": [
+        {
+          "text": "On May 9, 2023, pricing for your existing apps and in-app purchases (excluding auto-renewable subscriptions) will be updated across all 175 storefronts to be equalized to your base country or region using publicly available exchange rate information. If you don’t specify a base country or region, Apple will use your current price in the United States as the basis to provide comparable prices in other countries or regions. Learn more about `https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price` or`https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/manage-app-pricing/set-a-price",
+            "https://developer.apple.com/help/app-store-connect/manage-in-app-purchases/set-a-price-for-an-in-app-purchase"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-1-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-4-0-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-8-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-7-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-6-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-5-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-4-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-3-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-2-release-notes",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-connect-api-3-1-release-notes"
+      ]
+    }
+  ]
+}

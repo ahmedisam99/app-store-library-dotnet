@@ -1,0 +1,100 @@
+{
+  "id": "data:app_store_connect_api:PhasedReleaseState",
+  "title": "PhasedReleaseState",
+  "kind": "typealias",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/PhasedReleaseState",
+  "slug": "appstoreconnectapi/phasedreleasestate",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "String that represents the progress of a phased release for an app version.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "string PhasedReleaseState",
+    "baseType": "string",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": [
+    {
+      "name": "INACTIVE",
+      "abstract": {
+        "text": "The phased release hasn’t started.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "ACTIVE",
+      "abstract": {
+        "text": "The app version is released. During a phased release, the App Store releases the update over a 7-day period to a percentage of your users, randomly selected. The phased release applies to macOS and iOS devices with automatic updates enabled. Users can also manually download the app version.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "PAUSED",
+      "abstract": {
+        "text": "The App Store paused the phased release, at your request.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    },
+    {
+      "name": "COMPLETE",
+      "abstract": {
+        "text": "The process released the update to all devices that have automatic updates enabled. The phased-release process is complete.",
+        "refs": []
+      },
+      "deprecated": false,
+      "introducedVersion": null
+    }
+  ],
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "For more information about phased releases including pausing an update, see `https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseUpdateRequest"
+      ]
+    }
+  ]
+}

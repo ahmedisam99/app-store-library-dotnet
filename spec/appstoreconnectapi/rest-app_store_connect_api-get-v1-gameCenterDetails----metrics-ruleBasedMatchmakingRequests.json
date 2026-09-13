@@ -1,0 +1,278 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-gameCenterDetails-{}-metrics-ruleBasedMatchmakingRequests",
+  "title": "Get Rule-Based Match Requests",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-metrics-ruleBasedMatchmakingRequests",
+  "slug": "appstoreconnectapi/get-v1-gamecenterdetails-_id_-metrics-rulebasedmatchmakingrequests",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get match requests that use matchmaking rules.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterDetails/{id}/metrics/ruleBasedMatchmakingRequests",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the `GameCenterDetail` resource object. You can obtain this resource ID from the `GET-v1-apps` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterDetail",
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[result]",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "MATCHED",
+            "CANCELED",
+            "EXPIRED"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The types of the match requests to include in the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "granularity",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "P1D",
+            "PT1H",
+            "PT15M"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The level of information you want in the response, specified as a time interval for the data collection, using the ISO 8601 format for durations.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "groupBy",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "result"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "If `result`, organizes the match requests by type (`MATCHED`, `CANCELED`, and `EXPIRED`).",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of match requests to fetch.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "sort",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "count",
+            "-count",
+            "averageSecondsInQueue",
+            "-averageSecondsInQueue",
+            "p50SecondsInQueue",
+            "-p50SecondsInQueue",
+            "p95SecondsInQueue",
+            "-p95SecondsInQueue"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Sorts the match request by count or duration in the queue. For example, `count` sorts the results by decreasing number of players that Game Center finds.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingAppRequestsV1MetricResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingAppRequestsV1MetricResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET /v1/gameCenterDetails/8fb73d41-1ca1-1cbf-2538-9df424beb10b/metrics/ruleBasedMatchmakingRequests?granularity=PT15M\n```\n\n**Response**\n\n```json\n{\n  “data”: [\n    {\n      “type”: “gameCenterMatchmakingAppRequests”,\n      “dataPoints”: [\n        {\n          “start”: “2023-10-05T04:00:00Z”,\n          “end”: “2023-10-05T04:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 2.9630714285714284,\n            “p95SecondsInQueue”: 3.838,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.36\n          }\n        },\n        {\n          “start”: “2023-10-05T03:45:00Z”,\n          “end”: “2023-10-05T04:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 87.95857142857143,\n            “p95SecondsInQueue”: 302.343,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.435\n          }\n        },\n        {\n          “start”: “2023-10-05T03:30:00Z”,\n          “end”: “2023-10-05T03:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.7325,\n            “p95SecondsInQueue”: 3.984,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.818\n          }\n        },\n        {\n          “start”: “2023-10-05T03:15:00Z”,\n          “end”: “2023-10-05T03:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 301.53325,\n            “p95SecondsInQueue”: 302.924,\n            “count”: 4,\n            “p50SecondsInQueue”: 302.62\n          }\n        },\n        {\n          “start”: “2023-10-05T03:00:00Z”,\n          “end”: “2023-10-05T03:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 2.883714285714286,\n            “p95SecondsInQueue”: 3.53,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.346\n          }\n        },\n        {\n          “start”: “2023-10-05T02:45:00Z”,\n          “end”: “2023-10-05T03:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 87.926,\n            “p95SecondsInQueue”: 302.848,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.197\n          }\n        },\n        {\n          “start”: “2023-10-05T02:30:00Z”,\n          “end”: “2023-10-05T02:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.42825,\n            “p95SecondsInQueue”: 3.66,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.503\n          }\n        },\n        {\n          “start”: “2023-10-05T02:15:00Z”,\n          “end”: “2023-10-05T02:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 300.98025,\n            “p95SecondsInQueue”: 301.383,\n            “count”: 4,\n            “p50SecondsInQueue”: 301.108\n          }\n        },\n        {\n          “start”: “2023-10-05T02:00:00Z”,\n          “end”: “2023-10-05T02:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 2.928,\n            “p95SecondsInQueue”: 3.777,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.29\n          }\n        },\n        {\n          “start”: “2023-10-05T01:45:00Z”,\n          “end”: “2023-10-05T02:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 87.93171428571429,\n            “p95SecondsInQueue”: 302.445,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.242\n          }\n        },\n        {\n          “start”: “2023-10-05T01:30:00Z”,\n          “end”: “2023-10-05T01:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.1195,\n            “p95SecondsInQueue”: 3.34,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.196\n          }\n        },\n        {\n          “start”: “2023-10-05T01:15:00Z”,\n          “end”: “2023-10-05T01:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 301.0555,\n            “p95SecondsInQueue”: 302.572,\n            “count”: 4,\n            “p50SecondsInQueue”: 301.148\n          }\n        },\n        {\n          “start”: “2023-10-05T01:00:00Z”,\n          “end”: “2023-10-05T01:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.0154285714285716,\n            “p95SecondsInQueue”: 3.678,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.484\n          }\n        },\n        {\n          “start”: “2023-10-05T00:45:00Z”,\n          “end”: “2023-10-05T01:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 88.19257142857144,\n            “p95SecondsInQueue”: 302.78,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.413\n          }\n        },\n        {\n          “start”: “2023-10-05T00:30:00Z”,\n          “end”: “2023-10-05T00:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.109,\n            “p95SecondsInQueue”: 3.387,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.182\n          }\n        },\n        {\n          “start”: “2023-10-05T00:15:00Z”,\n          “end”: “2023-10-05T00:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 301.06625,\n            “p95SecondsInQueue”: 302.979,\n            “count”: 4,\n            “p50SecondsInQueue”: 300.68\n          }\n        },\n        {\n          “start”: “2023-10-05T00:00:00Z”,\n          “end”: “2023-10-05T00:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 2.8656428571428574,\n            “p95SecondsInQueue”: 3.663,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.237\n          }\n        },\n        {\n          “start”: “2023-10-04T23:45:00Z”,\n          “end”: “2023-10-05T00:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 88.13835714285715,\n            “p95SecondsInQueue”: 303.037,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.409\n          }\n        },\n        {\n          “start”: “2023-10-04T23:30:00Z”,\n          “end”: “2023-10-04T23:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.0285,\n            “p95SecondsInQueue”: 3.312,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.152\n          }\n        },\n        {\n          “start”: “2023-10-04T23:15:00Z”,\n          “end”: “2023-10-04T23:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T23:00:00Z”,\n          “end”: “2023-10-04T23:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T22:45:00Z”,\n          “end”: “2023-10-04T23:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T22:30:00Z”,\n          “end”: “2023-10-04T22:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T22:15:00Z”,\n          “end”: “2023-10-04T22:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T22:00:00Z”,\n          “end”: “2023-10-04T22:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T21:45:00Z”,\n          “end”: “2023-10-04T22:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T21:30:00Z”,\n          “end”: “2023-10-04T21:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        },\n        {\n          “start”: “2023-10-04T21:15:00Z”,\n          “end”: “2023-10-04T21:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 301.37775,\n            “p95SecondsInQueue”: 302.627,\n            “count”: 4,\n            “p50SecondsInQueue”: 302.513\n          }\n        },\n        {\n          “start”: “2023-10-04T21:00:00Z”,\n          “end”: “2023-10-04T21:15:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 2.8602857142857143,\n            “p95SecondsInQueue”: 3.528,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.318\n          }\n        },\n        {\n          “start”: “2023-10-04T20:45:00Z”,\n          “end”: “2023-10-04T21:00:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 87.86357142857143,\n            “p95SecondsInQueue”: 302.205,\n            “count”: 14,\n            “p50SecondsInQueue”: 3.173\n          }\n        },\n        {\n          “start”: “2023-10-04T20:30:00Z”,\n          “end”: “2023-10-04T20:45:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 3.11125,\n            “p95SecondsInQueue”: 3.359,\n            “count”: 4,\n            “p50SecondsInQueue”: 3.186\n          }\n        },\n        {\n          “start”: “2023-10-04T20:15:00Z”,\n          “end”: “2023-10-04T20:30:00Z”,\n          “values”: {\n            “averageSecondsInQueue”: 0,\n            “p95SecondsInQueue”: 0,\n            “count”: 0,\n            “p50SecondsInQueue”: 0\n          }\n        }\n      ],\n      “dimensions”: {\n        “result”: {\n          “links”: {\n            “groupBy”: “https://api.appstoreconnect.apple.com/v1/gameCenterDetails/8fb73d41-1ca1-1cbf-2538-9df424beb10b/metrics/ruleBasedMatchmakingRequests?groupBy=result”\n          }\n        }\n      },\n      “granularity”: 900\n    }\n  ],\n  “links”: {\n    “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterDetails/8fb73d41-1ca1-1cbf-2538-9df424beb10b/metrics/ruleBasedMatchmakingRequests?granularity=PT15M”\n  },\n  “meta”: {\n    “paging”: {\n      “total”: 1,\n      “limit”: 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting match request metrics",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterDetails-_id_-metrics-classicMatchmakingRequests"
+      ]
+    }
+  ]
+}

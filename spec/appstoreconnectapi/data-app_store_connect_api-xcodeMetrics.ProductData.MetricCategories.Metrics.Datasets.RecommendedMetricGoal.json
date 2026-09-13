@@ -1,0 +1,81 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.RecommendedMetricGoal",
+  "title": "xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.RecommendedMetricGoal",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary/Datasets-data.dictionary/RecommendedMetricGoal-data.dictionary",
+  "slug": "appstoreconnectapi/xcodemetrics/productdata-data.dictionary/metriccategories-data.dictionary/metrics-data.dictionary/datasets-data.dictionary/recommendedmetricgoal-data.dictionary",
+  "introducedAt": "4.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A recommeded value of a goal for a specific app metric.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics.ProductData.MetricCategories.Metrics.Datasets.RecommendedMetricGoal",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "detail",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A human-readable description of the recommended metric goal.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "value",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The recommended metric value.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 3,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Xcode compares your app’s metrics against two types of goals: *similar-app goals*, which are based on metrics from apps with functional and technical similarities to yours, and *historical performance goals*, which are based on your app’s own historical data.",
+          "refs": []
+        },
+        {
+          "text": "When Xcode has enough information to determine a goal for a metric, it is available in this resource. Use this information to plan and prioritize performance-engineering work.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

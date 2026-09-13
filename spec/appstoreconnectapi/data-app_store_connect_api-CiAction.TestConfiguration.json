@@ -1,0 +1,101 @@
+{
+  "id": "data:app_store_connect_api:CiAction.TestConfiguration",
+  "title": "CiAction.TestConfiguration",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiAction/TestConfiguration-data.dictionary",
+  "slug": "appstoreconnectapi/ciaction/testconfiguration-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The test configuration for a test action.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiAction.TestConfiguration",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "kind",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "USE_SCHEME_SETTINGS",
+            "SPECIFIC_TEST_PLANS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes whether the test action uses the scheme’s default tests or a specific test plan.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "testDestinations",
+      "type": "[CiTestDestination]",
+      "typeId": "data:app_store_connect_api:CiTestDestination",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A list of destination information for the test configuration.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "testPlanName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the test plan. This value is only available to test actions that set the `kind` field to `SPECIFIC_TEST_PLANS`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestination",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiTestDestinationKind"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

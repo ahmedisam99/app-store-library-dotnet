@@ -1,0 +1,146 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-ciBuildRuns",
+  "title": "Start a build",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-ciBuildRuns",
+  "slug": "appstoreconnectapi/post-v1-cibuildruns",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Start a new Xcode Cloud build for a workflow.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/ciBuildRuns",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "CiBuildRunCreateRequest",
+    "typeId": "data:app_store_connect_api:CiBuildRunCreateRequest",
+    "abstract": {
+      "text": "The request body you use to start a new Xcode Cloud build.",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "CiBuildRunResponse",
+      "typeId": "data:app_store_connect_api:CiBuildRunResponse",
+      "abstract": {
+        "text": "The request completed successfully and a new Build Runs resource has been created.",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "The provided resource data is not valid.",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example request below starts a new build for a specific workflow. Use the information provided in the response to display build information on a dashboard or to access additional information; for example, the actions Xcode Cloud performs during the build.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\n{\n    “data”: {\n        “type”: “ciBuildRuns”,\n        “attributes”: {},\n        “relationships”: {\n            “workflow”: {\n                “data”: {\n                    “type”: “ciWorkflows”,\n                    “id”: “a3946af0-cc38-4e0b-acba-5575c8dad050”\n                }\n            }\n        }\n    }\n}\n```\n\n**Response**\n\n```json\n{\n    \"data\": {\n        \"type\": \"ciBuildRuns\",\n        \"id\": \"574f26a1-193c-409e-98ab-33ed4105a2ff\",\n        \"attributes\": {\n            \"number\": 1,\n            \"createdDate\": \"2021-08-17T19:04:31.876Z\",\n            \"startedDate\": null,\n            \"finishedDate\": null,\n            \"sourceCommit\": {\n                \"commitSha\": \"The commit hash of the source commit.\",\n                \"message\": \"A commit message.\",\n                \"author\": {\n                    \"displayName\": \"An author\",\n                    \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                },\n                \"committer\": {\n                    \"displayName\": \"A committer\",\n                    \"avatarUrl\": \"https://example.com/user/avatar/author.png\"\n                },\n                \"webUrl\": \"https://example.cpm/commits/abc123\"\n            },\n            \"destinationCommit\": null,\n            \"isPullRequestBuild\": false,\n            \"issueCounts\": null,\n            \"executionProgress\": \"PENDING\",\n            \"completionStatus\": null,\n            \"startReason\": \"MANUAL\",\n            \"cancelReason\": null\n        },\n        \"relationships\": {\n            \"builds\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/574f26a1-193c-409e-98ab-33ed4105a2ff/relationships/builds\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/574f26a1-193c-409e-98ab-33ed4105a2ff/builds\"\n                }\n            },\n            \"actions\": {\n                \"links\": {\n                    \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/574f26a1-193c-409e-98ab-33ed4105a2ff/relationships/actions\",\n                    \"related\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/574f26a1-193c-409e-98ab-33ed4105a2ff/actions\"\n                }\n            }\n        },\n        \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns/574f26a1-193c-409e-98ab-33ed4105a2ff\"\n        }\n    },\n    \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/ciBuildRuns\"\n    }\n}\n\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

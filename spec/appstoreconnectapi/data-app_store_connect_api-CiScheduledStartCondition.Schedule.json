@@ -1,0 +1,134 @@
+{
+  "id": "data:app_store_connect_api:CiScheduledStartCondition.Schedule",
+  "title": "CiScheduledStartCondition.Schedule",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiScheduledStartCondition/Schedule-data.dictionary",
+  "slug": "appstoreconnectapi/cischeduledstartcondition/schedule-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The schedule of an Xcode Cloud workflow that starts a new build based on a schedule.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiScheduledStartCondition.Schedule",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "days",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "SUNDAY",
+            "MONDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+            "THURSDAY",
+            "FRIDAY",
+            "SATURDAY"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A list of days you configure for the start condition that starts a new build on a schedule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "frequency",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "WEEKLY",
+            "DAILY",
+            "HOURLY"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string indicating the frequency of the start condition that starts a new build on a schedule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "hour",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An integer that represents the hour you configure for the start condition that starts a new build on a schedule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "minute",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An integer that represents the minute you configure for the start condition that starts a new build on a schedule.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "timezone",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that represents the time zone you configure for the start condition that starts a new build on a schedule.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

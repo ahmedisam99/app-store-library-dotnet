@@ -1,0 +1,158 @@
+{
+  "id": "data:app_store_connect_api:WinBackOfferUpdateRequest.Data.Attributes",
+  "title": "WinBackOfferUpdateRequest.Data.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/WinBackOfferUpdateRequest/Data-data.dictionary/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/winbackofferupdaterequest/data-data.dictionary/attributes-data.dictionary",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a win-back offer update resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object WinBackOfferUpdateRequest.Data.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "customerEligibilityPaidSubscriptionDurationInMonths",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "How long a customer was a subscriber. Possible values:\n\n- **`1-24`** — 1 to 24 months, as integers\n- **`36`** — 3 years\n- **`48`** — 4 years\n- **`60`** — 5 years",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "customerEligibilityTimeSinceLastSubscribedInMonths",
+      "type": "IntegerRange",
+      "typeId": "data:app_store_connect_api:IntegerRange",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "How long since the subscribe last had an active subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "customerEligibilityWaitBetweenOffersInMonths",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "How long since the subscribe last had an active subscription.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "endDate",
+      "type": "date",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "priority",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "HIGH",
+            "NORMAL"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Select how this offer ranks among your other offers and in-app events. `HIGH` priority offers will appear above other offers and events on your appʼs product page.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "promotionIntent",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "NOT_PROMOTED",
+            "USE_AUTO_GENERATED_ASSETS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "You can promote this offer on your App Store product page. Promoted offers can also display in search results and may be featured on the Today, Games, and Apps tabs. If your win-back offer is live and `promotionIntent` is set to `USE_AUTO_GENERATED_ASSETS` you need to delete the win-back offer in order to remove it from promotion.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "startDate",
+      "type": "date",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "First available date is today + 1 day.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

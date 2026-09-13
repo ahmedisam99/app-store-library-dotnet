@@ -1,0 +1,161 @@
+{
+  "id": "data:app_store_connect_api:UserInvitation.Attributes",
+  "title": "UserInvitation.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/UserInvitation/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/userinvitation/attributes-data.dictionary",
+  "introducedAt": "1.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe a User Invitations resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object UserInvitation.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "email",
+      "type": "email",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The email address of a pending user invitation. The email address must be valid to activate the account. It can be any email address, not necessarily one associated with an Apple Account.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "firstName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The first name of the user with the pending user invitation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "lastName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The last name of the user with the pending user invitation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "roles",
+      "type": "[UserRole]",
+      "typeId": "data:app_store_connect_api:UserRole",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Assigned user roles that determine the user’s access to sections of App Store Connect and tasks they can perform.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "expirationDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The expiration date of the pending invitation.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "provisioningAllowed",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates the user’s specified role allows access to the provisioning functionality on the Apple Developer website.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "allAppsVisible",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether a user has access to all apps available to the team.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Related Documentation",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/user-invitations"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UserInvitation/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

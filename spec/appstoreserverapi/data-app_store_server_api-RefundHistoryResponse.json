@@ -31,6 +31,7 @@
       "deprecated": false,
       "introducedVersion": "1.6.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A Boolean value that indicates whether the App Store has more transactions than it returns in `signedTransactions`. If the value is `true`, use the `revision` token to request the next set of transactions by calling `Get-Refund-History`.",
         "refs": [
@@ -47,6 +48,7 @@
       "deprecated": false,
       "introducedVersion": "1.6.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A token you provide in a query to request the next set of transactions from the `Get-Refund-History` endpoint.",
         "refs": [
@@ -63,6 +65,7 @@
       "deprecated": false,
       "introducedVersion": "1.6.0",
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "A list of up to 20 JWS transactions, or an empty array if the customer hasn’t received any refunds in your app.\n\nThe transactions are sorted in ascending order by `revocationDate`.",
         "refs": [
@@ -108,6 +111,10 @@
   "topics": [
     {
       "title": "Response data types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/hasMore",
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/revision",
@@ -118,6 +125,10 @@
   "seeAlso": [
     {
       "title": "Refund lookup",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreserverapi/documentation/AppStoreServerAPI/Get-Refund-History"
       ]

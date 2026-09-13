@@ -1,0 +1,174 @@
+{
+  "id": "rest:app_store_connect_api:get:v2-sandboxTesters",
+  "title": "List sandbox testers",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v2-sandboxTesters",
+  "slug": "appstoreconnectapi/get-v2-sandboxtesters",
+  "introducedAt": "2.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get a list of Sandbox Testers for your team.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v2/sandboxTesters",
+      "parameters": []
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Query Parameters",
+      "name": "fields[sandboxTesters]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "firstName",
+            "lastName",
+            "acAccountName",
+            "territory",
+            "applePayCompatible",
+            "interruptPurchases",
+            "subscriptionRenewalRate"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "SandboxTestersV2Response",
+      "typeId": "data:app_store_connect_api:SandboxTestersV2Response",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nhttps://api.appstoreconnect.apple.com/v2/sandboxTesters\n```\n\n**Response**\n\n```json\n{\n  \"data\" : [ {\n    \"type\" : \"sandboxTesters\",\n    \"id\" : \"47be9e57-1a3f-49c2-8ce7-af27a977ebb0\",\n    \"attributes\" : {\n      \"firstName\" : \"Anne\",\n      \"lastName\" : \"Johnson\",\n      \"acAccountName\" : \"annejohnson1@icloud.com\",\n      \"territory\" : \"USA\",\n      \"applePayCompatible\" : true,\n      \"interruptPurchases\" : false,\n      \"subscriptionRenewalRate\" : \"MONTHLY_RENEWAL_EVERY_FIVE_MINUTES\"\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v2/sandboxTesters/47be9e57-1a3f-49c2-8ce7-af27a977ebb0\"\n    }\n  } ],\n  \"links\" : {\n    \"self\" : \"https://api.appstoreconnect.apple.com/v2/sandboxTesters\"\n  },\n  \"meta\" : {\n    \"paging\" : {\n      \"total\" : 1,\n      \"limit\" : 50\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Sandbox Tester Lookup and Modification",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-sandboxTesters-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-sandboxTestersClearPurchaseHistoryRequest"
+      ]
+    }
+  ]
+}

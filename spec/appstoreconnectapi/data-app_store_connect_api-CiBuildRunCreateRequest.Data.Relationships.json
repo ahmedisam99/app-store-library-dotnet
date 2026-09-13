@@ -1,0 +1,120 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships",
+  "title": "CiBuildRunCreateRequest.Data.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildruncreaterequest/data-data.dictionary/relationships-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The relationships to other resources that you can set with this request.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRunCreateRequest.Data.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "workflow",
+      "type": "CiBuildRunCreateRequest.Data.Relationships.Workflow",
+      "typeId": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships.Workflow",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Workflows resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildRun",
+      "type": "CiBuildRunCreateRequest.Data.Relationships.BuildRun",
+      "typeId": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships.BuildRun",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Build Runs resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "pullRequest",
+      "type": "CiBuildRunCreateRequest.Data.Relationships.PullRequest",
+      "typeId": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships.PullRequest",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Pull Requests resource.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sourceBranchOrTag",
+      "type": "CiBuildRunCreateRequest.Data.Relationships.SourceBranchOrTag",
+      "typeId": "data:app_store_connect_api:CiBuildRunCreateRequest.Data.Relationships.SourceBranchOrTag",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The related Git References resource.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary/BuildRun-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary/PullRequest-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary/SourceBranchOrTag-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Relationships-data.dictionary/Workflow-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

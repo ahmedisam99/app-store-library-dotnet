@@ -1,0 +1,244 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-analyticsReports-{}-instances",
+  "title": "Read a List of Instances of a Report",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_-instances",
+  "slug": "appstoreconnectapi/get-v1-analyticsreports-_id_-instances",
+  "introducedAt": "3.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Read list of all the granularity options for a specific type of analytics report.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/analyticsReports/{id}/instances",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An opaque resource ID that uniquely identifies the resource. Obtain the analytics report resource ID from the `GET-v1-analyticsReportRequests-_id_-reports` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportRequests-_id_-reports"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "fields[analyticsReportInstances]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "granularity",
+            "processingDate",
+            "segments"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Additional fields to include for each analytics report instances resource returned by the response.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[granularity]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "DAILY",
+            "WEEKLY",
+            "MONTHLY"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned report instances by granularity.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "filter[processingDate]",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Filter the returned report instances by processing date. Use ISO 8601 YYYY-MM-DD format.",
+        "refs": []
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of analytics report instances resources to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/json",
+      "type": "AnalyticsReportInstancesResponse",
+      "typeId": "data:app_store_connect_api:AnalyticsReportInstancesResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Examples Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/analyticsReports/r2-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances?limit=3&filter%5Bgranularity%5D=DAILY\n```\n\n**Response**\n\n```json\n{\n  \"data\": [\n    {\n      \"type\": \"analyticsReportInstances\",\n      \"id\": \"5c43f2fa-aae7-4290-8664-d6551784c508\",\n      \"attributes\": {\n        \"granularity\": \"DAILY\",\n        \"processingDate\": \"2024-01-23\"\n      },\n      \"relationships\": {\n        \"segments\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/5c43f2fa-aae7-4290-8664-d6551784c508/relationships/segments\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/5c43f2fa-aae7-4290-8664-d6551784c508/segments\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/5c43f2fa-aae7-4290-8664-d6551784c508\"\n      }\n    },\n    {\n      \"type\": \"analyticsReportInstances\",\n      \"id\": \"42b3c667-3d79-47d0-8ee9-775f685a777c\",\n      \"attributes\": {\n        \"granularity\": \"DAILY\",\n        \"processingDate\": \"2024-01-24\"\n      },\n      \"relationships\": {\n        \"segments\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/42b3c667-3d79-47d0-8ee9-775f685a777c/relationships/segments\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/42b3c667-3d79-47d0-8ee9-775f685a777c/segments\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/42b3c667-3d79-47d0-8ee9-775f685a777c\"\n      }\n    },\n    {\n      \"type\": \"analyticsReportInstances\",\n      \"id\": \"d4a141c8-7647-4bdf-b9ae-04cab705d641\",\n      \"attributes\": {\n        \"granularity\": \"DAILY\",\n        \"processingDate\": \"2024-01-25\"\n      },\n      \"relationships\": {\n        \"segments\": {\n          \"links\": {\n            \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/d4a141c8-7647-4bdf-b9ae-04cab705d641/relationships/segments\",\n            \"related\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/d4a141c8-7647-4bdf-b9ae-04cab705d641/segments\"\n          }\n        }\n      },\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReportInstances/d4a141c8-7647-4bdf-b9ae-04cab705d641\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r2-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances?limit=3&filter%5Bgranularity%5D=DAILY\",\n    \"next\": \"https://api.appstoreconnect.apple.com/v1/analyticsReports/r2-d48c69c5-9bcb-4592-abbd-08a9411b0231/instances?cursor=Aw.VGkW1w&limit=3&filter%5Bgranularity%5D=DAILY\"\n  },\n  \"meta\": {\n    \"paging\": {\n      \"total\": 6,\n      \"limit\": 3\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Reading Reports, Instances, and Segments",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_-segments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportInstances-_id_-relationships-segments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReportSegments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-analyticsReports-_id_-relationships-instances"
+      ]
+    }
+  ]
+}

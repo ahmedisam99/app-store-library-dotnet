@@ -1,0 +1,245 @@
+{
+  "id": "doc:appstoreconnectapi/working-with-in-app-purchase-versions",
+  "title": "Working with in-app purchase versions",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/working-with-in-app-purchase-versions",
+  "slug": "appstoreconnectapi/working-with-in-app-purchase-versions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage draft versions of an in-app purchase’s localized metadata and review images before submitting for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " The pre-4.4.1 workflow that posts localizations and images directly to the in-app purchase (`POST /v1/inAppPurchaseLocalizations`, `POST /v1/inAppPurchaseImages`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An in-app purchase version is a draft container that groups the localized metadata and review images that go through App Review together. Create a version, attach localizations and images to it, then submit the version through the review submissions workflow. The parent in-app purchase resource holds properties that stay stable across versions — its product ID, in-app purchase type, and pricing — while each version captures the reviewable metadata for a single review cycle.",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The pre-4.4.1 workflow that posts localizations and images directly to the in-app purchase (`POST /v1/inAppPurchaseLocalizations`, `POST /v1/inAppPurchaseImages`) is deprecated as of 4.4.1 but remains available for existing integrations. For guidance on moving to the version-based workflow, see `migrating-in-app-purchase-metadata-to-v2`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Understand the version lifecycle",
+      "paragraphs": [
+        {
+          "text": "A version moves through these states, exposed on `InAppPurchaseVersion/Attributes/state`:",
+          "refs": []
+        },
+        {
+          "text": "Versions are read-only after creation. To change a version’s contents, create a new version.",
+          "refs": []
+        }
+      ],
+      "listItems": [
+        {
+          "text": "`PREPARE_FOR_SUBMISSION`: the version is being edited. Localizations and images can be added, changed, or removed.",
+          "refs": []
+        },
+        {
+          "text": "`READY_FOR_REVIEW`: the version is attached to a review submission and awaiting the submission to be marked `submitted`.",
+          "refs": []
+        },
+        {
+          "text": "`WAITING_FOR_REVIEW`: the review submission has been submitted and the version is queued.",
+          "refs": []
+        },
+        {
+          "text": "`IN_REVIEW`: App Review is actively reviewing the version.",
+          "refs": []
+        },
+        {
+          "text": "`ACCEPTED` or `APPROVED`: the version passed review.",
+          "refs": []
+        },
+        {
+          "text": "`REJECTED` or `DEVELOPER_REJECTED`: the version was rejected by App Review or withdrawn by the developer.",
+          "refs": []
+        },
+        {
+          "text": "`REPLACED_WITH_NEW_VERSION`: a newer version supersedes this one.",
+          "refs": []
+        }
+      ]
+    },
+    {
+      "level": 3,
+      "heading": "Create a version",
+      "paragraphs": [
+        {
+          "text": "Create a draft version with `POST /v1/inAppPurchaseVersions` (`POST-v1-inAppPurchaseVersions`). Relate it to the in-app purchase whose metadata you’re updating:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-inAppPurchaseVersions"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"inAppPurchaseVersions\",\n    \"relationships\": {\n      \"inAppPurchase\": {\n        \"data\": {\n          \"type\": \"inAppPurchases\",\n          \"id\": \"6446452615\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response returns the new version’s `id` and a `state` of `PREPARE_FOR_SUBMISSION`. Note the `id` — every subsequent step references it.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Attach a localization to the version",
+      "paragraphs": [
+        {
+          "text": "Add a localized display name and description with `POST /v2/inAppPurchaseLocalizations` (`POST-v2-inAppPurchaseLocalizations`). The payload relates the localization to the version, not the parent in-app purchase:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-inAppPurchaseLocalizations"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"inAppPurchaseLocalizations\",\n    \"attributes\": {\n      \"locale\": \"en-US\",\n      \"name\": \"Seattle Neighborhood Coffee Map\",\n      \"description\": \"This is a neighborhood map for helping to find awesome coffee shops.\"\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"inAppPurchaseVersions\",\n          \"id\": \"${inAppPurchaseVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Repeat for each locale you support. To list the localizations attached to a version, use `GET /v1/inAppPurchaseVersions/{id}/localizations` (`GET-v1-inAppPurchaseVersions-_id_-localizations`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_-localizations"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Attach a review image to the version",
+      "paragraphs": [
+        {
+          "text": "An in-app purchase version can carry review images that show the promotion image customers see on the App Store product page. Reserve, upload, and commit each image in three steps.",
+          "refs": []
+        },
+        {
+          "text": "Reserve an image with `POST /v2/inAppPurchaseImages` (`POST-v2-inAppPurchaseImages`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v2-inAppPurchaseImages"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"inAppPurchaseImages\",\n    \"attributes\": {\n      \"fileName\": \"coffee-map-promo.png\",\n      \"fileSize\": 245670\n    },\n    \"relationships\": {\n      \"version\": {\n        \"data\": {\n          \"type\": \"inAppPurchaseVersions\",\n          \"id\": \"${inAppPurchaseVersionId}\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "The response returns an `id` for the image and a set of `uploadOperations` describing how to `PUT` the file bytes.",
+          "refs": []
+        },
+        {
+          "text": "Upload the image bytes to the URL from `uploadOperations`. Then commit the upload with `PATCH /v2/inAppPurchaseImages/{id}` (`PATCH-v2-inAppPurchaseImages-_id_`):",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v2-inAppPurchaseImages-_id_"
+          ]
+        },
+        {
+          "text": "```json\n{\n  \"data\": {\n    \"type\": \"inAppPurchaseImages\",\n    \"id\": \"${inAppPurchaseImageId}\",\n    \"attributes\": {\n      \"uploaded\": true\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "Read image metadata with `GET /v2/inAppPurchaseImages/{id}` (`GET-v2-inAppPurchaseImages-_id_`). Remove an image with `DELETE /v2/inAppPurchaseImages/{id}` (`DELETE-v2-inAppPurchaseImages-_id_`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchaseImages-_id_",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v2-inAppPurchaseImages-_id_"
+          ]
+        },
+        {
+          "text": "For more on the reserve-upload-commit pattern, see `uploading-assets-to-app-store-connect`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/uploading-assets-to-app-store-connect"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "List all versions for an in-app purchase",
+      "paragraphs": [
+        {
+          "text": "To see every version on a parent in-app purchase, use `GET /v2/inAppPurchases/{id}/versions` (`GET-v2-inAppPurchases-_id_-versions`). The response includes each version’s state, so you can find the current draft, the most recently approved version, and any versions currently in review.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-versions"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Submit the version",
+      "paragraphs": [
+        {
+          "text": "Submit a completed version through the review submissions workflow. Create a review submission for the app, add the version as an item, and mark the submission as `submitted`. For step-by-step instructions, see `managing-in-app-purchases`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-in-app-purchases"
+          ]
+        },
+        {
+          "text": "When you mark the submission `submitted`, the version moves from `READY_FOR_REVIEW` to `WAITING_FOR_REVIEW`. Poll `GET /v1/inAppPurchaseVersions/{id}` (`GET-v1-inAppPurchaseVersions-_id_`) to watch it continue to `IN_REVIEW` and then `APPROVED` or `REJECTED`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-inAppPurchaseVersions-_id_"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing In-App Purchases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/managing-in-app-purchases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/migrating-in-app-purchase-metadata-to-v2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-price-schedules",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/in-app-purchase-images-v1"
+      ]
+    }
+  ]
+}

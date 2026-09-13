@@ -1,0 +1,97 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-version-phased-releases",
+  "title": "App Store Version Phased Releases",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-version-phased-releases",
+  "slug": "appstoreconnectapi/app-store-version-phased-releases",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage phased releases of updates to your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`appStoreVersionPhasedReleases` handles your process of releasing app updates to customers in stages. Use this resource to set up your process for an app update. This resource is not available for the first version of an app, only for subsequent releases.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing Phased Releases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreVersionPhasedReleases",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreVersionPhasedReleases-_id_"
+      ]
+    },
+    {
+      "title": "Canceling Phased Releases",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreVersionPhasedReleases-_id_"
+      ]
+    },
+    {
+      "title": "Objects and Data Types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedRelease",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionPhasedReleaseUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PhasedReleaseState"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Publishing",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-release-requests",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-pre-orders",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-availability"
+      ]
+    }
+  ]
+}

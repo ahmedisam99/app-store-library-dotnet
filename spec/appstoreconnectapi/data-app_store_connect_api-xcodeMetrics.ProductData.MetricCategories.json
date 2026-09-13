@@ -1,0 +1,76 @@
+{
+  "id": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories",
+  "title": "xcodeMetrics.ProductData.MetricCategories",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary",
+  "slug": "appstoreconnectapi/xcodemetrics/productdata-data.dictionary/metriccategories-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A metric category and its associated array of data and measurements.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object xcodeMetrics.ProductData.MetricCategories",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "identifier",
+      "type": "MetricCategory",
+      "typeId": "data:app_store_connect_api:MetricCategory",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The category of the metric that this product data is about.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "metrics",
+      "type": "[xcodeMetrics.ProductData.MetricCategories.Metrics]",
+      "typeId": "data:app_store_connect_api:xcodeMetrics.ProductData.MetricCategories.Metrics",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of data and measurements for the metric category specified by the `identifier`.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/xcodeMetrics/ProductData-data.dictionary/MetricCategories-data.dictionary/Metrics-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

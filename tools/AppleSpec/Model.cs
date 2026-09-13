@@ -93,7 +93,16 @@ public sealed class Member
     [JsonPropertyName("deprecated")] public bool Deprecated { get; set; }
     [JsonPropertyName("introducedVersion")] public string? IntroducedVersion { get; set; }
     [JsonPropertyName("attributes")] public List<Constraint> Attributes { get; set; } = new();
+    [JsonPropertyName("typeDetails")] public List<TypeDetail>? TypeDetails { get; set; }
     [JsonPropertyName("abstract")] public Prose Abstract { get; set; } = Prose.Empty;
+}
+
+// The JSON type under a member whose declared type does not say it, such as a field App Store
+// Connect documents as holding either a URI reference or a dictionary.
+public sealed class TypeDetail
+{
+    [JsonPropertyName("baseType")] public string? BaseType { get; set; }
+    [JsonPropertyName("isArray")] public bool IsArray { get; set; }
 }
 
 public sealed class EndpointUrl
@@ -150,8 +159,12 @@ public sealed class ArticleBlock
 public sealed class TopicGroup
 {
     [JsonPropertyName("title")] public string Title { get; set; } = "";
+    [JsonPropertyName("abstract")] public Prose Abstract { get; set; } = Prose.Empty;
     [JsonPropertyName("members")] public List<string> Members { get; set; } = new();
 }
+
+// One framework's pages, normalized and ready to write.
+public sealed record DocumentationSet(SortedDictionary<string, byte[]> Files, int Pages, string? Version);
 
 public sealed class Manifest
 {

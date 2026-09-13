@@ -1,0 +1,136 @@
+{
+  "id": "data:app_store_connect_api:TerritoryAvailabilityInlineCreate",
+  "title": "TerritoryAvailabilityInlineCreate",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/TerritoryAvailabilityInlineCreate",
+  "slug": "appstoreconnectapi/territoryavailabilityinlinecreate",
+  "introducedAt": "3.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The request body you use to create a territory availability.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object TerritoryAvailabilityInlineCreate",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "attributes",
+      "type": "TerritoryAvailabilityInlineCreate.Attributes",
+      "typeId": "data:app_store_connect_api:TerritoryAvailabilityInlineCreate.Attributes",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "relationships",
+      "type": "TerritoryAvailabilityInlineCreate.Relationships",
+      "typeId": "data:app_store_connect_api:TerritoryAvailabilityInlineCreate.Relationships",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "territoryAvailabilities"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Dictionaries",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityInlineCreate/Attributes-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityInlineCreate/Relationships-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAvailabilityV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAppAvailabilityV2LinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilitiesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/TerritoryAvailabilityUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrder",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrderCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndAppAvailabilityPreOrderResponse"
+      ]
+    }
+  ]
+}

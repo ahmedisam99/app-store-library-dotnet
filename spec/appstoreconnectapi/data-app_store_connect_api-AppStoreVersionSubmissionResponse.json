@@ -1,0 +1,99 @@
+{
+  "id": "data:app_store_connect_api:AppStoreVersionSubmissionResponse",
+  "title": "AppStoreVersionSubmissionResponse",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AppStoreVersionSubmissionResponse",
+  "slug": "appstoreconnectapi/appstoreversionsubmissionresponse",
+  "introducedAt": "1.2",
+  "deprecated": {
+    "at": "1.7",
+    "summary": {
+      "text": "This object is deprecated. Use `ReviewSubmissionResponse` instead.",
+      "refs": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/ReviewSubmissionResponse"
+      ]
+    }
+  },
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that submit an App Store version for review.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AppStoreVersionSubmissionResponse",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "AppStoreVersionSubmission",
+      "typeId": "data:app_store_connect_api:AppStoreVersionSubmission",
+      "required": true,
+      "deprecated": true,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "DocumentLinks",
+      "typeId": "data:app_store_connect_api:DocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "included",
+      "type": "[AppStoreVersion]",
+      "typeId": "data:app_store_connect_api:AppStoreVersion",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreVersionSubmission"
+      ]
+    }
+  ]
+}

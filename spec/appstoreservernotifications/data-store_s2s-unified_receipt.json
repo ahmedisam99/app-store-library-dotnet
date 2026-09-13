@@ -40,6 +40,7 @@
           ]
         }
       ],
+      "typeDetails": null,
       "abstract": {
         "text": "The environment for which the App Store generated the receipt.",
         "refs": []
@@ -54,6 +55,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "The latest Base64-encoded app receipt.",
         "refs": []
@@ -68,6 +70,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "An array that contains the latest 100 in-app purchase transactions of the decoded value in `latest_receipt`. This array excludes transactions for consumable products your app has marked as finished. The contents of this array are identical to those in `Latest_receipt_info-data.dictionary` in the `Verify-Receipt` endpoint response for receipt validation.",
         "refs": [
@@ -85,6 +88,7 @@
       "deprecated": false,
       "introducedVersion": null,
       "attributes": [],
+      "typeDetails": null,
       "abstract": {
         "text": "An array in which each element contains the pending renewal information for each auto-renewable subscription identified in `product_id`. The contents of this array are identical to those in `Pending_renewal_info-data.dictionary` in the `Verify-Receipt` endpoint response for receipt validation.",
         "refs": [
@@ -110,6 +114,7 @@
           ]
         }
       ],
+      "typeDetails": null,
       "abstract": {
         "text": "The status code, where `0` indicates that the notification is valid.",
         "refs": []
@@ -126,6 +131,10 @@
   "topics": [
     {
       "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
       "members": [
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Latest_receipt_info-data.dictionary",
         "doc://com.apple.appstoreservernotifications/documentation/AppStoreServerNotifications/unified_receipt/Pending_renewal_info-data.dictionary"

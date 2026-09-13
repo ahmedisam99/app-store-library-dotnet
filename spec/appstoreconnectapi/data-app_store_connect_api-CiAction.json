@@ -1,0 +1,216 @@
+{
+  "id": "data:app_store_connect_api:CiAction",
+  "title": "CiAction",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiAction",
+  "slug": "appstoreconnectapi/ciaction",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A step within an Xcode Cloud workflow, such as building, running tests, analyzing, or deploying an app.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiAction",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "actionType",
+      "type": "CiActionType",
+      "typeId": "data:app_store_connect_api:CiActionType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The type of the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "buildDistributionAudience",
+      "type": "BuildAudienceType",
+      "typeId": "data:app_store_connect_api:BuildAudienceType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A type that indicates whether a build’s artifact is eligible for release on the App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "destination",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ANY_IOS_DEVICE",
+            "ANY_IOS_SIMULATOR",
+            "ANY_TVOS_DEVICE",
+            "ANY_TVOS_SIMULATOR",
+            "ANY_WATCHOS_DEVICE",
+            "ANY_WATCHOS_SIMULATOR",
+            "ANY_MAC",
+            "ANY_MAC_CATALYST",
+            "ANY_VISIONOS_DEVICE",
+            "ANY_VISIONOS_SIMULATOR"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that describes the destination Xcode Cloud uses for an action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isRequiredToPass",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the action must succeed in order for a build to succeed.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "name",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the action; for example, archive or test.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "platform",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "MACOS",
+            "IOS",
+            "TVOS",
+            "WATCHOS",
+            "VISIONOS"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The platform Xcode Cloud uses for the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "scheme",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the scheme that Xcode Cloud uses to perform the action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "testConfiguration",
+      "type": "CiAction.TestConfiguration",
+      "typeId": "data:app_store_connect_api:CiAction.TestConfiguration",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An action’s test configuration. Only set this field for test actions.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiAction/TestConfiguration-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflow",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRunsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualBranchStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualPullRequestStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiManualTagStartCondition",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowBuildRunsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiWorkflowRepositoryLinkageResponse"
+      ]
+    }
+  ]
+}

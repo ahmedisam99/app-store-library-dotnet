@@ -1,0 +1,129 @@
+{
+  "id": "doc:appstoreconnectapi/notifications",
+  "title": "Notifications",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/notifications",
+  "slug": "appstoreconnectapi/notifications",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Add and read information for alternative distribution package notifications.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": " To receive notifications for an app, the developer of an app distributed on an alternative marketplace must enable it in App Store Connect, to learn more see `https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/manage-distribution-on-an-alternative-app-marketplace`. If a developer doesn’t opt-in to notifications, they must provide that alternative distribution ID to the marketplace so the marketplace can ingest the alternative distribution package. To learn more about server-side processing of marketplace webhooks, see `processing-alternative-marketplace-notifications`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/manage-distribution-on-an-alternative-app-marketplace",
+          "doc://com.apple.documentation/documentation/marketplacekit/processing-alternative-marketplace-notifications"
+        ]
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Alternative marketplaces can use the marketplace webhooks API `POST-v1-marketplaceWebhooks` endpoint to set up an `endpointURL,` where the marketplace receives notifications about changes to apps that it distributes.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceWebhooks"
+          ]
+        },
+        {
+          "text": "The most typical notifications are:",
+          "refs": []
+        },
+        {
+          "text": "To learn more about configuring a webhook URL using the API, see\u00A0`POST-v1-marketplaceWebhooks`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceWebhooks"
+          ]
+        },
+        {
+          "text": "To learn more about server-side processing of marketplace webhook notifications, see `processing-alternative-marketplace-notifications`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/marketplacekit/processing-alternative-marketplace-notifications"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  To receive notifications for an app, the developer of an app distributed on an alternative marketplace must enable it in App Store Connect, to learn more see `https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/manage-distribution-on-an-alternative-app-marketplace`. If a developer doesn’t opt-in to notifications, they must provide that alternative distribution ID to the marketplace so the marketplace can ingest the alternative distribution package. To learn more about server-side processing of marketplace webhooks, see `processing-alternative-marketplace-notifications`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/distributing-apps-in-the-european-union/manage-distribution-on-an-alternative-app-marketplace",
+            "doc://com.apple.documentation/documentation/marketplacekit/processing-alternative-marketplace-notifications"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "A new app version is available.",
+          "refs": []
+        },
+        {
+          "text": "A specific app version needs to be removed.",
+          "refs": []
+        },
+        {
+          "text": "All versions of an app need to be removed.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Managing Webhook Endpoint URLs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-marketplaceWebhooks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-marketplaceWebhooks",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-marketplaceWebhooks-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-marketplaceWebhooks-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhook",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhookCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhookResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhooksResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/MarketplaceWebhookUpdateRequest"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Alternative Distribution Packages and Notifications",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/alternative-distribution-packages"
+      ]
+    }
+  ]
+}

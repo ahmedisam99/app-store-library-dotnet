@@ -1,0 +1,172 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-winBackOffers",
+  "title": "Create a Win-Back Offer",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-winBackOffers",
+  "slug": "appstoreconnectapi/post-v1-winbackoffers",
+  "introducedAt": "3.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create a win-back offer for a specific subscription.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/winBackOffers",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "WinBackOfferCreateRequest",
+    "typeId": "data:app_store_connect_api:WinBackOfferCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "WinBackOfferResponse",
+      "typeId": "data:app_store_connect_api:WinBackOfferResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "Important Use a unique referenceName and offerId that you have not used for a promotional offer, offer code, or introductory offer, when you create your win-back offer.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "> **Note**\n>\n> Important Use a unique referenceName and offerId that you have not used for a promotional offer, offer code, or introductory offer, when you create your win-back offer.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/winBackOffers\n{\n  \"data\": {\n    \"type\": \"winBackOffers\",\n    \"attributes\": {\n      \"referenceName\": \"6 Months for 3 A\",\n      \"offerId\": \"6Monthfor3_a\",\n      \"startDate\": \"2024-07-01\",\n      \"endDate\": \"2024-07-31\",\n      \"priority\": \"HIGH\",\n      \"promotionIntent\": \"USE_AUTO_GENERATED_ASSETS\",\n      \"customerEligibilityPaidSubscriptionDurationInMonths\": 6,\n      \"customerEligibilityTimeSinceLastSubscribedInMonths\": {\n        \"minimum\": 2,\n        \"maximum\": 24\n      },\n      \"customerEligibilityWaitBetweenOffersInMonths\": 2,\n      \"duration\": \"SIX_MONTHS\",\n      \"offerMode\": \"PAY_UP_FRONT\",\n      \"periodCount\": 1\n    },\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6447497832\"\n        }\n      },\n      \"prices\": {\n        \"data\": [\n          {\n            \"id\": \"${winbackOfferPrice-0}\",\n            \"type\": \"winBackOfferPrices\"\n          },\n          {\n            \"id\": \"${winbackOfferPrice-1}\",\n            \"type\": \"winBackOfferPrices\"\n          }\n        ]\n      }\n    }\n  },\n  \"included\": [\n    {\n      \"type\": \"winBackOfferPrices\",\n      \"id\": \"${winbackOfferPrice-0}\",\n      \"relationships\": {\n        \"subscriptionPricePoint\": {\n          \"data\": {\n            \"type\": \"subscriptionPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ\"\n          }\n        }\n      }\n    },\n    {\n      \"type\": \"winBackOfferPrices\",\n      \"id\": \"${winbackOfferPrice-1}\",\n      \"relationships\": {\n        \"subscriptionPricePoint\": {\n          \"data\": {\n            \"type\": \"subscriptionPricePoints\",\n            \"id\": \"eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJDQU4iLCJwIjoiMTAxNDIifQ\"\n          }\n        }\n      }\n    }\n  ]\n}\n\n```\n\n**Response**\n\n```json\n{\n  \"data\": {\n    \"type\": \"winBackOffers\",\n    \"id\": \"10778326500\",\n    \"attributes\": {\n      \"referenceName\": \"6 Months for 3 A\",\n      \"offerId\": \"6Monthfor3_a\",\n      \"duration\": \"SIX_MONTHS\",\n      \"offerMode\": \"PAY_UP_FRONT\",\n      \"periodCount\": 1,\n      \"customerEligibilityPaidSubscriptionDurationInMonths\": 6,\n      \"customerEligibilityTimeSinceLastSubscribedInMonths\": {\n        \"minimum\": 2,\n        \"maximum\": 24\n      },\n      \"customerEligibilityWaitBetweenOffersInMonths\": 2,\n      \"startDate\": \"2024-07-01\",\n      \"endDate\": \"2024-07-31\",\n      \"priority\": \"HIGH\",\n      \"promotionIntent\": \"USE_AUTO_GENERATED_ASSETS\"\n    },\n    \"relationships\": {\n      \"promotion\": {\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/relationships/promotion\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/promotion\"\n        }\n      },\n      \"prices\": {\n        \"meta\": {\n          \"paging\": {\n            \"total\": 2,\n            \"limit\": 10\n          }\n        },\n        \"data\": [\n          {\n            \"type\": \"winBackOfferPrices\",\n            \"id\": \"eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiQ0FOIiwicCI6IjEwMTQyIn0\"\n          },\n          {\n            \"type\": \"winBackOfferPrices\",\n            \"id\": \"eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiVVNBIiwicCI6IjEwMTI3In0\"\n          }\n        ],\n        \"links\": {\n          \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/relationships/prices\",\n          \"related\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500/prices\"\n        }\n      }\n    },\n    \"links\": {\n      \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers/10778326500\"\n    }\n  },\n  \"included\": [\n    {\n      \"type\": \"winBackOfferPrices\",\n      \"id\": \"eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiQ0FOIiwicCI6IjEwMTQyIn0\",\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOfferPrices/eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiQ0FOIiwicCI6IjEwMTQyIn0\"\n      }\n    },\n    {\n      \"type\": \"winBackOfferPrices\",\n      \"id\": \"eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiVVNBIiwicCI6IjEwMTI3In0\",\n      \"links\": {\n        \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOfferPrices/eyJvIjoiMTA3NzgzMjY1MDAiLCJ0IjoiVVNBIiwicCI6IjEwMTI3In0\"\n      }\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.appstoreconnect.apple.com/v1/winBackOffers\"\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/Creating-and-configuring-win-back-offers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-winBackOffers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-relationships-winBackOffers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-winBackOffers-_id_-relationships-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-winBackOffers-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-winBackOffers-_id_"
+      ]
+    }
+  ]
+}

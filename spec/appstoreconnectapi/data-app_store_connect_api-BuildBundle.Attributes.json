@@ -1,0 +1,361 @@
+{
+  "id": "data:app_store_connect_api:BuildBundle.Attributes",
+  "title": "BuildBundle.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/BuildBundle/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/buildbundle/attributes-data.dictionary",
+  "introducedAt": "1.6",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe a Build Bundles resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object BuildBundle.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "bundleId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The bundle ID of the build bundle.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "bundleType",
+      "type": "BuildBundleType",
+      "typeId": "data:app_store_connect_api:BuildBundleType",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The type of the build bundle.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "deviceProtocols",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The protocols that the app uses to communicate with external accessory hardware. For more information, see `UISupportedExternalAccessoryProtocols`.",
+        "refs": [
+          "doc://com.apple.documentation/documentation/BundleResources/Information-Property-List/UISupportedExternalAccessoryProtocols"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "dSYMUrl",
+      "type": "uri",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The URL to the symbolication file for the app or App Clip.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "entitlements",
+      "type": "BuildBundle.Attributes.Entitlements",
+      "typeId": "data:app_store_connect_api:BuildBundle.Attributes.Entitlements",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Entitlement information for your app or App Clip.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "fileName",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The name of the build bundle.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "hasOnDemandResources",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build bundle contains on-demand resources.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "hasPrerenderedIcon",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build bundle contains a pre-rendered app icon.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "hasSirikit",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build bundle contains an app or App Clip that allows users to interact with it through voice, intelligent suggestions, and personalized workflows.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "includesSymbols",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build bundle includes symbol information for debugging and crash reports.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isIosBuildMacAppStoreCompatible",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether an iOS app included in the build bundle is included on the Mac App Store.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "locales",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The specified locale. Refer to `Attributes-data.dictionary` for possible values.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaAppLocalizationCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "platformBuild",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The build number of the OS you used to build the app or App Clip.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "requiredCapabilities",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of capabilities that your app or App Clip requires.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sdkBuild",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that identifies the SDK you used to build your app or App Clip.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "supportedArchitectures",
+      "type": "[string]",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of supported CPU architectures that your app or App Clip supports.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "usesLocationServices",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the app or App Clip included in the build bundle uses location services.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "baDownloadAllowance",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "baMaxInstallSize",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "minimumOsVersion",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Attributes-data.dictionary/Entitlements-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BuildBundle/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

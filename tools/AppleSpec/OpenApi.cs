@@ -15,8 +15,12 @@ public static class OpenApi
 
     private const string Framework = "appstoreconnectapi";
 
-    public static async Task<ManifestSource> SyncAsync(SpecPaths paths, CancellationToken cancellationToken)
+    // Apple's OpenAPI document carries the exact shapes and not one line of prose: every one of its
+    // operations and schemas has an empty description. The prose lives on the documentation site
+    // instead, so both are fetched into the same directory and written in one pass.
+    public static async Task<IReadOnlyList<ManifestSource>> SyncAsync(SpecPaths paths, CancellationToken cancellationToken)
     {
+        var documentation = await Sync.BuildDocumentationAsync(Framework, cancellationToken).ConfigureAwait(false);
         var meta = await AppleDocs.HeadAsync(Source, cancellationToken).ConfigureAwait(false);
         var archive = await AppleDocs.GetBytesAsync(Source, cancellationToken).ConfigureAwait(false);
 
@@ -37,22 +41,45 @@ public static class OpenApi
 
         // Apple ships it pretty-printed at a quarter of a million lines and it already diffs
         // cleanly; reformatting would turn every future release into one unreadable change.
-        var files = new SortedDictionary<string, byte[]>(StringComparer.Ordinal) { ["openapi.json"] = document };
+        var specification = new SortedDictionary<string, byte[]>(StringComparer.Ordinal) { ["openapi.json"] = document };
+
+        var files = new SortedDictionary<string, byte[]>(documentation.Files, StringComparer.Ordinal);
+
+        if (!files.TryAdd("openapi.json", document))
+        {
+            throw new SpecFormatException($"A documentation page of {Framework} claims the file name openapi.json.");
+        }
+
         var removed = Sync.WriteDirectory(paths, paths.FrameworkDir(Framework), files);
 
-        Console.WriteLine($"{Framework}: openapi.json, {document.Length / 1024}KB from {candidates[0].FullName}{(removed > 0 ? $", {removed} removed" : "")}.");
+        Console.WriteLine($"{Framework}: {documentation.Pages} pages and openapi.json at {document.Length / 1024}KB"
+            + $"{(removed > 0 ? $", {removed} removed" : "")}.");
 
-        return new ManifestSource
-        {
-            Name = Framework,
-            Kind = "openapi",
-            Url = Source,
-            Version = ReadVersion(document),
-            LastModified = meta.LastModified,
-            ETag = meta.ETag,
-            Pages = files.Count,
-            Sha256 = Sync.Digest(files)
-        };
+        return
+        [
+            new ManifestSource
+            {
+                Name = Framework,
+                Kind = "documentation",
+                Url = AppleDocs.IndexUrl(Framework),
+                Version = documentation.Version,
+                LastModified = null,
+                ETag = null,
+                Pages = documentation.Pages,
+                Sha256 = Sync.Digest(documentation.Files)
+            },
+            new ManifestSource
+            {
+                Name = Framework,
+                Kind = "openapi",
+                Url = Source,
+                Version = ReadVersion(document),
+                LastModified = meta.LastModified,
+                ETag = meta.ETag,
+                Pages = specification.Count,
+                Sha256 = Sync.Digest(specification)
+            }
+        ];
     }
 
     private static bool IsSpecification(ZipArchiveEntry entry) =>

@@ -1,0 +1,144 @@
+{
+  "id": "doc:appstoreconnectapi/app-infos",
+  "title": "App Infos",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-infos",
+  "slug": "appstoreconnectapi/app-infos",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage or read the app metadata that applies across all versions of your app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`appInfos` represents your app’s metadata that applies across all versions of your app. You can update your app’s App Store category, subcategory, and secondary category through the `appInfos` resource. You can also find your app’s status, which tells you if the app metadata is editable. For more information, see `https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses"
+          ]
+        },
+        {
+          "text": "Other attributes in `appInfos` are read-only. Their values are derived from other resources. For example, your app’s `appStoreAgeRating` value results from the answers you provide to the questions in `ageRatingDeclarations`.",
+          "refs": []
+        },
+        {
+          "text": "For more information about the metadata in the `appInfos` resource, see App and submission statuses.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-and-submission-statuses"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading App Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-appInfos",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-appInfoLocalizations"
+      ]
+    },
+    {
+      "title": "Modifying App Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appInfos-_id_"
+      ]
+    },
+    {
+      "title": "Reading Category Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-categories-and-subcategories"
+      ]
+    },
+    {
+      "title": "Reading Localization Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-appInfoLocalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-relationships-appInfoLocalizations"
+      ]
+    },
+    {
+      "title": "Reading Age Rating Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-ageRatingDeclaration",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appInfos-_id_-relationships-ageRatingDeclaration"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfo",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfosResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoAppInfoLocalizationsLinkagesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimaryCategoryLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimarySubcategoryOneLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoPrimarySubcategoryTwoLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondaryCategoryLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondarySubcategoryOneLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppInfoSecondarySubcategoryTwoLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing App Information and Versions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-info-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-tags",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/routing-app-coverages",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/accessibility-declarations"
+      ]
+    }
+  ]
+}

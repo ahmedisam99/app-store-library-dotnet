@@ -1,0 +1,92 @@
+{
+  "id": "data:app_store_connect_api:GameCenterMatchmakingQueueCreateRequest.Data.Relationships",
+  "title": "GameCenterMatchmakingQueueCreateRequest.Data.Relationships",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueCreateRequest/Data-data.dictionary/Relationships-data.dictionary",
+  "slug": "appstoreconnectapi/gamecentermatchmakingqueuecreaterequest/data-data.dictionary/relationships-data.dictionary",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The rule sets that you include when creating a queue.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object GameCenterMatchmakingQueueCreateRequest.Data.Relationships",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "experimentRuleSet",
+      "type": "GameCenterMatchmakingQueueCreateRequest.Data.Relationships.ExperimentRuleSet",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingQueueCreateRequest.Data.Relationships.ExperimentRuleSet",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The experimental rule set to test the associated rules with live match requests.\n\nIf you provide an experimental rule set, Game Center processes the match requests in the queue using both the experimental and the required rule set, except that it doesn’t return the results of the experimental rule set to clients.\n\nThen compare the results of the experimental rule set with the production rule set using metrics, such as the `GET-v1-gameCenterMatchmakingQueues` and `GET-v1-gameCenterMatchmakingQueues-_id_` endpoints.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues",
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-gameCenterMatchmakingQueues-_id_"
+        ]
+      }
+    },
+    {
+      "in": null,
+      "name": "ruleSet",
+      "type": "GameCenterMatchmakingQueueCreateRequest.Data.Relationships.RuleSet",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingQueueCreateRequest.Data.Relationships.RuleSet",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The rule set to associate with this queue.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueCreateRequest/Data-data.dictionary/Relationships-data.dictionary/ExperimentRuleSet-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueCreateRequest/Data-data.dictionary/Relationships-data.dictionary/ExperimentRuleSet-data.dictionary/Data-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueCreateRequest/Data-data.dictionary/Relationships-data.dictionary/RuleSet-data.dictionary"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GameCenterMatchmakingQueueCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+      ]
+    }
+  ]
+}

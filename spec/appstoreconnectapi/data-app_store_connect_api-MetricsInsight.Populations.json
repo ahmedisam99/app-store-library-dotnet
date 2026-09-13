@@ -1,0 +1,125 @@
+{
+  "id": "data:app_store_connect_api:MetricsInsight.Populations",
+  "title": "MetricsInsight.Populations",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/MetricsInsight/Populations-data.dictionary",
+  "slug": "appstoreconnectapi/metricsinsight/populations-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The value of a metric for a device type on the latest app version, and its percent change as compared with previous app versions.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object MetricsInsight.Populations",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "device",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The device type.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "deltaPercentage",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The percentage increase between the values of `latestVersionValue` and `referenceAverageValue`.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "latestVersionValue",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The value of the metric for the latest version of the app.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "referenceAverageValue",
+      "type": "number",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The average value of the metric for all reference app versions.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "percentile",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The percentile of users that are affected by this metric value. For example, the 50th percentile represents a typical user experience, and the 90th percentile represents the highest or lowest numbers, depending on the metric.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "summaryString",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A human-readable description of the metric and population.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": []
+}

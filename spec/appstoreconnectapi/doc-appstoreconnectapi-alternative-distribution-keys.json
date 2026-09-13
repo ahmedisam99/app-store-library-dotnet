@@ -1,0 +1,105 @@
+{
+  "id": "doc:appstoreconnectapi/alternative-distribution-keys",
+  "title": "Alternative Distribution Keys",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/alternative-distribution-keys",
+  "slug": "appstoreconnectapi/alternative-distribution-keys",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and manage keys for an alternative app distribution.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "As an alternative marketplace developer you create keys and JSON web tokens (JWTs) to authenticate and connect your marketplace to the apps distributed on your marketplace.",
+          "refs": []
+        },
+        {
+          "text": "The alternative distribution key you upload to App Store Connect is a public key. Your alternative distribution key is assocaited with all alternative distribution apps in your account. You can optionally assocaite a key with a single althernative disitribution app by adding a relationship in the payload when calling `POST-v1-alternativeDistributionKeys`. To learn more about creating this key, see `creating-keys-and-establishing-alternative-marketplace-connections`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionKeys",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-keys-and-establishing-alternative-marketplace-connections"
+          ]
+        },
+        {
+          "text": "The alternative distribution key `ID`, which you can find in the response body of the endpoint described in  `GET-v1-apps-_id_-alternativeDistributionKey` is also a part of creating the JWT for `supplying-an-install-verification-token`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-alternativeDistributionKey",
+            "doc://com.apple.documentation/documentation/marketplacekit/supplying-an-install-verification-token"
+          ]
+        },
+        {
+          "text": "When using web distribution, you need to create an alternative distribution key, the private half of the key pair is used for install verification.  To learn more about creating keys for web distribution, see `creating-and-configuring-keys-for-web-distribution`. For more information, see `supplying-an-install-verification-token`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-and-configuring-keys-for-web-distribution",
+            "doc://com.apple.documentation/documentation/marketplacekit/supplying-an-install-verification-token"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating and reading keys",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-keys-and-establishing-alternative-marketplace-connections",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-and-configuring-keys-for-web-distribution",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-alternativeDistributionKeys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionKeys",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-alternativeDistributionKeys-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-relationships-alternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-alternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-alternativeDistributionKeys-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKey",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKeyResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKeysResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AlternativeDistributionKeyCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppAlternativeDistributionKeyLinkageResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Alternative Marketplace Setup and Configuration",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/alternative-distribution-domains"
+      ]
+    }
+  ]
+}

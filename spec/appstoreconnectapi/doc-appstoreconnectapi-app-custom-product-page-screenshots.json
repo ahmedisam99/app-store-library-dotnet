@@ -1,0 +1,98 @@
+{
+  "id": "doc:appstoreconnectapi/app-custom-product-page-screenshots",
+  "title": "App Custom Product Page Screenshots",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-custom-product-page-screenshots",
+  "slug": "appstoreconnectapi/app-custom-product-page-screenshots",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Upload and download app screenshots for an app locale and display target.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "An `appScreenshots` resource represents a single app screenshot for an app locale and display target. Use this resource to:",
+          "refs": []
+        },
+        {
+          "text": "To upload screenshots, begin by using the `POST-v1-appScreenshotSets` endpoint for the locale and display target. To upload screenshots, you must create an asset reservation, then follow the upload operations specified in the response.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appScreenshotSets"
+          ]
+        }
+      ],
+      "listItems": [
+        {
+          "text": "Upload new app screenshots to App Store Connect.",
+          "refs": []
+        },
+        {
+          "text": "Download existing screenshots.",
+          "refs": []
+        }
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "title": "Endpoints",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appCustomProductPageLocalizations-_id_-appScreenshotSets",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appScreenshotSets-_id_-appScreenshots",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appScreenshots-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appScreenshots",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appScreenshots-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appScreenshots-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshot",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppScreenshotsResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/UploadOperation"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Managing Custom Product Page Screenshots",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-custom-product-page-screenshot-sets"
+      ]
+    }
+  ]
+}

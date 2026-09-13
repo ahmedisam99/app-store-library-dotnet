@@ -1,0 +1,264 @@
+{
+  "id": "data:app_store_connect_api:CiBuildRun.Attributes",
+  "title": "CiBuildRun.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/cibuildrun/attributes-data.dictionary",
+  "introducedAt": "1.5",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The attributes that describe a Build Runs resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object CiBuildRun.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "cancelReason",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "AUTOMATICALLY_BY_NEWER_BUILD",
+            "MANUALLY_BY_USER"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates the reason for a canceled build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "completionStatus",
+      "type": "CiCompletionStatus",
+      "typeId": "data:app_store_connect_api:CiCompletionStatus",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates the status of a completed build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "createdDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time when Xcode Cloud created the build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "destinationCommit",
+      "type": "CiBuildRun.Attributes.DestinationCommit",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Attributes.DestinationCommit",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Detailed information about the commit of a pull request build’s target branch. This value is only available to builds from pull requests.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "executionProgress",
+      "type": "CiExecutionProgress",
+      "typeId": "data:app_store_connect_api:CiExecutionProgress",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates the progress of the build action.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "finishedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time when Xcode Cloud completed the build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "isPullRequestBuild",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A Boolean value that indicates whether the build was started by a change to a pull request.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "issueCounts",
+      "type": "CiIssueCounts",
+      "typeId": "data:app_store_connect_api:CiIssueCounts",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An integer value that represents the number of issues Xcode Cloud encountered when it performed the build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "number",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The Xcode Cloud build number.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "sourceCommit",
+      "type": "CiBuildRun.Attributes.SourceCommit",
+      "typeId": "data:app_store_connect_api:CiBuildRun.Attributes.SourceCommit",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "Detailed information about the commit of a pull request build’s source branch. This value is only available to builds from pull requests.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "startedDate",
+      "type": "date-time",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The date and time when Xcode Cloud started the build.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "startReason",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "GIT_REF_CHANGE",
+            "MANUAL",
+            "MANUAL_REBUILD",
+            "PULL_REQUEST_OPEN",
+            "PULL_REQUEST_UPDATE",
+            "SCHEDULE"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "A string that indicates what started the build.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects and types",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary/DestinationCommit-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Attributes-data.dictionary/SourceCommit-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiGitUser",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiIssueCounts",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiCompletionStatus",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiExecutionProgress"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/CiBuildRun/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

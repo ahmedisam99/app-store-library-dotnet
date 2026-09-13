@@ -1,0 +1,93 @@
+{
+  "id": "data:app_store_connect_api:AnalyticsReportRequest.Attributes",
+  "title": "AnalyticsReportRequest.Attributes",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/AnalyticsReportRequest/Attributes-data.dictionary",
+  "slug": "appstoreconnectapi/analyticsreportrequest/attributes-data.dictionary",
+  "introducedAt": "3.4",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Attributes that describe an analytics report request resource.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object AnalyticsReportRequest.Attributes",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "accessType",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "ONE_TIME_SNAPSHOT",
+            "ONGOING"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "\n\n- **`ONE_TIME_SNAPSHOT`** — A type that provides up-to-the-moment data and goes back as far as is available. It doesn’t generate any new data after the day you request it.\n- **`ONGOING`** — A type that provides current data and is the most typical. It generates daily reports.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "stoppedDueToInactivity",
+      "type": "boolean",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "\n\n> **Note**\n>\n> Note If you don’t retrieve data for a long time, a report request changes to `stoppedDueToInactivity`. You need to make a new request to resume getting reports.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "note",
+      "prose": {
+        "text": "Note If you don’t retrieve data for a long time, a report request changes to `stoppedDueToInactivity`. You need to make a new request to resume getting reports.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AnalyticsReportRequest/Relationships-data.dictionary"
+      ]
+    }
+  ]
+}

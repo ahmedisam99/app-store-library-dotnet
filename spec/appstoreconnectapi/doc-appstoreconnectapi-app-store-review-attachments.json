@@ -1,0 +1,102 @@
+{
+  "id": "doc:appstoreconnectapi/app-store-review-attachments",
+  "title": "App Store review attachments",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/app-store-review-attachments",
+  "slug": "appstoreconnectapi/app-store-review-attachments",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage the attachments you upload to App Store Connect for App Review.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Use an `appReviewAttachments` resource to upload specific app documentation, demo videos, and other items to App Store Connect, to help prevent delays during the app review process.",
+          "refs": []
+        },
+        {
+          "text": "For more information, see `https://developer.apple.com/help/app-store-connect/reference/app-review-information`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/reference/app-review-information"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Reading Attachment Information",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreReviewAttachments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreReviewDetails-_id_-appStoreReviewAttachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-appStoreReviewDetails-_id_-relationships-appStoreReviewAttachments"
+      ]
+    },
+    {
+      "title": "Creating, Modifying, and Deleting Attachments",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-appStoreReviewAttachments",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-appStoreReviewAttachments-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-appStoreReviewAttachments-_id_"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewAttachment",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewAttachmentCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewAttachmentResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewAttachmentUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppStoreReviewAttachmentsResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "App Store Review Submissions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/review-submission-items",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-clip-app-store-review-details",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/app-store-version-submissions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/actors"
+      ]
+    }
+  ]
+}

@@ -18,6 +18,8 @@ public static class Normalizer
         "metadata",
         "primaryContentSections",
         "references",
+        // A link to a downloadable sample project, on the two upload articles. Nothing to model.
+        "sampleCodeDownload",
         "schemaVersion",
         "sections",
         "seeAlsoSections",
@@ -72,7 +74,10 @@ public static class Normalizer
         "introducedVersion",
         "name",
         "required",
-        "type"
+        "type",
+        // DocC emits this alongside a member's type; App Store Connect is the only corpus that
+        // carries it, and almost every occurrence is an empty array.
+        "typeDetails"
     };
 
     private static readonly HashSet<string> ResponseKeys = new(StringComparer.Ordinal)
@@ -96,6 +101,7 @@ public static class Normalizer
     // they are read rather than left to fail a future sync.
     private static readonly HashSet<string> AttributeKinds = new(StringComparer.Ordinal)
     {
+        "allowedTypes",
         "allowedValues",
         "default",
         "maximum",
@@ -106,6 +112,8 @@ public static class Normalizer
 
     private static readonly HashSet<string> AttributeKeys = new(StringComparer.Ordinal) { "kind", "value", "values" };
 
+    private static readonly HashSet<string> TypeDetailKeys = new(StringComparer.Ordinal) { "arrayMode", "baseType" };
+
     private static readonly HashSet<string> DeclarationKeys = new(StringComparer.Ordinal) { "languages", "platforms", "tokens" };
 
     private static readonly HashSet<string> DeclarationTokenKinds = new(StringComparer.Ordinal) { "identifier", "text", "typeIdentifier" };
@@ -114,7 +122,7 @@ public static class Normalizer
 
     private static readonly HashSet<string> EndpointTokenKinds = new(StringComparer.Ordinal) { "baseURL", "method", "parameter", "path", "text" };
 
-    private static readonly HashSet<string> TopicKeys = new(StringComparer.Ordinal) { "anchor", "generated", "identifiers", "title" };
+    private static readonly HashSet<string> TopicKeys = new(StringComparer.Ordinal) { "abstract", "anchor", "generated", "identifiers", "title" };
 
     public static SpecPage Normalize(JsonElement page, string framework)
     {
@@ -189,8 +197,8 @@ public static class Normalizer
         };
 
         ReadSections(page, references, result);
-        ReadGroups(Inline.Child(page, "topicSections"), "topicSections", result.Topics);
-        ReadGroups(Inline.Child(page, "seeAlsoSections"), "seeAlsoSections", result.SeeAlso);
+        ReadGroups(Inline.Child(page, "topicSections"), references, "topicSections", result.Topics);
+        ReadGroups(Inline.Child(page, "seeAlsoSections"), references, "seeAlsoSections", result.SeeAlso);
 
         return result;
     }
@@ -376,7 +384,11 @@ public static class Normalizer
             {
                 Kind = kind,
                 Value = Optional(attribute, "value"),
-                Values = values.ValueKind == JsonValueKind.Array ? Strings(values) : null
+                Values = values.ValueKind != JsonValueKind.Array
+                    ? null
+                    : kind == "allowedTypes"
+                        ? TypeNames(values)
+                        : Strings(values)
             });
         }
     }
@@ -400,6 +412,7 @@ public static class Normalizer
 
             (member.Type, member.TypeId) = ReadType(Inline.Child(item, "type"), $"{itemPath}.type");
             ReadAttributes(Inline.Child(item, "attributes"), $"{itemPath}.attributes", member.Attributes);
+            member.TypeDetails = ReadTypeDetails(Inline.Child(item, "typeDetails"), $"{itemPath}.typeDetails");
 
             yield return member;
         }
@@ -595,7 +608,7 @@ public static class Normalizer
         return blocks;
     }
 
-    private static void ReadGroups(JsonElement sections, string path, List<TopicGroup> into)
+    private static void ReadGroups(JsonElement sections, JsonElement references, string path, List<TopicGroup> into)
     {
         foreach (var (section, index) in Inline.Enumerate(sections))
         {
@@ -604,6 +617,7 @@ public static class Normalizer
             into.Add(new TopicGroup
             {
                 Title = Inline.Text(section, "title"),
+                Abstract = Inline.Render(Inline.Child(section, "abstract"), references),
                 Members = Strings(Inline.Child(section, "identifiers"))
             });
         }
@@ -650,6 +664,55 @@ public static class Normalizer
     }
 
     private static bool Flag(JsonElement node, string name) => Inline.Child(node, name).ValueKind == JsonValueKind.True;
+
+    private static List<TypeDetail>? ReadTypeDetails(JsonElement typeDetails, string path)
+    {
+        if (typeDetails.ValueKind != JsonValueKind.Array)
+        {
+            return null;
+        }
+
+        var details = new List<TypeDetail>();
+
+        foreach (var (detail, index) in Inline.Enumerate(typeDetails))
+        {
+            RequireKeys(detail, TypeDetailKeys, $"{path}[{index}]");
+
+            details.Add(new TypeDetail
+            {
+                BaseType = Optional(detail, "baseType"),
+                IsArray = Flag(detail, "arrayMode")
+            });
+        }
+
+        return details.Count > 0 ? details : null;
+    }
+
+    // allowedTypes names the types a polymorphic field may hold, and DocC writes each one as its
+    // own array of declaration tokens rather than as a plain string.
+    private static List<string> TypeNames(JsonElement values)
+    {
+        var names = new List<string>();
+
+        foreach (var (tokens, _) in Inline.Enumerate(values))
+        {
+            var text = new StringBuilder();
+
+            foreach (var (token, _) in Inline.Enumerate(tokens))
+            {
+                text.Append(Inline.Text(token, "text"));
+            }
+
+            var name = text.ToString().Trim();
+
+            if (name.Length > 0)
+            {
+                names.Add(name);
+            }
+        }
+
+        return names;
+    }
 
     private static List<string> Strings(JsonElement array)
     {

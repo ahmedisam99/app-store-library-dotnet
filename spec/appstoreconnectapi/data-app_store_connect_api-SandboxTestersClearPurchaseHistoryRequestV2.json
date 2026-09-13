@@ -1,0 +1,104 @@
+{
+  "id": "data:app_store_connect_api:SandboxTestersClearPurchaseHistoryRequestV2",
+  "title": "SandboxTestersClearPurchaseHistoryRequestV2",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2",
+  "slug": "appstoreconnectapi/sandboxtestersclearpurchasehistoryrequestv2",
+  "introducedAt": "2.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "A batch request to reset the in-app purchase and subscription history for one or more sandbox Apple IDs.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SandboxTestersClearPurchaseHistoryRequestV2",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "ResourceLinks",
+      "typeId": "data:app_store_connect_api:ResourceLinks",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "type",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "allowedValues",
+          "value": null,
+          "values": [
+            "sandboxTestersClearPurchaseHistoryRequest"
+          ]
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2"
+      ]
+    }
+  ]
+}

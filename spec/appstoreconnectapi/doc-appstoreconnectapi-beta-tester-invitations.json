@@ -1,0 +1,77 @@
+{
+  "id": "doc:appstoreconnectapi/beta-tester-invitations",
+  "title": "Beta Tester Invitations",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/beta-tester-invitations",
+  "slug": "appstoreconnectapi/beta-tester-invitations",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Requests to send or resend an email inviting a beta tester to test an app.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "A `betaTesterInvitations` resource has a single purpose: to resend an email inviting an existing beta tester to test an app. When the app is ready to test, TestFlight sends invitations to users when you add them to builds or beta groups. You can use the `betaTesterInvitations` resource to resend an invitation, or, if you disable automatic notifications, to send the invitation for the first time.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Resending Invitations",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-betaTesterInvitations"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTesterInvitation",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTesterInvitationCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/BetaTesterInvitationResponse"
+      ]
+    }
+  ],
+  "seeAlso": [
+    {
+      "title": "Beta Testers and Groups",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-testers",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-recruitment-criteria",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/beta-groups"
+      ]
+    }
+  ]
+}

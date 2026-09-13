@@ -1,0 +1,141 @@
+{
+  "id": "rest:app_store_connect_api:post:v1-gameCenterMatchmakingRuleSetTests",
+  "title": "Test a Rule Set",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/POST-v1-gameCenterMatchmakingRuleSetTests",
+  "slug": "appstoreconnectapi/post-v1-gamecentermatchmakingrulesettests",
+  "introducedAt": "3.1",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Apply the given rule set to the given sample match requests.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "POST",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/gameCenterMatchmakingRuleSetTests",
+      "parameters": []
+    }
+  ],
+  "parameters": null,
+  "requestBody": {
+    "mimeType": "application/json",
+    "type": "GameCenterMatchmakingRuleSetTestCreateRequest",
+    "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleSetTestCreateRequest",
+    "abstract": {
+      "text": "",
+      "refs": []
+    }
+  },
+  "responses": [
+    {
+      "status": 201,
+      "reason": "Created",
+      "mimeType": "application/json",
+      "type": "GameCenterMatchmakingRuleSetTestResponse",
+      "typeId": "data:app_store_connect_api:GameCenterMatchmakingRuleSetTestResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 409,
+      "reason": "Conflict",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 422,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nPOST https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSetTests\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRuleSetTests”,\n        “attributes”: {},\n        “relationships”: {\n            “matchmakingRuleSet”: {\n                “data”: {\n                    “type”: “gameCenterMatchmakingRuleSets”,\n                    “id”: “c11b33df-923b-4904-a43a-0bfb7e7b9abc”\n                }\n            },\n            “matchmakingRequests”: {\n                “data”: [\n                    {\n                        “type”: “gameCenterMatchmakingTestRequests”,\n                        “id”: “${r1}”\n                    },\n                    {\n                        “type”: “gameCenterMatchmakingTestRequests”,\n                        “id”: “${r2}”\n                    }\n                ]\n            }\n        }\n    },\n    “included”: [\n        {\n            “type”: “gameCenterMatchmakingTestRequests”,\n            “id”: “${r1}”,\n            “attributes”: {\n                “requestName”: “r1”,\n                “appVersion”: “1.0.0”,\n                “bundleId”: “com.example.mygame”,\n                “platform”: “IOS”,\n                “secondsInQueue”: 0\n            },\n            “relationships”: {\n                “matchmakingPlayerProperties”: {\n                    “data”: [\n                        {\n                            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n                            “id”: “${r1_p1}”\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestRequests”,\n            “id”: “${r2}”,\n            “attributes”: {\n                “requestName”: “r2”,\n                “appVersion”: “1.0.0”,\n                “bundleId”: “com.example.mygame”,\n                “platform”: “IOS”,\n                “secondsInQueue”: 0\n            },\n            “relationships”: {\n                “matchmakingPlayerProperties”: {\n                    “data”: [\n                        {\n                            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n                            “id”: “${r2_p1}”\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n            “id”: “${r1_p1}”,\n            “attributes”: {\n                “properties”: [\n                    {\n                        “key”: “skill”,\n                        “value”: “1”\n                    }\n                ],\n                “playerId”: “r1_p1”\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n            “id”: “${r2_p1}”,\n            “attributes”: {\n                “properties”: [\n                    {\n                        “key”: “skill”,\n                        “value”: “21”\n                    }\n                ],\n                “playerId”: “r2_p1”\n            }\n        }\n    ]\n}\n```\n\n**Response**\n\n```json\n{\n    “data”: {\n        “type”: “gameCenterMatchmakingRuleSetTests”,\n        “attributes”: {\n            “matchmakingResults”: [\n                [\n                    {\n                        “requestName”: “r1”,\n                        “teamAssignments”: null\n                    },\n                    {\n                        “requestName”: “r2”,\n                        “teamAssignments”: null\n                    }\n                ]\n            ]\n        },\n        “relationships”: {\n            “matchmakingRequests”: {\n                “meta”: {\n                    “paging”: {\n                        “total”: 2,\n                        “limit”: 10\n                    }\n                },\n                “data”: [\n                    {\n                        “type”: “gameCenterMatchmakingTestRequests”,\n                        “id”: “15b4fdf6-2a5f-4273-a417-db39070d956f”\n                    },\n                    {\n                        “type”: “gameCenterMatchmakingTestRequests”,\n                        “id”: “f6cf08cd-535b-4a4c-86d0-18237e76510e”\n                    }\n                ]\n            }\n        },\n        “links”: {\n            “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSetTests”\n        }\n    },\n    “included”: [\n        {\n            “type”: “gameCenterMatchmakingTestRequests”,\n            “id”: “15b4fdf6-2a5f-4273-a417-db39070d956f”,\n            “relationships”: {\n                “matchmakingPlayerProperties”: {\n                    “meta”: {\n                        “paging”: {\n                            “total”: 0,\n                            “limit”: 10\n                        }\n                    },\n                    “data”: [\n                        {\n                            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n                            “id”: “4aa2cee3-aeef-4b8f-ace5-4ae64249e6c7”\n                        }\n                    ]\n                }\n            },\n            “links”: {\n                “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTestRequests/15b4fdf6-2a5f-4273-a417-db39070d956f”\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n            “id”: “4aa2cee3-aeef-4b8f-ace5-4ae64249e6c7”,\n            “links”: {\n                “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTestPlayerProperties/4aa2cee3-aeef-4b8f-ace5-4ae64249e6c7”\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestRequests”,\n            “id”: “f6cf08cd-535b-4a4c-86d0-18237e76510e”,\n            “relationships”: {\n                “matchmakingPlayerProperties”: {\n                    “meta”: {\n                        “paging”: {\n                            “total”: 0,\n                            “limit”: 10\n                        }\n                    },\n                    “data”: [\n                        {\n                            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n                            “id”: “a6ce1b13-1d8e-47b5-8dc0-39ec7c504221”\n                        }\n                    ]\n                }\n            },\n            “links”: {\n                “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTestRequests/f6cf08cd-535b-4a4c-86d0-18237e76510e”\n            }\n        },\n        {\n            “type”: “gameCenterMatchmakingTestPlayerProperties”,\n            “id”: “a6ce1b13-1d8e-47b5-8dc0-39ec7c504221”,\n            “links”: {\n                “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingTestPlayerProperties/a6ce1b13-1d8e-47b5-8dc0-39ec7c504221”\n            }\n        }\n    ],\n    “links”: {\n        “self”: “https://api.appstoreconnect.apple.com/v1/gameCenterMatchmakingRuleSetTests”\n    }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": []
+}

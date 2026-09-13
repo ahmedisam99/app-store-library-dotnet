@@ -1,0 +1,94 @@
+{
+  "id": "data:app_store_connect_api:diagnosticLogs.ProductData",
+  "title": "diagnosticLogs.ProductData",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary",
+  "slug": "appstoreconnectapi/diagnosticlogs/productdata-data.dictionary",
+  "introducedAt": "2.0",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The logs and insights for a diagnostic signature.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object diagnosticLogs.ProductData",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "signatureId",
+      "type": "string",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The opaque resource ID that uniquely identifies a diagnostic signature.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "diagnosticInsights",
+      "type": "[diagnosticLogs.ProductData.DiagnosticInsights]",
+      "typeId": "data:app_store_connect_api:diagnosticLogs.ProductData.DiagnosticInsights",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of insights for a diagnostic signature.",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "diagnosticLogs",
+      "type": "[diagnosticLogs.ProductData.DiagnosticLogs]",
+      "typeId": "data:app_store_connect_api:diagnosticLogs.ProductData.DiagnosticLogs",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "An array of logs associated with a diagnostic signature.",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticInsights-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/diagnosticLogs/ProductData-data.dictionary/DiagnosticLogs-data.dictionary",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightDirection",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DiagnosticInsightType"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

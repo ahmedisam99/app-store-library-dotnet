@@ -1,0 +1,182 @@
+{
+  "id": "rest:app_store_connect_api:get:v1-diagnosticSignatures-{}-logs",
+  "title": "Download logs for a diagnostic signature",
+  "kind": "httpRequest",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/GET-v1-diagnosticSignatures-_id_-logs",
+  "slug": "appstoreconnectapi/get-v1-diagnosticsignatures-_id_-logs",
+  "introducedAt": "1.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Get the anonymized backtrace logs associated with a specific diagnostic signature.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": [
+    {
+      "title": "URL",
+      "method": "GET",
+      "baseUrl": "https://api.appstoreconnect.apple.com/",
+      "path": "v1/diagnosticSignatures/{id}/logs",
+      "parameters": [
+        "{id}"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "in": "Path Parameters",
+      "name": "id",
+      "type": "string",
+      "typeId": null,
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The resource ID that uniquely identifies a diagnostic signature. Obtain the diagnostic signature resource ID from the `GET-v1-builds-_id_-diagnosticSignatures` response.",
+        "refs": [
+          "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures"
+        ]
+      }
+    },
+    {
+      "in": "Query Parameters",
+      "name": "limit",
+      "type": "integer",
+      "typeId": null,
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [
+        {
+          "kind": "maximum",
+          "value": "200",
+          "values": null
+        }
+      ],
+      "typeDetails": null,
+      "abstract": {
+        "text": "The maximum number of diagnostic logs to return.",
+        "refs": []
+      }
+    }
+  ],
+  "requestBody": null,
+  "responses": [
+    {
+      "status": 200,
+      "reason": "OK",
+      "mimeType": "application/vnd.apple.diagnostic-logs+json",
+      "type": "diagnosticLogs",
+      "typeId": "data:app_store_connect_api:diagnosticLogs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 400,
+      "reason": "Bad Request",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "An error occurred with your request.",
+        "refs": []
+      }
+    },
+    {
+      "status": 401,
+      "reason": "Unauthorized",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "status": 403,
+      "reason": "Forbidden",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Request not authorized.",
+        "refs": []
+      }
+    },
+    {
+      "status": 404,
+      "reason": "Not Found",
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "Resource not found.",
+        "refs": []
+      }
+    },
+    {
+      "status": 429,
+      "reason": null,
+      "mimeType": "application/json",
+      "type": "ErrorResponse",
+      "typeId": "data:app_store_connect_api:ErrorResponse",
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Discussion",
+      "paragraphs": [
+        {
+          "text": "The example below requests a single disk write diagnostic log for a specific signature.",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Example Request and Response",
+      "paragraphs": [
+        {
+          "text": "**Request**\n\n```\nGET https://api.appstoreconnect.apple.com/v1/diagnosticSignatures/012a219872fe2aa3ca056df08dc9161007a26879a1c1475ca2e2712f7d0aefd7b4/logs?limit=1\n```\n\n**Response**\n\n```json\n{\n  \"productData\": [\n    {\n      \"signatureId\": \"012a219872fe2aa3ca056df08dc9161007a26879a1c1475ca2e2712f7d0aefd7b4\",\n      \"diagnosticInsights\": [\n        {\n          \"insightsURL\": \"doc://com.apple.documentation/documentation/xcode/reducing-disk-writes#Use-Appropriate-Indices\",\n          \"insightsCategory\": \"SQLiteSpill\",\n          \"insightsString\": \"SQLite spill file detected. Add appropriate index to improve performance.\"\n        }\n      ],\n      \"diagnosticLogs\": [\n        {\n          \"diagnosticMetaData\": {\n            \"event\": \"disk writes\",\n            \"osVersion\": \"iPhone OS 14.6 (18F72)\",\n            \"appVersion\": \"6.10.1\",\n            \"writesCaused\": \"1073.76 MB\",\n            \"deviceType\": \"iPhone13_3\",\n            \"platformArchitecture\": \"arm64\",\n            \"eventDetail\": \"Total of 1073.76 MB of disk writes\"\n          },\n          \"callStackTree\": [\n            {\n              \"callStacks\": [\n                {\n                  \"callStackRootFrames\": [\n                    {\n                      \"offsetIntoBinaryTextSegment\": \"\",\n                      \"offsetIntoSymbol\": \"32\",\n                      \"symbolName\": \"_dispatch_call_block_and_release\",\n                      \"address\": \"0x19f7cda84\",\n                      \"binaryUUID\": \"DAF30062-4C85-3B92-B159-50602A0C9D96\",\n                      \"isBlameFrame\": false,\n                      \"binaryName\": \"libdispatch.dylib\",\n                      \"lineNumber\": \"1466\",\n                      \"sampleCount\": 51,\n                      \"fileName\": \"init.c\",\n                      \"rawFrame\": \"44 _dispatch_call_block_and_release (in libdispatch.dylib) + 32 (init.c:1466) [0x19f7cda84]\",\n                      \"subFrames\": [\n                        {\n                          \"offsetIntoBinaryTextSegment\": \"\",\n                          \"offsetIntoSymbol\": \"112\",\n                          \"symbolName\": \"+[TaskHandler updateNames]\",\n                          \"address\": \"0x102f48b78\",\n                          \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                          \"isBlameFrame\": true,\n                          \"binaryName\": \"ExampleApp\",\n                          \"lineNumber\": \"2381\",\n                          \"sampleCount\": 51,\n                          \"fileName\": \"TaskHandler.m\",\n                          \"rawFrame\": \"44 +[TaskHandler updateNames] (in ExampleApp) + 112 (TaskHandler.m:2092) [0x102f48b74]\",\n                          \"subFrames\": [\n                            {\n                              \"offsetIntoBinaryTextSegment\": \"\",\n                              \"offsetIntoSymbol\": \"208\",\n                              \"symbolName\": \"+[TaskHandler getAllItemsFromDB]\",\n                              \"address\": \"0x102f3ca74\",\n                              \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                              \"isBlameFrame\": true,\n                              \"binaryName\": \"ExampleApp\",\n                              \"lineNumber\": \"1369\",\n                              \"sampleCount\": 51,\n                              \"fileName\": \"TaskHandler.m\",\n                              \"rawFrame\": \"44 +[TaskHandler getAllItemsFromDB] (in ExampleApp) + 208 (TaskHandler.m:1369) [0x102f3ca74]\",\n                              \"subFrames\": [\n                                {\n                                  \"offsetIntoBinaryTextSegment\": \"\",\n                                  \"offsetIntoSymbol\": \"144\",\n                                  \"symbolName\": \"-[DatabaseQueue inDatabase:]\",\n                                  \"address\": \"0x1034dbf04\",\n                                  \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                                  \"isBlameFrame\": true,\n                                  \"binaryName\": \"ExampleApp\",\n                                  \"lineNumber\": \"157\",\n                                  \"sampleCount\": 51,\n                                  \"fileName\": \"DatabaseQueue.m\",\n                                  \"rawFrame\": \"44 -[DatabaseQueue inDatabase:] (in ExampleApp) + 144 (DatabaseQueue.m:157) [0x1034dbf04]\",\n                                  \"subFrames\": [\n                                    {\n                                      \"offsetIntoBinaryTextSegment\": \"\",\n                                      \"offsetIntoSymbol\": \"176\",\n                                      \"symbolName\": \"_dispatch_sync_f_slow\",\n                                      \"address\": \"0x19f7de7b4\",\n                                      \"binaryUUID\": \"DAF30062-4C85-3B92-B159-50602A0C9D96\",\n                                      \"isBlameFrame\": false,\n                                      \"binaryName\": \"libdispatch.dylib\",\n                                      \"lineNumber\": \"1749\",\n                                      \"sampleCount\": 48,\n                                      \"fileName\": \"queue.c\",\n                                      \"rawFrame\": \"44 _dispatch_sync_f_slow (in libdispatch.dylib) + 176 (queue.c:1749) [0x19f7de7b4]\",\n                                      \"subFrames\": [\n                                        {\n                                          \"offsetIntoBinaryTextSegment\": \"\",\n                                          \"offsetIntoSymbol\": \"68\",\n                                          \"symbolName\": \"_dispatch_sync_invoke_and_complete_recurse\",\n                                          \"address\": \"0x19f7ded5c\",\n                                          \"binaryUUID\": \"DAF30062-4C85-3B92-B159-50602A0C9D96\",\n                                          \"isBlameFrame\": false,\n                                          \"binaryName\": \"libdispatch.dylib\",\n                                          \"lineNumber\": \"998\",\n                                          \"sampleCount\": 48,\n                                          \"fileName\": \"queue.c\",\n                                          \"rawFrame\": \"44 _dispatch_sync_invoke_and_complete_recurse (in libdispatch.dylib) + 68 (queue.c:998) [0x19f7ded5c]\",\n                                          \"subFrames\": [\n                                            {\n                                              \"offsetIntoBinaryTextSegment\": \"\",\n                                              \"offsetIntoSymbol\": \"20\",\n                                              \"symbolName\": \"_dispatch_client_callout\",\n                                              \"address\": \"0x19f7cf81c\",\n                                              \"binaryUUID\": \"DAF30062-4C85-3B92-B159-50602A0C9D96\",\n                                              \"isBlameFrame\": false,\n                                              \"binaryName\": \"libdispatch.dylib\",\n                                              \"lineNumber\": \"559\",\n                                              \"sampleCount\": 48,\n                                              \"fileName\": \"object.m\",\n                                              \"rawFrame\": \"44 _dispatch_client_callout (in libdispatch.dylib) + 20 (object.m:559) [0x19f7cf81c]\",\n                                              \"subFrames\": [\n                                                {\n                                                  \"offsetIntoBinaryTextSegment\": \"\",\n                                                  \"offsetIntoSymbol\": \"60\",\n                                                  \"symbolName\": \"__30-[DatabaseQueue inDatabase:]_block_invoke\",\n                                                  \"address\": \"0x1034dbf70\",\n                                                  \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                                                  \"isBlameFrame\": true,\n                                                  \"binaryName\": \"ExampleApp\",\n                                                  \"lineNumber\": \"160\",\n                                                  \"sampleCount\": 48,\n                                                  \"fileName\": \"DatabaseQueue.m\",\n                                                  \"rawFrame\": \"44 __30-[DatabaseQueue inDatabase:]_block_invoke (in ExampleApp) + 60 (DatabaseQueue.m:160) [0x1034dbf70]\",\n                                                  \"subFrames\": [\n                                                    {\n                                                      \"offsetIntoBinaryTextSegment\": \"\",\n                                                      \"offsetIntoSymbol\": \"180\",\n                                                      \"symbolName\": \"__39+[TaskHandler getAllItemsFromDB]_block_invoke\",\n                                                      \"address\": \"0x102f3cb8c\",\n                                                      \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                                                      \"isBlameFrame\": true,\n                                                      \"binaryName\": \"ExampleApp\",\n                                                      \"lineNumber\": \"1378\",\n                                                      \"sampleCount\": 48,\n                                                      \"fileName\": \"TaskHandler.m\",\n                                                      \"rawFrame\": \"44 __39+[TaskHandler getAllItemsFromDB]_block_invoke (in ExampleApp) + 180 (TaskHandler.m:1378) [0x102f3cb8c]\",\n                                                      \"subFrames\": [\n                                                        {\n                                                          \"offsetIntoBinaryTextSegment\": \"\",\n                                                          \"offsetIntoSymbol\": \"48\",\n                                                          \"symbolName\": \"-[ResultSet nextWithError:]\",\n                                                          \"address\": \"0x1034dcc00\",\n                                                          \"binaryUUID\": \"2BE5B0BD-0977-3220-B5CB-EBDB66DC3200\",\n                                                          \"isBlameFrame\": true,\n                                                          \"binaryName\": \"ExampleApp\",\n                                                          \"lineNumber\": \"161\",\n                                                          \"sampleCount\": 48,\n                                                          \"fileName\": \"ResultSet.m\",\n                                                          \"rawFrame\": \"44 -[ResultSet nextWithError:] (in ExampleApp) + 48 (ResultSet.m:161) [0x1034dcc00]\",\n                                                          \"subFrames\": [\n                                                            {\n                                                              \"offsetIntoBinaryTextSegment\": \"\",\n                                                              \"offsetIntoSymbol\": \"300\",\n                                                              \"symbolName\": \"sqlite3_step\",\n                                                              \"address\": \"0x1b9980e9c\",\n                                                              \"binaryUUID\": \"BFD2376F-2E6E-33FD-A5C2-413484CD6D51\",\n                                                              \"isBlameFrame\": false,\n                                                              \"binaryName\": \"libsqlite3.dylib\",\n                                                              \"lineNumber\": \"90617\",\n                                                              \"sampleCount\": 48,\n                                                              \"fileName\": \"sqlite3.c\",\n                                                              \"rawFrame\": \"44 sqlite3_step (in libsqlite3.dylib) + 300 (sqlite3.c:90617) [0x1b9980e9c]\",\n                                                              \"subFrames\": [\n                                                                {\n                                                                  \"offsetIntoBinaryTextSegment\": \"\",\n                                                                  \"offsetIntoSymbol\": \"40188\",\n                                                                  \"symbolName\": \"sqlite3VdbeExec\",\n                                                                  \"address\": \"0x1b998c240\",\n                                                                  \"binaryUUID\": \"BFD2376F-2E6E-33FD-A5C2-413484CD6D51\",\n                                                                  \"isBlameFrame\": false,\n                                                                  \"binaryName\": \"libsqlite3.dylib\",\n                                                                  \"lineNumber\": \"102825\",\n                                                                  \"sampleCount\": 48,\n                                                                  \"fileName\": \"sqlite3.c\",\n                                                                  \"rawFrame\": \"44 sqlite3VdbeExec (in libsqlite3.dylib) + 40188 (sqlite3.c:102825) [0x1b998c240]\",\n                                                                  \"subFrames\": [\n                                                                    {\n                                                                      \"offsetIntoBinaryTextSegment\": \"\",\n                                                                      \"offsetIntoSymbol\": \"196\",\n                                                                      \"symbolName\": \"vdbeSorterListToPMA\",\n                                                                      \"address\": \"0x1b9a08d3c\",\n                                                                      \"insightsCategory\": \"SQLiteSpill\",\n                                                                      \"binaryUUID\": \"BFD2376F-2E6E-33FD-A5C2-413484CD6D51\",\n                                                                      \"isBlameFrame\": false,\n                                                                      \"binaryName\": \"libsqlite3.dylib\",\n                                                                      \"lineNumber\": \"23794\",\n                                                                      \"sampleCount\": 48,\n                                                                      \"fileName\": \"sqlite3.c\",\n                                                                      \"rawFrame\": \"44 vdbeSorterListToPMA (in libsqlite3.dylib) + 196 (sqlite3.c:23794) [0x1b9a08d3c]\",\n                                                                      \"subFrames\": [\n                                                                        {\n                                                                          \"offsetIntoBinaryTextSegment\": \"\",\n                                                                          \"offsetIntoSymbol\": \"1832\",\n                                                                          \"symbolName\": \"unixFileControl\",\n                                                                          \"address\": \"0x1b99c3860\",\n                                                                          \"binaryUUID\": \"BFD2376F-2E6E-33FD-A5C2-413484CD6D51\",\n                                                                          \"isBlameFrame\": false,\n                                                                          \"binaryName\": \"libsqlite3.dylib\",\n                                                                          \"lineNumber\": \"40185\",\n                                                                          \"sampleCount\": 48,\n                                                                          \"fileName\": \"sqlite3.c\",\n                                                                          \"rawFrame\": \"44 unixFileControl (in libsqlite3.dylib) + 1832 (sqlite3.c:40185) [0x1b99c3860]\",\n                                                                          \"subFrames\": []\n                                                                        }\n                                                                      ]\n                                                                    }\n                                                                  ]\n                                                                }\n                                                              ]\n                                                            }\n                                                          ]\n                                                        }\n                                                      ]\n                                                    }\n                                                  ]\n                                                }\n                                              ]\n                                            }\n                                          ]\n                                        }\n                                      ]\n                                    }\n                                  ]\n                                }\n                              ]\n                            }\n                          ]\n                        }\n                      ]\n                    }\n                  ]\n                }\n              ],\n              \"callStackPerThread\": false\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"version\": \"1.0.0\"\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Getting Metrics and Diagnostic Logs",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/retrieve-power-and-performance-metrics-and-log-insights",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-perfPowerMetrics",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-builds-_id_-diagnosticSignatures"
+      ]
+    }
+  ]
+}

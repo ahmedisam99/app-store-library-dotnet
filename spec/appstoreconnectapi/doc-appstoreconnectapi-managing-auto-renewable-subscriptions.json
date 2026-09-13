@@ -1,0 +1,320 @@
+{
+  "id": "doc:appstoreconnectapi/managing-auto-renewable-subscriptions",
+  "title": "Managing auto-renewable subscriptions",
+  "kind": "article",
+  "role": "article",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/managing-auto-renewable-subscriptions",
+  "slug": "appstoreconnectapi/managing-auto-renewable-subscriptions",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Create and manage subscriptions with the App Store Connect API.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [
+    {
+      "style": "tip",
+      "prose": {
+        "text": " This API endpoint returns many values, so filtering by territory can save you time.",
+        "refs": []
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " The territory isn’t necessary to include because the price point is unique to the territory.",
+        "refs": []
+      }
+    },
+    {
+      "style": "important",
+      "prose": {
+        "text": " Review carefully because after a price goes into effect, you can’t revert it. Be sure to review information about price increases and changes at `https://developer.apple.com/help/app-store-connect/create-an-app-record/add-a-new-app`.",
+        "refs": [
+          "https://developer.apple.com/help/app-store-connect/create-an-app-record/add-a-new-app"
+        ]
+      }
+    },
+    {
+      "style": "note",
+      "prose": {
+        "text": " This change applies to all subscriptions within an app.",
+        "refs": []
+      }
+    }
+  ],
+  "tables": [
+    {
+      "headers": [
+        "Territory",
+        "`customerPrice`",
+        "`id`"
+      ],
+      "rows": [
+        [
+          "`USA`",
+          "`24.99`",
+          "`eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ`"
+        ],
+        [
+          "`MEX`",
+          "`499.0`",
+          "`eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ`"
+        ],
+        [
+          "`LUX`",
+          "`20.49`",
+          "`eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJMVVgiLCJwIjoiNDEifQ`"
+        ]
+      ]
+    }
+  ],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "Before you create an auto-renewable subscription, create an auto-renewable subscription group, as described in `creating-auto-renewable-subscription-groups`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/creating-auto-renewable-subscription-groups"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Create your auto-renewable subscription",
+      "paragraphs": [
+        {
+          "text": "To create a subscription in your existing subscription group, use `POST /v1/subscriptions` (`POST-v1-subscriptions`) with a payload that specifies a `name` (internal only), `productId` (without spaces), and `subscriptionGroup id`. If you’re adding more subscriptions to the same group, you can also specify `groupLevel` to set the display order of subscriptions within a group. There are other attributes you can add when creating your subscription; for more information, see `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptions",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionCreateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"subscriptions\",\n    \"attributes\": {\n      \"name\": \"All Access One Month\",\n      \"productId\": \"ALLACCESS1MONTH\",\n      \"subscriptionPeriod\": \"ONE_MONTH\",\n      \"familySharable\": true,\n      \"reviewNote\": \"This is the all-access tier for 1 month of ukulele lessons.\",\n      \"groupLevel\": 1,\n      \"availableInAllTerritories\": true\n    },\n    \"relationships\": {\n      \"group\": {\n        \"data\": {\n          \"type\": \"subscriptionGroups\",\n          \"id\": \"2000037020\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Localize metadata for your auto-renewable subscription",
+      "paragraphs": [
+        {
+          "text": "Like subscription groups, subscriptions need at least one localization. To add a localization, use `POST /v1/subscriptionLocalizations` (`POST-v1-subscriptionLocalizations`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionLocalizations"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"subscriptionLocalizations\",\n    \"attributes\": {\n      \"name\": \"All Access\",\n      \"locale\": \"en-US\",\n      \"description\": \"1 month access to all ukulele lessons.\"\n    },\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6446671421\"\n        }\n      }\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Configure your auto-renewable subscription pricing",
+      "paragraphs": [
+        {
+          "text": "The next item to configure for your subscription is pricing. First, determine the price for your subscription. You can set a unique price for each territory. To look up the price points available for the subscription, use `GET /v1/subscriptions/{id}/pricePoints` (`GET-v1-subscriptions-_id_-pricePoints`), where the `id` is the identifier of the subscription.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptions-_id_-pricePoints"
+          ]
+        },
+        {
+          "text": "Here’s an example request:",
+          "refs": []
+        },
+        {
+          "text": "```other\nGET /v1/subscriptions/6446671421/pricePoints?include=territory&filter[territory]=USA\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Tip**\n>\n>  This API endpoint returns many values, so filtering by territory can save you time.",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example response, truncated for clarity and sampled from the middle of the full response. This portion shows two price points:",
+          "refs": []
+        },
+        {
+          "text": "```other\n  \"equalizations\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDgifQ/relationships/equalizations\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDgifQ/equalizations\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDgifQ\"\n    }\n  }, {\n    \"type\" : \"subscriptionPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDkifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"24.49\",\n      \"proceeds\" : \"17.14\",\n      \"proceedsYear2\" : \"20.82\"\n    },\n    \"relationships\" : {\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"USA\"\n        }\n      },\n      \"equalizations\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDkifQ/relationships/equalizations\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDkifQ/equalizations\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNDkifQ\"\n    }\n  }, {\n    \"type\" : \"subscriptionPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"24.99\",\n      \"proceeds\" : \"17.49\",\n      \"proceedsYear2\" : \"21.24\"\n    },\n    \"relationships\" : {\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"USA\"\n        }\n      },\n```",
+          "refs": []
+        },
+        {
+          "text": "After you select the subscription price point, use `GET /v1/subscriptionPricePoints/{id}/equalizations` (`GET-v1-subscriptionPricePoints-_id_-equalizations`), where the `id` is the subscription price point. In this example, the selected price point is `24.99`, which has an `id` of `eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-equalizations"
+          ]
+        },
+        {
+          "text": "Here’s an example request using that price point `id`, with the additional included `territory`:",
+          "refs": []
+        },
+        {
+          "text": "```other\nGET /v1/subscriptionPricePoints/\neyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ\n/equalizations?include=territory\n```",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example response, truncated for clarity:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n    \"type\" : \"subscriptionPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"499.0\",\n      \"proceeds\" : \"349.3\",\n      \"proceedsYear2\" : \"424.15\"\n    },\n    \"relationships\" : {\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"MEX\"\n        }\n      },\n      \"equalizations\" : {\n        \"links\" : {\n          \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ/relationships/equalizations\",\n          \"related\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ/equalizations\"\n        }\n      }\n    },\n    \"links\" : {\n      \"self\" : \"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ\"\n    }\n  }, {\n    \"type\" : \"subscriptionPricePoints\",\n    \"id\" : \"eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJMVVgiLCJwIjoiNDEifQ\",\n    \"attributes\" : {\n      \"customerPrice\" : \"20.49\",\n      \"proceeds\" : \"14.34\",\n      \"proceedsYear2\" : \"17.42\"\n    },\n    \"relationships\" : {\n      \"territory\" : {\n        \"data\" : {\n          \"type\" : \"territories\",\n          \"id\" : \"LUX\"\n        }\n      },\n```",
+          "refs": []
+        },
+        {
+          "text": "The following example shows the equalized price points for Mexico (`MEX`) and Luxembourg (`LUX`). The three price points (`USA`, `MEX`, and `LUX`) are now identified.",
+          "refs": []
+        },
+        {
+          "text": "| Territory | `customerPrice` | `id` |\n| --- | --- | --- |\n| `USA` | `24.99` | `eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ` |\n| `MEX` | `499.0` | `eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJNRVgiLCJwIjoiNzEifQ` |\n| `LUX` | `20.49` | `eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJMVVgiLCJwIjoiNDEifQ` |",
+          "refs": []
+        },
+        {
+          "text": "The `customerPrice` shows in the local currency for that territory. Because Luxembourg uses the Euro and Mexico uses the Mexican peso, the `customerPrice` number isn’t exactly the `24.99` of the base currency from the equalization lookup (US dollars).",
+          "refs": []
+        },
+        {
+          "text": "Use `POST /v1/subscriptionPrices` (`POST-v1-subscriptionPrices`) with a payload like in the following example, in which the `subscriptionPricePoint` is set for `USA`:",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPrices"
+          ]
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"subscriptionPrices\",\n    \"attributes\": {\n      \"startDate\": \"2022-06-29\",\n      \"preserveCurrentPrice\": true\n    },\n    \"relationships\": {\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6446659888\"\n        }\n      },\n      \"subscriptionPricePoint\": {\n        \"data\": {\n          \"type\": \"subscriptionPricePoints\",\n          \"id\": \"eyJzIjoiNjQ0NjY3MTQyMSIsInQiOiJVU0EiLCJwIjoiNTAifQ\"\n        }\n      }\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "> **Note**\n>\n>  The territory isn’t necessary to include because the price point is unique to the territory.",
+          "refs": []
+        },
+        {
+          "text": "To set a price point for another territory, use `POST /v1/subscriptionPrices` (`POST-v1-subscriptionPrices`) again, replacing the `subscriptionPricePoint` ID with the other values you obtain from `GET /v1/subscriptionPricePoints/{id}/equalizations` (`GET-v1-subscriptionPricePoints-_id_-equalizations`). If the subscription is available in all territories, an individual `POST /v1/subscriptionPrices` call is necessary for each territory. You might consider automating this step.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-subscriptionPrices",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-subscriptionPricePoints-_id_-equalizations"
+          ]
+        },
+        {
+          "text": "> **Important**\n>\n>  Review carefully because after a price goes into effect, you can’t revert it. Be sure to review information about price increases and changes at `https://developer.apple.com/help/app-store-connect/create-an-app-record/add-a-new-app`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/create-an-app-record/add-a-new-app"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Configure Billing Grace Period for your app",
+      "paragraphs": [
+        {
+          "text": "After adding support for Billing Grace Period to your app, you can set the state for subscriptions. When you support Billing Grace Period in your app, it lets subscribers retain access to your app’s paid content for a period of time if their subscription expires due to a billing issue. If Apple successfully recovers the subscription within the grace period, you don’t experience any interruption in your revenue. Before you turn on Billing Grace Period in App Store Connect, you need to update your entitlement logic to ensure you’re providing service to customers within the grace period. For more information, see `reducing-involuntary-subscriber-churn` and `https://help.apple.com/app-store-connect/#/dev58bda3212`.",
+          "refs": [
+            "doc://com.apple.documentation/documentation/StoreKit/reducing-involuntary-subscriber-churn",
+            "https://help.apple.com/app-store-connect/#/dev58bda3212"
+          ]
+        },
+        {
+          "text": "To change the status of Billing Grace Period for your app, use `PATCH /v1/subscriptionGracePeriods/{id}` (`PATCH-v1-subscriptionGracePeriods-_id_`), where the `id` in the URL and in the payload is the app’s Apple ID.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-subscriptionGracePeriods-_id_"
+          ]
+        },
+        {
+          "text": "> **Note**\n>\n>  This change applies to all subscriptions within an app.",
+          "refs": []
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"id\": \"6446148572\",\n    \"type\": \"subscriptionGracePeriods\",\n    \"attributes\": {\n      \"optIn\": true\n    }\n  }\n}\n```",
+          "refs": []
+        },
+        {
+          "text": "You can provide additional attributes to control the duration of the grace period and the type of subscribers that are eligible, as well as set the state for the sandbox environment. For more information, see `Attributes-data.dictionary`.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SubscriptionGracePeriodUpdateRequest/Data-data.dictionary/Attributes-data.dictionary"
+          ]
+        }
+      ],
+      "listItems": []
+    },
+    {
+      "level": 3,
+      "heading": "Promote your auto-renewable subscriptions",
+      "paragraphs": [
+        {
+          "text": "You can promote an auto-renewable subscription to users who visit your app listing in the App Store. Use `POST /v1/promotedPurchases` (`POST-v1-promotedPurchases`) with a payload that includes your Apple ID and the ID for your auto-renewable subscription. The response confirms the state is `\"Waiting for Review\"`. You can also look up the state of a specific promoted purchase by using `GET /v1/promotedPurchases` (`GET-v2-inAppPurchases-_id_-promotedPurchase`), or look up the status of all your promoted purchases for an app by using `GET /v1/apps/{id}/promotedPurchases` (`GET-v1-apps-_id_-promotedPurchases`).",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-promotedPurchases",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v2-inAppPurchases-_id_-promotedPurchase",
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-promotedPurchases"
+          ]
+        },
+        {
+          "text": "Here’s an example payload:",
+          "refs": []
+        },
+        {
+          "text": "```other\n{\n  \"data\": {\n    \"type\": \"promotedPurchases\",\n    \"attributes\": {\n      \"visibleForAllUsers\": true,\n      \"enabled\": true\n    },\n    \"relationships\": {\n      \"app\": {\n        \"data\": {\n          \"type\": \"apps\",\n          \"id\": \"6446148572\"\n        }\n      },\n      \"subscription\": {\n        \"data\": {\n          \"type\": \"subscriptions\",\n          \"id\": \"6446671421\"\n        }\n      }\n    }\n  }\n}\n\n```",
+          "refs": []
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Managing Auto-Renewable Subscriptions",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/working-with-subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/configuring-subscription-prices-across-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/querying-adjusted-subscription-price-equalizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-versions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscriptions",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-localizations-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-price-points-and-subscription-prices",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-images-v1",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/subscription-plan-availability",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/billing-grace-periods"
+      ]
+    }
+  ]
+}

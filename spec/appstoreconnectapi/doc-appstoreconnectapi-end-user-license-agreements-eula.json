@@ -1,0 +1,91 @@
+{
+  "id": "doc:appstoreconnectapi/end-user-license-agreements-eula",
+  "title": "End User License Agreements (EULA)",
+  "kind": "article",
+  "role": "collectionGroup",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/end-user-license-agreements-eula",
+  "slug": "appstoreconnectapi/end-user-license-agreements-eula",
+  "introducedAt": null,
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "Manage custom End User License Agreements (EULA) that are related to territories.",
+    "refs": []
+  },
+  "declaration": null,
+  "constraints": [],
+  "values": null,
+  "properties": null,
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": [
+    {
+      "level": 2,
+      "heading": "Overview",
+      "paragraphs": [
+        {
+          "text": "`endUserLicenseAgreements` represents the custom End User License Agreement (EULA) that you provide. Apple provides a standard EULA that applies in all territories. If you need to provide a custom EULA, use this resource to provide your agreement text. Relate it to the app and territories for which it applies using the `territories` resource.",
+          "refs": [
+            "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/territories"
+          ]
+        },
+        {
+          "text": "For more information, see App Store Connect Help: `https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version`.",
+          "refs": [
+            "https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version"
+          ]
+        }
+      ],
+      "listItems": []
+    }
+  ],
+  "topics": [
+    {
+      "title": "Creating, Modifying, and Deleting an EULA",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/POST-v1-endUserLicenseAgreements",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/PATCH-v1-endUserLicenseAgreements-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/DELETE-v1-endUserLicenseAgreements-_id_"
+      ]
+    },
+    {
+      "title": "Reading EULA and Listing Territories",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-endUserLicenseAgreements-_id_",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-apps-_id_-endUserLicenseAgreement",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-endUserLicenseAgreements-_id_-territories",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/GET-v1-endUserLicenseAgreements-_id_-relationships-territories"
+      ]
+    },
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreement",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreementCreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreementUpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreementResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreementWithoutIncludesResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/AppEndUserLicenseAgreementLinkageResponse",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/EndUserLicenseAgreementTerritoriesLinkagesResponse"
+      ]
+    }
+  ],
+  "seeAlso": []
+}

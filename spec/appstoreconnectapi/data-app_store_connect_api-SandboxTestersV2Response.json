@@ -1,0 +1,96 @@
+{
+  "id": "data:app_store_connect_api:SandboxTestersV2Response",
+  "title": "SandboxTestersV2Response",
+  "kind": "dictionary",
+  "role": "symbol",
+  "framework": "appstoreconnectapi",
+  "path": "/documentation/AppStoreConnectAPI/SandboxTestersV2Response",
+  "slug": "appstoreconnectapi/sandboxtestersv2response",
+  "introducedAt": "2.2",
+  "deprecated": null,
+  "beta": false,
+  "abstract": {
+    "text": "The response body for endpoints that list sandbox Apple IDs used for testing.",
+    "refs": []
+  },
+  "declaration": {
+    "tokens": "object SandboxTestersV2Response",
+    "baseType": "object",
+    "isArray": false,
+    "elementType": null
+  },
+  "constraints": [],
+  "values": null,
+  "properties": [
+    {
+      "in": null,
+      "name": "data",
+      "type": "[SandboxTesterV2]",
+      "typeId": "data:app_store_connect_api:SandboxTesterV2",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "links",
+      "type": "PagedDocumentLinks",
+      "typeId": "data:app_store_connect_api:PagedDocumentLinks",
+      "required": true,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    },
+    {
+      "in": null,
+      "name": "meta",
+      "type": "PagingInformation",
+      "typeId": "data:app_store_connect_api:PagingInformation",
+      "required": false,
+      "deprecated": false,
+      "introducedVersion": null,
+      "attributes": [],
+      "typeDetails": null,
+      "abstract": {
+        "text": "",
+        "refs": []
+      }
+    }
+  ],
+  "endpoints": null,
+  "parameters": null,
+  "requestBody": null,
+  "responses": null,
+  "notes": [],
+  "tables": [],
+  "article": null,
+  "topics": [],
+  "seeAlso": [
+    {
+      "title": "Objects",
+      "abstract": {
+        "text": "",
+        "refs": []
+      },
+      "members": [
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2UpdateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2CreateRequest",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTestersClearPurchaseHistoryRequestV2Response",
+        "doc://com.apple.appstoreconnectapi/documentation/AppStoreConnectAPI/SandboxTesterV2"
+      ]
+    }
+  ]
+}
