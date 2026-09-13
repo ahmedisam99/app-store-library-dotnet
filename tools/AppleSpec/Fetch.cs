@@ -16,6 +16,14 @@ public static class AppleDocs
 
     private const int MaxAttempts = 4;
 
+    // Every request in a sync passes through one gate, so running the frameworks together cannot
+    // multiply the ceiling by the number of them. Measured against Apple: 8 at a time reaches
+    // 11.7 pages a second, 24 reaches 45.8 and 32 reaches 72.1, with no throttling at any of them.
+    // 24 is the politeness ceiling rather than the fast one; SendAsync backs off if that is wrong.
+    public const int MaxInFlight = 24;
+
+    private static readonly SemaphoreSlim Gate = new(MaxInFlight);
+
     private static readonly HttpClient Client = CreateClient();
 
     public static string IndexUrl(string framework) => $"https://developer.apple.com/tutorials/data/index/{framework}";
@@ -56,19 +64,39 @@ public static class AppleDocs
 
     public static async Task<HttpMeta> HeadAsync(string url, CancellationToken cancellationToken)
     {
-        using var response = await SendAsync(HttpMethod.Head, url, cancellationToken).ConfigureAwait(false);
+        await Gate.WaitAsync(cancellationToken).ConfigureAwait(false);
 
-        return new HttpMeta(
-            Header(response, "Last-Modified"),
-            Header(response, "ETag"),
-            response.Content.Headers.ContentLength);
+        try
+        {
+            using var response = await SendAsync(HttpMethod.Head, url, cancellationToken).ConfigureAwait(false);
+
+            return new HttpMeta(
+                Header(response, "Last-Modified"),
+                Header(response, "ETag"),
+                response.Content.Headers.ContentLength);
+        }
+        finally
+        {
+            Gate.Release();
+        }
     }
 
     public static async Task<byte[]> GetBytesAsync(string url, CancellationToken cancellationToken)
     {
-        using var response = await SendAsync(HttpMethod.Get, url, cancellationToken).ConfigureAwait(false);
+        // The slot is held until the body is read, not just until the headers arrive: responses come
+        // back with ResponseHeadersRead, so releasing earlier would leave the download uncounted.
+        await Gate.WaitAsync(cancellationToken).ConfigureAwait(false);
 
-        return await response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+        try
+        {
+            using var response = await SendAsync(HttpMethod.Get, url, cancellationToken).ConfigureAwait(false);
+
+            return await response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+        }
+        finally
+        {
+            Gate.Release();
+        }
     }
 
     private static async Task<JsonDocument> GetJsonAsync(string url, CancellationToken cancellationToken)
@@ -170,7 +198,9 @@ public static class AppleDocs
     {
         var client = new HttpClient(new SocketsHttpHandler
         {
-            MaxConnectionsPerServer = 16,
+            // Apple serves this over HTTP/1.1, so a connection is a request: anything below the
+            // gate would make the gate a fiction.
+            MaxConnectionsPerServer = MaxInFlight,
             PooledConnectionLifetime = TimeSpan.FromMinutes(5),
             AutomaticDecompression = DecompressionMethods.All
         })

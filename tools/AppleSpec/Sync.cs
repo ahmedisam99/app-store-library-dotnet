@@ -14,22 +14,32 @@ namespace AppleSpec;
 
 public static class Sync
 {
-    // Eight at a time has never drawn a throttle from Apple; the ceiling is politeness, not throughput.
-    private const int MaxInFlight = 8;
-
     private static readonly UTF8Encoding Utf8 = new(encoderShouldEmitUTF8Identifier: false);
 
     public static async Task<int> RunAsync(SpecPaths paths, CancellationToken cancellationToken)
     {
         var clock = Stopwatch.StartNew();
+
+        // Every source runs at once and they share AppleDocs' single gate, so the frameworks stop
+        // taking turns over a ceiling only one of them was using at a time.
+        var frameworks = Program.Frameworks
+            .Select(framework => SyncFrameworkAsync(paths, framework, cancellationToken))
+            .ToArray();
+
+        var connect = OpenApi.SyncAsync(paths, cancellationToken);
+
+        await Task.WhenAll(frameworks.Cast<Task>().Append(connect)).ConfigureAwait(false);
+
+        // Assembled in declaration order, never completion order: a manifest that reshuffled itself
+        // would report a change on every sync that changed nothing.
         var sources = new List<ManifestSource>();
 
-        foreach (var framework in Program.Frameworks)
+        foreach (var framework in frameworks)
         {
-            sources.Add(await SyncFrameworkAsync(paths, framework, cancellationToken).ConfigureAwait(false));
+            sources.Add(await framework.ConfigureAwait(false));
         }
 
-        sources.AddRange(await OpenApi.SyncAsync(paths, cancellationToken).ConfigureAwait(false));
+        sources.AddRange(await connect.ConfigureAwait(false));
 
         Directory.CreateDirectory(paths.SpecDir);
         WriteFile(paths.ManifestFile, Utf8.GetBytes(JsonSerializer.Serialize(new Manifest { Sources = sources }, Json.Options) + "\n"));
@@ -170,22 +180,12 @@ public static class Sync
 
     internal static async Task<Dictionary<string, JsonDocument>> FetchAllAsync(IReadOnlyList<string> slugs, CancellationToken cancellationToken)
     {
-        using var gate = new SemaphoreSlim(MaxInFlight);
         var fetched = new ConcurrentDictionary<string, JsonDocument>(StringComparer.Ordinal);
 
-        var tasks = slugs.Select(async slug =>
-        {
-            await gate.WaitAsync(cancellationToken).ConfigureAwait(false);
-
-            try
-            {
-                fetched[slug] = await AppleDocs.GetPageAsync(slug, cancellationToken).ConfigureAwait(false);
-            }
-            finally
-            {
-                gate.Release();
-            }
-        }).ToArray();
+        // No gate here: AppleDocs holds the only one, so every framework in flight shares it.
+        var tasks = slugs
+            .Select(async slug => fetched[slug] = await AppleDocs.GetPageAsync(slug, cancellationToken).ConfigureAwait(false))
+            .ToArray();
 
         try
         {
