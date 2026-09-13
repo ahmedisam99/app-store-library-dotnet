@@ -1,4 +1,6 @@
+using System;
 using System.Text.Json.Serialization;
+using Enjna.AppStoreServerLibrary.Models.Enums;
 
 namespace Enjna.AppStoreServerLibrary.Models;
 
@@ -21,4 +23,12 @@ public sealed class NotificationHistoryResponseItem
     /// <seealso href="https://developer.apple.com/documentation/appstoreserverapi/sendattemptitem"/>
     [JsonPropertyName("sendAttempts")]
     public SendAttemptItem[]? SendAttempts { get; set; }
+
+    /// <summary>
+    /// The result of the App Store server's first attempt to send the notification to your server's App-Store-Server-Notifications-V2 endpoint.
+    /// </summary>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreserverapi/sendattemptresult"/>
+    [Obsolete("Use the earliest SendAttemptItem in SendAttempts instead.")]
+    [JsonPropertyName("firstSendAttemptResult")]
+    public SendAttemptResult? FirstSendAttemptResult { get; set; }
 }

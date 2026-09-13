@@ -38,7 +38,7 @@ public static class OpenApi
         // Apple ships it pretty-printed at a quarter of a million lines and it already diffs
         // cleanly; reformatting would turn every future release into one unreadable change.
         var files = new SortedDictionary<string, byte[]>(StringComparer.Ordinal) { ["openapi.json"] = document };
-        var removed = Sync.WriteDirectory(paths.FrameworkDir(Framework), files);
+        var removed = Sync.WriteDirectory(paths, paths.FrameworkDir(Framework), files);
 
         Console.WriteLine($"{Framework}: openapi.json, {document.Length / 1024}KB from {candidates[0].FullName}{(removed > 0 ? $", {removed} removed" : "")}.");
 

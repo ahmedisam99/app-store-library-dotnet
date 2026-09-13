@@ -19,6 +19,13 @@ public sealed class JWSTransactionDecodedPayload : DecodedSignedData
     public string? OriginalTransactionId { get; set; }
 
     /// <summary>
+    /// The subscription's original transaction identifier, before you migrated the subscription.
+    /// </summary>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreservernotifications/previousoriginaltransactionid"/>
+    [JsonPropertyName("previousOriginalTransactionId")]
+    public string? PreviousOriginalTransactionId { get; set; }
+
+    /// <summary>
     /// The unique identifier for a transaction such as an in-app purchase, restored in-app purchase, or subscription renewal.
     /// </summary>
     /// <seealso href="https://developer.apple.com/documentation/appstoreserverapi/transactionid"/>

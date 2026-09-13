@@ -27,7 +27,7 @@ public static class ServerCheck
             return report;
         }
 
-        var coverage = ServerCoverage.Load(Path.Combine(paths.SpecDir, CoverageFile), report);
+        var coverage = ServerCoverage.Load(paths.ServerCoverageFile, report);
 
         CheckDictionaries(documented, inventory, coverage, report);
         CheckEnums(documented, inventory, coverage, report);

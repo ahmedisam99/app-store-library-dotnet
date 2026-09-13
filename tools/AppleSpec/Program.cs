@@ -52,6 +52,11 @@ public static class Program
             Console.Error.WriteLine($"Apple's documentation has a shape this tool does not handle yet.\n{ex.Message}");
             return 2;
         }
+        catch (SpecLayoutException ex)
+        {
+            Console.Error.WriteLine($"This repository is laid out in a way this tool cannot work with.\n{ex.Message}");
+            return 2;
+        }
         catch (OperationCanceledException)
         {
             Console.Error.WriteLine("Cancelled.");
@@ -88,6 +93,9 @@ public static class Program
                                   sync                    Re-fetch Apple's documentation into spec/.
                                   check [--report FILE]   Compare spec/ against src/ and report what is not covered.
                                                           Exits non-zero when something fails rather than merely differs.
+                                        [--update-baseline]
+                                                          Rewrite spec/baseline.connect.json, which is what tells a route
+                                                          Apple just added apart from one the library has long skipped.
                                 """);
 
         return 64;
@@ -101,6 +109,13 @@ public sealed class SpecPaths
     public string SpecDir => Path.Combine(RepoRoot, "spec");
     public string SourceDir => Path.Combine(RepoRoot, "src");
     public string ManifestFile => Path.Combine(SpecDir, "manifest.json");
+
+    public string ServerCoverageFile => Path.Combine(SpecDir, "coverage.server.json");
+    public string ConnectBaselineFile => Path.Combine(SpecDir, "baseline.connect.json");
+
+    // Files this repository maintains rather than fetches. None may live inside a framework
+    // directory: `sync` rewrites those wholesale and deletes whatever it did not just write.
+    public IReadOnlyList<string> PersistedFiles => [ManifestFile, ServerCoverageFile, ConnectBaselineFile];
 
     public string FrameworkDir(string framework) => Path.Combine(SpecDir, framework);
 
@@ -126,6 +141,10 @@ public sealed class SpecPaths
 // A page carrying a key, section kind or node type the normalizer does not model fails the sync
 // rather than writing a snapshot that silently omits it.
 public sealed class SpecFormatException(string message) : Exception(message);
+
+// A file this repository maintains, sitting where `sync` would delete it. Nothing to do with what
+// Apple published, so it is reported as the repository mistake it is rather than as a page shape.
+public sealed class SpecLayoutException(string message) : Exception(message);
 
 // A failure means the library is provably wrong or the checker has gone blind; uncovered surface
 // is only a report, because both libraries cover Apple's surface selectively on purpose.

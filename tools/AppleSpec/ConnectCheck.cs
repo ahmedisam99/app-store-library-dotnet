@@ -79,13 +79,14 @@ public static class ConnectCheck
             return report;
         }
 
+        var updating = Environment.GetCommandLineArgs().Contains(UpdateFlag);
         var implemented = Resolve(surface, spec, report);
-        var baseline = LoadBaseline(paths, report);
+        var baseline = LoadBaseline(paths, report, updating);
 
         Summarize(report, spec, implemented, baseline);
         ReportGaps(report, spec, implemented, surface, baseline);
 
-        if (Environment.GetCommandLineArgs().Contains(UpdateFlag))
+        if (updating)
         {
             WriteBaseline(paths, report, spec, implemented);
         }
@@ -158,7 +159,7 @@ public static class ConnectCheck
 
         if (baseline is null)
         {
-            report.Notes.Add($"no committed baseline; everything below reads as pre-existing. Write one with `check {UpdateFlag}`.");
+            report.Notes.Add("no baseline was read, so nothing below is marked new in this release.");
             return;
         }
 
@@ -333,24 +334,43 @@ public static class ConnectCheck
         return spec;
     }
 
-    private static ConnectBaseline? LoadBaseline(SpecPaths paths, CheckReport report)
+    // Without it every gap reads as pre-existing, so the run stays green on the release that added
+    // one. That is the check going blind, which is a failure here exactly as it is on the server side.
+    private static ConnectBaseline? LoadBaseline(SpecPaths paths, CheckReport report, bool updating)
     {
-        var file = Path.Combine(paths.FrameworkDir(Framework), "baseline.json");
+        var file = paths.ConnectBaselineFile;
+        var name = $"spec/{Path.GetFileName(file)}";
 
         if (!File.Exists(file))
         {
+            if (!updating)
+            {
+                report.Failures.Add(new CheckItem("Blind", name,
+                    $"no committed baseline, so a route Apple just added cannot be told from one long skipped; write one with `check {UpdateFlag}` and commit it."));
+            }
+
             return null;
         }
 
         try
         {
-            return JsonSerializer.Deserialize<ConnectBaseline>(File.ReadAllText(file));
+            var baseline = JsonSerializer.Deserialize<ConnectBaseline>(File.ReadAllText(file));
+
+            if (baseline is not null)
+            {
+                return baseline;
+            }
+
+            report.Failures.Add(new CheckItem("Blind", name,
+                $"the baseline holds no object; rewrite it with `check {UpdateFlag}`."));
         }
         catch (JsonException exception)
         {
-            report.Notes.Add($"spec/{Framework}/baseline.json will not parse ({exception.Message}); treating every gap as pre-existing.");
-            return null;
+            report.Failures.Add(new CheckItem("Blind", name,
+                $"the baseline will not parse ({exception.Message}); rewrite it with `check {UpdateFlag}`."));
         }
+
+        return null;
     }
 
     // The specification's own routes at the pinned version are what tell "new in this release"
@@ -376,11 +396,11 @@ public static class ConnectCheck
                 .ToList()
         };
 
-        var file = Path.Combine(paths.FrameworkDir(Framework), "baseline.json");
+        var file = paths.ConnectBaselineFile;
         Directory.CreateDirectory(Path.GetDirectoryName(file)!);
         File.WriteAllText(file, JsonSerializer.Serialize(baseline, Json.Options) + "\n", new UTF8Encoding(false));
 
-        report.Notes.Add($"rewrote spec/{Framework}/baseline.json: {baseline.Implemented.Count} implemented routes, {baseline.SpecOperations.Count} documented at {spec.Version}.");
+        report.Notes.Add($"rewrote spec/{Path.GetFileName(file)}: {baseline.Implemented.Count} implemented routes, {baseline.SpecOperations.Count} documented at {spec.Version}.");
     }
 
     private readonly record struct Route(string Verb, string Path)

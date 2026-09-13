@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Enjna.AppStoreServerLibrary.Models;
@@ -105,6 +106,7 @@ public class ModelDeserializationTests
 
         Assert.Equal("23456", decoded.TransactionId);
         Assert.Equal("12345", decoded.OriginalTransactionId);
+        Assert.Equal("11111", decoded.PreviousOriginalTransactionId);
         Assert.Equal("34343", decoded.WebOrderLineItemId);
         Assert.Equal("com.example", decoded.BundleId);
         Assert.Equal("com.example.product", decoded.ProductId);
@@ -319,6 +321,11 @@ public class ModelDeserializationTests
         Assert.Equal(1698148950000L, decoded.ExternalPurchaseToken.TokenCreationDate);
         Assert.Equal(55555L, decoded.ExternalPurchaseToken.AppAppleId);
         Assert.Equal("com.example", decoded.ExternalPurchaseToken.BundleId);
+        Assert.Equal(1698149000000L, decoded.ExternalPurchaseToken.TokenExpirationDate);
+        Assert.Equal(
+            DateTimeOffset.FromUnixTimeMilliseconds(1698149000000L).UtcDateTime,
+            decoded.ExternalPurchaseToken.TokenExpirationDateUtc);
+        Assert.Equal(TokenType.Services, decoded.ExternalPurchaseToken.TokenType);
     }
 
     [Fact]

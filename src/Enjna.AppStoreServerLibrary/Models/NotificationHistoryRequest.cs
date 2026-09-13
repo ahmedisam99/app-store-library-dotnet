@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 using Enjna.AppStoreServerLibrary.Models.Enums;
 
@@ -46,6 +47,14 @@ public sealed class NotificationHistoryRequest
     /// <seealso href="https://developer.apple.com/documentation/appstoreserverapi/transactionid"/>
     [JsonPropertyName("transactionId")]
     public string? TransactionId { get; set; }
+
+    /// <summary>
+    /// The original transaction identifier of any transaction belonging to the customer.
+    /// </summary>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreserverapi/originaltransactionid"/>
+    [Obsolete("Use TransactionId instead.")]
+    [JsonPropertyName("originalTransactionId")]
+    public string? OriginalTransactionId { get; set; }
 
     /// <summary>
     /// A Boolean value you set to true to request only the notifications that haven't reached your server successfully.

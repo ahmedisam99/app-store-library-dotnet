@@ -1,5 +1,6 @@
 using System;
 using System.Text.Json.Serialization;
+using Enjna.AppStoreServerLibrary.Models.Enums;
 
 namespace Enjna.AppStoreServerLibrary.Models;
 
@@ -45,4 +46,27 @@ public sealed class ExternalPurchaseToken
     /// <seealso href="https://developer.apple.com/documentation/appstoreservernotifications/bundleid"/>
     [JsonPropertyName("bundleId")]
     public string? BundleId { get; set; }
+
+    /// <summary>
+    /// The field of a custom link token that contains the UNIX date, in milliseconds, when the token expires. This field is present only for custom link tokens.
+    /// </summary>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreservernotifications/tokenexpirationdate"/>
+    [JsonPropertyName("tokenExpirationDate")]
+    public long? TokenExpirationDate { get; set; }
+
+    /// <summary>
+    /// The UTC date and time when the token expires,
+    /// derived from <see cref="TokenExpirationDate"/>.
+    /// </summary>
+    [JsonIgnore]
+    public DateTime? TokenExpirationDateUtc => TokenExpirationDate.HasValue
+        ? DateTimeOffset.FromUnixTimeMilliseconds(TokenExpirationDate.Value).UtcDateTime
+        : null;
+
+    /// <summary>
+    /// The custom link token type, either SERVICES or ACQUISITION. This field is present only for custom link tokens.
+    /// </summary>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreservernotifications/tokentype"/>
+    [JsonPropertyName("tokenType")]
+    public TokenType? TokenType { get; set; }
 }

@@ -39,7 +39,7 @@ public static class Sync
         return 0;
     }
 
-    internal static int WriteDirectory(string directory, SortedDictionary<string, byte[]> files)
+    internal static int WriteDirectory(SpecPaths paths, string directory, SortedDictionary<string, byte[]> files)
     {
         Directory.CreateDirectory(directory);
 
@@ -55,15 +55,28 @@ public static class Sync
             WriteFile(Path.Combine(directory, name), body);
         }
 
+        var persisted = paths.PersistedFiles.Select(Path.GetFullPath).ToHashSet(StringComparer.Ordinal);
         var removed = 0;
 
         foreach (var existing in Directory.EnumerateFiles(directory))
         {
-            if (!files.ContainsKey(Path.GetFileName(existing)))
+            if (files.ContainsKey(Path.GetFileName(existing)))
             {
-                File.Delete(existing);
-                removed++;
+                continue;
             }
+
+            // Sync owns this directory, so anything it did not just write is a page Apple retired
+            // and the deletion is the point. A file this repository maintains is not that, and
+            // deleting it would be silent data loss rather than a visible retirement.
+            if (persisted.Contains(Path.GetFullPath(existing)))
+            {
+                throw new SpecLayoutException(
+                    $"{existing} is maintained by this repository but sits in a directory `sync` rewrites, "
+                    + "which would delete it. It belongs directly under spec/.");
+            }
+
+            File.Delete(existing);
+            removed++;
         }
 
         return removed;
@@ -116,7 +129,7 @@ public static class Sync
                 version = Changelog.LatestVersion(changelog);
             }
 
-            var removed = WriteDirectory(paths.FrameworkDir(framework), files);
+            var removed = WriteDirectory(paths, paths.FrameworkDir(framework), files);
             var meta = await AppleDocs.HeadAsync(AppleDocs.IndexUrl(framework), cancellationToken).ConfigureAwait(false);
 
             Console.WriteLine($"{framework}: {pageCount} pages{(removed > 0 ? $", {removed} removed" : "")} in {clock.Elapsed.TotalSeconds:F1}s.");

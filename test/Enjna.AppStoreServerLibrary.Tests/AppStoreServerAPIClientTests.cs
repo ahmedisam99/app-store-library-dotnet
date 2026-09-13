@@ -262,6 +262,9 @@ public class AppStoreServerAPIClientTests
         Assert.Equal("signed_payload", response.SignedPayload);
         Assert.NotNull(response.SendAttempts);
         Assert.Equal(2, response.SendAttempts.Length);
+#pragma warning disable CS0618 // Apple deprecated the field; the library still decodes what it sends.
+        Assert.Equal(SendAttemptResult.NoResponse, response.FirstSendAttemptResult);
+#pragma warning restore CS0618
     }
 
     // 7. GetNotificationHistoryAsync
@@ -271,11 +274,14 @@ public class AppStoreServerAPIClientTests
         var (client, handler) = GetClientWithBody(
             "models.getNotificationHistoryResponse.json", HttpStatusCode.OK);
 
+#pragma warning disable CS0618 // Apple deprecated OriginalTransactionId; the library still sends what it is given.
         var request = new NotificationHistoryRequest
         {
             StartDate = 1698148800000,
-            EndDate = 1698148900000
+            EndDate = 1698148900000,
+            OriginalTransactionId = "12345"
         };
+#pragma warning restore CS0618
 
         var response = await client.GetNotificationHistoryAsync(request, BundleId, "test-pagination-token",
             cancellationToken: TestContext.Current.CancellationToken);
@@ -288,6 +294,14 @@ public class AppStoreServerAPIClientTests
         Assert.True(response.HasMore);
         Assert.NotNull(response.NotificationHistory);
         Assert.Equal(2, response.NotificationHistory.Length);
+        Assert.NotNull(handler.CapturedRequestBody);
+
+        using var body = JsonDocument.Parse(handler.CapturedRequestBody);
+        Assert.Equal("12345", body.RootElement.GetProperty("originalTransactionId").GetString());
+#pragma warning disable CS0618 // Apple deprecated the field; the library still decodes what it sends.
+        Assert.Equal(SendAttemptResult.NoResponse, response.NotificationHistory[0].FirstSendAttemptResult);
+        Assert.Null(response.NotificationHistory[1].FirstSendAttemptResult);
+#pragma warning restore CS0618
     }
 
     // 8. GetTransactionHistoryAsync
