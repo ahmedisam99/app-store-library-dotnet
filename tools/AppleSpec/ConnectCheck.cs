@@ -32,6 +32,14 @@ public static class ConnectCheck
         "Dispose"
     ];
 
+    // Apple's root type name → the class that models it, where the package chose another name.
+    private static readonly Dictionary<string, string> RenamedTypes = new(StringComparer.Ordinal)
+    {
+        // The package models the reply a developer writes, Apple's CustomerReviewResponseV1, under the
+        // plainer name. Apple's own CustomerReviewResponse is a response envelope the package doesn't model.
+        ["CustomerReviewResponseV1"] = "CustomerReviewResponse"
+    };
+
     // OpenAPI puts a shared parameters array beside the verbs under a path.
     private static readonly string[] HttpVerbs =
     [
@@ -69,6 +77,8 @@ public static class ConnectCheck
         }
 
         var spec = ReadSpec(document.RootElement, specPaths);
+        var pages = ReadPages(paths.FrameworkDir(Framework), report);
+        MergeDeprecations(spec, pages);
         var surface = ConnectInventory.Read(clientDir);
 
         if (surface.Calls.Count == 0)
@@ -85,6 +95,8 @@ public static class ConnectCheck
 
         Summarize(report, spec, implemented, baseline);
         ReportGaps(report, spec, implemented, surface, baseline);
+        CheckDeprecatedOperations(report, spec, implemented);
+        CheckDeprecatedModels(report, pages, ConnectInventory.ReadModels(clientDir));
 
         if (updating)
         {
@@ -224,15 +236,6 @@ public static class ConnectCheck
             report.Reports.Add(new CheckItem("Unimplemented path under an implemented one", path, $"hangs off implemented `{parent}`.{SincePath(spec, known, path)}"));
         }
 
-        // A report rather than a failure: Apple ships the replacement before it retires the original.
-        foreach (var pair in implemented
-            .Where(pair => spec.Operations.TryGetValue(pair.Key, out var operation) && operation.Deprecated)
-            .OrderBy(pair => pair.Key.Path, StringComparer.Ordinal)
-            .ThenBy(pair => pair.Key.Verb, StringComparer.Ordinal))
-        {
-            report.Reports.Add(new CheckItem("Implemented operation Apple deprecated", pair.Key.ToString(), $"`{pair.Value.Method}` calls it; `{spec.Operations[pair.Key].OperationId}` is marked deprecated."));
-        }
-
         // Paths whose every operation is deprecated are left out, or the number stays permanently
         // inflated by surface Apple has already retired.
         var rest = live.Where(path => !accounted.Contains(path)).ToList();
@@ -249,6 +252,121 @@ public static class ConnectCheck
             report.Reports.Add(new CheckItem("Public method issuing no documented request", method, "either it should call an endpoint, or it belongs on this check's exemption list."));
         }
     }
+
+    // Keeping a deprecated operation is fine, since Apple ships the replacement before it retires the
+    // original. Keeping it without [Obsolete] is not: callers would build on it with no warning.
+    private static void CheckDeprecatedOperations(CheckReport report, SpecSnapshot spec, Dictionary<Route, ConnectCall> implemented)
+    {
+        var marked = 0;
+
+        foreach (var (route, call) in implemented
+            .OrderBy(pair => pair.Key.Path, StringComparer.Ordinal)
+            .ThenBy(pair => pair.Key.Verb, StringComparer.Ordinal))
+        {
+            if (!spec.Operations.TryGetValue(route, out var operation))
+            {
+                continue;
+            }
+
+            if (operation.Deprecated && call.Obsolete)
+            {
+                marked++;
+            }
+            else if (operation.Deprecated)
+            {
+                report.Failures.Add(new CheckItem("Deprecated operation not marked [Obsolete]", route.ToString(),
+                    $"`{call.Method}` calls it; Apple deprecated it{Since(operation.DeprecatedAt)}.{Replacement(operation.Summary)}"));
+            }
+            else if (call.Obsolete)
+            {
+                // Wrong in the other direction: callers are steered off something Apple still supports.
+                report.Failures.Add(new CheckItem("[Obsolete] on a current operation", route.ToString(),
+                    $"`{call.Method}` is marked [Obsolete], but Apple documents `{operation.OperationId}` as current."));
+            }
+        }
+
+        if (marked > 0)
+        {
+            report.Notes.Add($"{marked} implemented operations are ones Apple deprecated, each marked [Obsolete].");
+        }
+    }
+
+    // Apple deprecates a type on its own page and leaves the nested Data, Attributes and Relationships
+    // pages beneath it unflagged, so a page counts as deprecated when it or any enclosing page is.
+    private static void CheckDeprecatedModels(CheckReport report, Dictionary<string, SpecPage> pages, Dictionary<string, ConnectModel> models)
+    {
+        Deprecation? DeprecationOf(string title)
+        {
+            for (var name = title; ; name = name[..name.LastIndexOf('.')])
+            {
+                if (pages.TryGetValue(name, out var page) && page.Deprecated is not null)
+                {
+                    return page.Deprecated;
+                }
+
+                if (!name.Contains('.'))
+                {
+                    return null;
+                }
+            }
+        }
+
+        foreach (var (title, page) in pages.OrderBy(pair => pair.Key, StringComparer.Ordinal))
+        {
+            if (ClassNameFor(title) is not { } className || !models.TryGetValue(className, out var model))
+            {
+                continue;
+            }
+
+            var deprecation = DeprecationOf(title);
+
+            if (deprecation is not null && !model.Obsolete)
+            {
+                report.Failures.Add(new CheckItem("Deprecated type not marked [Obsolete]", model.Name,
+                    $"models `{title}`, which Apple deprecated{Since(deprecation.At)}.{Replacement(deprecation.Summary?.Text)}"));
+            }
+            else if (deprecation is null && model.Obsolete)
+            {
+                report.Failures.Add(new CheckItem("[Obsolete] on a current type", model.Name,
+                    $"is marked [Obsolete], but Apple documents `{title}` as current."));
+            }
+
+            if (model.Obsolete)
+            {
+                continue;
+            }
+
+            foreach (var member in page.Properties ?? [])
+            {
+                if (member.Deprecated && model.Properties.TryGetValue(member.Name, out var obsolete) && !obsolete)
+                {
+                    report.Failures.Add(new CheckItem("Deprecated property not marked [Obsolete]", $"{model.Name}.{member.Name}",
+                        $"Apple marks `{title}.{member.Name}` deprecated."));
+                }
+            }
+        }
+    }
+
+    // Apple's nested type titles join their parts with dots, and the package's class names join the
+    // same parts without them. A renamed root carries its nested types along; a title whose root a
+    // rename took over belongs to a type the package doesn't model.
+    private static string? ClassNameFor(string title)
+    {
+        var dot = title.IndexOf('.');
+        var root = dot < 0 ? title : title[..dot];
+        var nested = dot < 0 ? "" : title[dot..].Replace(".", "");
+
+        if (RenamedTypes.TryGetValue(root, out var renamed))
+        {
+            return renamed + nested;
+        }
+
+        return RenamedTypes.ContainsValue(root) ? null : root + nested;
+    }
+
+    private static string Since(string? at) => at is null ? "" : $" in {at}";
+
+    private static string Replacement(string? summary) => string.IsNullOrWhiteSpace(summary) ? "" : $" Apple: \"{summary.Trim()}\"";
 
     private static string SincePath(SpecSnapshot spec, HashSet<string>? known, string path) =>
         IsNewPath(spec, known, path) ? " New in this release." : "";
@@ -301,6 +419,89 @@ public static class ConnectCheck
         return cut > 0 ? path[..cut] : null;
     }
 
+    // Apple's OpenAPI document leaves `deprecated` off some operations its documentation deprecates,
+    // every one of 4.4.1's in-app purchase and subscription metadata endpoints among them, so the flag
+    // is read from both.
+    // Keyed by title, which is the endpoint's route for a REST page and the type's name for a data page.
+    private static Dictionary<string, SpecPage> ReadPages(string directory, CheckReport report)
+    {
+        var pages = new Dictionary<string, SpecPage>(StringComparer.Ordinal);
+        var restPages = 0;
+        var dataPages = 0;
+
+        foreach (var file in Directory.EnumerateFiles(directory, "*.json").OrderBy(file => file, StringComparer.Ordinal))
+        {
+            var name = Path.GetFileName(file);
+            var isRest = name.StartsWith("rest-", StringComparison.Ordinal);
+
+            if (!isRest && !name.StartsWith("data-", StringComparison.Ordinal))
+            {
+                continue;
+            }
+
+            SpecPage? page;
+
+            try
+            {
+                page = JsonSerializer.Deserialize<SpecPage>(File.ReadAllText(file), Json.Options);
+            }
+            catch (JsonException exception)
+            {
+                report.Failures.Add(new CheckItem("Blind", name, $"unreadable snapshot page: {exception.Message}"));
+                continue;
+            }
+
+            if (page is null)
+            {
+                continue;
+            }
+
+            if (isRest)
+            {
+                restPages++;
+
+                foreach (var endpoint in page.Endpoints ?? [])
+                {
+                    pages[new Route(endpoint.Method.ToUpperInvariant(), Normalize(endpoint.Path)).ToString()] = page;
+                }
+            }
+            else
+            {
+                dataPages++;
+                pages[page.Title] = page;
+            }
+        }
+
+        // Without either kind, every deprecation Apple states only in its documentation goes unseen.
+        if (restPages == 0)
+        {
+            report.Failures.Add(new CheckItem("Blind", $"spec/{Framework}", "holds no REST endpoint pages; run `sync` before `check`."));
+        }
+
+        if (dataPages == 0)
+        {
+            report.Failures.Add(new CheckItem("Blind", $"spec/{Framework}", "holds no data type pages; run `sync` before `check`."));
+        }
+
+        return pages;
+    }
+
+    private static void MergeDeprecations(SpecSnapshot spec, Dictionary<string, SpecPage> pages)
+    {
+        foreach (var (route, operation) in spec.Operations.ToList())
+        {
+            if (pages.TryGetValue(route.ToString(), out var page) && page.Deprecated is { } deprecation)
+            {
+                spec.Operations[route] = operation with
+                {
+                    Deprecated = true,
+                    DeprecatedAt = deprecation.At,
+                    Summary = deprecation.Summary?.Text
+                };
+            }
+        }
+    }
+
     private static SpecSnapshot ReadSpec(JsonElement root, JsonElement paths)
     {
         var spec = new SpecSnapshot
@@ -320,7 +521,7 @@ public static class ConnectCheck
                 var deprecated = operation.Value.TryGetProperty("deprecated", out var flag) && flag.ValueKind == JsonValueKind.True;
                 var route = new Route(operation.Name.ToUpperInvariant(), path.Name);
 
-                spec.Operations[route] = new SpecOperation(identifier, deprecated);
+                spec.Operations[route] = new SpecOperation(identifier, deprecated, null, null);
 
                 if (!spec.ByPath.TryGetValue(path.Name, out var routes))
                 {
@@ -408,7 +609,7 @@ public static class ConnectCheck
         public override string ToString() => $"{Verb} {Path}";
     }
 
-    private readonly record struct SpecOperation(string OperationId, bool Deprecated);
+    private readonly record struct SpecOperation(string OperationId, bool Deprecated, string? DeprecatedAt, string? Summary);
 
     private sealed class SpecSnapshot
     {

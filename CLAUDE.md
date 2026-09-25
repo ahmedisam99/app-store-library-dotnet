@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Two community-maintained .NET 8.0 packages that version and ship independently: `Enjna.AppStoreServerLibrary` for the App Store Server API, and `Enjna.AppStoreConnectApi` for the App Store Connect API. Neither depends on the other.
 
-A snapshot of Apple's own documentation is vendored under `spec/`: the App Store Server API, App Store Server Notifications, Retention Messaging and Advanced Commerce documentation sets, plus Apple's App Store Connect OpenAPI document. It is the reference for what the packages should cover. Refresh it with `dotnet run --project tools/AppleSpec -- sync`, after which `git diff spec/` is what Apple changed.
+A snapshot of Apple's own documentation is vendored under `spec/`: the App Store Server API, App Store Server Notifications, Retention Messaging and Advanced Commerce documentation sets, plus Apple's App Store Connect OpenAPI document and its documentation pages. It is the reference for what the packages should cover. Refresh it with `dotnet run --project tools/AppleSpec -- sync`, after which `git diff spec/` is what Apple changed.
 
 The snapshot covers API shape, not client behaviour. Apple documents nothing about certificate chain validation, OCSP, or receipt parsing; for those, read Apple's own [Swift](https://github.com/apple/app-store-server-library-swift) or [Node.js](https://github.com/apple/app-store-server-library-node) library.
 
@@ -67,4 +67,4 @@ dotnet run --project test/Enjna.AppStoreServerLibrary.Tests -- --filter-method "
 
 ## Coverage Against Apple's Documentation
 
-`dotnet run --project tools/AppleSpec -- check` compares both packages against `spec/` and exits non-zero on a real gap. Deliberate omissions live in `spec/coverage.server.json`, each with its reason. Use the `apple-spec-coverage` agent (`.claude/agents/apple-spec-coverage.md`) to judge whether something the check reports is a gap worth closing or a scope decision worth recording.
+`dotnet run --project tools/AppleSpec -- check` compares both packages against `spec/` and exits non-zero on a real gap. Deliberate omissions live in `spec/coverage.server.json`, each with its reason. A Connect operation, model type or model property that Apple deprecated must carry `[Obsolete("... Use X instead.")]`; `check` fails otherwise, reading the flag from the vendored REST and data pages as well as `openapi.json`, which omits some, every 4.4.1 deprecation among them. `[Obsolete]` on something Apple still documents as current fails too. Use the `apple-spec-coverage` agent (`.claude/agents/apple-spec-coverage.md`) to judge whether something the check reports is a gap worth closing or a scope decision worth recording.

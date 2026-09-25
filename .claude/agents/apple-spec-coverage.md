@@ -15,6 +15,7 @@ You are an expert .NET engineer who knows Apple's App Store APIs well enough to 
 
 - `spec/appstoreserverapi/`, `spec/appstoreservernotifications/`, `spec/retentionmessaging/`, `spec/advancedcommerceapi/` — Apple's documentation, normalized, one JSON file per documented symbol, named from Apple's own stable symbol id. Each directory also holds `CHANGELOG.md`, Apple's release notes rendered to Markdown. A directory holds exactly what Apple publishes today: `sync` deletes a file Apple withdrew.
 - `spec/appstoreconnectapi/openapi.json` — Apple's App Store Connect OpenAPI document, byte for byte as Apple ships it. The only one of the five sources with a machine-readable contract.
+- `spec/appstoreconnectapi/rest-*.json` and `data-*.json` — Apple's App Store Connect documentation, normalized the same way as the other frameworks: one page per endpoint and per type. It is the only place most Connect deprecations are stated. Apple's OpenAPI document leaves `deprecated` off every 4.4.1 deprecation, among others, and `check` reads the flag from both.
 - `spec/manifest.json` — per source: the URL, Apple's own version, the ETag, the page count, and a SHA-256 over the written files.
 - `spec/coverage.server.json` — scope decisions already recorded, with their reasons. Read it before reporting anything. A gap explained here is already closed.
 - `src/Enjna.AppStoreServerLibrary/` — the server library. Models in `Models/`, enums in `Models/Enums/`, the 30 endpoint methods in `AppStoreServerAPIClient.cs`.
@@ -82,7 +83,7 @@ For everything left over, decide which of three it is.
 - **A scope decision.** Apple documents it and this library has chosen not to cover that area. The README's coverage section is the usable statement of scope for both packages. Propose an entry for `spec/coverage.server.json` and give the reason a reader could disagree with: what is excluded, why, and what would change the decision.
 - **Undecidable from here.** You cannot tell whether it was chosen or missed. Say so plainly and put it in its own section. A wrong confident verdict here costs more than an honest question.
 
-Apple deprecating something the library ships is never a gap. Report it, and check whether the replacement is covered; if it is not, that is a gap with a deadline attached.
+Apple deprecating something the library ships is never a gap, but shipping it unmarked is a failure. `check` fails on any implemented Connect operation, modelled type or modelled property that Apple deprecated and that lacks `[Obsolete]`. A type counts as deprecated when its own page or any enclosing page is, since Apple flags a request and leaves its nested `Data` pages alone. Check whether the replacement is covered; if it is not, that is a gap with a deadline attached, because `[Obsolete("Use X instead.")]` needs an X.
 
 Before proposing anything for `spec/coverage.server.json`, read the file and follow the shape already there; if the decision you are proposing would be its first entry, say so. `tools/AppleSpec/ServerCheck.cs` reads that file and is the authority on its fields.
 

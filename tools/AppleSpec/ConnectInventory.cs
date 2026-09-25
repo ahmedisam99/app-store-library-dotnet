@@ -122,7 +122,8 @@ public static class ConnectInventory
             Verb = verb.Name.Identifier.ValueText.ToUpperInvariant(),
             Path = template,
             File = file,
-            SeeAlso = SeeAlsoHref(method)
+            SeeAlso = SeeAlsoHref(method),
+            Obsolete = IsObsolete(method.AttributeLists)
         });
     }
 
@@ -205,6 +206,72 @@ public static class ConnectInventory
         return found;
     }
 
+    // Every model is a plain class or enum in Models/, so a type is found by its simple name. Nested
+    // types would need qualifying, and the package declares none.
+    public static Dictionary<string, ConnectModel> ReadModels(string projectDir)
+    {
+        var models = new Dictionary<string, ConnectModel>(StringComparer.Ordinal);
+        var directory = Path.Combine(projectDir, "Models");
+
+        if (!Directory.Exists(directory))
+        {
+            return models;
+        }
+
+        var files = Directory.GetFiles(directory, "*.cs", SearchOption.AllDirectories);
+        Array.Sort(files, StringComparer.Ordinal);
+
+        foreach (var file in files)
+        {
+            var root = CSharpSyntaxTree.ParseText(File.ReadAllText(file), new CSharpParseOptions(LanguageVersion.Latest)).GetCompilationUnitRoot();
+
+            foreach (var type in root.DescendantNodes().OfType<BaseTypeDeclarationSyntax>())
+            {
+                if (!type.Modifiers.Any(SyntaxKind.PublicKeyword))
+                {
+                    continue;
+                }
+
+                var model = new ConnectModel
+                {
+                    Name = type.Identifier.ValueText,
+                    File = Path.GetFileName(file),
+                    Obsolete = IsObsolete(type.AttributeLists)
+                };
+
+                foreach (var property in type.ChildNodes().OfType<PropertyDeclarationSyntax>())
+                {
+                    var wireName = JsonPropertyName(property.AttributeLists) ?? property.Identifier.ValueText;
+                    model.Properties[wireName] = IsObsolete(property.AttributeLists);
+                }
+
+                models[model.Name] = model;
+            }
+        }
+
+        return models;
+    }
+
+    private static bool IsObsolete(SyntaxList<AttributeListSyntax> lists) =>
+        lists.SelectMany(list => list.Attributes).Any(attribute => AttributeName(attribute) is "Obsolete" or "ObsoleteAttribute");
+
+    private static string? JsonPropertyName(SyntaxList<AttributeListSyntax> lists)
+    {
+        var attribute = lists.SelectMany(list => list.Attributes)
+            .FirstOrDefault(attribute => AttributeName(attribute) is "JsonPropertyName" or "JsonPropertyNameAttribute");
+
+        return attribute?.ArgumentList?.Arguments.FirstOrDefault()?.Expression is LiteralExpressionSyntax literal
+            ? literal.Token.ValueText
+            : null;
+    }
+
+    private static string AttributeName(AttributeSyntax attribute) => attribute.Name switch
+    {
+        QualifiedNameSyntax qualified => qualified.Right.Identifier.ValueText,
+        SimpleNameSyntax simple => simple.Identifier.ValueText,
+        _ => attribute.Name.ToString()
+    };
+
     private static bool IsOnClientType(MethodDeclarationSyntax method) =>
         method.Parent is ClassDeclarationSyntax type
         && type.Identifier.ValueText == ClientTypeName
@@ -245,4 +312,18 @@ public sealed class ConnectCall
     public required string File { get; init; }
 
     public string? SeeAlso { get; init; }
+
+    public bool Obsolete { get; init; }
+}
+
+public sealed class ConnectModel
+{
+    public required string Name { get; init; }
+
+    public required string File { get; init; }
+
+    public bool Obsolete { get; init; }
+
+    // Keyed by wire name, so a property is matched to Apple's member without guessing at casing.
+    public Dictionary<string, bool> Properties { get; } = new(StringComparer.Ordinal);
 }
