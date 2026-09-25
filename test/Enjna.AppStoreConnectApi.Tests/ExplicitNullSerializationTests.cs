@@ -175,6 +175,7 @@ public class ExplicitNullSerializationTests
         Assert.Equal("{\"name\":\"Pro Unlock\"}", Serialize(attributes));
     }
 
+#pragma warning disable CS0618 // Apple deprecated the v1 localization request in 4.4.1; the library still sends it.
     [Fact]
     public void KeepsTheLocalizationDescriptionOutOfAnUpdateRequestWhenNobodyAssignedIt()
     {
@@ -185,6 +186,7 @@ public class ExplicitNullSerializationTests
 
         Assert.Equal("{\"name\":\"Pro Unlock\"}", Serialize(attributes));
     }
+#pragma warning restore CS0618
 
     [Fact]
     public void StillClearsARelationshipThroughAnExplicitNullLinkage()

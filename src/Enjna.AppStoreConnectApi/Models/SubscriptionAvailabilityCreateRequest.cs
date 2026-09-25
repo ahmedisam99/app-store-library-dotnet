@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// this request along with the Subscription Availabilities resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionavailabilitycreaterequest"/>
+[Obsolete("Apple deprecated this request. Use SubscriptionPlanAvailabilityCreateRequest instead.")]
 public sealed class SubscriptionAvailabilityCreateRequest
 {
     /// <summary>

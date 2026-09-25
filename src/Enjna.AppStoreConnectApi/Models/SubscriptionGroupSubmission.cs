@@ -1,3 +1,5 @@
+using System;
+
 namespace Enjna.AppStoreConnectApi.Models;
 
 /// <summary>
@@ -6,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// App Store review, without submitting a new app version.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptiongroupsubmission"/>
+[Obsolete("Apple deprecated this resource in App Store Connect API 4.4.1. Submit a subscription group version through a review submission instead.")]
 public sealed class SubscriptionGroupSubmission : Resource<SubscriptionGroupSubmissionAttributes>
 {
 }

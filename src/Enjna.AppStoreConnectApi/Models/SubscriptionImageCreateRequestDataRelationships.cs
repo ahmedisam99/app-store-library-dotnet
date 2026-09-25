@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The relationships of the request that reserves a subscription promotional image.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionimagecreaterequest/data/relationships"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use SubscriptionImageV2CreateRequestDataRelationships instead.")]
 public sealed class SubscriptionImageCreateRequestDataRelationships
 {
     /// <summary>

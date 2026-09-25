@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -15,8 +16,9 @@ public sealed class BetaTesterInvitationCreateRequestDataRelationships
     public required RelationshipDeclaration App { get; set; }
 
     /// <summary>
-    /// The beta tester to invite. Apple deprecated this relationship.
+    /// The beta tester to invite. Apple deprecated this relationship without naming a replacement.
     /// </summary>
+    [Obsolete("Apple deprecated this relationship and names no replacement.")]
     [JsonPropertyName("betaTester")]
     public RelationshipDeclaration? BetaTester { get; set; }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 using Enjna.AppStoreConnectApi.Models.Enums;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The attributes that describe a Subscription Images resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionimage/attributes"/>
+[Obsolete("Apple deprecated this resource in App Store Connect API 4.4.1. Use SubscriptionImageV2Attributes instead.")]
 public sealed class SubscriptionImageAttributes
 {
     /// <summary>

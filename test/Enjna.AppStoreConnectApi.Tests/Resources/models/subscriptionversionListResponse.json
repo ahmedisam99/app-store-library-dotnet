@@ -1,0 +1,117 @@
+{
+  "data": [
+    {
+      "type": "subscriptionVersions",
+      "id": "1f6b3e27-0a9d-4c58-8e2b-6d71c4a93f10",
+      "attributes": {
+        "version": 1,
+        "state": "APPROVED"
+      },
+      "relationships": {
+        "localizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/1f6b3e27-0a9d-4c58-8e2b-6d71c4a93f10/relationships/localizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/1f6b3e27-0a9d-4c58-8e2b-6d71c4a93f10/localizations"
+          },
+          "meta": {
+            "paging": {
+              "total": 1,
+              "limit": 50
+            }
+          },
+          "data": [
+            {
+              "type": "subscriptionLocalizations",
+              "id": "b8e0c2d4-6f13-4a7e-9b25-0c3d5e7f9a11"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/1f6b3e27-0a9d-4c58-8e2b-6d71c4a93f10"
+      }
+    },
+    {
+      "type": "subscriptionVersions",
+      "id": "7c2d9a41-5e8f-4b3a-9c61-2f4e8d7b1a05",
+      "attributes": {
+        "version": 2,
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "relationships": {
+        "localizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/7c2d9a41-5e8f-4b3a-9c61-2f4e8d7b1a05/relationships/localizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/7c2d9a41-5e8f-4b3a-9c61-2f4e8d7b1a05/localizations"
+          },
+          "meta": {
+            "paging": {
+              "total": 1,
+              "limit": 50
+            }
+          },
+          "data": [
+            {
+              "type": "subscriptionLocalizations",
+              "id": "4a6c8e0f-2b4d-4f61-8a3c-5e7f9b1d3c22"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionVersions/7c2d9a41-5e8f-4b3a-9c61-2f4e8d7b1a05"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "subscriptionLocalizations",
+      "id": "b8e0c2d4-6f13-4a7e-9b25-0c3d5e7f9a11",
+      "attributes": {
+        "name": "All Access (Monthly)",
+        "locale": "en-US",
+        "description": "Unlimited lessons across every instrument."
+      },
+      "relationships": {
+        "version": {
+          "data": {
+            "type": "subscriptionVersions",
+            "id": "1f6b3e27-0a9d-4c58-8e2b-6d71c4a93f10"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v2/subscriptionLocalizations/b8e0c2d4-6f13-4a7e-9b25-0c3d5e7f9a11"
+      }
+    },
+    {
+      "type": "subscriptionLocalizations",
+      "id": "4a6c8e0f-2b4d-4f61-8a3c-5e7f9b1d3c22",
+      "attributes": {
+        "name": "All Access (Monthly)",
+        "locale": "en-US",
+        "description": "Unlimited lessons across every instrument, now with sheet music."
+      },
+      "relationships": {
+        "version": {
+          "data": {
+            "type": "subscriptionVersions",
+            "id": "7c2d9a41-5e8f-4b3a-9c61-2f4e8d7b1a05"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v2/subscriptionLocalizations/4a6c8e0f-2b4d-4f61-8a3c-5e7f9b1d3c22"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptions/6446671421/versions?include=localizations"
+  },
+  "meta": {
+    "paging": {
+      "total": 2,
+      "limit": 50
+    }
+  }
+}

@@ -1,3 +1,5 @@
+using System;
+
 namespace Enjna.AppStoreConnectApi.Models;
 
 /// <summary>
@@ -6,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// Subscription Plan Availabilities resource, which models availability per subscription plan.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionavailability"/>
+[Obsolete("Apple deprecated this resource. Use SubscriptionPlanAvailability instead.")]
 public sealed class SubscriptionAvailability : Resource<SubscriptionAvailabilityAttributes>
 {
 }

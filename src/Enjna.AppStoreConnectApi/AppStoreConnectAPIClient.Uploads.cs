@@ -18,7 +18,10 @@ public partial class AppStoreConnectAPIClient
     /// <summary>
     /// Uploads an asset's bytes to the upload operations that App Store Connect returned when you
     /// reserved the asset. Commit the upload afterwards by patching the reserved resource with
-    /// <c>uploaded</c> set to <c>true</c> and the checksum from <see cref="ComputeSourceFileChecksum"/>.
+    /// <c>uploaded</c> set to <c>true</c>. Where the resource's update request also takes a
+    /// <c>sourceFileChecksum</c>, such as an App Review screenshot, send the checksum from
+    /// <see cref="ComputeSourceFileChecksum"/> with it. The v2 in-app purchase and subscription
+    /// images take no checksum.
     /// </summary>
     /// <param name="uploadOperations">The upload operations from the reservation response.</param>
     /// <param name="fileData">The bytes of the whole, unsplit asset file.</param>

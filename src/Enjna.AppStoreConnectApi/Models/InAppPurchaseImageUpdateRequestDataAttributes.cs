@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The attributes of the request body that commits an In-App Purchase Images resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaseimageupdaterequest/data/attributes"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use InAppPurchaseImageV2UpdateRequestDataAttributes instead.")]
 public sealed class InAppPurchaseImageUpdateRequestDataAttributes : AttributeChangeSet
 {
     /// <summary>

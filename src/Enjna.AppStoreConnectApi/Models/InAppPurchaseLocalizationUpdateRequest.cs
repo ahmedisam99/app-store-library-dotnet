@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The request body you use to update an In-App Purchase Localizations resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaselocalizationupdaterequest"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use InAppPurchaseLocalizationV2UpdateRequest instead.")]
 public sealed class InAppPurchaseLocalizationUpdateRequest
 {
     /// <summary>

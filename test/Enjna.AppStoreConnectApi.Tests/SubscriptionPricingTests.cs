@@ -314,6 +314,7 @@ public class SubscriptionPricingTests
         Assert.Equal("FUTURE", offer.OfferCode);
     }
 
+#pragma warning disable CS0618 // Apple deprecated subscription availabilities in 4.4; the library still supports them.
     [Fact]
     public async Task DecodesAvailabilityWithIncludedTerritories()
     {
@@ -343,6 +344,7 @@ public class SubscriptionPricingTests
         Assert.Equal("JPY", japan.Attributes!.Currency);
         Assert.False(response.TryGetIncluded<Territory>("territories", "DEU", out _));
     }
+#pragma warning restore CS0618
 
     [Fact]
     public async Task DecodesPlanAvailabilityWithIncludedTerritories()
@@ -452,5 +454,51 @@ public class SubscriptionPricingTests
         Assert.Equal("territories", data[0].GetProperty("type").GetString());
         Assert.Equal("USA", data[0].GetProperty("id").GetString());
         Assert.Equal("DEU", data[2].GetProperty("id").GetString());
+    }
+
+    [Fact]
+    public async Task ListsAdjustedEqualizationsForAPricePoint()
+    {
+        const string sourcePricePointId = "eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ";
+
+        var (client, handler) = TestUtilities.GetClientWithJson("models.subscriptionAdjustedEqualizationsResponse.json");
+
+        var query = new AppStoreConnectQuery()
+            .Include("territory")
+            .Fields("subscriptionPricePoints", "customerPrice", "territory")
+            .Filter("planType", "MONTHLY")
+            .Limit(200);
+
+        var response = await client.ListAdjustedEqualizationsForSubscriptionPricePointAsync(
+            sourcePricePointId,
+            query,
+            TestContext.Current.CancellationToken);
+
+        Assert.Equal(HttpMethod.Get, handler.CapturedRequest!.Method);
+
+        var url = Uri.UnescapeDataString(handler.CapturedRequest.RequestUri!.ToString());
+
+        Assert.StartsWith(
+            $"https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/{sourcePricePointId}/adjustedEqualizations?",
+            url);
+        Assert.Contains("include=territory", url);
+        Assert.Contains("fields[subscriptionPricePoints]=customerPrice,territory", url);
+        Assert.Contains("filter[planType]=MONTHLY", url);
+        Assert.Contains("limit=200", url);
+
+        Assert.Equal(2, response.Data.Length);
+        Assert.Equal("subscriptionPricePoints", response.Data[0].Type);
+        Assert.Equal("12.99", response.Data[0].Attributes!.CustomerPrice);
+        Assert.Equal("9.09", response.Data[0].Attributes!.Proceeds);
+
+        var japan = response.Data[1];
+        var territory = japan.Relationships!["territory"].ToOne()!;
+
+        Assert.Equal("1500", japan.Attributes!.CustomerPrice);
+        Assert.True(response.TryGetIncluded<Territory>(territory.Type, territory.Id, out var included));
+        Assert.Equal("JPY", included.Attributes!.Currency);
+
+        Assert.Equal(174, response.Meta!.Paging.Total);
+        Assert.NotNull(response.Links.Next);
     }
 }

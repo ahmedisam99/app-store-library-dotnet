@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models.Enums;
 /// The upload and review state of a promotional image for an auto-renewable subscription.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionimage/attributes"/>
+[Obsolete("Apple deprecated the resource this state belongs to in App Store Connect API 4.4.1. SubscriptionImageV2 has no state, so read its AssetDeliveryState for the upload and the SubscriptionVersionState of its version for review instead.")]
 [JsonConverter(typeof(JsonEnumMemberConverter<SubscriptionImageState>))]
 public enum SubscriptionImageState
 {

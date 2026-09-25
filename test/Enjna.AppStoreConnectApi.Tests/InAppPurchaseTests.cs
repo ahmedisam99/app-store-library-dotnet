@@ -72,6 +72,7 @@ public class InAppPurchaseTests
         Assert.Null(relationships["inAppPurchaseAvailability"].ToOne());
     }
 
+#pragma warning disable CS0618 // Apple deprecated the v1 localization endpoints in 4.4.1; the library still supports them.
     [Fact]
     public async Task DecodesLocalizationListWithPagingMeta()
     {
@@ -113,6 +114,7 @@ public class InAppPurchaseTests
             "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446819279/inAppPurchaseLocalizations?cursor=BQ.CDGZ7Bw&limit=2",
             response.Links.Next);
     }
+#pragma warning restore CS0618
 
     [Fact]
     public async Task DecodesPricePointListWithTerritoryLinkage()

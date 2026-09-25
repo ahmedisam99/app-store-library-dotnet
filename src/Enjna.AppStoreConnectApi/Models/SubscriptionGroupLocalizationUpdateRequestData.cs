@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The resource data of a request that updates a subscription group localization.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptiongrouplocalizationupdaterequest/data"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use SubscriptionGroupLocalizationV2UpdateRequestData instead.")]
 public sealed class SubscriptionGroupLocalizationUpdateRequestData
 {
     /// <summary>

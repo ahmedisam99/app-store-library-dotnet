@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models.Enums;
 /// Where an in-app purchase localization sits in the App Review workflow.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaselocalization/attributes"/>
+[Obsolete("Apple deprecated the resource this state belongs to in App Store Connect API 4.4.1. InAppPurchaseLocalizationV2 has no state, so read the InAppPurchaseVersionState of its version instead.")]
 [JsonConverter(typeof(JsonEnumMemberConverter<InAppPurchaseLocalizationState>))]
 public enum InAppPurchaseLocalizationState
 {

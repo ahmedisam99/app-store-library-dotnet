@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The attributes of the request body that sets a subscription's territory availability.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionavailabilitycreaterequest/data/attributes"/>
+[Obsolete("Apple deprecated this request. Use SubscriptionPlanAvailabilityCreateRequestDataAttributes instead.")]
 public sealed class SubscriptionAvailabilityCreateRequestDataAttributes
 {
     /// <summary>

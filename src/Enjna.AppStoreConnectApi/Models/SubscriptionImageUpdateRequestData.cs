@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The resource data of the request that commits a subscription promotional image.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionimageupdaterequest/data"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use SubscriptionImageV2UpdateRequestData instead.")]
 public sealed class SubscriptionImageUpdateRequestData
 {
     /// <summary>

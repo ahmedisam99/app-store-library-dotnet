@@ -234,7 +234,7 @@ public class UploadTests
     {
         var (client, _) = TestUtilities.GetClientWithJson(ReservationResource);
 
-        var reservation = await client.GetInAppPurchaseImageAsync(
+        var reservation = await client.GetInAppPurchaseImageV2Async(
             "d1f3a7c4-1b2e-4f5a-9c6d-7e8f9a0b1c2d",
             cancellationToken: TestContext.Current.CancellationToken);
 
@@ -260,7 +260,7 @@ public class UploadTests
 
     private static async Task<UploadOperation[]> ReserveUploadOperationsAsync(AppStoreConnectAPIClient client)
     {
-        var reservation = await client.GetInAppPurchaseImageAsync(
+        var reservation = await client.GetInAppPurchaseImageV2Async(
             "d1f3a7c4-1b2e-4f5a-9c6d-7e8f9a0b1c2d",
             cancellationToken: TestContext.Current.CancellationToken);
 

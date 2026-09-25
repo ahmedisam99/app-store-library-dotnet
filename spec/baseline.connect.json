@@ -48,6 +48,36 @@
     },
     {
       "verb": "GET",
+      "path": "/v1/appCategories",
+      "method": "ListAppCategoriesAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/appCategories/{id}",
+      "method": "GetAppCategoryAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/appCategories/{id}/parent",
+      "method": "GetParentForAppCategoryAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/appCategories/{id}/subcategories",
+      "method": "ListSubcategoriesForAppCategoryAsync"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/appTags/{id}",
+      "method": "UpdateAppTagAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/appTags/{id}/territories",
+      "method": "ListTerritoriesForAppTagAsync"
+    },
+    {
+      "verb": "GET",
       "path": "/v1/apps",
       "method": "ListAppsAsync"
     },
@@ -100,6 +130,11 @@
       "verb": "DELETE",
       "path": "/v1/apps/{id}/relationships/betaTesters",
       "method": "RemoveBetaTestersFromAppAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/apps/{id}/reviewSubmissions",
+      "method": "ListReviewSubmissionsForAppAsync"
     },
     {
       "verb": "GET",
@@ -562,6 +597,31 @@
       "method": "CreateInAppPurchaseSubmissionAsync"
     },
     {
+      "verb": "POST",
+      "path": "/v1/inAppPurchaseVersions",
+      "method": "CreateInAppPurchaseVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/inAppPurchaseVersions/{id}",
+      "method": "GetInAppPurchaseVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/inAppPurchaseVersions/{id}/image",
+      "method": "GetImageForInAppPurchaseVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/inAppPurchaseVersions/{id}/images",
+      "method": "ListImagesForInAppPurchaseVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/inAppPurchaseVersions/{id}/localizations",
+      "method": "ListLocalizationsForInAppPurchaseVersionAsync"
+    },
+    {
       "verb": "GET",
       "path": "/v1/preReleaseVersions",
       "method": "ListPrereleaseVersionsAsync"
@@ -595,6 +655,46 @@
       "verb": "PATCH",
       "path": "/v1/promotedPurchases/{id}",
       "method": "UpdatePromotedPurchaseAsync"
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/reviewSubmissionItems",
+      "method": "CreateReviewSubmissionItemAsync"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v1/reviewSubmissionItems/{id}",
+      "method": "DeleteReviewSubmissionItemAsync"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/reviewSubmissionItems/{id}",
+      "method": "UpdateReviewSubmissionItemAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/reviewSubmissions",
+      "method": "ListReviewSubmissionsAsync"
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/reviewSubmissions",
+      "method": "CreateReviewSubmissionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/reviewSubmissions/{id}",
+      "method": "GetReviewSubmissionAsync"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v1/reviewSubmissions/{id}",
+      "method": "UpdateReviewSubmissionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/reviewSubmissions/{id}/items",
+      "method": "ListItemsForReviewSubmissionAsync"
     },
     {
       "verb": "GET",
@@ -673,6 +773,21 @@
     },
     {
       "verb": "POST",
+      "path": "/v1/subscriptionGroupVersions",
+      "method": "CreateSubscriptionGroupVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionGroupVersions/{id}",
+      "method": "GetSubscriptionGroupVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionGroupVersions/{id}/localizations",
+      "method": "ListLocalizationsForSubscriptionGroupVersionAsync"
+    },
+    {
+      "verb": "POST",
       "path": "/v1/subscriptionGroups",
       "method": "CreateSubscriptionGroupAsync"
     },
@@ -700,6 +815,11 @@
       "verb": "GET",
       "path": "/v1/subscriptionGroups/{id}/subscriptions",
       "method": "ListSubscriptionsForSubscriptionGroupAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionGroups/{id}/versions",
+      "method": "ListVersionsForSubscriptionGroupAsync"
     },
     {
       "verb": "POST",
@@ -853,6 +973,11 @@
     },
     {
       "verb": "GET",
+      "path": "/v1/subscriptionPricePoints/{id}/adjustedEqualizations",
+      "method": "ListAdjustedEqualizationsForSubscriptionPricePointAsync"
+    },
+    {
+      "verb": "GET",
       "path": "/v1/subscriptionPricePoints/{id}/equalizations",
       "method": "ListEqualizationsForSubscriptionPricePointAsync"
     },
@@ -895,6 +1020,31 @@
       "verb": "POST",
       "path": "/v1/subscriptionSubmissions",
       "method": "CreateSubscriptionSubmissionAsync"
+    },
+    {
+      "verb": "POST",
+      "path": "/v1/subscriptionVersions",
+      "method": "CreateSubscriptionVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionVersions/{id}",
+      "method": "GetSubscriptionVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionVersions/{id}/image",
+      "method": "GetImageForSubscriptionVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionVersions/{id}/images",
+      "method": "ListImagesForSubscriptionVersionAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v1/subscriptionVersions/{id}/localizations",
+      "method": "ListLocalizationsForSubscriptionVersionAsync"
     },
     {
       "verb": "POST",
@@ -973,6 +1123,11 @@
     },
     {
       "verb": "GET",
+      "path": "/v1/subscriptions/{id}/versions",
+      "method": "ListVersionsForSubscriptionAsync"
+    },
+    {
+      "verb": "GET",
       "path": "/v1/subscriptions/{id}/winBackOffers",
       "method": "ListWinBackOffersForSubscriptionAsync"
     },
@@ -1005,6 +1160,46 @@
       "verb": "GET",
       "path": "/v1/winBackOffers/{id}/prices",
       "method": "ListPricesForWinBackOfferAsync"
+    },
+    {
+      "verb": "POST",
+      "path": "/v2/inAppPurchaseImages",
+      "method": "CreateInAppPurchaseImageV2Async"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v2/inAppPurchaseImages/{id}",
+      "method": "DeleteInAppPurchaseImageV2Async"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/inAppPurchaseImages/{id}",
+      "method": "GetInAppPurchaseImageV2Async"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v2/inAppPurchaseImages/{id}",
+      "method": "UpdateInAppPurchaseImageV2Async"
+    },
+    {
+      "verb": "POST",
+      "path": "/v2/inAppPurchaseLocalizations",
+      "method": "CreateInAppPurchaseLocalizationV2Async"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v2/inAppPurchaseLocalizations/{id}",
+      "method": "DeleteInAppPurchaseLocalizationV2Async"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/inAppPurchaseLocalizations/{id}",
+      "method": "GetInAppPurchaseLocalizationV2Async"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v2/inAppPurchaseLocalizations/{id}",
+      "method": "UpdateInAppPurchaseLocalizationV2Async"
     },
     {
       "verb": "POST",
@@ -1070,6 +1265,71 @@
       "verb": "GET",
       "path": "/v2/inAppPurchases/{id}/promotedPurchase",
       "method": "GetPromotedPurchaseForInAppPurchaseAsync"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/inAppPurchases/{id}/versions",
+      "method": "ListVersionsForInAppPurchaseAsync"
+    },
+    {
+      "verb": "POST",
+      "path": "/v2/subscriptionGroupLocalizations",
+      "method": "CreateSubscriptionGroupLocalizationV2Async"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v2/subscriptionGroupLocalizations/{id}",
+      "method": "DeleteSubscriptionGroupLocalizationV2Async"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/subscriptionGroupLocalizations/{id}",
+      "method": "GetSubscriptionGroupLocalizationV2Async"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v2/subscriptionGroupLocalizations/{id}",
+      "method": "UpdateSubscriptionGroupLocalizationV2Async"
+    },
+    {
+      "verb": "POST",
+      "path": "/v2/subscriptionImages",
+      "method": "CreateSubscriptionImageV2Async"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v2/subscriptionImages/{id}",
+      "method": "DeleteSubscriptionImageV2Async"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/subscriptionImages/{id}",
+      "method": "GetSubscriptionImageV2Async"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v2/subscriptionImages/{id}",
+      "method": "UpdateSubscriptionImageV2Async"
+    },
+    {
+      "verb": "POST",
+      "path": "/v2/subscriptionLocalizations",
+      "method": "CreateSubscriptionLocalizationV2Async"
+    },
+    {
+      "verb": "DELETE",
+      "path": "/v2/subscriptionLocalizations/{id}",
+      "method": "DeleteSubscriptionLocalizationV2Async"
+    },
+    {
+      "verb": "GET",
+      "path": "/v2/subscriptionLocalizations/{id}",
+      "method": "GetSubscriptionLocalizationV2Async"
+    },
+    {
+      "verb": "PATCH",
+      "path": "/v2/subscriptionLocalizations/{id}",
+      "method": "UpdateSubscriptionLocalizationV2Async"
     }
   ],
   "specOperations": [

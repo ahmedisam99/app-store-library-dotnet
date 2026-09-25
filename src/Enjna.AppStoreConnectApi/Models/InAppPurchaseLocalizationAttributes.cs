@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 using Enjna.AppStoreConnectApi.Models.Enums;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The attributes that describe an In-App Purchase Localizations resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaselocalization/attributes"/>
+[Obsolete("Apple deprecated this resource in App Store Connect API 4.4.1. Use InAppPurchaseLocalizationV2Attributes instead.")]
 public sealed class InAppPurchaseLocalizationAttributes
 {
     /// <summary>

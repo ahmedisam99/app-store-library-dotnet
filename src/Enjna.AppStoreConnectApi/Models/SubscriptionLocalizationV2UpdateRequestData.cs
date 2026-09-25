@@ -1,0 +1,30 @@
+using System.Text.Json.Serialization;
+
+namespace Enjna.AppStoreConnectApi.Models;
+
+/// <summary>
+/// The data element of the request body that updates a Subscription Localizations resource of the
+/// v2 API.
+/// </summary>
+/// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionlocalizationv2updaterequest/data"/>
+public sealed class SubscriptionLocalizationV2UpdateRequestData
+{
+    /// <summary>
+    /// The resource type. The value is always <c>subscriptionLocalizations</c>.
+    /// </summary>
+    [JsonPropertyName("type")]
+    public string Type { get; set; } = "subscriptionLocalizations";
+
+    /// <summary>
+    /// The opaque resource ID of the localization to update. This member is required.
+    /// </summary>
+    [JsonPropertyName("id")]
+    public required string Id { get; set; }
+
+    /// <summary>
+    /// The attributes to change. Leave an attribute unset to keep its current value. The locale
+    /// isn't among them, because you can't move a localization to another locale.
+    /// </summary>
+    [JsonPropertyName("attributes")]
+    public SubscriptionLocalizationV2UpdateRequestDataAttributes? Attributes { get; set; }
+}

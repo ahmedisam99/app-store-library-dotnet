@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "type": "inAppPurchaseVersions",
+      "id": "b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46",
+      "attributes": {
+        "version": 2,
+        "state": "PREPARE_FOR_SUBMISSION"
+      },
+      "relationships": {
+        "inAppPurchase": {
+          "data": {
+            "type": "inAppPurchases",
+            "id": "6446452615"
+          }
+        },
+        "image": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/relationships/image",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/image"
+          }
+        },
+        "images": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/relationships/images",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/images"
+          }
+        },
+        "localizations": {
+          "links": {
+            "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/relationships/localizations",
+            "related": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46/localizations"
+          },
+          "meta": {
+            "paging": {
+              "total": 1,
+              "limit": 10
+            }
+          },
+          "data": [
+            {
+              "type": "inAppPurchaseLocalizations",
+              "id": "9c1e3a5b-7d9f-4b1d-8f3a-5c7e9b1d3f57"
+            }
+          ]
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/inAppPurchaseVersions/b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "inAppPurchaseLocalizations",
+      "id": "9c1e3a5b-7d9f-4b1d-8f3a-5c7e9b1d3f57",
+      "attributes": {
+        "name": "Seattle Neighborhood Coffee Map",
+        "locale": "en-US",
+        "description": "Find awesome coffee shops."
+      },
+      "relationships": {
+        "version": {
+          "data": {
+            "type": "inAppPurchaseVersions",
+            "id": "b4e6a8c0-2d4f-4a6c-8e0a-3b5d7f9a1c46"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchaseLocalizations/9c1e3a5b-7d9f-4b1d-8f3a-5c7e9b1d3f57"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v2/inAppPurchases/6446452615/versions?filter%5Bstate%5D=PREPARE_FOR_SUBMISSION&include=localizations"
+  },
+  "meta": {
+    "paging": {
+      "total": 1,
+      "limit": 50
+    }
+  }
+}

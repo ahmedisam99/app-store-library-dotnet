@@ -141,8 +141,12 @@ public partial class AppStoreConnectAPIClient : IDisposable
     public string[]? TokenScope { get; set; }
 
     /// <summary>
-    /// The rate-limit information from the most recent response. Every App Store Connect API
-    /// response carries it, whether the request succeeded or not. It is client-wide: every response
+    /// The rate-limit information from the most recent response, whether the request succeeded or
+    /// not. Apple documents an <c>X-Rate-Limit</c> header on every response, but a response that
+    /// arrives without one sets this to <c>null</c> rather than leaving an older reading in place,
+    /// so it always describes the latest response. Reads and writes can report different budgets,
+    /// as <see cref="RateLimit"/> describes, so a reading taken after a write may not carry the
+    /// hourly figures a read does. It is client-wide: every response
     /// this client receives overwrites it, on any thread, so a client shared across concurrent
     /// requests reports whichever response landed last rather than the one belonging to any
     /// particular call. To read the rate limit of one specific failed call, use

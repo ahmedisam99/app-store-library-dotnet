@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// attributes; the group you point the relationship at is the whole of it.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptiongroupsubmissioncreaterequest/data"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Submit a subscription group version through a review submission instead, with CreateReviewSubmissionAsync, CreateReviewSubmissionItemAsync and UpdateReviewSubmissionAsync.")]
 public sealed class SubscriptionGroupSubmissionCreateRequestData
 {
     /// <summary>

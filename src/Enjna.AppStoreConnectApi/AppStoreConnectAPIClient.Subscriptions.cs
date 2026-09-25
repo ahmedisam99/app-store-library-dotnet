@@ -1,3 +1,4 @@
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace Enjna.AppStoreConnectApi;
 public partial class AppStoreConnectAPIClient
 {
     /// <summary>
-    /// Creates an auto-renewable subscription in one of your app's subscription groups.
+    /// Creates an auto-renewable subscription in one of your app's subscription groups. Its localized
+    /// names, descriptions and images go on a version of the subscription rather than on the
+    /// subscription itself. Create the version with <see cref="CreateSubscriptionVersionAsync"/>, then
+    /// add each localization to it with <see cref="CreateSubscriptionLocalizationV2Async"/>.
     /// </summary>
     /// <param name="request">The subscription to create, including the subscription group it belongs to.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
@@ -101,7 +105,9 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Lists the localized metadata of an auto-renewable subscription, one entry per locale.
+    /// Lists the localized metadata of an auto-renewable subscription, one entry per locale. Apple
+    /// replaced it with <see cref="ListLocalizationsForSubscriptionVersionAsync"/>, which lists the
+    /// localizations of one subscription version.
     /// </summary>
     /// <param name="subscriptionId">The opaque resource ID of the subscription.</param>
     /// <param name="query">Optional query parameters such as fields, includes, and paging limits.</param>
@@ -109,6 +115,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains a list of Subscription Localizations resources.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptions-_id_-subscriptionlocalizations"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use ListLocalizationsForSubscriptionVersionAsync instead.")]
     public async Task<ResourceListResponse<SubscriptionLocalization>> ListLocalizationsForSubscriptionAsync(
         string subscriptionId,
         AppStoreConnectQuery? query = null,
@@ -285,6 +292,7 @@ public partial class AppStoreConnectAPIClient
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptions-_id_-subscriptionavailability"/>
     /// <seealso cref="ListPlanAvailabilitiesForSubscriptionAsync(string, AppStoreConnectQuery, CancellationToken)"/>
+    [Obsolete("Apple deprecated this endpoint. Use ListPlanAvailabilitiesForSubscriptionAsync instead.")]
     public async Task<ResourceResponse<SubscriptionAvailability>> GetAvailabilityForSubscriptionAsync(
         string subscriptionId,
         AppStoreConnectQuery? query = null,
@@ -349,7 +357,9 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Lists the promotional images of an auto-renewable subscription.
+    /// Lists the promotional images of an auto-renewable subscription. Apple replaced this endpoint
+    /// with <see cref="ListImagesForSubscriptionVersionAsync"/>, which lists the images of one
+    /// subscription version.
     /// </summary>
     /// <param name="subscriptionId">The opaque resource ID of the subscription.</param>
     /// <param name="query">Optional query parameters such as fields, includes, and paging limits.</param>
@@ -357,6 +367,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains a list of Subscription Images resources.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptions-_id_-images"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use ListImagesForSubscriptionVersionAsync instead.")]
     public async Task<ResourceListResponse<SubscriptionImage>> ListImagesForSubscriptionAsync(
         string subscriptionId,
         AppStoreConnectQuery? query = null,
@@ -364,6 +375,38 @@ public partial class AppStoreConnectAPIClient
     {
         return await MakeRequestAsync<ResourceListResponse<SubscriptionImage>>(
                 path: $"/v1/subscriptions/{subscriptionId}/images",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Lists the versions of an auto-renewable subscription, with the state of each, so you can find
+    /// the current draft, the most recently approved version, and any version in review.
+    /// </summary>
+    /// <remarks>
+    /// Apple says each subscription has a version. Before you call
+    /// <see cref="CreateSubscriptionVersionAsync"/>, filter this list on the
+    /// <c>PREPARE_FOR_SUBMISSION</c> state and reuse the draft it returns, if any. Add
+    /// <c>include=localizations</c> or <c>include=images</c> to read each version's metadata in the
+    /// same call.
+    /// </remarks>
+    /// <param name="subscriptionId">The opaque resource ID of the subscription.</param>
+    /// <param name="query">Optional query parameters such as the <c>state</c> filter, fields, includes, and paging limits.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains a list of Subscription Versions resources.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptions-_id_-versions"/>
+    public async Task<ResourceListResponse<SubscriptionVersion>> ListVersionsForSubscriptionAsync(
+        string subscriptionId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceListResponse<SubscriptionVersion>>(
+                path: $"/v1/subscriptions/{subscriptionId}/versions",
                 method: HttpMethod.Get,
                 queryParameters: query?.ToQueryParameters(),
                 body: null,
@@ -398,13 +441,16 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Adds localized metadata for one locale to an auto-renewable subscription.
+    /// Adds localized metadata for one locale to an auto-renewable subscription. Apple replaced it
+    /// with <see cref="CreateSubscriptionLocalizationV2Async"/>, which adds the localization to a
+    /// subscription version.
     /// </summary>
     /// <param name="request">The localization to create, including the subscription it belongs to.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     /// <returns>A response that contains the new Subscription Localizations resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v1-subscriptionlocalizations"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use CreateSubscriptionLocalizationV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionLocalization>> CreateSubscriptionLocalizationAsync(
         SubscriptionLocalizationCreateRequest request,
         CancellationToken cancellationToken = default)
@@ -420,7 +466,8 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Reads the localized metadata of an auto-renewable subscription for one locale.
+    /// Reads the localized metadata of an auto-renewable subscription for one locale. Apple replaced
+    /// it with <see cref="GetSubscriptionLocalizationV2Async"/>.
     /// </summary>
     /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization.</param>
     /// <param name="query">Optional query parameters such as fields and includes.</param>
@@ -428,6 +475,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains the Subscription Localizations resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionlocalizations-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use GetSubscriptionLocalizationV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionLocalization>> GetSubscriptionLocalizationAsync(
         string subscriptionLocalizationId,
         AppStoreConnectQuery? query = null,
@@ -445,6 +493,7 @@ public partial class AppStoreConnectAPIClient
 
     /// <summary>
     /// Changes the localized name or description of an auto-renewable subscription for one locale.
+    /// Apple replaced this endpoint with <see cref="UpdateSubscriptionLocalizationV2Async"/>.
     /// </summary>
     /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization to update.</param>
     /// <param name="request">The attributes to change.</param>
@@ -452,6 +501,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains the updated Subscription Localizations resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/patch-v1-subscriptionlocalizations-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use UpdateSubscriptionLocalizationV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionLocalization>> UpdateSubscriptionLocalizationAsync(
         string subscriptionLocalizationId,
         SubscriptionLocalizationUpdateRequest request,
@@ -468,13 +518,15 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Removes the localized metadata of an auto-renewable subscription for one locale.
+    /// Removes the localized metadata of an auto-renewable subscription for one locale. Apple replaced
+    /// it with <see cref="DeleteSubscriptionLocalizationV2Async"/>.
     /// </summary>
     /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization to delete.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     /// <returns>A task that completes once App Store Connect deleted the localization.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/delete-v1-subscriptionlocalizations-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use DeleteSubscriptionLocalizationV2Async instead.")]
     public async Task DeleteSubscriptionLocalizationAsync(
         string subscriptionLocalizationId,
         CancellationToken cancellationToken = default)
@@ -490,13 +542,17 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Submits an auto-renewable subscription and its metadata to App Review.
+    /// Submits an auto-renewable subscription and its metadata to App Review. Apple replaced this
+    /// endpoint with the review submission workflow, which submits a subscription version through
+    /// <see cref="CreateReviewSubmissionAsync"/>, <see cref="CreateReviewSubmissionItemAsync"/>,
+    /// and <see cref="UpdateReviewSubmissionAsync"/>.
     /// </summary>
     /// <param name="request">The submission to create, which names the subscription to submit.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     /// <returns>A response that contains the new Subscription Submissions resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v1-subscriptionsubmissions"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Submit through a review submission instead, with CreateReviewSubmissionAsync, CreateReviewSubmissionItemAsync and UpdateReviewSubmissionAsync.")]
     public async Task<ResourceResponse<SubscriptionSubmission>> CreateSubscriptionSubmissionAsync(
         SubscriptionSubmissionCreateRequest request,
         CancellationToken cancellationToken = default)
@@ -610,13 +666,16 @@ public partial class AppStoreConnectAPIClient
     /// <summary>
     /// Reserves a promotional image for an auto-renewable subscription. Upload the file's bytes
     /// with the upload operations of the response, then commit it with
-    /// <see cref="UpdateSubscriptionImageAsync"/>.
+    /// <see cref="UpdateSubscriptionImageAsync"/>. Apple replaced this endpoint with
+    /// <see cref="CreateSubscriptionImageV2Async"/>, which reserves the image on a subscription
+    /// version.
     /// </summary>
     /// <param name="request">The image to reserve, including its file name and size.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     /// <returns>A response that contains the reserved Subscription Images resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v1-subscriptionimages"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use CreateSubscriptionImageV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionImage>> CreateSubscriptionImageAsync(
         SubscriptionImageCreateRequest request,
         CancellationToken cancellationToken = default)
@@ -633,7 +692,7 @@ public partial class AppStoreConnectAPIClient
 
     /// <summary>
     /// Reads the information of a single subscription promotional image, including its upload and
-    /// review state.
+    /// review state. Apple replaced this endpoint with <see cref="GetSubscriptionImageV2Async"/>.
     /// </summary>
     /// <param name="subscriptionImageId">The opaque resource ID of the image.</param>
     /// <param name="query">Optional query parameters such as fields and includes.</param>
@@ -641,6 +700,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains the Subscription Images resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionimages-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use GetSubscriptionImageV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionImage>> GetSubscriptionImageAsync(
         string subscriptionImageId,
         AppStoreConnectQuery? query = null,
@@ -658,7 +718,8 @@ public partial class AppStoreConnectAPIClient
 
     /// <summary>
     /// Commits a subscription promotional image once every upload operation finished, by sending
-    /// the checksum of the file you uploaded.
+    /// the checksum of the file you uploaded. Apple replaced this endpoint with
+    /// <see cref="UpdateSubscriptionImageV2Async"/>.
     /// </summary>
     /// <param name="subscriptionImageId">The opaque resource ID of the reserved image.</param>
     /// <param name="request">The checksum of the uploaded file, and the flag that marks the upload complete.</param>
@@ -666,6 +727,7 @@ public partial class AppStoreConnectAPIClient
     /// <returns>A response that contains the updated Subscription Images resource.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/patch-v1-subscriptionimages-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use UpdateSubscriptionImageV2Async instead.")]
     public async Task<ResourceResponse<SubscriptionImage>> UpdateSubscriptionImageAsync(
         string subscriptionImageId,
         SubscriptionImageUpdateRequest request,
@@ -682,19 +744,352 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
-    /// Deletes a promotional image of an auto-renewable subscription.
+    /// Deletes a promotional image of an auto-renewable subscription. Apple replaced this endpoint with
+    /// <see cref="DeleteSubscriptionImageV2Async"/>.
     /// </summary>
     /// <param name="subscriptionImageId">The opaque resource ID of the image to delete.</param>
     /// <param name="cancellationToken">A token to cancel the operation.</param>
     /// <returns>A task that completes once App Store Connect deleted the image.</returns>
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/delete-v1-subscriptionimages-_id_"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4.1. Use DeleteSubscriptionImageV2Async instead.")]
     public async Task DeleteSubscriptionImageAsync(
         string subscriptionImageId,
         CancellationToken cancellationToken = default)
     {
         await MakeRequestAsync<object>(
                 path: $"/v1/subscriptionImages/{subscriptionImageId}",
+                method: HttpMethod.Delete,
+                queryParameters: null,
+                body: null,
+                parseResponse: false,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Creates a draft version of an auto-renewable subscription, which holds the localized metadata
+    /// and promotional images that go through App Review together. Attach localizations with
+    /// <see cref="CreateSubscriptionLocalizationV2Async"/> and images with
+    /// <see cref="CreateSubscriptionImageV2Async"/>, then submit the version through a review
+    /// submission.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// The new version starts in <c>PREPARE_FOR_SUBMISSION</c>, the only state in which you can add,
+    /// change, or remove its localizations and images. Once it moves on, create a new version to
+    /// change the metadata.
+    /// </para>
+    /// <para>
+    /// Apple says each subscription has a version, so list the subscription's versions with
+    /// <see cref="ListVersionsForSubscriptionAsync"/>, filtered on the <c>PREPARE_FOR_SUBMISSION</c>
+    /// state, and reuse a draft before you create one. Apple describes a new version as capturing
+    /// the subscription's current localized metadata and images.
+    /// </para>
+    /// </remarks>
+    /// <param name="request">The version to create, which names the subscription it belongs to.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the new Subscription Versions resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v1-subscriptionversions"/>
+    public async Task<ResourceResponse<SubscriptionVersion>> CreateSubscriptionVersionAsync(
+        SubscriptionVersionCreateRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionVersion>>(
+                path: "/v1/subscriptionVersions",
+                method: HttpMethod.Post,
+                queryParameters: null,
+                body: request,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reads a subscription version, including its state. Poll it after you submit the version to
+    /// follow it through App Review.
+    /// </summary>
+    /// <param name="subscriptionVersionId">The opaque resource ID of the subscription version.</param>
+    /// <param name="query">Optional query parameters such as fields, includes, and per-relationship paging limits.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the Subscription Versions resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionversions-_id_"/>
+    public async Task<ResourceResponse<SubscriptionVersion>> GetSubscriptionVersionAsync(
+        string subscriptionVersionId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionVersion>>(
+                path: $"/v1/subscriptionVersions/{subscriptionVersionId}",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Lists the localized display names and descriptions of a subscription version, one entry per
+    /// locale.
+    /// </summary>
+    /// <param name="subscriptionVersionId">The opaque resource ID of the subscription version.</param>
+    /// <param name="query">Optional query parameters such as fields, includes, and paging limits.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains a list of Subscription Localizations resources.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionversions-_id_-localizations"/>
+    public async Task<ResourceListResponse<SubscriptionLocalizationV2>> ListLocalizationsForSubscriptionVersionAsync(
+        string subscriptionVersionId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceListResponse<SubscriptionLocalizationV2>>(
+                path: $"/v1/subscriptionVersions/{subscriptionVersionId}/localizations",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Lists the promotional images of a subscription version.
+    /// </summary>
+    /// <param name="subscriptionVersionId">The opaque resource ID of the subscription version.</param>
+    /// <param name="query">Optional query parameters such as fields and paging limits.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains a list of Subscription Images resources.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionversions-_id_-images"/>
+    public async Task<ResourceListResponse<SubscriptionImageV2>> ListImagesForSubscriptionVersionAsync(
+        string subscriptionVersionId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceListResponse<SubscriptionImageV2>>(
+                path: $"/v1/subscriptionVersions/{subscriptionVersionId}/images",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reads the promotional image attached to a subscription version.
+    /// </summary>
+    /// <param name="subscriptionVersionId">The opaque resource ID of the subscription version.</param>
+    /// <param name="query">Optional query parameters such as fields.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the Subscription Images resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionversions-_id_-image"/>
+    public async Task<ResourceResponse<SubscriptionImageV2>> GetImageForSubscriptionVersionAsync(
+        string subscriptionVersionId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionImageV2>>(
+                path: $"/v1/subscriptionVersions/{subscriptionVersionId}/image",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Adds a localized display name and description for one locale to a subscription version. You
+    /// can add localizations only while the version is in <c>PREPARE_FOR_SUBMISSION</c>.
+    /// </summary>
+    /// <param name="request">The localization to create, including the subscription version it belongs to.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the new Subscription Localizations resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v2-subscriptionlocalizations"/>
+    public async Task<ResourceResponse<SubscriptionLocalizationV2>> CreateSubscriptionLocalizationV2Async(
+        SubscriptionLocalizationV2CreateRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionLocalizationV2>>(
+                path: "/v2/subscriptionLocalizations",
+                method: HttpMethod.Post,
+                queryParameters: null,
+                body: request,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reads the localized display name and description of a subscription version for one locale.
+    /// </summary>
+    /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization.</param>
+    /// <param name="query">Optional query parameters such as fields and includes.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the Subscription Localizations resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v2-subscriptionlocalizations-_id_"/>
+    public async Task<ResourceResponse<SubscriptionLocalizationV2>> GetSubscriptionLocalizationV2Async(
+        string subscriptionLocalizationId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionLocalizationV2>>(
+                path: $"/v2/subscriptionLocalizations/{subscriptionLocalizationId}",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Changes the localized display name or description of a subscription version for one locale.
+    /// You can change localizations only while the version is in <c>PREPARE_FOR_SUBMISSION</c>.
+    /// </summary>
+    /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization to update.</param>
+    /// <param name="request">The attributes to change.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the updated Subscription Localizations resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/patch-v2-subscriptionlocalizations-_id_"/>
+    public async Task<ResourceResponse<SubscriptionLocalizationV2>> UpdateSubscriptionLocalizationV2Async(
+        string subscriptionLocalizationId,
+        SubscriptionLocalizationV2UpdateRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionLocalizationV2>>(
+                path: $"/v2/subscriptionLocalizations/{subscriptionLocalizationId}",
+                method: HttpMethod.Patch,
+                queryParameters: null,
+                body: request,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Removes the localized display name and description of one locale from a subscription
+    /// version. You can remove localizations only while the version is in
+    /// <c>PREPARE_FOR_SUBMISSION</c>.
+    /// </summary>
+    /// <param name="subscriptionLocalizationId">The opaque resource ID of the localization to delete.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A task that completes once App Store Connect deleted the localization.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/delete-v2-subscriptionlocalizations-_id_"/>
+    public async Task DeleteSubscriptionLocalizationV2Async(
+        string subscriptionLocalizationId,
+        CancellationToken cancellationToken = default)
+    {
+        await MakeRequestAsync<object>(
+                path: $"/v2/subscriptionLocalizations/{subscriptionLocalizationId}",
+                method: HttpMethod.Delete,
+                queryParameters: null,
+                body: null,
+                parseResponse: false,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reserves a promotional image for a subscription version. Upload the file's bytes to the upload
+    /// operations of the response with
+    /// <see cref="UploadAssetAsync(System.Collections.Generic.IEnumerable{UploadOperation}, byte[], CancellationToken)"/>,
+    /// then commit it with <see cref="UpdateSubscriptionImageV2Async"/>.
+    /// </summary>
+    /// <param name="request">The image to reserve, including its file name, its size, and the subscription version it belongs to.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the reserved Subscription Images resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v2-subscriptionimages"/>
+    public async Task<ResourceResponse<SubscriptionImageV2>> CreateSubscriptionImageV2Async(
+        SubscriptionImageV2CreateRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionImageV2>>(
+                path: "/v2/subscriptionImages",
+                method: HttpMethod.Post,
+                queryParameters: null,
+                body: request,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Reads a promotional image of a subscription version, including the delivery state of its
+    /// asset.
+    /// </summary>
+    /// <param name="subscriptionImageId">The opaque resource ID of the image.</param>
+    /// <param name="query">Optional query parameters such as fields.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the Subscription Images resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v2-subscriptionimages-_id_"/>
+    public async Task<ResourceResponse<SubscriptionImageV2>> GetSubscriptionImageV2Async(
+        string subscriptionImageId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionImageV2>>(
+                path: $"/v2/subscriptionImages/{subscriptionImageId}",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Commits a promotional image of a subscription version once every upload operation finished.
+    /// The request carries only the <c>uploaded</c> flag, with no checksum.
+    /// </summary>
+    /// <param name="subscriptionImageId">The opaque resource ID of the reserved image.</param>
+    /// <param name="request">The flag that marks the upload complete.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains the updated Subscription Images resource.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/patch-v2-subscriptionimages-_id_"/>
+    public async Task<ResourceResponse<SubscriptionImageV2>> UpdateSubscriptionImageV2Async(
+        string subscriptionImageId,
+        SubscriptionImageV2UpdateRequest request,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceResponse<SubscriptionImageV2>>(
+                path: $"/v2/subscriptionImages/{subscriptionImageId}",
+                method: HttpMethod.Patch,
+                queryParameters: null,
+                body: request,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// Deletes a promotional image from a subscription version. You can remove images only while
+    /// the version is in <c>PREPARE_FOR_SUBMISSION</c>.
+    /// </summary>
+    /// <param name="subscriptionImageId">The opaque resource ID of the image to delete.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A task that completes once App Store Connect deleted the image.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/delete-v2-subscriptionimages-_id_"/>
+    public async Task DeleteSubscriptionImageV2Async(
+        string subscriptionImageId,
+        CancellationToken cancellationToken = default)
+    {
+        await MakeRequestAsync<object>(
+                path: $"/v2/subscriptionImages/{subscriptionImageId}",
                 method: HttpMethod.Delete,
                 queryParameters: null,
                 body: null,

@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// image file.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaseimagecreaterequest"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use InAppPurchaseImageV2CreateRequest instead.")]
 public sealed class InAppPurchaseImageCreateRequest
 {
     /// <summary>

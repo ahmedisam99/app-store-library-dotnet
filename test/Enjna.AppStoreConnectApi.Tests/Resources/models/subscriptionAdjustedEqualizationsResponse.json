@@ -1,0 +1,76 @@
+{
+  "data": [
+    {
+      "type": "subscriptionPricePoints",
+      "id": "eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJDQU4iLCJwIjoiMTAxNDIifQ",
+      "attributes": {
+        "customerPrice": "12.99",
+        "proceeds": "9.09",
+        "proceedsYear2": "11.04"
+      },
+      "relationships": {
+        "territory": {
+          "data": {
+            "type": "territories",
+            "id": "CAN"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJDQU4iLCJwIjoiMTAxNDIifQ"
+      }
+    },
+    {
+      "type": "subscriptionPricePoints",
+      "id": "eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJKUE4iLCJwIjoiMTAxNTUifQ",
+      "attributes": {
+        "customerPrice": "1500",
+        "proceeds": "1050",
+        "proceedsYear2": "1275"
+      },
+      "relationships": {
+        "territory": {
+          "data": {
+            "type": "territories",
+            "id": "JPN"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJKUE4iLCJwIjoiMTAxNTUifQ"
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "territories",
+      "id": "CAN",
+      "attributes": {
+        "currency": "CAD"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/territories/CAN"
+      }
+    },
+    {
+      "type": "territories",
+      "id": "JPN",
+      "attributes": {
+        "currency": "JPY"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/territories/JPN"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ/adjustedEqualizations?filter%5BupfrontPricePointId%5D=eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ&filter%5BplanType%5D=MONTHLY&include=territory&limit=200",
+    "next": "https://api.appstoreconnect.apple.com/v1/subscriptionPricePoints/eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ/adjustedEqualizations?cursor=Ag.AJs&filter%5BupfrontPricePointId%5D=eyJzIjoiNjQ0NzQ5NzgzMiIsInQiOiJVU0EiLCJwIjoiMTAxMjcifQ&filter%5BplanType%5D=MONTHLY&include=territory&limit=200"
+  },
+  "meta": {
+    "paging": {
+      "total": 174,
+      "limit": 200
+    }
+  }
+}

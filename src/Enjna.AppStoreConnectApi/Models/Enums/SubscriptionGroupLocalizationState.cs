@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models.Enums;
 /// The state of a subscription group localization in the App Store review process.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptiongrouplocalization/attributes"/>
+[Obsolete("Apple deprecated the resource this state belongs to in App Store Connect API 4.4.1. SubscriptionGroupLocalizationV2 has no state, so read the SubscriptionGroupVersionState of its version instead.")]
 [JsonConverter(typeof(JsonEnumMemberConverter<SubscriptionGroupLocalizationState>))]
 public enum SubscriptionGroupLocalizationState
 {

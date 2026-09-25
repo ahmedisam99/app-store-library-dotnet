@@ -210,6 +210,7 @@ public class SubscriptionTests
         Assert.Equal("6446075099", subscriptions[1].Id);
     }
 
+#pragma warning disable CS0618 // Apple deprecated the v1 localization endpoints in 4.4.1; the library still supports them.
     [Fact]
     public async Task DecodesSubscriptionGroupLocalizationsPage()
     {
@@ -242,7 +243,9 @@ public class SubscriptionTests
             "https://api.appstoreconnect.apple.com/v1/subscriptionGroups/20925550/subscriptionGroupLocalizations?cursor=BQ.MglVUw",
             response.Links.Next);
     }
+#pragma warning restore CS0618
 
+#pragma warning disable CS0618 // Apple deprecated the v1 localization endpoints in 4.4.1; the library still supports them.
     [Fact]
     public async Task DecodesSubscriptionLocalizationAttributes()
     {
@@ -264,6 +267,7 @@ public class SubscriptionTests
         Assert.Equal(SubscriptionLocalizationState.WaitingForReview, localization.Attributes.State);
         Assert.Equal("6446075067", localization.Relationships!["subscription"].ToOne()!.Id);
     }
+#pragma warning restore CS0618
 
     [Fact]
     public async Task DecodesOfferCodeCustomerEligibilities()

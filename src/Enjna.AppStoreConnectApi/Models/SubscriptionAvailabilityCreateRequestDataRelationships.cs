@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The relationships of the request body that sets a subscription's territory availability.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionavailabilitycreaterequest/data/relationships"/>
+[Obsolete("Apple deprecated this request. Use SubscriptionPlanAvailabilityCreateRequestDataRelationships instead.")]
 public sealed class SubscriptionAvailabilityCreateRequestDataRelationships
 {
     /// <summary>

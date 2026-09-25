@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models.Enums;
 /// The state of an in-app purchase image, which covers both its upload and its review.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/inapppurchaseimage/attributes"/>
+[Obsolete("Apple deprecated the resource this state belongs to in App Store Connect API 4.4.1. InAppPurchaseImageV2 has no state, so read its AssetDeliveryState for the upload and the InAppPurchaseVersionState of its version for review instead.")]
 [JsonConverter(typeof(JsonEnumMemberConverter<InAppPurchaseImageState>))]
 public enum InAppPurchaseImageState
 {

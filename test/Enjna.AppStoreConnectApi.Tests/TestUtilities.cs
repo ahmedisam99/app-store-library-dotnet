@@ -2,6 +2,8 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using System.Text.Json.Nodes;
+using Xunit;
 
 namespace Enjna.AppStoreConnectApi.Tests;
 
@@ -78,5 +80,21 @@ internal static class TestUtilities
             KeyId,
             IssuerId,
             new HttpClient(handler));
+    }
+
+    /// <summary>
+    /// Asserts that a captured request body is the same JSON as the expected one, ignoring member
+    /// order and whitespace, so a test can compare against Apple's example payloads verbatim.
+    /// </summary>
+    public static void AssertJsonEquivalent(string expected, string? actual)
+    {
+        Assert.NotNull(actual);
+
+        var expectedNode = JsonNode.Parse(expected);
+        var actualNode = JsonNode.Parse(actual);
+
+        Assert.True(
+            JsonNode.DeepEquals(expectedNode, actualNode),
+            $"Expected {expectedNode!.ToJsonString()} but the request sent {actualNode!.ToJsonString()}.");
     }
 }

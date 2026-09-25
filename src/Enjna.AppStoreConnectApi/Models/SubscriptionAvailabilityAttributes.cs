@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -6,6 +7,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// The attributes that describe a Subscription Availabilities resource.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptionavailability/attributes"/>
+[Obsolete("Apple deprecated this resource. Use SubscriptionPlanAvailabilityAttributes instead.")]
 public sealed class SubscriptionAvailabilityAttributes
 {
     /// <summary>

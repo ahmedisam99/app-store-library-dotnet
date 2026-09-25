@@ -103,6 +103,47 @@ public partial class AppStoreConnectAPIClient
     }
 
     /// <summary>
+    /// Lists the price points of other territories that are equivalent to a price point, adjusted in
+    /// the territories where the direct equalization would break a local pricing rule. Use it
+    /// instead of <see cref="ListEqualizationsForSubscriptionPricePointAsync"/> when you plan a price
+    /// change and need the price customers would pay in each territory, not the raw currency
+    /// conversion.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// The adjustments keep the equalized prices consistent whether a territory offers the monthly
+    /// or the up-front billing plan. Apple recommends identifying a specific adjusted equalization
+    /// with the <c>upfrontPricePointId</c> and <c>planType</c> filters, for example
+    /// <c>new AppStoreConnectQuery().Filter("upfrontPricePointId", upfrontPricePointId).Filter("planType", "MONTHLY")</c>.
+    /// Add <c>include=territory</c> so each price point carries its territory.
+    /// </para>
+    /// <para>
+    /// To see which territories needed an adjustment, compare the result with the plain
+    /// equalizations of the same price point.
+    /// </para>
+    /// </remarks>
+    /// <param name="subscriptionPricePointId">The opaque resource ID of the price point to equalize.</param>
+    /// <param name="query">Optional query parameters such as the <c>upfrontPricePointId</c>, <c>planType</c>, <c>territory</c>, and <c>subscription</c> filters, fields, includes, and paging limits.</param>
+    /// <param name="cancellationToken">A token to cancel the operation.</param>
+    /// <returns>A response that contains a list of equivalent Subscription Price Points resources, one per territory.</returns>
+    /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
+    /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionpricepoints-_id_-adjustedequalizations"/>
+    public async Task<ResourceListResponse<SubscriptionPricePoint>> ListAdjustedEqualizationsForSubscriptionPricePointAsync(
+        string subscriptionPricePointId,
+        AppStoreConnectQuery? query = null,
+        CancellationToken cancellationToken = default)
+    {
+        return await MakeRequestAsync<ResourceListResponse<SubscriptionPricePoint>>(
+                path: $"/v1/subscriptionPricePoints/{subscriptionPricePointId}/adjustedEqualizations",
+                method: HttpMethod.Get,
+                queryParameters: query?.ToQueryParameters(),
+                body: null,
+                parseResponse: true,
+                cancellationToken: cancellationToken)
+            .ConfigureAwait(false);
+    }
+
+    /// <summary>
     /// Sets the territories a subscription is for sale in.
     /// </summary>
     /// <remarks>
@@ -117,6 +158,7 @@ public partial class AppStoreConnectAPIClient
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/post-v1-subscriptionavailabilities"/>
     /// <seealso cref="CreateSubscriptionPlanAvailabilityAsync(SubscriptionPlanAvailabilityCreateRequest, CancellationToken)"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4. Use CreateSubscriptionPlanAvailabilityAsync instead.")]
     public async Task<ResourceResponse<SubscriptionAvailability>> CreateSubscriptionAvailabilityAsync(
         SubscriptionAvailabilityCreateRequest request,
         CancellationToken cancellationToken = default)
@@ -146,6 +188,7 @@ public partial class AppStoreConnectAPIClient
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionavailabilities-_id_"/>
     /// <seealso cref="GetSubscriptionPlanAvailabilityAsync(string, AppStoreConnectQuery, CancellationToken)"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4. Use GetSubscriptionPlanAvailabilityAsync instead.")]
     public async Task<ResourceResponse<SubscriptionAvailability>> GetSubscriptionAvailabilityAsync(
         string subscriptionAvailabilityId,
         AppStoreConnectQuery? query = null,
@@ -176,6 +219,7 @@ public partial class AppStoreConnectAPIClient
     /// <exception cref="APIException">Thrown if a response was returned indicating the request could not be processed.</exception>
     /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/get-v1-subscriptionavailabilities-_id_-availableterritories"/>
     /// <seealso cref="ListAvailableTerritoriesForSubscriptionPlanAvailabilityAsync(string, AppStoreConnectQuery, CancellationToken)"/>
+    [Obsolete("Apple deprecated this endpoint in App Store Connect API 4.4. Use ListAvailableTerritoriesForSubscriptionPlanAvailabilityAsync instead.")]
     public async Task<ResourceListResponse<Territory>> ListAvailableTerritoriesForSubscriptionAvailabilityAsync(
         string subscriptionAvailabilityId,
         AppStoreConnectQuery? query = null,

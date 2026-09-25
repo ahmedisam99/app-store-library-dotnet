@@ -1,3 +1,4 @@
+using System;
 using System.Text.Json.Serialization;
 
 namespace Enjna.AppStoreConnectApi.Models;
@@ -7,6 +8,7 @@ namespace Enjna.AppStoreConnectApi.Models;
 /// locale isn't among them, because you set it once when you create the localization.
 /// </summary>
 /// <seealso href="https://developer.apple.com/documentation/appstoreconnectapi/subscriptiongrouplocalizationupdaterequest/data/attributes"/>
+[Obsolete("Apple deprecated this request in App Store Connect API 4.4.1. Use SubscriptionGroupLocalizationV2UpdateRequestDataAttributes instead.")]
 public sealed class SubscriptionGroupLocalizationUpdateRequestDataAttributes : AttributeChangeSet
 {
     /// <summary>
