@@ -1,0 +1,52 @@
+{
+  "data": {
+    "type": "appTags",
+    "id": "eyJhIjoiNjQ0NjkzOTQ1NyIsInQiOiJqb3VybmFsaW5nIn0",
+    "attributes": {
+      "name": "Journaling",
+      "visibleInAppStore": false
+    },
+    "relationships": {
+      "territories": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appTags/eyJhIjoiNjQ0NjkzOTQ1NyIsInQiOiJqb3VybmFsaW5nIn0/relationships/territories",
+          "related": "https://api.appstoreconnect.apple.com/v1/appTags/eyJhIjoiNjQ0NjkzOTQ1NyIsInQiOiJqb3VybmFsaW5nIn0/territories"
+        },
+        "meta": {
+          "paging": {
+            "total": 2,
+            "limit": 50
+          }
+        },
+        "data": [
+          {
+            "type": "territories",
+            "id": "USA"
+          },
+          {
+            "type": "territories",
+            "id": "JPN"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appTags/eyJhIjoiNjQ0NjkzOTQ1NyIsInQiOiJqb3VybmFsaW5nIn0"
+    }
+  },
+  "included": [
+    {
+      "type": "territories",
+      "id": "USA",
+      "attributes": {
+        "currency": "USD"
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/territories/USA"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/appTags/eyJhIjoiNjQ0NjkzOTQ1NyIsInQiOiJqb3VybmFsaW5nIn0"
+  }
+}

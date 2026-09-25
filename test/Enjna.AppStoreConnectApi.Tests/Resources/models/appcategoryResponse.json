@@ -1,0 +1,60 @@
+{
+  "data": {
+    "type": "appCategories",
+    "id": "GAMES_PUZZLE",
+    "attributes": {
+      "platforms": [
+        "IOS",
+        "MAC_OS",
+        "TV_OS"
+      ]
+    },
+    "relationships": {
+      "parent": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE/relationships/parent",
+          "related": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE/parent"
+        },
+        "data": {
+          "type": "appCategories",
+          "id": "GAMES"
+        }
+      },
+      "subcategories": {
+        "links": {
+          "self": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE/relationships/subcategories",
+          "related": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE/subcategories"
+        },
+        "meta": {
+          "paging": {
+            "total": 0,
+            "limit": 50
+          }
+        },
+        "data": []
+      }
+    },
+    "links": {
+      "self": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE"
+    }
+  },
+  "included": [
+    {
+      "type": "appCategories",
+      "id": "GAMES",
+      "attributes": {
+        "platforms": [
+          "IOS",
+          "MAC_OS",
+          "TV_OS"
+        ]
+      },
+      "links": {
+        "self": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES"
+      }
+    }
+  ],
+  "links": {
+    "self": "https://api.appstoreconnect.apple.com/v1/appCategories/GAMES_PUZZLE"
+  }
+}
